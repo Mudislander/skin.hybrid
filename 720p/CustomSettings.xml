@@ -1,0 +1,3575 @@
+<window id="1111">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<include>CommonBackground</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>100r</posy>
+			<width>1280</width>
+			<height>100</height>
+			<texture>floor.png</texture>
+			<include>VisibleFadeEffect</include>
+		</control>
+		<control type="group">
+			<posx>90</posx>
+			<posy>30</posy>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>1090</width>
+				<height>630</height>
+				<texture border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>625</posy>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>SkinLogo/Convergence_Logo.png</texture>
+			</control>
+			<control type="button" id="61">
+				<description>Back push button</description>
+				<posx>120r</posx>
+				<posy>55r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>9000</onleft>
+				<onright>62</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>115r</posx>
+				<posy>50r</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_back.png</texture>
+			</control>
+			<control type="button" id="62">
+				<description>Home push button</description>
+				<posx>65r</posx>
+				<posy>55r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>61</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60r</posx>
+				<posy>50r</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_home.png</texture>
+			</control>
+			<control type="list" id="9000">
+				<posx>10</posx>
+				<posy>90</posy>
+				<width>260</width>
+				<height>527</height>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+				<itemlayout height="75" width="260">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>76</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<posy>15</posy>
+						<width>380</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>grey3</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<posy>42</posy>
+						<width>870</width>
+						<height>25</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="75" width="260">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>81</height>
+						<texture border="5">MenuItemFO.png</texture>
+						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<posy>15</posy>
+						<width>380</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<posy>42</posy>
+						<width>870</width>
+						<height>25</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[10000] $LOCALIZE[31302]</label>
+						<label2>31950</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[1034]</label>
+						<label2>$LOCALIZE[1034] $LOCALIZE[31025]</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="3">
+						<label>33068</label>
+						<label2>31115</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="4">
+						<label>513</label>
+						<label2>31112</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="5">
+						<label>128</label>
+						<label2>5</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="6">
+						<label>24000</label>
+						<label2>31200</label2>
+						<onclick>-</onclick>
+					</item>
+					<item id="7">
+						<label>Reserved</label>
+						<label2>Reserved</label2>
+						<onclick>-</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="image">
+				<posx>268</posx>
+				<posy>10</posy>
+				<width>790</width>
+				<height>618</height>
+				<texture border="5">black-back2.png</texture>
+			</control>
+			<control type="image">
+				<posx>268</posx>
+				<posy>10</posy>
+				<width>804</width>
+				<height>100</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>GlassTitleBar.png</texture>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<posx>300</posx>
+				<posy>20</posy>
+				<width>740</width>
+				<height>30</height>
+				<font>font16</font>
+				<label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="group" id="9010">
+				<control type="grouplist" id="9001">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<control type="label" id="100">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31950]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="101">
+						<description>Hide Settings Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[13000]</label>
+						<onclick>Skin.ToggleSetting(HideHomeMenuSystem)</onclick>
+						<selected>Skin.HasSetting(HideHomeMenuSystem)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="102">
+						<description>Sticky Menu #1 Action</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31910]</label>
+						<onclick>Skin.Reset(HomeItemOneAction)</onclick>
+						<onclick>Skin.Reset(HomeItemOneLabel)</onclick>
+						<onclick>Skin.ToggleSetting(StickyHomeMenuAction)</onclick>
+						<selected>Skin.HasSetting(StickyHomeMenuAction)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="button" id="103">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 1</label>
+						<label2>[COLOR=selected]$VAR[MenuItemOneLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemOne,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemOneLabel))">Skin.SetString(HomeItemOneLabel)</onclick>
+						<enable>!Skin.HasSetting(StickyHomeMenuAction)</enable>
+					</control>	
+					<control type="button" id="104">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTwo,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemTwoLabel))">Skin.SetString(HomeItemTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="105">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemThree,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemThreeLabel))">Skin.SetString(HomeItemThreeLabel)</onclick>
+					</control>	
+					<control type="button" id="106">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 4</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemFourLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFour,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemFourLabel))">Skin.SetString(HomeItemFourLabel)</onclick>
+					</control>	
+					<control type="button" id="107">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 5</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemFiveLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFive,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemFiveLabel))">Skin.SetString(HomeItemFiveLabel)</onclick>
+					</control>	
+					<control type="button" id="108">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 6</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemSixLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSix,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemSixLabel))">Skin.SetString(HomeItemSixLabel)</onclick>
+					</control>	
+					<control type="button" id="109">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 7</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemSevenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSeven,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemSevenLabel))">Skin.SetString(HomeItemSevenLabel)</onclick>
+					</control>	
+					<control type="button" id="110">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 8</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemEightLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemEight,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemEightLabel))">Skin.SetString(HomeItemEightLabel)</onclick>
+					</control>	
+					<control type="button" id="111">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 9</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemNineLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemNine,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemNineLabel))">Skin.SetString(HomeItemNineLabel)</onclick>
+					</control>	
+					<control type="button" id="112">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31951] - 10</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeItemTenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTen,home)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeItemTenLabel))">Skin.SetString(HomeItemTenLabel)</onclick>
+					</control>
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9001</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(1)</visible>
+				</control>
+				<control type="grouplist" id="9002">
+					<visible>Container(9000).Hasfocus(2)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+						<control type="label" id="200">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31673]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="201">
+						<description>Hide Default Submenu Items</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31674]</label>
+						<onclick>Skin.ToggleSetting(HideDefaultSubItem)</onclick>
+						<selected>Skin.HasSetting(HideDefaultSubItem)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<!--control type="radiobutton" id="202">
+						<description>Hide New Media on SubMenu</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31675]</label>
+						<onclick>Skin.ToggleSetting(HideNewMediaSubItem)</onclick>
+						<selected>Skin.HasSetting(HideNewMediaSubItem)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control-->
+					<control type="label" id="203">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31939]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="204">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$VAR[MenuItemOneLabel]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemOneSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(HomeItemLastLabel)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemOne,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemOneLabel)) | Skin.HasSetting(StickyHomeMenuAction)</visible>
+					</control>	
+					<control type="button" id="205">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemTwoLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemTwoSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTwo,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemTwoLabel))</visible>
+					</control>	
+					<control type="button" id="206">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemThreeLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemThreeSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemThree,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemThreeLabel))</visible>
+					</control>
+					<control type="button" id="207">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemFourLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemFourSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFour,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemFourLabel))</visible>
+					</control>
+					<control type="button" id="208">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemFiveLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemFiveSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFive,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemFiveLabel))</visible>
+					</control>
+					<control type="button" id="209">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemSixLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemSixSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSix,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemSixLabel))</visible>
+					</control>						
+					<control type="button" id="210">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemSevenLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemSevenSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSeven,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemSevenLabel))</visible>
+					</control>
+					<control type="button" id="211">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemEightLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemEightSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemEight,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemEightLabel))</visible>
+					</control>	
+					<control type="button" id="212">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemNineLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemNineSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemNine,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemNineLabel))</visible>
+					</control>	
+					<control type="button" id="213">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemTenLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemTenSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTen,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemTenLabel))</visible>
+					</control>
+					<control type="button" id="214">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[13000]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefSettingsSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemEleven,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<visible>!Skin.HasSetting(HideHomeMenuSystem)</visible>
+					</control>	
+					<control type="label" id="215">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[559] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="216">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemOneLabel))">Skin.SetString(SubMenuItemOneLabel)</onclick>
+					</control>	
+					<control type="button" id="217">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemTwoLabel))">Skin.SetString(SubMenuItemTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="218">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemThreeLabel))">Skin.SetString(SubMenuItemThreeLabel)</onclick>
+					</control>	
+					<control type="button" id="219">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 4</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemFourLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemFour,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemFourLabel))">Skin.SetString(SubMenuItemFourLabel)</onclick>
+					</control>	
+					<control type="button" id="220">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 5</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemFiveLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemFive,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemFiveLabel))">Skin.SetString(SubMenuItemFiveLabel)</onclick>
+					</control>	
+					<control type="label" id="221">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31982] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="222">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemSixLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemSix,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemSixLabel))">Skin.SetString(SubMenuItemSixLabel)</onclick>
+					</control>	
+					<control type="button" id="223">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemSevenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemSeven,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemSevenLabel))">Skin.SetString(SubMenuItemSevenLabel)</onclick>
+					</control>	
+					<control type="button" id="224">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemEightLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemEight,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemEightLabel))">Skin.SetString(SubMenuItemEightLabel)</onclick>
+					</control>	
+					<control type="button" id="225">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 4</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemNineLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemNine,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemNineLabel))">Skin.SetString(SubMenuItemNineLabel)</onclick>
+					</control>	
+					<control type="button" id="226">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 5</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SubMenuItemTenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,SubMenuItemTen,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(SubMenuItemTenLabel))">Skin.SetString(SubMenuItemTenLabel)</onclick>
+					</control>	
+					
+					<!--
+					<control type="label" id="227">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31670] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="228">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CommonSubMenuOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,CommonSubMenuOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(CommonSubMenuOneLabel))">Skin.SetString(CommonSubMenuOneLabel)</onclick>
+					</control>	
+					<control type="button" id="229">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CommonSubMenuTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,CommonSubMenuTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(CommonSubMenuTwoLabel))">Skin.SetString(CommonSubMenuTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="230">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CommonSubMenuThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,CommonSubMenuThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(CommonSubMenuThreeLabel))">Skin.SetString(CommonSubMenuThreeLabel)</onclick>
+					</control>	
+					<control type="button" id="231">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 4</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CommonSubMenuFourLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,CommonSubMenuFour,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(CommonSubMenuFourLabel))">Skin.SetString(CommonSubMenuFourLabel)</onclick>
+					</control>	
+					<control type="button" id="232">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 5</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CommonSubMenuFiveLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,CommonSubMenuFive,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(CommonSubMenuFiveLabel))">Skin.SetString(CommonSubMenuFiveLabel)</onclick>
+					</control>
+					-->
+					<control type="label" id="233">
+						<description>User Video Submenu Items</description>
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[10006] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="234">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(VideoSubMenuOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,VideoSubMenuOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(VideoSubMenuOneLabel))">Skin.SetString(VideoSubMenuOneLabel)</onclick>
+					</control>	
+					<control type="button" id="235">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(VideoSubMenuTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,VideoSubMenuTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(VideoSubMenuTwoLabel))">Skin.SetString(VideoSubMenuTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="236">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(VideoSubMenuThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,VideoSubMenuThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(VideoSubMenuThreeLabel))">Skin.SetString(VideoSubMenuThreeLabel)</onclick>
+					</control>	
+					<control type="label" id="237">
+						<description>User Music Submenu Items</description>
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[10005] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="238">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(MusicSubMenuOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,MusicSubMenuOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(MusicSubMenuOneLabel))">Skin.SetString(MusicSubMenuOneLabel)</onclick>
+					</control>	
+					<control type="button" id="239">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(MusicSubMenuTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,MusicSubMenuTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(MusicSubMenuTwoLabel))">Skin.SetString(MusicSubMenuTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="240">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(MusicSubMenuThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,MusicSubMenuThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(MusicSubMenuThreeLabel))">Skin.SetString(MusicSubMenuThreeLabel)</onclick>
+					</control>	
+					<control type="label" id="241">
+						<description>User Pictures Submenu Items</description>
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[10002] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="242">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PicSubMenuOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,PicSubMenuOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(PicSubMenuOneLabel))">Skin.SetString(PicSubMenuOneLabel)</onclick>
+					</control>	
+					<control type="button" id="243">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PicSubMenuTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,PicSubMenuTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(PicSubMenuTwoLabel))">Skin.SetString(PicSubMenuTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="244">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PicSubMenuThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,PicSubMenuThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(PicSubMenuThreeLabel))">Skin.SetString(PicSubMenuThreeLabel)</onclick>
+					</control>	
+					<control type="label" id="245">
+						<description>User Programes Submenu Items</description>
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[10001] $LOCALIZE[1034] $LOCALIZE[31025]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="246">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 1</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ProgSubMenuOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,ProgSubMenuOne,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(ProgSubMenuOneLabel))">Skin.SetString(ProgSubMenuOneLabel)</onclick>
+					</control>	
+					<control type="button" id="247">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 2</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ProgSubMenuTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,ProgSubMenuTwo,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(ProgSubMenuTwoLabel))">Skin.SetString(ProgSubMenuTwoLabel)</onclick>
+					</control>	
+					<control type="button" id="248">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31941] - 3</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ProgSubMenuThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,ProgSubMenuThree,home)</onclick>
+						<onclick>ActivateWindow(2115)</onclick>
+						<onclick condition="!IsEmpty(Skin.String(ProgSubMenuThreeLabel))">Skin.SetString(ProgSubMenuThreeLabel)</onclick>
+					</control>	
+				</control>	
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9002</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(2)</visible>
+				</control>				
+				<control type="group">
+					<posx>290</posx>
+					<posy>60</posy>
+					<visible>Container(9000).Hasfocus(3)</visible>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>680</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31109]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="306">
+						<posx>0</posx>
+						<posy>45</posy>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31668]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(GlobalMenuBackdrop)</onclick>
+						<onleft>9000</onleft>
+						<onright>61</onright>
+						<onup>300</onup>
+						<ondown>300</ondown>
+						<selected>Skin.HasSetting(GlobalMenuBackdrop)</selected>
+					</control>	
+					<control type="button" id="304">
+						<description>Menu Item Next Button</description>
+						<posx>670</posx>
+						<posy>98</posy>
+						<width>33</width>
+						<height>22</height>
+						<label>-</label>
+						<font>-</font>
+						<texturenofocus>scroll-down-2.png</texturenofocus>
+						<texturefocus>scroll-down-focus-2.png</texturefocus>
+						<onclick>Control.Move(9003,1)</onclick>
+						<onleft>9000</onleft>
+						<onright>305</onright>
+						<onup>306</onup>
+						<ondown>300</ondown>
+						<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
+					</control>
+					<control type="button" id="305">
+						<description>Menu Item Prev Button</description>
+						<posx>703</posx>
+						<posy>98</posy>
+						<width>33</width>
+						<height>22</height>
+						<label>-</label>
+						<font>-</font>
+						<texturenofocus>scroll-up-2.png</texturenofocus>
+						<texturefocus>scroll-up-focus-2.png</texturefocus>
+						<onclick>Control.Move(9003,-1)</onclick>
+						<onleft>304</onleft>
+						<onright>61</onright>
+						<onup>306</onup>
+						<ondown>300</ondown>
+						<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
+					</control>
+					<control type="list" id="9003">
+						<hitrect x="0" y="0" w="0" h="0" />
+						<posx>0</posx>
+						<posy>90</posy>
+						<width>750</width>
+						<height>40</height>
+						<onleft>9000</onleft>
+						<onright>300</onright>
+						<onup>9003</onup>
+						<ondown>9003</ondown>
+						<pagecontrol>-</pagecontrol>
+						<scrolltime>0</scrolltime>
+						<itemlayout height="1" width="750">
+						</itemlayout>
+						<focusedlayout height="40" width="750">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>750</width>
+								<height>40</height>
+								<texture>MenuItemNF.png</texture>
+								<visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>750</width>
+								<height>40</height>
+								<texture>MenuItemFO.png</texture>
+								<visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
+								<width>600</width>
+								<height>40</height>
+								<font>font13</font>
+								<textcolor>grey2</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$LOCALIZE[31110]</label>
+								<visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+							<control type="label">
+								<posx>10</posx>
+								<posy>0</posy>
+								<width>600</width>
+								<height>40</height>
+								<font>font13</font>
+								<textcolor>white</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$LOCALIZE[31110]</label>
+								<visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+							<control type="label">
+								<posx>650</posx>
+								<posy>0</posy>
+								<width>640</width>
+								<height>40</height>
+								<font>font13</font>
+								<textcolor>grey2</textcolor>
+								<align>right</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+							<control type="label">
+								<posx>650</posx>
+								<posy>0</posy>
+								<width>640</width>
+								<height>40</height>
+								<font>font13</font>
+								<textcolor>white</textcolor>
+								<align>right</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<description>Global Home Menu</description>
+								<label>$LOCALIZE[31998]</label>
+								<onclick>-</onclick>
+								<icon>$VAR[GlobalScreenBackground]</icon>
+								<visible>Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="2">
+								<description>Home Menu Item One</description>
+								<label>$VAR[MenuItemOneLabel]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemOneBackground)]</thumb>
+								<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItemOneAction)) | Skin.HasSetting(StickyHomeMenuAction)</visible>
+							</item>
+							<item id="3">
+								<description>Home Menu Item Two</description>
+								<label>$INFO[Skin.String(HomeItemTwoLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemTwoBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemTwoAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="4">
+								<description>Home Menu Item Three</description>
+								<label>$INFO[Skin.String(HomeItemThreeLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemThreeBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemThreeAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="5">
+								<description>Home Menu Item Four</description>
+								<label>$INFO[Skin.String(HomeItemFourLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemFourBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemFourAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="6">
+								<description>Home Menu Item Five</description>
+								<label>$INFO[Skin.String(HomeItemFiveLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<icon>$VAR[DefaultUnSetBackground]</icon>
+								<thumb>$INFO[Skin.String(HomeItemFiveBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemFiveAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="7">
+								<description>Home Menu Item Six</description>
+								<label>$INFO[Skin.String(HomeItemSixLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemSixBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemSixAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="8">
+								<description>Home Menu Item Seven</description>
+								<label>$INFO[Skin.String(HomeItemSevenLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemSevenBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemSevenAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="9">
+								<description>Home Menu Item Eight</description>
+								<label>$INFO[Skin.String(HomeItemEightLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemEightBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemEightAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="10">
+								<description>Home Menu Item Nine</description>
+								<label>$INFO[Skin.String(HomeItemNineLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemNineBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemNineAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="11">
+								<description>Home Menu Item Ten</description>
+								<label>$INFO[Skin.String(HomeItemTenLabel)]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeItemTenBackground)]</thumb>
+								<visible>!IsEmpty(Skin.String(HomeItemTenAction)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+							<item id="12">
+								<description>Home Menu Settings</description>
+								<label>$LOCALIZE[13000]</label>
+								<onclick>-</onclick>
+								<icon>special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</icon>
+								<thumb>$INFO[Skin.String(HomeSystemBackground)]</thumb>
+								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+							</item>
+						</content>
+					</control>
+					<control type="image">
+						<posx>35</posx>
+						<posy>135</posy>
+						<width>680</width>
+						<height>425</height>
+						<texture>black-back.png</texture>
+					</control>
+					<control type="group">
+						<posx>45</posx>
+						<posy>140</posy>
+						<control type="group">
+							<visible>Container(9003).HasFocus(1)</visible>
+							<control type="button" id="300">
+								<description>Global Movie DB</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>$LOCALIZE[20338] $LOCALIZE[31671]</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick> 
+								<onclick>Skin.SetBool(GlobalMovieBackdrop)</onclick> 
+								<enable>Library.HasContent(Movies)</enable>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Global Live Cases</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>$LOCALIZE[31657]</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick> 
+								<onclick>Skin.SetBool(GlobalLiveBackdrop)</onclick> 
+								<enable>Library.HasContent(Movies)</enable>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Global Weather</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>8</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalMovieBackdrop)</onclick> 
+								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick> 
+								<onclick>Skin.SetBool(GlobalWeatherBackdrop)</onclick> 
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(GlobalMovieBackdrop)</onclick> 
+								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick> 
+								<onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick> 
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Container(9003).HasFocus(2)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemOneBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemOneBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Weather)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Pictures)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Videos)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Movies)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),TVShows)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Music)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Programs)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),PlayDisc)">Skin.SetString(HomeItemOneBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemOneType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemOneBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(3)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemTwoBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemTwoBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Weather)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Pictures)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Videos)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Movies)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),TVShows)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Music)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Programs)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),PlayDisc)">Skin.SetString(HomeItemTwoBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTwoType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemTwoBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).Hasfocus(4)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemThreeBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemThreeBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Weather)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Pictures)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Videos)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Movies)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),TVShows)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Music)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Programs)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),PlayDisc)">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemThreeType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemThreeBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(5)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemFourBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemFourBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Weather)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Pictures)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Videos)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Movies)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),TVShows)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Music)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Programs)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),PlayDisc)">Skin.SetString(HomeItemFourBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFourType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemFourBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(6)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemFiveBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemFiveBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Weather)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Pictures)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Videos)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Movies)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),TVShows)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Music)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Programs)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),PlayDisc)">Skin.SetString(HomeItemFiveBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemFiveType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemFiveBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(7)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemSixBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemSixBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Weather)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Pictures)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Videos)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Movies)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),TVShows)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Music)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Programs)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),PlayDisc)">Skin.SetString(HomeItemSixBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSixType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemSixBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(8)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemSevenBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemSevenBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Weather)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Pictures)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Videos)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Movies)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),TVShows)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Music)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Programs)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),PlayDisc)">Skin.SetString(HomeItemSevenBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemSevenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemSevenBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(9)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemEightBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemEightBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Weather)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Pictures)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Videos)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Movies)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),TVShows)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Music)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Programs)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),PlayDisc)">Skin.SetString(HomeItemEightBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemEightType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemEightBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(10)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemNineBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemNineBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Weather)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Pictures)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Videos)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Movies)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),TVShows)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Music)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Programs)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),PlayDisc)">Skin.SetString(HomeItemNineBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemNineType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemNineBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>	
+						<control type="group">
+							<visible>Container(9003).HasFocus(11)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetImage(HomeItemTenBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.SetPath(HomeItemTenBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Weather)">Skin.SetBool(CurrentWeatherBackdrop)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Weather)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/weather/weather.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Pictures)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Videos)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Movies)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),TVShows)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/videos.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Music)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Programs)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/programs.jpg)</onclick>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),PlayDisc)">Skin.SetString(HomeItemTenBackground,special://skin/backgrounds/homescreen/playdisc.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick condition="StringCompare(Skin.String(HomeItemTenType),Weather)">Skin.Reset(CurrentWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(HomeItemTenBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Container(9003).HasFocus(12)</visible>
+							<control type="button" id="300">
+								<description>Single Image button</description>
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31113</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.SetImage(HomeSystemBackground)</onclick>
+								<onleft>303</onleft>
+								<onright>301</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="301">
+								<description>Multi Image button</description>
+								<posx>170</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>31114</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.SetPath(HomeSystemBackground)</onclick>
+								<onleft>300</onleft>
+								<onright>302</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="302">
+								<description>Default Image button</description>
+								<posx>335</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>571</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.SetString(HomeSystemBackground,special://skin/backgrounds/homescreen/settings.jpg)</onclick>
+								<onleft>301</onleft>
+								<onright>303</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+							<control type="button" id="303">
+								<description>Theme Image button</description>
+								<posx>500</posx>
+								<posy>0</posy>
+								<width>160</width>
+								<height>40</height>
+								<label>21895</label>
+								<font>font12_title</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="5">button-nofocus.png</texturenofocus>
+								<texturefocus border="5">button-focus.png</texturefocus>
+								<onclick>Skin.Reset(HomeSystemBackground)</onclick>
+								<onleft>302</onleft>
+								<onright>61</onright>
+								<onup>304</onup>
+								<ondown>304</ondown>
+							</control>
+						</control>						
+					</control>
+					<control type="multiimage">
+						<posx>95</posx>
+						<posy>185</posy>
+						<width>560</width>
+						<height>335</height>
+						<imagepath background="true">$INFO[Container(9003).ListItem.Icon]</imagepath>
+						<timeperimage>6000</timeperimage>
+						<randomize>true</randomize>
+						<fadetime>500</fadetime>
+					</control>
+					<control type="image">
+						<posx>95</posx>
+						<posy>185</posy>
+						<width>560</width>
+						<height>335</height>
+						<align>center</align>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture>special://skin/backgrounds/homescreen/livecases.jpg</texture>
+						<visible>Skin.HasSetting(GlobalLiveBackdrop)</visible>
+					</control>
+					<control type="label">
+						<posx>95</posx>
+						<posy>530</posy>
+						<width>560</width>
+						<height>20</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>white</textcolor>
+						<haspath>yes</haspath>
+						<label fallback="21895">$INFO[Container(9003).ListItem.Thumb]</label>
+						<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
+					</control>
+				</control>
+				<control type="grouplist" id="9004">
+					<visible>Container(9000).Hasfocus(4)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9004</onup>
+					<ondown>9004</ondown>
+					<control type="label" id="400">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31101]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="401">
+						<description>enable horizontal menu</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31677]</label>
+						<onclick>Skin.ToggleSetting(HorizontalHomeScreen)</onclick>
+						<selected>!Skin.HasSetting(HorizontalHomeScreen)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<!--control type="radiobutton" id="402">
+						<description>Enable Live Cases Backdrop</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31657]</label>
+						<onclick>Skin.ToggleSetting(HideLiveDisk)</onclick>
+						<selected>!Skin.HasSetting(HideLiveDisk)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control-->
+					<control type="radiobutton" id="403">
+						<description>enable weather info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[20084]</label>
+						<onclick>Skin.ToggleSetting(ShowWeatherInfo)</onclick>
+						<selected>!Skin.HasSetting(ShowWeatherInfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="404">
+						<description>enable library stats</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31949]</label>
+						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
+						<selected>!Skin.HasSetting(HideHomeStats)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="405">
+						<description>RainDrop Effect</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31672]</label>
+						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
+						<selected>Skin.HasSetting(HideRainDropEffect)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>	
+					
+				<!--	
+					<control type="label" id="406">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31928]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="407">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$VAR[MenuItemOneLabel]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemOneWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemOne,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemOneLabel)) | Skin.HasSetting(StickyHomeMenuAction)</visible>
+					</control>	
+					<control type="button" id="408">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemTwoLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemTwoWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTwo,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemTwoLabel))</visible>
+					</control>	
+					<control type="button" id="409">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemThreeLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemThreeWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemThree,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemThreeLabel))</visible>
+					</control>
+					<control type="button" id="410">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemFourLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemFourWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFour,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemFourLabel))</visible>
+					</control>
+					<control type="button" id="411">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemFiveLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemFiveWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemFive,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemFiveLabel))</visible>
+					</control>
+					<control type="button" id="412">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemSixLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemSixWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSix,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemSixLabel))</visible>
+					</control>						
+					<control type="button" id="413">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemSevenLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemSevenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemSeven,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemSevenLabel))</visible>
+					</control>
+					<control type="button" id="414">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemEightLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemEightWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemEight,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemEightLabel))</visible>
+					</control>	
+					<control type="button" id="415">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemNineLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemNineWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemNine,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemNineLabel))</visible>
+					</control>	
+					<control type="button" id="416">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$INFO[Skin.String(HomeItemTenLabel)]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefItemTenWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemTen,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!IsEmpty(Skin.String(HomeItemTenLabel))</visible>
+					</control>
+					<control type="button" id="417">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[13000]</label>
+						<label2>[COLOR=selected]$VAR[UsrDefSettingsWidgetLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItemEleven,home)</onclick>
+						<onclick>ActivateWindow(2117)</onclick>
+						<visible>!Skin.HasSetting(HideHomeMenuSystem)</visible>
+					</control>
+					<control type="label" id="418">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31914]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="419">
+						<description>Do Not Allow watchlist.script To Run</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31966]</label>
+						<onclick>Skin.ToggleSetting(HideWatchlist)</onclick>
+						<selected>!Skin.HasSetting(HideWatchlist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.watchlist)</enable>
+					</control>
+					<control type="radiobutton" id="420">
+						<description>Do Not Allow randomandlastitems.script To Run</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31967]</label>
+						<onclick>Skin.ToggleSetting(HideWatchPlaylist)</onclick>
+						<selected>!Skin.HasSetting(HideWatchPlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomandlastitems)</enable>
+					</control>
+					<control type="radiobutton" id="421">
+						<description>randomandlastitems.script uses last not random</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31968]</label>
+						<onclick>Skin.ToggleSetting(UseLastNotRandom)</onclick>
+						<selected>Skin.HasSetting(UseLastNotRandom)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
+					</control>
+					<control type="radiobutton" id="422">
+						<description>randomandlastitems.script only shows unwatched items</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31969]</label>
+						<onclick>Skin.ToggleSetting(UseUnWatchedPlaylist)</onclick>
+						<selected>Skin.HasSetting(UseUnWatchedPlaylist)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
+					</control>
+					<control type="radiobutton" id="423">
+						<description>Do Not Allow randomitems.script To Run</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31916]</label>
+						<onclick>Skin.ToggleSetting(HideRandomList)</onclick>
+						<selected>!Skin.HasSetting(HideRandomList)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomitems)</enable>
+					</control>
+					<control type="radiobutton" id="424">
+						<description>Random.script only shows unwatched items</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31915]</label>
+						<onclick>Skin.ToggleSetting(UseUnWatchedRandom)</onclick>
+						<selected>Skin.HasSetting(UseUnWatchedRandom)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>System.HasAddon(script.randomitems) + !Skin.HasSetting(HideRandomList)</enable>
+					</control>
+					<control type="radiobutton" id="425">
+						<description>Hide Home Panel Fanart</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31994]</label>
+						<onclick>Skin.ToggleSetting(HideHomePanelFanArt)</onclick>
+						<selected>Skin.HasSetting(HideHomePanelFanArt)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+				-->	
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9004</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(4)</visible>
+				</control>
+				<control type="grouplist" id="9005">
+					<visible>Container(9000).Hasfocus(5)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9005</onup>
+					<ondown>9005</ondown>
+				<!--	
+					<control type="label" id="500">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31106</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="501">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31979]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(FavPlaysPlayList)</onclick>
+						<selected>!Skin.HasSetting(FavPlaysPlayList)</selected>
+					</control>	
+					<control type="radiobutton" id="502">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31119</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
+						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
+					</control>
+					<control type="radiobutton" id="503">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31103</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
+						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
+					</control>
+					<control type="radiobutton" id="504">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31104</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
+						<selected>Skin.HasSetting(WindowedTrailer)</selected>
+					</control>
+					<control type="radiobutton" id="505">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[29801]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
+						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
+					</control>
+					<control type="radiobutton" id="506">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31996]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
+						<selected>Skin.HasSetting(KioskMode)</selected>
+					</control>					
+					<control type="label" id="507">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31984]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="508">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31985]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseStatusBanners)</onclick>
+						<selected>Skin.HasSetting(UseStatusBanners)</selected>
+					</control>
+					<control type="radiobutton" id="509">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>     $LOCALIZE[31986]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideNewMediaStat)</onclick>
+						<selected>!Skin.HasSetting(HideNewMediaStat)</selected>
+						<enable>Skin.HasSetting(UseStatusBanners)</enable>
+					</control>
+					<control type="radiobutton" id="510">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31651]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UsrGenreFanArt)</onclick>
+						<selected>Skin.HasSetting(UsrGenreFanArt)</selected>
+					</control>
+					<control type="radiobutton" id="511">
+						<description>User Genre backgrounds</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31659]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UsrGenreBackground)</onclick>
+						<selected>Skin.HasSetting(UsrGenreBackground)</selected>
+					</control>
+					<control type="button" id="512">
+						<description>User Genre FanArt Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(UsrGenreFanartDir)]</label2>
+						<onclick>Skin.SetPath(UsrGenreFanartDir)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(UsrGenreBackground)</enable>
+					</control>					
+					<control type="radiobutton" id="513">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>20189</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
+						<selected>Skin.HasSetting(AutoScroll)</selected>
+					</control>
+					<control type="radiobutton" id="514">
+						<description>Show Sub Flag Toggle</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31983]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideSubTitleFlags)</onclick>
+						<selected>!Skin.HasSetting(HideSubTitleFlags)</selected>
+					</control>
+					-->
+					<!--control type="radiobutton" id="515">
+						<description>Enable Media View Home Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31995]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideMediaHomeButton)</onclick>
+						<selected>!Skin.HasSetting(HideMediaHomeButton)</selected>
+					</control-->
+					<!--
+					<control type="radiobutton" id="516">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31932]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseTvSeasonArt)</onclick>
+						<selected>Skin.HasSetting(UseTvSeasonArt)</selected>
+					</control>	
+					<control type="label" id="517">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31141]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="518">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31970]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
+						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
+					</control>
+					<control type="radiobutton" id="519">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31971]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(TVShowUsesLogo)</onclick>
+						<selected>Skin.HasSetting(TVShowUsesLogo)</selected>
+					</control>
+					<control type="label" id="520">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>20343</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="521">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31123</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(TVShowsUsePosters)</onclick>
+						<selected>Skin.HasSetting(TVShowsUsePosters)</selected>
+					</control>
+					<control type="radiobutton" id="522">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31126</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
+						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
+						<visible>System.HasAddon(script.tvtunes)</visible>
+					</control>
+					-->
+					<control type="label" id="523">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[249] $LOCALIZE[250]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="524">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31963]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(ShowArtistSlideShow)</onclick>
+						<onclick>Skin.Reset(MusicVizXtraFanart)</onclick>
+						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
+						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
+					</control>
+					<control type="button" id="525">
+						<description>CD Wall Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(AlbumWallFolder)]</label2>
+						<onclick>Skin.SetPath(AlbumWallFolder)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(ShowBackgroundAlbumWall)</enable>
+					</control>
+					<control type="radiobutton" id="526">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24022] $LOCALIZE[557] $LOCALIZE[108]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(MusicVizXtraFanart)</onclick>
+						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
+						<onclick>Skin.ToggleSetting(ShowArtistSlideShow)</onclick>
+						<selected>Skin.HasSetting(ShowArtistSlideShow)</selected>
+					</control>
+					<control type="radiobutton" id="527">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31929]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(ShowArtistSlideShow)</onclick>
+						<onclick>Skin.Reset(ShowBackgroundAlbumWall)</onclick>
+						<onclick>Skin.ToggleSetting(MusicVizXtraFanart)</onclick>
+						<selected>Skin.HasSetting(MusicVizXtraFanart)</selected>
+					</control>
+					<control type="radiobutton" id="528">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31991]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(NoAnimateFanArt)</onclick>
+						<selected>Skin.HasSetting(NoAnimateFanArt)</selected>
+					</control>
+					<control type="radiobutton" id="529">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31652]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideCDArt)</onclick>
+						<selected>Skin.HasSetting(HideCDArt)</selected>
+					</control>
+					<control type="label" id="530">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>512</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="531">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>21398</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
+						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+					</control>
+					<control type="button" id="532">
+						<description>Startup Playlist Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
+						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
+					</control>
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9005</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(5)</visible>
+				</control>
+				<control type="grouplist" id="9006">
+					<visible>Container(9000).Hasfocus(6)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9006</onup>
+					<ondown>9006</ondown>
+					<control type="label" id="600">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31140</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="601">
+						<width>750</width>
+						<height>35</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31132]</label>
+						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+					</control>
+					<control type="label" id="602">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31141</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="603">
+						<width>750</width>
+						<height>35</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31133]</label>
+						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(SubtitleScript_Path))][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</onclick>
+					</control>
+				<!--	
+					<control type="label" id="604">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31999]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="605">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]1[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonOneLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonOne,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonOneLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonOne))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonOneLabel))">Skin.SetString(HomeAddonOneLabel)</onclick>
+					</control>
+					<control type="button" id="606">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]2[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonTwoLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonTwo,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonTwoLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonTwo))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonTwoLabel))">Skin.SetString(HomeAddonTwoLabel)</onclick>
+					</control>
+					<control type="button" id="607">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]3[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonThreeLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonThree,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonThreeLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonThree))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonThreeLabel))">Skin.SetString(HomeAddonThreeLabel)</onclick>
+					</control>
+					<control type="button" id="608">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]4[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonFourLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonFour,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonFourLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonFour))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonFourLabel))">Skin.SetString(HomeAddonFourLabel)</onclick>
+					</control>
+					<control type="button" id="609">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]5[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonFiveLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonFive,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonFiveLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonFive))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonFiveLabel))">Skin.SetString(HomeAddonFiveLabel)</onclick>
+					</control>
+					<control type="button" id="610">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]6[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonSixLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonSix,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonSixLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonSix))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonSixLabel))">Skin.SetString(HomeAddonSixLabel)</onclick>
+					</control>
+					<control type="button" id="611">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]7[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonSevenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonSeven,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonSevenLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonSeven))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonSevenLabel))">Skin.SetString(HomeAddonSevenLabel)</onclick>
+					</control>
+					<control type="button" id="612">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]8[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonEightLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonEight,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonEightLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonEight))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonEightLabel))">Skin.SetString(HomeAddonEightLabel)</onclick>
+					</control>
+					<control type="button" id="613">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]9[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonNineLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonNine,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonNineLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonNine))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonNineLabel))">Skin.SetString(HomeAddonNineLabel)</onclick>
+					</control>
+					<control type="button" id="614">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[24000] [B]10[/B]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(HomeAddonTenLabel)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetAddon(HomeAddonButtonTen,xbmc.addon.video,xbmc.addon.audio,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						<onclick>Skin.SetString(HomeAddonTenLabel,$INFO[system.addontitle(Skin.String(HomeAddonButtonTen))])</onclick>
+						<onclick condition="!IsEmpty(Skin.String(HomeAddonTenLabel))">Skin.SetString(HomeAddonTenLabel)</onclick>
+					</control>
+				-->	
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9006</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(6)</visible>
+				</control>
+				<control type="grouplist" id="9007">
+					<visible>Container(9000).Hasfocus(7)</visible>
+					<posx>290</posx>
+					<posy>60</posy>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9007</onup>
+					<ondown>9007</ondown>
+					<control type="label" id="700">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Reserved</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+				<control type="scrollbar" id="60">
+					<posx>1060</posx>
+					<posy>60</posy>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9007</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(7)</visible>
+				</control>
+			</control>
+		</control>
+		<include>BehindDialogFadeOut</include>
+		<include>Clock</include>
+	</controls>
+</window>
