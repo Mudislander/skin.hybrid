@@ -1,0 +1,52 @@
+<window id="0">
+	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
+	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
+	<onload condition="!IsEmpty(Window(home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
+	<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+	<onload condition="Library.HasContent(Movies) + IsEmpty(Skin.String(HomeScreenMoviesBackGround))">Skin.SetString(HomeScreenMoviesBackGround,special://masterprofile/Thumbnails/Video/Fanart/)</onload>
+	<!--onload condition="Library.HasContent(Music) + IsEmpty(Skin.String(HomeScreenMusicBackGround))">Skin.SetString(HomeScreenMusicBackGround,special://masterprofile/Thumbnails/Music/Fanart/)</onload-->
+	<!--onload condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload-->
+	<defaultcontrol always="true">8999</defaultcontrol>
+	<allowoverlay>no</allowoverlay>	
+	<controls>
+		<include>HomeScreenBackground</include>
+		<include condition="!Skin.HasSetting(HideRainDropEffect)">BackgroundRainDropEffect</include>
+		<control type="group">
+			<!-- Vertical Home Screen -->
+			<animation effect="slide" end="-450,0" time="500" tween="quadratic" easing="out">WindowClose</animation>
+			<animation effect="slide" start="-450,0" time="500" tween="quadratic" easing="out">WindowOpen</animation>
+			<include>HomeVerticalSubBlade</include>
+			<include>HomeSubMenuControl</include>
+			<include>HomeVerticalBottomBlade</include>
+			<include>HomeMainMenuInitialSetup</include>
+			<include>HomeVerticalMainMenu</include>
+			<include>HomeVerticalMenuBlade</include>
+			<!--include>HomeMediaControl</include-->
+			<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+		</control>	
+		<control type="group">
+			<!-- Horizontal Home Screen -->
+			<include>HomeHorizontalFloor</include>
+			<control type="group">
+				<posy>580</posy>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+					<effect type="fade" start="0" end="100" time="300" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+					<effect type="fade" start="100" end="0" time="300" />
+				</animation>
+				<include>HomeSubMenuControl</include>
+				<include>HomeHorizontalOverlay</include>
+				<include>HomeMainMenuInitialSetup</include>
+				<include>HomeHorizontalMainMenu</include>
+				<include>HomeHorizontalSideFade</include>
+				<!--include>HomeMediaControl</include-->
+			</control>
+			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+		</control>
+		<include>HomeUserCurrentInfo</include>
+		<include>ShowHomeInfoBar</include>
+	</controls>	
+</window>

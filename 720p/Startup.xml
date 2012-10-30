@@ -1,0 +1,10 @@
+<window>
+	<defaultcontrol>-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
+	<onload condition="Skin.HasSetting(Use_Startup_Playlist)">PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onload>
+	<onload condition="!System.HasAddon(script.xbmc.intro.movie)">ReplaceWindow(Home)</onload>
+	<controls>
+		<include condition="!System.HasAddon(script.xbmc.intro.movie)">CommonBackground</include>
+	</controls>
+</window>
