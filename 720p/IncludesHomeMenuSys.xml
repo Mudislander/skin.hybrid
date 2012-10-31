@@ -669,6 +669,13 @@
 		</control>
 	</include>
 	<include name="HomeUserCurrentInfo">
+		<control type="image">
+			<posx>0</posx>
+			<posy>-150</posy>
+			<width>1280</width>
+			<height>256</height>
+			<texture flipy="true">HomeNowPlayingBack.png</texture>
+		</control>
 		<control type="label">
 			<description>date label</description>
 			<posx>15r</posx>
@@ -700,13 +707,6 @@
 			<posy>0</posy>
 			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(ShowWeatherInfo)</visible>
 			<include>Window_OpenClose_Animation</include>
-			<control type="image">
-				<posx>-20</posx>
-				<posy>-150</posy>
-				<width>1280</width>
-				<height>256</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
-			</control>
 			<control type="image">
 				<description>Weather image</description>
 				<posx>0</posx>

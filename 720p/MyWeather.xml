@@ -3,16 +3,7 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonWeatherBackground</include>
-		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<texture>floor.png</texture>
-			<include>VisibleFadeEffect</include>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-		</control>
+		<include>MediaContentBackground</include>
 		<control type="group">
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
@@ -77,23 +68,7 @@
 			</control>
 			<control type="group">
 				<posx>60</posx>
-				<posy>40</posy>
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>500</width>
-					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
-					<include>TransparentEffect</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>612</posy>
-					<width>500</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
-					<include>TransparentEffect</include>
-				</control>
+				<posy>50</posy>
 				<control type="image">
 					<posx>20</posx>
 					<posy>5</posy>
@@ -343,23 +318,7 @@
 			</control>
 			<control type="group">
 				<posx>580</posx>
-				<posy>40</posy>
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>650</width>
-					<height>620</height>
-					<texture border="20">ContentPanel.png</texture>
-					<include>TransparentEffect</include>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>612</posy>
-					<width>650</width>
-					<height>64</height>
-					<texture border="10">ContentPanelMirror.png</texture>
-					<include>TransparentEffect</include>
-				</control>
+				<posy>50</posy>
 				<control type="image">
 					<posx>20</posx>
 					<posy>5</posy>
