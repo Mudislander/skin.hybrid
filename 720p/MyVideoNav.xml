@@ -1,0 +1,245 @@
+<window id="25">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<!--views>50,500,505,51,57,550,551,501,508,504,503,511,515,516,555,722,724,737,728,529</views-->
+	<views>50,500,505,555,560</views>
+	<onload condition="Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
+	<controls>
+		<include>CommonVideoBackground</include>
+		<include>MediaContentBackground</include>		
+		<control type="group">
+			<include>Window_OpenClose_Animation</include>
+			<include>CommonRootView</include> <!-- view id = 50 -->
+			<include>ThumbnailView</include> <!-- view id = 500 -->	
+			<include>WideIconView</include> <!-- view id = 505 -->
+			<include>Coverflowview</include> <!-- view id = 555 -->
+			<include>LiveTVView1</include> 	<!-- view id = 560 -->
+			
+			<!--include>AnimatedCaseWithDisc</include-->		<!-- view id = 57  -->
+			<!--include>PosterWrapView</include--> <!-- view id = 501 -->
+			<!--include>PosterWrapView2_Fanart</include--> <!-- view id = 508 -->
+			<!--include>MediaListView3</include--> <!-- view id = 503 -->
+			<!--include>MediaListView2</include--> <!-- view id = 504 -->
+			<!--include>MusicVideoInfoListView</include--> <!-- view id = 511 -->
+			<!--include>MediaListView4</include--> <!-- view id = 515 -->
+			<!--include>MediaListView5</include--> <!-- view id = 516 -->
+			<!--include>AddonInfoListView1</include--> 	<!-- view id = 550 -->
+			<!--include>AddonInfoThumbView1</include--> 	<!-- view id = 551 -->
+			<!--include>Coverflowview</include--> <!-- view id = 555 -->
+			
+			
+			<!--include>WallStreamView</include--> 		<!-- view id = 722 -->
+			<!--include>Lowlist</include--> 				<!-- view id = 724 -->
+			<!--include>MovieSetList</include--> 		<!-- view id = 737 -->
+			<!--include>Episode</include--> 				<!-- view id = 728 -->
+			<!--include>WideList2</include--> 			<!-- view id = 529 -->
+	</control>
+		<include>CommonPageCount</include>
+		<include>MediaViewReturnButtons</include>
+		<include>BehindDialogFadeOut</include>
+		<control type="group">
+			<visible>!Skin.HasSetting(KioskMode)</visible>
+			<posx>-250</posx>
+			<include>SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<posx>0</posx>
+				<posy>110</posy>
+				<width>250</width>
+				<height>600</height>
+				<onleft condition="!Skin.HasSetting(HideMediaHomeButton)">62</onleft>
+				<onleft condition="Skin.HasSetting(HideMediaHomeButton)">9000</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>50</onback>
+				<itemgap>0</itemgap>
+				<control type="label" id="200">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>31006</label>
+					<textcolor>blue</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="2">
+					<description>View As button</description>
+					<textwidth>235</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>-</label>
+				</control>
+				<control type="button" id="3">
+					<description>Sort by button</description>
+					<include>ButtonCommonValues</include>
+					<label>103</label>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<include>ButtonCommonValues</include>
+					<alttexturefocus border="5">button-focus.png</alttexturefocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<label>31051</label>
+					<altlabel>31050</altlabel>
+					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+				</control>
+				<control type="edit" id="19">
+					<description>Filter</description>
+					<textwidth>230</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>587</label>
+				</control>
+				<!--
+				<control type="radiobutton" id="92">
+					<description>Show Genre Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31977]</label>
+					<onclick>Skin.ToggleSetting(ViewExtraFanArt)</onclick>
+					<selected>Skin.HasSetting(ViewExtraFanArt)</selected>
+					<visible>[Control.IsVisible(504) | Control.IsVisible(57)] + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
+				</control>
+				<control type="radiobutton" id="93">
+					<description>Show Genre Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31976]</label>
+					<onclick>Skin.ToggleSetting(View501HideGenre)</onclick>
+					<selected>Skin.HasSetting(View501HideGenre)</selected>
+					<visible>Control.IsVisible(501) + Container.Content(Movies)</visible>
+				</control>
+				<control type="radiobutton" id="94">
+					<description>Show Logos Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31975]</label>
+					<onclick>Skin.ToggleSetting(View500ShowClearArt)</onclick>
+					<selected>Skin.HasSetting(View500ShowClearArt)</selected>
+					<visible>Control.IsVisible(500) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="radiobutton" id="95">
+					<description>Show Logos Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31974]</label>
+					<onclick>Skin.ToggleSetting(View503ShowLogos)</onclick>
+					<selected>Skin.HasSetting(View503ShowLogos)</selected>
+					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="radiobutton" id="96">
+					<description>Show Logos Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31974]</label>
+					<onclick>Skin.ToggleSetting(View505ShowLogos)</onclick>
+					<selected>Skin.HasSetting(View505ShowLogos)</selected>
+					<visible>Control.IsVisible(505) + Container.Content(TVShows) + !Skin.HasSetting(TVShowsUsePosters)</visible>
+				</control>
+				<control type="radiobutton" id="97">
+					<description>Show Cases Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31972]</label>
+					<onclick>Skin.ToggleSetting(View724HideCases)</onclick>
+					<selected>Skin.HasSetting(View724HideCases)</selected>
+					<visible>[Control.IsVisible(723) + !Container.Content(Episodes)] | Control.IsVisible(501) | Control.IsVisible(722) | [Control.IsVisible(724) + Container.Content(Movies)] | [Control.IsVisible(725) + Container.Content(Movies)]</visible>
+				</control>
+				<control type="radiobutton" id="98">
+					<description>Show Cases Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31988]</label>
+					<onclick>Skin.ToggleSetting(HideDarkThumbs)</onclick>
+					<selected>!Skin.HasSetting(HideDarkThumbs)</selected>
+					<visible>Control.IsVisible(723)</visible>
+				</control>
+				<control type="radiobutton" id="99">
+					<description>Show Info Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31005</label>
+					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
+					<selected>Skin.HasSetting(View508HideInfo)</selected>
+					<visible>Control.IsVisible(508)</visible>
+				</control>
+				<control type="radiobutton" id="101">
+					<description>Animate movie Case in 57</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31931]</label>
+					<onclick>Skin.ToggleSetting(HideMovieCDArt)</onclick>
+					<selected>!Skin.HasSetting(HideMovieCDArt)</selected>
+					<visible>Control.IsVisible(57)</visible>
+				</control>
+				<control type="radiobutton" id="102">
+					<description>Show Logos Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31974]</label>
+					<onclick>Skin.ToggleSetting(View516ShowLogos)</onclick>
+					<selected>Skin.HasSetting(View516ShowLogos)</selected>
+					<visible>Control.IsVisible(516) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="radiobutton" id="103">
+					<description>Toggle Case</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31930]</label>
+					<label>Toggle Cases</label>
+					<onclick>Skin.ToggleSetting(UseDiscTypeCase)</onclick>
+					<selected>Skin.HasSetting(UseDiscTypeCase)</selected>
+					<visible>Control.IsVisible(57) | Control.IsVisible(516)</visible>
+				</control>
+				-->
+				<control type="label" id="201">
+					<width>250</width>
+					<height>35</height>
+					<font>font12</font>
+					<label>31026</label>
+					<textcolor>blue</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="radiobutton" id="14">
+					<description>Watched Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>20367</label>
+				</control>
+				<control type="button" id="8">
+					<description>Search</description>
+					<include>ButtonCommonValues</include>
+					<label>137</label>
+				</control>
+				<control type="radiobutton" id="7">
+					<description>Stack Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>346</label>
+				</control>
+				<control type="radiobutton" id="17">
+					<description>Flatten</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>20411</label>
+				</control>
+				<control type="radiobutton" id="16">
+					<description>PartyMode</description>
+					<label>589</label>
+					<include>ButtonCommonValues</include>
+					<visible>Container.Content(MusicVideos)</visible>
+				</control>
+				<control type="radiobutton" id="11">
+					<description>Unlock Shares</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>20336</label>
+					<onclick>xbmc.mastermode</onclick>
+					<selected>system.ismaster</selected>
+					<visible>system.haslocks</visible>
+				</control>
+				<include>CommonNowPlaying_Controls</include>
+			</control>
+		</control>
+		<include>Clock</include>
+	</controls>
+</window>

@@ -378,8 +378,78 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 		</control>
 	</include>
-	
-	
+	<include name="ButtonMediaSubCommonValues">
+		<height>40</height>
+		<width>221</width>
+		<textoffsetx>20</textoffsetx>
+		<textwidth>195</textwidth>
+		<aligny>center</aligny>
+		<font>font12_title</font>
+		<texturefocus border="5">button-focus.png</texturefocus>
+		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</include>	
+	<include name="MediaViewReturnButtons">
+		<control type="group">
+			<posx>120r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<visible>system.getbool(input.enablemouse) | !Skin.HasSetting(HideMediaHomeButton)</visible>
+			<control type="button" id="61">
+				<description>Back push button</description>
+				<posx>120r</posx>
+				<posy>55r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>50</onleft>
+				<onright>62</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+			</control>
+			<control type="image">
+				<description>Back Icon</description>
+				<posx>115r</posx>
+				<posy>50r</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_back.png</texture>
+			</control>
+			<control type="button" id="62">
+				<description>Home push button</description>
+				<posx>65r</posx>
+				<posy>55r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">floor_buttonFO.png</texturefocus>
+				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onleft>61</onleft>
+				<onright>50</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+			</control>
+			<control type="image">
+				<description>Home Icon</description>
+				<posx>60r</posx>
+				<posy>50r</posy>
+				<width>35</width>
+				<height>35</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icon_home.png</texture>
+			</control>
+		</control>
+	</include>	
 		
 	
 	
@@ -412,17 +482,7 @@
         <texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
         <pulseonselect>no</pulseonselect>
 	</include>
-	<include name="ButtonMediaSubCommonValues">
-		<height>40</height>
-		<width>221</width>
-		<textoffsetx>20</textoffsetx>
-		<textwidth>195</textwidth>
-		<aligny>center</aligny>
-		<font>font12_title</font>
-		<texturefocus border="5">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
+	
 	
 	
 	
@@ -444,67 +504,7 @@
 	
 	
 	
-	<include name="MediaViewReturnButtons">
-		<control type="group">
-			<posx>120r</posx>
-			<posy>55r</posy>
-			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
-			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
-			<visible>system.getbool(input.enablemouse) | !Skin.HasSetting(HideMediaHomeButton)</visible>
-			<control type="button" id="8997">
-				<description>Back push button</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>45</width>
-				<height>45</height>
-				<label>1036</label>
-				<font>-</font>
-				<aligny>-</aligny>
-				<onclick>back</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>50</onleft>
-				<onright>8998</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-			</control>
-			<control type="image">
-				<description>Back Icon</description>
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_back.png</texture>
-			</control>
-			<control type="button" id="8998">
-				<description>Home push button</description>
-				<posx>55</posx>
-				<posy>0</posy>
-				<width>45</width>
-				<height>45</height>
-				<label>31003</label>
-				<font>-</font>
-				<aligny>-</aligny>
-				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>8997</onleft>
-				<onright>50</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-			</control>
-			<control type="image">
-				<description>Home Icon</description>
-				<posx>60</posx>
-				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_home.png</texture>
-			</control>
-		</control>
-	</include>
+	
 	
 	
 	
