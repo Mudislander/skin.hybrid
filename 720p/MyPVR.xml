@@ -31,7 +31,7 @@
 				<posy>0</posy>
 				<width>1280</width>
 				<height>720</height>
-				<texture>special://skin/backgrounds/media-overlay.png</texture>
+				<texture>media-overlay.png</texture>
 				<visible>Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo)</visible>
 			</control>
 			<control type="visualisation">
@@ -223,6 +223,6 @@
 				<include>CommonNowPlaying_Controls</include>
 			</control>
 		</control>
-		<include>Clock</include>
+		<include>HomeUserCurrentInfo</include>
 	</controls>
 </window>

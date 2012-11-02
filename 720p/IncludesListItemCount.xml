@@ -1,9 +1,10 @@
 <includes>
 	<include name="CommonPageCount">
 		<control type="group">
+		<animation effect="slide" end="350,0" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog)" reversible="true">Conditional</animation> 
 			<include>CommonScrollLetter</include> 
 			<control type="image">
-				<posx>105</posx>
+				<posx>65</posx>
 				<posy>50r</posy>
 				<width>50</width>
 				<height>50</height>
@@ -11,7 +12,7 @@
 				<texture>$VAR[CommonCountIcons]</texture>
 			</control>
 			<control type="grouplist">
-				<posx>165</posx>
+				<posx>125</posx>
 				<posy>50r</posy>
 				<orientation>horizontal</orientation>
 				<control type="label">
@@ -59,7 +60,7 @@
 	</include>
 	<include name="CommonScrollLetter">
 		<control type="label">
-				<posx>50</posx>
+				<posx>10</posx>
 				<posy>50r</posy>
 				<width>65</width>
 				<height>50</height>
@@ -79,7 +80,7 @@
 	</include>
 	<include name="CommonItemCount">
 		<control type="grouplist">
-			<posx>165</posx>
+			<posx>125</posx>
 			<posy>25r</posy>
 			<orientation>horizontal</orientation>
 			<control type="label">

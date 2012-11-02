@@ -11,7 +11,7 @@
 		</control>
 		<control type="group">
 			<posx>420</posx>
-			<posy>550</posy>
+			<posy>580</posy>
 			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
 			<animation effect="slide" start="880,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(9002) | [StringCompare(Container(9000).ListItem.Property(LibStats),None) + !system.getbool(lookandfeel.enablerssfeeds) + IsEmpty(MusicPlayer.offset(1).Artist)]">Conditional</animation>		

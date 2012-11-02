@@ -10,6 +10,9 @@
 	<allowoverlay>no</allowoverlay>	
 	<controls>
 		<include>HomeScreenBackground</include>
+		<include>ScreenDarkenEffect</include>
+		
+		
 		<include condition="!Skin.HasSetting(HideRainDropEffect)">BackgroundRainDropEffect</include>
 		<control type="group">
 			<!-- Vertical Home Screen -->
@@ -28,7 +31,8 @@
 			<!-- Horizontal Home Screen -->
 			<include>HomeHorizontalFloor</include>
 			<control type="group">
-				<posy>580</posy>
+				<!--posy>580</posy-->
+				<posy>610</posy>
 				<animation type="WindowOpen" reversible="false">
 					<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 					<effect type="fade" start="0" end="100" time="300" />
@@ -48,5 +52,6 @@
 		</control>
 		<include>HomeUserCurrentInfo</include>
 		<include>ShowHomeInfoBar</include>
+		
 	</controls>	
 </window>
