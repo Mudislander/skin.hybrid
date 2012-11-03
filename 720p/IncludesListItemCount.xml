@@ -1,7 +1,7 @@
 <includes>
 	<include name="CommonPageCount">
 		<control type="group">
-		<animation effect="slide" end="350,0" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog)" reversible="true">Conditional</animation> 
+			<animation effect="slide" end="350,0" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation> 
 			<include>CommonScrollLetter</include> 
 			<control type="image">
 				<posx>65</posx>

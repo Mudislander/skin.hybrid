@@ -394,6 +394,18 @@
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
+	<include name="ContextMenuButtonCommonValues">
+        <font>fontContextMenu</font>
+        <width>340</width>
+        <height>40</height>
+        <textcolor>grey2</textcolor>
+        <focusedcolor>white</focusedcolor>
+        <align>center</align>
+        <textwidth>290</textwidth>
+        <texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+        <texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+        <pulseonselect>no</pulseonselect>
+	</include>
 	<include name="MediaViewReturnButtons">
 		<control type="group">
 			<posx>120r</posx>
@@ -1033,18 +1045,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="ContextMenuButtonCommonValues">
-        <font>fontContextMenu</font>
-        <width>340</width>
-        <height>40</height>
-        <textcolor>grey2</textcolor>
-        <focusedcolor>white</focusedcolor>
-        <align>center</align>
-        <textwidth>290</textwidth>
-        <texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-        <texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
-        <pulseonselect>no</pulseonselect>
-	</include>
+	
 	<include name="MovieSetCaseUnderlay">
 		<control type="image">
 			<posx>5</posx>
