@@ -3,6 +3,7 @@
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
 	<onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/backgrounds/weather/)</onload>
+	<onload condition="IsEmpty(Skin.String(UsrGenreFanartDir))">Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
 	<onload condition="Library.HasContent(Movies) + IsEmpty(Skin.String(HomeScreenMoviesBackGround))">Skin.SetString(HomeScreenMoviesBackGround,special://masterprofile/Thumbnails/Video/Fanart/)</onload>
 	<!--onload condition="Library.HasContent(Music) + IsEmpty(Skin.String(HomeScreenMusicBackGround))">Skin.SetString(HomeScreenMusicBackGround,special://masterprofile/Thumbnails/Music/Fanart/)</onload-->
 	<!--onload condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload-->

@@ -17,8 +17,8 @@
 			<ondown>26</ondown>
 			<action>seek</action>
 			<texturesliderbar>seekslider2.png</texturesliderbar>
-			<textureslidernib>osd_slider_nibNF.png</textureslidernib>
-			<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+			<textureslidernib>OSD/osd_slider_nibNF.png</textureslidernib>
+			<textureslidernibfocus>OSD/osd_slider_nib.png</textureslidernibfocus>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | VideoPlayer.Content(LiveTV)]]</visible>
 		</control>
@@ -35,8 +35,8 @@
 				<height>45</height>
 				<label>210</label>
 				<font>-</font>
-				<texturefocus>OSDHomeBtnFO.png</texturefocus>
-				<texturenofocus>OSDHomeBtnNF.png</texturenofocus>
+				<texturefocus>OSD/OSDHomeBtnFO.png</texturefocus>
+				<texturenofocus>OSD/OSDHomeBtnNF.png</texturenofocus>
 				<onleft>705</onleft>
 				<onright>600</onright>
 				<onup>608</onup>
@@ -51,8 +51,8 @@
 				<height>45</height>
 				<label>210</label>
 				<font>-</font>
-				<texturefocus>OSDPrevTrackFO.png</texturefocus>
-				<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
+				<texturefocus>OSD/OSDPrevTrackFO.png</texturefocus>
+				<texturenofocus>OSD/OSDPrevTrackNF.png</texturenofocus>
 				<onleft>608</onleft>
 				<onright>601</onright>
 				<onup>608</onup>
@@ -66,8 +66,8 @@
 				<height>45</height>
 				<label>31354</label>
 				<font>-</font>
-				<texturefocus>OSDRewindFO.png</texturefocus>
-				<texturenofocus>OSDRewindNF.png</texturenofocus>
+				<texturefocus>OSD/OSDRewindFO.png</texturefocus>
+				<texturenofocus>OSD/OSDRewindNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>602</onright>
 				<onup>608</onup>
@@ -82,11 +82,11 @@
 				<label>31351</label>
 				<altlabel>208</altlabel>
 				<font>-</font>
-				<texturefocus>OSDPauseFO.png</texturefocus>
-				<texturenofocus>OSDPauseNF.png</texturenofocus>
+				<texturefocus>OSD/OSDPauseFO.png</texturefocus>
+				<texturenofocus>OSD/OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+				<alttexturefocus>OSD/OSDPlayFO.png</alttexturefocus>
+				<alttexturenofocus>OSD/OSDPlayNF.png</alttexturenofocus>
 				<onleft>601</onleft>
 				<onright>603</onright>
 				<onup>608</onup>
@@ -100,8 +100,8 @@
 				<height>45</height>
 				<label>31352</label>
 				<font>-</font>
-				<texturefocus>OSDStopFO.png</texturefocus>
-				<texturenofocus>OSDStopNF.png</texturenofocus>
+				<texturefocus>OSD/OSDStopFO.png</texturefocus>
+				<texturenofocus>OSD/OSDStopNF.png</texturenofocus>
 				<onleft>602</onleft>
 				<onright>604</onright>
 				<onup>608</onup>
@@ -115,8 +115,8 @@
 				<height>45</height>
 				<label>31353</label>
 				<font>-</font>
-				<texturefocus>OSDForwardFO.png</texturefocus>
-				<texturenofocus>OSDForwardNF.png</texturenofocus>
+				<texturefocus>OSD/OSDForwardFO.png</texturefocus>
+				<texturenofocus>OSD/OSDForwardNF.png</texturenofocus>
 				<onleft>603</onleft>
 				<onright>605</onright>
 				<onup>608</onup>
@@ -130,8 +130,8 @@
 				<height>45</height>
 				<label>209</label>
 				<font>-</font>
-				<texturefocus>OSDNextTrackFO.png</texturefocus>
-				<texturenofocus>OSDNextTrackNF.png</texturenofocus>
+				<texturefocus>OSD/OSDNextTrackFO.png</texturefocus>
+				<texturenofocus>OSD/OSDNextTrackNF.png</texturenofocus>
 				<onleft>604</onleft>
 				<onright>701</onright>
 				<onup>608</onup>
@@ -157,8 +157,8 @@
 				<height>55</height>
 				<label>210</label>
 				<font>-</font>
-				<texturefocus>OSDChannelUPFO.png</texturefocus>
-				<texturenofocus>OSDChannelUPNF.png</texturenofocus>
+				<texturefocus>OSD/OSDChannelUPFO.png</texturefocus>
+				<texturenofocus>OSD/OSDChannelUPNF.png</texturenofocus>
 				<onleft>704</onleft>
 				<onright>601</onright>
 				<onup>1000</onup>
@@ -172,8 +172,8 @@
 				<height>55</height>
 				<label>31354</label>
 				<font>-</font>
-				<texturefocus>OSDChannelDownFO.png</texturefocus>
-				<texturenofocus>OSDChannelDownNF.png</texturenofocus>
+				<texturefocus>OSD/OSDChannelDownFO.png</texturefocus>
+				<texturenofocus>OSD/OSDChannelDownNF.png</texturenofocus>
 				<onleft>600</onleft>
 				<onright>602</onright>
 				<onup>1000</onup>
@@ -188,11 +188,11 @@
 				<label>31351</label>
 				<altlabel>208</altlabel>
 				<font>-</font>
-				<texturefocus>OSDPauseFO.png</texturefocus>
-				<texturenofocus>OSDPauseNF.png</texturenofocus>
+				<texturefocus>OSD/OSDPauseFO.png</texturefocus>
+				<texturenofocus>OSD/OSDPauseNF.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
-				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+				<alttexturefocus>OSD/OSDPlayFO.png</alttexturefocus>
+				<alttexturenofocus>OSD/OSDPlayNF.png</alttexturenofocus>
 				<onleft>601</onleft>
 				<onright>603</onright>
 				<onup>1000</onup>
@@ -208,8 +208,8 @@
 				<label>31351</label>
 				<altlabel>208</altlabel>
 				<font>-</font>
-				<texturefocus>OSDStopFO.png</texturefocus>
-				<texturenofocus>OSDStopNF.png</texturenofocus>
+				<texturefocus>OSD/OSDStopFO.png</texturefocus>
+				<texturenofocus>OSD/OSDStopNF.png</texturenofocus>
 				<onleft>602</onleft>
 				<onright>604</onright>
 				<onup>1000</onup>
@@ -223,8 +223,8 @@
 				<height>55</height>
 				<label>19019</label>
 				<font>-</font>
-				<texturefocus>OSDChannelListFO.png</texturefocus>
-				<texturenofocus>OSDChannelListNF.png</texturenofocus>
+				<texturefocus>OSD/OSDChannelListFO.png</texturefocus>
+				<texturenofocus>OSD/OSDChannelListNF.png</texturenofocus>
 				<onleft>603</onleft>
 				<onright>605</onright>
 				<onup>1000</onup>
@@ -239,8 +239,8 @@
 				<height>55</height>
 				<label>$LOCALIZE[19029]$INFO[VideoPlayer.ChannelName, - ]</label>
 				<font>-</font>
-				<texturefocus>OSDepgFO.png</texturefocus>
-				<texturenofocus>OSDepgNF.png</texturenofocus>
+				<texturefocus>OSD/OSDepgFO.png</texturefocus>
+				<texturenofocus>OSD/OSDepgNF.png</texturenofocus>
 				<onleft>604</onleft>
 				<onright>701</onright>
 				<onup>1000</onup>
@@ -280,10 +280,10 @@
 				<height>45</height>
 				<label>31356</label>
 				<font>-</font>
-				<texturefocus>OSDSubtitlesFO.png</texturefocus>
-				<texturenofocus>OSDSubtitlesNF.png</texturenofocus>
-				<alttexturefocus>OSDSubtitlesFO.png</alttexturefocus>
-				<alttexturenofocus>OSDSubtitlesNF.png</alttexturenofocus>
+				<texturefocus>OSD/OSDSubtitlesFO.png</texturefocus>
+				<texturenofocus>OSD/OSDSubtitlesNF.png</texturenofocus>
+				<alttexturefocus>OSD/OSDSubtitlesFO.png</alttexturefocus>
+				<alttexturenofocus>OSD/OSDSubtitlesNF.png</alttexturenofocus>
 				<onleft>605</onleft>
 				<onright>702</onright>
 				<onup>608</onup>
@@ -302,8 +302,8 @@
 				<height>45</height>
 				<label>13395</label>
 				<font>-</font>
-				<texturefocus>OSDVideoFO.png</texturefocus>
-				<texturenofocus>OSDVideoNF.png</texturenofocus>
+				<texturefocus>OSD/OSDVideoFO.png</texturefocus>
+				<texturenofocus>OSD/OSDVideoNF.png</texturenofocus>
 				<onleft>701</onleft>
 				<onright>703</onright>
 				<onup>608</onup>
@@ -317,8 +317,8 @@
 				<height>45</height>
 				<label>13396</label>
 				<font>-</font>
-				<texturefocus>OSDAudioFO.png</texturefocus>
-				<texturenofocus>OSDAudioNF.png</texturenofocus>
+				<texturefocus>OSD/OSDAudioFO.png</texturefocus>
+				<texturenofocus>OSD/OSDAudioNF.png</texturenofocus>
 				<onleft>702</onleft>
 				<onright>704</onright>
 				<onup>608</onup>
@@ -332,8 +332,8 @@
 				<height>45</height>
 				<label>31355</label>
 				<font>-</font>
-				<texturefocus>OSDBookmarksFO.png</texturefocus>
-				<texturenofocus>OSDBookmarksNF.png</texturenofocus>
+				<texturefocus>OSD/OSDBookmarksFO.png</texturefocus>
+				<texturenofocus>OSD/OSDBookmarksNF.png</texturenofocus>
 				<onleft>703</onleft>
 				<onright>705</onright>
 				<onup>608</onup>
@@ -347,8 +347,8 @@
 				<height>45</height>
 				<label>31355</label>
 				<font>-</font>
-				<texturefocus>OSDDvdFO.png</texturefocus>
-				<texturenofocus>OSDDvdNF.png</texturenofocus>
+				<texturefocus>OSD/OSDDvdFO.png</texturefocus>
+				<texturenofocus>OSD/OSDDvdNF.png</texturenofocus>
 				<onleft>704</onleft>
 				<onright>608</onright>
 				<onup>608</onup>
@@ -375,8 +375,8 @@
 				<height>55</height>
 				<label>31356</label>
 				<font>-</font>
-				<texturefocus>OSDTeleTextFO.png</texturefocus>
-				<texturenofocus>OSDTeleTextNF.png</texturenofocus>
+				<texturefocus>OSD/OSDTeleTextFO.png</texturefocus>
+				<texturenofocus>OSD/OSDTeleTextNF.png</texturenofocus>
 				<onleft>605</onleft>
 				<onright>702</onright>
 				<onup>1000</onup>
@@ -390,8 +390,8 @@
 				<height>55</height>
 				<label>13395</label>
 				<font>-</font>
-				<texturefocus>OSDVideoFO.png</texturefocus>
-				<texturenofocus>OSDVideoNF.png</texturenofocus>
+				<texturefocus>OSD/OSDVideoFO.png</texturefocus>
+				<texturenofocus>OSD/OSDVideoNF.png</texturenofocus>
 				<onleft>701</onleft>
 				<onright>703</onright>
 				<onup>1000</onup>
@@ -405,8 +405,8 @@
 				<height>55</height>
 				<label>13396</label>
 				<font>-</font>
-				<texturefocus>OSDAudioFO.png</texturefocus>
-				<texturenofocus>OSDAudioNF.png</texturenofocus>
+				<texturefocus>OSD/OSDAudioFO.png</texturefocus>
+				<texturenofocus>OSD/OSDAudioNF.png</texturenofocus>
 				<onleft>702</onleft>
 				<onright>704</onright>
 				<onup>1000</onup>
@@ -421,11 +421,11 @@
 				<label>31351</label>
 				<altlabel>208</altlabel>
 				<font>-</font>
-				<texturefocus>OSDRecordOffFO.png</texturefocus>
-				<texturenofocus>OSDRecordOffNF.png</texturenofocus>
+				<texturefocus>OSD/OSDRecordOffFO.png</texturefocus>
+				<texturenofocus>OSD/OSDRecordOffNF.png</texturenofocus>
 				<usealttexture>Player.Recording</usealttexture>
-				<alttexturefocus>OSDRecordOnFO.png</alttexturefocus>
-				<alttexturenofocus>OSDRecordOnNF.png</alttexturenofocus>
+				<alttexturefocus>OSD/OSDRecordOnFO.png</alttexturefocus>
+				<alttexturenofocus>OSD/OSDRecordOnNF.png</alttexturenofocus>
 				<onleft>703</onleft>
 				<onright>600</onright>
 				<onup>1000</onup>

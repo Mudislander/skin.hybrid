@@ -101,6 +101,27 @@
 			<include>Window_OpenClose_Animation</include>
 			<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Window.Property(current.actor.fanart)]</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!IsEmpty(Window.Property(current.actor.fanart)) + System.HasAddon(script.metadata.actors)</visible>
+		</control>
+		<control type="image">
+			<!-- User Defined Genre Fanart -->
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Skin.String(UsrGenreFanartDir)]$INFO[ListItem.Label,,.jpg]</texture>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+		</control>
+		
+		
+		
+		
 	</include>
 	<include name="CommonMusicBackground">
 		<control type="multiimage">

@@ -107,7 +107,7 @@
 			<width>220</width>
 			<height>80</height>
 			<aspectratio>keep</aspectratio>
-			<texture>SkinLogo/Convergence_Logo.png</texture>
+			<texture>SkinLogo/Hybrid_Logo.png</texture>
 		</control>
 	</include>
 	<include name="MediaContentBackground">
@@ -770,7 +770,7 @@
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
-			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(ShowWeatherInfo)</visible>
+			<visible>Window.IsActive(home) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(ShowWeatherInfo)</visible>
 			<animation effect="slide" start="0,0" end="-400,0" time="100" condition="Window.IsVisible(musicscan) | Window.IsVisible(videoscan)">conditional</animation>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">

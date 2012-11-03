@@ -85,9 +85,19 @@
 	<variable name="Mainlabel" type="text">
 		<value condition="StringCompare(ListItem.label,..)">$LOCALIZE[31667]</value>
 		<value condition="!IsEmpty(ListItem.Year) + Container.Content(Movies)">$INFO[ListItem.label] ($INFO[ListItem.Year])</value>
-		<value condition="Container(7000).ListItem.Property(IsSet)">$INFO[Container(7000).ListItem.Label]</value>
+		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ($INFO[Window.Property(current.actor.agelong)])</value>
 		<value>$INFO[ListItem.label]</value>
-	</variable>		
+	</variable>	
+	<variable name="ShowMediaPlot">
+		<value condition="!Container.Content(Seasons)">$INFO[ListItem.Plot]</value>
+		<value condition="Container.Content(Seasons)">$INFO[Container.ShowPlot]</value>
+	</variable>
+	<variable name="ContainerTypeInfo">
+		<value condition="Container.Content(Artists) + Window.IsVisible(MusicLibrary)">$LOCALIZE[31936]</value>
+		<value condition="Container.Content(Actors)">$LOCALIZE[20337] $LOCALIZE[31935]</value>
+		<value condition="Container.Content(Directors)">$LOCALIZE[20339] $LOCALIZE[31935]</value>
+		<value condition="Container.Content(Artists)">$LOCALIZE[21891]</value>
+	</variable>	
 	<variable name="NextFiveScroller" type="text">
 		<value condition="!IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">     [COLOR StatsName][B]$LOCALIZE[31964]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR StatsName][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR StatsName][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR StatsName][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]    [COLOR StatsName][B]5:[/B][/COLOR]  $INFO[MusicPlayer.offset(5).Artist] - $INFO[MusicPlayer.offset(5).Title]</value>
 		<value condition="!IsEmpty(MusicPlayer.offset(4).Artist) + IsEmpty(MusicPlayer.offset(5).Artist) + Player.HasAudio">     [COLOR StatsName][B]$LOCALIZE[31964]   1:[/B][/COLOR]  $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]    [COLOR StatsName][B]2:[/B][/COLOR]  $INFO[MusicPlayer.offset(2).Artist] - $INFO[MusicPlayer.offset(2).Title]    [COLOR StatsName][B]3:[/B][/COLOR]  $INFO[MusicPlayer.offset(3).Artist] - $INFO[MusicPlayer.offset(3).Title]    [COLOR StatsName][B]4:[/B][/COLOR]  $INFO[MusicPlayer.offset(4).Artist] - $INFO[MusicPlayer.offset(4).Title]</value>
@@ -98,6 +108,15 @@
 	<variable name="CurrentWeatherTemp" type="text">
 		<value condition="!IsEmpty(Weather.Conditions) + Weather.IsFetched">$INFO[Window(Weather).Property(Current.Temperature)]</value>
 		<value>UnAvail</value>
+	</variable>
+	<variable name="PartlyWatched">
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">OverlayPartlywatched2</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,31) + !IntegerGreaterThan(ListItem.PercentPlayed,43)">OverlayPartlywatched3</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,43) + !IntegerGreaterThan(ListItem.PercentPlayed,56)">OverlayPartlywatched4</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,56) + !IntegerGreaterThan(ListItem.PercentPlayed,68)">OverlayPartlywatched5</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,68) + !IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched6</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched7</value>
 	</variable>
 	<variable name="CommonCountItems">
 		<value condition="SubString(Container.FolderPath,plugin://plugin.video.live.streams)">$LOCALIZE[31660]</value>
