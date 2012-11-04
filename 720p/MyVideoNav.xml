@@ -89,6 +89,15 @@
 					<include>ButtonCommonValues</include>
 					<label>587</label>
 				</control>
+				<control type="radiobutton" id="92">
+					<description>Hide File List Poster</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>hide Posters</label>
+					<onclick>Skin.ToggleSetting(HideFileListPoster)</onclick>
+					<selected>Skin.HasSetting(HideFileListPoster)</selected>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
 				<!--
 				<control type="radiobutton" id="92">
 					<description>Show Genre Toggle</description>
