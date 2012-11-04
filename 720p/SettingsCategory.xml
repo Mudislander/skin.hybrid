@@ -1,17 +1,19 @@
-<window id="12">
+<window>
 	<defaultcontrol>3</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<include>ScreenDarkenEffect</include>
+		<!--
 		<control type="image">
 			<posx>0</posx>
-			<posy>100r</posy>
+			<posy>60r</posy>
 			<width>1280</width>
-			<height>100</height>
+			<height>60</height>
 			<texture>floor.png</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
+		-->
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -231,6 +233,6 @@
 			<font>-</font>
 			<visible>false</visible>
 		</control>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 	</controls>
 </window>

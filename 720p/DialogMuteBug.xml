@@ -1,4 +1,4 @@
-<window id="113">
+<window>
 	<defaultcontrol>-</defaultcontrol>
 	<include>dialogeffect</include>
 	<coordinates>
@@ -14,7 +14,7 @@
 			<height>45</height>
 			<aspectratio>keep</aspectratio>
 			<texture>icon-mute.png</texture>
-			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(136)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 		</control>
 	</controls>
 </window>

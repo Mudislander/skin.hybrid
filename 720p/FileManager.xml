@@ -1,8 +1,9 @@
-<window id="3">
+<window>
 	<defaultcontrol>20</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
+		<!--
 		<control type="image">
 			<posx>0</posx>
 			<posy>100r</posy>
@@ -12,6 +13,7 @@
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
 		</control>
+		-->
 		<control type="group">
 			<posx>30</posx>
 			<posy>40</posy>
@@ -443,6 +445,6 @@
 				<texture>icon_home.png</texture>
 			</control>
 		</control>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 	</controls>
 </window>

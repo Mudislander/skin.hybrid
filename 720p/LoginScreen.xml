@@ -1,4 +1,4 @@
-<window id="29">
+<window>
 	<defaultcontrol always="true">52</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<coordinates>
@@ -10,15 +10,17 @@
 		<include>CommonBackground</include>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>		
+			<!--
 			<control type="image">
 				<posx>0</posx>
-				<posy>100r</posy>
+				<posy>60r</posy>
 				<width>1280</width>
-				<height>100</height>
+				<height>60</height>
 				<texture>floor.png</texture>
 				<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
 			</control>
+			-->
 			<control type="image">
 				<description>LOGO</description>
 				<posx>0</posx>
@@ -218,7 +220,7 @@
 				</control>
 			</control>
 		</control>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 		<control type="label">
 			<description>Date label</description>
 			<posx>20r</posx>

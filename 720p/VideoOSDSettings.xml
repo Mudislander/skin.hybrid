@@ -1,4 +1,4 @@
-<window id="123">
+<window>
 	<defaultcontrol>5</defaultcontrol>
 	<coordinates>
 		<system>1</system>
@@ -55,7 +55,7 @@
 				<aligny>center</aligny>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<visible>Window.IsVisible(123)</visible>
+				<visible>Window.IsVisible(osdvideosettings)</visible>
 			</control>
 			<control type="label">
 				<description>header label</description>
@@ -69,7 +69,7 @@
 				<aligny>center</aligny>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<visible>Window.IsVisible(124)</visible>
+				<visible>Window.IsVisible(osdaudiosettings)</visible>
 			</control>
 			<control type="label" id="3">
 				<description>No Settings Label</description>

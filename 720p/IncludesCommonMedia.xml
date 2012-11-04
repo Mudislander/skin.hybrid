@@ -3,7 +3,7 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
 			<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
-			<include>backgroundfade</include>
+			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(MusicVizXtraFanart) + !IsEmpty(MusicPlayer.Property(Fanart_Image)) + Player.HasAudio</visible>
 		</control>
@@ -113,7 +113,7 @@
 			<!-- User Defined Genre Fanart -->
 			<include>Dimensions_Fullscreen</include> 
 			<texture background="true">$INFO[Skin.String(UsrGenreFanartDir)]$INFO[ListItem.Label,,.jpg]</texture>
-			<include>backgroundfade</include>
+			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
 			<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>

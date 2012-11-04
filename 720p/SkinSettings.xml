@@ -1,16 +1,18 @@
-<window id="1111">
+<window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
 		<include>CommonBackground</include>
 		<include>ScreenDarkenEffect</include>
+		<!--
 		<control type="image">
 			<posx>0</posx>
-			<posy>100r</posy>
+			<posy>60r</posy>
 			<width>1280</width>
-			<height>100</height>
+			<height>60</height>
 			<texture>floor.png</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
+		-->
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -3588,6 +3590,6 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 	</controls>
 </window>

@@ -1,18 +1,20 @@
-<window id="4">
+<window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>CommonBackground</include>
 		<include>ScreenDarkenEffect</include>
+		<!--
 		<control type="image">
 			<posx>0</posx>
-			<posy>100r</posy>
+			<posy>60r</posy>
 			<width>1280</width>
-			<height>100</height>
+			<height>60</height>
 			<texture>floor.png</texture>
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
 		</control>
+		-->
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -234,7 +236,7 @@
 					<item id="10">
 						<label>166</label>
 						<label2>31407</label2>
-						<onclick>ActivateWindow(1111)</onclick>
+						<onclick>ActivateWindow(SkinSettings)</onclick>
 						<icon>-</icon>
 					</item>
 				</content>
@@ -313,6 +315,6 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 	</controls>
 </window>

@@ -479,7 +479,7 @@
 	                    <description>Skin Settings</description>
 						<label>$LOCALIZE[166] $LOCALIZE[5]</label>
 						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)]Label)</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)]Action,ActivateWindow(1111),return)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)]Action,ActivateWindow(SkinSettings),return)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)]Label,$LOCALIZE[166])</onclick>	
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<onclick>Dialog.Close(2115)</onclick>

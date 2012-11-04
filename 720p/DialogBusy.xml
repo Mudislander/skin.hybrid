@@ -1,4 +1,4 @@
-<window id="136">
+<window>
 	<animation effect="fade" time="100">WindowOpen</animation>
 	<animation effect="fade" time="200">WindowClose</animation>
 	<coordinates>
@@ -30,6 +30,13 @@
 				<aligny>center</aligny>
 				<label>$LOCALIZE[31004]</label>
 				<font>font13_title</font>
+			</control>
+			<control type="progress" id="10">
+				<description>progress control</description>
+				<posx>0</posx>
+				<posy>55</posy>
+				<width>180</width>
+				<height>8</height>
 			</control>
 		</control>
 	</controls>

@@ -1,4 +1,4 @@
-<window id="0">
+<window>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
 	<onload condition="!IsEmpty(Window(home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
@@ -25,6 +25,7 @@
 			<include>HomeMainMenuInitialSetup</include>
 			<include>HomeVerticalMainMenu</include>
 			<include>HomeVerticalMenuBlade</include>
+			<include>WeatherInfo</include>
 			<!--include>HomeMediaControl</include-->
 			<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>	
@@ -32,7 +33,6 @@
 			<!-- Horizontal Home Screen -->
 			<include>HomeHorizontalFloor</include>
 			<control type="group">
-				<!--posy>580</posy-->
 				<posy>610</posy>
 				<animation type="WindowOpen" reversible="false">
 					<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
@@ -49,9 +49,10 @@
 				<include>HomeHorizontalSideFade</include>
 				<!--include>HomeMediaControl</include-->
 			</control>
+			<include>WeatherInfo</include>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>
-		<include>HomeUserCurrentInfo</include>
+		<include>Clock</include>
 		<include>ShowHomeInfoBar</include>
 	</controls>	
 </window>

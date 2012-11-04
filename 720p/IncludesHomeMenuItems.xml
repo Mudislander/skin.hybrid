@@ -362,7 +362,7 @@
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Settings))</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[5])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
-			<onclick>ActivateWindow(1111),return</onclick>
+			<onclick>ActivateWindow(SkinSettings),return</onclick>
 			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
 		</control>
 		<control type="button" id="90504">

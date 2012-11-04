@@ -111,6 +111,7 @@
 		</control>
 	</include>
 	<include name="MediaContentBackground">
+		<!--
 		<control type="image">
 			<posx>0</posx>
 			<posy>60r</posy>
@@ -120,6 +121,7 @@
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(home)">WindowClose</animation>
 		</control>
+		-->
 		<include>ScreenDarkenEffect</include>
 	</include>
 	<include name="ScreenDarkenEffect">
@@ -136,6 +138,23 @@
 			<height>256</height>
 			<texture flipy="true">HomeNowPlayingBack.png</texture>
 		</control>
+		
+		<control type="image">
+			<posx>0</posx>
+			<posy>150r</posy>
+			<width>1280</width>
+			<height>256</height>
+			<texture>HomeNowPlayingBack.png</texture>
+		</control>
+		<!--
+		<control type="image">
+			<posx>0</posx>
+			<posy>150r</posy>
+			<width>1280</width>
+			<height>256</height>
+			<texture>HomeNowPlayingBack.png</texture>
+		</control>
+		-->
 	</include>
 	<include name="CommonNowPlaying_Controls">
 		<control type="label" id="202">
@@ -738,7 +757,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="HomeUserCurrentInfo">
+	<include name="Clock">
 		<control type="label">
 			<description>date label</description>
 			<posx>15r</posx>
@@ -751,7 +770,8 @@
 			<textcolor>HomeInfoOne</textcolor>
 			<info>System.Date</info>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(136)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
+			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
 		</control>	
 		<control type="label">
 			<description>time label</description>
@@ -765,16 +785,20 @@
 			<textcolor>HomeInfoClock</textcolor>
 			<label>$INFO[System.Time]</label>
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
-			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(136)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
+			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
 		</control>
+	</include>
+	<include name="WeatherInfo">
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
 			<visible>Window.IsActive(home) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(ShowWeatherInfo)</visible>
-			<animation effect="slide" start="0,0" end="-400,0" time="100" condition="Window.IsVisible(musicscan) | Window.IsVisible(videoscan)">conditional</animation>
+			<visible>!Window.IsVisible(videoscan)</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Weather image</description>
+				<animation effect="slide" start="0,0" end="-400,0" time="100" condition="Window.IsVisible(musicscan) | Window.IsVisible(videoscan)">conditional</animation>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>60</width>
@@ -838,6 +862,7 @@
 		</control>
 	</include>
 	<include name="HomeHorizontalFloor">
+		<!--
 		<control type="image">
 			<posx>0</posx>
 			<posy>60r</posy>
@@ -847,6 +872,12 @@
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
 		</control>
+		-->
+		<!--
+					<animation effect="slide" start="0,0" end="0,10" time="200" condition="Skin.HasSetting(HorizontalHomeScreen) + Window.Next(Home)">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="0,60" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + Window.Next(Home)">WindowClose</animation>
+
+		-->
 	</include>
 	<include name="HomeHorizontalOverlay">
 		<control type="image">

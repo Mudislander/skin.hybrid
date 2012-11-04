@@ -1,4 +1,4 @@
-﻿<window id="2006">
+﻿<window>
 	<onload  condition="System.HasAddon(script.artistslideshow) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow)</onload>
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
@@ -178,7 +178,7 @@
 				<scrollspeed>30</scrollspeed> 
 				<pauseatend>2000</pauseatend>
 				<animation effect="fade" time="200">VisibleChange</animation>
-				<visible>Player.HasAudio + !Window.IsVisible(Favourites)+ !Window.IsVisible(MusicOSD)+ !Window.IsVisible(115)</visible>
+				<visible>Player.HasAudio + !Window.IsVisible(Favourites)+ !Window.IsVisible(MusicOSD)+ !Window.IsVisible(seekbar)</visible>
 				<visible>!SubString(Player.FolderPath,http://,Left)</visible>
 			</control>
 			<control type="group">
