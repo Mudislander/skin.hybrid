@@ -60,7 +60,38 @@
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTen) + IsEmpty(Skin.String(HomeItemTenBackground))">$VAR[CurrentThemeBackground]</value>
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeSystemBackground))">$INFO[Skin.String(HomeSystemBackground)]</value>		
 		<value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + IsEmpty(Skin.String(HomeSystemBackground))">$VAR[CurrentThemeBackground]</value>		
+	</variable>
+	<variable name="AutoGenreImage">
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31600],Left) | substring(ListItem.Label,Action,Left)]">DefaultGenre/Action.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31601],Left) | substring(ListItem.Label,Adventure,Left)]">DefaultGenre/Adventure.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31602],Left) | substring(ListItem.Label,Animation,Left)]">DefaultGenre/Animation.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31603],Left) | substring(ListItem.Label,Bio,Left)]">DefaultGenre/Biography.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31604],Left) | substring(ListItem.Label,Children,Left)]">DefaultGenre/Children.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31605],Left) | substring(ListItem.Label,Comedy,Left)]">DefaultGenre/Comedy.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31606],Left) | substring(ListItem.Label,Crime,Left)]">DefaultGenre/Crime.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31607],Left) | substring(ListItem.Label,Disaster,Left)]">DefaultGenre/Disaster.png</value>
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31608],Left) | substring(ListItem.Label,Document,Left)]">DefaultGenre/Documentary.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31609],Left) | substring(ListItem.Label,Drama,Left)]">DefaultGenre/Drama.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31610],Left) | substring(ListItem.Label,Family,Left)]">DefaultGenre/Family.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31611],Left) | substring(ListItem.Label,Fantasy,Left)]">DefaultGenre/Fantasy.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31612],Left) | substring(ListItem.Label,History,Left)]">DefaultGenre/History.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31613],Left) | substring(ListItem.Label,Holiday,Left) | substring(ListItem.Label,Christmas,Left)]">DefaultGenre/Holiday.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31614],Left) | substring(ListItem.Label,Horror,Left)]">DefaultGenre/Horror.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31615],Left) | substring(ListItem.Label,Indie,Left)]">DefaultGenre/Indie.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31616],Left) | substring(ListItem.Label,Music,Left)]">DefaultGenre/Musical.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31617],Left) | substring(ListItem.Label,Mystery,Left)]">DefaultGenre/Mystery.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31618],Left) | substring(ListItem.Label,Romance,Left)]">DefaultGenre/Romance.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31619],Left) | substring(ListItem.Label,Sci,Left)]">DefaultGenre/Sci-Fi.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31620],Left) | substring(ListItem.Label,Short,Left)]">DefaultGenre/Short.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31621],Left) | substring(ListItem.Label,Sport,Left)]">DefaultGenre/Sport.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31622],Left) | substring(ListItem.Label,Suspense,Left)]">DefaultGenre/Suspense.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31623],Left) | substring(ListItem.Label,Thriller,Left)]">DefaultGenre/Thriller.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31624],Left) | substring(ListItem.Label,War,Left)]">DefaultGenre/War.png</value>	
+		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31625],Left) | substring(ListItem.Label,Western,Left)]">DefaultGenre/Western.png</value>	
+		<value condition="Skin.HasSetting(UsrGenreFanArt)">$INFO[ListItem.Label,MovieGenre/,.png]</value>
+		<value>DefaultGenre.png</value>
 	</variable>	
+	
 	<variable name="GenreFlagPath">
 		<value condition="Skin.HasSetting(UsrGenreFanArt)">MovieGenre/</value>
 		<value>DefaultGenre/</value>
@@ -154,6 +185,12 @@
 		<value condition="Window.IsVisible(musicplaylist)">CommonCount/MusicPlaylistsCount.png</value>
 		<value>CommonCount/MusicPlaylistsCount.png</value>
 	</variable>
+	<variable name="VideoListCase">
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">TVseries</value>
+		<value condition="!IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
+		<value>dv</value>
+	</variable>
+
 	<variable name="LiveCaseOne">
 		<value condition="!IsEmpty(Window(home).Property(RandomMovie.5.Thumb))">$INFO[Window(home).Property(RandomMovie.5.Thumb)]</value>
 		<value condition="!IsEmpty(Window(home).Property(LatestMovie.5.Thumb))">$INFO[Window(home).Property(LatestMovie.5.Thumb)]</value>

@@ -93,7 +93,7 @@
 					<description>Hide File List Poster</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
-					<label>hide Posters</label>
+					<label>$LOCALIZE[31681]</label>
 					<onclick>Skin.ToggleSetting(HideFileListPoster)</onclick>
 					<selected>Skin.HasSetting(HideFileListPoster)</selected>
 					<visible>Control.IsVisible(50)</visible>

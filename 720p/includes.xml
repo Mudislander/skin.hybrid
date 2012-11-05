@@ -156,6 +156,22 @@
 		</control>
 		-->
 	</include>
+		<include name="ListImagePosi">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>360</width>
+		<height>540</height>
+		<aspectratio aligny="bottom">keep</aspectratio>
+		<fadetime>IconCrossfadeTime</fadetime>
+	</include>
+	<include name="ListImageReflection">
+		<posx>8</posx>
+		<posy>545</posy>
+		<width>344</width>
+		<height>524</height>
+		<aspectratio aligny="top">keep</aspectratio>
+		<fadetime>IconCrossfadeTime</fadetime>
+	</include>
 	<include name="CommonNowPlaying_Controls">
 		<control type="label" id="202">
 			<width>250</width>
@@ -705,6 +721,20 @@
 			<shadowcolor>black</shadowcolor>
 		</control>
 	</include>
+		<include name="CDArtSpinner">
+		<animation effect="slide" start="-70,0" end="0,0" time="900" delay="2000" condition="Player.HasMedia">conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2400" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="Player.Forwarding2x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="1600" loop="true" reversible="false" condition="Player.Forwarding4x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="1200" loop="true" reversible="false" condition="Player.Forwarding8x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="800" loop="true" reversible="false" condition="Player.Forwarding16x">Conditional</animation>
+		<animation effect="rotate" end="-360" center="auto" time="400" loop="true" reversible="false" condition="Player.Forwarding32x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="2000" loop="true" reversible="false" condition="Player.Rewinding2x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="1600" loop="true" reversible="false" condition="Player.Rewinding4x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="1200" loop="true" reversible="false" condition="Player.Rewinding8x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
+		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
+	</include>
 	<include name="HomeVerticalSubBlade">
 		<control type="group">
 			<animation effect="slide" end="-228,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
@@ -1134,20 +1164,6 @@
 	<include name="ViewMovieDiskBluRay">
 		<texture fallback="disc-bluray.png" diffuse="disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
 		<visible>!stringcompare(ListItem.Label,..)</visible>
-	</include>
-	<include name="CDArtSpinner">
-		<animation effect="slide" start="-70,0" end="0,0" time="900" delay="2000" condition="Player.HasMedia">conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="2400" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="Player.Forwarding2x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="1600" loop="true" reversible="false" condition="Player.Forwarding4x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="1200" loop="true" reversible="false" condition="Player.Forwarding8x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="800" loop="true" reversible="false" condition="Player.Forwarding16x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="400" loop="true" reversible="false" condition="Player.Forwarding32x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="2000" loop="true" reversible="false" condition="Player.Rewinding2x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="1600" loop="true" reversible="false" condition="Player.Rewinding4x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="1200" loop="true" reversible="false" condition="Player.Rewinding8x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
 	</include>
 	-->
 </includes>
