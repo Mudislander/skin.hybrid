@@ -1161,6 +1161,9 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(GlobalMenuBackdrop)</onclick>
+						<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+						<onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick> 
+						<onclick>Skin.Reset(GlobalMovieBackdrop)</onclick> 
 						<onleft>9000</onleft>
 						<onright>61</onright>
 						<onup>300</onup>

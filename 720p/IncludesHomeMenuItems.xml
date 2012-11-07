@@ -122,11 +122,11 @@
 		<control type="button" id="90204">
 			<include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
 			<include condition="Skin.HasSetting(HorizontalHomeScreen)">HorizontalCommonSubMenu</include>
-			<label>31328</label>
-			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMovies,return))</onclick>
+			<label>$LOCALIZE[31682]</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MovieTags,return))</onclick>
 			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[31328])</onclick>
 			<onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
-			<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+			<onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
 			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
 		</control>
 		<control type="button" id="90205">
