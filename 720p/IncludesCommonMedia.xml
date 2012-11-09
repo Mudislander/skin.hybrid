@@ -27,7 +27,7 @@
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
-			<texture>media-overlay.jpg</texture>
+			<texture>media-overlay.png</texture>
 			<visible>Player.HasVideo</visible>
 		</control>
 		<control type="videowindow">
@@ -35,6 +35,28 @@
 			<visible>Player.HasVideo</visible>
 		</control>
 	</include>
+	
+	<include name="LiveTVPlayingBackground">
+		<control type="group">
+			<visible>!Control.IsVisible(11) + !Control.IsVisible(12)</visible>
+			<control type="visualisation">
+				<include>Dimensions_Fullscreen</include> 
+				<visible>Player.HasAudio</visible>
+				<visible>!Skin.HasSetting(HideBackGroundFanart) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+			</control>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include> 
+				<texture>media-overlay.png</texture>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="videowindow">
+				<include>Dimensions_Fullscreen</include> 
+				<visible>Player.HasVideo</visible>
+			</control>
+		</control>
+	</include>
+	
+	
 	<include name="CommonBackground">
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 
@@ -118,10 +140,6 @@
 			<include>Window_OpenClose_Animation</include>
 			<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
 		</control>
-		
-		
-		
-		
 	</include>
 	<include name="CommonMusicBackground">
 		<control type="multiimage">

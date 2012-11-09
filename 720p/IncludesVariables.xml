@@ -167,6 +167,7 @@
 		<value condition="Container.Content(Songs)">$LOCALIZE[134]</value>
 		<value condition="Window.IsVisible(musicplaylist)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(Genres)">$LOCALIZE[135]</value>
+		<value condition="Window.IsVisible(MyPVR)">$LOCALIZE[19019]</value>
 		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31025]</value>
 		<value>$LOCALIZE[31025]</value>
 	</variable>
@@ -183,6 +184,7 @@
 		<value condition="Container.Content(Artists)">CommonCount/MusicArtistsCount.png</value>
 		<value condition="Container.Content(Songs)">CommonCount/MusicSongsCount.png</value>
 		<value condition="Window.IsVisible(musicplaylist)">CommonCount/MusicPlaylistsCount.png</value>
+		<value condition="Window.IsVisible(MyPVR)">CommonCount/TVShowCount.png</value>
 		<value>CommonCount/MusicPlaylistsCount.png</value>
 	</variable>
 	<variable name="VideoListCase">
