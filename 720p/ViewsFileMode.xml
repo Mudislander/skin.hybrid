@@ -475,7 +475,7 @@
 			<control type="group">		
 				<posx>850</posx>
 				<posy>100</posy>
-				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
 				<control type="image">
 					<description>Title Icon</description>
 					<include>ListImagePosi</include>
@@ -583,7 +583,11 @@
 					</control>
 				</control>
 			</control>
+			
+			
+			
 			<!-- TVLogo ontop of Episode -->
+			<!--
 			<control type="group">		
 				<posx>850</posx>
 				<posy>100</posy>
@@ -595,9 +599,10 @@
 					<height>116</height>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture background="true" fallback="DefaultNoImage.png">$INFO[ListItem.Art(clearlogo)]</texture>
+					<texture background="true" fallback="DefaultNoImage.png">$INFO[ListItem.path]../logo.png</texture>
 				</control>
 			</control>	
+			-->
 			<!-- Music -->
 			<control type="group">		
 				<posx>850</posx>
@@ -960,6 +965,9 @@
 			</control>
 		</control>
 	</include>
+	
+	
+	
 	<include name="WideIconView">
 		<control type="group">
 			<visible>Control.IsVisible(505)</visible>
@@ -996,7 +1004,7 @@
 						<height>105</height>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>5</bordersize>
-						<texture background="true">$INFO[Listitem.Icon]</texture>
+						<texture background="true">$VAR[BannerThumb]</texture>
 						<visible>!Container.Content(genres) | [Container.Content(genres) + StringCompare(ListItem.Label,..)]</visible>
 						<visible>!Container.Content(TVShows) | [Container.Content(TVShows) + !Skin.HasSetting(View505ShowLogos) | IsEmpty(ListItem.Title)]</visible>
 					</control>
@@ -1009,7 +1017,8 @@
 						<bordersize>5</bordersize>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<aspectratio aligny="center">keep</aspectratio>
-						<texture background="true" fallback="DefaultLogo.png">$INFO[ListItem.path]logo.png</texture>
+						<!--texture background="true" fallback="DefaultLogo.png">$INFO[ListItem.path]logo.png</texture-->
+						<texture background="true">$VAR[LogoThumb]</texture>
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(TVShows) + Skin.HasSetting(View505ShowLogos)</visible>
 					</control>
 					<control type="image">
@@ -1039,7 +1048,7 @@
 						<height>105</height>
 						<bordertexture border="5">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
-						<texture background="true" fallback="DefaultFallback/poster-fallback.png">$INFO[Listitem.Icon]</texture>
+						<texture background="true">$VAR[BannerThumb]</texture>
 						<visible>!Container.Content(genres) | [Container.Content(genres) + StringCompare(ListItem.Label,..)]</visible>
 						<visible>!Container.Content(TVShows) | [Container.Content(TVShows) + !Skin.HasSetting(View505ShowLogos) | IsEmpty(ListItem.Title)]</visible>
 					</control>
@@ -1052,7 +1061,8 @@
 						<bordersize>5</bordersize>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<aspectratio aligny="center">keep</aspectratio>
-						<texture background="true" fallback="DefaultFallback/banner-fallback.png">$INFO[ListItem.path]logo.png</texture>
+						<texture background="true">$VAR[LogoThumb]</texture>
+						<!--texture background="true" fallback="DefaultFallback/banner-fallback.png">$INFO[ListItem.path]logo.png</texture-->
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(TVShows) + Skin.HasSetting(View505ShowLogos)</visible>
 					</control>
 					<control type="image">
@@ -1097,6 +1107,10 @@
 			</control>
 		</control>
 	</include>
+	
+	
+	
+	
 	<include name="Coverflowview">
 		<control type="group" id="7001">
 			<include>Window_OpenClose_Animation</include>
@@ -1113,7 +1127,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-4]</texture>
+					<info>Container(555).ListItem(-4).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1125,7 +1139,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-4]</texture>
+					<info>Container(555).ListItem(-4).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1138,7 +1152,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1150,7 +1164,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1163,7 +1177,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1175,7 +1189,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" />
 					<aspectratio aligny="top">keep</aspectratio>					
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1190,7 +1204,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1202,7 +1216,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1215,7 +1229,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1227,7 +1241,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1240,7 +1254,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb1]</texture>
+					<info>Container(555).ListItem(1).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1252,7 +1266,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" />
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb1]</texture>
+					<info>Container(555).ListItem(1).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1270,7 +1284,7 @@
 						<posy>0</posy>
 						<width>300</width>
 						<height>440</height>
-						<texture background="true">$VAR[CoverflowThumb0]</texture>
+						<info>Container(555).ListItem(0).Icon</info>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<bordertexture border="4">folder-focus.png</bordertexture>
 						<bordersize>4</bordersize>
@@ -1282,7 +1296,7 @@
 						<height>440</height>
 						<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[CoverflowThumb0]</texture>
+						<info>Container(555).ListItem(0).Icon</info>
 						<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">folder-focus.png</bordertexture>
 						<bordersize>4</bordersize>
 					</control>
@@ -1296,7 +1310,7 @@
 						<posy>0</posy>
 						<width>300</width>
 						<height>440</height>
-						<texture background="true">$VAR[CoverflowThumb-1]</texture>
+						<info>Container(555).ListItem(-1).Icon</info>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<bordertexture border="4">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
@@ -1308,7 +1322,7 @@
 						<height>440</height>
 						<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[CoverflowThumb-1]</texture>
+						<info>Container(555).ListItem(-1).Icon</info>
 						<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
 					</control>
@@ -1330,7 +1344,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb4]</texture>
+					<info>Container(555).ListItem(4).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1342,7 +1356,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb4]</texture>
+					<info>Container(555).ListItem(4).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1355,7 +1369,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1367,7 +1381,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1380,7 +1394,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1392,7 +1406,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" />
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1407,7 +1421,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1419,7 +1433,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1432,7 +1446,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1444,7 +1458,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1457,7 +1471,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-1]</texture>
+					<info>Container(555).ListItem(-1).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1469,7 +1483,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-1]</texture>
+					<info>Container(555).ListItem(-1).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1487,7 +1501,7 @@
 						<posy>0</posy>
 						<width>300</width>
 						<height>440</height>
-						<texture background="true">$VAR[CoverflowThumb0]</texture>
+						<info>Container(555).ListItem(0).Icon</info>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<bordertexture border="4">folder-focus.png</bordertexture>
 						<bordersize>4</bordersize>
@@ -1499,7 +1513,7 @@
 						<height>440</height>
 						<texture flipy="true" diffuse="diffuse_mirror2.png" />
 						<aspectratio aligny="top">keep</aspectratio>						
-						<texture background="true">$VAR[CoverflowThumb0]</texture>
+						<info>Container(555).ListItem(0).Icon</info>
 						<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">folder-focus.png</bordertexture>
 						<bordersize>4</bordersize>
 					</control>
@@ -1513,7 +1527,7 @@
 						<posy>0</posy>
 						<width>300</width>
 						<height>440</height>
-						<texture background="true">$VAR[CoverflowThumb1]</texture>
+						<info>Container(555).ListItem(1).Icon</info>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<bordertexture border="4">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
@@ -1525,7 +1539,7 @@
 						<height>440</height>
 						<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[CoverflowThumb1]</texture>
+						<info>Container(555).ListItem(1).Icon</info>
 						<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
 					</control>
@@ -1544,7 +1558,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1556,7 +1570,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-3]</texture>
+					<info>Container(555).ListItem(-3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1569,7 +1583,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1581,7 +1595,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-2]</texture>
+					<info>Container(555).ListItem(-2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1594,7 +1608,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb-1]</texture>
+					<info>Container(555).ListItem(-1).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1606,7 +1620,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb-1]</texture>
+					<info>Container(555).ListItem(-1).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1619,7 +1633,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1631,7 +1645,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb3]</texture>
+					<info>Container(555).ListItem(3).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1644,7 +1658,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1656,7 +1670,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb2]</texture>
+					<info>Container(555).ListItem(2).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1669,7 +1683,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb1]</texture>
+					<info>Container(555).ListItem(1).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1681,7 +1695,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" />
 					<aspectratio aligny="top">keep</aspectratio>					
-					<texture background="true">$VAR[CoverflowThumb1]</texture>
+					<info>Container(555).ListItem(1).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 				</control>
@@ -1693,7 +1707,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb0]</texture>
+					<info>Container(555).ListItem(0).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">folder-focus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1706,7 +1720,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" /> 
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb0]</texture>
+					<info>Container(555).ListItem(0).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">folder-focus.png</bordertexture>
 					<bordersize>4</bordersize>
 					<visible>Control.HasFocus(555)</visible>
@@ -1719,7 +1733,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[CoverflowThumb0]</texture>
+					<info>Container(555).ListItem(0).Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
@@ -1732,7 +1746,7 @@
 					<height>440</height>
 					<texture flipy="true" diffuse="diffuse_mirror2.png" />
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[CoverflowThumb0]</texture>
+					<info>Container(555).ListItem(0).Icon</info>
 					<bordertexture border="4" flipy="true" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
 					<bordersize>4</bordersize>
 					<visible>!Control.HasFocus(555)</visible>
@@ -1764,7 +1778,7 @@
 					<posy>0</posy>
 					<width>300</width>
 					<height>440</height>
-					<texture background="true">$VAR[PosterThumb]</texture>
+					<info>ListItem.Icon</info>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<aspectratio>stretch</aspectratio>
 					<bordertexture border="4">button-nofocus.png</bordertexture>

@@ -135,6 +135,7 @@
 					<selected>Skin.HasSetting(View503ShowLogos)</selected>
 					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
 				</control>
+				-->
 				<control type="radiobutton" id="96">
 					<description>Show Logos Toggle</description>
 					<textwidth>170</textwidth>
@@ -144,6 +145,7 @@
 					<selected>Skin.HasSetting(View505ShowLogos)</selected>
 					<visible>Control.IsVisible(505) + Container.Content(TVShows) + !Skin.HasSetting(TVShowsUsePosters)</visible>
 				</control>
+				<!--
 				<control type="radiobutton" id="97">
 					<description>Show Cases Toggle</description>
 					<textwidth>170</textwidth>

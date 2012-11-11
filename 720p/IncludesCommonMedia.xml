@@ -5,7 +5,7 @@
 			<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(MusicVizXtraFanart) + !IsEmpty(MusicPlayer.Property(Fanart_Image)) + Player.HasAudio</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + !Skin.HasSetting(MusicVizXtraFanart) + !IsEmpty(MusicPlayer.Property(Fanart_Image)) + Player.HasAudio</visible>
 		</control>
 		<control type="multiimage">
 			<description>Artist ExtraFanArt Multi-image Background</description>
@@ -18,21 +18,21 @@
 			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 			<include>KBurnsAnimateFanart</include>
-			<visible>!Skin.HasSetting(HideBackGroundFanart) + Player.HasAudio + Skin.HasSetting(MusicVizXtraFanart)</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasAudio + Skin.HasSetting(MusicVizXtraFanart)</visible>
 		</control>
 		<control type="visualisation">
 			<include>Dimensions_Fullscreen</include> 
 			<visible>Player.HasAudio</visible>
-			<visible>!Skin.HasSetting(HideBackGroundFanart) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
 			<texture>media-overlay.png</texture>
-			<visible>Player.HasVideo</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasVideo</visible>
 		</control>
 		<control type="videowindow">
 			<include>Dimensions_Fullscreen</include> 
-			<visible>Player.HasVideo</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasVideo</visible>
 		</control>
 	</include>
 	
@@ -42,16 +42,16 @@
 			<control type="visualisation">
 				<include>Dimensions_Fullscreen</include> 
 				<visible>Player.HasAudio</visible>
-				<visible>!Skin.HasSetting(HideBackGroundFanart) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+				<visible>!Skin.HasSetting(HideBackHomePlaying) + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include> 
 				<texture>media-overlay.png</texture>
-				<visible>Player.HasVideo</visible>
+				<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasVideo</visible>
 			</control>
 			<control type="videowindow">
 				<include>Dimensions_Fullscreen</include> 
-				<visible>Player.HasVideo</visible>
+				<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasVideo</visible>
 			</control>
 		</control>
 	</include>
@@ -97,6 +97,9 @@
 		<include condition="Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
 		<include>MediaPlayingBackground</include>	
 	</include>	
+	
+	
+	
 	<include name="CommonVideoBackground">
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 
@@ -104,16 +107,24 @@
 			<timeperimage>8000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>IsEmpty(ListItem.Property(Fanart_Image)) + Skin.HasSetting(GlobalMenuBackdrop)</visible>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalMenuBackdrop)</visible>
 		</control>
-		<include condition="IsEmpty(ListItem.Property(Fanart_Image)) + Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include> 
+			<imagepath background="true" >$INFO[Skin.String(VideoBrowserBackdrop)]</imagepath>
+			<timeperimage>8000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalMenuBackdrop) + !IsEmpty(Skin.String(VideoBrowserBackdrop))]</visible>
+		</control>
+		<include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(VideoBrowserBackdrop))">InteractiveCasesBackground</include>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 
 			<imagepath background="true" >$VAR[CommonMenuItemBackground]</imagepath>
 			<timeperimage>8000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>IsEmpty(ListItem.Property(Fanart_Image)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
@@ -121,7 +132,7 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
-			<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(ListItem.Property(Fanart_Image))</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
@@ -129,18 +140,46 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
-			<visible>!IsEmpty(Window.Property(current.actor.fanart)) + System.HasAddon(script.metadata.actors)</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(Window.Property(current.actor.fanart)) + System.HasAddon(script.metadata.actors)</visible>
 		</control>
 		<control type="image">
-			<!-- User Defined Genre Fanart -->
 			<include>Dimensions_Fullscreen</include> 
 			<texture background="true">$INFO[Skin.String(UsrGenreFanartDir)]$INFO[ListItem.Label,,.jpg]</texture>
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
-			<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</texture>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>Container.Content(Seasons) + Skin.HasSetting(UseTvSeasonArt) + !Skin.HasSetting(HideBackGroundFanart)+ !IsEmpty(ListItem.Path) + !StringCompare(ListItem.label,..)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+			<include>backgroundfade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>Container.Content(Episodes) + Skin.HasSetting(UseTvSeasonArt) + !Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(ListItem.Path) + !StringCompare(ListItem.label,..)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Fanart.Image]</texture>
+			<animation effect="fade" time="600" delay="400">Hidden</animation>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(Fanart.Image)</visible>
+			<visible>!Player.HasAudio |[Player.HasAudio + SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]</visible>
+			<visible>!Player.HasVideo + StringCompare(ListItem.Label,..) + [Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 		</control>
 	</include>
+	
+	
+	
+	
 	<include name="CommonMusicBackground">
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 
@@ -148,16 +187,24 @@
 			<timeperimage>8000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>IsEmpty(ListItem.Property(Fanart_Image)) + Skin.HasSetting(GlobalMenuBackdrop)</visible>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalMenuBackdrop)</visible>
 		</control>
-		<include condition="IsEmpty(ListItem.Property(Fanart_Image)) + Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include> 
+			<imagepath background="true" >$INFO[Skin.String(MusicBrowserBackdrop)]</imagepath>
+			<timeperimage>8000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalMenuBackdrop) + !IsEmpty(Skin.String(MusicBrowserBackdrop))]</visible>
+		</control>
+		<include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(MusicBrowserBackdrop))">InteractiveCasesBackground</include>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 
 			<imagepath background="true" >$VAR[CommonMenuItemBackground]</imagepath>
 			<timeperimage>8000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>FanartCrossfadeTime</fadetime>
-			<visible>IsEmpty(ListItem.Property(Fanart_Image)) + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
+			<visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Property(Fanart_Image))] + !Skin.HasSetting(GlobalMenuBackdrop)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
@@ -165,9 +212,12 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
-			<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + !IsEmpty(ListItem.Property(Fanart_Image))</visible>
 		</control>
 	</include>
+	
+	
+	
 	<include name="CommonWeatherBackground">
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 

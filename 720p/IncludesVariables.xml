@@ -124,51 +124,27 @@
 	</variable>
 	<variable name="BannerThumb">
 		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<!--value condition="!IsEmpty(ListItem.Title)">DefaultFallback/banner-fallback.png</value-->
 		<value condition="IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Icon]</value>
+		
+		
+		
 	</variable>
 	<variable name="PosterThumb">
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<!--value condition="!IsEmpty(ListItem.Title)">DefaultFallback/poster-fallback.png</value-->
 		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="CoverflowThumb-4">
-		<value condition="!IsEmpty(Container(555).ListItem(-4).Art(poster))">$INFO[Container(555).ListItem(-4).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(-4).Art(poster))">$INFO[Container(555).ListItem(-4).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb-3">
-		<value condition="!IsEmpty(Container(555).ListItem(-3).Art(poster))">$INFO[Container(555).ListItem(-3).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(-3).Art(poster))">$INFO[Container(555).ListItem(-3).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb-2">
-		<value condition="!IsEmpty(Container(555).ListItem(-2).Art(poster))">$INFO[Container(555).ListItem(-2).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(-2).Art(poster))">$INFO[Container(555).ListItem(-2).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb-1">
-		<value condition="!IsEmpty(Container(555).ListItem(-1).Art(poster))">$INFO[Container(555).ListItem(-1).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(-1).Art(poster))">$INFO[Container(555).ListItem(-1).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb0">
-		<value condition="!IsEmpty(Container(555).ListItem(0).Art(poster))">$INFO[Container(555).ListItem(0).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(0).Art(poster))">$INFO[Container(555).ListItem(0).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb1">
-		<value condition="!IsEmpty(Container(555).ListItem(1).Art(poster))">$INFO[Container(555).ListItem(1).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(1).Art(poster))">$INFO[Container(555).ListItem(1).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb2">
-		<value condition="!IsEmpty(Container(555).ListItem(2).Art(poster))">$INFO[Container(555).ListItem(2).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(2).Art(poster))">$INFO[Container(555).ListItem(2).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb3">
-		<value condition="!IsEmpty(Container(555).ListItem(3).Art(poster))">$INFO[Container(555).ListItem(3).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(3).Art(poster))">$INFO[Container(555).ListItem(3).Icon]</value>
-	</variable>
-	<variable name="CoverflowThumb4">
-		<value condition="!IsEmpty(Container(555).ListItem(4).Art(poster))">$INFO[Container(555).ListItem(4).Art(poster)]</value>
-		<value condition="IsEmpty(Container(555).ListItem(4).Art(poster))">$INFO[Container(555).ListItem(4).Icon]</value>
-	</variable>
-
-
+	<variable name="LogoThumb">
+		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="IsEmpty(ListItem.Art(clearlogo)) + !IsEmpty(ListItem.Title)">$INFO[ListItem.path]logo.png</value>
+		<value condition="!IsEmpty(ListItem.Title)">DefaultFallback/banner-fallback.png</value>
 	
+	
+	
+	
+	
+	</variable>
 	<variable name="ContainerTypeInfo">
 		<value condition="Container.Content(Artists) + Window.IsVisible(MusicLibrary)">$LOCALIZE[31936]</value>
 		<value condition="Container.Content(Actors)">$LOCALIZE[20337] $LOCALIZE[31935]</value>

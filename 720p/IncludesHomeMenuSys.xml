@@ -209,7 +209,7 @@
 			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeSub))">Skin.SetString(HomeItemThreeSub,Videos)</onfocus>
 			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeStats))">Skin.SetString(HomeItemThreeStats,Videos)</onfocus>
 			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeAction))">Skin.SetString(HomeItemThreeAction,ActivateWindow(Videos,Root,return))</onfocus>
-			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeBackground))">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/videos.jpg)</onfocus>
+			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeBackground))">Skin.SetString(HomeItemThreeBackground,special://skin/backgrounds/homescreen/movies.jpg)</onfocus>
 			<onfocus condition="IsEmpty(Skin.String(HomeItemThreeType))">Skin.SetString(HomeItemThreeType,Videos)</onfocus>
 			<onfocus condition="IsEmpty(Skin.String(HomeItemFourLabel))">Skin.SetString(HomeItemFourLabel,$LOCALIZE[2])</onfocus>
 			<onfocus condition="IsEmpty(Skin.String(HomeItemFourWidget))">Skin.SetString(HomeItemFourWidget,RecentAlbums)</onfocus>	
