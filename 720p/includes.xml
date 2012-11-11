@@ -10,6 +10,7 @@
 	
 	<include file="IncludesHomeRecentlyAdded.xml" />
 	<include file="IncludesHomeLiveCases.xml" />
+	<include file="IncludesGenreFlagging.xml" />
 	
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
@@ -18,6 +19,9 @@
 	<include file="ViewsAddonBrowser.xml" />
 	<include file="ViewsLiveTV.xml" />
 	<include file="ViewsPVR.xml" />
+	<include file="ViewsGenrePoster.xml" />
+	
+	
 
 	
 	
@@ -452,7 +456,6 @@
 			<posy>55r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
-			<visible>system.getbool(input.enablemouse) | !Skin.HasSetting(HideMediaHomeButton)</visible>
 			<control type="button" id="61">
 				<description>Back push button</description>
 				<posx>120r</posx>
