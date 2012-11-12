@@ -88,7 +88,7 @@
 				<width>180</width>
 				<height>180</height>
 				<aspectratio aligny="bottom">stretch</aspectratio>
-				<texture fallback="DefaultAlbumCover.png" diffuse="CDCase/cdcase-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
+				<texture fallback="DefaultFallback/DefaultAlbumCover.png" diffuse="CDCase/cdcase-diffuse.png">$INFO[MusicPlayer.Cover]</texture>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible>
 			</control>
 			<control type="image">
@@ -97,7 +97,7 @@
 				<posy>250r</posy>
 				<width>300</width>
 				<height>230</height>
-				<texture fallback="DefaultAudio.png">$INFO[MusicPlayer.Cover]</texture>
+				<texture fallback="DefaultFallback/DefaultAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<bordertexture border="8">ThumbShadow.png</bordertexture>
 				<bordersize>8</bordersize>
