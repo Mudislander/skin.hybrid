@@ -246,43 +246,109 @@
 			<textureslidernib>ScrollBarNib.png</textureslidernib>
 			<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 			<onleft>3</onleft>
-			<onright>3</onright>
+			<onright>5</onright>
 			<ondown>61</ondown>
 			<onup>61</onup>
-			<showonepage>false</showonepage>
+			<showonepage>true</showonepage>
 			<orientation>vertical</orientation>
 		</control>
-		<control type="label">
-			<description>number of files/pages in list text label</description>
-			<posx>580</posx>
+		<control type="image">
+			<posx>20</posx>
 			<posy>585</posy>
-			<width>300</width>
-			<height>35</height>
-			<font>font12</font>
-			<align>right</align>
-			<aligny>center</aligny>
-			<scroll>true</scroll>
-			<textcolor>grey</textcolor>
-			<label>([COLOR=blue]$INFO[Container(3).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages][/COLOR])</label>
+			<width>50</width>
+			<height>50</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$VAR[CommonCountIcons]</texture>
+		</control>
+		<control type="group">
 			<visible>Control.IsVisible(3)</visible>
+			<posx>70</posx>
+			<posy>585</posy>
+			<control type="label">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>[COLOR=blue]$INFO[Container(3).NumItems][/COLOR] $VAR[CommonCountItems]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>!IntegerGreaterThan(Container(3).NumItems,1)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>[COLOR=blue]$INFO[Container(3).NumItems][/COLOR] $VAR[CommonCountItems]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>IntegerGreaterThan(Container(3).NumItems,1)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>$INFO[Container(3).CurrentPage, $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(3).NumPages,/,[/COLOR])]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>IntegerGreaterThan(Container(3).NumPages,1)</visible>
+			</control>
 		</control>
-		<control type="label">
-			<description>number of files/pages in list text label</description>
-			<posx>580</posx>
-			<posy>587</posy>
-			<width>300</width>
-			<height>35</height>
-			<font>font12</font>
-			<align>right</align>
-			<aligny>center</aligny>
-			<scroll>true</scroll>
-			<textcolor>grey</textcolor>
-			<label>([COLOR=blue]$INFO[Container(6).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31024] ([COLOR=blue]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages][/COLOR])</label>
+		<control type="group">
 			<visible>Control.IsVisible(6)</visible>
+			<posx>70</posx>
+			<posy>585</posy>
+			<control type="label">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>[COLOR=blue]$INFO[Container(6).NumItems][/COLOR] $VAR[CommonCountItems]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>!IntegerGreaterThan(Container(6).NumItems,1)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>[COLOR=blue]$INFO[Container(6).NumItems][/COLOR] $VAR[CommonCountItems]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>IntegerGreaterThan(Container(6).NumItems,1)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>280</width>
+				<height>18</height>
+				<label>$INFO[Container(6).CurrentPage, $LOCALIZE[31024] ([COLOR=blue]]$INFO[Container(6).NumPages,/,[/COLOR])]</label>
+				<font>font12</font>
+				<textcolor>80FFFFFF</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<visible>IntegerGreaterThan(Container(6).NumPages,1)</visible>
+			</control>
 		</control>
+		
+		
+		
+		
 		<control type="button" id="5">
 			<description>Manual button</description>
-			<posx>20</posx>
+			<posx>370</posx>
 			<posy>585</posy>
 			<width>200</width>
 			<height>40</height>

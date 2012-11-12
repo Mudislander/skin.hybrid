@@ -356,9 +356,7 @@
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>50</onleft>
-				<onright condition="!Skin.HasSetting(HideMediaHomeButton)">61</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + !Skin.HasSetting(KioskMode)">9000</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + Skin.HasSetting(KioskMode)">50</onright>
+				<onright>61</onright>
 				<showonepage>true</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(50)</visible>
@@ -544,14 +542,14 @@
 							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
 						</control>
 					</control>
-					<!--control type="image">
+					<control type="image">
 						<posx>50</posx>
 						<posy>492</posy>
 						<width>44</width>
 						<height>26</height>
 						<texture>movieset.png</texture>
 						<visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
-					</control-->
+					</control>
 					<control type="group">	
 						<posx>0</posx>
 						<posy>35</posy>
@@ -956,9 +954,7 @@
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>500</onleft>
-				<onright condition="!Skin.HasSetting(HideMediaHomeButton)">61</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + !Skin.HasSetting(KioskMode)">9000</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + Skin.HasSetting(KioskMode)">500</onright>
+				<onright>61</onright>
 				<showonepage>true</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(500)</visible>
@@ -1086,9 +1082,7 @@
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>505</onleft>
-				<onright condition="!Skin.HasSetting(HideMediaHomeButton)">61</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + !Skin.HasSetting(KioskMode)">9000</onright>
-				<onright condition="Skin.HasSetting(HideMediaHomeButton) + Skin.HasSetting(KioskMode)">505</onright>
+				<onright>61</onright>
 				<showonepage>true</showonepage>
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(505)</visible>
@@ -1815,9 +1809,7 @@
 				<showonepage>true</showonepage>
 				<orientation>horizontal</orientation>
 				<onup>555</onup>
-				<ondown condition="!Skin.HasSetting(HideMediaHomeButton)">61</ondown>
-				<ondown condition="Skin.HasSetting(HideMediaHomeButton) + !Skin.HasSetting(KioskMode)">9000</ondown>
-				<ondown condition="Skin.HasSetting(HideMediaHomeButton) + Skin.HasSetting(KioskMode)">555</ondown>
+				<ondown>61</ondown>
 			</control>
 		</control>
 		<control type="group">			

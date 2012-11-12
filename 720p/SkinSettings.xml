@@ -3184,11 +3184,6 @@
 					<onright>60</onright>
 					<onup>9005</onup>
 					<ondown>9005</ondown>
-				
-
-
-
-				
 					<control type="label" id="500">
 						<width>750</width>
 						<height>45</height>
@@ -3258,7 +3253,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
-					</control>					
+					</control>	
 					<control type="label" id="506">
 						<width>750</width>
 						<height>45</height>
@@ -3306,7 +3301,6 @@
 						<selected>!Skin.HasSetting(HideNewMediaStat)</selected>
 						<enable>Skin.HasSetting(UseStatusBanners)</enable>
 					</control>
-					
 					<control type="radiobutton" id="510">
 						<width>750</width>
 						<height>40</height>
@@ -3319,7 +3313,6 @@
 						<onclick>Skin.ToggleSetting(UsrGenreFanArt)</onclick>
 						<selected>Skin.HasSetting(UsrGenreFanArt)</selected>
 					</control>
-					
 					<control type="radiobutton" id="511">
 						<description>User Genre backgrounds</description>
 						<width>750</width>
@@ -3373,22 +3366,7 @@
 						<onclick>Skin.ToggleSetting(HideSubTitleFlags)</onclick>
 						<selected>!Skin.HasSetting(HideSubTitleFlags)</selected>
 					</control>
-					
-					<!--control type="radiobutton" id="515">
-						<description>Enable Media View Home Button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>$LOCALIZE[31995]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideMediaHomeButton)</onclick>
-						<selected>!Skin.HasSetting(HideMediaHomeButton)</selected>
-					</control-->
-					
-					<control type="radiobutton" id="516">
+					<control type="radiobutton" id="515">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3400,7 +3378,7 @@
 						<onclick>Skin.ToggleSetting(UseTvSeasonArt)</onclick>
 						<selected>Skin.HasSetting(UseTvSeasonArt)</selected>
 					</control>	
-					<control type="label" id="517">
+					<control type="label" id="516">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3410,7 +3388,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="518">
+					<control type="radiobutton" id="517">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3422,7 +3400,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="519">
+					<control type="radiobutton" id="518">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3504,6 +3482,7 @@
 						<focusedcolor>white</focusedcolor>
 						<label>15311</label>
 						<label2>$INFO[Skin.String(AlbumWallFolder)]</label2>
+						<onclick>Skin.Reset(AlbumWallFolder)</onclick>
 						<onclick>Skin.SetPath(AlbumWallFolder)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>

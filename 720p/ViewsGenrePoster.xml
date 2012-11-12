@@ -77,14 +77,14 @@
 							<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
 							<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
 						</control>	
-						<!--control type="image">
+						<control type="image">
 							<posx>32</posx>
 							<posy>308</posy>
 							<width>44</width>
 							<height>26</height>
 							<texture>movieset.png</texture>
 							<visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
-						</control-->						
+						</control>						
 						<control type="group">	
 							<posx>2</posx>
 							<posy>40</posy>
