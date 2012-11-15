@@ -3340,8 +3340,20 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(UsrGenreBackground) + !Skin.HasSetting(HideBackGroundFanart)</enable>
-					</control>					
+					</control>	
 					<control type="radiobutton" id="513">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31687]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideMainListLabel)</onclick>
+						<selected>Skin.HasSetting(HideMainListLabel)</selected>
+					</control>
+					<control type="radiobutton" id="514">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3353,7 +3365,7 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="514">
+					<control type="radiobutton" id="515">
 						<description>Show Sub Flag Toggle</description>
 						<width>750</width>
 						<height>40</height>
@@ -3366,7 +3378,7 @@
 						<onclick>Skin.ToggleSetting(HideSubTitleFlags)</onclick>
 						<selected>!Skin.HasSetting(HideSubTitleFlags)</selected>
 					</control>
-					<control type="radiobutton" id="515">
+					<control type="radiobutton" id="516">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3378,7 +3390,7 @@
 						<onclick>Skin.ToggleSetting(UseTvSeasonArt)</onclick>
 						<selected>Skin.HasSetting(UseTvSeasonArt)</selected>
 					</control>	
-					<control type="label" id="516">
+					<control type="label" id="517">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3388,7 +3400,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="517">
+					<control type="radiobutton" id="518">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3400,7 +3412,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="518">
+					<control type="radiobutton" id="519">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>

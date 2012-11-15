@@ -20,7 +20,8 @@
 	<include file="ViewsLiveTV.xml" />
 	<include file="ViewsPVR.xml" />
 	<include file="ViewsGenrePoster.xml" />
-	
+	<include file="ViewsFanArtPoster.xml" />
+	<include file="ViewsFullWall.xml" />
 	
 
 	
@@ -75,6 +76,21 @@
 		<texturefocus border="5">button-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="MainListLabel">
+		<control type="label">
+			<posx>75</posx>
+			<posy>10</posy>
+			<width>1165</width>
+			<height>40</height>
+			<font>font30_title</font>
+			<textcolor>blue</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>true</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$VAR[Mainlabel]</label>
+		</control>
 	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>

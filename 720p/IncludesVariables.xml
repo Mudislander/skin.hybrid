@@ -210,11 +210,6 @@
 		<value condition="Window.IsVisible(MyPVR)">CommonCount/TVShowCount.png</value>
 		<value>CommonCount/MusicPlaylistsCount.png</value>
 	</variable>
-	<variable name="VideoListCase">
-		<value condition="Container.Content(tvshows) | Container.Content(seasons)">TVseries</value>
-		<value condition="!IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
-		<value>dv</value>
-	</variable>
 	<variable name="VideoPlayerCase">
 		<value condition="substring(Player.Filenameandpath,.avi,right)">avi</value>
 		<value condition="substring(Player.Filenameandpath,.divx,right)">divx</value>
@@ -226,6 +221,15 @@
 		<value condition="substring(Player.Filenameandpath,.qt,right)">qt</value>
 		<value condition="substring(Player.Filenameandpath,.wmv,right)">wmv</value>
 		<value condition="substring(Player.Filenameandpath,.xvid,right)">xvid</value>
+		<value>dv</value>
+	</variable>
+		<variable name="VideoListCase">
+		<value condition="!Skin.HasSetting(UseDiscTypeCase) + Container.Content(tvshows) | Container.Content(seasons)">TVseries</value>
+		<value condition="!Skin.HasSetting(UseDiscTypeCase) + !IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,dvd)">dvd</value>
+		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,pdtv) | SubString(ListItem.FilenameAndPath,hdtv) | SubString(ListItem.FilenameAndPath,dsr)]">TVseries</value>
 		<value>dv</value>
 	</variable>
 	<variable name="LiveCaseOne">
