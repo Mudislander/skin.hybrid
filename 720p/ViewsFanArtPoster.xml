@@ -120,18 +120,7 @@
 		
 		<control type="group">
 			<visible>Control.IsVisible(508)</visible>
-			<control type="label">
-				<posx>0</posx>
-				<posy>35</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>	
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
 		
 		
 		

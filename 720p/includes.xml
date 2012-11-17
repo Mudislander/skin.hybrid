@@ -7,11 +7,9 @@
 	<include file="IncludesSubMenuInfo.xml" />
 	<include file="IncludesHomeInfoBar.xml" />
 	<include file="IncludesCommonMedia.xml" />
-	
 	<include file="IncludesHomeRecentlyAdded.xml" />
 	<include file="IncludesHomeLiveCases.xml" />
 	<include file="IncludesGenreFlagging.xml" />
-	
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
 	<include file="ViewsFileMode.xml" />
@@ -22,21 +20,13 @@
 	<include file="ViewsGenrePoster.xml" />
 	<include file="ViewsFanArtPoster.xml" />
 	<include file="ViewsFullWall.xml" />
-	
-
-	
-	
-	
 	<include file="IncludesCodecFlagging.xml" />
 	<include file="IncludesListItemCount.xml" />
 	<include file="IncludesCDWall.xml" />
 	<include file="IncludesBackgroundEffect.xml" />
 	<include file="IncludesHomeNowPlaying.xml" />
-	
-
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
-	
 	<include name="BackgroundFade">
 		 <animation effect="fade" time="600">Visible</animation>
 		 <animation effect="fade" time="600">Hidden</animation>
@@ -45,7 +35,7 @@
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</include>
-	<include name="dialogeffect">
+	<include name="DialogEffect">
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</include>
@@ -64,7 +54,7 @@
 		<height>720</height>
 	</include>
 	<include name="TransparentEffect"> 
-		<colordiffuse>AAFFFFFF</colordiffuse>
+		<colordiffuse>$INFO[Skin.String(MediaPanelTrans)]</colordiffuse>
 	</include>
 	<include name="ButtonCommonValues">
 		<height>40</height>
@@ -79,18 +69,28 @@
 	</include>
 	<include name="MainListLabel">
 		<control type="label">
-			<posx>75</posx>
-			<posy>10</posy>
-			<width>1165</width>
-			<height>40</height>
+			<posx>0</posx>
+			<posy>5</posy>
+			<width>1280</width>
+			<height>35</height>
 			<font>font30_title</font>
-			<textcolor>blue</textcolor>
-			<shadowcolor>black</shadowcolor>
+			<textcolor>MainLabel</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
 			<aligny>center</aligny>
-			<label>$VAR[Mainlabel]</label>
+			<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
 		</control>
+	</include>
+	<include name="ViewMovieDiskDefault">
+		<texture diffuse="Disks/disc_mask.png" background="true">Disks/disc.png</texture>
+	</include>
+	<include name="ViewMovieDiskDVD">
+		<texture fallback="Disks/disc-dvd.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
+		<visible>!stringcompare(ListItem.Label,..)</visible>
+	</include>
+	<include name="ViewMovieDiskBluRay">
+		<texture fallback="Disks/disc-bluray.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
+		<visible>!stringcompare(ListItem.Label,..)</visible>
 	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>
@@ -136,50 +136,42 @@
 		</control>
 	</include>
 	<include name="MediaContentBackground">
-		<!--
-		<control type="image">
-			<posx>0</posx>
-			<posy>60r</posy>
-			<width>1280</width>
-			<height>60</height>
-			<texture>floor.png</texture>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(home)">WindowClose</animation>
-		</control>
-		-->
-		<include>ScreenDarkenEffect</include>
-	</include>
-	<include name="ScreenDarkenEffect">
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<include>TransparentEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<texture>black-back.png</texture>
+			<visible>!stringcompare(Skin.String(HomePanelTrans),18FFFFFF)</visible>
 		</control>
 		<control type="image">
 			<posx>0</posx>
-			<posy>-150</posy>
+			<posy>0</posy>
 			<width>1280</width>
-			<height>256</height>
-			<texture flipy="true">HomeNowPlayingBack.png</texture>
+			<height>400</height>
+			<texture flipy="true">floor.png</texture>
+			<include>TransparentEffect</include>
+			<visible>!stringcompare(Skin.String(HomePanelTrans),18FFFFFF)</visible>
 		</control>
-		
 		<control type="image">
 			<posx>0</posx>
-			<posy>150r</posy>
+			<posy>380r</posy>
 			<width>1280</width>
-			<height>256</height>
-			<texture>HomeNowPlayingBack.png</texture>
+			<height>400</height>
+			<texture>floor.png</texture>
+			<include>TransparentEffect</include>
+			<visible>!stringcompare(Skin.String(HomePanelTrans),18FFFFFF)</visible>
 		</control>
-		<!--
 		<control type="image">
 			<posx>0</posx>
-			<posy>150r</posy>
+			<posy>80r</posy>
 			<width>1280</width>
-			<height>256</height>
-			<texture>HomeNowPlayingBack.png</texture>
+			<height>80</height>
+			<texture>floor.png</texture>
+			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(home)">WindowClose</animation>
 		</control>
-		-->
+	
+	
 	</include>
 	<include name="ListImagePosi">
 		<posx>0</posx>
@@ -767,7 +759,6 @@
 				<posy>0</posy>
 				<width>1</width>
 				<height>720</height>
-				<!--include>TransparentEffect</include-->
 				<texture>HomeBlade/HomeBladeSub_Part1.png</texture>
 				<animation effect="zoom" start="379,0,1,720" end="379,0,229,720" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(9002)">Conditional</animation>
 			</control>
@@ -789,7 +780,6 @@
 			<posy>0</posy>
 			<width>846</width>
 			<height>720</height>
-			<!--include>TransparentEffect</include--> 
 			<texture>HomeBlade/HomeBlade_bottom.png</texture>
 		</control>	
 	</include>
@@ -914,24 +904,6 @@
 				</control>
 			</control>
 		</control>
-	</include>
-	<include name="HomeHorizontalFloor">
-		<!--
-		<control type="image">
-			<posx>0</posx>
-			<posy>60r</posy>
-			<width>1280</width>
-			<height>60</height>
-			<texture>floor.png</texture>
-			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
-			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
-		</control>
-		-->
-		<!--
-					<animation effect="slide" start="0,0" end="0,10" time="200" condition="Skin.HasSetting(HorizontalHomeScreen) + Window.Next(Home)">WindowClose</animation>
-			<animation effect="slide" start="0,0" end="0,60" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + Window.Next(Home)">WindowClose</animation>
-
-		-->
 	</include>
 	<include name="HomeHorizontalOverlay">
 		<control type="image">
@@ -1129,65 +1101,6 @@
 				</control>
 			</control>
 		</control>
-	</include>
-	
-	<include name="MovieSetCaseUnderlay">
-		<control type="image">
-			<posx>5</posx>
-			<posy>33</posy>
-			<width>120</width>
-			<height>175</height>
-			<aspectratio stretchdiffuse="false">stretch</aspectratio>
-			<fadetime>IconCrossfadeTime</fadetime>
-			<texture background="true">ClearCase/EmptyCaseBorder.png</texture>
-		</control>
-	</include>	
-	<include name="MovieSetCaseOverlay">	
-		<control type="image">
-			<posx>5</posx>
-			<posy>33</posy>
-			<width>120</width>
-			<height>175</height>
-			<aspectratio stretchdiffuse="false">stretch</aspectratio>
-			<fadetime>IconCrossfadeTime</fadetime>
-			<texture background="true">ClearCase/EmptyCaseOverlay.png</texture>
-		</control>
-	</include>
-	<include name="MovieSetTitles">
-		<width>390</width>
-		<height>25</height>
-		<scroll>false</scroll>	
-		<font>font12</font>
-		<textcolor>white</textcolor>
-		<shadowcolor>black</shadowcolor>
-	</include>	
-	<include name="ContainerMovieSets">
-		<control type="list" id="7000">
-			<description>Container Movie Sets</description>
-			<hitrect x="0" y="0" w="0" h="0" />
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1</width>
-			<height>1</height>
-			<onleft>50</onleft>
-			<onright>50</onright>
-			<onup>50</onup>
-			<ondown>50</ondown>
-			<pagecontrol>-</pagecontrol>
-			<itemlayout height="1" width="1" />
-			<focusedlayout height="1" width="1" />
-		</control>
-	</include>
-	<include name="ViewMovieDiskDefault">
-		<texture>disc.png</texture>
-	</include>
-	<include name="ViewMovieDiskDVD">
-		<texture fallback="disc-dvd.png" diffuse="disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
-		<visible>!stringcompare(ListItem.Label,..)</visible>
-	</include>
-	<include name="ViewMovieDiskBluRay">
-		<texture fallback="disc-bluray.png" diffuse="disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
-		<visible>!stringcompare(ListItem.Label,..)</visible>
 	</include>
 	-->
 </includes>

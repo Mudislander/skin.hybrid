@@ -362,18 +362,8 @@
 				<visible>Control.IsVisible(50)</visible>
 				<animation effect="slide" start="0,0" end="485,0" delay="0" time="0" condition="Skin.HasSetting(HideFileListPoster)">conditional</animation>
 			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>35</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
+			
 			<control type="group">
 				<posx>850</posx>
 				<posy>100</posy>
@@ -931,18 +921,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>35</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
 			<control type="scrollbar" id="60">
 				<posx>1170</posx>
 				<posy>80</posy>
@@ -1087,18 +1066,7 @@
 				<orientation>vertical</orientation>
 				<visible>Control.IsVisible(505)</visible>
 			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>35</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
 		</control>
 	</include>
 	
@@ -1784,18 +1752,7 @@
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<visible>Control.IsVisible(555)</visible>
-			<control type="label">
-				<posx>0</posx>
-				<posy>48</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
 			<control type="scrollbar" id="60">
 				<posx>90</posx>
 				<posy>625</posy>

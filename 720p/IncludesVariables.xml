@@ -119,6 +119,10 @@
 		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ($INFO[Window.Property(current.actor.agelong)])</value>
 		<value>$INFO[ListItem.label]</value>
 	</variable>	
+	<variable name="PVRRecordingTitle">
+		<value condition="!IsEmpty(PVR.NextRecordingTitle)">$INFO[PVR.NextRecordingTitle]</value>
+		<value>$LOCALIZE[[31688]</value>
+	</variable>
 	<variable name="ShowMediaPlot">
 		<value condition="!Container.Content(Seasons)">$INFO[ListItem.Plot]</value>
 		<value condition="Container.Content(Seasons)">$INFO[Container.ShowPlot]</value>
@@ -145,6 +149,34 @@
 	
 	
 	
+	</variable>
+	<variable name="AgeLimit">
+		<value condition="SubString(listitem.mpaa,UK:U) + !SubString(listitem.mpaa,UK:UC)">gb/U</value>
+		<!--value condition="SubString(listitem.mpaa,UK:UC)">gb/bbfc_UC</value-->
+		<value condition="SubString(listitem.mpaa,UK:PG) + !SubString(listitem.mpaa,Rated PG-13)">gb/PG</value>
+		<value condition="SubString(listitem.mpaa,UK:12) + !SubString(listitem.mpaa,UK:12A)">gb/12</value>
+		<value condition="SubString(Listitem.mpaa,UK:12A)">gb/12A</value>
+		<value condition="SubString(Listitem.mpaa,UK:15)">gb/15</value>
+		<value condition="SubString(Listitem.mpaa,UK:18) + !SubString(listitem.mpaa,UK:R18)">gb/18</value>
+		<value condition="SubString(Listitem.mpaa,UK:R18)">gb/R18</value>
+		<value condition="SubString(listitem.mpaa,UK:E)">gb/Exempt</value>
+		
+		<value condition="SubString(Listitem.mpaa,FSK o.A.)">de/0</value>
+		<value condition="SubString(Listitem.mpaa,FSK 6)">de/6</value>
+		<value condition="SubString(Listitem.mpaa,FSK 12)">de/12</value>
+		<value condition="SubString(Listitem.mpaa,FSK 16)">de/16</value>
+		<value condition="SubString(Listitem.mpaa,FSK 18)">de/18</value>
+		<value condition="SubString(Listitem.mpaa,Rated o.A.)">de/0</value>
+		<value condition="SubString(Listitem.mpaa,Rated 6)">de/6</value>
+		<value condition="SubString(Listitem.mpaa,Rated 12)">de/12</value>
+		<value condition="SubString(Listitem.mpaa,Rated 16)">de/16</value>
+		<value condition="SubString(Listitem.mpaa,Rated 18)">de/18</value>
+	
+		<value condition="SubString(listitem.mpaa,Rated G)">G</value>
+		<value condition="SubString(listitem.mpaa,Rated PG) + !SubString(listitem.mpaa,Rated PG-13)">PG</value>
+		<value condition="SubString(listitem.mpaa,Rated PG-13)">PG-13</value>
+		<value condition="SubString(Listitem.mpaa,Rated R)">R</value>
+		<value condition="SubString(Listitem.mpaa,Rated NC)">NC-17</value>
 	</variable>
 	<variable name="ContainerTypeInfo">
 		<value condition="Container.Content(Artists) + Window.IsVisible(MusicLibrary)">$LOCALIZE[31936]</value>

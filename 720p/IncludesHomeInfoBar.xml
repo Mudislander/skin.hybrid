@@ -27,7 +27,7 @@
 				<posy>0</posy>
 				<width>860</width>
 				<height>35</height>
-				<include>TransparentEffect</include>
+				<colordiffuse>AAFFFFFF</colordiffuse>
 				<texture border="32,0,0,0">RssFeed/Rss_Back.png</texture>
 			</control>
 			<control type="rss">
@@ -528,7 +528,7 @@
 					<posy>7</posy>
 					<height>20</height>
 					<width>700</width>
-					<label>$LOCALIZE[264]: [COLOR StatsAmnt]$INFO[PVR.NextRecordingTitle][/COLOR]</label>
+					<label>$LOCALIZE[264]: [COLOR StatsAmnt]$VAR[PVRRecordingTitle][/COLOR]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font12_title</font>
@@ -569,7 +569,7 @@
 				<posy>0</posy>
 				<width>100</width>
 				<height>35</height>
-				<include>TransparentEffect</include>
+				<colordiffuse>AAFFFFFF</colordiffuse>
 				<texture border="32,0,0,0">RssFeed/Rss_Back_Overlay.png</texture>
 			</control>
 		</control>	

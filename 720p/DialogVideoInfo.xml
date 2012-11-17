@@ -1128,7 +1128,7 @@
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>31127</label>
 						<onclick>XBMC.RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
-						<visible>Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes) + Container.Content(TVShows)</visible>
+						<visible>System.HasAddon(script.tvtunes) + Container.Content(TVShows)</visible>
 					</control>
 					<control type="button" id="101">
                         <description>Edit library</description>

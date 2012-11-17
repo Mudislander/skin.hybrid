@@ -3,7 +3,7 @@
 	<allowoverlay>no</allowoverlay>
 	<!--views>50,500,505,51,57,550,551,501,508,504,503,511,515,516,555,722,724,737,728,529</views-->
 	<views>50,500,505,555,560,501,508,732</views>
-	<onload condition="Skin.HasSetting(ActivateTvTunes) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
+	<onload condition="System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
 	<onload condition="System.HasAddon(script.metadata.actors)">RunScript(script.metadata.actors,backend)</onload> 
 	<controls>
 		<include>CommonVideoBackground</include>
@@ -171,16 +171,17 @@
 					<selected>Skin.HasSetting(View508HideInfo)</selected>
 					<visible>Control.IsVisible(508)</visible>
 				</control>
-				<!--
+				
 				<control type="radiobutton" id="101">
-					<description>Animate movie Case in 57</description>
+					<description>Animate movie Case in 501</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>$LOCALIZE[31931]</label>
 					<onclick>Skin.ToggleSetting(HideMovieCDArt)</onclick>
 					<selected>!Skin.HasSetting(HideMovieCDArt)</selected>
-					<visible>Control.IsVisible(57)</visible>
+					<visible>Control.IsVisible(501)</visible>
 				</control>
+				<!--
 				<control type="radiobutton" id="102">
 					<description>Show Logos Toggle</description>
 					<textwidth>170</textwidth>

@@ -77,7 +77,7 @@
 				<width>170</width>
 				<height>175</height>
 				<include>CDArtSpinner</include>
-				<texture fallback="DefaultCDArt.png">$INFO[Player.FolderPath,,cdart.png]</texture>
+				<texture fallback="Disks/DefaultCDArt.png">$INFO[Player.FolderPath,,cdart.png]</texture>
 				<aspectratio align="bottom">keep</aspectratio>
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible>
 			</control>

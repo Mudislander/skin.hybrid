@@ -3,7 +3,7 @@
 		<control type="grouplist">
 			<visible>Control.IsVisible(501)</visible>
 			<posx>0</posx>
-			<posy>80</posy>
+			<posy>140</posy>
 			<width>1280</width>
 			<height>460</height>
 			<onup>9000</onup>
@@ -13,7 +13,7 @@
 			<control type="fixedlist" id="501">
 				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
-				<posx>-135</posx>
+				<posx>-160</posx>
 				<posy>0</posy>
 				<width>1526</width>
 				<height>390</height>
@@ -27,166 +27,288 @@
 				<focusposition>3</focusposition>
 				<orientation>horizontal</orientation>
 				<preloaditems>4</preloaditems>
-				<itemlayout height="310" width="218">
+				<itemlayout width="230" height="310">
 					<control type="image">
-						<posx>2</posx>
-						<posy>40</posy>
-						<width>214</width>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>202</width>
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<visible>stringcompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="image">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>195</width>
+						<height>310</height>					
+						<aspectratio>stretch</aspectratio>
+						<texture>CaseInside.png</texture>
+						<visible>!stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="image">
+						<posx>25</posx>
+						<posy>10</posy>
+						<width>170</width>
+						<height>290</height>	
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="group">
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
 						<control type="image">
-							<posx>30</posx>
-							<posy>50</posy>
-							<width>177</width>
-							<height>290</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
-						</control>
-						<control type="group">
-							<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-							<control type="image">
-								<posx>101</posx>
-								<posy>50</posy>
-								<width>105</width>
-								<height>105</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
-								<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-							</control>
-							<control type="image">
-								<posx>104</posx>
-								<posy>47</posy>
-								<width>105</width>
-								<height>105</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
-								<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
-							</control>
-						</control>
-						<control type="image">
-							<posx>168</posx>
-							<posy>298</posy>
-							<width>40</width>
-							<height>40</height>
+							<posx>90</posx>
+							<posy>10</posy>
+							<width>105</width>
+							<height>105</height>
 							<fadetime>IconCrossfadeTime</fadetime>
-							<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-						</control>	
-						<control type="image">
-							<posx>32</posx>
-							<posy>308</posy>
-							<width>44</width>
-							<height>26</height>
-							<texture>movieset.png</texture>
-							<visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
-						</control>						
-						<control type="group">	
-							<posx>2</posx>
-							<posy>40</posy>
-							<control type="image">
-								<width>214</width>
-								<height>310</height>
-								<aspectratio>stretch</aspectratio>
-								<texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
-								<visible>!StringCompare(ListItem.Label,..)</visible>
-							</control>
+							<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
+						<control type="image">
+							<posx>89</posx>
+							<posy>9</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
+						</control>
+					</control>
+					<control type="image">
+						<posx>152</posx>
+						<posy>258</posy>
+						<width>40</width>
+						<height>40</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>	
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>202</width>
+						<height>310</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout height="310" width="218">
+				<focusedlayout width="250" height="310">
 					<control type="image">
-						<posx>-2</posx>
-						<posy>36</posy>
-						<width>222</width>
-						<height>318</height>
+						<posx>0</posx>
+						<posy>24</posy>
+						<width>188</width>
+						<height>267</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
-						<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
-						<visible>StringCompare(ListItem.Label,..)</visible>
+						<animation effect="zoom" start="0,24,188,267" end="-21,-3,228,324" time="250">Focus</animation>
+						<animation effect="zoom" start="-21,-3,228,324" end="0,24,188,267" time="250">UnFocus</animation>
+						<visible>stringcompare(ListItem.Label,..)</visible>
+					</control>	
+					<control type="image">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>195</width>
+						<height>310</height>	
+						<aspectratio>stretch</aspectratio>
+						<texture>CaseInside.png</texture>
+						<animation effect="zoom" start="6,6,195,310" end="-15,-26,244,374" time="250">Focus</animation>
+						<animation effect="zoom" start="-15,-26,244,374" end="6,6,195,310" time="250">UnFocus</animation>
+						<visible>!stringcompare(ListItem.Label,..)+ !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>71</posy>
+						<width>173</width>
+						<height>173</height>
+						<aspectratio>stretch</aspectratio>
+						<include condition="![substring(ListItem.Path,plugin://) | substring(ListItem.Path,special://) | substring(Container.FolderPath,plugin://) | substring(Container.FolderPath,addons://)]">ViewMovieDiskDVD</include>
+						<include condition="substring(ListItem.Path,plugin://) | substring(ListItem.Path,special://) | substring(Container.FolderPath,plugin://) | substring(Container.FolderPath,addons://)">ViewMovieDiskDefault</include>
+						<animation effect="zoom" start="12,71,173,173" end="-3,51,209,209" time="250">Focus</animation>
+						<animation effect="zoom" start="-3,51,209,209" end="12,71,173,173" time="250">UnFocus</animation>
+						<visible>![stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)] + !Container.Content(Seasons) + !stringcompare(ListItem.Label,..) + !ListItem.IsFolder + !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>71</posy>
+						<width>173</width>
+						<height>173</height>
+						<aspectratio>stretch</aspectratio>
+						<include condition="![substring(ListItem.Path,plugin://) | substring(ListItem.Path,special://) | substring(Container.FolderPath,plugin://) | substring(Container.FolderPath,addons://)]">ViewMovieDiskBluRay</include>
+						<include condition="substring(ListItem.Path,plugin://) | substring(ListItem.Path,special://) | substring(Container.FolderPath,plugin://) | substring(Container.FolderPath,addons://)">ViewMovieDiskDefault</include>
+						<animation effect="zoom" start="12,71,173,173" end="-3,51,209,209" time="250">Focus</animation>
+						<animation effect="zoom" start="-3,51,209,209" end="12,71,173,173" time="250">UnFocus</animation>
+						<visible>[stringcompare(ListItem.VideoResolution,720) | stringcompare(ListItem.VideoResolution,1080)] + !stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>71</posy>
+						<width>173</width>
+						<height>173</height>
+						<texture>Disks/disc.png</texture>
+						<animation effect="zoom" start="12,71,173,173" end="-3,51,209,209" time="250">Focus</animation>
+						<animation effect="zoom" start="-3,51,209,209" end="12,71,173,173" time="250">UnFocus</animation>
+						<visible>[Container.Content(Seasons) | [!Container.Content(Seasons) + ListItem.IsFolder]] + !stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="image">
+						<description>Rating image</description>
+						<posx>50</posx>
+						<posy>25</posy>
+						<width>96</width>
+						<height>36</height>
+						<aspectratio aligny="center">keep</aspectratio>
+						<texture>$VAR[AgeLimit,MediaFlags/ratings/,.png]</texture>
+						<colordiffuse>FF7C7063</colordiffuse>
+						<animation effect="zoom" start="50,25,96,36" end="34,-5,128,48" time="250">Focus</animation>
+						<animation effect="zoom" start="34,-5,128,48" end="50,25,96,36" time="250">UnFocus</animation>
+						<visible>Container.Content(Movies) + !Skin.HasSetting(HideMovieCDArt)</visible>
+					</control>
+					<control type="label">
+						<posx>50</posx>
+						<posy>25</posy>
+						<width>120</width>
+						<height>36</height>
+						<scroll>false</scroll>
+						<font>font28_title</font>
+						<textcolor>FF574F46</textcolor>
+						<shadowcolor>FF000000</shadowcolor>
+						<label>$INFO[listitem.mpaa]</label>
+						<animation effect="zoom" start="50,25,120,36" end="34,-5,157,48" time="250">Focus</animation>
+						<animation effect="zoom" start="34,-5,157,48" end="50,25,120,36" time="250">UnFocus</animation>
+						<visible>!Skin.HasSetting(HideMovieCDArt) + Container.Content(TVShows) | Container.Content(Seasons)</visible>
+					</control>
+					<control type="label">
+						<posx>100</posx>
+						<posy>250</posy>
+						<width>83</width>
+						<height>17</height>
+						<align>center</align>
+						<label>$INFO[ListItem.Year]</label>
+						<font>font28_title</font>
+						<textcolor>FF574F46</textcolor>
+						<shadowcolor>FF000000</shadowcolor>
+						<animation effect="zoom" start="100,250,83,17" end="96,272,91,20" time="250">Focus</animation>
+						<animation effect="zoom" start="96,272,91,20" end="100,250,83,17" time="250">UnFocus</animation>
+						<visible>!Skin.HasSetting(HideMovieCDArt) + !IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="image">
+						<posx>75</posx>
+						<posy>205</posy>
+						<width>44</width>
+						<height>26</height>
+						<texture>movieset.png</texture>
+						<visible>!Skin.HasSetting(HideMovieCDArt) + Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
+					</control>
+					<control type="image">
+						<posx>25</posx>
+						<posy>10</posy>
+						<width>170</width>
+						<height>290</height>	
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+						<animation type="focus" reversible="false" condition="!Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="25,10,170,290" end="10,-20,204,348" time="250"/>
+							<effect type="rotatey" delay="800" center="1" start="0" end="85" time="1000" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="focus" reversible="false" condition="Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="25,10,170,290" end="10,-20,204,348" time="250"/>
+						</animation>
+						<animation type="UnFocus" reversible="true" condition="!Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="10,-20,204,348" end="25,10,170,290" time="250" reversible="true"/>
+							<effect type="rotatey" center="1" start="85" end="0" time="250" reversible="true"/>
+						</animation>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="group">
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
 						<control type="image">
-							<posx>30</posx>
-							<posy>50</posy>
-							<width>177</width>
-							<height>290</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
-							<animation reversible="false" effect="zoom" start="30,50,177,290" end="10,5,233,361" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="30,50,177,290" start="10,5,233,361" time="200">unfocus</animation>
-						</control>
-						<control type="group">
-							<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-							<control type="image">
-								<posx>102</posx>
-								<posy>50</posy>
-								<width>105</width>
-								<height>105</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
-								<animation reversible="false" effect="zoom" start="102,50,105,105" end="109,5,134,134" time="200">focus</animation>
-								<animation reversible="false" effect="zoom" end="102,50,105,105" start="109,5,134,134" time="200">unfocus</animation>
-								<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-							</control>
-							<control type="image">
-								<posx>104</posx>
-								<posy>47</posy>
-								<width>105</width>
-								<height>105</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
-								<animation reversible="false" effect="zoom" start="104,47,105,105" end="112,2,134,134" time="200">focus</animation>
-								<animation reversible="false" effect="zoom" end="104,47,105,105" start="112,2,134,134" time="200">unfocus</animation>
-								<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
-							</control>
-						</control>
-						<control type="image">
-							<posx>168</posx>
-							<posy>298</posy>
-							<width>40</width>
-							<height>40</height>
+							<posx>90</posx>
+							<posy>10</posy>
+							<width>105</width>
+							<height>105</height>
 							<fadetime>IconCrossfadeTime</fadetime>
-							<animation reversible="false" effect="zoom" start="168,298,40,40" end="194,317,48,48" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="168,298,40,40" start="194,317,48,48" time="200">unfocus</animation>
-							<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-						</control>	
-						<control type="image">
-							<posx>32</posx>
-							<posy>308</posy>
-							<width>44</width>
-							<height>26</height>
-							<animation reversible="false" effect="zoom" start="32,308,44,26" end="12,334,48,28" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="32,308,44,26" start="12,334,48,28" time="200">unfocus</animation>
-							<texture>movieset.png</texture>
-							<visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
+							<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
+							<animation type="focus" reversible="false" condition="!Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="90,10,105,105" end="102,-20,110,110" time="250"/>
+								<effect type="rotatey" delay="800" center="-20" start="0" end="85" time="1000" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="focus" reversible="false" condition="Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="90,10,105,105" end="102,-20,110,110" time="250"/>
+							</animation>
+							<animation type="UnFocus" reversible="true" condition="!Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="102,-20,110,110" end="90,10,105,105" time="250" reversible="true"/>
+								<effect type="rotatey" center="20" start="85" end="0" time="250" reversible="true"/>
+							</animation>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
-						<control type="group">	
-							<posx>-2</posx>
-							<posy>36</posy>
-							<control type="image">
-								<width>222</width>
-								<height>318</height>
-								<aspectratio>stretch</aspectratio>
-								<texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
-								<animation reversible="false" effect="zoom" start="-2,36,222,318" end="-28,0,284,390" time="200">focus</animation>
-								<animation reversible="false" effect="zoom" end="-2,36,222,318" start="-28,0,284,390" time="200">unfocus</animation>
-								<visible>!StringCompare(ListItem.Label,..)</visible>
-							</control>
+						<control type="image">
+							<posx>89</posx>
+							<posy>9</posy>
+							<width>105</width>
+							<height>105</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
+							<animation type="focus" reversible="false" condition="!Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="89,9,105,105" end="103,-20,110,110" time="250"/>
+								<effect type="rotatey" delay="800" center="-24" start="0" end="85" time="1000" tween="quadratic" easing="out"/>
+							</animation>
+							<animation type="focus" reversible="false" condition="Skin.HasSetting(HideMovieCDArt)">
+									<effect type="zoom" start="89,9,105,105" end="103,-20,110,110" time="250"/>
+							</animation>
+							<animation type="UnFocus" reversible="true" condition="!Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="103,-20,110,110" end="89,9,105,105" time="250" reversible="true"/>
+								<effect type="rotatey" center="-24" start="85" end="0" time="250" reversible="true"/>
+							</animation>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
 						</control>
 					</control>
-				</focusedlayout>				
+					<control type="image">
+						<posx>152</posx>
+						<posy>258</posy>
+						<width>40</width>
+						<height>40</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<animation type="focus" reversible="false" condition="!Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="152,258,40,40" end="165,280,48,48" time="250"/>
+							<effect type="rotatey" delay="800" center="0" start="0" end="85" time="1000" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="focus" reversible="false" condition="Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="152,258,40,40" end="165,280,48,48" time="250"/>
+						</animation>
+						<animation type="UnFocus" reversible="true" condition="!Skin.HasSetting(HideMovieCDArt)">
+								<effect type="zoom" start="165,280,48,48" end="152,258,40,40" time="250" reversible="true"/>
+								<effect type="rotatey" center="0" start="85" end="0" time="250" reversible="true"/>
+							</animation>
+						<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+					</control>	
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>202</width>
+						<height>310</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
+						<animation type="focus" reversible="false" condition="!Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="0,0,202,310" end="-21,-32,244,374" time="250"/>
+							<effect type="rotatey" delay="800" center="1" start="0" end="85" time="1000" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="focus" reversible="false" condition="Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="0,0,202,310" end="-21,-32,244,374" time="250"/>
+						</animation>
+						<animation type="UnFocus" reversible="true" condition="!Skin.HasSetting(HideMovieCDArt)">
+							<effect type="zoom" start="-21,-32,244,374" end="0,0,202,310" time="250" reversible="true"/>
+							<effect type="rotatey" center="1" start="85" end="0" time="250" reversible="true"/>
+						</animation>
+						<visible>!stringcompare(ListItem.Label,..)</visible>
+					</control>
+				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>90</posx>
-				<posy>0</posy>
+				<posy>-10</posy>
 				<width>1100</width>
 				<height>25</height>
 				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
@@ -204,30 +326,19 @@
 			<visible>Control.IsVisible(501)</visible>
 			<control type="image">
 				<posx>0</posx>
-				<posy>120</posy>
+				<posy>140</posy>
 				<width>128</width>
 				<height>310</height>
 				<texture>SideFade.png</texture>
 			</control>
 			<control type="image">
 				<posx>1152</posx>
-				<posy>120</posy>
+				<posy>140</posy>
 				<width>128</width>
 				<height>310</height>
 				<texture flipx="true">SideFade.png</texture>
 			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>35</posy>
-				<width>1280</width>
-				<height>35</height>
-				<font>font30_title</font>
-				<textcolor>MainLabel</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
-			</control>		
+			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>	
 			<control type="label">
 				<posx>15</posx>
 				<posy>500</posy>
@@ -259,7 +370,7 @@
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
 				<posx>100</posx>
-				<posy>536</posy>
+				<posy>550</posy>
 				<width>1080</width>
 				<align>center</align>
 				<itemgap>0</itemgap>
@@ -269,7 +380,7 @@
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
 				<posx>135</posx>
-				<posy>632</posy>
+				<posy>645</posy>
 				<width>1080</width>
 				<align>center</align>
 				<itemgap>0</itemgap>
