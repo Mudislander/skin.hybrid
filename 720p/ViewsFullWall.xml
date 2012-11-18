@@ -255,9 +255,12 @@
 							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 					</control>
-					<!--
+					
+					
+					
+					
 					<control type="group">
-						<visible>!Skin.HasSetting(HideInfoPopup) + !StringCompare(ListItem.Label,..) + !ListItem.IsFolder + !IsEmpty(ListItem.Plot)</visible>
+						<visible>!Skin.HasSetting(View732HideInfo) + !StringCompare(ListItem.Label,..) + !ListItem.IsFolder + !IsEmpty(ListItem.Plot)</visible>
 						<control type="group">
 							<visible>!Container.Row(0) + !Container.Column(5) + !Container.Column(6) + !Container.Column(7) + !Container.Column(8)</visible>
 							<animation type="Focus" reversible="false">
@@ -299,7 +302,7 @@
 							<include>WallMovieInfoPanel</include>
 						</control>	
 					</control>
-					-->
+					
 				</focusedlayout>
 				
 			</control>
@@ -327,19 +330,7 @@
 			<width>460</width>
 			<height>524</height>
 			<texture border="15">ContentPanel.png</texture>
-		</control>
-		<control type="multiimage">
-			<posx>30</posx>
-			<posy>15</posy>
-			<width>400</width>
-			<height>220</height>
-			<aspectratio>stretch</aspectratio>
-			<aspectratio>stretch</aspectratio>
-			<imagepath fallback="Fanart_Fallback_Small.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-			<timeperimage>2000</timeperimage>
-			<randomize>true</randomize>
-			<fadetime>1250</fadetime>
-			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes) + Skin.HasSetting(MovieExtraFanart)</visible>
+			<colordiffuse>AAFFFFFF</colordiffuse>
 		</control>
 		<control type="image">
 			<posx>30</posx>
@@ -349,7 +340,20 @@
 			<aspectratio>stretch</aspectratio>
 			<fadetime>IconCrossfadeTime</fadetime>
 			<texture background="true" fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Property(fanart_image)]</texture>
-			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)  + !Skin.HasSetting(MovieExtraFanart)</visible>
+			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+		</control>
+		<control type="multiimage">
+			<posx>30</posx>
+			<posy>15</posy>
+			<width>400</width>
+			<height>220</height>
+			<aspectratio>stretch</aspectratio>
+			<aspectratio>stretch</aspectratio>
+			<imagepath background="true" diffuse="episodematte.png">$INFO[ListItem.Path,,extrafanart/]</imagepath>
+			<timeperimage>2000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1250</fadetime>
+			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
 		</control>
 		<control type="image">
 			<posx>30</posx>

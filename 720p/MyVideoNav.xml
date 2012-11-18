@@ -91,6 +91,25 @@
 					<label>587</label>
 				</control>
 				<control type="radiobutton" id="92">
+					<description>Animate movie Case in 501</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31931]</label>
+					<onclick>Skin.ToggleSetting(HideMovieCDArt)</onclick>
+					<selected>!Skin.HasSetting(HideMovieCDArt)</selected>
+					<visible>Control.IsVisible(501)</visible>
+				</control>
+				<control type="radiobutton" id="93">
+					<description>Toggle Case</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31930]</label>
+					<label>Toggle Cases</label>
+					<onclick>Skin.ToggleSetting(UseDiscTypeCase)</onclick>
+					<selected>Skin.HasSetting(UseDiscTypeCase)</selected>
+					<visible>Control.IsVisible(501) | Control.IsVisible(732)</visible>
+				</control>
+				<control type="radiobutton" id="94">
 					<description>Hide File List Poster</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
@@ -99,6 +118,47 @@
 					<selected>Skin.HasSetting(HideFileListPoster)</selected>
 					<visible>Control.IsVisible(50)</visible>
 				</control>
+				<control type="radiobutton" id="95">
+					<description>Show Logos Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31974]</label>
+					<onclick>Skin.ToggleSetting(View505ShowLogos)</onclick>
+					<selected>Skin.HasSetting(View505ShowLogos)</selected>
+					<visible>Control.IsVisible(505) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="radiobutton" id="96">
+					<description>Darken Watched Toggle</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31988]</label>
+					<onclick>Skin.ToggleSetting(HideDarkThumbs)</onclick>
+					<selected>Skin.HasSetting(HideDarkThumbs)</selected>
+					<visible>Control.IsVisible(732)</visible>
+				</control>
+				<control type="radiobutton" id="97">
+					<description>Show Info Toggle 508</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31005</label>
+					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
+					<selected>Skin.HasSetting(View508HideInfo)</selected>
+					<visible>Control.IsVisible(508)</visible>
+				</control>
+				<control type="radiobutton" id="98">
+					<description>Show Info Toggle 732</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31005</label>
+					<onclick>Skin.ToggleSetting(View732HideInfo)</onclick>
+					<selected>Skin.HasSetting(View732HideInfo)</selected>
+					<visible>Control.IsVisible(732)</visible>
+				</control>
+				
+				
+				
+				
+				
 				<!--
 				<control type="radiobutton" id="92">
 					<description>Show Genre Toggle</description>
@@ -131,15 +191,7 @@
 					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
 				</control>
 				-->
-				<control type="radiobutton" id="96">
-					<description>Show Logos Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31974]</label>
-					<onclick>Skin.ToggleSetting(View505ShowLogos)</onclick>
-					<selected>Skin.HasSetting(View505ShowLogos)</selected>
-					<visible>Control.IsVisible(505) + Container.Content(TVShows) + !Skin.HasSetting(TVShowsUsePosters)</visible>
-				</control>
+				
 				<!--
 				<control type="radiobutton" id="97">
 					<description>Show Cases Toggle</description>
@@ -152,35 +204,7 @@
 				</control>
 				
 				-->
-				<control type="radiobutton" id="98">
-					<description>Darken Watched Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31988]</label>
-					<onclick>Skin.ToggleSetting(HideDarkThumbs)</onclick>
-					<selected>Skin.HasSetting(HideDarkThumbs)</selected>
-					<visible>Control.IsVisible(732)</visible>
-				</control>
 				
-				<control type="radiobutton" id="99">
-					<description>Show Info Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31005</label>
-					<onclick>Skin.ToggleSetting(View508HideInfo)</onclick>
-					<selected>Skin.HasSetting(View508HideInfo)</selected>
-					<visible>Control.IsVisible(508)</visible>
-				</control>
-				
-				<control type="radiobutton" id="101">
-					<description>Animate movie Case in 501</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31931]</label>
-					<onclick>Skin.ToggleSetting(HideMovieCDArt)</onclick>
-					<selected>!Skin.HasSetting(HideMovieCDArt)</selected>
-					<visible>Control.IsVisible(501)</visible>
-				</control>
 				<!--
 				<control type="radiobutton" id="102">
 					<description>Show Logos Toggle</description>
@@ -192,16 +216,7 @@
 					<visible>Control.IsVisible(516) + Container.Content(TVShows)</visible>
 				</control>
 				-->
-				<control type="radiobutton" id="103">
-					<description>Toggle Case</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31930]</label>
-					<label>Toggle Cases</label>
-					<onclick>Skin.ToggleSetting(UseDiscTypeCase)</onclick>
-					<selected>Skin.HasSetting(UseDiscTypeCase)</selected>
-					<visible>Control.IsVisible(501) | Control.IsVisible(732)</visible>
-				</control>
+				
 				<control type="label" id="201">
 					<width>250</width>
 					<height>35</height>

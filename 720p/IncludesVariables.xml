@@ -119,10 +119,6 @@
 		<value condition="!IsEmpty(Window.Property(current.actor.agelong)) + [Container.Content(Actors) | Container.Content(Directors)]">$INFO[ListItem.label] ($INFO[Window.Property(current.actor.agelong)])</value>
 		<value>$INFO[ListItem.label]</value>
 	</variable>	
-	<variable name="PVRRecordingTitle">
-		<value condition="!IsEmpty(PVR.NextRecordingTitle)">$INFO[PVR.NextRecordingTitle]</value>
-		<value>$LOCALIZE[[31688]</value>
-	</variable>
 	<variable name="ShowMediaPlot">
 		<value condition="!Container.Content(Seasons)">$INFO[ListItem.Plot]</value>
 		<value condition="Container.Content(Seasons)">$INFO[Container.ShowPlot]</value>
