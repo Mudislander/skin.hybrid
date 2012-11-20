@@ -270,7 +270,7 @@
 		</control>	
 	</include>
 	<include name="HomeVerticalMainMenu">
-		<control type="fixedlist" id="9000">
+		<control type="wraplist" id="9000">
 			<description>Home Wraplist</description>
 			<hitrect x="5" y="5" w="330" h="650" />
 			<posx>-20</posx>
@@ -323,7 +323,7 @@
 		</control>
 	</include>
 	<include name="HomeHorizontalMainMenu">
-		<control type="fixedlist" id="9000">
+		<control type="wraplist" id="9000">
 			<posx>-110</posx>
 			<posy>5</posy>
 			<width>1500</width>

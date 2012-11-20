@@ -2711,7 +2711,19 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="402">
+					<control type="button" id="402">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31689]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetNumeric(CustomFocusOffset)</onclick>
+					</control>
+					<control type="radiobutton" id="403">
 						<description>enable weather info</description>
 						<width>750</width>
 						<height>40</height>
@@ -2724,7 +2736,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="403">
+					<control type="radiobutton" id="404">
 						<description>enable library stats</description>
 						<width>750</width>
 						<height>40</height>
@@ -2737,7 +2749,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="404">
+					<control type="radiobutton" id="405">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -2750,7 +2762,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="405">
+					<control type="radiobutton" id="406">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
