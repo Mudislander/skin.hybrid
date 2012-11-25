@@ -9,7 +9,11 @@
 	<include file="IncludesCommonMedia.xml" />
 	<include file="IncludesHomeRecentlyAdded.xml" />
 	<include file="IncludesHomeLiveCases.xml" />
+	<include file="IncludesHomeAddons.xml" />
+	<include file="IncludesHomeWeather.xml" />
+	<include file="IncludesHomePlaylists.xml" />
 	<include file="IncludesGenreFlagging.xml" />
+	<include file="IncludesSuggestedContent.xml" />
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
 	<include file="ViewsFileMode.xml" />
@@ -170,8 +174,6 @@
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(home)">WindowClose</animation>
 		</control>
-	
-	
 	</include>
 	<include name="ListImagePosi">
 		<posx>0</posx>
@@ -816,6 +818,8 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomPanelType.xml) | Window.IsVisible(CustomSubMenuAddon.xml) | Window.IsVisible(CustomMenuAddon.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
 		</control>	
 		<control type="label">
 			<description>time label</description>
@@ -831,13 +835,15 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomPanelType.xml) | Window.IsVisible(CustomSubMenuAddon.xml) | Window.IsVisible(CustomMenuAddon.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
 		</control>
 	</include>
 	<include name="WeatherInfo">
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
-			<visible>Window.IsActive(home) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(ShowWeatherInfo)</visible>
+			<visible>Window.IsActive(home) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(HideWeatherInfo)</visible>
 			<visible>!Window.IsVisible(videoscan)</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
@@ -978,8 +984,6 @@
 		<width>1280</width>
 		<height>35</height>
 		<align>center</align>
-		<onup>9000</onup>
-		<ondown>9000</ondown>		
 		<itemgap>0</itemgap>
 		<orientation>Horizontal</orientation>
 		<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out">Visible</animation>
@@ -1000,107 +1004,4 @@
 		<alttexturenofocus border="5">HorizontalMenu/HomeSubNF.png</alttexturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
-	<!--
-	<include name="HomeMediaControl">
-		<control type="group">
-			<description>Controls for currently playing media</description>
-			<posx>25</posx>
-			<posy>35r</posy>
-			<control type="group" id="600">
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<defaultcontrol>-</defaultcontrol>
-				<enable>Player.HasMedia</enable>
-				<control type="button" id="601">
-					<posx>5</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDPrevTrackFO.png</texturefocus>
-					<texturenofocus>OSD/OSDPrevTrackNF.png</texturenofocus>
-					<onleft>606</onleft>
-					<onright>602</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>XBMC.PlayerControl(Previous)</onclick>
-				</control>
-				<control type="button" id="602">
-					<posx>35</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDRewindFO.png</texturefocus>
-					<texturenofocus>OSD/OSDRewindNF.png</texturenofocus>
-					<onleft>601</onleft>
-					<onright>603</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>XBMC.PlayerControl(Rewind)</onclick>
-				</control>
-				<control type="togglebutton" id="603">
-					<posx>65</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDPauseFO.png</texturefocus>
-					<texturenofocus>OSD/OSDPauseNF.png</texturenofocus>
-					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<alttexturefocus>OSD/OSDPlayFO.png</alttexturefocus>
-					<alttexturenofocus>OSD/OSDPlayNF.png</alttexturenofocus>
-					<onleft>602</onleft>
-					<onright>604</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>XBMC.PlayerControl(Play)</onclick>
-				</control>
-				<control type="button" id="604">
-					<posx>95</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDStopFO.png</texturefocus>
-					<texturenofocus>OSD/OSDStopNF.png</texturenofocus>
-					<onleft>603</onleft>
-					<onright>605</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>down</onclick>
-					<onclick>XBMC.PlayerControl(Stop)</onclick>
-				</control>
-				<control type="button" id="605">
-					<posx>125</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDForwardFO.png</texturefocus>
-					<texturenofocus>OSD/OSDForwardNF.png</texturenofocus>
-					<onleft>604</onleft>
-					<onright>606</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>XBMC.PlayerControl(Forward)</onclick>
-				</control>
-				<control type="button" id="606">
-					<posx>155</posx>
-					<posy>2</posy>
-					<width>30</width>
-					<height>30</height>
-					<label>-</label>
-					<texturefocus>OSD/OSDNextTrackFO.png</texturefocus>
-					<texturenofocus>OSD/OSDNextTrackNF.png</texturenofocus>
-					<onleft>605</onleft>
-					<onright>601</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
-					<onclick>XBMC.PlayerControl(Next)</onclick>
-				</control>
-			</control>
-		</control>
-	</include>
-	-->
 </includes>

@@ -95,11 +95,116 @@
 			<visible>Skin.HasSetting(GlobalMenuBackdrop)</visible> 
 		</control>
 		<include condition="Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
+		<!--
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8000).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8000) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8001).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8001) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8002).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8002) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8003).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8003) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		-->
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8004).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8004) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>		
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8005).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8005) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8006).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8006) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<!--
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8008).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8008) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8009).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8009) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8010).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8010) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8011).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8011) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8012).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8012) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8013).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8013) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8014).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8014) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8015).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8015) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8016).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8016) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">$INFO[Container(8017).ListItem.Thumb]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(8017) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
+		</control>
+		-->
+		
+		
 		<include>MediaPlayingBackground</include>	
 	</include>	
-	
-	
-	
 	<include name="CommonVideoBackground">
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include> 

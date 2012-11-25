@@ -8,6 +8,17 @@
 			<texture>HomeBlade/HomeHasSub.png</texture>
 			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
 			<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+			<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+		</control>
+		<control type="image">
+			<posx>272</posx>
+			<posy>7</posy>
+			<width>26</width>
+			<height>26</height>
+			<texture>HorizontalMenu/HomeHasSub.png</texture>
+			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+			<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+			<visible>Skin.HasSetting(HorizontalHomeScreen) + Skin.HasSetting(AutoHorizontalSubMenu)</visible>
 		</control>
 		<control type="image">
 			<posx>325</posx>
@@ -17,7 +28,48 @@
 			<texture>HomeBlade/UserPreSet.png</texture>
 			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
 			<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
-			<visible>Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)</visible>
+			<visible>!Skin.HasSetting(HorizontalHomeScreen)  + Skin.HasSetting(StickyHomeMenuAction)</visible>
+			<visible>Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItemLastAction))</visible>
+		</control>
+		<control type="image">
+			<posx>3</posx>
+			<posy>8</posy>
+			<width>26</width>
+			<height>26</height>
+			<texture>HomeBlade/UserPreSet.png</texture>
+			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+			<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+			<visible>Skin.HasSetting(HorizontalHomeScreen)  + Skin.HasSetting(StickyHomeMenuAction)</visible>
+			<visible>Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItemLastAction))</visible>
+		</control>
+	</include>
+	<include name="HomeSuggestedImage">
+		<control type="group">
+			<visible>
+				StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) |
+				StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) |
+				StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)
+			</visible>
+			<control type="image">
+				<posx>290</posx>
+				<posy>80</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture flipx="true">HomeBlade/HomeHasSub.png</texture>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+				<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+			</control>
+			<control type="image">
+				<posx>272</posx>
+				<posy>34</posy>
+				<width>26</width>
+				<height>26</height>
+				<texture>HorizontalMenu/HomeHasSub.png</texture>
+				<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+				<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+				<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+			</control>
 		</control>
 	</include>
 	<include name="HomeSubMenuInfo">
@@ -26,9 +78,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Videos)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) |
-				[!IsEmpty(Skin.String(VideoSubMenuOneAction)) + !IsEmpty(Skin.String(VideoSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuTwoAction)) + !IsEmpty(Skin.String(VideoSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuThreeAction)) + !IsEmpty(Skin.String(VideoSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(VideoSubMenu.1.Path)) + !IsEmpty(Skin.String(VideoSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.2.Path)) + !IsEmpty(Skin.String(VideoSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.3.Path)) + !IsEmpty(Skin.String(VideoSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -36,9 +88,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Movies)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) |
-				[!IsEmpty(Skin.String(VideoSubMenuOneAction)) + !IsEmpty(Skin.String(VideoSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuTwoAction)) + !IsEmpty(Skin.String(VideoSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuThreeAction)) + !IsEmpty(Skin.String(VideoSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(VideoSubMenu.1.Path)) + !IsEmpty(Skin.String(VideoSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.2.Path)) + !IsEmpty(Skin.String(VideoSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.3.Path)) + !IsEmpty(Skin.String(VideoSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -46,9 +98,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) |
-				[!IsEmpty(Skin.String(VideoSubMenuOneAction)) + !IsEmpty(Skin.String(VideoSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuTwoAction)) + !IsEmpty(Skin.String(VideoSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(VideoSubMenuThreeAction)) + !IsEmpty(Skin.String(VideoSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(VideoSubMenu.1.Path)) + !IsEmpty(Skin.String(VideoSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.2.Path)) + !IsEmpty(Skin.String(VideoSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(VideoSubMenu.3.Path)) + !IsEmpty(Skin.String(VideoSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -56,9 +108,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Music)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) | 
-				[!IsEmpty(Skin.String(MusicSubMenuOneAction)) + !IsEmpty(Skin.String(MusicSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(MusicSubMenuTwoAction)) + !IsEmpty(Skin.String(MusicSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(MusicSubMenuThreeAction)) + !IsEmpty(Skin.String(MusicSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(MusicSubMenu.1.Path)) + !IsEmpty(Skin.String(MusicSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(MusicSubMenu.2.Path)) + !IsEmpty(Skin.String(MusicSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(MusicSubMenu.3.Path)) + !IsEmpty(Skin.String(MusicSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -79,27 +131,28 @@
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Favourites)</visible>
 			<visible>!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Window(0).Property(favourite.1.name),Can Not Find favourites.xml)</visible>
+			<visible>System.HasAddon(script.favourites)</visible>
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Playlists)</visible>
 			<visible>
-				[!IsEmpty(Skin.String(SubMenuItemOneAction)) + !IsEmpty(Skin.String(SubMenuItemOneLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemTwoAction)) + !IsEmpty(Skin.String(SubMenuItemTwoLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemThreeAction)) + !IsEmpty(Skin.String(SubMenuItemThreeLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemFourAction)) + !IsEmpty(Skin.String(SubMenuItemFourLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemFiveAction)) + !IsEmpty(Skin.String(SubMenuItemFiveLabel))]
+				[!IsEmpty(Skin.String(SubMenuItem.1.Path)) + !IsEmpty(Skin.String(SubMenuItem.1.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.2.Path)) + !IsEmpty(Skin.String(SubMenuItem.2.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.3.Path)) + !IsEmpty(Skin.String(SubMenuItem.3.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.4.Path)) + !IsEmpty(Skin.String(SubMenuItem.4.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.5.Path)) + !IsEmpty(Skin.String(SubMenuItem.5.Label))]
 			</visible>
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns)</visible>
 			<visible>
-				[!IsEmpty(Skin.String(SubMenuItemSixAction)) + !IsEmpty(Skin.String(SubMenuItemSixLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemSevenAction)) + !IsEmpty(Skin.String(SubMenuItemSevenLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemEightAction)) + !IsEmpty(Skin.String(SubMenuItemEightLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemNineAction)) + !IsEmpty(Skin.String(SubMenuItemNineLabel))] |
-				[!IsEmpty(Skin.String(SubMenuItemTenAction)) + !IsEmpty(Skin.String(SubMenuItemTenLabel))]
+				[!IsEmpty(Skin.String(SubMenuItem.6.Path)) + !IsEmpty(Skin.String(SubMenuItem.6.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.7.Path)) + !IsEmpty(Skin.String(SubMenuItem.7.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.8.Path)) + !IsEmpty(Skin.String(SubMenuItem.8.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.9.Path)) + !IsEmpty(Skin.String(SubMenuItem.9.Label))] |
+				[!IsEmpty(Skin.String(SubMenuItem.10.Path)) + !IsEmpty(Skin.String(SubMenuItem.10.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -116,18 +169,18 @@
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures)</visible>
 			<visible>
-				[!IsEmpty(Skin.String(PicSubMenuOneAction)) + !IsEmpty(Skin.String(PicSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(PicSubMenuTwoAction)) + !IsEmpty(Skin.String(PicSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(PicSubMenuThreeAction)) + !IsEmpty(Skin.String(PicSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(PicSubMenu.1.Path)) + !IsEmpty(Skin.String(PicSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(PicSubMenu.2.Path)) + !IsEmpty(Skin.String(PicSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(PicSubMenu.3.Path)) + !IsEmpty(Skin.String(PicSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Programs)</visible>
 			<visible>
-				[!IsEmpty(Skin.String(ProgSubMenuOneAction)) + !IsEmpty(Skin.String(ProgSubMenuOneLabel))] |
-				[!IsEmpty(Skin.String(ProgSubMenuTwoAction)) + !IsEmpty(Skin.String(ProgSubMenuTwoLabel))] |
-				[!IsEmpty(Skin.String(ProgSubMenuThreeAction)) + !IsEmpty(Skin.String(ProgSubMenuThreeLabel))]
+				[!IsEmpty(Skin.String(ProgSubMenu.1.Path)) + !IsEmpty(Skin.String(ProgSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(ProgSubMenu.2.Path)) + !IsEmpty(Skin.String(ProgSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(ProgSubMenu.3.Path)) + !IsEmpty(Skin.String(ProgSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">

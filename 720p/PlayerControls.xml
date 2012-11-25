@@ -242,11 +242,11 @@
 					<onup>100</onup>
 					<ondown>100</ondown>
 					<onclick>Close</onclick>
-					<onclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
-					<altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(LyricScript.Path)])</onclick>
+					<altclick>Skin.SetAddon(LyricScript.Path,xbmc.python.lyrics)</altclick>
 					<altclick>Close</altclick>
-					<altclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
-					<usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
+					<altclick>XBMC.RunScript($INFO[Skin.String(LyricScript.Path)])</altclick>
+					<usealttexture>IsEmpty(Skin.String(LyricScript.Path))</usealttexture>
 					<visible>Player.HasAudio</visible>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
 				</control>

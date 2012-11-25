@@ -1,20 +1,10 @@
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">8999</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
+		<include>HomeMainMenuInitialSetup</include>
 		<include>CommonBackground</include>
 		<include>MediaContentBackground</include>
-		<!--
-		<control type="image">
-			<posx>0</posx>
-			<posy>60r</posy>
-			<width>1280</width>
-			<height>60</height>
-			<texture>floor.png</texture>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-		</control>
-		-->
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
