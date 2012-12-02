@@ -77,7 +77,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="image">
 						<posx>650</posx>
@@ -85,7 +85,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 				</itemlayout>
 				<itemlayout condition="Skin.HasSetting(HideFileListPoster)" height="40" width="1065">
@@ -150,7 +150,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="image">
 						<posx>1135</posx>
@@ -158,10 +158,10 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="Skin.HasSetting(!HideFileListPoster)" height="40" width="580">
+				<focusedlayout condition="!Skin.HasSetting(HideFileListPoster)" height="40" width="580">
 					<control type="image">
 						<posx>10</posx>
 						<posy>5</posy>
@@ -206,7 +206,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
 						<animation effect="slide" start="0,0" end="35,0" delay="0" time="0" condition="Window.IsVisible(Videos) + !Skin.HasSetting(HideSubTitleFlags)">conditional</animation>
 					</control>
 					<control type="label">
@@ -241,7 +241,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="image">
 						<posx>650</posx>
@@ -249,7 +249,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 				</focusedlayout>
 				<focusedlayout condition="Skin.HasSetting(HideFileListPoster)" height="40" width="1065">
@@ -298,7 +298,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
 						<animation effect="slide" start="0,0" end="35,0" delay="0" time="0" condition="Window.IsVisible(Videos) + !Skin.HasSetting(HideSubTitleFlags)">conditional</animation>
 					</control>
 					<control type="label">
@@ -333,7 +333,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 					<control type="image">
 						<posx>1135</posx>
@@ -341,7 +341,7 @@
 						<width>30</width>
 						<height>30</height>
 						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + !IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -571,15 +571,36 @@
 					</control>
 				</control>
 			</control>
-			
-			
-			
-			<!-- TVLogo ontop of Episode -->
-			<!--
+			<!-- Episode List -->
 			<control type="group">		
 				<posx>850</posx>
 				<posy>100</posy>
-				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + !StringCompare(ListItem.Label,..) + Container.Content(episodes) + IsEmpty(ListItem.Art(poster))</visible>
+				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + Container.Content(episodes) + !stringcompare(ListItem.Label,..)</visible>
+				<control type="image">
+					<description>Title Icon</description>
+					<include>ListImagePosi</include>
+					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture> 
+					<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<control type="image">
+					<description>Title Icon</description>
+					<include>ListImagePosi</include>
+					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Property(Fanart_Image)]</texture> 
+					<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<control type="image">
+					<description>Title Icon Reflection</description>
+					<include>ListImageReflection</include>
+					<texture diffuse="diffuse_mirror3.png" flipy="true" >$INFO[ListItem.Thumb]</texture> 
+					<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<control type="image">
+					<description>Title Icon Reflection</description>
+					<include>ListImageReflection</include>
+					<texture diffuse="diffuse_mirror3.png" flipy="true">$INFO[ListItem.Property(Fanart_Image)]</texture> 
+					<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<!-- TVLogo ontop of Episode -->
 				<control type="image">
 					<posx>43</posx>
 					<posy>52</posy>
@@ -587,10 +608,9 @@
 					<height>116</height>
 					<fadetime>IconCrossfadeTime</fadetime>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture background="true" fallback="DefaultNoImage.png">$INFO[ListItem.path]../logo.png</texture>
+					<texture background="true">$INFO[ListItem.Art(tvshow.clearlogo)]</texture>
 				</control>
-			</control>	
-			-->
+			</control>
 			<!-- Music -->
 			<control type="group">		
 				<posx>850</posx>
@@ -625,11 +645,15 @@
 					<texture>CDCase/cdcase.png</texture>
 				</control>	
 			</control>	
+			
+			
+			
+			
 			<!-- All Others Not Defined -->
 			<control type="group">		
 				<posx>850</posx>
 				<posy>100</posy>
-				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + [StringCompare(ListItem.Label,..) | !Container.Content(movies) + !Container.Content(actors) + !Container.Content(studios) + !Container.Content(directors) + !Container.Content(genres) + !Container.Content(years) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(albums) + !Container.Content(songs)]</visible>
+				<visible>Control.IsVisible(50) + !Skin.HasSetting(HideFileListPoster) + [StringCompare(ListItem.Label,..) | !Container.Content(movies) + !Container.Content(actors) + !Container.Content(studios) + !Container.Content(directors) + !Container.Content(genres) + !Container.Content(years) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(songs)]</visible>
 				<control type="image">
 					<description>Title Icon</description>
 					<include>ListImagePosi</include>
@@ -741,7 +765,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<info>ListItem.Label</info>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
 					<control type="image">
 						<posx>180</posx>
@@ -847,7 +871,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<info>ListItem.Label</info>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
 					<control type="image">
 						<posx>180</posx>
@@ -866,7 +890,7 @@
 						<height>240</height>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>5</bordersize>
-						<texture background="true" fallback="DefaultFallback/poster-fallback.png">$INFO[Listitem.Icon]</texture>
+						<texture background="true" fallback="DefaultFallback/DefaultPoster.png">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>108</posx>
@@ -897,7 +921,7 @@
 						<height>240</height>
 						<bordertexture border="5">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
-						<texture background="true" fallback="DefaultFallback/poster-fallback.png">$INFO[Listitem.Icon]</texture>
+						<texture background="true" fallback="DefaultFallback/DefaultPoster.png">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="label">
 						<posx>108</posx>
@@ -909,7 +933,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<info>ListItem.Label</info>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
 					</control>
 					<control type="image">
 						<posx>170</posx>

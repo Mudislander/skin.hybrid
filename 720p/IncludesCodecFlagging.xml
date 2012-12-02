@@ -1,0 +1,72 @@
+<includes>
+	<include name="VideoCodecFlaggingConditions">
+		<control type="image">
+			<description>Video rez Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$INFO[ListItem.VideoResolution,MediaFlags/resolution/,.png]</texture>
+		</control>
+		<control type="image">
+			<description>Codec Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$VAR[videocodec,MediaFlags/codectype/,.png]</texture>
+		</control>
+	</include>
+	<include name="VideoTypeHackFlaggingConditions">
+		<control type="image">
+			<description>Video Type Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$VAR[typehackflagging,MediaFlags/videotype/,.png]</texture>
+		</control>
+	</include>
+	<include name="VideoMPAAFlaggingConditions">
+		<control type="image">
+			<description>Rating image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$VAR[AgeLimit,MediaFlags/ratings/,.png]</texture>
+		</control>
+	</include>
+	<include name="AudioCodecFlaggingConditions">
+		<control type="image">
+			<description>Audio Codec Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$INFO[ListItem.AudioCodec,MediaFlags/codectype/,.png]</texture>
+		</control>
+	</include>
+	<include name="AudioChannelsFlaggingConditions">
+		<control type="image">
+			<description>Audio Codec Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$INFO[ListItem.AudioChannels,MediaFlags/audiochannels/,.png]</texture>
+		</control>
+	</include>
+	<include name="AspectCodecFlaggingConditions">
+		<control type="image">
+			<description>Aspectratio Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$INFO[ListItem.VideoAspect,MediaFlags/aspectratio/,.png]</texture>
+		</control>
+	</include>
+	<include name="MediaStudioFlagging">
+		<control type="image">
+			<description>Aspectratio Image</description>
+			<width>80</width>
+			<height>55</height>
+			<aspectratio align="center">keep</aspectratio>
+			<texture>$INFO[listitem.Studio,MediaFlags/studios/,.png]</texture>
+		</control>
+	</include>
+</includes>

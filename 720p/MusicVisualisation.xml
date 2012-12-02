@@ -38,7 +38,7 @@
 			<animation effect="fade" start="0" end="100" time="300">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 			<include>KBurnsAnimateFanart</include>
-			<visible>Player.HasAudio + Skin.HasSetting(MusicVizXtraFanart)</visible>
+			<visible>Player.HasAudio + Skin.HasSetting(EnableXtraFanArt)</visible>
 		</control>
 		<control type="visualisation" id="2">
 			<description>visualisation</description>
@@ -55,6 +55,7 @@
 				<texture flipy="true">HomeNowPlayingBack.png</texture>
 			</control>
 			<include>Clock</include>
+			<include>WeatherInfo</include>
 			<control type="image">
 				<posx>0</posx>
 				<posy>250r</posy>

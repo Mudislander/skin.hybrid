@@ -147,7 +147,7 @@
 						<posy>71</posy>
 						<width>173</width>
 						<height>173</height>
-						<texture>Disks/disc.png</texture>
+						<texture fallback="Disks/disc.png">$INFO[ListItem.Art(discart)]</texture>
 						<animation effect="zoom" start="12,71,173,173" end="-3,51,209,209" time="250">Focus</animation>
 						<animation effect="zoom" start="-3,51,209,209" end="12,71,173,173" time="250">UnFocus</animation>
 						<visible>[Container.Content(Seasons) | [!Container.Content(Seasons) + ListItem.IsFolder]] + !stringcompare(ListItem.Label,..) + !Skin.HasSetting(HideMovieCDArt)</visible>

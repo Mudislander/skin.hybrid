@@ -44,7 +44,6 @@
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
-						<!--texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture-->
 						<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">DarkCaseMask/DarkCase.png</texture>
 					</control>
 					<control type="image">
@@ -55,6 +54,26 @@
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="group">
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>78</posx>
+							<posy>27</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
+						<control type="image">
+							<posx>78</posx>
+							<posy>27</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
 					</control>
 					<control type="image">
 						<posx>2</posx>
@@ -82,22 +101,36 @@
 						<animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
 					</control>
-					<control type="image">
-						<posx>90</posx>
-						<posy>150</posy>
-						<width>35</width>
-						<height>35</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay]</texture>
+					<control type="group">
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
 						<animation type="focus">
-							<effect type="fade" start="0" end="100" time="200" />
-							<effect type="slide" start="0,0" end="10,5" time="200" />
+							<effect type="slide" start="0,0" end="5,-25" time="200" />
 						</animation>
 						<animation type="unfocus">
-							<effect type="fade" start="100" end="0" time="200" />
-							<effect type="slide" end="0,0" start="10,5" time="200" />
+							<effect type="slide" end="0,0" start="5,-25" time="200" />
 						</animation>
+						<control type="image">
+							<posx>78</posx>
+							<posy>27</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+							
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
+						<control type="image">
+							<posx>78</posx>
+							<posy>27</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
 					</control>
+					
+					
+					
+					
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
@@ -117,14 +150,66 @@
 				<visible>Control.IsVisible(508)</visible>
 			</control>
 		</control>
-		
 		<control type="group">
 			<visible>Control.IsVisible(508)</visible>
 			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
-		
-		
-		
-		
+			<control type="label">
+				<posx>60</posx>
+				<posy>43</posy>
+				<width>1180</width>
+				<height>20</height>
+				<font>font10caps_title</font>
+				<textcolor>grey2</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Tagline]</label>
+				<visible>!ListItem.IsFolder + Container.Content(Movies)</visible>
+			</control>	
+			<control type="group">
+				<visible>!Skin.HasSetting(View508HideInfo) + !StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Plot) + !Container.OnNext + !Container.OnPrevious</visible>
+				<animation effect="fade" start="0" end="100" time="1600" delay="3000" >Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" >Hidden</animation>
+				<include>FanArtInfoPanel</include>
+			</control>	
 		</control>	
 	</include>
+	<include name="FanArtInfoPanel"> <!-- Edit 25/10/11 -->
+        <control type="image">
+			<posx>180</posx>
+			<posy>85</posy>
+			<width>920</width>
+			<height>375</height>
+			<include condition="!Skin.HasSetting(MediaNotTransparent)">TransparentEffect</include>
+			<texture border="20">ContentPanel.png</texture>
+		</control>
+		<control type="textbox">
+			<description>Description Value The Movie</description>
+			<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
+			<posx>220</posx>
+			<posy>120</posy>
+			<width>850</width>
+			<height>265</height>
+			<align>justify</align>
+			<font>font16caps</font>
+			<textcolor>white</textcolor>
+			<label>$VAR[ShowMediaPlot]</label>
+			<autoscroll time="4000" delay="5000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
+		</control>
+		<control type="grouplist">
+			<description>Media Codec Flagging Images</description>
+			<posx>220</posx>
+			<posy>400</posy>
+			<width>840</width>
+			<align>center</align>
+			<itemgap>5</itemgap>
+			<orientation>horizontal</orientation>
+			<include>VideoCodecFlaggingConditions</include>
+			<include>AudioCodecFlaggingConditions</include>
+			<include>AspectCodecFlaggingConditions</include>
+			<include>VideoTypeHackFlaggingConditions</include>
+			<include>VideoMPAAFlaggingConditions</include>
+			<include>MediaStudioFlagging</include>
+		</control>
+	</include>	
 </includes>

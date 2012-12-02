@@ -1,19 +1,18 @@
 <includes>
 	<include file="defaults.xml" />
 	<include file="IncludesVariables.xml" />
+	<include file="IncludesCommonMedia.xml" />
+	<include file="IncludesSubMenuInfo.xml" />
 	<include file="IncludesHomeMenuSys.xml" />
 	<include file="IncludesHomeMenuItems.xml" />
 	<include file="IncludesHomeMenuChoices.xml" />
-	<include file="IncludesSubMenuInfo.xml" />
 	<include file="IncludesHomeInfoBar.xml" />
-	<include file="IncludesCommonMedia.xml" />
-	<include file="IncludesHomeRecentlyAdded.xml" />
 	<include file="IncludesHomeLiveCases.xml" />
-	<include file="IncludesHomeAddons.xml" />
+	<include file="IncludesHomePlaying.xml" />
+	<include file="IncludesHomePanel.xml" />
+	<include file="IncludesHomePanelContent.xml" />
 	<include file="IncludesHomeWeather.xml" />
-	<include file="IncludesHomePlaylists.xml" />
 	<include file="IncludesGenreFlagging.xml" />
-	<include file="IncludesSuggestedContent.xml" />
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
 	<include file="ViewsFileMode.xml" />
@@ -24,6 +23,10 @@
 	<include file="ViewsGenrePoster.xml" />
 	<include file="ViewsFanArtPoster.xml" />
 	<include file="ViewsFullWall.xml" />
+	<include file="ViewsEpisodes.xml" />
+	<include file="ViewsLowlist.xml" />
+	<include file="ViewsMediaInfo.xml" />
+	<include file="ViewsHalfWall.xml" />
 	<include file="IncludesCodecFlagging.xml" />
 	<include file="IncludesListItemCount.xml" />
 	<include file="IncludesCDWall.xml" />
@@ -60,6 +63,8 @@
 	<include name="TransparentEffect"> 
 		<colordiffuse>$INFO[Skin.String(MediaPanelTrans)]</colordiffuse>
 	</include>
+	
+	
 	<include name="ButtonCommonValues">
 		<height>40</height>
 		<width>250</width>
@@ -89,11 +94,11 @@
 		<texture diffuse="Disks/disc_mask.png" background="true">Disks/disc.png</texture>
 	</include>
 	<include name="ViewMovieDiskDVD">
-		<texture fallback="Disks/disc-dvd.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
+		<texture fallback="Disks/disc-dvd.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Art(discart)]</texture>
 		<visible>!stringcompare(ListItem.Label,..)</visible>
 	</include>
 	<include name="ViewMovieDiskBluRay">
-		<texture fallback="Disks/disc-bluray.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Path,,disc.png]</texture>
+		<texture fallback="Disks/disc-bluray.png" diffuse="Disks/disc_mask.png" background="true">$INFO[ListItem.Art(discart)]</texture>
 		<visible>!stringcompare(ListItem.Label,..)</visible>
 	</include>
 	<include name="SideBladeLeft">
@@ -843,7 +848,7 @@
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
-			<visible>Window.IsActive(home) + !IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(HideWeatherInfo)</visible>
+			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(HideWeatherInfo)</visible>
 			<visible>!Window.IsVisible(videoscan)</visible>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
@@ -1003,5 +1008,46 @@
 		<alttexturefocus border="5">HorizontalMenu/HomeSubFO.png</alttexturefocus>
 		<alttexturenofocus border="5">HorizontalMenu/HomeSubNF.png</alttexturenofocus>
 		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="DimensionsPosterPanel">
+		<posx>90</posx>
+		<posy>65</posy>
+		<width>700</width>
+		<height>380</height>
+	</include>
+	<include name="DimensionsLandscapePanel">
+		<posx>15</posx>
+		<posy>80</posy>
+		<width>840</width>
+		<height>330</height>
+	</include>
+	<include name="DimensionsMusicCDPanel">
+		<posx>25</posx>
+		<posy>70</posy>
+		<width>860</width>
+		<height>290</height>
+	</include>
+	
+	<include name="HomePanelBackground">
+			<include>VisibleFadeEffect</include>
+			<posx>215</posx>
+			<posy>60</posy>
+			<control type="image">
+				<description>background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>850</width>
+				<height>455</height>
+				<texture border="20">ContentPanel.png</texture>
+				<include>TransparentEffect</include>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>10</posy>
+				<width>850</width>
+				<height>90</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>GlassTitleBar.png</texture>
+			</control>
 	</include>
 </includes>

@@ -87,6 +87,15 @@
 					<include>ButtonCommonValues</include>
 					<label>587</label>
 				</control>
+				<control type="radiobutton" id="94">
+					<description>Hide File List Poster</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31681]</label>
+					<onclick>Skin.ToggleSetting(HideFileListPoster)</onclick>
+					<selected>Skin.HasSetting(HideFileListPoster)</selected>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
 				<control type="radiobutton" id="100">
 					<description>Show Info Toggle</description>
 					<textwidth>170</textwidth>

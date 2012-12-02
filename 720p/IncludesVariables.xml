@@ -124,21 +124,18 @@
 	</variable>
 	<variable name="BannerThumb">
 		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-		<!--value condition="!IsEmpty(ListItem.Title)">DefaultFallback/banner-fallback.png</value-->
 		<value condition="IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Icon]</value>
-		
-		
-		
 	</variable>
 	<variable name="PosterThumb">
+		<value condition="Container.Content(Episodes) + !StringCompare(ListItem.Label,..)">$INFO[ListItem.Property(TVShowThumb)]</value>
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<!--value condition="!IsEmpty(ListItem.Title)">DefaultFallback/poster-fallback.png</value-->
-		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
+		<value condition="StringCompare(ListItem.Label,..)">$INFO[ListItem.Icon]</value>
+		<value>DefaultFallback/DefaultPoster.png</value>
 	</variable>
 	<variable name="LogoThumb">
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="IsEmpty(ListItem.Art(clearlogo)) + !IsEmpty(ListItem.Title)">$INFO[ListItem.path]logo.png</value>
-		<value condition="!IsEmpty(ListItem.Title)">DefaultFallback/banner-fallback.png</value>
+		<!--value condition="!IsEmpty(ListItem.Title)">DefaultFallback/banner-fallback.png</value-->
 	
 	
 	
@@ -146,6 +143,13 @@
 	
 	</variable>
 	<variable name="AgeLimit">
+		<value condition="SubString(Listitem.mpaa,TV-G)">TV-G</value>
+		<value condition="SubString(Listitem.mpaa,TV-PG)">TV-PG</value>
+		<value condition="SubString(Listitem.mpaa,TV-14)">TV-14</value>
+		<value condition="SubString(Listitem.mpaa,TV-Y7)">TV-Y7</value>
+		<value condition="SubString(Listitem.mpaa,TV-Y7-FV)">TV-Y7-FV</value>
+		<value condition="SubString(Listitem.mpaa,TV-Y)">TV-Y</value>
+		<value condition="SubString(Listitem.mpaa,TV-MA)">TV-MA</value>
 		<value condition="SubString(listitem.mpaa,UK:U) + !SubString(listitem.mpaa,UK:UC)">gb/U</value>
 		<!--value condition="SubString(listitem.mpaa,UK:UC)">gb/bbfc_UC</value-->
 		<value condition="SubString(listitem.mpaa,UK:PG) + !SubString(listitem.mpaa,Rated PG-13)">gb/PG</value>
@@ -155,7 +159,6 @@
 		<value condition="SubString(Listitem.mpaa,UK:18) + !SubString(listitem.mpaa,UK:R18)">gb/18</value>
 		<value condition="SubString(Listitem.mpaa,UK:R18)">gb/R18</value>
 		<value condition="SubString(listitem.mpaa,UK:E)">gb/Exempt</value>
-		
 		<value condition="SubString(Listitem.mpaa,FSK o.A.)">de/0</value>
 		<value condition="SubString(Listitem.mpaa,FSK 6)">de/6</value>
 		<value condition="SubString(Listitem.mpaa,FSK 12)">de/12</value>
@@ -166,12 +169,24 @@
 		<value condition="SubString(Listitem.mpaa,Rated 12)">de/12</value>
 		<value condition="SubString(Listitem.mpaa,Rated 16)">de/16</value>
 		<value condition="SubString(Listitem.mpaa,Rated 18)">de/18</value>
-	
 		<value condition="SubString(listitem.mpaa,Rated G)">G</value>
 		<value condition="SubString(listitem.mpaa,Rated PG) + !SubString(listitem.mpaa,Rated PG-13)">PG</value>
 		<value condition="SubString(listitem.mpaa,Rated PG-13)">PG-13</value>
 		<value condition="SubString(Listitem.mpaa,Rated R)">R</value>
 		<value condition="SubString(Listitem.mpaa,Rated NC)">NC-17</value>
+	</variable>
+	<variable name="videocodec">
+		<value condition="[SubString(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]">divx</value>
+		<value>$INFO[ListItem.VideoCodec]</value>
+	</variable>
+		<variable name="typehackflagging">
+		<value condition="[SubString(ListItem.FilenameAndPath,.3D.) | SubString(ListItem.FilenameAndPath,.SBS.)]">3Dbluray</value>
+		<value condition="[SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bluray</value>
+		<value condition="SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>
+		<value condition="SubString(ListItem.FilenameAndPath,dvd)">dvd</value>
+		<value condition="[SubString(ListItem.FilenameAndPath,pdtv) | SubString(ListItem.FilenameAndPath,hdtv) | SubString(ListItem.FilenameAndPath,dsr)]">TV</value>
+		<value condition="SubString(ListItem.FilenameAndPath,vhs)">vhs</value>
+		<value condition="SubString(ListItem.FilenameAndPath,.mkv)">mkv</value>
 	</variable>
 	<variable name="ContainerTypeInfo">
 		<value condition="Container.Content(Artists) + Window.IsVisible(MusicLibrary)">$LOCALIZE[31936]</value>
@@ -258,7 +273,7 @@
 		<value>dv</value>
 	</variable>
 		<variable name="VideoListCase">
-		<value condition="!Skin.HasSetting(UseDiscTypeCase) + Container.Content(tvshows) | Container.Content(seasons)">TVseries</value>
+		<value condition="!Skin.HasSetting(UseDiscTypeCase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">TVseries</value>
 		<value condition="!Skin.HasSetting(UseDiscTypeCase) + !IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
 		<value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bd</value>
 		<value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>

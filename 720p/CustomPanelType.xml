@@ -131,6 +131,7 @@
 							!IsEmpty(Skin.String(HomeItem.9.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
 							!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
 						</visible>
+						<visible>!Skin.HasSetting(HideWatchPlaylist)</visible>
 					</item>
 					<item id="3">
 						<description>User Addons</description>
@@ -146,7 +147,6 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,Weather)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<!--
 					<item id="5">
 						<description>Recent Movies</description>
 						<label>$LOCALIZE[31927]</label>
@@ -155,6 +155,7 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(Movies)</visible>
 					</item>
+					<!--
 					<item id="6">
 						<description>Suggested Movies</description>
 						<label>$LOCALIZE[31926]</label>
@@ -163,6 +164,7 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(Movies)</visible>
 					</item>
+					-->
 					<item id="7">
 						<description>Random Movies</description>
 						<label>$LOCALIZE[31925]</label>
@@ -179,6 +181,7 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(TVShows)</visible>
 					</item>
+					<!--
 					<item id="9">
 						<description>Suggested TVShows</description>
 						<label>$LOCALIZE[31923]</label>
@@ -187,6 +190,7 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(TVShows)</visible>
 					</item>
+					-->
 					<item id="10">
 						<description>Random TVShows</description>
 						<label>$LOCALIZE[31922]</label>
@@ -235,15 +239,6 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(MusicVideos)</visible>
 					</item>
-					<item id="16">
-						<description>Random Concerts thumbs</description>
-						<label>$LOCALIZE[31911]</label>
-						<onclick>Dialog.Close(2117)</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomConcertThumbs)</onclick>
-						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-						<visible>Library.HasContent(MusicVideos)</visible>
-					</item>
-					-->
 				</content>				
 			</control>
 			<control type="button">

@@ -16,13 +16,9 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>200</preloaditems>
-				<!--
-<visible>[Container.Content(Movies) + !SubString(Container.FolderPath,plugin.video.live.streams)] | Container.Content(Seasons) | Container.Content(Episodes) | [Container.Content(TVShows) + !Skin.HasSetting(TVShowsUseBanners)  + !Skin.HasSetting(TVShowsUselogos)]</visible>
-				-->
+				<visible>Window.IsVisible(Videos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<itemlayout width="123" height="184">
-					
-					
 					<control type="image">
 						<posx>3</posx>
 						<posy>3</posy>
@@ -32,7 +28,6 @@
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<include>VisibleFadeEffect</include>
 					</control>
-					<!--
 					<control type="group">
 						<visible>Container.Content(episodes) + !IsEmpty(ListItem.Title)</visible>
 						<control type="label">
@@ -58,65 +53,6 @@
 							<label>[B]$INFO[ListItem.Episode][/B]</label>
 						</control>	
 					</control>
-					-->
-					<!--
-					<control type="image">
-						<posx>81</posx>
-						<posy>3</posy>
-						<width>40</width>
-						<height>40</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture background="true" fallback="DefaultWatched.png">Banner/$LOCALIZE[16102].png</texture>
-						<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideWatchedStat) + !Skin.HasSetting(HideStatusBanners)</visible>
-					</control>
-					<control type="image">
-						<posx>82</posx>
-						<posy>2</posy>
-						<width>40</width>
-						<height>40</height>
-						<fadetime>IconCrossfadeTime</fadetime>
-						<texture background="true" fallback="DefaultUnwatched.png">Banner/$LOCALIZE[16101].png</texture>
-						<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IntegerGreaterThan(ListItem.PercentPlayed,2) +!Skin.HasSetting(HideNewMediaStat)+ !Skin.HasSetting(HideStatusBanners)</visible>
-					</control>
-					<control type="image">
-						<posx>81</posx>
-						<posy>3</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + Skin.HasSetting(HideStatusBanners) + Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay)</visible>
-					</control>
-					<control type="image">
-						<posx>81</posx>
-						<posy>3</posy>
-						<width>40</width>
-						<height>40</height>
-						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-						<visible>!Skin.HasSetting(HideWatchedStat) + Skin.HasSetting(HideStatusBanners) + Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay)</visible>
-					</control>
-					-->
-					<control type="group">
-							<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-							<control type="image">
-								<posx>81</posx>
-						<posy>3</posy>
-								<width>40</width>
-						<height>40</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
-								<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-							</control>
-							<control type="image">
-								<posx>81</posx>
-						<posy>3</posy>
-								<width>40</width>
-						<height>40</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
-								<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
-							</control>
-						</control>
-
 					<control type="image">
 						<posx>91</posx>
 						<posy>148</posy>
@@ -150,11 +86,47 @@
 						<texture background="true">DarkCase/EmptyCaseOverlay.png</texture>
 						<visible>Skin.HasSetting(HideDarkThumbs) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>81</posx>
+							<posy>3</posy>
+							<width>40</width>
+							<height>40</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideStatusBanners)</visible>
+						</control>
+						<control type="image">
+							<posx>82</posx>
+							<posy>2</posy>
+							<width>40</width>
+							<height>40</height>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IntegerGreaterThan(ListItem.PercentPlayed,2) +!Skin.HasSetting(HideNewMediaStat)+ !Skin.HasSetting(HideStatusBanners)</visible>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
+						<control type="image">
+							<posx>81</posx>
+							<posy>3</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
+						<control type="image">
+							<posx>81</posx>
+							<posy>3</posy>
+							<width>40</width>
+							<height>40</height>
+							<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
+						</control>
+					</control>
 				</itemlayout>
-				
-				
-				
-				
 				<focusedlayout width="123" height="179">
 					<control type="group">	
 						<animation type="Focus" condition="Container(732).Row(2)" reversible="false">
@@ -169,7 +141,7 @@
 							<width>98</width>
 							<height>161</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture background="true" diffuse="EmptyCaseMask.png">$INFO[ListItem.Icon]</texture>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
 						</control>
 						<control type="group">
 							<visible>Container.Content(episodes) + !IsEmpty(ListItem.Title)</visible>
@@ -196,29 +168,36 @@
 								<label>[B]$INFO[ListItem.Episode][/B]</label>
 							</control>	
 						</control>
+						<control type="group">
+						<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
 						<control type="image">
 							<posx>61</posx>
 							<posy>9</posy>
 							<width>55</width>
 							<height>55</height>
-							<texture background="true" fallback="DefaultWatched.png">Banner/$LOCALIZE[16102].png</texture>
-							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)+!Skin.HasSetting(HideWatchedStat)+ !Skin.HasSetting(HideStatusBanners)+!IsEmpty(ListItem.Overlay)</visible>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
+							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideStatusBanners)</visible>
 						</control>
 						<control type="image">
 							<posx>63</posx>
 							<posy>8</posy>
 							<width>55</width>
 							<height>55</height>
-							<texture background="true" fallback="DefaultUnwatched.png">Banner/$LOCALIZE[16101].png</texture>
-							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)+!Skin.HasSetting(HideNewMediaStat)+ !Skin.HasSetting(HideStatusBanners)+!IsEmpty(ListItem.Overlay)</visible>
+							<fadetime>IconCrossfadeTime</fadetime>
+							<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
+							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IntegerGreaterThan(ListItem.PercentPlayed,2) +!Skin.HasSetting(HideNewMediaStat)+ !Skin.HasSetting(HideStatusBanners)</visible>
 						</control>
+					</control>
+					<control type="group">
+						<visible>!Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
 						<control type="image">
 							<posx>61</posx>
 							<posy>9</posy>
 							<width>55</width>
 							<height>55</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>!Skin.HasSetting(HideWatchedStat) + Skin.HasSetting(HideStatusBanners) + Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay)</visible>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 						</control>
 						<control type="image">
 							<posx>61</posx>
@@ -226,9 +205,10 @@
 							<width>55</width>
 							<height>55</height>
 							<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!Skin.HasSetting(HideWatchedStat) + Skin.HasSetting(HideStatusBanners) + Window.IsVisible(Videos) + !IsEmpty(ListItem.Overlay)</visible>
+							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 						</control>
-						<control type="image">
+					</control>
+					<control type="image">
 							<posx>91</posx>
 							<posy>145</posy>
 							<width>25</width>
@@ -255,10 +235,6 @@
 							<visible>!StringCompare(ListItem.Label,..)</visible>
 						</control>
 					</control>
-					
-					
-					
-					
 					<control type="group">
 						<visible>!Skin.HasSetting(View732HideInfo) + !StringCompare(ListItem.Label,..) + !ListItem.IsFolder + !IsEmpty(ListItem.Plot)</visible>
 						<control type="group">
@@ -302,9 +278,7 @@
 							<include>WallMovieInfoPanel</include>
 						</control>	
 					</control>
-					
 				</focusedlayout>
-				
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>90</posx>
@@ -353,7 +327,7 @@
 			<timeperimage>2000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>1250</fadetime>
-			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+			<visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(EnableXtraFanArt) + !Container.Content(Episodes)</visible>
 		</control>
 		<control type="image">
 			<posx>30</posx>
@@ -379,376 +353,4 @@
 			<visible>!StringCompare(ListItem.Label,..)</visible>
 		</control>
 	</include>
-
-
-
-<!--
-	<include name="FullWallView">
-		<control type="group">
-			<visible>Control.IsVisible(723)</visible>
-			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
-			<control type="panel" id="723">
-				<posx>46</posx>
-				<posy>90</posy>
-				<width>1200</width>
-				<height>560</height>
-				<onleft>2</onleft>
-				<onright>60</onright>
-				<onup>723</onup>
-				<ondown>723</ondown>
-				<viewtype label="$LOCALIZE[31987]">panel</viewtype>
-				<pagecontrol>60</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<preloaditems>200</preloaditems>
-
-				<visible>![Window.IsVisible(VideoLibrary) + Container.Content(TVShows)]</visible>
-				
-				<itemlayout height="186" width="150">
-					<control type="group">
-						<posx>0</posx>
-						<posy>0</posy>
-						<control type="group">
-							<visible>!Skin.HasSetting(View724HideCases) + !StringCompare(ListItem.Label,..) + !Container.Content(Episodes) + !Container.Content(genres)</visible>
-							<control type="image">
-								<posx>0</posx>
-								<posy>16</posy>
-								<width>144</width>
-								<height>166</height>
-								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true">$INFO[Listitem.Icon]</texture> 
-							</control>
-							<control type="image">
-								<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies) + ListItem.IsFolder + !Window.IsVisible(VideoPlaylist) + SubString(Container.Folderpath,videodb://,left)</visible>
-								<aspectratio>keep</aspectratio>
-								<posx>10</posx>
-								<posy>156</posy>
-								<width>33</width>
-								<height>20</height>
-								<fadetime>200</fadetime>
-								<texture background="true">movieset.png</texture>
-							</control>
-							<control type="image">
-								<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-								<posx>110</posx>
-								<posy>150</posy>
-								<width>33</width>
-								<height>30</height>
-								<height>30</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
--->								
-								<!--texture background="true">DarkCase/$INFO[ListItem.videoresolution]case.png</texture-->
-<!--								
-								<texture fallback="DarkCase/dv.png">$VAR[VideoListCase,DarkCase/,.png]</texture>
-								<visible>SubString(ListItem.Overlay,OverlayWatched) + !Skin.HasSetting(HideDarkThumbs)</visible>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true">cases/$INFO[ListItem.videoresolution]case.png</texture>
-								<visible>!SubString(ListItem.Overlay,OverlayWatched) | Skin.HasSetting(HideDarkThumbs)</visible>
-							</control>
-							<control type="group">
-								<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-								<control type="image">
-									<posx>92</posx>
-									<posy>19</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultWatched.png">status/$LOCALIZE[16102].png</texture>
-									<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-								</control>
-								<control type="image">
-									<posx>92</posx>
-									<posy>19</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultUnwatched.png">status/$LOCALIZE[16101].png</texture>
-									<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat)</visible>
-								</control>
-							</control>
-						</control>
-						<control type="group">
-							<visible>Skin.HasSetting(View724HideCases) | StringCompare(ListItem.Label,..) | Container.Content(Episodes) | Container.Content(genres)</visible>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>5</bordersize>
-								<bordertexture border="5">button-nofocus.png</bordertexture>
-								<aspectratio>scale</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true" >$INFO[Listitem.Icon]</texture> 
-								<visible>StringCompare(ListItem.Label,..) | !Container.Content(genres)</visible>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>5</bordersize>
-								<bordertexture border="5">button-nofocus.png</bordertexture>
-								<aspectratio>scale</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true" fallback="DefaultGenre.png">$INFO[ListItem.Label,MovieGenre/,.png]</texture>
-								<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
-							</control>
-							<control type="image">
-								<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies) + ListItem.IsFolder + !Window.IsVisible(VideoPlaylist) + SubString(Container.Folderpath,videodb://,left)</visible>
-								<aspectratio>keep</aspectratio>
-								<posx>4</posx>
-								<posy>158</posy>
-								<width>33</width>
-								<height>20</height>
-								<fadetime>200</fadetime>
-								<texture background="true">movieset.png</texture>
-							</control>
-							<control type="image">
-								<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-								<posx>110</posx>
-								<posy>148</posy>
-								<width>33</width>
-								<height>30</height>
-								<height>30</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>5</bordersize>
-								<bordertexture border="5">button-nofocus.png</bordertexture>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true">DarkWatched.png</texture> 
-								<visible>!Skin.HasSetting(HideDarkThumbs) + !StringCompare(ListItem.Label,..)</visible>
-								<visible>SubString(ListItem.Overlay,OverlayWatched) | Container.Content(genres)</visible>
-							</control>
-							<control type="group">
-								<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-								<control type="image">
-									<posx>95</posx>
-									<posy>5</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultWatched.png">status/$LOCALIZE[16102].png</texture>
-									<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-								</control>
-								<control type="image">
-									<posx>95</posx>
-									<posy>5</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultUnwatched.png">status/$LOCALIZE[16101].png</texture>
-									<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat)</visible>
-								</control>
-							</control>
-						</control>
-						<control type="image">
-							<posx>120</posx>
-							<posy>10</posy>
-							<width>30</width>
-							<height>30</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$INFO[ListItem.Overlay]</texture>
-							<visible>!Skin.HasSetting(UseStatusBanners)</visible>
-						</control>
-					</control>
-				</itemlayout>
-				<focusedlayout height="290" width="221">
-					<control type="group">	
-						<posx>0</posx>
-						<posy>0</posy>
-    					<animation effect="slide" end="30,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
-						<animation effect="slide" end="0,34" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
-						<animation effect="slide" end="0,-37" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
-						<animation effect="slide" end="-28,0" time="200" reversible="true" condition="Container.Column(7)">conditional</animation>
-						<animation reversible="false" effect="zoom"  end="-27,-33,300,425" time="100">focus</animation>
-						<animation reversible="false" effect="zoom" start="-27,-33,300,425" time="100">unfocus</animation>			
-						<control type="group">
-							<visible>!Skin.HasSetting(View724HideCases) + !StringCompare(ListItem.Label,..) + !Container.Content(Episodes) + !Container.Content(genres)</visible>
-							<control type="image">
-								<posx>0</posx>
-								<posy>16</posy>
-								<width>144</width>
-								<height>166</height>
-								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true">$INFO[Listitem.Icon]</texture> 
-							</control>
-							<control type="image">
-								<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies) + ListItem.IsFolder + !Window.IsVisible(VideoPlaylist) + SubString(Container.Folderpath,videodb://,left)</visible>
-								<aspectratio>keep</aspectratio>
-								<posx>10</posx>
-								<posy>156</posy>
-								<width>33</width>
-								<height>20</height>
-								<fadetime>200</fadetime>
-								<texture background="true">movieset.png</texture>
-							</control>
-							<control type="image">
-								<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-								<posx>110</posx>
-								<posy>150</posy>
-								<width>33</width>
-								<height>30</height>
-								<height>30</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>2</bordersize>
-								<aspectratio>stretch</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true">cases/$INFO[ListItem.videoresolution]case.png</texture>
-							</control>
-							<control type="group">
-								<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-								<control type="image">
-									<posx>92</posx>
-									<posy>19</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultWatched.png">status/$LOCALIZE[16102].png</texture>
-									<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-								</control>
-								<control type="image">
-									<posx>92</posx>
-									<posy>19</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultUnwatched.png">status/$LOCALIZE[16101].png</texture>
-									<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat)</visible>
-								</control>
-							</control>
-						</control>
-						<control type="group">
-							<visible>Skin.HasSetting(View724HideCases) | StringCompare(ListItem.Label,..) | Container.Content(Episodes) | Container.Content(genres)</visible>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>8</bordersize>
-								<bordertexture border="8">folder-focus.png</bordertexture>
-								<aspectratio>scale</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true" >$INFO[Listitem.Icon]</texture> 
-								<visible>StringCompare(ListItem.Label,..) | !Container.Content(genres)</visible>
-							</control>
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>150</width>
-								<height>186</height>
-								<bordersize>5</bordersize>
-								<bordertexture border="5">button-nofocus.png</bordertexture>
-								<aspectratio>scale</aspectratio>
-								<fadetime>200</fadetime>
-								<texture background="true" fallback="DefaultGenre.png">$INFO[ListItem.Label,MovieGenre/,.png]</texture>
-								<visible>!StringCompare(ListItem.Label,..) + Container.Content(genres)</visible>
-							</control>
-							<control type="image">
-								<visible>!stringcompare(ListItem.Label,..) + Container.Content(movies) + ListItem.IsFolder + !Window.IsVisible(VideoPlaylist) + SubString(Container.Folderpath,videodb://,left)</visible>
-								<aspectratio>keep</aspectratio>
-								<posx>4</posx>
-								<posy>158</posy>
-								<width>33</width>
-								<height>20</height>
-								<fadetime>200</fadetime>
-								<texture background="true">movieset.png</texture>
-							</control>
-							<control type="image">
-								<visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-								<posx>110</posx>
-								<posy>148</posy>
-								<width>33</width>
-								<height>30</height>
-								<height>30</height>
-								<fadetime>IconCrossfadeTime</fadetime>
-								<texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-							</control>
-							<control type="group">
-								<visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-								<control type="image">
-									<posx>92</posx>
-									<posy>8</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultWatched.png">status/$LOCALIZE[16102].png</texture>
-									<visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-								</control>
-								<control type="image">
-									<posx>92</posx>
-									<posy>8</posy>
-									<width>50</width>
-									<height>50</height>
-									<fadetime>IconCrossfadeTime</fadetime>
-									<texture background="true" fallback="DefaultUnwatched.png">status/$LOCALIZE[16101].png</texture>
-									<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat)</visible>
-								</control>
-							</control>
-						</control>
-						<control type="image">
-							<posx>120</posx>
-							<posy>10</posy>
-							<width>30</width>
-							<height>30</height>
-							<aspectratio>keep</aspectratio>
-							<texture>$INFO[ListItem.Overlay]</texture>
-							<visible>!Skin.HasSetting(UseStatusBanners)</visible>
-						</control>
-					</control>
-				</focusedlayout>
-			</control>
-			<control type="scrollbar" id="60">
-				<posx>1245</posx>
-				<posy>90</posy>
-				<width>25</width>
-				<height>560</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-				<onleft>723</onleft>
-				<onright>61</onright>
-				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
-				<visible>Control.IsVisible(723)</visible>
-			</control>
-		</control>
-	</include>
--->	
 </includes>

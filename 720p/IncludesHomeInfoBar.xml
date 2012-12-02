@@ -33,7 +33,7 @@
 				<texture border="32,0,0,0">RssFeed/Rss_Back.png</texture>
 			</control>
 			<control type="rss">
-				<description>RSS feed Verticle</description>
+				<description>RSS feed Vertical</description>
 				<posx>35</posx>
 				<posy>10</posy>
 				<height>35</height>
@@ -48,6 +48,8 @@
 				<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out" condition="Skin.HasSetting(HorizontalHomeScreen) + [!StringCompare(Container(9000).ListItem.Property(LibStats),None) | !IsEmpty(MusicPlayer.offset(1).Artist)]">conditional</animation>
 				<animation effect="slide" start="880,0" time="300" tween="quadratic" easing="out" condition="Skin.HasSetting(HorizontalHomeScreen) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + IsEmpty(MusicPlayer.offset(1).Artist)">conditional</animation>
 			</control>
+			
+			
 			<control type="group">
 				<description>Video Stats Display</description>
 				<posx>50</posx>
