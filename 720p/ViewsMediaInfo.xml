@@ -13,14 +13,14 @@
 				<posy>85</posy>
 				<width>340</width>
 				<height>561</height>
-				<onleft>2</onleft>
+				<onleft>9000</onleft>
 				<onright>60</onright>
 				<onup>515</onup>
 				<ondown>515</ondown>
 				<viewtype label="$LOCALIZE[544]">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="40" width="345">
 					<control type="image">
 						<posx>0</posx>
@@ -109,42 +109,28 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<control type="scrollbar" id="60">
-				<posx>415</posx>
-				<posy>78</posy>
-				<width>25</width>
-				<height>560</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
-				<onleft>515</onleft>
-				<onright>61</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-				<visible>Control.IsVisible(515)</visible>
-			</control>
 			<control type="group">
 				<visible>Control.IsVisible(515)</visible>
-				<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
-				<control type="label">
-					<posx>60</posx>
-					<posy>43</posy>
-					<width>1180</width>
-					<height>20</height>
-					<font>font10caps_title</font>
-					<textcolor>grey2</textcolor>
-					<scroll>true</scroll>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Tagline]</label>
-					<visible>!ListItem.IsFolder + Container.Content(Movies)</visible>
-				</control>	
+				<control type="scrollbar" id="60">
+					<posx>420</posx>
+					<posy>85</posy>
+					<width>25</width>
+					<height>560</height>
+					<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>515</onleft>
+					<onright>61</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+				<include>MainListLabel</include>
 			</control>		
 			<control type="group">
 				<posx>470</posx>
-				<posy>70</posy>
+				<posy>85</posy>
 				<visible>Control.IsVisible(515) + Container.Content(Movies)</visible>
 				<control type="image">
 					<posx>0</posx>
@@ -153,7 +139,7 @@
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Art(fanart)]</texture>
 				</control>
 				<control type="multiimage">
 					<posx>0</posx>
@@ -167,17 +153,14 @@
 					<fadetime>700</fadetime>
 					<visible>Skin.HasSetting(EnableXtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
 				</control>
-				<control type="label">
+				<control type="image">
+					<description>Rating value</description>
 					<posx>10</posx>
-					<posy>395</posy>
-					<width>540</width>
-					<height>30</height>
-					<font>font24_title</font>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<posy>392</posy>
+					<width>150</width>
+					<height>32</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
@@ -193,18 +176,18 @@
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
-					<posx>0</posx>
+					<posx>-15</posx>
 					<posy>540</posy>
 					<width>540</width>
-					<align>center</align>
-					<itemgap>2</itemgap>
+					<align>left</align>
+					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
-					<include>VideoCodecFlaggingConditions</include>
-					<include>AudioCodecFlaggingConditions</include>
-					<include>AspectCodecFlaggingConditions</include>
-					<!--include>VideoTypeHackFlaggingConditions</include-->
-					<include>VideoMPAAFlaggingConditions</include>
 					<include>MediaStudioFlagging</include>
+					<include>VideoTypeHackFlaggingConditions</include>
+					<include>VideoCodecFlaggingConditions</include>
+					<include>AudioChannelsFlaggingConditions</include>
+					<include>AudioCodecFlaggingConditions</include>
+					<!--include>AspectCodecFlaggingConditions</include-->
 				</control>
 				<control type="image">
 					<posx>560</posx>
@@ -229,7 +212,7 @@
 					<height>420</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Property(fanart_image)]</texture>
+					<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Art(fanart)]</texture>
 				</control>
 				<control type="label">
 					<posx>10</posx>
@@ -403,12 +386,12 @@
 					<align>center</align>
 					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
+					<include>MediaStudioFlagging</include>
+					<include>VideoTypeHackFlaggingConditions</include>
 					<include>VideoCodecFlaggingConditions</include>
+					<include>AudioChannelsFlaggingConditions</include>
 					<include>AudioCodecFlaggingConditions</include>
 					<include>AspectCodecFlaggingConditions</include>
-					<!--include>VideoTypeHackFlaggingConditions</include-->
-					<include>VideoMPAAFlaggingConditions</include>
-					<include>MediaStudioFlagging</include>
 				</control>
 				<control type="image">
 					<posx>420</posx>

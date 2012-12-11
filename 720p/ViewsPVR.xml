@@ -683,7 +683,7 @@
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
+						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/,]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="760">
@@ -749,7 +749,7 @@
 						<posy>14</posy>
 						<width>20</width>
 						<height>16</height>
-						<texture>$INFO[ListItem.Overlay]</texture>
+						<texture diffuse="poster-diffuse.png">$INFO[ListItem.Overlay,MediaStatus/,]</texture>
 					</control>
 				</focusedlayout>
 			</control>
@@ -824,7 +824,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$INFO[Container(13).ListItem.Plot]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(StopAutoScroll)</autoscroll>
 				</control>
 			</control>
 		</control>

@@ -48,18 +48,17 @@
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<control type="image">
-				<posx>0</posx>
+				<posx>-150</posx>
 				<posy>-150</posy>
-				<width>1280</width>
+				<width>1580</width>
 				<height>256</height>
 				<texture flipy="true">HomeNowPlayingBack.png</texture>
 			</control>
 			<include>Clock</include>
-			<include>WeatherInfo</include>
 			<control type="image">
-				<posx>0</posx>
+				<posx>-150</posx>
 				<posy>250r</posy>
-				<width>1280</width>
+				<width>1580</width>
 				<height>250</height>
 				<texture>HomeNowPlayingBack.png</texture>
 			</control>

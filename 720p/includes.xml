@@ -27,7 +27,12 @@
 	<include file="ViewsLowlist.xml" />
 	<include file="ViewsMediaInfo.xml" />
 	<include file="ViewsHalfWall.xml" />
+	<include file="ViewsCoverFlow.xml" />
+	<include file="ViewsLogoVertical.xml" />
+	<!--include file="ViewsLogoHorizontal.xml" /-->
+	<include file="ViewsWideList.xml" />
 	<include file="IncludesCodecFlagging.xml" />
+	<include file="IncludesMPAAFlagging.xml" />
 	<include file="IncludesListItemCount.xml" />
 	<include file="IncludesCDWall.xml" />
 	<include file="IncludesBackgroundEffect.xml" />
@@ -63,8 +68,6 @@
 	<include name="TransparentEffect"> 
 		<colordiffuse>$INFO[Skin.String(MediaPanelTrans)]</colordiffuse>
 	</include>
-	
-	
 	<include name="ButtonCommonValues">
 		<height>40</height>
 		<width>250</width>
@@ -78,16 +81,66 @@
 	</include>
 	<include name="MainListLabel">
 		<control type="label">
-			<posx>0</posx>
+			<posx>190</posx>
 			<posy>5</posy>
-			<width>1280</width>
+			<width>900</width>
 			<height>35</height>
 			<font>font30_title</font>
 			<textcolor>MainLabel</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
 			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
 			<label>[UPPERCASE]$VAR[Mainlabel][/UPPERCASE]</label>
+		</control>
+		<control type="label">
+			<posx>190</posx>
+			<posy>50</posy>
+			<width>900</width>
+			<height>20</height>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<scroll>false</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>$INFO[ListItem.Tagline]</label>
+			<visible>!IsEmpty(ListItem.Tagline) + Container.Content(Movies)</visible>
+		</control>
+		<control type="group">			
+			<include>Window_OpenClose_Animation</include>
+			<visible>!StringCompare(ListItem.Label,..) + [Container.Content(Seasons) | Container.Content(TVShows)]</visible>
+			<control type="label">
+				<description>Episodes Value</description>
+				<posx>190</posx>
+				<posy>45</posy>
+				<width>900</width>
+				<height>20</height>
+				<label>[B][COLOR=blue]$LOCALIZE[20360]:[/COLOR][/B] $INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13_title</font>
+				<scroll>true</scroll>
+				<visible>IntegerGreaterThan(ListItem.Property(TotalEpisodes),0)</visible>
+			</control>
+		</control>
+		<control type="group">			
+			<include>Window_OpenClose_Animation</include>
+			<visible>Container.Content(Episodes)</visible>		
+			<control type="label">
+				<description>First Aired txt</description>
+				<posx>190</posx>
+				<posy>50</posy>
+				<width>900</width>
+				<height>20</height>
+				<label>[B][COLOR=blue]$LOCALIZE[20416]:[/COLOR][/B][COLOR=grey] $INFO[listitem.premiered][/COLOR]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13_title</font>
+				<scroll>true</scroll>
+				<visible>!IsEmpty(listitem.premiered)</visible>
+			</control>
 		</control>
 	</include>
 	<include name="ViewMovieDiskDefault">
@@ -106,7 +159,7 @@
 		<animation effect="slide" start="0,0" end="-300,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001)">WindowClose</animation>
 		<animation effect="slide" start="0,0" end="-50,0" time="300" tween="quadratic" easing="out" condition="![ControlGroup(9000).HasFocus | Control.HasFocus(9001)]">WindowClose</animation>
 		<animation effect="slide" start="-50,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
-		<control type="button" id="8999">
+		<control type="button" id="8998">
 			<description>Fake button for mouse control</description>
 			<posx>0</posx>
 			<posy>0</posy>
@@ -843,17 +896,14 @@
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomPanelType.xml) | Window.IsVisible(CustomSubMenuAddon.xml) | Window.IsVisible(CustomMenuAddon.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
 		</control>
-	</include>
-	<include name="WeatherInfo">
 		<control type="group">
 			<posx>20</posx>
 			<posy>0</posy>
 			<visible>!IsEmpty(Weather.Conditions) + Weather.IsFetched + !Skin.HasSetting(HideWeatherInfo)</visible>
-			<visible>!Window.IsVisible(videoscan)</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
 			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<description>Weather image</description>
-				<animation effect="slide" start="0,0" end="-400,0" time="100" condition="Window.IsVisible(musicscan) | Window.IsVisible(videoscan)">conditional</animation>
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>60</width>
@@ -873,6 +923,21 @@
 				<textcolor>HomeInfoOne</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<label>$INFO[Window(Weather).Property(Location)]</label>
+				<visible>Window.IsVisible(home)</visible>
+			</control>
+			<control type="label">
+				<description>Location label</description>
+				<posx>65</posx>
+				<posy>5</posy>
+				<width>295</width>
+				<height>15</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font10</font>
+				<textcolor>HomeInfoOne</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$LOCALIZE[31300]</label>
+				<visible>!Window.IsVisible(home)</visible>
 			</control>
 			<control type="grouplist">
 				<posx>65</posx>
@@ -912,9 +977,10 @@
 					<label> $INFO[Window(Weather).Property(Current.Condition)]</label>
 					<textcolor>HomeInfoThree</textcolor>
 					<shadowcolor>black</shadowcolor>
+					<visible>Window.IsVisible(home)</visible>
 				</control>
 			</control>
-		</control>
+		</control>		
 	</include>
 	<include name="HomeHorizontalOverlay">
 		<control type="image">
@@ -1027,7 +1093,6 @@
 		<width>860</width>
 		<height>290</height>
 	</include>
-	
 	<include name="HomePanelBackground">
 			<include>VisibleFadeEffect</include>
 			<posx>215</posx>

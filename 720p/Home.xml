@@ -61,7 +61,6 @@
 			<include>HomeMainMenuInitialSetup</include>
 			<include>HomeVerticalMainMenu</include>
 			<include>HomeVerticalMenuBlade</include>
-			<include>WeatherInfo</include>
 			<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>	
 		<control type="group">
@@ -81,7 +80,6 @@
 				<include>HomeHorizontalMainMenu</include>
 				<include>HomeHorizontalSideFade</include>
 			</control>
-			<include>WeatherInfo</include>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>
 		<include>Clock</include>

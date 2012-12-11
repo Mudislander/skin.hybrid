@@ -2,16 +2,16 @@
 	<include name="FullWallView">
 		<control type="group">
 			<visible>Control.IsVisible(732)</visible>
-			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
+			<include>MainListLabel</include>
 			<control type="panel" id="732">
 				<posx>40</posx>
 				<posy>85</posy>
 				<width>1230</width>
 				<height>545</height>
-				<onleft>2</onleft>
+				<onleft>9000</onleft>
 				<onright>732</onright>
 				<onup>732</onup>
-				<ondown>732</ondown>
+				<ondown>60</ondown>
 				<viewtype label="$LOCALIZE[31987]">icon</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
@@ -128,12 +128,17 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="123" height="179">
-					<control type="group">	
+					<control type="group">
+						<posx>0</posx>
+						<posy>0</posy>
+						<animation effect="slide" end="0,45" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
+						<animation effect="slide" end="30,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
+						<animation effect="slide" end="-30,0" time="200" reversible="true" condition="Container.Column(9)">conditional</animation>
 						<animation type="Focus" condition="Container(732).Row(2)" reversible="false">
-							<effect type="zoom" center="62,135" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false"/>
+							<effect type="zoom" center="62,135" start="100" end="160" time="200" easing="out" tween="cubic" reversible="false"/>
 						</animation>
 						<animation type="Focus" condition="Container(732).Row(1)|Container(732).Row(0)" reversible="false">
-							<effect type="zoom" center="62,90" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false"/>
+							<effect type="zoom" center="62,90" start="100" end="160" time="200" easing="out" tween="cubic" reversible="false"/>
 						</animation>
 						<control type="image">
 							<posx>18</posx>
@@ -313,7 +318,7 @@
 			<height>220</height>
 			<aspectratio>stretch</aspectratio>
 			<fadetime>IconCrossfadeTime</fadetime>
-			<texture background="true" fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Property(fanart_image)]</texture>
+			<texture background="true" fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
 			<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
 		</control>
 		<control type="multiimage">
@@ -345,7 +350,7 @@
 			<posy>245</posy>
 			<width>430</width>
 			<height>260</height>
-			<font>font13caps</font>
+			<font>font13_title</font>
 			<align>justify</align>
 			<textcolor>white</textcolor>
 			<label>$VAR[ShowMediaPlot]</label>

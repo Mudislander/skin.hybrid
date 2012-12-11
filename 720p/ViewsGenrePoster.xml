@@ -3,7 +3,7 @@
 		<control type="grouplist">
 			<visible>Control.IsVisible(501)</visible>
 			<posx>0</posx>
-			<posy>140</posy>
+			<posy>155</posy>
 			<width>1280</width>
 			<height>460</height>
 			<onup>9000</onup>
@@ -11,7 +11,7 @@
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>VisibleFadeEffect</include>
 			<control type="fixedlist" id="501">
-				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(MusicVideos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<posx>-160</posx>
 				<posy>0</posy>
@@ -19,7 +19,7 @@
 				<height>390</height>
 				<onleft>501</onleft>
 				<onright>501</onright>
-				<onup>2</onup>
+				<onup>8998</onup>
 				<ondown>60</ondown>
 				<viewtype label="31635">bigwrap</viewtype>
 				<pagecontrol>60</pagecontrol>
@@ -308,7 +308,7 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>90</posx>
-				<posy>-10</posy>
+				<posy>-25</posy>
 				<width>1100</width>
 				<height>25</height>
 				<texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
@@ -338,34 +338,29 @@
 				<height>310</height>
 				<texture flipx="true">SideFade.png</texture>
 			</control>
-			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>	
-			<control type="label">
-				<posx>15</posx>
-				<posy>500</posy>
-				<width>1250</width>
-				<height>35</height>
-				<font>font13_title</font>
-				<textcolor>grey2</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Tagline]</label>
-				<visible>Container.Content(Movies)</visible>
+			<include>MainListLabel</include>
+			<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<posx>760</posx>
+				<posy>470</posy>
+				<width>510</width>
+				<align>right</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>MediaStudioFlagging</include>
+				<include>VideoTypeHackFlaggingConditions</include>
+				<include>VideoCodecFlaggingConditions</include>
+				<include>AudioChannelsFlaggingConditions</include>
+				<include>AudioCodecFlaggingConditions</include>
 			</control>
-			<control type="label">
-				<posx>15</posx>
-				<posy>500</posy>
-				<width>1250</width>
-				<height>35</height>
-				<font>font13_title</font>
-				<textcolor>grey2</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
-				<visible>!StringCompare(ListItem.Label,..) + [Container.Content(Seasons) | Container.Content(TVShows)]</visible>
+			<control type="image">
+				<description>Rating value</description>
+				<posx>50</posx>
+				<posy>480</posy>
+				<width>150</width>
+				<height>32</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>

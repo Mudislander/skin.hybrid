@@ -8,33 +8,20 @@
  				<aspectratio>stretch</aspectratio>
 				<texture>black-back.png</texture>
 			</control>
-			<include condition="!Skin.HasSetting(HideMainListLabel)">MainListLabel</include>
-			<control type="label">
-				<posx>60</posx>
-				<posy>43</posy>
-				<width>1180</width>
-				<height>20</height>
-				<font>font10caps_title</font>
-				<textcolor>grey2</textcolor>
-				<scroll>true</scroll>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Tagline]</label>
-				<visible>!ListItem.IsFolder + Container.Content(Movies)</visible>
-			</control>
+			<include>MainListLabel</include>
 			<control type="image">
 				<posx>50</posx>
-				<posy>70</posy>
+				<posy>85</posy>
 				<width>523</width>
 				<height>253</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
-				<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Property(Fanart_Image)]</texture>
+				<texture diffuse="Fanart_Diffuse.png" background="true" fallback="Fanart_Fallback_Small.jpg" >$INFO[ListItem.Art(fanart)]</texture>
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="multiimage">
 				<posx>50</posx>
-				<posy>70</posy>
+				<posy>85</posy>
 				<width>523</width>
 				<height>253</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
@@ -50,14 +37,13 @@
 				<posy>330</posy>
 				<width>523</width>
 				<align>center</align>
-				<itemgap>1</itemgap>
+				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
-				<include>VideoCodecFlaggingConditions</include>
-				<include>AudioCodecFlaggingConditions</include>
-				<include>AspectCodecFlaggingConditions</include>
-				<!--include>VideoTypeHackFlaggingConditions</include-->
-				<include>VideoMPAAFlaggingConditions</include>
 				<include>MediaStudioFlagging</include>
+				<include>VideoTypeHackFlaggingConditions</include>
+				<include>VideoCodecFlaggingConditions</include>
+				<include>AudioChannelsFlaggingConditions</include>
+				<include>AudioCodecFlaggingConditions</include>
 			</control>				
 			<control type="textbox">
 				<description>Description Value for Video</description>
@@ -84,7 +70,7 @@
 			</control>
 			<control type="scrollbar" id="60">
 				<posx>1245</posx>
-				<posy>80</posy>
+				<posy>90</posy>
 				<width>25</width>
 				<height>550</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -99,10 +85,10 @@
 			</control>				
 			<control type="panel" id="514">
 				<posx>620</posx>
-				<posy>70</posy>
+				<posy>80</posy>
 				<width>750</width>
 				<height>582</height>
-				<onleft>4</onleft>
+				<onleft>9000</onleft>
 				<onright>60</onright>
 				<onup>514</onup>
 				<ondown>514</ondown>
@@ -110,7 +96,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>200</preloaditems>
-				<visible>Container.Content(Movies)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos)</visible>
 				<itemlayout height="194" width="154">
 					<control type="image">
 						<posx>20</posx>
@@ -152,6 +138,15 @@
 						</control>
 					</control>
 					<control type="image">
+						<description>Rating value</description>
+						<posx>25</posx>
+						<posy>6</posy>
+						<width>75</width>
+						<height>16</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
+					</control>
+					<control type="image">
 						<posx>115</posx>
 						<posy>155</posy>
 						<width>30</width>
@@ -184,8 +179,8 @@
 						<posy>0</posy>
     					<animation effect="slide" end="30,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
     					<animation effect="slide" end="0,34" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
-    					<animation effect="slide" end="0,-37" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
-    					<animation effect="slide" end="-28,0" time="200" reversible="true" condition="Container.Column(3)">conditional</animation>
+    					<animation effect="slide" end="0,-50" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
+    					<animation effect="slide" end="-22,0" time="200" reversible="true" condition="Container.Column(3)">conditional</animation>
 						<animation reversible="false" effect="zoom"  end="-27,-33,300,425" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" start="-27,-33,300,425" time="0">unfocus</animation>			
 					<control type="image">
@@ -216,6 +211,15 @@
 							<texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
 							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
 						</control>
+					</control>
+					<control type="image">
+						<description>Rating value</description>
+						<posx>25</posx>
+						<posy>6</posy>
+						<width>75</width>
+						<height>16</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 					</control>
 					<control type="image">
 						<posx>115</posx>
