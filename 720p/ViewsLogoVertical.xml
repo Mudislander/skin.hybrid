@@ -275,35 +275,32 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Director,[B][COLOR=blue]$LOCALIZE[20339]: [/COLOR][/B]]</label>
 					</control>
+					<control type="label">
+						<posx>320</posx>
+						<posy>40</posy>
+						<width>400</width>
+						<height>30</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scroll>true</scroll>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
+					</control>
 					<control type="textbox">
 						<description>Description Value The Movie</description>
 						<posx>320</posx>
-						<posy>40</posy>
+						<posy>70</posy>
 						<width>480</width>
-						<height>378</height>
+						<height>335</height>
 						<font>font13</font>
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$INFO[ListItem.Plot,[B][COLOR=blue]$LOCALIZE[207]: [/COLOR][/B]]</label>
 						<autoscroll time="4000" delay="5000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 					</control>
-					<!--
-					<control type="grouplist">
-						<description>Media Codec Flagging Images</description>
-						<posx>0</posx>
-						<posy>440</posy>
-						<width>800</width>
-						<align>right</align>
-						<itemgap>5</itemgap>
-						<orientation>horizontal</orientation>
-						<include>MediaStudioFlagging</include>
-						<include>VideoMPAAFlaggingConditions</include>
-						<include>VideoCodecFlaggingConditions</include>
-						<include>AudioCodecFlaggingConditions</include>
-						<include>AspectCodecFlaggingConditions</include>
-						<include>VideoTypeHackFlaggingConditions</include>
-					</control>
-					-->
 					<control type="grouplist">
 						<description>Media Codec Flagging Images</description>
 						<posx>250</posx>
@@ -319,7 +316,6 @@
 						<include>AudioCodecFlaggingConditions</include>
 						<include>AspectCodecFlaggingConditions</include>
 					</control>					
-
 				</control>	
 				<control type="image">
 					<posx>0</posx>
@@ -421,17 +417,6 @@
 						<label>$INFO[ListItem.Plot,[B][COLOR=blue]$LOCALIZE[207]: [/COLOR][/B]]</label>
 						<autoscroll time="4000" delay="5000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 					</control>
-					<!--control type="grouplist">
-						<description>Media Codec Flagging Images</description>
-						<posx>0</posx>
-						<posy>440</posy>
-						<width>800</width>
-						<align>right</align>
-						<itemgap>5</itemgap>
-						<orientation>horizontal</orientation>
-						<include>MediaStudioFlagging</include>
-						<include>VideoMPAAFlaggingConditions</include>
-					</control-->	
 				</control>	
 				<control type="image">
 					<posx>0</posx>
@@ -549,23 +534,6 @@
 						<label>$INFO[ListItem.Plot,[B][COLOR=blue]$LOCALIZE[207]: [/COLOR][/B]]</label>
 						<autoscroll time="4000" delay="5000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 					</control>
-					<!--
-					<control type="grouplist">
-						<description>Media Codec Flagging Images</description>
-						<posx>0</posx>
-						<posy>440</posy>
-						<width>800</width>
-						<align>right</align>
-						<itemgap>5</itemgap>
-						<orientation>horizontal</orientation>
-						<include>VideoCodecFlaggingConditions</include>
-						<include>AudioCodecFlaggingConditions</include>
-						<include>AspectCodecFlaggingConditions</include>
-						<include>VideoTypeHackFlaggingConditions</include>
-						<include>MediaStudioFlagging</include>
-						<include>VideoMPAAFlaggingConditions</include>
-					</control>
-					-->
 					<control type="grouplist">
 						<description>Media Codec Flagging Images</description>
 						<posx>260</posx>

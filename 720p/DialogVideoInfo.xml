@@ -107,6 +107,8 @@
 						</control>
 					</control>
 				</control>
+				
+				<!--
 				<control type="group">
 					<posy>90</posy>
 					<posx>387</posx>
@@ -150,6 +152,9 @@
 						<visible>Player.HasVideo</visible>
 					</control>
 				</control>
+				-->
+				
+				
 				<control type="group">
 					<visible>[!container.content(tvshows) + !container.content(episodes) + !container.content(musicvideos)] + ![Control.HasFocus(12) | Control.HasFocus(15)]</visible>
 					<posy>90</posy>
@@ -1239,15 +1244,16 @@
 						<description>Play Trailer</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>20410</label>
-						<visible>!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(WindowedTrailer)</visible>
+						<!--visible>!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(WindowedTrailer)</visible-->
+						<visible>!IsEmpty(ListItem.Trailer)</visible>
 					</control>
-					<control type="button" id="15">
+					<!--control type="button" id="15">
 						<description>Play Trailer Windowed</description>
 						<include>ButtonInfoDialogsCommonValues</include>
 						<label>20410</label>
 						<onclick>PlayMedia($INFO[ListItem.Trailer],1)</onclick>
 						<visible>!IsEmpty(ListItem.Trailer) + Skin.HasSetting(WindowedTrailer)</visible>
-					</control>
+					</control-->
 					<control type="button" id="100">
 						<description>Get Artwork</description>
 						<include>ButtonInfoDialogsCommonValues</include>

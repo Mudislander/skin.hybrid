@@ -12,7 +12,6 @@
 			<include>CommonRootView</include> 		<!-- view id = 50 -->
 			<include>ThumbnailView</include> 		<!-- view id = 500 -->
 			<include>GenrePosterView</include> 		<!-- view id = 501 -->			
-			<!--include>WideIconView</include--> 		<!-- view id = 505 -->
 			<include>PosterFanArtView</include> 	<!-- view id = 508 -->			
 			<include>HalfWallView</include> 		<!-- view id = 514 -->
 			<include>MediaListView</include> 		<!-- view id = 515 -->
@@ -26,22 +25,7 @@
 			<include>LogoVertical</include> 		<!-- view id = 730 -->
 			<!--include>LogoHorizontal</include--> 		<!-- view id = 731 -->
 			<include>FullWallView</include> 		<!-- view id = 732 -->
-			
-			
-			
-			
-			
-			
-			<!--include>MediaListView2</include--> <!-- view id = 504 -->
-			<!--include>MusicVideoInfoListView</include--> <!-- view id = 511 -->
-			<!--include>MediaListView4</include--> <!-- view id = 515 -->
-			<!--include>MediaListView5</include--> <!-- view id = 516 -->
-			
-			
-			
-			
-			<!--include>WideList2</include--> 			<!-- view id = 529 -->
-	</control>
+		</control>
 		<include>MPAARatings</include>
 		<include>CommonPageCount</include>
 		<include>MediaViewReturnButtons</include>
@@ -55,7 +39,7 @@
 				<posy>110</posy>
 				<width>250</width>
 				<height>600</height>
-				<onleft>61</onleft>
+				<onleft>62</onleft>
 				<onright>50</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
@@ -160,69 +144,15 @@
 					<selected>Skin.HasSetting(View732HideInfo)</selected>
 					<visible>Control.IsVisible(732)</visible>
 				</control>
-				
-				
-				
-				
-				
-				<!--
-				<control type="radiobutton" id="92">
-					<description>Show Genre Toggle</description>
+				<control type="radiobutton" id="99">
+					<description>Hide Genre Icons in 501</description>
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31977]</label>
-					<onclick>Skin.ToggleSetting(ViewExtraFanArt)</onclick>
-					<selected>Skin.HasSetting(ViewExtraFanArt)</selected>
-					<visible>[Control.IsVisible(504) | Control.IsVisible(57)] + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
+					<label>$LOCALIZE[31699]</label>
+					<onclick>Skin.ToggleSetting(Hide501GenreFlags)</onclick>
+					<selected>Skin.HasSetting(Hide501GenreFlags)</selected>
+					<visible>Control.IsVisible(501)</visible>
 				</control>
-				-->
-				
-				<!--
-				<control type="radiobutton" id="94">
-					<description>Show Logos Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31975]</label>
-					<onclick>Skin.ToggleSetting(View500ShowClearArt)</onclick>
-					<selected>Skin.HasSetting(View500ShowClearArt)</selected>
-					<visible>Control.IsVisible(500) + Container.Content(TVShows)</visible>
-				</control>
-				<control type="radiobutton" id="95">
-					<description>Show Logos Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31974]</label>
-					<onclick>Skin.ToggleSetting(View503ShowLogos)</onclick>
-					<selected>Skin.HasSetting(View503ShowLogos)</selected>
-					<visible>Control.IsVisible(503) + Container.Content(TVShows)</visible>
-				</control>
-				-->
-				
-				<!--
-				<control type="radiobutton" id="97">
-					<description>Show Cases Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31972]</label>
-					<onclick>Skin.ToggleSetting(View724HideCases)</onclick>
-					<selected>Skin.HasSetting(View724HideCases)</selected>
-					<visible>[Control.IsVisible(723) + !Container.Content(Episodes)] | Control.IsVisible(501) | Control.IsVisible(722) | [Control.IsVisible(724) + Container.Content(Movies)] | [Control.IsVisible(725) + Container.Content(Movies)]</visible>
-				</control>
-				
-				-->
-				
-				<!--
-				<control type="radiobutton" id="102">
-					<description>Show Logos Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31974]</label>
-					<onclick>Skin.ToggleSetting(View516ShowLogos)</onclick>
-					<selected>Skin.HasSetting(View516ShowLogos)</selected>
-					<visible>Control.IsVisible(516) + Container.Content(TVShows)</visible>
-				</control>
-				-->
-				
 				<control type="label" id="201">
 					<width>250</width>
 					<height>35</height>

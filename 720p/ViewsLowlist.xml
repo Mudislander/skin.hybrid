@@ -235,9 +235,23 @@
 					<font>font13</font>
 					<align>justify</align>
 					<textcolor>white</textcolor>
-					<label>[COLOR blue][B]$LOCALIZE[203]: [/B][/COLOR]$VAR[ShowMediaPlot]</label>
+					<label>$VAR[ShowMediaPlot,[B][COLOR=blue]$LOCALIZE[207]: [/COLOR][/B]]</label>
 					<autoscroll time="3600" delay="6000" repeat="6000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 					<visible>!StringCompare(ListItem.Label,..)</visible>
+				</control>
+				<control type="label">
+					<posx>1270</posx>
+					<posy>615</posy>
+					<width>430</width>
+					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<aligny>top</aligny>
+					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+					<visible>!IsEmpty(ListItem.Duration)</visible>
 				</control>
 			</control>
 		</control>

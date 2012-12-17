@@ -1,5 +1,5 @@
 <includes>	
-<include name="MediaListView">
+	<include name="MediaListView">
 		<control type="group">
 			<visible>Control.IsVisible(515)</visible>
 			<include>VisibleFadeEffect</include>
@@ -162,6 +162,20 @@
 					<aspectratio align="left">keep</aspectratio>
 					<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 				</control>
+				<control type="label">
+					<posx>550</posx>
+					<posy>394</posy>
+					<width>400</width>
+					<height>30</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<aligny>top</aligny>
+					<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+					<visible>!IsEmpty(ListItem.Duration)</visible>
+				</control>
 				<control type="textbox">
 					<description>Description Value for Video</description>
 					<posx>10</posx>
@@ -187,7 +201,6 @@
 					<include>VideoCodecFlaggingConditions</include>
 					<include>AudioChannelsFlaggingConditions</include>
 					<include>AudioCodecFlaggingConditions</include>
-					<!--include>AspectCodecFlaggingConditions</include-->
 				</control>
 				<control type="image">
 					<posx>560</posx>

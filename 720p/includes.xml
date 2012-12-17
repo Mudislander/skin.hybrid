@@ -13,9 +13,8 @@
 	<include file="IncludesHomePanelContent.xml" />
 	<include file="IncludesHomeWeather.xml" />
 	<include file="IncludesGenreFlagging.xml" />
-	<include file="ViewsVideoLibrary.xml" />
-	<include file="ViewsMusicLibrary.xml" />
 	<include file="ViewsFileMode.xml" />
+	<include file="ViewsThumbnails.xml" />
 	<include file="ViewsPictures.xml" />
 	<include file="ViewsAddonBrowser.xml" />
 	<include file="ViewsLiveTV.xml" />
@@ -31,6 +30,9 @@
 	<include file="ViewsLogoVertical.xml" />
 	<!--include file="ViewsLogoHorizontal.xml" /-->
 	<include file="ViewsWideList.xml" />
+	<include file="ViewsMusicInfo.xml" />
+	<include file="ViewsAlbumWrap.xml" />
+	<include file="ViewsArtistInfo.xml" />
 	<include file="IncludesCodecFlagging.xml" />
 	<include file="IncludesMPAAFlagging.xml" />
 	<include file="IncludesListItemCount.xml" />
@@ -520,61 +522,103 @@
 	</include>
 	<include name="MediaViewReturnButtons">
 		<control type="group">
-			<posx>120r</posx>
-			<posy>55r</posy>
+			<posx>145r</posx>
+			<posy>50r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<visible>Container.Content(Movies) + !IsEmpty(ListItem.Trailer)</visible>
+			<visible>!Control.IsVisible(500) + !Control.IsVisible(514) + !Control.IsVisible(529) + !Control.IsVisible(732)</visible>
 			<control type="button" id="61">
+				<description>Trailer button</description>
+				<posx>145r</posx>
+				<posy>50r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>PlayMedia(&quot;$INFO[ListItem.Trailer]&quot;)</onclick>
+				<texturefocus border="5">floortrailerFO.png</texturefocus>
+				<texturenofocus border="5">floortrailerNF.png</texturenofocus>
+				<onleft>50</onleft>
+				<onright>62</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+			</control>
+			<control type="button" id="62">
 				<description>Back push button</description>
-				<posx>120r</posx>
-				<posy>55r</posy>
+				<posx>100r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>50</onleft>
-				<onright>62</onright>
+				<texturefocus border="5">floorbackFO.png</texturefocus>
+				<texturenofocus border="5">floorbackNF.png</texturenofocus>
+				<onleft>61</onleft>
+				<onright>63</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
-			<control type="image">
-				<description>Back Icon</description>
-				<posx>115r</posx>
-				<posy>50r</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_back.png</texture>
-			</control>
-			<control type="button" id="62">
+			<control type="button" id="63">
 				<description>Home push button</description>
-				<posx>65r</posx>
-				<posy>55r</posy>
+				<posx>55r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>61</onleft>
+				<texturefocus border="5">floorhomeFO.png</texturefocus>
+				<texturenofocus border="5">floorhomeNF.png</texturenofocus>
+				<onleft>62</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
-			<control type="image">
-				<description>Home Icon</description>
-				<posx>60r</posx>
+		</control>	
+		<control type="group">
+			<posx>145r</posx>
+			<posy>50r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<visible>!Container.Content(Movies) | IsEmpty(ListItem.Trailer) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(529) | Control.IsVisible(732)</visible>
+			<control type="button" id="61">
+				<description>Back push button</description>
+				<posx>100r</posx>
 				<posy>50r</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_home.png</texture>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>back</onclick>
+				<texturefocus border="5">floorbackFO.png</texturefocus>
+				<texturenofocus border="5">floorbackNF.png</texturenofocus>
+				<onleft>50</onleft>
+				<onright>62</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+			</control>
+			<control type="button" id="62">
+				<description>Home push button</description>
+				<posx>55r</posx>
+				<posy>50r</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<aligny>-</aligny>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">floorhomeFO.png</texturefocus>
+				<texturenofocus border="5">floorhomeNF.png</texturenofocus>
+				<onleft>61</onleft>
+				<onright>50</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
 			</control>
 		</control>
 	</include>	

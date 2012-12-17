@@ -1,8 +1,21 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
-		<include>CommonBackground</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include> 
+			<texture background="true">special://skin/backgrounds/homescreen/settings.jpg</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!Skin.HasSetting(InitialSetUpRun)</visible>
+		</control>
+		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
 		<include>MediaContentBackground</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+ 			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -14,153 +27,139 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<posx>5</posx>
+			<control type="label">
+				<posx>190</posx>
 				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
+				<width>900</width>
+				<height>35</height>
+				<font>font30_title</font>
+				<textcolor>MainLabel</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<include>Window_OpenClose_Animation</include>
+				<label>[UPPERCASE]$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label][/UPPERCASE]</label>
 			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>SkinLogo/Hybrid_Logo.png</texture>
+			<control type="label">
+				<posx>190</posx>
+				<posy>50</posy>
+				<width>900</width>
+				<height>20</height>
+				<font>font12_title</font>
+				<textcolor>grey2</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+				<scroll>false</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<include>Window_OpenClose_Animation</include>
+				<label>$INFO[Container(9000).ListItem.Label] $INFO[Container(9000).ListItem.Label2]</label>
 			</control>
 			<control type="button" id="61">
 				<description>Back push button</description>
-				<posx>120r</posx>
-				<posy>55r</posy>
+				<posx>100r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>back</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<texturefocus border="5">floorbackFO.png</texturefocus>
+				<texturenofocus border="5">floorbackNF.png</texturenofocus>
 				<onleft>9000</onleft>
 				<onright>62</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
-			<control type="image">
-				<description>Back Icon</description>
-				<posx>115r</posx>
-				<posy>50r</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_back.png</texture>
-			</control>
 			<control type="button" id="62">
 				<description>Home push button</description>
-				<posx>65r</posx>
-				<posy>55r</posy>
+				<posx>55r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<texturefocus border="5">floorhomeFO.png</texturefocus>
+				<texturenofocus border="5">floorhomeNF.png</texturenofocus>
 				<onleft>61</onleft>
 				<onright>9000</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
-			<control type="image">
-				<description>Home Icon</description>
-				<posx>60r</posx>
-				<posy>50r</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_home.png</texture>
-			</control>
 			<control type="list" id="9000">
-				<posx>10</posx>
-				<posy>90</posy>
-				<width>260</width>
-				<height>527</height>
+				<posx>-20</posx>
+				<posy>120</posy>
+				<width>430</width>
+				<height>600</height>
 				<onleft>9010</onleft>
 				<onright>9010</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
-				<itemlayout height="75" width="260">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>260</width>
-						<height>76</height>
-						<texture border="5">MenuItemNF.png</texture>
-					</control>
+				<!--animation effect="fade" start="0" end="100" time="200">Visible</animation-->
+				
+				<!--
+				<animation type="Focus">
+ <effect type="fade" start="60" end="100" time="200"/>
+ <effect type="zoom" end="100,100" center="auto" time="200" delay="200"/>
+</animation>
+	
+				<animation type="UnFocus">
+ <effect type="fade" start="100" end="60" time="200"/>
+ <effect type="zoom" end="80,80" center="auto" time="200" delay="200"/>
+</animation>
+-->
+	
+				
+				<!--
+				<animation effect="zoom" start="0,0,0,0" end="0,0,0,0" time="250">Focus</animation>
+				<animation effect="zoom" start="-21,-3,228,324" end="0,24,188,267" time="250">UnFocus</animation>
+				-->
+				
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" start="80" end="100" center="auto" time="200" />
+					<effect type="fade" start="80" end="100" time="200" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="zoom" start="100" end="80" center="auto" time="200" />
+					<effect type="fade" start="100" end="80" time="200" />
+				</animation>
+				
+				
+				
+				<itemlayout height="42" width="380">
 					<control type="label">
-						<posx>250</posx>
-						<posy>15</posy>
+						<posx>380</posx>
+						<posy>21</posy>
 						<width>380</width>
-						<height>25</height>
-						<font>font24_title</font>
+						<height>40</height>
+						<font>font30_title</font>
 						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>42</posy>
-						<width>870</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+						<animation effect="zoom" start="65" end="65" center="380,51" time="0" condition="true">Conditional</animation>
+					
+				
+					
 					</control>
 				</itemlayout>
-				<focusedlayout height="75" width="260">
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>260</width>
-						<height>81</height>
-						<texture border="5">MenuItemFO.png</texture>
-						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
-					</control>
+				<focusedlayout height="62" width="430">
 					<control type="label">
-						<posx>250</posx>
-						<posy>15</posy>
-						<width>380</width>
-						<height>25</height>
-						<font>font24_title</font>
+						<posy>21</posy>
+						<posx>380</posx>
+						<width>400</width>
+						<height>62</height>
+						<font>font45_title</font>
 						<textcolor>white</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>250</posx>
-						<posy>42</posy>
-						<width>870</width>
-						<height>25</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label2]</label>
+`						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation>
+						<animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation>
 					</control>
 				</focusedlayout>
 				<content>
@@ -201,39 +200,19 @@
 					</item>
 				</content>
 			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>100</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
-			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
-				<height>30</height>
-				<font>font16</font>
-				<label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-			</control>
 			<control type="group" id="9010">
 				<control type="grouplist" id="9001">
 					<visible>Container(9000).Hasfocus(1)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9001).HasFocus() | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9001).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -423,10 +402,10 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
+					<posx>1160</posx>
+					<posy>110</posy>
 					<width>25</width>
-					<height>530</height>
+					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
@@ -440,8 +419,16 @@
 				</control>
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9002).HasFocus()  | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9002).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -1012,10 +999,10 @@
 					</control>	
 				</control>	
 				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
+					<posx>1160</posx>
+					<posy>110</posy>
 					<width>25</width>
-					<height>530</height>
+					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
@@ -1026,10 +1013,20 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(2)</visible>
-				</control>				
-				<control type="group">
-					<posx>290</posx>
-					<posy>60</posy>
+				</control>			
+				<control type="group" id="9009">
+					<animation type="Conditional" condition="ControlGroup(9009).HasFocus()">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9009).HasFocus()">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
+					<width>750</width>
+					<height>530</height>
 					<visible>Container(9000).Hasfocus(3)</visible>
 					<control type="label">
 						<posx>0</posx>
@@ -1308,7 +1305,7 @@
 						<posx>35</posx>
 						<posy>135</posy>
 						<width>680</width>
-						<height>425</height>
+						<height>405</height>
 						<texture>black-back.png</texture>
 					</control>
 					<control type="group">
@@ -2661,7 +2658,7 @@
 							[Container(9003).Hasfocus(15) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(PhotoBrowserBackdrop))]
 						</visible>
 					</control>
-					<control type="label">
+					<!--control type="label">
 						<posx>95</posx>
 						<posy>530</posy>
 						<width>560</width>
@@ -2673,12 +2670,20 @@
 						<haspath>yes</haspath>
 						<label fallback="21895">$INFO[Container(9003).ListItem.Thumb]</label>
 						<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
-					</control>
+					</control-->
 				</control>
 				<control type="grouplist" id="9004">
 					<visible>Container(9000).Hasfocus(4)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9004).HasFocus() | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9004).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -2724,19 +2729,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(HorizontalHomeScreen)</enable>
 					</control>
-					<control type="button" id="403">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>$LOCALIZE[31689]</label>
-						<label2>[COLOR=selected]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.SetNumeric(CustomFocusOffset)</onclick>
-					</control>
-					<control type="radiobutton" id="404">
+					<control type="radiobutton" id="403">
 						<description>enable submenu advise</description>
 						<width>750</width>
 						<height>40</height>
@@ -2749,7 +2742,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>					
-					<control type="radiobutton" id="405">
+					<control type="radiobutton" id="404">
 						<description>enable library stats</description>
 						<width>750</width>
 						<height>40</height>
@@ -2762,7 +2755,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="406">
+					<control type="radiobutton" id="405">
 						<description>Enable Now Playing</description>
 						<width>750</width>
 						<height>40</height>
@@ -2775,7 +2768,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="407">
+					<control type="radiobutton" id="406">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2787,7 +2780,7 @@
 						<onclick>Skin.ToggleSetting(HideBackHomePlaying)</onclick>
 						<selected>Skin.HasSetting(HideBackHomePlaying)</selected>
 					</control>
-					<control type="radiobutton" id="408">
+					<control type="radiobutton" id="407">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -2800,7 +2793,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="label" id="409">
+					<control type="label" id="408">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -2810,7 +2803,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="410">
+					<control type="button" id="409">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2824,7 +2817,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.1.Label)) | Skin.HasSetting(StickyHomeMenuAction)</visible>
 					</control>	
-					<control type="button" id="411">
+					<control type="button" id="410">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2838,7 +2831,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.2.Label))</visible>
 					</control>	
-					<control type="button" id="412">
+					<control type="button" id="411">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2852,7 +2845,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.3.Label))</visible>
 					</control>
-					<control type="button" id="413">
+					<control type="button" id="412">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2866,7 +2859,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.4.Label))</visible>
 					</control>
-					<control type="button" id="414">
+					<control type="button" id="413">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2880,7 +2873,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.5.Label))</visible>
 					</control>
-					<control type="button" id="415">
+					<control type="button" id="414">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2894,7 +2887,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.6.Label))</visible>
 					</control>						
-					<control type="button" id="416">
+					<control type="button" id="415">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2908,7 +2901,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.7.Label))</visible>
 					</control>
-					<control type="button" id="417">
+					<control type="button" id="416">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2922,7 +2915,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.8.Label))</visible>
 					</control>	
-					<control type="button" id="418">
+					<control type="button" id="417">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2936,7 +2929,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.9.Label))</visible>
 					</control>	
-					<control type="button" id="419">
+					<control type="button" id="418">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2950,7 +2943,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(HomeItem.10.Label))</visible>
 					</control>
-					<control type="button" id="420">
+					<control type="button" id="419">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2964,7 +2957,7 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!Skin.HasSetting(HideHomeMenuSystem)</visible>
 					</control>
-					<control type="label" id="421">
+					<control type="label" id="420">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -2975,7 +2968,7 @@
 						<aligny>center</aligny>
 					</control>
 					<!--
-					<control type="radiobutton" id="422">
+					<control type="radiobutton" id="421">
 						<description>Do Not Allow randomandlastitems.script To Run</description>
 						<width>750</width>
 						<height>40</height>
@@ -2989,7 +2982,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems)</enable>
 					</control>
-					<control type="radiobutton" id="423">
+					<control type="radiobutton" id="422">
 						<description>randomandlastitems.script uses last not random</description>
 						<width>750</width>
 						<height>40</height>
@@ -3003,7 +2996,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
 					</control>
-					<control type="radiobutton" id="424">
+					<control type="radiobutton" id="423">
 						<description>randomandlastitems.script only shows unwatched items</description>
 						<width>750</width>
 						<height>40</height>
@@ -3018,7 +3011,7 @@
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
 					</control>
 					-->
-					<control type="radiobutton" id="425">
+					<control type="radiobutton" id="424">
 						<description>Home Panel - Use Fanart as Thumb</description>
 						<width>750</width>
 						<height>40</height>
@@ -3031,7 +3024,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="426">
+					<control type="radiobutton" id="425">
 						<description>Hide Home Panel Fanart</description>
 						<width>750</width>
 						<height>40</height>
@@ -3046,10 +3039,10 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
+					<posx>1160</posx>
+					<posy>110</posy>
 					<width>25</width>
-					<height>530</height>
+					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
@@ -3060,11 +3053,19 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(4)</visible>
-				</control>
+				</control>			
 				<control type="grouplist" id="9005">
 					<visible>Container(9000).Hasfocus(5)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9005).HasFocus() | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9005).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -3096,18 +3097,6 @@
 						<selected>!Skin.HasSetting(EnableSlideShowPause)</selected>
 					</control>
 					<control type="radiobutton" id="502">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31104</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
-						<selected>Skin.HasSetting(WindowedTrailer)</selected>
-					</control>
-					<control type="radiobutton" id="503">
 						<description>enable weather info</description>
 						<width>750</width>
 						<height>40</height>
@@ -3120,7 +3109,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="504">
+					<control type="radiobutton" id="503">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3132,7 +3121,7 @@
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
-					<control type="radiobutton" id="505">
+					<control type="radiobutton" id="504">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3144,7 +3133,7 @@
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>	
-					<control type="radiobutton" id="506">
+					<control type="radiobutton" id="505">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3156,7 +3145,7 @@
 						<onclick>Skin.ToggleSetting(EnableXtraFanArt)</onclick>
 						<selected>Skin.HasSetting(EnableXtraFanArt)</selected>
 					</control>	
-					<control type="label" id="507">
+					<control type="label" id="506">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3166,7 +3155,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="508">
+					<control type="button" id="507">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3179,7 +3168,7 @@
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>	
-					<control type="radiobutton" id="509">
+					<control type="radiobutton" id="508">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3191,7 +3180,7 @@
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="510">
+					<control type="radiobutton" id="509">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3203,7 +3192,7 @@
 						<onclick>Skin.ToggleSetting(UseStatusBanners)</onclick>
 						<selected>Skin.HasSetting(UseStatusBanners)</selected>
 					</control>
-					<control type="radiobutton" id="511">
+					<control type="radiobutton" id="510">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3216,7 +3205,7 @@
 						<selected>!Skin.HasSetting(HideNewMediaStat)</selected>
 						<enable>Skin.HasSetting(UseStatusBanners)</enable>
 					</control>
-					<control type="radiobutton" id="512">
+					<control type="radiobutton" id="511">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3228,7 +3217,7 @@
 						<onclick>Skin.ToggleSetting(UsrGenreFanArt)</onclick>
 						<selected>Skin.HasSetting(UsrGenreFanArt)</selected>
 					</control>
-					<control type="radiobutton" id="513">
+					<control type="radiobutton" id="512">
 						<description>User Genre backgrounds</description>
 						<width>750</width>
 						<height>40</height>
@@ -3242,7 +3231,7 @@
 						<selected>Skin.HasSetting(UsrGenreBackground)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="button" id="514">
+					<control type="button" id="513">
 						<description>User Genre FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -3256,7 +3245,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(UsrGenreBackground) + !Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>	
-					<control type="radiobutton" id="515">
+					<control type="radiobutton" id="514">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3265,10 +3254,10 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
+						<onclick>Skin.ToggleSetting(StopAutoScroll)</onclick>
 						<selected>Skin.HasSetting(StopAutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="516">
+					<control type="radiobutton" id="515">
 						<description>Show Sub Flag Toggle</description>
 						<width>750</width>
 						<height>40</height>
@@ -3281,7 +3270,7 @@
 						<onclick>Skin.ToggleSetting(HideSubTitleFlags)</onclick>
 						<selected>!Skin.HasSetting(HideSubTitleFlags)</selected>
 					</control>
-					<control type="radiobutton" id="517">
+					<control type="radiobutton" id="516">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3293,7 +3282,7 @@
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>	
-					<control type="radiobutton" id="518">
+					<control type="radiobutton" id="517">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3305,7 +3294,7 @@
 						<onclick>Skin.ToggleSetting(UseTvSeasonArt)</onclick>
 						<selected>Skin.HasSetting(UseTvSeasonArt)</selected>
 					</control>	
-					<control type="label" id="519">
+					<control type="label" id="518">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3315,18 +3304,18 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>	
-					<control type="group" id="520">
+					<control type="group" id="519">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="521">
+						<control type="grouplist" id="520">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>518</onup>
-							<ondown>533</ondown>
+							<onup>517</onup>
+							<ondown>532</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="522">
+							<control type="radiobutton" id="521">
 								<description>Transparency Level 90</description>
 								<width>75</width>
 								<height>40</height>
@@ -3338,7 +3327,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,18FFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),18FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="523">
+							<control type="radiobutton" id="522">
 								<description>Transparency Level 80</description>
 								<width>75</width>
 								<height>40</height>
@@ -3350,7 +3339,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,2FFFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),2FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="524">
+							<control type="radiobutton" id="523">
 								<description>Transparency Level 70</description>
 								<width>75</width>
 								<height>40</height>
@@ -3362,7 +3351,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,48FFFFFF)</onclick>		
 								<selected>stringcompare(Skin.String(MediaPanelTrans),48FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="525">
+							<control type="radiobutton" id="524">
 								<description>Transparency Level 60</description>
 								<width>75</width>
 								<height>40</height>
@@ -3374,7 +3363,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,5FFFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),5FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="526">
+							<control type="radiobutton" id="525">
 								<description>Transparency Level 50</description>
 								<width>75</width>
 								<height>40</height>
@@ -3386,7 +3375,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,78FFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),78FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="527">
+							<control type="radiobutton" id="526">
 								<description>Transparency Level 40</description>
 								<width>75</width>
 								<height>40</height>
@@ -3398,7 +3387,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,8FFFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),8FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="528">
+							<control type="radiobutton" id="527">
 								<description>Transparency Level 30</description>
 								<width>75</width>
 								<height>40</height>
@@ -3410,7 +3399,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,A8FFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),A8FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="529">
+							<control type="radiobutton" id="528">
 								<description>Transparency Level 20</description>
 								<width>75</width>
 								<height>40</height>
@@ -3422,7 +3411,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,BFFFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),BFFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="530">
+							<control type="radiobutton" id="529">
 								<description>Transparency Level 10</description>
 								<width>75</width>
 								<height>40</height>
@@ -3434,7 +3423,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DFFFFFFF)</onclick>	
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DFFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="531">
+							<control type="radiobutton" id="530">
 								<description>Transparency Level 0</description>
 								<width>70</width>
 								<height>40</height>
@@ -3448,7 +3437,7 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="532">
+					<control type="label" id="531">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3458,7 +3447,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="533">
+					<control type="radiobutton" id="532">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3470,7 +3459,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="radiobutton" id="534">
+					<control type="radiobutton" id="533">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3481,9 +3470,8 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
-						<enable>!Skin.HasSetting(HideSeekBarOSD)</enable>
 					</control>
-					<control type="radiobutton" id="535">
+					<control type="radiobutton" id="534">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3495,7 +3483,7 @@
 						<onclick>Skin.ToggleSetting(TVShowUsesLogo)</onclick>
 						<selected>Skin.HasSetting(TVShowUsesLogo)</selected>
 					</control>
-					<control type="label" id="536">
+					<control type="label" id="535">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3505,7 +3493,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="537">
+					<control type="radiobutton" id="536">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3518,7 +3506,7 @@
 						<onclick>Skin.ToggleSetting(ShowBackgroundAlbumWall)</onclick>
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 					</control>
-					<control type="button" id="538">
+					<control type="button" id="537">
 						<description>CD Wall Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -3533,7 +3521,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(ShowBackgroundAlbumWall)</enable>
 					</control>
-					<control type="radiobutton" id="539">
+					<control type="radiobutton" id="538">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3546,7 +3534,7 @@
 						<onclick>Skin.ToggleSetting(ShowArtistSlideShow)</onclick>
 						<selected>Skin.HasSetting(ShowArtistSlideShow)</selected>
 					</control>
-					<control type="radiobutton" id="540">
+					<control type="radiobutton" id="539">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3558,7 +3546,7 @@
 						<onclick>Skin.ToggleSetting(NoAnimateFanArt)</onclick>
 						<selected>Skin.HasSetting(NoAnimateFanArt)</selected>
 					</control>
-					<control type="radiobutton" id="541">
+					<control type="radiobutton" id="540">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3570,7 +3558,7 @@
 						<onclick>Skin.ToggleSetting(HideCDArt)</onclick>
 						<selected>Skin.HasSetting(HideCDArt)</selected>
 					</control>
-					<control type="label" id="542">
+					<control type="label" id="541">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3580,7 +3568,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="543">
+					<control type="radiobutton" id="542">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3592,7 +3580,7 @@
 						<onclick>Skin.ToggleSetting(EnableStartupPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableStartupPlaylist)</selected>
 					</control>
-					<control type="button" id="544">
+					<control type="button" id="543">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -3641,10 +3629,10 @@
 					</content>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
+					<posx>1160</posx>
+					<posy>110</posy>
 					<width>25</width>
-					<height>530</height>
+					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
@@ -3655,11 +3643,19 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(5)</visible>
-				</control>
+				</control>			
 				<control type="grouplist" id="9006">
 					<visible>Container(9000).Hasfocus(6)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9006).HasFocus() | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9006).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -3864,10 +3860,10 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1060</posx>
-					<posy>60</posy>
+					<posx>1160</posx>
+					<posy>110</posy>
 					<width>25</width>
-					<height>530</height>
+					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
@@ -3878,11 +3874,19 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(6)</visible>
-				</control>
+				</control>		
 				<control type="grouplist" id="9007">
 					<visible>Container(9000).Hasfocus(7)</visible>
-					<posx>290</posx>
-					<posy>60</posy>
+					<animation type="Conditional" condition="ControlGroup(9007).HasFocus() | Control.HasFocus(60)">
+						<effect type="zoom" start="80" end="100" center="auto" time="200" />
+						<effect type="fade" start="80" end="100" time="200" />
+					</animation>
+					<animation type="Conditional" condition="!ControlGroup(9007).HasFocus() + !Control.HasFocus(60)">
+						<effect type="zoom" start="100" end="80" center="auto" time="200" />
+						<effect type="fade" start="100" end="80" time="200" />
+					</animation>					
+					<posx>390</posx>
+					<posy>100</posy>
 					<width>750</width>
 					<height>530</height>
 					<itemgap>-1</itemgap>
@@ -3928,6 +3932,16 @@
 			</control>
 		</control>
 		<include>BehindDialogFadeOut</include>
+		<control type="image">
+			<description>LOGO</description>
+			<posx>10</posx>
+			<posy>80r</posy>
+			<width>220</width>
+			<height>80</height>
+			<aspectratio>keep</aspectratio>
+			<texture>SkinLogo/Hybrid_Logo.png</texture>
+			<animation effect="slide" end="0,100" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation> 
+		</control>
 		<include>Clock</include>
 	</controls>
 </window>

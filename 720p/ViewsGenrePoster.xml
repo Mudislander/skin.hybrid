@@ -362,6 +362,20 @@
 				<aspectratio align="left">keep</aspectratio>
 				<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 			</control>
+			<control type="label">
+				<posx>190</posx>
+				<posy>482</posy>
+				<width>300</width>
+				<height>32</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+				<visible>!IsEmpty(ListItem.Duration)</visible>
+			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
 				<posx>100</posx>
@@ -371,6 +385,7 @@
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<include>MultiVideoGenreFlagging</include>
+				<visible>!Skin.HasSetting(Hide501GenreFlags) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
@@ -381,6 +396,19 @@
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<include>GenreText</include>
+				<visible>!Skin.HasSetting(Hide501GenreFlags) + !StringCompare(ListItem.Label,..)</visible>
+			</control>
+			<control type="textbox">
+				<posx>100</posx>
+				<posy>550</posy>
+				<width>1080</width>
+				<height>100</height>
+				<font>font12_title</font>
+				<align>justify</align>
+				<textcolor>white</textcolor>
+				<label>$VAR[ShowMediaPlot]</label>
+				<autoscroll time="4000" delay="4000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
+				<visible>Skin.HasSetting(Hide501GenreFlags) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 		</control>
 	</include>

@@ -186,6 +186,10 @@
 		<value condition="SubString(Listitem.mpaa,Rated R)">R</value>
 		<value condition="SubString(Listitem.mpaa,Rated NC)">NC-17</value>
 	</variable>
+	<variable name="MediaRuntime">
+		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !substring(ListItem.Duration,min)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
+		<value condition="[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + substring(ListItem.Duration,min)">$INFO[ListItem.Duration]</value>
+	</variable>
 	<variable name="PartlyWatched">
 		<value condition="[Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),0) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19)">OverlayPartlywatched1</value>
 		<value condition="[Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),31)">OverlayPartlywatched2</value>

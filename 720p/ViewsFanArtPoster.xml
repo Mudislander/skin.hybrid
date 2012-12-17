@@ -115,7 +115,6 @@
 							<width>40</width>
 							<height>40</height>
 							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							
 							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 						</control>
 						<control type="image">
@@ -127,10 +126,6 @@
 							<visible>!IsEmpty(ListItem.Overlay) + Window.IsVisible(Videos)</visible>
 						</control>
 					</control>
-					
-					
-					
-					
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
@@ -145,7 +140,7 @@
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onup>508</onup>
 				<ondown>61</ondown>
-				<showonepage>false</showonepage>
+				<showonepage>true</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(508)</visible>
 			</control>
@@ -161,7 +156,7 @@
 			</control>	
 		</control>	
 	</include>
-	<include name="FanArtInfoPanel"> <!-- Edit 25/10/11 -->
+	<include name="FanArtInfoPanel">
         <control type="image">
 			<posx>180</posx>
 			<posy>85</posy>
@@ -170,36 +165,46 @@
 			<include condition="!Skin.HasSetting(MediaNotTransparent)">TransparentEffect</include>
 			<texture border="20">ContentPanel.png</texture>
 		</control>
+		<control type="label">
+			<posx>220</posx>
+			<posy>110</posy>
+			<width>350</width>
+			<height>30</height>
+			<font>font13</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>false</scroll>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$VAR[MediaRuntime,[B][COLOR=blue]$LOCALIZE[2050]: [/COLOR][/B]]</label>
+			<visible>!IsEmpty(ListItem.Duration)</visible>
+		</control>
+		<control type="label">
+			<posx>620</posx>
+			<posy>110</posy>
+			<width>450</width>
+			<height>30</height>
+			<font>font13</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<scroll>false</scroll>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Director,[B][COLOR=blue]$LOCALIZE[20339]: [/COLOR][/B]]</label>
+		</control>
 		<control type="textbox">
 			<description>Description Value The Movie</description>
 			<visible>Container.Content(Movies) | Container.Content(TVShows)</visible>
 			<posx>220</posx>
-			<posy>120</posy>
+			<posy>150</posy>
 			<width>850</width>
-			<height>265</height>
+			<height>235</height>
 			<align>justify</align>
 			<font>font16_title</font>
 			<textcolor>white</textcolor>
-			<label>$VAR[ShowMediaPlot]</label>
+			<label>$VAR[ShowMediaPlot,[B][COLOR=blue]$LOCALIZE[207]: [/COLOR][/B]]</label>
 			<autoscroll time="4000" delay="5000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 		</control>
-		<!--
-		<control type="grouplist">
-			<description>Media Codec Flagging Images</description>
-			<posx>220</posx>
-			<posy>400</posy>
-			<width>840</width>
-			<align>center</align>
-			<itemgap>5</itemgap>
-			<orientation>horizontal</orientation>
-			<include>VideoCodecFlaggingConditions</include>
-			<include>AudioCodecFlaggingConditions</include>
-			<include>AspectCodecFlaggingConditions</include>
-			<include>VideoTypeHackFlaggingConditions</include>
-			<include>VideoMPAAFlaggingConditions</include>
-			<include>MediaStudioFlagging</include>
-		</control>
-		-->
 		<control type="grouplist">
 			<description>Media Codec Flagging Images</description>
 			<posx>220</posx>

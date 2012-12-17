@@ -1,5 +1,5 @@
 <includes>	
-<include name="WideList">
+	<include name="WideList">
 		<control type="group">
 			<visible>Control.IsVisible(529)</visible>
 			<include>VisibleFadeEffect</include>
@@ -178,7 +178,7 @@
 						<font>font13</font> 	
 						<textcolor>white</textcolor> 	
 						<shadowcolor>black</shadowcolor> 	
-						<label>$LOCALIZE[31933]</label> 
+						<label>$LOCALIZE[31667]</label> 
 						<visible>StringCompare(ListItem.Label,..)</visible> 	
 					</control>
 					<control type="label"> 	
@@ -221,13 +221,27 @@
 					</control>
 					<control type="image"> 	
 						<posx>202</posx> 	
-						<posy>104</posy> 	
+						<posy>110</posy> 	
 						<width>160</width> 	
-						<height>19</height> 	
+						<height>20</height> 	
 						<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 						<aspectratio>keep</aspectratio> 	
 						<visible>!StringCompare(ListItem.Label,..)</visible> 	
 						<visible>Container.Content(Movies) | Container.Content(TVshows)</visible> 	
+					</control>
+					<control type="label">
+						<posx>560</posx> 	
+						<posy>104</posy> 	
+						<width>200</width>
+						<height>20</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>top</aligny>
+						<label>$VAR[MediaRuntime]</label>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
 					</control>
 				</itemlayout> 
 				<focusedlayout height="144" width="587">
@@ -391,7 +405,7 @@
 						<font>font13</font> 	
 						<textcolor>white</textcolor> 	
 						<shadowcolor>black</shadowcolor> 	
-						<label>$LOCALIZE[31933]</label> 	
+						<label>$LOCALIZE[31667]</label> 	
 						<visible>StringCompare(ListItem.Label,..)</visible> 	
 					</control> 	
 					<control type="label"> 	
@@ -434,14 +448,28 @@
 					</control>
 					<control type="image"> 	
 						<posx>202</posx> 	
-						<posy>104</posy> 	
+						<posy>110</posy> 	
 						<width>160</width> 	
-						<height>19</height> 	
+						<height>20</height> 	
 						<texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
 						<aspectratio>keep</aspectratio> 	
-						<visible>!IsEmpty(ListItem.foldername) + !StringCompare(ListItem.Label,..)</visible> 	
+						<visible>!StringCompare(ListItem.Label,..)</visible> 	
 						<visible>Container.Content(Movies) | Container.Content(TVshows)</visible> 	
-					</control> 
+					</control>
+					<control type="label">
+						<posx>560</posx> 	
+						<posy>104</posy> 	
+						<width>200</width>
+						<height>20</height>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>top</aligny>
+						<label>$VAR[MediaRuntime]</label>
+						<visible>!IsEmpty(ListItem.Duration)</visible>
+					</control>
 				</focusedlayout> 	
 			</control> 	
 			<control type="scrollbar" id="60">

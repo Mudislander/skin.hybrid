@@ -7,30 +7,15 @@
 		<posy>0</posy>
 	</coordinates>
 	<controls>
-		<include>CommonBackground</include>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include> 
+			<imagepath background="true">$VAR[GlobalScreenBackground]</imagepath>
+			<timeperimage>8000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>FanartCrossfadeTime</fadetime>
+		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>		
-			<!--
-			<control type="image">
-				<posx>0</posx>
-				<posy>60r</posy>
-				<width>1280</width>
-				<height>60</height>
-				<texture>floor.png</texture>
-				<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-				<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-			</control>
-			-->
-			<control type="image">
-				<description>LOGO</description>
-				<posx>0</posx>
-				<posy>5</posy>
-				<width>170</width>
-				<height>100</height>
-				<aspectratio aligny="top" align="left">keep</aspectratio>
-				<texture>xbmc-logo.png</texture>
-				<include>Window_OpenClose_Animation</include>
-			</control>
 			<control type="image">
 				<posx>265</posx>
 				<posy>60</posy>
@@ -54,7 +39,7 @@
 				<textcolor>grey2</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$LOCALIZE[31421]</label>
+				<label>$LOCALIZE[31470]</label>
 			</control>
 			<control type="list" id="52">
 				<posx>295</posx>
@@ -193,48 +178,16 @@
 					<font>-</font>
 					<aligny>-</aligny>
 					<onclick>ActivateWindow(ShutdownMenu)</onclick>
-					<texturefocus border="5">floor_buttonFO.png</texturefocus>
-					<texturenofocus border="5">floor_button.png</texturenofocus>
+					<texturefocus border="5">floorpowerFO.png</texturefocus>
+					<texturenofocus border="5">floorpowerNF.png</texturenofocus>
 					<onleft>52</onleft>
 					<onright>52</onright>
 					<onup>52</onup>
 					<ondown>52</ondown>
 					<colordiffuse>CCFFFFFF</colordiffuse>
 				</control>
-				<control type="image">
-					<description>Power Icon</description>
-					<posx>15</posx>
-					<posy>5</posy>
-					<width>35</width>
-					<height>35</height>
-					<aspectratio>keep</aspectratio>
-					<texture>icon_power.png</texture>
-				</control>
-				<control type="image">
-					<posx>13</posx>
-					<posy>3</posy>
-					<width>30</width>
-					<height>29</height>
-					<texture>home-power-focus.gif</texture>
-					<visible>Control.HasFocus(20)</visible>
-				</control>
 			</control>
 		</control>
 		<include>Clock</include>
-		<control type="label">
-			<description>Date label</description>
-			<posx>20r</posx>
-			<posy>35</posy>
-			<width>200</width>
-			<height>15</height>
-			<align>right</align>
-			<aligny>center</aligny>
-			<font>font10</font>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<label>$INFO[System.Date]</label>
-			<include>Window_OpenClose_Animation</include>
-			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
-		</control>
 	</controls>
 </window>

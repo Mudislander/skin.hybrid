@@ -392,57 +392,39 @@
 			<include>Window_OpenClose_Animation</include>
 			<visible>system.getbool(input.enablemouse)</visible>
 			<include>Window_OpenClose_Animation</include>
-			<control type="button">
+			<control type="button" id="61">
 				<description>Back push button</description>
-				<posx>0</posx>
-				<posy>0</posy>
+				<posx>100r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>1036</label>
 				<font>-</font>
 				<aligny>-</aligny>
-				<onclick>back</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus border="5">floorbackFO.png</texturefocus>
+				<texturenofocus border="5">floorbackNF.png</texturenofocus>
 				<onleft>50</onleft>
-				<onright>50</onright>
+				<onright>62</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
 			</control>
-			<control type="image">
-				<description>Back Icon</description>
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_back.png</texture>
-			</control>
-			<control type="button">
+			<control type="button" id="62">
 				<description>Home push button</description>
-				<posx>55</posx>
-				<posy>0</posy>
+				<posx>55r</posx>
+				<posy>50r</posy>
 				<width>45</width>
 				<height>45</height>
 				<label>31003</label>
 				<font>-</font>
 				<aligny>-</aligny>
 				<onclick>ActivateWindow(home)</onclick>
-				<texturefocus border="5">floor_buttonFO.png</texturefocus>
-				<texturenofocus border="5">floor_button.png</texturenofocus>
-				<onleft>50</onleft>
+				<texturefocus border="5">floorhomeFO.png</texturefocus>
+				<texturenofocus border="5">floorhomeNF.png</texturenofocus>
+				<onleft>61</onleft>
 				<onright>50</onright>
 				<onup>50</onup>
 				<ondown>50</ondown>
-			</control>
-			<control type="image">
-				<description>Home Icon</description>
-				<posx>60</posx>
-				<posy>5</posy>
-				<width>35</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<texture>icon_home.png</texture>
 			</control>
 		</control>
 		<include>Clock</include>
