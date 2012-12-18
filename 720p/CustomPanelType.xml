@@ -188,14 +188,6 @@
 						<visible>Library.HasContent(Music)</visible>
 					</item>
 					<item id="10">
-						<description>Random Music</description>
-						<label>$LOCALIZE[31919]</label>
-						<onclick>Dialog.Close(2117)</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RandomAlbums)</onclick>
-						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-						<visible>Library.HasContent(Music)</visible>
-					</item>
-					<item id="11">
 						<description>Recent Concerts</description>
 						<label>$LOCALIZE[31918]</label>
 						<onclick>Dialog.Close(2117)</onclick>
@@ -203,7 +195,7 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>Library.HasContent(MusicVideos)</visible>
 					</item>
-					<item id="12">
+					<item id="11">
 						<description>Random Concerts</description>
 						<label>$LOCALIZE[31917]</label>
 						<onclick>Dialog.Close(2117)</onclick>
