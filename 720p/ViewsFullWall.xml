@@ -16,7 +16,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<preloaditems>200</preloaditems>
-				<visible>Window.IsVisible(Videos)</visible>
+				<visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
 				<visible>!Container.Content(LiveTV)</visible>
 				<itemlayout width="123" height="184">
 					<control type="image">
