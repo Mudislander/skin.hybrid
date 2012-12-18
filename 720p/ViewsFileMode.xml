@@ -397,13 +397,13 @@
 				<control type="image">
 					<description>Studio Icon</description>
 					<include>ListImagePosi</include>
-					<texture background="true" fallback="DefaultStudios.png">$INFO[ListItem.Label,MovieStudios/,/folder.png]</texture>
+					<texture background="true" fallback="DefaultStudios.png">$INFO[listitem.Label,MediaFlags/studios/,.png]</texture>
 					<visible>Container.Content(studios) + substring(Container.FolderPath,videodb)</visible>
 				</control>	
 				<control type="image">
 					<description>Studio Icon Reflection</description>
 					<include>ListImageReflection</include>
-					<texture diffuse="diffuse_mirror3.png" flipy="true" background="true" fallback="DefaultStudios.png">$INFO[ListItem.Label,MovieStudios/,/folder.png]</texture>
+					<texture diffuse="diffuse_mirror3.png" flipy="true" background="true" fallback="DefaultStudios.png">$INFO[listitem.Label,MediaFlags/studios/,.png]</texture>
 					<visible>Container.Content(studios) + substring(Container.FolderPath,videodb)</visible>
 				</control>
 				<!-- Years List -->
