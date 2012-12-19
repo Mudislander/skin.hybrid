@@ -181,13 +181,13 @@
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
-			<texture background="true">$INFO[Container(8012).ListItem.ActualIcon]</texture>
+			<texture background="true">$INFO[Container(8012).ListItem.Thumb]</texture>
 			<fadetime>600</fadetime>
 			<visible>Control.HasFocus(8012) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include> 
-			<texture background="true">$INFO[Container(8013).ListItem.ActualIcon]</texture>
+			<texture background="true">$INFO[Container(8013).ListItem.Thumb]</texture>
 			<fadetime>600</fadetime>
 			<visible>Control.HasFocus(8013) + !Skin.HasSetting(HideHomePanelFanArt)</visible>
 		</control>
