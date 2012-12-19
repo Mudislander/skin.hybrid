@@ -241,7 +241,7 @@
 						<align>right</align>
 						<aligny>top</aligny>
 						<label>$VAR[MediaRuntime]</label>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
+						<visible>!IsEmpty(ListItem.Duration) + !Container.Content(Episodes)</visible>
 					</control>
 				</itemlayout> 
 				<focusedlayout height="144" width="587">
@@ -468,7 +468,7 @@
 						<align>right</align>
 						<aligny>top</aligny>
 						<label>$VAR[MediaRuntime]</label>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
+						<visible>!IsEmpty(ListItem.Duration) + !Container.Content(Episodes)</visible>
 					</control>
 				</focusedlayout> 	
 			</control> 	
