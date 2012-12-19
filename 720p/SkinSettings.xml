@@ -1319,7 +1319,7 @@
 								<posy>0</posy>
 								<width>160</width>
 								<height>40</height>
-								<label>$LOCALIZE[20338] $LOCALIZE[31671]</label>
+								<label>$LOCALIZE[31114]</label>
 								<font>font12_title</font>
 								<textcolor>grey2</textcolor>
 								<focusedcolor>white</focusedcolor>
@@ -1329,7 +1329,7 @@
 								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
 								<onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick> 
 								<onclick>Skin.SetBool(GlobalMovieBackdrop)</onclick> 
-								<enable>Library.HasContent(Movies)</enable>
+								<onclick>Skin.SetPath(HomeScreenMoviesBackGround)</onclick>
 								<onleft>303</onleft>
 								<onright>301</onright>
 								<onup>304</onup>
@@ -2967,7 +2967,6 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<!--
 					<control type="radiobutton" id="421">
 						<description>Do Not Allow randomandlastitems.script To Run</description>
 						<width>750</width>
@@ -3010,7 +3009,6 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
 					</control>
-					-->
 					<control type="radiobutton" id="424">
 						<description>Home Panel - Use Fanart as Thumb</description>
 						<width>750</width>
