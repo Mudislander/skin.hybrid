@@ -326,7 +326,7 @@
 	</include>
 	<include name="RandomMoviePanel">  
 		<control type="group">
-			<visible>StringCompare(Container(9000).ListItem.Property(PanelType),RandomMovies) + !Skin.HasSetting(UseFanartThumbPanel) + !IsEmpty(Window.Property(RandomMovie.1.Title))</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(PanelType),RandomMovies) + !IsEmpty(Window.Property(RandomMovie.1.Title))</visible>
 			<animation effect="slide" start="0,0" end="200,5" condition="!Skin.HasSetting(HorizontalHomeScreen)">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
