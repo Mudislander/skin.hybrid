@@ -81,14 +81,10 @@
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
-			
-	<!--
-Move lower + left if Skin.HasSetting(HideSeekBarOSD)
-	-->
-			
 				<visible>!Skin.HasSetting(HidePauseInfo) + Player.Paused + !Player.Caching</visible>
 				<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 				<visible>!IsEmpty(VideoPlayer.Plot)</visible>
+				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation> 
 				<posx>320</posx>
 				<posy>370r</posy>
 				<control type="image" id="1">
