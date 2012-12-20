@@ -99,26 +99,6 @@
 				<ondown>9000</ondown>
 				<pagecontrol>-</pagecontrol>
 				<scrolltime>300</scrolltime>
-				<!--animation effect="fade" start="0" end="100" time="200">Visible</animation-->
-				
-				<!--
-				<animation type="Focus">
- <effect type="fade" start="60" end="100" time="200"/>
- <effect type="zoom" end="100,100" center="auto" time="200" delay="200"/>
-</animation>
-	
-				<animation type="UnFocus">
- <effect type="fade" start="100" end="60" time="200"/>
- <effect type="zoom" end="80,80" center="auto" time="200" delay="200"/>
-</animation>
--->
-	
-				
-				<!--
-				<animation effect="zoom" start="0,0,0,0" end="0,0,0,0" time="250">Focus</animation>
-				<animation effect="zoom" start="-21,-3,228,324" end="0,24,188,267" time="250">UnFocus</animation>
-				-->
-				
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" start="80" end="100" center="auto" time="200" />
 					<effect type="fade" start="80" end="100" time="200" />
@@ -127,9 +107,6 @@
 					<effect type="zoom" start="100" end="80" center="auto" time="200" />
 					<effect type="fade" start="100" end="80" time="200" />
 				</animation>
-				
-				
-				
 				<itemlayout height="42" width="380">
 					<control type="label">
 						<posx>380</posx>
@@ -142,9 +119,6 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="zoom" start="65" end="65" center="380,51" time="0" condition="true">Conditional</animation>
-					
-				
-					
 					</control>
 				</itemlayout>
 				<focusedlayout height="62" width="430">
