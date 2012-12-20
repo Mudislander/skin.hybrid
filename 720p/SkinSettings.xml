@@ -2658,19 +2658,6 @@
 							[Container(9003).Hasfocus(15) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(PhotoBrowserBackdrop))]
 						</visible>
 					</control>
-					<!--control type="label">
-						<posx>95</posx>
-						<posy>530</posy>
-						<width>560</width>
-						<height>20</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>font11</font>
-						<textcolor>white</textcolor>
-						<haspath>yes</haspath>
-						<label fallback="21895">$INFO[Container(9003).ListItem.Thumb]</label>
-						<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
-					</control-->
 				</control>
 				<control type="grouplist" id="9004">
 					<visible>Container(9000).Hasfocus(4)</visible>
@@ -3473,7 +3460,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31971]</label>
+						<label>$LOCALIZE[31979]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
