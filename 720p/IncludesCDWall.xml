@@ -501,7 +501,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Player.HasAudio + [IsEmpty(Skin.String(AlbumWallFolder)) | IsEmpty(MusicPlayer.Property(Fanart_Image))]</visible>
+			<visible>Player.HasAudio + [IsEmpty(Skin.String(AlbumWallFolder)) + Skin.HasSetting(ShowBackgroundAlbumWall)] | [IsEmpty(MusicPlayer.Property(Fanart_Image)) + !Skin.HasSetting(ShowBackgroundAlbumWall)]</visible>
 			<posx>-35</posx>
 			<posy>-15</posy>
 			<control type="image">
