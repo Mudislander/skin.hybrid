@@ -39,6 +39,7 @@
 			<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
 			<include>KBurnsAnimateFanart</include>
 			<visible>Player.HasAudio + Skin.HasSetting(EnableXtraFanArt)</visible>
+			<visible>!Skin.HasSetting(ShowArtistSlideShow) + !Skin.HasSetting(ShowBackgroundAlbumWall)</visible>
 		</control>
 		<control type="visualisation" id="2">
 			<description>visualisation</description>
