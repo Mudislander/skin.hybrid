@@ -4,6 +4,11 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include>MediaContentBackground</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+ 			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>		
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -15,29 +20,6 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>SkinLogo/Hybrid_Logo.png</texture>
-			</control>
 			<control type="button" id="61">
 				<description>Back push button</description>
 				<posx>100r</posx>
@@ -73,137 +55,144 @@
 				<ondown>9000</ondown>
 			</control>
 			<control type="grouplist" id="9000">
-				<posx>10</posx>
-				<posy>90</posy>
+				<description>main menu area</description>
+				<posx>-40</posx>
+				<posy>110</posy>
 				<width>260</width>
-				<height>481</height>
+				<height>500</height>
 				<itemgap>-1</itemgap>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
 				<onleft>62</onleft>
 				<onright>61</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" start="80" end="100" center="auto" time="200" />
+					<effect type="fade" start="80" end="100" time="200" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="zoom" start="100" end="80" center="auto" time="200" />
+					<effect type="fade" start="100" end="80" time="200" />
+				</animation>
 				<control type="button" id="95">
 					<description>Button Summary Values</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>20037</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="94">
 					<description>Button Storage</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13277</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="96">
 					<description>Button Network</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13279</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="97">
 					<description>Button Video</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13280</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="98">
 					<description>Button Hardware</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>13281</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="99">
 					<description>Button PVR</description>
 					<height>60</height>
-					<width>241</width>
+					<width>260</width>
 					<textoffsetx>0</textoffsetx>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font13_title</font>
+					<font>font24_title</font>
 					<textcolor>grey2</textcolor>
 					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
+					<texturefocus border="0,2,0,2">DefaultNoImage.png</texturefocus>
+					<texturenofocus border="0,2,0,2">DefaultNoImage.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<label>19191</label>
+					<animation effect="zoom" start="110" end="145" center="120,51" time="200">Focus</animation>
+					<animation effect="zoom" start="145" end="110" center="120,51" time="200">UnFocus</animation>
 				</control>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>100</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
 			</control>
 			<control type="label" id="40">
 				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
-				<height>30</height>
-				<font>font16</font>
-				<label>-</label>
-				<align>left</align>
+				<posx>190</posx>
+				<posy>5</posy>
+				<width>900</width>
+				<height>35</height>
+				<font>font30_title</font>
+				<textcolor>MainLabel</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
+				<include>Window_OpenClose_Animation</include>
+				<label>-</label>
 			</control>
 			<control type="group">
-				<posx>290</posx>
-				<posy>100</posy>
+				<posx>350</posx>
+				<posy>130</posy>
 				<control type="label" id="2">
 					<description>Label 2</description>
 					<posx>0</posx>
@@ -338,6 +327,16 @@
 					<info>system.memory(used)</info>
 				</control>
 			</control>
+		</control>
+		<control type="image">
+			<description>LOGO</description>
+			<posx>10</posx>
+			<posy>80r</posy>
+			<width>220</width>
+			<height>80</height>
+			<aspectratio>keep</aspectratio>
+			<texture>SkinLogo/Hybrid_Logo.png</texture>
+			<animation effect="slide" end="0,100" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation> 
 		</control>
 		<include>Clock</include>
 	</controls>

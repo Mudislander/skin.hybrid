@@ -2928,6 +2928,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
+					<!--
 					<control type="radiobutton" id="421">
 						<description>Do Not Allow randomandlastitems.script To Run</description>
 						<width>750</width>
@@ -2970,20 +2971,8 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist)</enable>
 					</control>
+					-->
 					<control type="radiobutton" id="424">
-						<description>Home Panel - Use Fanart as Thumb</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31911]</label>
-						<onclick>Skin.ToggleSetting(UseFanartThumbPanel)</onclick>
-						<selected>Skin.HasSetting(UseFanartThumbPanel)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control>
-					<control type="radiobutton" id="425">
 						<description>Hide Home Panel Fanart</description>
 						<width>750</width>
 						<height>40</height>

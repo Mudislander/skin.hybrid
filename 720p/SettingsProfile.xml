@@ -4,17 +4,11 @@
 	<controls>
 		<include>CommonBackground</include>
 		<include>MediaContentBackground</include>
-		<!--
 		<control type="image">
-			<posx>0</posx>
-			<posy>60r</posy>
-			<width>1280</width>
-			<height>60</height>
-			<texture>floor.png</texture>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-		</control>
-		-->
+			<include>Dimensions_Fullscreen</include>
+ 			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>		
 		<control type="group">
 			<posx>90</posx>
 			<posy>30</posy>
@@ -26,29 +20,6 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>SkinLogo/Hybrid_Logo.png</texture>
-			</control>
 			<control type="button" id="61">
 				<description>Back push button</description>
 				<posx>100r</posx>
@@ -184,37 +155,23 @@
 					<label fallback="13170">$INFO[Container(2).ListItem.Label2]</label>
 				</control>
 			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>70</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
-			</control>
 			<control type="label">
 				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
-				<height>30</height>
+				<posx>190</posx>
+				<posy>5</posy>
+				<width>900</width>
+				<height>35</height>
 				<font>font30_title</font>
-				<label>$LOCALIZE[10034]</label>
-				<align>left</align>
+				<textcolor>MainLabel</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
+				<include>Window_OpenClose_Animation</include>
+				<label>$LOCALIZE[10034]</label>
 			</control>
 			<control type="panel" id="2">
-				<posx>283</posx>
-				<posy>70</posy>
+				<posx>350</posx>
+				<posy>90</posy>
 				<width>760</width>
 				<height>540</height>
 				<onleft>4</onleft>
@@ -272,8 +229,8 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>1060</posx>
-				<posy>60</posy>
+				<posx>1140</posx>
+				<posy>90</posy>
 				<width>25</width>
 				<height>530</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -287,7 +244,16 @@
 				<orientation>vertical</orientation>
 			</control>
 		</control>
-		<include>BehindDialogFadeOut</include>
+		<control type="image">
+			<description>LOGO</description>
+			<posx>10</posx>
+			<posy>80r</posy>
+			<width>220</width>
+			<height>80</height>
+			<aspectratio>keep</aspectratio>
+			<texture>SkinLogo/Hybrid_Logo.png</texture>
+			<animation effect="slide" end="0,100" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation> 
+		</control>
 		<include>Clock</include>
 	</controls>
 </window>

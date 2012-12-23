@@ -1077,7 +1077,7 @@
 				<onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.19.File)])</onclick>
 				<icon>$INFO[Window(Home).Property(RecentMovie.19.Art(poster))]</icon>
 				<thumb>$INFO[Window(Home).Property(RecentMovie.19.Art(fanart))]</thumb>
-				<visible>!IsEmpty(Window(Home).Property(RecentMovie.19.Title))  + !Skin.HasSetting(UseFanartThumbPanel)</visible>
+				<visible>!IsEmpty(Window(Home).Property(RecentMovie.19.Title))</visible>
 			</item>
 			<item id="20">
 				<label>$INFO[Window(Home).Property(RecentMovie.20.Title)]</label>
@@ -1086,7 +1086,7 @@
 				<onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.20.File)])</onclick>
 				<icon>$INFO[Window(Home).Property(RecentMovie.20.Art(poster))]</icon>
 				<thumb>$INFO[Window(Home).Property(RecentMovie.20.Art(fanart))]</thumb>
-				<visible>!IsEmpty(Window(Home).Property(RecentMovie.20.Title)) + !Skin.HasSetting(UseFanartThumbPanel)</visible>
+				<visible>!IsEmpty(Window(Home).Property(RecentMovie.20.Title))</visible>
 			</item>
 		</content>
 	</include>
@@ -1815,7 +1815,7 @@
 				<icon>$INFO[Window(Home).Property(RandomMovie.19.Art(poster))]</icon>
 				<thumb>$INFO[Window(Home).Property(RandomMovie.19.Art(fanart))]</thumb>
 				<property name="MoviePath">$INFO[Window(Home).Property(RandomMovie.19.Path)]</property>
-				<visible>!IsEmpty(Window(Home).Property(RandomMovie.19.Title))  + !Skin.HasSetting(UseFanartThumbPanel)</visible>
+				<visible>!IsEmpty(Window(Home).Property(RandomMovie.19.Title))</visible>
 			</item>
 			<item id="20">
 				<label>$INFO[Window(Home).Property(RandomMovie.20.Title)]</label>
@@ -1825,7 +1825,7 @@
 				<icon>$INFO[Window(Home).Property(RandomMovie.20.Art(poster))]</icon>
 				<thumb>$INFO[Window(Home).Property(RandomMovie.20.Art(fanart))]</thumb>
 				<property name="MoviePath">$INFO[Window(Home).Property(RandomMovie.20.Path)]</property>
-				<visible>!IsEmpty(Window(Home).Property(RandomMovie.20.Title)) + !Skin.HasSetting(UseFanartThumbPanel)</visible>
+				<visible>!IsEmpty(Window(Home).Property(RandomMovie.20.Title))</visible>
 			</item>
 		</content>
 	</include>

@@ -130,8 +130,7 @@
 		<control type="group">
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Favourites)</visible>
-			<visible>!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Window(0).Property(favourite.1.name),Can Not Find favourites.xml)</visible>
-			<visible>System.HasAddon(script.favourites)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem) +  IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>

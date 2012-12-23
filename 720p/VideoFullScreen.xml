@@ -3,7 +3,7 @@
 	<controls>
 		<control type="group" id="1">
 			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(123) | Window.IsVisible(124) | Window.IsVisible(125) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>	
-			<animation effect="fade" time="200">VisibleChange</animation>
+			<animation effect="fade" start="0" end="100" time="100">VisibleChange</animation>		
 			<control type="image" id="1">
 				<include>Dimensions_Fullscreen</include>
  				<aspectratio>stretch</aspectratio>
@@ -98,7 +98,6 @@
 			</control>
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HidePauseInfo) + Player.Paused + !Player.Caching</visible>
-				<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 				<visible>!IsEmpty(VideoPlayer.Plot)</visible>
 				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation> 
 				<posx>320</posx>
@@ -124,6 +123,8 @@
 					<autoscroll time="4000" delay="3000" repeat="5000">!Skin.HasSetting(StopAutoScroll)</autoscroll>
 				</control>
 			</control>
+			<control type="group" id="1">>
+			<animation effect="slide" end="0,-60" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation> 
 			<control type="image" id="1">
 				<description>clearart image</description>
 				<posx>20</posx>
@@ -132,7 +133,7 @@
 				<height>230</height>
 				<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo)</visible>
 			</control>
 			<control type="image" id="1">
 				<description>logo image</description>
@@ -142,7 +143,7 @@
 				<height>230</height>
 				<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo)</visible>
 			</control>
 			<control type="image" id="1">
 				<description>clearart image</description>
@@ -152,7 +153,7 @@
 				<height>230</height>
 				<texture>$INFO[Player.Art(clearart)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<visible>!IsEmpty(Player.Art(clearart)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!IsEmpty(Player.Art(clearart)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo)</visible>
 			</control>
 			<control type="image" id="1">
 				<description>logo image</description>
@@ -162,13 +163,13 @@
 				<height>230</height>
 				<texture>$INFO[Player.Art(clearlogo)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo)</visible>
 			</control>
 			<control type="group" id="1">
 				<visible>[VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearart))]
 					| [VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearlogo))] | [VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearart))]
 				</visible>
-				<visible>[!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>[!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 				<control type="image" id="1">
 					<posx>52</posx>
 					<posy>338r</posy>
@@ -208,8 +209,9 @@
 				<bordersize>8</bordersize>
 				<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 			</control>
+			</control>
 			<control type="group" id="1">
-				<visible>[!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<posx>330</posx>
 				<posy>175r</posy>
 				<control type="label" id="1">
@@ -346,7 +348,7 @@
 				</control>
 			</control>
 			<control type="group" id="1">
-				<visible>[!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<posx>330</posx>
 				<posy>85r</posy>

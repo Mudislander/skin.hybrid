@@ -6,6 +6,11 @@
 	<onload condition="IsEmpty(Skin.String(UsrGenreFanartDir))">Skin.SetString(UsrGenreFanartDir,special://skin/backgrounds/moviegenre/)</onload>
 	<onload condition="IsEmpty(Skin.String(MediaPanelTrans))">Skin.SetString(MediaPanelTrans,5FFFFFFF)</onload>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
+	
+	<!-- Temp until script.randomandlastitems working in Frodo -->
+	<onload condition="!Skin.HasSetting(HideWatchPlaylist)">Skin.ToggleSetting(HideWatchPlaylist)</onload>
+	
+	<!--
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.1.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.1.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListOne)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.2.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.2.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListTwo)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.3.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.3.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListThree)</onload>
@@ -16,6 +21,7 @@
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.8.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.8.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListEight)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.9.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.9.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListNine)</onload>
 	<onload condition="System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(HideWatchPlaylist) + !IsEmpty(Skin.String(HomeItem.10.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.10.Playlist)],method=$VAR[RandomOrLastAction],limit=10,unwatched=$VAR[RandomOrLastUnWatched],resume=False,propertie=HomePlayListTen)</onload>
+	-->
 	<defaultcontrol always="true">8999</defaultcontrol>
 	<allowoverlay>no</allowoverlay>	
 	<controls>
@@ -34,15 +40,22 @@
 			<animation effect="fade" start="100" end="30" time="200" condition="Window.IsVisible(Favourites)">conditional</animation>
 			<include>AddonsHomePanel</include>
 			<include>HomeWeatherForecast</include>
-			<include>PlayListContentPanel</include>
+			<!--include>PlayListContentPanel</include>
+			<include>PlayListContentPanelFanArt</include-->
 			<include>RecentMoviePanel</include>
+			<include>RecentMoviePanelFanArt</include>
 			<include>RecentTVShowPanel</include>
 			<include>RecentAlbumsPanel</include>
+			<include>RecentAlbumsPanelFanArt</include>
 			<include>RecentConcertsPanel</include>
+			<include>RecentConcertsPanelFanArt</include>
 			<include>RandomMoviePanel</include>
+			<include>RandomMoviePanelFanArt</include>
 			<include>RandomTVShowPanel</include>
 			<include>RandomAlbumPanel</include>
+			<include>RandomAlbumPanelFanArt</include>
 			<include>RandomConcertsPanel</include>
+			<include>RandomConcertsPanelFanArt</include>
 		</control>	
 		<control type="group">
 			<animation effect="slide" end="-450,0" time="500" tween="quadratic" easing="out">WindowClose</animation>

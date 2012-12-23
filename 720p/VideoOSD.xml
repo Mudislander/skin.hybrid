@@ -43,6 +43,7 @@
 				<ondown>608</ondown>
 				<onclick>Dialog.Close(VideoOSD,true)</onclick>
 				<onclick>FullScreen</onclick>
+				<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 			</control>
 			<control type="button" id="600">
 				<posx>45</posx>
@@ -259,11 +260,6 @@
 			</control>
 		</control>
 		<!-- !LiveTV -->
-		
-		
-		
-		
-		
 		<control type="group">
 			<posx>500r</posx>
 			<posy>50r</posy>
@@ -355,9 +351,6 @@
 				<animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
 			</control>
 		</control>
-		
-		
-		
 		<!-- LiveTV -->
 		<control type="group">
 			<posx>240r</posx>
@@ -432,9 +425,6 @@
 				<animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
 			</control>
 			<!-- LiveTV -->
-			
-			
-			
 		</control>
 	</controls>
  </window>

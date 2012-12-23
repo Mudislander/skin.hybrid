@@ -555,7 +555,7 @@
 			<height>35</height>
 			<texture border="0,0,0,3" flipx="true">HorizontalMenu/HomeSubEnd.png</texture>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
-			<visible>!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Window(0).Property(favourite.1.name),Can Not Find favourites.xml)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem) + IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 		</control>
 		<control type="button" id="90801">
 			<include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
@@ -565,7 +565,6 @@
 			<onclick>$INFO[Window(0).Property(favourite.1.path)]</onclick>
 			<visible>!IsEmpty(Window(0).Property(favourite.1.name))</visible>
 			<visible>!IsEmpty(Window(0).Property(favourite.1.path))</visible>
-			<visible>!StringCompare(Window(0).Property(favourite.1.name),Can Not Find favourites.xml)</visible>
 			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
 		</control>
 		<control type="button" id="90802">
@@ -613,7 +612,7 @@
 			<height>35</height>
 			<texture border="0,0,0,3">HorizontalMenu/HomeSubEnd.png</texture>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
-			<visible>!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Window(0).Property(favourite.1.name),Can Not Find favourites.xml)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem) + IntegerGreaterThan(Window(Home).Property(favourite.count),0)</visible>
 		</control>
 	</include>
 	<include name="HomeSubMenuPlaylist">
