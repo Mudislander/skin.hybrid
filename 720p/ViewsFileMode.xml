@@ -509,6 +509,12 @@
                         <fadetime>IconCrossfadeTime</fadetime>
                         <aspectratio stretchdiffuse="false">stretch</aspectratio>
                         <texture background="true" diffuse="EmptyCaseMask.png">$INFO[ListItem.Art(poster)]</texture>
+                        <visible>!Skin.HasSetting(DisableMediaCases)</visible>
+                    </control>
+                    <control type="image">
+                        <include>ListImagePosi</include>
+                        <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[ListItem.Art(poster)]</texture>
+                        <visible>Skin.HasSetting(DisableMediaCases)</visible>
                     </control>
                     <control type="group">
                         <visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
@@ -540,6 +546,7 @@
                         <visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
                     </control>
                     <control type="group">
+                        <visible>!Skin.HasSetting(DisableMediaCases)</visible>
                         <posx>0</posx>
                         <posy>35</posy>
                         <control type="image">
@@ -558,6 +565,7 @@
                         <aspectratio aligny="top">keep</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture diffuse="diffuse_mirror3.png" flipy="true" background="true">$INFO[ListItem.Art(poster)]</texture>
+                        <visible>!Skin.HasSetting(DisableMediaCases)</visible>
                     </control>
                     <control type="image">
                         <posx>8</posx>
@@ -567,6 +575,7 @@
                         <aspectratio aligny="top">keep</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture diffuse="diffuse_mirror3.png" flipy="true" background="true">ClearCase/ClearCase.png</texture>
+                        <visible>!Skin.HasSetting(DisableMediaCases)</visible>
                     </control>
                 </control>
             </control>

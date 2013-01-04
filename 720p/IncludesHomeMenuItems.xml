@@ -524,12 +524,13 @@
         <control type="button" id="90705">
             <include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
             <include condition="Skin.HasSetting(HorizontalHomeScreen)">HorizontalCommonSubMenu</include>
-            <label>13200</label>
-            <onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Profiles))</onclick>
-            <onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[13200])</onclick>
+            <label>$LOCALIZE[20126]</label>
+            <onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,System.LogOff)</onclick>
+            <onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[20126])</onclick>
             <onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
-            <onclick>ActivateWindow(Profiles)</onclick>
+            <onclick>System.LogOff</onclick>
             <visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
+            <visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
         </control>
         <control type="button" id="90706">
             <include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>

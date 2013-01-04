@@ -227,15 +227,19 @@
         <value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(6)">$LOCALIZE[133]</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(7)">$LOCALIZE[132]</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(8)">$LOCALIZE[134]</value>
+        <value condition="SubString(Container.FolderPath,program.advanced.launcher)">$LOCALIZE[31200]</value>
         <value condition="SubString(Container.FolderPath,plugin://plugin.video.live.streams)">$LOCALIZE[31660]</value>
-        <value condition="Container.Content(movies) + stringcompare(Container.FolderPath,videodb://1/7/)">$LOCALIZE[31661]</value>
-        <value condition="Container.Content(movies) + !stringcompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/)">$LOCALIZE[342]</value>
-        <value condition="Container.Content(TVShows) + !stringcompare(Container.FolderPath,special://skin/playlists/GenreKidsTV.xsp)">$LOCALIZE[31662]</value>
-        <value condition="stringcompare(Container.FolderPath,special://skin/playlists/GenreKidsTV.xsp)">$LOCALIZE[31604] $LOCALIZE[31663]</value>
+        <value condition="stringcompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/)">$LOCALIZE[31664]</value>
+        <value condition="stringcompare(Container.FolderPath,videodb://1/7/)">$LOCALIZE[31661]</value>
+        <value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/HDMovies.xsp)">$LOCALIZE[31019]</value>
+        <value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreFamily.xsp)">$LOCALIZE[31610] $LOCALIZE[20342]</value>
+        <value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/GenreChildren.xsp)">$LOCALIZE[31604] $LOCALIZE[31663]</value>
+        <value condition="stringcompare(Container.FolderPath,special://skin/extras/Playlists/MoviesInProgress.xsp)">$LOCALIZE[31020]</value>
+        <value condition="Container.Content(movies)">$LOCALIZE[342]</value>
+        <value condition="Container.Content(TVShows)">$LOCALIZE[31662]</value>
         <value condition="Container.Content(Seasons)">$LOCALIZE[33054]</value>
         <value condition="Container.Content(Episodes)">$LOCALIZE[20360]</value>
         <value condition="Container.Content(actors)">$LOCALIZE[344]</value>
-        <value condition="stringcompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/)">$LOCALIZE[31664]</value>
         <value condition="stringcompare(Container.FolderPath,musicdb://6/)">$INFO[Container.FolderName]</value>
         <value condition="stringcompare(Container.FolderPath,musicdb://7/)">$INFO[Container.FolderName]</value>
         <value condition="stringcompare(Container.FolderPath,musicdb://8/)">$INFO[Container.FolderName]</value>
@@ -287,60 +291,60 @@
         <value condition="!Skin.HasSetting(UseDiscTypeCase) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">TVseries</value>
         <value condition="!Skin.HasSetting(UseDiscTypeCase) + !IsEmpty(ListItem.FileExtension)">$INFO[ListItem.FileExtension]</value>
         <value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,bluray) | SubString(ListItem.FilenameAndPath,bdrip) | SubString(ListItem.FilenameAndPath,bd25) | SubString(ListItem.FilenameAndPath,bd50)]">bd</value>
-        <value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,.3D.) | SubString(ListItem.FilenameAndPath,.SBS.)]">3DCase</value>
+        <value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,.3D.) | SubString(ListItem.FilenameAndPath,.3DBD.) | SubString(ListItem.FilenameAndPath,.SBS.)]">3DCase</value>
         <value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,hddvd)">hddvd</value>
         <value condition="Skin.HasSetting(UseDiscTypeCase) + SubString(ListItem.FilenameAndPath,dvd)">dvd</value>
         <value condition="Skin.HasSetting(UseDiscTypeCase) + [SubString(ListItem.FilenameAndPath,pdtv) | SubString(ListItem.FilenameAndPath,hdtv) | SubString(ListItem.FilenameAndPath,dsr)]">TVseries</value>
         <value>dv</value>
     </variable>
     <variable name="LiveCaseOne">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.5.Thumb))">$INFO[Window(home).Property(RandomMovie.5.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.5.Thumb))">$INFO[Window(home).Property(LatestMovie.5.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.5.Art(poster)))">$INFO[Window(home).Property(RandomMovie.5.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.5.Art(poster)))">$INFO[Window(home).Property(RecentMovie.5.Art(poster))]</value>
         <value>fallbackposters/fallback5.jpg</value>
     </variable>
     <variable name="LiveCaseTwo">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.9.Thumb))">$INFO[Window(home).Property(RandomMovie.9.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.9.Thumb))">$INFO[Window(home).Property(LatestMovie.9.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.9.Art(poster)))">$INFO[Window(home).Property(RandomMovie.9.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.9.Art(poster)))">$INFO[Window(home).Property(RecentMovie.9.Art(poster))]</value>
         <value>fallbackposters/fallback9.jpg</value>
     </variable>
     <variable name="LiveCaseThree">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.8.Thumb))">$INFO[Window(home).Property(RandomMovie.8.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.8.Thumb))">$INFO[Window(home).Property(LatestMovie.8.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.8.Art(poster)))">$INFO[Window(home).Property(RandomMovie.8.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.8.Art(poster)))">$INFO[Window(home).Property(RecentMovie.8.Art(poster))]</value>
         <value>fallbackposters/fallback8.jpg</value>
     </variable>
     <variable name="LiveCaseFour">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.7.Thumb))">$INFO[Window(home).Property(RandomMovie.7.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.7.Thumb))">$INFO[Window(home).Property(LatestMovie.7.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.7.Art(poster)))">$INFO[Window(home).Property(RandomMovie.7.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.7.Art(poster)))">$INFO[Window(home).Property(RecentMovie.7.Art(poster))]</value>
         <value>fallbackposters/fallback7.jpg</value>
     </variable>
     <variable name="LiveCaseFive">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.4.Thumb))">$INFO[Window(home).Property(RandomMovie.4.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.4.Thumb))">$INFO[Window(home).Property(LatestMovie.4.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.4.Art(poster)))">$INFO[Window(home).Property(RandomMovie.4.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.4.Art(poster)))">$INFO[Window(home).Property(RecentMovie.4.Art(poster))]</value>
         <value>fallbackposters/fallback4.jpg</value>
     </variable>
     <variable name="LiveCaseSix">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.6.Thumb))">$INFO[Window(home).Property(RandomMovie.6.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.6.Thumb))">$INFO[Window(home).Property(LatestMovie.6.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.6.Art(poster)))">$INFO[Window(home).Property(RandomMovie.6.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.6.Art(poster)))">$INFO[Window(home).Property(RecentMovie.6.Art(poster))]</value>
         <value>fallbackposters/fallback6.jpg</value>
     </variable>
     <variable name="LiveCaseSeven">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.10.Thumb))">$INFO[Window(home).Property(RandomMovie.10.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.10.Thumb))">$INFO[Window(home).Property(LatestMovie.10.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.10.Art(poster)))">$INFO[Window(home).Property(RandomMovie.10.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.10.Art(poster)))">$INFO[Window(home).Property(RecentMovie.10.Art(poster))]</value>
         <value>fallbackposters/fallback10.jpg</value>
     </variable>
     <variable name="LiveCaseEight">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.3.Thumb))">$INFO[Window(home).Property(RandomMovie.3.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.3.Thumb))">$INFO[Window(home).Property(LatestMovie.3.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.3.Art(poster)))">$INFO[Window(home).Property(RandomMovie.3.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.3.Art(poster)))">$INFO[Window(home).Property(RecentMovie.3.Art(poster))]</value>
         <value>fallbackposters/fallback3.jpg</value>
     </variable>
     <variable name="LiveCaseNine">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.2.Thumb))">$INFO[Window(home).Property(RandomMovie.2.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.2.Thumb))">$INFO[Window(home).Property(LatestMovie.2.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.2.Art(poster)))">$INFO[Window(home).Property(RandomMovie.2.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.2.Art(poster)))">$INFO[Window(home).Property(RecentMovie.2.Art(poster))]</value>
         <value>fallbackposters/fallback2.jpg</value>
     </variable>
     <variable name="LiveCaseTen">
-        <value condition="!IsEmpty(Window(home).Property(RandomMovie.1.Thumb))">$INFO[Window(home).Property(RandomMovie.1.Thumb)]</value>
-        <value condition="!IsEmpty(Window(home).Property(LatestMovie.1.Thumb))">$INFO[Window(home).Property(LatestMovie.1.Thumb)]</value>
+        <value condition="!IsEmpty(Window(home).Property(RandomMovie.1.Art(poster)))">$INFO[Window(home).Property(RandomMovie.1.Art(poster))]</value>
+        <value condition="!IsEmpty(Window(home).Property(RecentMovie.1.Art(poster)))">$INFO[Window(home).Property(RecentMovie.1.Art(poster))]</value>
         <value>fallbackposters/fallback1.jpg</value>
     </variable>
     <variable name="UsrHomePlaylistTitleOne" type="text">

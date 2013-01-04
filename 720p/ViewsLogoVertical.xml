@@ -174,95 +174,133 @@
                 <control type="group">
                     <visible>!stringcompare(ListItem.Label,..)</visible>
                     <control type="image">
-                        <posx>38</posx>
-                        <posy>15</posy>
-                        <width>248</width>
-                        <height>410</height>
-                        <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
-                        <aspectratio aligny="bottom">stretch</aspectratio>
-                    </control>
-                    <control type="image">
-                        <posx>38</posx>
-                        <posy>455</posy>
-                        <width>248</width>
-                        <height>410</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
-                        <texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
-                    </control>
-                    <control type="group">
-                        <visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
-                        <control type="image">
-                            <posx>181</posx>
-                            <posy>14</posy>
-                            <width>105</width>
-                            <height>105</height>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                            <texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
-                            <visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
-                        </control>
-                        <control type="image">
-                            <posx>181</posx>
-                            <posy>14</posy>
-                            <width>105</width>
-                            <height>105</height>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                            <texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
-                            <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <posx>246</posx>
-                        <posy>380</posy>
-                        <width>40</width>
-                        <height>40</height>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                        <texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
-                        <visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
-                    </control>
-                    <control type="image">
-                        <description>Rating value</description>
-                        <posx>40</posx>
-                        <posy>14</posy>
-                        <width>150</width>
-                        <height>32</height>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
-                        <visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>40</posx>
-                        <posy>390</posy>
-                        <width>44</width>
-                        <height>26</height>
-                        <texture>movieset.png</texture>
-                        <visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(ListItem.FolderPath,videodb://,left)</visible>
-                    </control>
-                    <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>300</width>
                         <height>440</height>
-                        <aspectratio>stretch</aspectratio>
-                        <texture fallback="ClearCase/dv.png">$INFO[ListItem.FileExtension,ClearCase/,.png]</texture>
+                        <aspectratio aligny="bottom">keep</aspectratio>
+                        <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+                        <visible>SubString(Container.FolderPath,program.advanced.launcher)</visible>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>440</posy>
                         <width>300</width>
                         <height>440</height>
-                        <aspectratio aligny="top">stretch</aspectratio>
-                        <texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
+                        <aspectratio aligny="top">keep</aspectratio>
+                        <texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
+                        <visible>SubString(Container.FolderPath,program.advanced.launcher)</visible>
                     </control>
-                    <control type="grouplist">
-                        <description>Media Genre Flagging</description>
-                        <posx>0</posx>
-                        <posy>-80</posy>
-                        <width>840</width>
-                        <align>right</align>
-                        <itemgap>0</itemgap>
-                        <orientation>horizontal</orientation>
-                        <include>GenreText</include>
-                        <visible>!SubString(Container.FolderPath,program.advanced.launcher)</visible>
+                    <control type="group">
+                        <visible>!stringcompare(ListItem.Label,..) + !SubString(Container.FolderPath,program.advanced.launcher)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>440</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+                            <visible>Skin.HasSetting(DisableMediaCases)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>38</posx>
+                            <posy>15</posy>
+                            <width>248</width>
+                            <height>410</height>
+                            <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+                            <aspectratio aligny="bottom">stretch</aspectratio>
+                            <visible>!Skin.HasSetting(DisableMediaCases)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>38</posx>
+                            <posy>455</posy>
+                            <width>248</width>
+                            <height>410</height>
+                            <aspectratio aligny="top">stretch</aspectratio>
+                            <texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
+                            <visible>!Skin.HasSetting(DisableMediaCases)</visible>
+                        </control>
+                        <control type="group">
+                            <visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
+                            <control type="image">
+                                <posx>181</posx>
+                                <posy>14</posy>
+                                <width>105</width>
+                                <height>105</height>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <texture background="true" fallback="DefaultFallback/DefaultWatched.png">UsrStatus/$LOCALIZE[16102].png</texture>
+                                <animation effect="slide" start="0,0" end="13,-15" delay="0" time="0" condition="Skin.HasSetting(DisableMediaCases)">conditional</animation>
+                                <visible>StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                            </control>
+                            <control type="image">
+                                <posx>181</posx>
+                                <posy>14</posy>
+                                <width>105</width>
+                                <height>105</height>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <texture background="true" fallback="DefaultFallback/DefaultUnwatched.png">UsrStatus/$LOCALIZE[16101].png</texture>
+                                <animation effect="slide" start="0,0" end="15,-15" delay="0" time="0" condition="Skin.HasSetting(DisableMediaCases)">conditional</animation>
+                                <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(HideNewMediaStat) + !IntegerGreaterThan(ListItem.PercentPlayed,2)</visible>
+                            </control>
+                        </control>
+                        <control type="image">
+                            <posx>246</posx>
+                            <posy>380</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <fadetime>IconCrossfadeTime</fadetime>
+                            <texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+                            <animation effect="slide" start="0,0" end="10,18" delay="0" time="0" condition="Skin.HasSetting(DisableMediaCases)">conditional</animation>
+                            <visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Rating value</description>
+                            <posx>40</posx>
+                            <posy>14</posy>
+                            <width>150</width>
+                            <height>32</height>
+                            <aspectratio align="left">keep</aspectratio>
+                            <texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
+                            <animation effect="slide" start="0,0" end="-30,-10" delay="0" time="0" condition="Skin.HasSetting(DisableMediaCases)">conditional</animation>
+                            <visible>!Skin.HasSetting(DisableStarRating)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>40</posx>
+                            <posy>390</posy>
+                            <width>44</width>
+                            <height>26</height>
+                            <texture>movieset.png</texture>
+                            <animation effect="slide" start="0,0" end="-30,18" delay="0" time="0" condition="Skin.HasSetting(DisableMediaCases)">conditional</animation>
+                            <visible>Container.Content(Movies) + ListItem.IsFolder + SubString(ListItem.FolderPath,videodb://,left)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>440</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture fallback="ClearCase/dv.png">$INFO[ListItem.FileExtension,ClearCase/,.png]</texture>
+                            <visible>!Skin.HasSetting(DisableMediaCases)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>440</posy>
+                            <width>300</width>
+                            <height>440</height>
+                            <aspectratio aligny="top">stretch</aspectratio>
+                            <texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
+                            <visible>!Skin.HasSetting(DisableMediaCases)</visible>
+                        </control>
+                        <control type="grouplist">
+                            <description>Media Genre Flagging</description>
+                            <posx>0</posx>
+                            <posy>-80</posy>
+                            <width>840</width>
+                            <align>right</align>
+                            <itemgap>0</itemgap>
+                            <orientation>horizontal</orientation>
+                            <include>GenreText</include>
+                        </control>
                     </control>
                     <control type="label">
                         <posx>320</posx>
