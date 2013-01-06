@@ -113,7 +113,15 @@
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
-                <control type="radiobutton" id="91">
+				<control type="radiobutton" id="90">
+                    <textwidth>170</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>$LOCALIZE[31304]</label>
+                    <onclick>Skin.ToggleSetting(EnableFanArtWall)</onclick>
+                    <selected>Skin.HasSetting(EnableFanArtWall)</selected>
+                    <visible>Control.IsVisible(732)</visible>
+                </control>
+	             <control type="radiobutton" id="91">
                     <textwidth>170</textwidth>
                     <include>ButtonCommonValues</include>
                     <label>$LOCALIZE[31111] $LOCALIZE[563]</label>
@@ -166,7 +174,7 @@
                     <label>$LOCALIZE[31988]</label>
                     <onclick>Skin.ToggleSetting(HideDarkThumbs)</onclick>
                     <selected>Skin.HasSetting(HideDarkThumbs)</selected>
-                    <visible>Control.IsVisible(732)</visible>
+                    <visible>Control.IsVisible(732) + !Skin.HasSetting(EnableFanArtWall)</visible>
                 </control>
                 <control type="radiobutton" id="97">
                     <description>Show Info Toggle 508</description>

@@ -27,10 +27,22 @@
                         <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <include>VisibleFadeEffect</include>
+						<include>TransparentWallEffect</include>
+						<visible>Skin.HasSetting(EnableFanArtWall)</visible>
+                    </control>
+					<control type="image">
+                        <posx>3</posx>
+                        <posy>3</posy>
+                        <width>118</width>
+                        <height>174</height>
+                        <texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <include>VisibleFadeEffect</include>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                     </control>
                     <control type="group">
-                        <visible>Container.Content(episodes) + !IsEmpty(ListItem.Title)</visible>
-                        <control type="label">
+                        <visible>Container.Content(episodes) + !IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableFanArtWall)</visible>
+						<control type="label">
                             <posx>60</posx>
                             <posy>3</posy>
                             <width>114</width>
@@ -60,6 +72,7 @@
                         <height>30</height>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture>$INFO[ListItem.SubtitleLanguage,Language/,.png]</texture>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <visible>!Skin.HasSetting(HideSubTitleFlags) + !IsEmpty(ListItem.SubtitleLanguage)</visible>
                     </control>
                     <control type="image">
@@ -68,26 +81,30 @@
                         <width>35</width>
                         <height>20</height>
                         <texture>movieset.png</texture>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <visible>Container.Content(Movies) + ListItem.IsFolder + !stringcompare(ListItem.Label,..) + SubString(Container.Folderpath,videodb://,left)</visible>
                     </control>
-                    <control type="image">
+					<control type="image">
                         <posx>-3</posx>
                         <posy>-1</posy>
                         <width>130</width>
                         <height>186</height>
                         <texture background="true">ClearCase/EmptyCaseOverlay.png</texture>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <visible>[!Skin.HasSetting(HideDarkThumbs) | !StringCompare(ListItem.Overlay,OverlayWatched.png)] + !StringCompare(ListItem.Label,..)</visible>
                     </control>
-                    <control type="image">
+                	<control type="image">
                         <posx>-3</posx>
                         <posy>-1</posy>
                         <width>130</width>
                         <height>186</height>
                         <texture background="true">DarkCase/EmptyCaseOverlay.png</texture>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <visible>Skin.HasSetting(HideDarkThumbs) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
                     </control>
-                    <control type="group">
+				    <control type="group">
                         <visible>Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <control type="image">
                             <posx>81</posx>
                             <posy>3</posy>
@@ -109,6 +126,7 @@
                     </control>
                     <control type="group">
                         <visible>!Skin.HasSetting(UseStatusBanners) + !IsEmpty(ListItem.Overlay)</visible>
+						<visible>!Skin.HasSetting(EnableFanArtWall)</visible>
                         <control type="image">
                             <posx>81</posx>
                             <posy>3</posy>
@@ -134,7 +152,7 @@
                         <aspectratio>stretch</aspectratio>
                         <texture diffuse="ClearCase/EmptyCaseMask.png">black-back.png</texture>
                         <colordiffuse>AAFFFFFF</colordiffuse>
-                        <visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..) + !Skin.HasSetting(EnableFanArtWall)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="123" height="179">
