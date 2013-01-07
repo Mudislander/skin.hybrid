@@ -1078,7 +1078,7 @@
             </control>
             <control type="group">
                 <!-- Music Playlist -->
-                <visible>
+			   <visible>
 					[Container(9000).HasFocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)]|
 					[Container(9000).HasFocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)]|
 					[Container(9000).HasFocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)]|
@@ -1102,7 +1102,7 @@
                     <posy>18</posy>
                     <height>20</height>
                     <width>830</width>
-                    <label>$INFO[Container(8018).ListItem.Label] $LOCALIZE[31981] </label>
+                    <label>$INFO[Container(9000).ListItem.Label] $LOCALIZE[31981] </label>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
@@ -1116,7 +1116,7 @@
                     <posy>18</posy>
                     <height>20</height>
                     <width>830</width>
-                    <label>$INFO[Container(8018).ListItem.Label] $LOCALIZE[31980] </label>
+                    <label>$INFO[Container(9000).ListItem.Label] $LOCALIZE[31980] </label>
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
