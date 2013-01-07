@@ -150,7 +150,7 @@
                 <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
                 <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
                 <onclick condition="Container.Content(musicvideos)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=musicvideo, dbid=$INFO[ListItem.DBID])</onclick>
-                <visible>[Container.Content(tvshows)|Container.Content(movies)|Container.Content(musicvideos)] + system.hasaddon(script.artwork.downloader)</visible>
+                <visible>[Container.Content(tvshows)|Container.Content(movies)|Container.Content(musicvideos)] + !Skin.HasSetting(DisableArtDownloader)</visible>
             </control>
             <control type="button" id="3031">
                 <description>Fetch TvTunes stuff</description>

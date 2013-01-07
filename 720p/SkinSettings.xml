@@ -3911,7 +3911,34 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
                     </control>
-                    <control type="label" id="708">
+					<control type="radiobutton" id="708">
+                        <description>Enable Script Artwork Downloader</description>
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>$LOCALIZE[31034]</label>
+                        <onclick>Skin.ToggleSetting(DisableArtDownloader)</onclick>
+                        <selected>!Skin.HasSetting(DisableArtDownloader)</selected>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+                    <control type="radiobutton" id="709">
+                        <description>Allow autorun Artwork Downloader</description>
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <label>    $LOCALIZE[31035]</label>
+                        <onclick>Skin.ToggleSetting(DisableAutoDownloader)</onclick>
+                        <selected>!Skin.HasSetting(DisableAutoDownloader)</selected>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <enable>System.HasAddon(script.artwork.downloader) + !Skin.HasSetting(DisableArtDownloader)</enable>
+                    </control>
+					<control type="label" id="710">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -3921,7 +3948,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="button" id="709">
+                    <control type="button" id="711">
                         <description>Reset Skin Values</description>
                         <width>750</width>
                         <height>40</height>
