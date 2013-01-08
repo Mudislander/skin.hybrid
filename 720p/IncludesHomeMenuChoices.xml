@@ -292,9 +292,9 @@
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Music)</onclick>
                 <include>CloseMenuChoice</include>
             </item>
-			<item id="23">
+            <item id="23">
                 <description>Playlist Window</description>
-		         <label>$LOCALIZE[559] ([COLOR=selected]$LOCALIZE[513][/COLOR])</label>
+                <label>$LOCALIZE[559] ([COLOR=selected]$LOCALIZE[513][/COLOR])</label>
                 <include>ClearButtonChoice</include>
                 <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(VideoLibrary,special://videoplaylists/,return))</onclick>
                 <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[559])</onclick>
@@ -304,7 +304,7 @@
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,Movies)</onclick>
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Movies)</onclick>
                 <include>CloseMenuChoice</include>
-            </item>			
+            </item>
             <item id="24">
                 <description>Playlist Video</description>
                 <label>$LOCALIZE[31021] $LOCALIZE[559] ([COLOR=selected]$LOCALIZE[1024][/COLOR])</label>

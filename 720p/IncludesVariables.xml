@@ -5,60 +5,38 @@
         <value condition="!IsEmpty(Skin.CurrentTheme)  + !stringcompare(Skin.CurrentTheme,$LOCALIZE[15109])">special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</value>
         <value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
     </variable>
-    <variable name="CurrentThemeBackground" type="text">
-        <value condition="!IsEmpty(Skin.CurrentTheme)  + !stringcompare(Skin.CurrentTheme,$LOCALIZE[15109])">special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</value>
-        <value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
-    </variable>
     <variable name="CommonScreenBackground" type="text">
         <value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(CurrentWeatherBackdrop)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
         <value condition="Container(9000).Hasfocus(1) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(1) + IsEmpty(Skin.String(HomeItem.1.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(2) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(2) + IsEmpty(Skin.String(HomeItem.2.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(3) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(3) + IsEmpty(Skin.String(HomeItem.3.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(4) + !IsEmpty(Skin.String(HomeItem.4.FanArt))">$INFO[Skin.String(HomeItem.4.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(4) + IsEmpty(Skin.String(HomeItem.4.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(5) + !IsEmpty(Skin.String(HomeItem.5.FanArt))">$INFO[Skin.String(HomeItem.5.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(5) + IsEmpty(Skin.String(HomeItem.5.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(6) + !IsEmpty(Skin.String(HomeItem.6.FanArt))">$INFO[Skin.String(HomeItem.6.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(6) + IsEmpty(Skin.String(HomeItem.6.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(7) + !IsEmpty(Skin.String(HomeItem.7.FanArt))">$INFO[Skin.String(HomeItem.7.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(7) + IsEmpty(Skin.String(HomeItem.7.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(8) + !IsEmpty(Skin.String(HomeItem.8.FanArt))">$INFO[Skin.String(HomeItem.8.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(8) + IsEmpty(Skin.String(HomeItem.8.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(9) + !IsEmpty(Skin.String(HomeItem.9.FanArt))">$INFO[Skin.String(HomeItem.9.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(9) + IsEmpty(Skin.String(HomeItem.9.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(10) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(10) + IsEmpty(Skin.String(HomeItem.10.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="Container(9000).Hasfocus(11) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
-        <value condition="Container(9000).Hasfocus(11) + IsEmpty(Skin.String(HomeItem.11.FanArt))">$VAR[CurrentThemeBackground]</value>
+        <value condition="!IsEmpty(Skin.CurrentTheme)  + !stringcompare(Skin.CurrentTheme,$LOCALIZE[15109])">special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</value>
+        <value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
     </variable>
     <variable name="CommonMenuItemBackground" type="text">
         <value condition="StringCompare(Window(home).Property(MenuItemSelected),Weather) + Skin.HasSetting(CurrentWeatherBackdrop)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
         <value condition="!IsEmpty(Window(home).Property(SubMenuBackground))">$INFO[Window(home).Property(SubMenuBackground)]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemOne) + !IsEmpty(Skin.String(HomeItem.1.FanArt))">$INFO[Skin.String(HomeItem.1.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemOne) + IsEmpty(Skin.String(HomeItem.1.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTwo) + !IsEmpty(Skin.String(HomeItem.2.FanArt))">$INFO[Skin.String(HomeItem.2.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTwo) + IsEmpty(Skin.String(HomeItem.2.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemThree) + !IsEmpty(Skin.String(HomeItem.3.FanArt))">$INFO[Skin.String(HomeItem.3.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemThree) + IsEmpty(Skin.String(HomeItem.3.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemFour) + !IsEmpty(Skin.String(HomeItem.4.FanArt))">$INFO[Skin.String(HomeItem.4.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemFour) + IsEmpty(Skin.String(HomeItem.4.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemFive) + !IsEmpty(Skin.String(HomeItem.5.FanArt))">$INFO[Skin.String(HomeItem.5.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemFive) + IsEmpty(Skin.String(HomeItem.5.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemSix) + !IsEmpty(Skin.String(HomeItem.6.FanArt))">$INFO[Skin.String(HomeItem.6.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemSix) + IsEmpty(Skin.String(HomeItem.6.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemSeven) + !IsEmpty(Skin.String(HomeItem.7.FanArt))">$INFO[Skin.String(HomeItem.7.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemSeven) + IsEmpty(Skin.String(HomeItem.7.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemEight) + !IsEmpty(Skin.String(HomeItem.8.FanArt))">$INFO[Skin.String(HomeItem.8.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemEight) + IsEmpty(Skin.String(HomeItem.8.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemNine) + !IsEmpty(Skin.String(HomeItem.9.FanArt))">$INFO[Skin.String(HomeItem.9.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemNine) + IsEmpty(Skin.String(HomeItem.9.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTen) + !IsEmpty(Skin.String(HomeItem.10.FanArt))">$INFO[Skin.String(HomeItem.10.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),ItemTen) + IsEmpty(Skin.String(HomeItem.10.FanArt))">$VAR[CurrentThemeBackground]</value>
         <value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + !IsEmpty(Skin.String(HomeItem.11.FanArt))">$INFO[Skin.String(HomeItem.11.FanArt)]</value>
-        <value condition="StringCompare(Window(home).Property(MenuItemActive),Settings) + IsEmpty(Skin.String(HomeItem.11.FanArt))">$VAR[CurrentThemeBackground]</value>
+        <value condition="!IsEmpty(Skin.CurrentTheme)  + !stringcompare(Skin.CurrentTheme,$LOCALIZE[15109])">special://skin/backgrounds/$INFO[Skin.CurrentTheme].jpg</value>
+        <value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
     </variable>
     <variable name="AutoGenreImage">
         <value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31600],Left) | substring(ListItem.Label,Action,Left)]">DefaultGenre/Action.png</value>
@@ -347,6 +325,16 @@
         <value condition="!IsEmpty(Window(home).Property(RecentMovie.1.Art(poster)))">$INFO[Window(home).Property(RecentMovie.1.Art(poster))]</value>
         <value>fallbackposters/fallback1.jpg</value>
     </variable>
+    <variable name="NextAiredFanart">
+        <value condition="Control.HasFocus(200) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(200).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(201) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(201).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(202) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(202).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(203) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(203).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(204) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(204).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(205) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(205).ListItem.Property(Fanart)]</value>
+        <value condition="Control.HasFocus(206) + !IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))">$INFO[Container(206).ListItem.Property(Fanart)]</value>
+        <value>special://skin/backgrounds/homescreen/search.jpg</value>
+    </variable>
     <variable name="UsrHomePlaylistTitleOne" type="text">
         <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.1.Title)]</value>
@@ -358,9 +346,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.1.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.1.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.1.Title)]</value>
-	</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleTwo" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.2.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.2.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.2.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.2.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.2.Title)]</value>
@@ -370,9 +358,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.2.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.2.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.2.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleThree" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.3.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.3.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.3.Title)]</value>
@@ -382,9 +370,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.3.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.3.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.3.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleFour" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.4.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.4.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.4.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.4.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.4.Title)]</value>
@@ -394,9 +382,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.4.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.4.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.4.Title)]</value>
-	</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleFive" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.5.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.5.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.5.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.5.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.5.Title)]</value>
@@ -406,9 +394,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.5.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.5.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.5.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleSix" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.6.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.6.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.6.Title)]</value>
@@ -417,10 +405,10 @@
         <value condition="Container(9000).Hasfocus(7)">$INFO[Window(home).Property(HomePlayListSeven.6.Title)]</value>
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.6.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.6.Title)]</value>
-        <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.6.Title)]</value> 
-		</variable>
+        <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.6.Title)]</value>
+    </variable>
     <variable name="UsrHomePlaylistTitleSeven" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.7.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.7.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.7.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.7.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.7.Title)]</value>
@@ -430,9 +418,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.7.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.7.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.7.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleEight" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.8.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.8.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.8.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.8.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.8.Title)]</value>
@@ -442,9 +430,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.8.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.8.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.8.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleNine" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.9.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.9.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.9.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.9.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.9.Title)]</value>
@@ -454,9 +442,9 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.9.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.9.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.9.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistTitleTen" type="text">
- <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.10.Title)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.10.Title)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.10.Title)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.10.Title)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.10.Title)]</value>
@@ -466,7 +454,7 @@
         <value condition="Container(9000).Hasfocus(8)">$INFO[Window(home).Property(HomePlayListEight.10.Title)]</value>
         <value condition="Container(9000).Hasfocus(9)">$INFO[Window(home).Property(HomePlayListNine.10.Title)]</value>
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.10.Title)]</value>
-		</variable>
+    </variable>
     <variable name="UsrHomePlaylistInfoOne" type="text">
         <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Episode)">$INFO[Window(home).Property(HomePlayListOne.1.EpisodeNo)] - $INFO[Window(home).Property(HomePlayListOne.1.TVshowTitle)]</value>
         <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Episode)">$INFO[Window(home).Property(HomePlayListTwo.1.EpisodeNo)] - $INFO[Window(home).Property(HomePlayListTwo.1.TVshowTitle)]</value>
@@ -690,7 +678,7 @@
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.1.Play)]</value>
     </variable>
     <variable name="UsrHomePlaylistPathTwo" type="text">
-         <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.2.Play)]</value>
+        <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.2.Play)]</value>
         <value condition="Container(9000).Hasfocus(2)">$INFO[Window(home).Property(HomePlayListTwo.2.Play)]</value>
         <value condition="Container(9000).Hasfocus(3)">$INFO[Window(home).Property(HomePlayListThree.2.Play)]</value>
         <value condition="Container(9000).Hasfocus(4)">$INFO[Window(home).Property(HomePlayListFour.2.Play)]</value>
@@ -798,224 +786,224 @@
         <value condition="Container(9000).Hasfocus(10)">$INFO[Window(home).Property(HomePlayListTen.10.Play)]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbOne" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.1.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.1.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.1.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.1.Art(thumb))]</value>
-	</variable>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.1.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.1.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.1.Art(thumb))]</value>
+    </variable>
     <variable name="UsrHomePlaylistThumbTwo" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.2.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.2.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.2.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.2.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.2.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.2.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbThree" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.3.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.3.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.3.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.3.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.3.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.3.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbFour" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.4.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.4.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.4.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.4.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.4.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.4.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbFive" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.5.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.5.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.5.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.5.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.5.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.5.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbSix" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.6.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.6.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.6.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.6.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.6.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.6.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbSeven" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.7.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.7.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.7.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.7.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.7.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.7.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbEight" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.8.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.8.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.8.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.8.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.8.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.8.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbNine" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.9.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.9.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.9.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.9.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.9.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.9.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistThumbTen" type="text">
-	    <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.10.Art(thumb))]</value>
-		<value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.10.Art(thumb))]</value>
-	    <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.10.Art(poster))]</value>
-		<value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(1) + !StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)">$INFO[Window(home).Property(HomePlayListOne.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(2) + !StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)">$INFO[Window(home).Property(HomePlayListTwo.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(3) + !StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)">$INFO[Window(home).Property(HomePlayListThree.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(4) + !StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(4) + StringCompare(Window(home).Property(HomePlayListFour.Type),Music)">$INFO[Window(home).Property(HomePlayListFour.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(5) + !StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(5) + StringCompare(Window(home).Property(HomePlayListFive.Type),Music)">$INFO[Window(home).Property(HomePlayListFive.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(6) + !StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(6) + StringCompare(Window(home).Property(HomePlayListSix.Type),Music)">$INFO[Window(home).Property(HomePlayListSix.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(7) + !StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(7) + StringCompare(Window(home).Property(HomePlayListSeven.Type),Music)">$INFO[Window(home).Property(HomePlayListSeven.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(8) + !StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(8) + StringCompare(Window(home).Property(HomePlayListEight.Type),Music)">$INFO[Window(home).Property(HomePlayListEight.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(9) + !StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(9) + StringCompare(Window(home).Property(HomePlayListNine.Type),Music)">$INFO[Window(home).Property(HomePlayListNine.10.Art(thumb))]</value>
+        <value condition="Container(9000).Hasfocus(10) + !StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.10.Art(poster))]</value>
+        <value condition="Container(9000).Hasfocus(10) + StringCompare(Window(home).Property(HomePlayListTen.Type),Music)">$INFO[Window(home).Property(HomePlayListTen.10.Art(thumb))]</value>
     </variable>
     <variable name="UsrHomePlaylistFanArtOne" type="text">
         <value condition="Container(9000).Hasfocus(1)">$INFO[Window(home).Property(HomePlayListOne.1.Art(fanart))]</value>

@@ -21,14 +21,7 @@
                 <description>Cd overlay</description>
                 <posx>320</posx>
                 <posy>30</posy>&gt;
-				<width>170</width>
-				<height>175</height>
-				<include>CDArtSpinner</include>
-				<aspectratio align="bottom">keep</aspectratio>
-				<texture fallback="Disks/DefaultCDArt.png">$INFO[Player.FolderPath,,cdart.png]</texture>
-				<!--animation effect="slide" start="-70" end="0" time="1200" tween="cubic" easing="out" delay="2000">WindowOpen</animation-->
-				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible>
-				</control>
+				<width>170</width><height>175</height><include>CDArtSpinner</include><aspectratio align="bottom">keep</aspectratio><texture fallback="Disks/DefaultCDArt.png">$INFO[Player.FolderPath,,cdart.png]</texture><!--animation effect="slide" start="-70" end="0" time="1200" tween="cubic" easing="out" delay="2000">WindowOpen</animation--><visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible></control>
             <control type="image">
                 <description>Cover Image</description>
                 <posx>240</posx>
@@ -129,11 +122,7 @@
             <control type="image">
                 <posx>10</posx>
                 <posy>20</posy>&gt;
-				<width>200</width>
-				<height>78</height>
-				<texture fallback="XBMC_Logo.png">$INFO[Player.FolderPath,,../logo.png]</texture>
-				<aspectratio align="bottom">keep</aspectratio>
-			</control>
+				<width>200</width><height>78</height><texture fallback="XBMC_Logo.png">$INFO[Player.FolderPath,,../logo.png]</texture><aspectratio align="bottom">keep</aspectratio></control>
             <control type="image">
                 <description>Cd overlay</description>
                 <posx>100</posx>

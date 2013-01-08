@@ -3911,7 +3911,7 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <enable>System.HasAddon(script.randomandlastitems) + !Skin.HasSetting(DisableScriptPlayList)</enable>
                     </control>
-					<control type="radiobutton" id="708">
+                    <control type="radiobutton" id="708">
                         <description>Enable Script Artwork Downloader</description>
                         <width>750</width>
                         <height>40</height>
@@ -3938,7 +3938,7 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <enable>System.HasAddon(script.artwork.downloader) + !Skin.HasSetting(DisableArtDownloader)</enable>
                     </control>
-					<control type="label" id="710">
+                    <control type="label" id="710">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>

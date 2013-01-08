@@ -1078,7 +1078,7 @@
             </control>
             <control type="group">
                 <!-- Music Playlist -->
-			   <visible>
+                <visible>
 					[Container(9000).HasFocus(1) + StringCompare(Window(home).Property(HomePlayListOne.Type),Music)]|
 					[Container(9000).HasFocus(2) + StringCompare(Window(home).Property(HomePlayListTwo.Type),Music)]|
 					[Container(9000).HasFocus(3) + StringCompare(Window(home).Property(HomePlayListThree.Type),Music)]|
