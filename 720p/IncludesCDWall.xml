@@ -2,7 +2,7 @@
     <include name="AlbumArtMusicVizWall">
         <control type="group">
             <visible>Player.HasAudio + !IsEmpty(Skin.String(AlbumWallFolder)) + Skin.HasSetting(ShowBackgroundAlbumWall)</visible>
-            <posx>-35</posx>
+			<posx>-35</posx>
             <posy>-15</posy>
             <control type="multiimage">
                 <posx>0</posx>
@@ -501,8 +501,12 @@
             </control>
         </control>
         <control type="group">
-            <visible>Player.HasAudio + [IsEmpty(Skin.String(AlbumWallFolder)) + Skin.HasSetting(ShowBackgroundAlbumWall)] | [IsEmpty(MusicPlayer.Property(Fanart_Image)) + !Skin.HasSetting(ShowBackgroundAlbumWall)]</visible>
-            <posx>-35</posx>
+            <visible>
+				[Player.HasAudio + IsEmpty(Skin.String(AlbumWallFolder)) + Skin.HasSetting(ShowBackgroundAlbumWall)] | 
+				[Player.HasAudio + IsEmpty(MusicPlayer.Property(Fanart_Image)) + !Skin.HasSetting(ShowBackgroundAlbumWall)] |
+				[!Player.HasAudio + Skin.HasSetting(GlobalCDwallBackdrop)]
+			</visible>
+			<posx>-35</posx>
             <posy>-15</posy>
             <control type="image">
                 <posx>0</posx>

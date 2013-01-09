@@ -1014,7 +1014,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="radiobutton" id="306">
+                    <control type="radiobutton" id="307">
                         <posx>0</posx>
                         <posy>45</posy>
                         <width>750</width>
@@ -1027,16 +1027,17 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <onclick>Skin.ToggleSetting(GlobalMenuBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+						<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
                         <onclick>Control.Move(9003,1)</onclick>
                         <onleft>9000</onleft>
-                        <onright>305</onright>
-                        <onup>306</onup>
-                        <ondown>300</ondown>
+                        <onright>61</onright>
+                        <onup>300</onup>
+                        <ondown>305</ondown>
                         <selected>Skin.HasSetting(GlobalMenuBackdrop)</selected>
                     </control>
-                    <control type="button" id="304">
+                    <control type="button" id="305">
                         <description>Menu Item Next Button</description>
                         <posx>670</posx>
                         <posy>98</posy>
@@ -1048,11 +1049,11 @@
                         <texturefocus>scroll-down-focus-2.png</texturefocus>
                         <onclick>Control.Move(9003,1)</onclick>
                         <onleft>9000</onleft>
-                        <onright>305</onright>
-                        <onup>306</onup>
+                        <onright>306</onright>
+                        <onup>307</onup>
                         <ondown>300</ondown>
                     </control>
-                    <control type="button" id="305">
+                    <control type="button" id="306">
                         <description>Menu Item Prev Button</description>
                         <posx>703</posx>
                         <posy>98</posy>
@@ -1063,9 +1064,9 @@
                         <texturenofocus>scroll-up-2.png</texturenofocus>
                         <texturefocus>scroll-up-focus-2.png</texturefocus>
                         <onclick>Control.Move(9003,-1)</onclick>
-                        <onleft>304</onleft>
+                        <onleft>305</onleft>
                         <onright>61</onright>
-                        <onup>306</onup>
+                        <onup>307</onup>
                         <ondown>300</ondown>
                     </control>
                     <control type="list" id="9003">
@@ -1088,7 +1089,7 @@
                                 <width>750</width>
                                 <height>40</height>
                                 <texture>MenuItemNF.png</texture>
-                                <visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>![Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -1096,7 +1097,7 @@
                                 <width>750</width>
                                 <height>40</height>
                                 <texture>MenuItemFO.png</texture>
-                                <visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>[Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                             <control type="label">
                                 <posx>10</posx>
@@ -1108,7 +1109,7 @@
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>$LOCALIZE[31110]</label>
-                                <visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>![Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                             <control type="label">
                                 <posx>10</posx>
@@ -1120,7 +1121,7 @@
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <label>$LOCALIZE[31110]</label>
-                                <visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>[Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                             <control type="label">
                                 <posx>650</posx>
@@ -1132,7 +1133,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
-                                <visible>![Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>![Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                             <control type="label">
                                 <posx>650</posx>
@@ -1144,7 +1145,7 @@
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
-                                <visible>[Control.Hasfocus(304) | Control.Hasfocus(305)]</visible>
+                                <visible>[Control.Hasfocus(305) | Control.Hasfocus(306)]</visible>
                             </control>
                         </focusedlayout>
                         <content>
@@ -1275,9 +1276,9 @@
                         </content>
                     </control>
                     <control type="image">
-                        <posx>35</posx>
+                        <posx>0</posx>
                         <posy>135</posy>
-                        <width>680</width>
+                        <width>740</width>
                         <height>405</height>
                         <texture>black-back.png</texture>
                     </control>
@@ -1288,9 +1289,9 @@
                             <visible>Container(9003).HasFocus(1)</visible>
                             <control type="button" id="300">
                                 <description>Global Movie DB</description>
-                                <posx>5</posx>
+                                <posx>-35</posx>
                                 <posy>0</posy>
-                                <width>160</width>
+                                <width>140</width>
                                 <height>40</height>
                                 <label>$LOCALIZE[31114]</label>
                                 <font>font12_title</font>
@@ -1301,18 +1302,19 @@
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalMovieBackdrop)</onclick>
                                 <onclick>Skin.SetPath(HomeScreenMoviesBackGround)</onclick>
-                                <onleft>303</onleft>
+                                <onleft>304</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Global Live Cases</description>
-                                <posx>170</posx>
+                                <posx>110</posx>
                                 <posy>0</posy>
-                                <width>160</width>
+                               <width>140</width>
                                 <height>40</height>
                                 <label>$LOCALIZE[31657]</label>
                                 <font>font12_title</font>
@@ -1322,19 +1324,43 @@
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalLiveBackdrop)</onclick>
                                 <enable>Library.HasContent(Movies)</enable>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
-                            <control type="button" id="302">
-                                <description>Global Weather</description>
-                                <posx>335</posx>
+							<control type="button" id="302">
+                                <description>Live CD Wall</description>
+                                <posx>255</posx>
                                 <posy>0</posy>
-                                <width>160</width>
+                               <width>140</width>
+                                <height>40</height>
+                                <label>$LOCALIZE[31658]</label>
+                                <font>font12_title</font>
+                                <textcolor>grey2</textcolor>
+                                <focusedcolor>white</focusedcolor>
+                                <align>center</align>
+                                <texturenofocus border="5">button-nofocus.png</texturenofocus>
+                                <texturefocus border="5">button-focus.png</texturefocus>
+                                <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+								<onclick>Skin.SetBool(GlobalCDwallBackdrop)</onclick>
+                                <enable>Library.HasContent(Music)</enable>
+                                <onleft>301</onleft>
+                                <onright>303</onright>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
+                            </control>
+                            <control type="button" id="303">
+                                <description>Global Weather</description>
+                                <posx>400</posx>
+                                <posy>0</posy>
+                                <width>140</width>
                                 <height>40</height>
                                 <label>8</label>
                                 <font>font12_title</font>
@@ -1344,18 +1370,19 @@
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalWeatherBackdrop)</onclick>
-                                <onleft>301</onleft>
-                                <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onleft>302</onleft>
+                                <onright>304</onright>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
-                            <control type="button" id="303">
+                            <control type="button" id="304">
                                 <description>Theme Image button</description>
-                                <posx>500</posx>
+                                <posx>545</posx>
                                 <posy>0</posy>
-                                <width>160</width>
+                               <width>140</width>
                                 <height>40</height>
                                 <label>21895</label>
                                 <font>font12_title</font>
@@ -1366,11 +1393,12 @@
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
-                                <onleft>302</onleft>
+                                <onleft>303</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1392,8 +1420,8 @@
                                 <onclick>Skin.SetImage(HomeItem.1.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1412,8 +1440,8 @@
                                 <onclick>Skin.SetPath(HomeItem.1.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1440,8 +1468,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.1.Type),LiveTV)">Skin.SetString(HomeItem.1.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1460,8 +1488,8 @@
                                 <onclick>Skin.Reset(HomeItem.1.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1483,8 +1511,8 @@
                                 <onclick>Skin.SetImage(HomeItem.2.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1503,8 +1531,8 @@
                                 <onclick>Skin.SetPath(HomeItem.2.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1531,8 +1559,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.2.Type),LiveTV)">Skin.SetString(HomeItem.2.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1551,8 +1579,8 @@
                                 <onclick>Skin.Reset(HomeItem.2.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1574,8 +1602,8 @@
                                 <onclick>Skin.SetImage(HomeItem.3.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1594,8 +1622,8 @@
                                 <onclick>Skin.SetPath(HomeItem.3.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1622,8 +1650,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.3.Type),LiveTV)">Skin.SetString(HomeItem.3.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1642,8 +1670,8 @@
                                 <onclick>Skin.Reset(HomeItem.3.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1665,8 +1693,8 @@
                                 <onclick>Skin.SetImage(HomeItem.4.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1685,8 +1713,8 @@
                                 <onclick>Skin.SetPath(HomeItem.4.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1713,8 +1741,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.4.Type),LiveTV)">Skin.SetString(HomeItem.4.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1733,8 +1761,8 @@
                                 <onclick>Skin.Reset(HomeItem.4.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1756,8 +1784,8 @@
                                 <onclick>Skin.SetImage(HomeItem.5.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1776,8 +1804,8 @@
                                 <onclick>Skin.SetPath(HomeItem.5.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1804,8 +1832,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.5.Type),LiveTV)">Skin.SetString(HomeItem.5.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1824,8 +1852,8 @@
                                 <onclick>Skin.Reset(HomeItem.5.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1847,8 +1875,8 @@
                                 <onclick>Skin.SetImage(HomeItem.6.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1867,8 +1895,8 @@
                                 <onclick>Skin.SetPath(HomeItem.6.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1895,8 +1923,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.6.Type),LiveTV)">Skin.SetString(HomeItem.6.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -1915,8 +1943,8 @@
                                 <onclick>Skin.Reset(HomeItem.6.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -1938,8 +1966,8 @@
                                 <onclick>Skin.SetImage(HomeItem.7.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -1958,8 +1986,8 @@
                                 <onclick>Skin.SetPath(HomeItem.7.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -1986,8 +2014,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.7.Type),LiveTV)">Skin.SetString(HomeItem.7.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -2006,8 +2034,8 @@
                                 <onclick>Skin.Reset(HomeItem.7.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2029,8 +2057,8 @@
                                 <onclick>Skin.SetImage(HomeItem.8.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2049,8 +2077,8 @@
                                 <onclick>Skin.SetPath(HomeItem.8.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2077,8 +2105,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.8.Type),LiveTV)">Skin.SetString(HomeItem.8.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -2097,8 +2125,8 @@
                                 <onclick>Skin.Reset(HomeItem.8.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2120,8 +2148,8 @@
                                 <onclick>Skin.SetImage(HomeItem.9.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2140,8 +2168,8 @@
                                 <onclick>Skin.SetPath(HomeItem.9.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2168,8 +2196,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.9.Type),LiveTV)">Skin.SetString(HomeItem.9.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -2188,8 +2216,8 @@
                                 <onclick>Skin.Reset(HomeItem.9.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2211,8 +2239,8 @@
                                 <onclick>Skin.SetImage(HomeItem.10.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2231,8 +2259,8 @@
                                 <onclick>Skin.SetPath(HomeItem.10.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2259,8 +2287,8 @@
                                 <onclick condition="StringCompare(Skin.String(HomeItem.10.Type),LiveTV)">Skin.SetString(HomeItem.10.FanArt,special://skin/backgrounds/homescreen/tv.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -2279,8 +2307,8 @@
                                 <onclick>Skin.Reset(HomeItem.10.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2301,8 +2329,8 @@
                                 <onclick>Skin.SetImage(HomeItem.11.FanArt)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2320,8 +2348,8 @@
                                 <onclick>Skin.SetPath(HomeItem.11.FanArt)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2339,8 +2367,8 @@
                                 <onclick>Skin.SetString(HomeItem.11.FanArt,special://skin/backgrounds/homescreen/settings.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Theme Image button</description>
@@ -2358,8 +2386,8 @@
                                 <onclick>Skin.Reset(HomeItem.11.FanArt)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2380,8 +2408,8 @@
                                 <onclick>Skin.SetImage(VideoBrowserBackdrop)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2399,8 +2427,8 @@
                                 <onclick>Skin.SetPath(VideoBrowserBackdrop)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2418,8 +2446,8 @@
                                 <onclick>Skin.SetString(VideoBrowserBackdrop,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Global Image button</description>
@@ -2437,8 +2465,8 @@
                                 <onclick>Skin.Reset(VideoBrowserBackdrop)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2459,8 +2487,8 @@
                                 <onclick>Skin.SetImage(MusicBrowserBackdrop)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2478,8 +2506,8 @@
                                 <onclick>Skin.SetPath(MusicBrowserBackdrop)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2497,8 +2525,8 @@
                                 <onclick>Skin.SetString(MusicBrowserBackdrop,special://skin/backgrounds/homescreen/music.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Global Image button</description>
@@ -2516,8 +2544,8 @@
                                 <onclick>Skin.Reset(MusicBrowserBackdrop)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                         <control type="group">
@@ -2538,8 +2566,8 @@
                                 <onclick>Skin.SetImage(PhotoBrowserBackdrop)</onclick>
                                 <onleft>303</onleft>
                                 <onright>301</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="301">
                                 <description>Multi Image button</description>
@@ -2557,8 +2585,8 @@
                                 <onclick>Skin.SetPath(PhotoBrowserBackdrop)</onclick>
                                 <onleft>300</onleft>
                                 <onright>302</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="302">
                                 <description>Default Image button</description>
@@ -2576,8 +2604,8 @@
                                 <onclick>Skin.SetString(PhotoBrowserBackdrop,special://skin/backgrounds/homescreen/pictures.jpg)</onclick>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                             <control type="button" id="303">
                                 <description>Global Image button</description>
@@ -2595,8 +2623,8 @@
                                 <onclick>Skin.Reset(PhotoBrowserBackdrop)</onclick>
                                 <onleft>302</onleft>
                                 <onright>61</onright>
-                                <onup>304</onup>
-                                <ondown>304</ondown>
+                                <onup>305</onup>
+                                <ondown>307</ondown>
                             </control>
                         </control>
                     </control>
@@ -2610,7 +2638,7 @@
                         <randomize>true</randomize>
                         <fadetime>500</fadetime>
                         <visible>
-							!Skin.HasSetting(GlobalLiveBackdrop) |
+							[!Skin.HasSetting(GlobalLiveBackdrop) + !Skin.HasSetting(GlobalCDwallBackdrop)] |
 							[Container(9003).Hasfocus(13) + !IsEmpty(Skin.String(VideoBrowserBackdrop))] |
 							[Container(9003).Hasfocus(14) + !IsEmpty(Skin.String(MusicBrowserBackdrop))] |
 							[Container(9003).Hasfocus(15) + !IsEmpty(Skin.String(PhotoBrowserBackdrop))]
@@ -2629,6 +2657,21 @@
 							[Container(9003).Hasfocus(13) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(VideoBrowserBackdrop))] |
 							[Container(9003).Hasfocus(14) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(MusicBrowserBackdrop))] |
 							[Container(9003).Hasfocus(15) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(PhotoBrowserBackdrop))]
+						</visible>
+                    </control>
+					<control type="image">
+                        <posx>95</posx>
+                        <posy>185</posy>
+                        <width>560</width>
+                        <height>335</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture>special://skin/backgrounds/homescreen/cdwall.jpg</texture>
+                        <visible>
+							Container(9003).Hasfocus(1) + Skin.HasSetting(GlobalCDwallBackdrop) |
+							[Container(9003).Hasfocus(13) + Skin.HasSetting(GlobalCDwallBackdrop) + IsEmpty(Skin.String(VideoBrowserBackdrop))] |
+							[Container(9003).Hasfocus(14) + Skin.HasSetting(GlobalCDwallBackdrop) + IsEmpty(Skin.String(MusicBrowserBackdrop))] |
+							[Container(9003).Hasfocus(15) + Skin.HasSetting(GlobalCDwallBackdrop) + IsEmpty(Skin.String(PhotoBrowserBackdrop))]
 						</visible>
                     </control>
                 </control>

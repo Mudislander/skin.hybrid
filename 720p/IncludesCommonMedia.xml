@@ -68,7 +68,8 @@
             <visible>Skin.HasSetting(GlobalMenuBackdrop)</visible>
         </control>
         <include condition="Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
-        <control type="multiimage">
+        <include condition="Skin.HasSetting(GlobalCDwallBackdrop)">AlbumArtMusicVizWall</include>
+		<control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
             <timeperimage>8000</timeperimage>
@@ -105,6 +106,7 @@
             <visible>Skin.HasSetting(GlobalMenuBackdrop)</visible>
         </control>
         <include condition="Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
+		<include condition="Skin.HasSetting(GlobalCDwallBackdrop)">AlbumArtMusicVizWall</include>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <texture background="true">$INFO[Container(8000).ListItem.Thumb]</texture>
@@ -251,7 +253,8 @@
             <visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalMenuBackdrop) + !IsEmpty(Skin.String(VideoBrowserBackdrop))</visible>
         </control>
         <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(VideoBrowserBackdrop))">InteractiveCasesBackground</include>
-        <control type="multiimage">
+        <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalCDwallBackdrop) + IsEmpty(Skin.String(VideoBrowserBackdrop))">AlbumArtMusicVizWall</include>
+		<control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
             <timeperimage>8000</timeperimage>
@@ -336,7 +339,8 @@
             <visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalMenuBackdrop) + !IsEmpty(Skin.String(MusicBrowserBackdrop))</visible>
         </control>
         <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(MusicBrowserBackdrop))">InteractiveCasesBackground</include>
-        <control type="multiimage">
+        <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalCDwallBackdrop) + IsEmpty(Skin.String(MusicBrowserBackdrop))">AlbumArtMusicVizWall</include>
+		<control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
             <timeperimage>8000</timeperimage>
@@ -372,7 +376,8 @@
             <visible>[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalMenuBackdrop)</visible>
         </control>
         <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
-        <control type="multiimage">
+        <include condition="[Skin.HasSetting(HideBackGroundFanart) | IsEmpty(ListItem.Art(fanart))] + Skin.HasSetting(GlobalCDwallBackdrop)">AlbumArtMusicVizWall</include>
+		<control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
             <timeperimage>8000</timeperimage>
@@ -424,7 +429,8 @@
             <visible>Skin.HasSetting(HideWeatherFanart) + Skin.HasSetting(GlobalMenuBackdrop)</visible>
         </control>
         <include condition="Skin.HasSetting(HideWeatherFanart) + Skin.HasSetting(GlobalLiveBackdrop)">InteractiveCasesBackground</include>
-        <control type="multiimage">
+        <include condition="Skin.HasSetting(HideWeatherFanart) + Skin.HasSetting(GlobalCDwallBackdrop)">AlbumArtMusicVizWall</include>
+		<control type="multiimage">
             <include>Dimensions_Fullscreen</include>
             <imagepath background="true">$VAR[CommonMenuItemBackground]</imagepath>
             <timeperimage>8000</timeperimage>
