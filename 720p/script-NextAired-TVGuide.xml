@@ -1,11 +1,4 @@
 ﻿<window>
-    <onload>ClearProperty(TVGuide.MondayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.TuesdayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.WednesdayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.ThursdayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.FridayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.SaturdayList,Home)</onload>
-    <onload>ClearProperty(TVGuide.SundayList,Home)</onload>
     <allowoverlay>no</allowoverlay>
     <controls>
         <control type="group">
@@ -202,7 +195,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>206</onup>
                         <ondown>201</ondown>
-                        <onleft>SetProperty(TVGuide.MondayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -361,7 +353,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>200</onup>
                         <ondown>202</ondown>
-                        <onleft>SetProperty(TVGuide.TuesdayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -520,7 +511,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>201</onup>
                         <ondown>203</ondown>
-                        <onleft>SetProperty(TVGuide.WednesdayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -679,7 +669,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>202</onup>
                         <ondown>204</ondown>
-                        <onleft>SetProperty(TVGuide.ThursdayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -838,7 +827,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>203</onup>
                         <ondown>205</ondown>
-                        <onleft>SetProperty(TVGuide.FridayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -997,7 +985,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>204</onup>
                         <ondown>206</ondown>
-                        <onleft>SetProperty(TVGuide.SaturdayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
@@ -1156,7 +1143,6 @@
                         <scrolltime>0</scrolltime>
                         <onup>205</onup>
                         <ondown>200</ondown>
-                        <onleft>SetProperty(TVGuide.SundayList,1,Home)</onleft>
                         <onleft>9000</onleft>
                         <onright>61</onright>
                         <itemgap>5</itemgap>
