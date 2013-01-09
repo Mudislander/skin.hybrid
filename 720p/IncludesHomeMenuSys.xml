@@ -181,7 +181,7 @@
                 <property name="PanelType">None</property>
                 <property name="HiLiteItem">None</property>
                 <property name="LibStats">NowPlaying</property>
-                <visible>Player.HasMedia</visible>
+                <visible>Player.HasMedia + !Skin.HasSetting(HideHomeFullScreen)</visible>
             </item>
         </content>
     </include>
