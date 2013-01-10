@@ -1,4 +1,4 @@
-﻿<includes>
+<includes>
     <include name="AlbumArtMusicVizWall">
         <control type="group">
             <visible>Player.HasAudio + !IsEmpty(Skin.String(AlbumWallFolder)) + Skin.HasSetting(ShowBackgroundAlbumWall)</visible>

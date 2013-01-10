@@ -1,4 +1,4 @@
-﻿<includes>
+<includes>
     <include name="HomeWeatherForecast">
         <control type="group">
             <visible>Weather.IsFetched + !IsEmpty(Weather.Conditions)</visible>

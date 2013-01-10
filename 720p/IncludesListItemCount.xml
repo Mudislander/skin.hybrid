@@ -1,4 +1,4 @@
-﻿<includes>
+<includes>
     <include name="CommonPageCount">
         <control type="group">
             <animation effect="slide" end="350,0" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>

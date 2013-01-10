@@ -1,4 +1,4 @@
-﻿<includes>
+<includes>
     <variable name="GlobalScreenBackground" type="text">
         <value condition="Skin.HasSetting(GlobalMovieBackdrop)">$INFO[Skin.String(HomeScreenMoviesBackGround)]</value>
         <value condition="Skin.HasSetting(GlobalWeatherBackdrop)">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>

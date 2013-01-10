@@ -1,4 +1,4 @@
-﻿<includes>
+<includes>
     <include name="RecentMoviePanel">
         <control type="group">
             <visible>StringCompare(Container(9000).ListItem.Property(PanelType),RecentMovies) + !IsEmpty(Window(Home).Property(RecentMovie.1.Title))</visible>
