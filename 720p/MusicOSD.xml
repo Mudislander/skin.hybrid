@@ -175,7 +175,7 @@
             <visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)]</visible>
         </control>
         <control type="group" id="100">
-            <posx>325</posx>
+            <posx>365</posx>
             <posy>50r</posy>
             <animation effect="fade" time="200">VisibleChange</animation>
             <visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>

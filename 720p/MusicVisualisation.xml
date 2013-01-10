@@ -47,7 +47,7 @@
         </control>
         <control type="group">
             <animation effect="fade" time="200">VisibleChange</animation>
-            <visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
             <control type="image">
                 <posx>-150</posx>
                 <posy>-150</posy>
@@ -71,7 +71,9 @@
                 <texture fallback="XBMC_Logo.png">$INFO[Player.FolderPath,,../logo.png]</texture>
                 <aspectratio align="bottom">keep</aspectratio>
             </control>
-            <control type="image">
+            <control type="group">
+			<animation effect="slide" end="0,-50" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>           
+			<control type="image">
                 <description>Cd overlay</description>
                 <posx>120</posx>
                 <posy>220r</posy>&gt;
@@ -108,7 +110,8 @@
                 <texture>CDCase/cdcase.png</texture>
                 <visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible>
             </control>
-            <control type="group">
+            </control>
+			<control type="group">
                 <posx>330</posx>
                 <posy>175r</posy>
                 <control type="label" id="1">
@@ -188,6 +191,7 @@
                 <scrollspeed>30</scrollspeed>
                 <pauseatend>2000</pauseatend>
                 <animation effect="fade" time="200">VisibleChange</animation>
+				<animation effect="slide" end="350,0" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>
                 <visible>Player.HasAudio + !Window.IsVisible(Favourites)+ !Window.IsVisible(MusicOSD)+ !Window.IsVisible(seekbar)</visible>
                 <visible>!SubString(Player.FolderPath,mms://,Left) | !SubString(Player.FolderPath,http://,Left)</visible>
             </control>

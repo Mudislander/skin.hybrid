@@ -26,7 +26,7 @@
                 <visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
             </control>
             <control type="group" id="100">
-                <posx>325</posx>
+                <posx>365</posx>
                 <posy>50r</posy>
                 <animation effect="fade" time="200">VisibleChange</animation>
                 <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
