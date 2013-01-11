@@ -395,12 +395,12 @@
                 <onclick condition="Window.IsVisible(2114) + !IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Playlists)</onclick>
                 <include>CloseMenuChoice</include>
             </item>
-			<item id="30">
+            <item id="30">
                 <description>Video Folder</description>
                 <label>$LOCALIZE[3] ([COLOR=selected]$LOCALIZE[20334][/COLOR])</label>
                 <include>ClearButtonChoice</include>
                 <onclick>Skin.Setpath(UsrSelectAddon)</onclick>
-                <onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,&quot;$INFO[Skin.String(UsrSelectAddon)]&quot;,return))</onclick>
+                <onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,"$INFO[Skin.String(UsrSelectAddon)]",return))</onclick>
                 <onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20334])</onclick>
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].FanArt,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentMovies)</onclick>
@@ -408,7 +408,7 @@
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,Videos)</onclick>
                 <onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Videos)</onclick>
                 <include>CloseMenuChoice</include>
-            </item>			
+            </item>
             <item id="31">
                 <description>Video Streaming File</description>
                 <label>$LOCALIZE[31956]</label>

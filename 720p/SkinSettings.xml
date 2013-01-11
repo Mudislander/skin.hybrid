@@ -203,7 +203,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
- 					<control type="radiobutton" id="101">
+                    <control type="radiobutton" id="101">
                         <description>Hide FullScreen Button</description>
                         <width>750</width>
                         <height>40</height>
@@ -216,7 +216,7 @@
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-					<control type="radiobutton" id="102">
+                    <control type="radiobutton" id="102">
                         <description>Hide Settings Button</description>
                         <width>750</width>
                         <height>40</height>
@@ -1040,7 +1040,7 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <onclick>Skin.ToggleSetting(GlobalMenuBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
-						<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
+                        <onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
                         <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
                         <onclick>Control.Move(9003,1)</onclick>
@@ -1315,7 +1315,7 @@
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
-								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalMovieBackdrop)</onclick>
                                 <onclick>Skin.SetPath(HomeScreenMoviesBackGround)</onclick>
                                 <onleft>304</onleft>
@@ -1327,7 +1327,7 @@
                                 <description>Global Live Cases</description>
                                 <posx>110</posx>
                                 <posy>0</posy>
-                               <width>140</width>
+                                <width>140</width>
                                 <height>40</height>
                                 <label>$LOCALIZE[31657]</label>
                                 <font>font12_title</font>
@@ -1337,7 +1337,7 @@
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
-								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalLiveBackdrop)</onclick>
                                 <enable>Library.HasContent(Movies)</enable>
@@ -1346,11 +1346,11 @@
                                 <onup>305</onup>
                                 <ondown>307</ondown>
                             </control>
-							<control type="button" id="302">
+                            <control type="button" id="302">
                                 <description>Live CD Wall</description>
                                 <posx>255</posx>
                                 <posy>0</posy>
-                               <width>140</width>
+                                <width>140</width>
                                 <height>40</height>
                                 <label>$LOCALIZE[31658]</label>
                                 <font>font12_title</font>
@@ -1361,8 +1361,8 @@
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
-								<onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
-								<onclick>Skin.SetBool(GlobalCDwallBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
+                                <onclick>Skin.SetBool(GlobalCDwallBackdrop)</onclick>
                                 <enable>Library.HasContent(Music)</enable>
                                 <onleft>301</onleft>
                                 <onright>303</onright>
@@ -1383,7 +1383,7 @@
                                 <texturenofocus border="5">button-nofocus.png</texturenofocus>
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
-								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
                                 <onclick>Skin.SetBool(GlobalWeatherBackdrop)</onclick>
                                 <onleft>302</onleft>
@@ -1395,7 +1395,7 @@
                                 <description>Theme Image button</description>
                                 <posx>545</posx>
                                 <posy>0</posy>
-                               <width>140</width>
+                                <width>140</width>
                                 <height>40</height>
                                 <label>21895</label>
                                 <font>font12_title</font>
@@ -1406,7 +1406,7 @@
                                 <texturefocus border="5">button-focus.png</texturefocus>
                                 <onclick>Skin.Reset(GlobalMovieBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalLiveBackdrop)</onclick>
-								<onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
+                                <onclick>Skin.Reset(GlobalCDwallBackdrop)</onclick>
                                 <onclick>Skin.Reset(GlobalWeatherBackdrop)</onclick>
                                 <onleft>303</onleft>
                                 <onright>61</onright>
@@ -2672,7 +2672,7 @@
 							[Container(9003).Hasfocus(15) + Skin.HasSetting(GlobalLiveBackdrop) + IsEmpty(Skin.String(PhotoBrowserBackdrop))]
 						</visible>
                     </control>
-					<control type="image">
+                    <control type="image">
                         <posx>95</posx>
                         <posy>185</posy>
                         <width>560</width>

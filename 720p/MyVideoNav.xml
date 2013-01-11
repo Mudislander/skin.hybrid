@@ -3,7 +3,7 @@
     <allowoverlay>no</allowoverlay>
     <views>50,57,500,501,508,514,515,529,550,551,555,560,724,728,730,732</views>
     <onload condition="System.HasAddon(script.tvtunes) + !Skin.HasSetting(DisableTvTunes) + !SubString(Window(10025).Property(CinemaExperienceRunning),True)">XBMC.RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
-   <onload condition="System.HasAddon(script.metadata.actors)">RunScript(script.metadata.actors,backend)</onload>
+    <onload condition="System.HasAddon(script.metadata.actors)">RunScript(script.metadata.actors,backend)</onload>
     <controls>
         <include>CommonVideoBackground</include>
         <include>MediaContentBackground</include>
