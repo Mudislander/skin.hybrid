@@ -3980,21 +3980,7 @@
                         <texturefocus>MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="radiobutton" id="709">
-                        <description>Allow autorun Artwork Downloader</description>
-                        <width>750</width>
-                        <height>40</height>
-                        <font>font13</font>
-                        <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
-                        <label>    $LOCALIZE[31035]</label>
-                        <onclick>Skin.ToggleSetting(DisableAutoDownloader)</onclick>
-                        <selected>!Skin.HasSetting(DisableAutoDownloader)</selected>
-                        <texturefocus>MenuItemFO.png</texturefocus>
-                        <texturenofocus>MenuItemNF.png</texturenofocus>
-                        <enable>System.HasAddon(script.artwork.downloader) + !Skin.HasSetting(DisableArtDownloader)</enable>
-                    </control>
-                    <control type="label" id="710">
+                    <control type="label" id="709">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -4004,7 +3990,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="button" id="711">
+                    <control type="button" id="710">
                         <description>Reset Skin Values</description>
                         <width>750</width>
                         <height>40</height>
