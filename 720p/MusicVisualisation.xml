@@ -76,7 +76,7 @@
                 <control type="image">
                     <description>Cd overlay</description>
                     <posx>120</posx>
-                    <posy>220r</posy>&gt;
+                    <posy>220r</posy>
 				<width>170</width><height>175</height><include>CDArtSpinner</include><texture fallback="Disks/DefaultCDArt.png">$INFO[Player.FolderPath,,cdart.png]</texture><aspectratio align="bottom">keep</aspectratio><visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left)] + !Skin.HasSetting(HideCDArt)</visible></control>
                 <control type="image">
                     <description>Cover Image</description>
