@@ -6,7 +6,7 @@
 			<animation effect="slide" end="0,35" time="300" tween="quadratic" easing="out">WindowClose</animation>
 			<animation effect="slide" start="0,35" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" end="0,40" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(9002) | Window.IsVisible(Favourites) | [StringCompare(Container(9000).ListItem.Property(LibStats),None) + !system.getbool(lookandfeel.enablerssfeeds) + IsEmpty(MusicPlayer.offset(1).Artist)]">Conditional</animation>
-			<animation effect="slide" end="0,40" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="slide" end="0,40" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomeInfoBarContent</include>
 			<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>
@@ -16,7 +16,7 @@
 			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
 			<animation effect="slide" start="880,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out" condition="[StringCompare(Container(9000).ListItem.Property(LibStats),None) + !system.getbool(lookandfeel.enablerssfeeds) + IsEmpty(MusicPlayer.offset(1).Artist)] | Window.IsVisible(Favourites)">Conditional</animation>
-			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="slide" end="880,0" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomeInfoBarContent</include>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 		</control>

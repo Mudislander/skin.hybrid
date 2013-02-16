@@ -46,6 +46,8 @@
 	<include name="HomeSuggestedImage">
 		<control type="group">
 			<visible>
+				[StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + System.HasAddon(script.playlists) + !Skin.HasSetting(DisableSubmenuPlayList) + !Skin.HasSetting(SubmenuPlayListMusic)] |
+				[StringCompare(Container(9000).ListItem.Property(HiLiteItem),Playlists) + System.HasAddon(script.playlists) + !Skin.HasSetting(DisableSubmenuPlayList) + !Skin.HasSetting(SubmenuPlayListMusic)] |
 				StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) |
 				StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) |
 				StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)
@@ -88,9 +90,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Movies)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) |
-				[!IsEmpty(Skin.String(VideoSubMenu.1.Path)) + !IsEmpty(Skin.String(VideoSubMenu.1.Label))] |
-				[!IsEmpty(Skin.String(VideoSubMenu.2.Path)) + !IsEmpty(Skin.String(VideoSubMenu.2.Label))] |
-				[!IsEmpty(Skin.String(VideoSubMenu.3.Path)) + !IsEmpty(Skin.String(VideoSubMenu.3.Label))]
+				[!IsEmpty(Skin.String(MovieSubMenu.1.Path)) + !IsEmpty(Skin.String(MovieSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(MovieSubMenu.2.Path)) + !IsEmpty(Skin.String(MovieSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(MovieSubMenu.3.Path)) + !IsEmpty(Skin.String(MovieSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -98,9 +100,9 @@
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows)</visible>
 			<visible>
 				!Skin.HasSetting(HideDefaultSubItem) |
-				[!IsEmpty(Skin.String(VideoSubMenu.1.Path)) + !IsEmpty(Skin.String(VideoSubMenu.1.Label))] |
-				[!IsEmpty(Skin.String(VideoSubMenu.2.Path)) + !IsEmpty(Skin.String(VideoSubMenu.2.Label))] |
-				[!IsEmpty(Skin.String(VideoSubMenu.3.Path)) + !IsEmpty(Skin.String(VideoSubMenu.3.Label))]
+				[!IsEmpty(Skin.String(TVShowSubMenu.1.Path)) + !IsEmpty(Skin.String(TVShowSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(TVShowSubMenu.2.Path)) + !IsEmpty(Skin.String(TVShowSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(TVShowSubMenu.3.Path)) + !IsEmpty(Skin.String(TVShowSubMenu.3.Label))]
 			</visible>
 		</control>
 		<control type="group">
@@ -145,6 +147,11 @@
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>
+			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),UserList)</visible>
+			<visible>!IsEmpty(Skin.String(SubMenuItem.1.Path)) + !IsEmpty(Skin.String(SubMenuItem.1.Label))</visible>
+		</control>
+		<control type="group">
+			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns)</visible>
 			<visible>
 				[!IsEmpty(Skin.String(SubMenuItem.6.Path)) + !IsEmpty(Skin.String(SubMenuItem.6.Label))] |
@@ -162,7 +169,11 @@
 		<control type="group">
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts)</visible>
-			<visible>false</visible>
+			<visible>
+				[!IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.1.Label))] |
+				[!IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.2.Label))] |
+				[!IsEmpty(Skin.String(ConcertSubMenu.3.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.3.Label))]
+			</visible>
 		</control>
 		<control type="group">
 			<include>HomeSubMenuImage</include>

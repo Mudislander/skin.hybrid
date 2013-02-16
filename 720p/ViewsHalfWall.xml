@@ -186,7 +186,7 @@
 				<viewtype label="Halfwall">List</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<preloaditems>200</preloaditems>
+				<preloaditems>2</preloaditems>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos) | SubString(Container.FolderPath,program.advanced.launcher)</visible>
 				<itemlayout height="194" width="154">
 					<control type="image">

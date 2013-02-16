@@ -6,7 +6,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Movies Title label</description>
@@ -42,7 +42,8 @@
 				<ondown>9000</ondown>
 				<onleft>8000</onleft>
 				<onright>8000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -56,7 +57,8 @@
 				<ondown>8000</ondown>
 				<onleft>9000</onleft>
 				<onright>8000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -72,7 +74,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Movies Title label</description>
@@ -93,7 +95,8 @@
 				<ondown>9000</ondown>
 				<onleft>8001</onleft>
 				<onright>8001</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -107,7 +110,8 @@
 				<ondown>8001</ondown>
 				<onleft>9000</onleft>
 				<onright>8001</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -123,7 +127,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Episodes label</description>
@@ -159,7 +163,8 @@
 				<ondown>9000</ondown>
 				<onleft>8002</onleft>
 				<onright>8002</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -173,7 +178,8 @@
 				<ondown>8002</ondown>
 				<onleft>9000</onleft>
 				<onright>8002</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>TVShowLandscapeLayout</include>
@@ -189,7 +195,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -225,7 +231,8 @@
 				<ondown>9000</ondown>
 				<onleft>8003</onleft>
 				<onright>8003</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -239,7 +246,8 @@
 				<ondown>8003</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDThumbLayout</include>
@@ -255,7 +263,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -276,7 +284,8 @@
 				<ondown>9000</ondown>
 				<onleft>8004</onleft>
 				<onright>8004</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -290,7 +299,8 @@
 				<ondown>8004</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDLandscapeLayout</include>
@@ -306,7 +316,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -342,7 +352,8 @@
 				<ondown>9000</ondown>
 				<onleft>8005</onleft>
 				<onright>8005</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -356,7 +367,8 @@
 				<ondown>8005</ondown>
 				<onleft>9000</onleft>
 				<onright>8005</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -372,7 +384,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Concerts Title label</description>
@@ -393,7 +405,8 @@
 				<ondown>9000</ondown>
 				<onleft>8006</onleft>
 				<onright>8006</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -407,7 +420,8 @@
 				<ondown>8006</ondown>
 				<onleft>9000</onleft>
 				<onright>8006</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -423,7 +437,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Random Movies Title label</description>
@@ -459,7 +473,8 @@
 				<ondown>9000</ondown>
 				<onleft>8007</onleft>
 				<onright>8007</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -473,7 +488,8 @@
 				<ondown>8007</ondown>
 				<onleft>9000</onleft>
 				<onright>8007</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -489,7 +505,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Random Movies Title label</description>
@@ -510,7 +526,8 @@
 				<ondown>9000</ondown>
 				<onleft>8008</onleft>
 				<onright>8008</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -524,7 +541,8 @@
 				<ondown>8008</ondown>
 				<onleft>9000</onleft>
 				<onright>8008</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -540,7 +558,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -576,7 +594,8 @@
 				<ondown>9000</ondown>
 				<onleft>8009</onleft>
 				<onright>8009</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -590,7 +609,8 @@
 				<ondown>8009</ondown>
 				<onleft>9000</onleft>
 				<onright>8009</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>TVShowLandscapeLayout</include>
@@ -606,7 +626,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -642,7 +662,8 @@
 				<ondown>9000</ondown>
 				<onleft>8010</onleft>
 				<onright>8010</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -656,7 +677,8 @@
 				<ondown>8010</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDThumbLayout</include>
@@ -672,7 +694,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -693,7 +715,8 @@
 				<ondown>9000</ondown>
 				<onleft>8011</onleft>
 				<onright>8011</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -707,7 +730,8 @@
 				<ondown>8011</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDLandscapeLayout</include>
@@ -723,7 +747,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -759,7 +783,8 @@
 				<ondown>9000</ondown>
 				<onleft>8012</onleft>
 				<onright>8012</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -773,7 +798,8 @@
 				<ondown>8012</ondown>
 				<onleft>9000</onleft>
 				<onright>8012</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -789,7 +815,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -810,7 +836,8 @@
 				<ondown>9000</ondown>
 				<onleft>8013</onleft>
 				<onright>8013</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -824,7 +851,8 @@
 				<ondown>8013</ondown>
 				<onleft>9000</onleft>
 				<onright>8013</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -840,7 +868,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Suggested Movies Title label</description>
@@ -876,7 +904,8 @@
 				<ondown>9000</ondown>
 				<onleft>8020</onleft>
 				<onright>8020</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -890,7 +919,8 @@
 				<ondown>8020</ondown>
 				<onleft>9000</onleft>
 				<onright>8020</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -906,7 +936,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Suggested Movies Title label</description>
@@ -942,7 +972,8 @@
 				<ondown>9000</ondown>
 				<onleft>8021</onleft>
 				<onright>8021</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -956,7 +987,8 @@
 				<ondown>8021</ondown>
 				<onleft>9000</onleft>
 				<onright>8021</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -972,7 +1004,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -1008,7 +1040,8 @@
 				<ondown>9000</ondown>
 				<onleft>8022</onleft>
 				<onright>8022</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation condition="Skin.HasSetting(HorizontalHomeScreen)">horizontal</orientation>
@@ -1022,7 +1055,8 @@
 				<ondown>8022</ondown>
 				<onleft>9000</onleft>
 				<onright>8022</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>TVShowLandscapeLayout</include>
@@ -1038,7 +1072,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -1074,7 +1108,8 @@
 				<ondown>9000</ondown>
 				<onleft>8023</onleft>
 				<onright>8023</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -1088,7 +1123,8 @@
 				<ondown>8023</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDThumbLayout</include>
@@ -1104,7 +1140,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -1125,7 +1161,8 @@
 				<ondown>9000</ondown>
 				<onleft>8024</onleft>
 				<onright>8024</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -1139,7 +1176,8 @@
 				<ondown>8024</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MusicCDLandscapeLayout</include>
@@ -1155,7 +1193,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Movies Title label</description>
@@ -1191,7 +1229,8 @@
 				<ondown>9000</ondown>
 				<onleft>8025</onleft>
 				<onright>8025</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -1205,7 +1244,8 @@
 				<ondown>8025</ondown>
 				<onleft>9000</onleft>
 				<onright>8025</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MoviePosterLayout</include>
@@ -1221,7 +1261,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Latest Movies Title label</description>
@@ -1242,7 +1282,8 @@
 				<ondown>9000</ondown>
 				<onleft>8026</onleft>
 				<onright>8026</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<orientation>horizontal</orientation>
@@ -1256,7 +1297,8 @@
 				<ondown>8026</ondown>
 				<onleft>9000</onleft>
 				<onright>8026</onright>
-				<preloaditems>4</preloaditems>
+				<onback>9000</onback>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<include>MovieLandscapeLayout</include>
@@ -1286,7 +1328,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1338,13 +1380,14 @@
 					<ondown>9000</ondown>
 					<onleft>8014</onleft>
 					<onright>8014</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>MoviePosterLayout</include>
-					<include>PlayListContent</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
 				<control type="panel" id="8014">
 					<include>DimensionsPosterPanel</include>
@@ -1352,12 +1395,274 @@
 					<ondown>8014</ondown>
 					<onleft>9000</onleft>
 					<onright>8014</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<include>MoviePosterLayout</include>
-					<include>PlayListContent</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListTwoContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListTwoContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListThreeContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListThreeContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListFourContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListFourContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListFiveContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListFiveContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListSixContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListSixContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListSevenContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListSevenContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListEightContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListEightContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListNineContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListNineContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>9000</ondown>
+					<onleft>8014</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MoviePosterLayout</include>
+					<include>PlayListTenContent</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8014">
+					<include>DimensionsPosterPanel</include>
+					<onup>8014</onup>
+					<ondown>8014</ondown>
+					<onleft>9000</onleft>
+					<onright>8014</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MoviePosterLayout</include>
+					<include>PlayListTenContent</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1378,7 +1683,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1430,13 +1735,14 @@
 					<ondown>9000</ondown>
 					<onleft>8016</onleft>
 					<onright>8016</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>TVShowLandscapeLayout</include>
-					<include>PlayListEpisodes</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
 				<control type="panel" id="8016">
 					<include>DimensionsLandscapePanel</include>
@@ -1444,12 +1750,274 @@
 					<ondown>8016</ondown>
 					<onleft>9000</onleft>
 					<onright>8016</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<include>TVShowLandscapeLayout</include>
-					<include>PlayListEpisodes</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTwoEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTwoEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListThreeEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListThreeEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFourEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFourEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFiveEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFiveEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSixEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSixEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSevenEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSevenEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListEightEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListEightEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListNineEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListNineEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>9000</ondown>
+					<onleft>8016</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTenEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8016">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8016</onup>
+					<ondown>8016</ondown>
+					<onleft>9000</onleft>
+					<onright>8016</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTenEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1470,7 +2038,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1522,13 +2090,14 @@
 					<ondown>9000</ondown>
 					<onleft>8017</onleft>
 					<onright>8017</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>MusicCDThumbLayout</include>
-					<include>PlayListAlbums</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
 				<control type="panel" id="8017">
 					<include>DimensionsMusicCDPanel</include>
@@ -1536,12 +2105,274 @@
 					<ondown>8017</ondown>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<include>MusicCDThumbLayout</include>
-					<include>PlayListAlbums</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListTwoAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListTwoAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListThreeAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListThreeAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListFourAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListFourAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListFiveAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListFiveAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListSixAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListSixAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListSevenAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListSevenAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListEightAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListEightAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListNineAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListNineAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8017</onleft>
+					<onright>8017</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListTenAlbums</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8017">
+					<include>DimensionsMusicCDPanel</include>
+					<onup>8017</onup>
+					<ondown>8017</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDThumbLayout</include>
+					<include>PlayListTenAlbums</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 		</control>
@@ -1567,7 +2398,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1603,13 +2434,14 @@
 					<ondown>9000</ondown>
 					<onleft>8015</onleft>
 					<onright>8015</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>MovieLandscapeLayout</include>
-					<include>PlayListContentFanArt</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
 				<control type="panel" id="8015">
 					<include>DimensionsLandscapePanel</include>
@@ -1617,12 +2449,274 @@
 					<ondown>8015</ondown>
 					<onleft>9000</onleft>
 					<onright>8015</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<include>MovieLandscapeLayout</include>
-					<include>PlayListContentFanArt</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListTwoContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListTwoContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListThreeContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListThreeContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListFourContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListFourContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListFiveContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListFiveContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListSixContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListSixContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListSevenContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListSevenContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListEightContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListEightContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListNineContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListNineContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>9000</ondown>
+					<onleft>8015</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListTenContentFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8015">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8015</onup>
+					<ondown>8015</ondown>
+					<onleft>9000</onleft>
+					<onright>8015</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MovieLandscapeLayout</include>
+					<include>PlayListTenContentFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1643,7 +2737,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1658,7 +2752,7 @@
 					<textcolor>HomeInfoOne</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<visible>!Skin.HasSetting(EnableRandomPlaylist)</visible>
-					<visible>!Control.HasFocus(8016)</visible>
+					<visible>!Control.HasFocus(8027)</visible>
 				</control>
 				<control type="label">
 					<description>Recent Title label</description>
@@ -1673,7 +2767,7 @@
 					<textcolor>HomeInfoOne</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<visible>Skin.HasSetting(EnableRandomPlaylist)</visible>
-					<visible>!Control.HasFocus(8016)</visible>
+					<visible>!Control.HasFocus(8027)</visible>
 				</control>
 				<control type="label">
 					<description>Title label</description>
@@ -1687,35 +2781,307 @@
 					<font>font13_title</font>
 					<textcolor>HomeInfoOne</textcolor>
 					<shadowcolor>black</shadowcolor>
-					<visible>Control.HasFocus(8016)</visible>
+					<visible>Control.HasFocus(8027)</visible>
 				</control>
-				<control type="panel" id="8016">
+				<control type="panel" id="8027">
 					<include>DimensionsLandscapePanel</include>
-					<onup>8016</onup>
+					<onup>8027</onup>
 					<ondown>9000</ondown>
-					<onleft>8016</onleft>
-					<onright>8016</onright>
-					<preloaditems>4</preloaditems>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>TVShowLandscapeLayout</include>
-					<include>PlayListEpisodes</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
-				<control type="panel" id="8016">
+				<control type="panel" id="8027">
 					<include>DimensionsLandscapePanel</include>
-					<onup>8016</onup>
-					<ondown>8016</ondown>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
 					<onleft>9000</onleft>
-					<onright>8016</onright>
-					<preloaditems>4</preloaditems>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>TVShowLandscapeLayout</include>
-					<include>PlayListEpisodes</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTwoEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTwoEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListThreeEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListThreeEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFourEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFourEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFiveEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListFiveEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSixEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSixEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSevenEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListSevenEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListEightEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListEightEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListNineEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListNineEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>9000</ondown>
+					<onleft>8027</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTenEpisodes</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8027">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8027</onup>
+					<ondown>8027</ondown>
+					<onleft>9000</onleft>
+					<onright>8027</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>TVShowLandscapeLayout</include>
+					<include>PlayListTenEpisodes</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -1736,7 +3102,7 @@
 				<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 				<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+				<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 				<include>HomePanelBackground</include>
 				<control type="label">
 					<description>Random Title label</description>
@@ -1772,13 +3138,14 @@
 					<ondown>9000</ondown>
 					<onleft>8018</onleft>
 					<onright>8018</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<orientation>horizontal</orientation>
 					<include>MusicCDLandscapeLayout</include>
-					<include>PlayListContentFanArt</include>
-					<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
 				</control>
 				<control type="panel" id="8018">
 					<include>DimensionsLandscapePanel</include>
@@ -1786,12 +3153,274 @@
 					<ondown>8018</ondown>
 					<onleft>9000</onleft>
 					<onright>9000</onright>
-					<preloaditems>4</preloaditems>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
 					<scrolltime>150</scrolltime>
 					<pagecontrol>-</pagecontrol>
 					<include>MusicCDLandscapeLayout</include>
-					<include>PlayListContentFanArt</include>
-					<visible>!Skin.HasSetting(HorizontalHomeScreen)</visible>
+					<include>PlayListOneAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(1)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListTwoAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListTwoAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(2)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListThreeAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListThreeAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(3)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListFourAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListFourAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(4)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListFiveAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListFiveAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(5)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListSixAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListSixAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(6)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListSevenAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListSevenAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(7)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListEightAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListEightAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(8)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListNineAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListNineAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(9)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onleft>8018</onleft>
+					<onright>8018</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<orientation>horizontal</orientation>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListTenAlbumsFanArt</include>
+					<visible>Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
+				</control>
+				<control type="panel" id="8018">
+					<include>DimensionsLandscapePanel</include>
+					<onup>8018</onup>
+					<ondown>8018</ondown>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<preloaditems>2</preloaditems>
+					<scrolltime>150</scrolltime>
+					<pagecontrol>-</pagecontrol>
+					<include>MusicCDLandscapeLayout</include>
+					<include>PlayListTenAlbumsFanArt</include>
+					<visible>!Skin.HasSetting(HorizontalHomeScreen) + Container(9000).HasFocus(10)</visible>
 				</control>
 			</control>
 		</control>
@@ -1808,7 +3437,7 @@
 			<animation effect="slide" start="0,0" end="0,-18" condition="!Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="slide" start="0,0" end="130,0" condition="Skin.HasSetting(HorizontalHomeScreen) + !Skin.HasSetting(HideHomePlaying) + Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="100" end="30" time="200" condition="!Skin.HasSetting(HorizontalHomeScreen) + [ControlGroup(9001).HasFocus | Control.HasFocus(9002)]">conditional</animation>
-			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="500" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
 			<include>HomePanelBackground</include>
 			<control type="label">
 				<description>Title label</description>
@@ -1851,7 +3480,7 @@
 				<ondown condition="!Skin.HasSetting(HorizontalHomeScreen)">8019</ondown>
 				<onleft condition="!Skin.HasSetting(HorizontalHomeScreen)">9000</onleft>
 				<onright condition="!Skin.HasSetting(HorizontalHomeScreen)">9000</onright>
-				<preloaditems>4</preloaditems>
+				<preloaditems>2</preloaditems>
 				<scrolltime>150</scrolltime>
 				<pagecontrol>-</pagecontrol>
 				<itemlayout height="160" width="160">
@@ -1863,6 +3492,7 @@
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture background="true" diffuse="AddonCaseMask.png">$INFO[ListItem.ActualIcon]</texture>
+						<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 						<visible>!IsEmpty(ListItem.Label)</visible>
 					</control>
 					<control type="image">
@@ -1925,6 +3555,7 @@
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<fadetime>IconCrossfadeTime</fadetime>
 				<texture fallback="DefaultFallback/DefaultPoster.png" background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[ListItem.ActualIcon]</texture>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="image">
@@ -1975,21 +3606,22 @@
 		</focusedlayout>
 	</include>
 	<include name="MovieLandscapeLayout">
-		<itemlayout height="165" width="280">
+		<itemlayout height="185" width="280">
 			<control type="image">
 				<description>Main Icon</description>
-				<posx>3</posx>
-				<posy>3</posy>
+				<posx>28</posx>
+				<posy>13</posy>
 				<width>224</width>
 				<height>114</height>
 				<texture fallback="Fanart_Fallback_Small.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="image">
 				<description>Main Icon</description>
-				<posx>0</posx>
-				<posy>0</posy>
+				<posx>25</posx>
+				<posy>10</posy>
 				<width>230</width>
 				<height>120</height>
 				<texture background="true">EpisodeFrame.png</texture>
@@ -1997,26 +3629,47 @@
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="label">
-				<posx>5</posx>
-				<posy>120</posy>
+				<posx>140</posx>
+				<posy>130</posy>
 				<height>20</height>
 				<width>224</width>
 				<label>$INFO[ListItem.Label]</label>
-				<align>left</align>
+				<align>center</align>
 				<font>font12_title</font>
 				<textcolor>HomeInfoOne</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout height="165" width="280">
+		<focusedlayout height="185" width="280">
 			<control type="group">
-				<animation effect="zoom" center="58,89" start="100" end="120" time="400" easing="out" tween="back" reversible="false">Focus</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(2)">conditional</animation>
+				<animation effect="zoom" center="auto" start="100" end="120" time="100" easing="inout" tween="cubic" reversible="true">Focus</animation>
 				<control type="image">
 					<description>Main Icon</description>
-					<posx>4</posx>
-					<posy>3</posy>
-					<width>222</width>
+					<posx>28</posx>
+					<posy>13</posy>
+					<width>224</width>
 					<height>114</height>
 					<texture fallback="Fanart_Fallback_Small.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -2024,8 +3677,8 @@
 				</control>
 				<control type="image">
 					<description>Main Icon</description>
-					<posx>0</posx>
-					<posy>0</posy>
+					<posx>25</posx>
+					<posy>10</posy>
 					<width>230</width>
 					<height>120</height>
 					<texture background="true">EpisodeFrame.png</texture>
@@ -2034,15 +3687,36 @@
 				</control>
 			</control>
 			<control type="label">
-				<posx>0</posx>
-				<posy>125</posy>
+				<posx>140</posx>
+				<posy>135</posy>
 				<height>20</height>
-				<width>250</width>
-				<label>$INFO[ListItem.Label]</label>
-				<align>left</align>
+				<width>270</width>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+				<align>center</align>
 				<font>font13_title</font>
 				<textcolor>HomeInfoTwo</textcolor>
 				<shadowcolor>black</shadowcolor>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8001) + Container(8001).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8006) + Container(8006).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8008) + Container(8008).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8013) + Container(8013).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8015) + Container(8015).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8021) + Container(8021).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8026) + Container(8026).Column(2)">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</focusedlayout>
@@ -2057,6 +3731,7 @@
 				<height>125</height>
 				<aspectratio aligny="bottom">stretch</aspectratio>
 				<texture background="true" fallback="DefaultFallback/DefaultAlbumCover.png" diffuse="CDCase/cdcase-diffuse.png">$INFO[ListItem.ActualIcon]</texture>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="image">
@@ -2097,21 +3772,22 @@
 		</focusedlayout>
 	</include>
 	<include name="MusicCDLandscapeLayout">
-		<itemlayout height="165" width="280">
+		<itemlayout height="185" width="280">
 			<control type="image">
 				<description>Main Icon</description>
-				<posx>3</posx>
-				<posy>3</posy>
+				<posx>28</posx>
+				<posy>13</posy>
 				<width>224</width>
 				<height>114</height>
 				<texture fallback="Fanart_Fallback_Music_Small.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="image">
 				<description>Main Icon</description>
-				<posx>0</posx>
-				<posy>0</posy>
+				<posx>25</posx>
+				<posy>10</posy>
 				<width>230</width>
 				<height>120</height>
 				<texture background="true">EpisodeFrame.png</texture>
@@ -2119,26 +3795,38 @@
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="label">
-				<posx>5</posx>
-				<posy>120</posy>
+				<posx>140</posx>
+				<posy>130</posy>
 				<height>20</height>
 				<width>224</width>
 				<label>$INFO[ListItem.Label]</label>
-				<align>left</align>
+				<align>center</align>
 				<font>font12_title</font>
 				<textcolor>HomeInfoOne</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout height="165" width="280">
+		<focusedlayout height="185" width="280">
 			<control type="group">
-				<animation effect="zoom" center="58,89" start="100" end="120" time="400" easing="out" tween="back" reversible="false">Focus</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(2)">conditional</animation>
+				<animation effect="zoom" center="auto" start="100" end="120" time="100" easing="inout" tween="cubic" reversible="true">Focus</animation>
 				<control type="image">
 					<description>Main Icon</description>
-					<posx>4</posx>
-					<posy>3</posy>
-					<width>222</width>
+					<posx>28</posx>
+					<posy>13</posy>
+					<width>224</width>
 					<height>114</height>
 					<texture fallback="Fanart_Fallback_Music_Small.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -2146,8 +3834,8 @@
 				</control>
 				<control type="image">
 					<description>Main Icon</description>
-					<posx>0</posx>
-					<posy>0</posy>
+					<posx>25</posx>
+					<posy>10</posy>
 					<width>230</width>
 					<height>120</height>
 					<texture background="true">EpisodeFrame.png</texture>
@@ -2156,55 +3844,69 @@
 				</control>
 			</control>
 			<control type="label">
-				<posx>0</posx>
-				<posy>125</posy>
+				<posx>140</posx>
+				<posy>135</posy>
 				<height>20</height>
-				<width>250</width>
-				<label>$INFO[ListItem.Label]</label>
-				<align>left</align>
+				<width>270</width>
+				<label>[B]$INFO[ListItem.Label][/B]</label>
+				<align>center</align>
 				<font>font13_title</font>
 				<textcolor>HomeInfoTwo</textcolor>
 				<shadowcolor>black</shadowcolor>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8004) + Container(8004).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8011) + Container(8011).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8018) + Container(8018).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8024) + Container(8024).Column(2)">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</focusedlayout>
 	</include>
-	<include name="TVShowLandscapeLayout">
-		<itemlayout height="165" width="280">
+		<include name="TVShowLandscapeLayout">
+		<itemlayout height="185" width="280">
 			<control type="image">
-				<posx>3</posx>
-				<posy>3</posy>
+				<description>Main Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
 				<width>224</width>
 				<height>114</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<fadetime>IconCrossfadeTime</fadetime>
 				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
-				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
-			</control>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
+				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>			</control>
 			<control type="image">
-				<posx>3</posx>
-				<posy>3</posy>
+				<description>Actual Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
 				<width>224</width>
 				<height>114</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<fadetime>IconCrossfadeTime</fadetime>
 				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.ActualIcon]</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
 			<control type="image">
-				<posx>3</posx>
-				<posy>3</posy>
+				<description>FanArt Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
 				<width>224</width>
 				<height>114</height>
-				<aspectratio align="center">stretch</aspectratio>
-				<fadetime>IconCrossfadeTime</fadetime>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
 				<texture diffuse="episodematte.png">$INFO[listItem.Property(EpisodePath),,fanart.jpg]</texture>
 				<visible>Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(UseTvSeasonArt)</visible>
 			</control>
 			<control type="image">
-				<description>Main Icon</description>
-				<posx>0</posx>
-				<posy>0</posy>
+				<description>Episode Frame Icon</description>
+				<posx>25</posx>
+				<posy>10</posy>
 				<width>230</width>
 				<height>120</height>
 				<texture background="true">EpisodeFrame.png</texture>
@@ -2212,72 +3914,95 @@
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="label">
-				<posx>5</posx>
-				<posy>120</posy>
+				<posx>140</posx>
+				<posy>130</posy>
 				<height>20</height>
 				<width>224</width>
 				<label>$INFO[ListItem.Label2]</label>
-				<align>left</align>
+				<align>center</align>
 				<font>font12_title</font>
 				<textcolor>HomeInfoOne</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout height="165" width="280">
+		<focusedlayout height="185" width="280">
 			<control type="group">
-				<animation effect="zoom" center="58,89" start="100" end="120" time="400" easing="out" tween="back" reversible="false">Focus</animation>
-				<control type="image">
-					<posx>3</posx>
-					<posy>3</posy>
-					<width>224</width>
-					<height>114</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
-					<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
-				</control>
-				<control type="image">
-					<posx>3</posx>
-					<posy>3</posy>
-					<width>224</width>
-					<height>114</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.ActualIcon]</texture>
-					<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
-				</control>
-				<control type="image">
-					<posx>3</posx>
-					<posy>3</posy>
-					<width>224</width>
-					<height>114</height>
-					<aspectratio align="center">stretch</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture diffuse="episodematte.png">$INFO[listItem.Property(EpisodePath),,fanart.jpg]</texture>
-					<visible>Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(UseTvSeasonArt)</visible>
-				</control>
-				<control type="image">
-					<description>Main Icon</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>230</width>
-					<height>120</height>
-					<texture background="true">EpisodeFrame.png</texture>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<visible>!IsEmpty(ListItem.Label)</visible>
-				</control>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(0)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(1)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(2)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(2)">conditional</animation>
+				<animation effect="zoom" center="auto" start="100" end="120" time="100" easing="inout" tween="cubic" reversible="true">Focus</animation>
+			<control type="image">
+				<description>Main Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
+				<width>224</width>
+				<height>114</height>
+				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>			</control>
+			<control type="image">
+				<description>Actual Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
+				<width>224</width>
+				<height>114</height>
+				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.ActualIcon]</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+			</control>
+			<control type="image">
+				<description>FanArt Icon</description>
+				<posx>28</posx>
+				<posy>13</posy>
+				<width>224</width>
+				<height>114</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="episodematte.png">$INFO[listItem.Property(EpisodePath),,fanart.jpg]</texture>
+				<visible>Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(UseTvSeasonArt)</visible>
+			</control>
+			<control type="image">
+				<description>Episode Frame Icon</description>
+				<posx>25</posx>
+				<posy>10</posy>
+				<width>230</width>
+				<height>120</height>
+				<texture background="true">EpisodeFrame.png</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<visible>!IsEmpty(ListItem.Label)</visible>
+			</control>
 			</control>
 			<control type="label">
-				<posx>0</posx>
-				<posy>125</posy>
+				<posx>140</posx>
+				<posy>135</posy>
 				<height>20</height>
-				<width>250</width>
+				<width>270</width>
 				<label>$INFO[ListItem.Label2]</label>
-				<align>left</align>
+				<align>center</align>
 				<font>font13_title</font>
 				<textcolor>HomeInfoTwo</textcolor>
 				<shadowcolor>black</shadowcolor>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8002) + Container(8002).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8009) + Container(8009).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(2)">conditional</animation>
+				<animation effect="slide" end="25,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(0)">conditional</animation>
+				<animation effect="slide" end="5,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(1)">conditional</animation>
+				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(2)">conditional</animation>
 				<visible>!IsEmpty(ListItem.Label)</visible>
 			</control>
 		</focusedlayout>

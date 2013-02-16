@@ -25,7 +25,7 @@
 				<orientation>vertical</orientation>
 				<scrolltime>300</scrolltime>
 				<focusposition>2</focusposition>
-				<preloaditems>5</preloaditems>
+				<preloaditems>2</preloaditems>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons) | Container.Content(MusicVideos) | SubString(Container.FolderPath,program.advanced.launcher)</visible>
 				<itemlayout condition="!Skin.HasSetting(EnableBannerNotLogo) | [Skin.HasSetting(EnableBannerNotLogo) + Container.Content(Movies)] + ![Container.Content(Episodes) | Container.Content(Seasons)  | SubString(Container.FolderPath,program.advanced.launcher)]" width="380" height="140">
 					<control type="image">
