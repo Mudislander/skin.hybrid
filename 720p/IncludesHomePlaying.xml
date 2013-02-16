@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="ShowNowPlayingMedia">
 		<control type="group">
@@ -246,7 +247,7 @@
 				<control type="image">
 					<description>Cover image</description>
 					<posx>20</posx>
-					<posy>235</posy>				
+					<posy>235</posy>
 					<width>120</width>
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
@@ -259,7 +260,7 @@
 					<posx>160</posx>
 					<posy>475</posy>
 					<height>30</height>
-					<width>1050</width>					
+					<width>1050</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -270,7 +271,7 @@
 				<control type="label">
 					<description>Time Label</description>
 					<posx>160</posx>
-					<posy>505</posy>					
+					<posy>505</posy>
 					<height>30</height>
 					<width>220</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=FF0084ff] / [/COLOR]]</label>
@@ -299,7 +300,7 @@
 					<height>245</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
-				</control>	
+				</control>
 				<control type="label">
 					<description>Studio label</description>
 					<posx>205</posx>
@@ -318,7 +319,7 @@
 					<posx>205</posx>
 					<posy>475</posy>
 					<height>30</height>
-					<width>1050</width>					
+					<width>1050</width>
 					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=grey] (,)[/COLOR]]</label>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -369,7 +370,7 @@
 				<control type="label">
 					<description>Title label</description>
 					<posx>220</posx>
-					<posy>475</posy>					
+					<posy>475</posy>
 					<height>30</height>
 					<width>1050</width>
 					<label>$INFO[VideoPlayer.Title]</label>
@@ -382,7 +383,7 @@
 				<control type="label">
 					<description>Time Label</description>
 					<posx>220</posx>
-					<posy>505</posy>					
+					<posy>505</posy>
 					<height>30</height>
 					<width>220</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=HomeInfoTwo] / [/COLOR]]</label>
@@ -406,7 +407,7 @@
 				<control type="image">
 					<description>Cover image</description>
 					<posx>290</posx>
-					<posy>235</posy>				
+					<posy>235</posy>
 					<width>120</width>
 					<height>300</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
@@ -419,7 +420,7 @@
 					<posx>280</posx>
 					<posy>475</posy>
 					<height>30</height>
-					<width>520</width>				
+					<width>520</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<align>right</align>
 					<aligny>center</aligny>
@@ -430,7 +431,7 @@
 				<control type="label">
 					<description>Time Label</description>
 					<posx>280</posx>
-					<posy>505</posy>					
+					<posy>505</posy>
 					<height>30</height>
 					<width>520</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=FF0084ff] / [/COLOR]]</label>
@@ -459,7 +460,7 @@
 					<height>245</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
-				</control>	
+				</control>
 				<control type="label">
 					<description>Studio label</description>
 					<posx>215</posx>
@@ -478,7 +479,7 @@
 					<posx>215</posx>
 					<posy>475</posy>
 					<height>30</height>
-					<width>455</width>					
+					<width>455</width>
 					<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year,[COLOR=grey] (,)[/COLOR]]</label>
 					<align>right</align>
 					<aligny>center</aligny>
@@ -529,7 +530,7 @@
 				<control type="label">
 					<description>Title label</description>
 					<posx>220</posx>
-					<posy>475</posy>					
+					<posy>475</posy>
 					<height>30</height>
 					<width>460</width>
 					<label>$INFO[VideoPlayer.Title]</label>
@@ -542,7 +543,7 @@
 				<control type="label">
 					<description>Time Label</description>
 					<posx>220</posx>
-					<posy>505</posy>					
+					<posy>505</posy>
 					<height>30</height>
 					<width>460</width>
 					<label>$INFO[Player.Time]$INFO[Player.Duration,[COLOR=HomeInfoTwo] / [/COLOR]]</label>

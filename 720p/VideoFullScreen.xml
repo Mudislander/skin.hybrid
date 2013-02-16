@@ -1,12 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
 <window>
 	<defaultcontrol>-</defaultcontrol>
 	<controls>
 		<control type="group" id="1">
-			<visible>![substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
-			<visible>
-				[!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,5) | !IntegerGreaterThan(Player.TimeRemaining,3)]
-				| Player.ShowInfo | Window.IsActive(VideoOSD) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding
-			</visible>
+			<description>Media Info at Start of Play</description>
+			<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(Episodes)</visible>
+			<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
+			<visible>!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,10) + !Window.IsVisible(VideoOSD) + !substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mkv,right)</visible>		
+			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+			<animation effect="slide" end="0,-60" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>
+			<control type="image" id="1">
+				<posx>-150</posx>
+				<posy>230r</posy>
+				<width>1580</width>
+				<height>230</height>
+				<texture>floor.png</texture>
+			</control>
+			<control type="image" id="1">
+				<description>clearart image</description>
+				<posx>20</posx>
+				<posy>260r</posy>
+				<width>300</width>
+				<height>230</height>
+				<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo)</visible>
+			</control>		
+			<control type="image" id="1">
+				<description>logo image</description>
+				<posx>20</posx>
+				<posy>260r</posy>
+				<width>300</width>
+				<height>230</height>
+				<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo)</visible>
+			</control>
+			<control type="image" id="1">
+				<description>clearart image</description>
+				<posx>20</posx>
+				<posy>260r</posy>
+				<width>300</width>
+				<height>230</height>
+				<texture>$INFO[Player.Art(clearart)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Player.Art(clearart)) + VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo)</visible>
+			</control>
+			<control type="image" id="1">
+				<description>logo image</description>
+				<posx>20</posx>
+				<posy>260r</posy>
+				<width>300</width>
+				<height>230</height>
+				<texture>$INFO[Player.Art(clearlogo)]</texture>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo)</visible>
+			</control>
+			<control type="group" id="1">
+				<visible>
+					[VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearart))] |
+					[VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearlogo))] | [VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearart))]
+				</visible>
+				<control type="image" id="1">
+					<posx>52</posx>
+					<posy>338r</posy>
+					<width>203</width>
+					<height>331</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultFallback/DefaultPoster.png" background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[Player.Art(poster)]</texture>
+					<visible>VideoPlayer.Content(Movies)</visible>
+				</control>
+				<control type="image" id="1">
+					<posx>52</posx>
+					<posy>338r</posy>
+					<width>203</width>
+					<height>331</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture fallback="DefaultFallback/DefaultPoster.png" background="true" diffuse="ClearCase/EmptyCaseMask.png">$INFO[Player.Art(tvshow.poster)]</texture>
+					<visible>VideoPlayer.Content(Episodes)</visible>
+				</control>
+				<control type="image" id="1">
+					<posx>20</posx>
+					<posy>350r</posy>
+					<width>246</width>
+					<height>356</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
+				</control>
+			</control>
+			<control type="group" id="1">
+				<posx>330</posx>
+				<posy>175r</posy>
+				<control type="label" id="1">
+					<description>Heading label</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>910</width>
+					<height>25</height>
+					<align>left</align>
+					<font>font13</font>
+					<label>$LOCALIZE[31040]</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label" id="1">
+					<description>Studio label</description>
+					<posx>20</posx>
+					<posy>30</posy>
+					<width>910</width>
+					<height>25</height>
+					<align>left</align>
+					<font>font12</font>
+					<label>$INFO[VideoPlayer.Studio]</label>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>VideoPlayer.Content(Movies)</visible>
+				</control>
+				<control type="label" id="1">
+					<description>TV Show label</description>
+					<posx>20</posx>
+					<posy>30</posy>
+					<width>910</width>
+					<height>25</height>
+					<align>left</align>
+					<font>font12</font>
+					<label>$INFO[VideoPlayer.TVShowTitle] ($INFO[VideoPlayer.Season]x$INFO[VideoPlayer.Episode])</label>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>VideoPlayer.Content(Episodes)</visible>
+				</control>
+				<control type="label" id="1">
+					<description>Music Info label</description>
+					<posx>20</posx>
+					<posy>30</posy>
+					<width>910</width>
+					<height>25</height>
+					<align>left</align>
+					<font>font12</font>
+					<label>$INFO[VideoPlayer.Artist] $INFO[VideoPlayer.Album, - ]</label>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>VideoPlayer.Content(MusicVideos)</visible>
+				</control>
+				<control type="grouplist" id="1">
+					<posx>20</posx>
+					<posy>60</posy>
+					<width>910</width>
+					<height>35</height>
+					<itemgap>1</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label" id="1">
+						<width min="10" max="710">auto</width>
+						<height>30</height>
+						<font>font30</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[VideoPlayer.Title]</label>
+						<textcolor>orange</textcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="image" id="1">
+						<description>Video Resolution Image</description>
+						<width>50</width>
+						<height>35</height>
+						<aspectratio align="center">keep</aspectratio>
+						<texture>$INFO[VideoPlayer.VideoResolution,MediaFlags/resolution/,.png]</texture>
+					</control>
+					<control type="image" id="1">
+						<description>Audio Codec Image</description>
+						<width>85</width>
+						<height>35</height>
+						<aspectratio align="center">keep</aspectratio>
+						<texture>$INFO[VideoPlayer.AudioCodec,MediaFlags/codectype/,.png]</texture>
+					</control>
+					<control type="image" id="1">
+						<description>Audio Channels Image</description>
+						<width>50</width>
+						<height>35</height>
+						<aspectratio align="center">keep</aspectratio>
+						<texture>$INFO[VideoPlayer.AudioChannels,MediaFlags/audiochannels/,.png]</texture>
+					</control>
+				</control>
+				<control type="label" id="1">
+					<posx>580</posx>
+					<posy>120</posy>
+					<width>580</width>
+					<height>25</height>
+					<label>$LOCALIZE[31049] $INFO[Player.FinishTime]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<animation effect="fade" time="200">VisibleChange</animation>
+				</control>
+			</control>			
+			<control type="group" id="1">
+				<posx>330</posx>
+				<posy>85r</posy>
+				<control type="label" id="1">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.Time(hh:mm:ss)]</label>
+				</control>
+				<control type="progress" id="1">
+					<description>ProgressbarCache</description>
+					<posx>100</posx>
+					<posy>15</posy>
+					<width>720</width>
+					<height>16</height>
+					<info>Player.ProgressCache</info>
+					<midtexture border="6,0,6,0">OSDProgressMidLight.png</midtexture>
+				</control>
+				<control type="progress" id="1">
+					<description>Progressbar</description>
+					<posx>100</posx>
+					<posy>15</posy>
+					<width>720</width>
+					<height>16</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="label" id="1">
+					<posx>920</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
+				</control>
+			</control>			
+		</control>
+		<control type="group" id="1">
+			<visible>![substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mkv,right) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+			<visible>Player.ShowInfo | Window.IsActive(VideoOSD) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
 			<animation effect="fade" start="0" end="100" time="100">VisibleChange</animation>
 			<control type="image" id="1">
 				<include>Dimensions_Fullscreen</include>
@@ -68,9 +301,9 @@
 			</control>
 			<control type="label" id="1">
 				<description>date label</description>
-				<posx>1250</posx>
+				<posx>15r</posx>
 				<posy>5</posy>
-				<width>800</width>
+				<width>345</width>
 				<height>10</height>
 				<align>right</align>
 				<aligny>center</aligny>
@@ -81,9 +314,9 @@
 			</control>
 			<control type="label" id="1">
 				<description>time label</description>
-				<posx>1250</posx>
-				<posy>15</posy>
-				<width>800</width>
+				<posx>15r</posx>
+				<posy>20</posy>
+				<width>345</width>
 				<height>30</height>
 				<align>right</align>
 				<aligny>center</aligny>
@@ -101,9 +334,7 @@
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 			</control>
 			<control type="group" id="1">
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
-				<visible>!Skin.HasSetting(HidePauseInfo) + Player.Paused + !Player.Caching</visible>
-				<visible>!IsEmpty(VideoPlayer.Plot)</visible>
+				<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + Player.Paused + !Player.Caching</visible>
 				<animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation>
 				<posx>320</posx>
 				<posy>370r</posy>
@@ -130,8 +361,8 @@
 			</control>
 			<control type="group" id="1">
 				<animation effect="slide" end="0,-60" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
+				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<control type="image" id="1">
 					<description>clearart image</description>
 					<posx>20</posx>
@@ -140,7 +371,7 @@
 					<height>230</height>
 					<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo)</visible>
+					<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo)</visible>
 				</control>
 				<control type="image" id="1">
 					<description>logo image</description>
@@ -150,7 +381,7 @@
 					<height>230</height>
 					<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo)</visible>
+					<visible>!IsEmpty(Player.Art(tvshow.clearlogo)) + VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo)</visible>
 				</control>
 				<control type="image" id="1">
 					<description>clearart image</description>
@@ -160,7 +391,7 @@
 					<height>230</height>
 					<texture>$INFO[Player.Art(clearart)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<visible>!IsEmpty(Player.Art(clearart)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + !Skin.HasSetting(TVShowUsesLogo)</visible>
+					<visible>!IsEmpty(Player.Art(clearart)) + VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo)</visible>
 				</control>
 				<control type="image" id="1">
 					<description>logo image</description>
@@ -170,13 +401,13 @@
 					<height>230</height>
 					<texture>$INFO[Player.Art(clearlogo)]</texture>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)] + Skin.HasSetting(TVShowUsesLogo)</visible>
+					<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo)</visible>
 				</control>
 				<control type="group" id="1">
-					<visible>[VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearart))]
-						| [VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearlogo))] | [VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearart))]
+					<visible>
+						[VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearart))] |
+						[VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearlogo))] | [VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(tvshow.clearart))]
 					</visible>
-					<visible>[!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
 					<control type="image" id="1">
 						<posx>52</posx>
 						<posy>338r</posy>
@@ -214,7 +445,7 @@
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + [!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)]</visible>
+					<visible>!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
 				</control>
 			</control>
 			<control type="image" id="1">
@@ -228,12 +459,10 @@
 				<bordertexture border="8">ThumbShadow.png</bordertexture>
 				<bordersize>8</bordersize>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
 				<visible>SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)</visible>
 			</control>
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
 				<posx>330</posx>
 				<posy>175r</posy>
@@ -372,7 +601,6 @@
 			</control>
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
 				<visible>SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)</visible>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<control type="grouplist" id="1">
@@ -432,7 +660,6 @@
 			<control type="group" id="1">
 				<visible>!Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
-				<visible>!substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mp4,right)</visible>			
 				<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
 				<posx>330</posx>
 				<posy>85r</posy>
@@ -537,10 +764,6 @@
 			<ondown>500</ondown>
 			<include>VisibleFadeEffect</include>
 		</control>
-		
-		
-		
-		
 		<control type="group">
 			<visible>Player.ShowCodec + VideoPlayer.Content(LiveTV) + system.getbool(pvrplayback.signalquality)</visible>
 			<posy>165</posy>

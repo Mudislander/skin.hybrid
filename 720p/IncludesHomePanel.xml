@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="RecentMoviePanel">
 		<control type="group">
@@ -3869,7 +3870,7 @@
 			</control>
 		</focusedlayout>
 	</include>
-		<include name="TVShowLandscapeLayout">
+	<include name="TVShowLandscapeLayout">
 		<itemlayout height="185" width="280">
 			<control type="image">
 				<description>Main Icon</description>
@@ -3880,7 +3881,8 @@
 				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
 				<animation effect="fade" start="75" end="75" time="0" condition="true">conditional</animation>
-				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>			</control>
+				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+			</control>
 			<control type="image">
 				<description>Actual Icon</description>
 				<posx>28</posx>
@@ -3941,45 +3943,46 @@
 				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8016) + Container(8016).Column(2)">conditional</animation>
 				<animation effect="slide" end="-15,0" time="100" reversible="true" condition="Control.HasFocus(8022) + Container(8022).Column(2)">conditional</animation>
 				<animation effect="zoom" center="auto" start="100" end="120" time="100" easing="inout" tween="cubic" reversible="true">Focus</animation>
-			<control type="image">
-				<description>Main Icon</description>
-				<posx>28</posx>
-				<posy>13</posy>
-				<width>224</width>
-				<height>114</height>
-				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>			</control>
-			<control type="image">
-				<description>Actual Icon</description>
-				<posx>28</posx>
-				<posy>13</posy>
-				<width>224</width>
-				<height>114</height>
-				<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.ActualIcon]</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
-			</control>
-			<control type="image">
-				<description>FanArt Icon</description>
-				<posx>28</posx>
-				<posy>13</posy>
-				<width>224</width>
-				<height>114</height>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="episodematte.png">$INFO[listItem.Property(EpisodePath),,fanart.jpg]</texture>
-				<visible>Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(UseTvSeasonArt)</visible>
-			</control>
-			<control type="image">
-				<description>Episode Frame Icon</description>
-				<posx>25</posx>
-				<posy>10</posy>
-				<width>230</width>
-				<height>120</height>
-				<texture background="true">EpisodeFrame.png</texture>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<visible>!IsEmpty(ListItem.Label)</visible>
-			</control>
+				<control type="image">
+					<description>Main Icon</description>
+					<posx>28</posx>
+					<posy>13</posy>
+					<width>224</width>
+					<height>114</height>
+					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>!Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<control type="image">
+					<description>Actual Icon</description>
+					<posx>28</posx>
+					<posy>13</posy>
+					<width>224</width>
+					<height>114</height>
+					<texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[ListItem.ActualIcon]</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Skin.HasSetting(HideEpisodeThumb)</visible>
+				</control>
+				<control type="image">
+					<description>FanArt Icon</description>
+					<posx>28</posx>
+					<posy>13</posy>
+					<width>224</width>
+					<height>114</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="episodematte.png">$INFO[listItem.Property(EpisodePath),,fanart.jpg]</texture>
+					<visible>Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(UseTvSeasonArt)</visible>
+				</control>
+				<control type="image">
+					<description>Episode Frame Icon</description>
+					<posx>25</posx>
+					<posy>10</posy>
+					<width>230</width>
+					<height>120</height>
+					<texture background="true">EpisodeFrame.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>!IsEmpty(ListItem.Label)</visible>
+				</control>
 			</control>
 			<control type="label">
 				<posx>140</posx>

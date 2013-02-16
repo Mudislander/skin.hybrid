@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <window>
 	<onload condition="System.HasAddon(script.artistslideshow) + !Skin.HasSetting(DisableArtistSlideShow) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow)</onload>
 	<defaultcontrol>-</defaultcontrol>

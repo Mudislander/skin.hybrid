@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<variable name="GlobalScreenBackground" type="text">
 		<value condition="Skin.HasSetting(GlobalMovieBackdrop)">$INFO[Skin.String(HomeScreenMoviesBackGround)]</value>
@@ -39,12 +40,12 @@
 		<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
 	</variable>
 	<variable name="MenuPopUpNav" type="text">
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + !Skin.HasSetting(SubmenuPlayListMusic)">ActivateWindow(2122)</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Playlists)">ActivateWindow(2122)</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + !Skin.HasSetting(SubmenuPlayListMusic) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Playlists) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies)">ActivateWindow(2118)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)">ActivateWindow(2119)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)">ActivateWindow(2120)</value>
-		<value condition="IntegerGreaterThan(Window(Home).Property(favourite.count),0)">ActivateWindow(Favourites)</value>
+		<value condition="IntegerGreaterThan(Window(Home).Property(favourite.count),0) + !Skin.HasSetting(DisableScriptFavourites)">ActivateWindow(Favourites)</value>
 	</variable>
 	<variable name="AutoGenreImage">
 		<value condition="!Skin.HasSetting(UsrGenreFanArt) + [substring(ListItem.Label,$LOCALIZE[31600],Left) | substring(ListItem.Label,Action,Left)]">DefaultGenre/Action.png</value>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="HomeMainMenuContent">
 		<content>
@@ -342,24 +343,24 @@
 			<ondown condition="!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Container(9000).ListItem.Property(SubMenu),Playlists)">9001</ondown>
 			<ondown condition="!Skin.HasSetting(HideDefaultSubItem) + !StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns)">9001</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Videos) + [!IsEmpty(Skin.String(VideoSubMenu.1.Path)) | !IsEmpty(Skin.String(VideoSubMenu.2.Path)) | !IsEmpty(Skin.String(VideoSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Videos) + IsEmpty(Skin.String(VideoSubMenu.1.Path)) + IsEmpty(Skin.String(VideoSubMenu.2.Path)) + IsEmpty(Skin.String(VideoSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Videos) + IsEmpty(Skin.String(VideoSubMenu.1.Path)) + IsEmpty(Skin.String(VideoSubMenu.2.Path)) + IsEmpty(Skin.String(VideoSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Movies) + [!IsEmpty(Skin.String(MovieSubMenu.1.Path)) | !IsEmpty(Skin.String(MovieSubMenu.2.Path)) | !IsEmpty(Skin.String(MovieSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Movies) + IsEmpty(Skin.String(MovieSubMenu.1.Path)) + IsEmpty(Skin.String(MovieSubMenu.2.Path)) + IsEmpty(Skin.String(MovieSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Movies) + IsEmpty(Skin.String(MovieSubMenu.1.Path)) + IsEmpty(Skin.String(MovieSubMenu.2.Path)) + IsEmpty(Skin.String(MovieSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows) + [!IsEmpty(Skin.String(TVShowSubMenu.1.Path)) | !IsEmpty(Skin.String(TVShowSubMenu.2.Path)) | !IsEmpty(Skin.String(TVShowSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows) + IsEmpty(Skin.String(TVShowSubMenu.1.Path)) + IsEmpty(Skin.String(TVShowSubMenu.2.Path)) + IsEmpty(Skin.String(TVShowSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),TVShows) + IsEmpty(Skin.String(TVShowSubMenu.1.Path)) + IsEmpty(Skin.String(TVShowSubMenu.2.Path)) + IsEmpty(Skin.String(TVShowSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Music) + [!IsEmpty(Skin.String(MusicSubMenu.1.Path)) | !IsEmpty(Skin.String(MusicSubMenu.2.Path)) | !IsEmpty(Skin.String(MusicSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Music) + IsEmpty(Skin.String(MusicSubMenu.1.Path)) + IsEmpty(Skin.String(MusicSubMenu.2.Path)) + IsEmpty(Skin.String(MusicSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Music) + IsEmpty(Skin.String(MusicSubMenu.1.Path)) + IsEmpty(Skin.String(MusicSubMenu.2.Path)) + IsEmpty(Skin.String(MusicSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts) + [!IsEmpty(Skin.String(ConcertSubMenu.1.Path)) | !IsEmpty(Skin.String(ConcertSubMenu.2.Path)) | !IsEmpty(Skin.String(ConcertSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts) + IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + IsEmpty(Skin.String(ConcertSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts) + IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + IsEmpty(Skin.String(ConcertSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures) + [!IsEmpty(Skin.String(PicSubMenu.1.Path)) | !IsEmpty(Skin.String(PicSubMenu.2.Path)) | !IsEmpty(Skin.String(PicSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures) + IsEmpty(Skin.String(PicSubMenu.1.Path)) + IsEmpty(Skin.String(PicSubMenu.2.Path)) + IsEmpty(Skin.String(PicSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Pictures) + IsEmpty(Skin.String(PicSubMenu.1.Path)) + IsEmpty(Skin.String(PicSubMenu.2.Path)) + IsEmpty(Skin.String(PicSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Programs) + [!IsEmpty(Skin.String(ProgSubMenu.1.Path)) | !IsEmpty(Skin.String(ProgSubMenu.2.Path)) | !IsEmpty(Skin.String(ProgSubMenu.3.Path))]">9001</ondown>
-			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Programs) + IsEmpty(Skin.String(ProgSubMenu.1.Path)) + IsEmpty(Skin.String(ProgSubMenu.2.Path)) + IsEmpty(Skin.String(ProgSubMenu.3.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),Programs) + IsEmpty(Skin.String(ProgSubMenu.1.Path)) + IsEmpty(Skin.String(ProgSubMenu.2.Path)) + IsEmpty(Skin.String(ProgSubMenu.3.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="Skin.HasSetting(HideDefaultSubItem) + StringCompare(Container(9000).ListItem.Property(SubMenu),PlayDisc)">9001</ondown>
 			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),Playlists) + [!IsEmpty(Skin.String(SubMenuItem.1.Path)) | !IsEmpty(Skin.String(SubMenuItem.2.Path)) | !IsEmpty(Skin.String(SubMenuItem.3.Path)) | !IsEmpty(Skin.String(SubMenuItem.4.Path)) | !IsEmpty(Skin.String(SubMenuItem.5.Path))]">9001</ondown>
-			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),Playlists) + IsEmpty(Skin.String(SubMenuItem.1.Path)) + IsEmpty(Skin.String(SubMenuItem.2.Path)) + IsEmpty(Skin.String(SubMenuItem.3.Path)) + IsEmpty(Skin.String(SubMenuItem.4.Path)) + IsEmpty(Skin.String(SubMenuItem.5.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),Playlists) + IsEmpty(Skin.String(SubMenuItem.1.Path)) + IsEmpty(Skin.String(SubMenuItem.2.Path)) + IsEmpty(Skin.String(SubMenuItem.3.Path)) + IsEmpty(Skin.String(SubMenuItem.4.Path)) + IsEmpty(Skin.String(SubMenuItem.5.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns) + [!IsEmpty(Skin.String(SubMenuItem.6.Path)) | !IsEmpty(Skin.String(SubMenuItem.7.Path)) | !IsEmpty(Skin.String(SubMenuItem.8.Path)) | !IsEmpty(Skin.String(SubMenuItem.9.Path)) | !IsEmpty(Skin.String(SubMenuItem.10.Path))]">9001</ondown>
-			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns) + IsEmpty(Skin.String(SubMenuItem.6.Path)) + IsEmpty(Skin.String(SubMenuItem.7.Path)) + IsEmpty(Skin.String(SubMenuItem.8.Path)) + IsEmpty(Skin.String(SubMenuItem.9.Path)) + IsEmpty(Skin.String(SubMenuItem.10.Path))]">$VAR[MenuPopUpNav]</ondown>
+			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),AddOns) + IsEmpty(Skin.String(SubMenuItem.6.Path)) + IsEmpty(Skin.String(SubMenuItem.7.Path)) + IsEmpty(Skin.String(SubMenuItem.8.Path)) + IsEmpty(Skin.String(SubMenuItem.9.Path)) + IsEmpty(Skin.String(SubMenuItem.10.Path))">$VAR[MenuPopUpNav]</ondown>
 			<ondown condition="StringCompare(Container(9000).ListItem.Property(SubMenu),None)">$VAR[MenuPopUpNav]</ondown>
 			<pagecontrol>-</pagecontrol>
 			<scrolltime>300</scrolltime>
@@ -463,7 +464,7 @@
 				<onleft condition="Skin.HasSetting(HorizontalHomeScreen)">9012</onleft>
 				<onright condition="Skin.HasSetting(HorizontalHomeScreen)">9012</onright>
 				<onup condition="Skin.HasSetting(HorizontalHomeScreen)">9000</onup>
-				<ondown condition="Skin.HasSetting(HorizontalHomeScreen)">ActivateWindow(2119)</ondown>
+				<ondown condition="Skin.HasSetting(HorizontalHomeScreen)">$VAR[MenuPopUpNav]</ondown>
 				<onleft condition="!Skin.HasSetting(HorizontalHomeScreen)">9000</onleft>
 				<onright condition="!Skin.HasSetting(HorizontalHomeScreen)">9003</onright>
 				<onup condition="!Skin.HasSetting(HorizontalHomeScreen)">9012</onup>
