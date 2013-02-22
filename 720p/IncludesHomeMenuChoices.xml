@@ -80,7 +80,7 @@
 				<label>$LOCALIZE[1212] - $LOCALIZE[31683]</label>
 				<include>ClearButtonChoice</include>
 				<onclick>Skin.Setpath(UsrSelectAddon,library://video/)</onclick>
-				<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,$INFO[Skin.String(UsrSelectAddon)]))</onclick>
+				<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,$INFO[Skin.String(UsrSelectAddon)],return))</onclick>
 				<onclick condition="!IsEmpty(Skin.String(UsrSelectAddon))">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31683])</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].FanArt,special://skin/backgrounds/homescreen/movies.jpg)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentMovies)</onclick>
@@ -133,10 +133,10 @@
 			</item>
 			<item id="11">
 				<description>Concerts</description>
-				<label>$LOCALIZE[31954] - $LOCALIZE[20391]</label>
+				<label>$LOCALIZE[31954] - $LOCALIZE[31669]</label>
 				<include>ClearButtonChoice</include>
 				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(Videos,MusicVideos,return))</onclick>
-				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[20391])</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[31669])</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].FanArt,special://skin/backgrounds/homescreen/musicvideos.jpg)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentConcerts)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Concerts)</onclick>
@@ -759,6 +759,20 @@
 				<visible>Library.HasContent(Music)</visible>
 			</item>
 			<item id="55">
+				<description>List Music Genres</description>
+				<label>$LOCALIZE[2] - $LOCALIZE[135]</label>
+				<include>ClearButtonChoice</include>
+				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Path,ActivateWindow(MusicLibrary,Genres,return))</onclick>
+				<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Label,$LOCALIZE[135])</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].FanArt,special://skin/backgrounds/homescreen/music.jpg)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentAlbums)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,Music)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,Music)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Music)</onclick>
+				<include>CloseMenuChoice</include>
+				<visible>Library.HasContent(Music)</visible>
+			</item>
+			<item id="56">
 				<description>Artists</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[133]</label>
 				<include>ClearButtonChoice</include>
@@ -772,7 +786,7 @@
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(Music)</visible>
 			</item>
-			<item id="56">
+			<item id="57">
 				<description>Albums</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[132]</label>
 				<include>ClearButtonChoice</include>
@@ -785,7 +799,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Music)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="57">
+			<item id="58">
 				<description>Songs</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[134]</label>
 				<include>ClearButtonChoice</include>
@@ -799,7 +813,7 @@
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(Music)</visible>
 			</item>
-			<item id="58">
+			<item id="59">
 				<description>Music addons</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[10040]</label>
 				<include>ClearButtonChoice</include>
@@ -812,7 +826,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,AddOns)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="59">
+			<item id="60">
 				<description>Update Library Music</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[653]</label>
 				<include>ClearButtonChoice</include>
@@ -825,7 +839,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Music)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="60">
+			<item id="61">
 				<description>Recently played albums</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[517]</label>
 				<include>ClearButtonChoice</include>
@@ -839,7 +853,7 @@
 				<include>CloseMenuChoice</include>
 				<visible>Library.HasContent(Music)</visible>
 			</item>
-			<item id="61">
+			<item id="62">
 				<description>Rip CD</description>
 				<label>$LOCALIZE[2] - $LOCALIZE[31940]</label>
 				<include>ClearButtonChoice</include>
@@ -852,7 +866,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Music)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="62">
+			<item id="63">
 				<description>Eject Tray</description>
 				<label>$LOCALIZE[13391]</label>
 				<include>ClearButtonChoice</include>
@@ -865,7 +879,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,PlayDisc)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="63">
+			<item id="64">
 				<description>Picture AddOns</description>
 				<label>$LOCALIZE[1] - $LOCALIZE[10040]</label>
 				<include>ClearButtonChoice</include>
@@ -878,7 +892,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,AddOns)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="64">
+			<item id="65">
 				<description>Profiles</description>
 				<label>$LOCALIZE[13200]</label>
 				<include>ClearButtonChoice</include>
@@ -891,7 +905,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="65">
+			<item id="66">
 				<description>Logg Off</description>
 				<label>$LOCALIZE[31954] - $LOCALIZE[20126]</label>
 				<include>ClearButtonChoice</include>
@@ -904,7 +918,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Shutdown)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="66">
+			<item id="67">
 				<description>Exit</description>
 				<label>$LOCALIZE[31954] - $LOCALIZE[13005]</label>
 				<include>ClearButtonChoice</include>
@@ -917,7 +931,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Shutdown)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="67">
+			<item id="68">
 				<description>Openelec Settings</description>
 				<label>$LOCALIZE[31676]</label>
 				<include>ClearButtonChoice</include>
@@ -931,7 +945,7 @@
 				<include>CloseMenuChoice</include>
 				<visible>System.HasAddon(os.openelec.settings)</visible>
 			</item>
-			<item id="68">
+			<item id="69">
 				<description>Sys Info</description>
 				<label>$LOCALIZE[130]</label>
 				<include>ClearButtonChoice</include>
@@ -944,7 +958,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="69">
+			<item id="70">
 				<description>Addon Browser</description>
 				<label>$LOCALIZE[10040]</label>
 				<include>ClearButtonChoice</include>
@@ -957,7 +971,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="70">
+			<item id="71">
 				<description>File Manager</description>
 				<label>$LOCALIZE[7]</label>
 				<include>ClearButtonChoice</include>
@@ -970,7 +984,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="71">
+			<item id="72">
 				<description>Skin Settings</description>
 				<label>$LOCALIZE[166] $LOCALIZE[5]</label>
 				<include>ClearButtonChoice</include>
@@ -983,7 +997,7 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Settings)</onclick>
 				<include>CloseMenuChoice</include>
 			</item>
-			<item id="72">
+			<item id="73">
 				<description>System Settings</description>
 				<label>$LOCALIZE[10016]</label>
 				<include>ClearButtonChoice</include>

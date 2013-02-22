@@ -858,6 +858,7 @@
 			<texture border="0,0,0,3" flipx="true">HorizontalMenu/HomeSubEnd.png</texture>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 			<visible>
+				!Skin.HasSetting(HideDefaultSubItem) |
 				[!IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.1.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.2.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.3.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.3.Label))]
@@ -896,12 +897,46 @@
 			<visible>!IsEmpty(Skin.String(ConcertSubMenu.3.Path))</visible>
 			<visible>!IsEmpty(Skin.String(ConcertSubMenu.3.Label))</visible>
 		</control>
-		<control type="image" id="91204">
+		<control type="button" id="91204">
+			<include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
+			<include condition="Skin.HasSetting(HorizontalHomeScreen)">HorizontalCommonSubMenu</include>
+			<label>132</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoAlbums,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[132])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
+			<onclick>ActivateWindow(Videos,MusicVideoAlbums,return)</onclick>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
+		</control>
+		<control type="button" id="91205">
+			<include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
+			<include condition="Skin.HasSetting(HorizontalHomeScreen)">HorizontalCommonSubMenu</include>
+			<label>133</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoArtists,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[133])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
+			<onclick>ActivateWindow(Videos,MusicVideoArtists,return)</onclick>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
+		</control>
+		<control type="button" id="91206">
+			<include condition="!Skin.HasSetting(HorizontalHomeScreen)">VerticalCommonSubMenu</include>
+			<include condition="Skin.HasSetting(HorizontalHomeScreen)">HorizontalCommonSubMenu</include>
+			<label>135</label>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,MusicVideoGenres,return))</onclick>
+			<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$LOCALIZE[135])</onclick>
+			<onclick>SetProperty(SubMenuBackground,$VAR[CommonScreenBackground],Home)</onclick>
+			<onclick>ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<visible>!Skin.HasSetting(HideDefaultSubItem)</visible>
+		</control>
+		<control type="image" id="91207">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HorizontalMenu/HomeSubEnd.png</texture>
 			<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 			<visible>
+				!Skin.HasSetting(HideDefaultSubItem) |
 				[!IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.1.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.2.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.3.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.3.Label))]

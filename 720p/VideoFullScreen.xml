@@ -6,7 +6,7 @@
 			<description>Media Info at Start of Play</description>
 			<visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(Episodes)</visible>
 			<visible>![SubString(Player.FolderPath,mms://,Left) | SubString(Player.FolderPath,http://,Left) | SubString(Player.FolderPath,rtmp://,Left)]</visible>
-			<visible>!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,10) + !Window.IsVisible(VideoOSD) + !substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mkv,right)</visible>		
+			<visible>!Skin.HasSetting(HideInfoStartOSD) + !IntegerGreaterThan(Player.time,10) + !Window.IsVisible(VideoOSD) + !substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mkv,right)</visible>
 			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
 			<animation effect="slide" end="0,-60" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>
 			<control type="image" id="1">
@@ -24,8 +24,8 @@
 				<height>230</height>
 				<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + Skin.HasSetting(TVShowUsesLogo)</visible>
-			</control>		
+				<visible>!IsEmpty(Player.Art(tvshow.clearart)) + VideoPlayer.Content(Episodes) + !Skin.HasSetting(TVShowUsesLogo)</visible>
+			</control>
 			<control type="image" id="1">
 				<description>logo image</description>
 				<posx>20</posx>
@@ -55,7 +55,7 @@
 				<texture>$INFO[Player.Art(clearlogo)]</texture>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<visible>!IsEmpty(Player.Art(clearlogo)) + VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo)</visible>
-			</control>
+			</control>			
 			<control type="group" id="1">
 				<visible>
 					[VideoPlayer.Content(Movies) + Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearlogo))] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(TVShowUsesLogo) + IsEmpty(Player.Art(clearart))] |
@@ -194,7 +194,7 @@
 					<scroll>true</scroll>
 					<animation effect="fade" time="200">VisibleChange</animation>
 				</control>
-			</control>			
+			</control>
 			<control type="group" id="1">
 				<posx>330</posx>
 				<posy>85r</posy>
@@ -235,7 +235,7 @@
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
-			</control>			
+			</control>
 		</control>
 		<control type="group" id="1">
 			<visible>![substring(Player.Filenameandpath,extras/Intro/XBMC-Intro-Video.mkv,right) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>

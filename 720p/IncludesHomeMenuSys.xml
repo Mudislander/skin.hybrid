@@ -9,6 +9,8 @@
 				<onclick>SetProperty(MenuItemActive,ItemOne,Home)</onclick>
 				<onclick>SetProperty(MenuItemSelected,$INFO[Skin.String(HomeItem.1.Type)],Home)</onclick>
 				<onclick>$INFO[Skin.String(HomeItem.1.Path)]</onclick>
+				<onclick>Skin.SetString(HomeItemLastAction,$INFO[Skin.String(HomeItem.1.Path)])</onclick>
+				<onclick>Skin.SetString(HomeItemLastLabel,$VAR[MenuItemOneLabel])</onclick>
 				<icon>$VAR[CommonScreenBackground]</icon>
 				<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 				<property name="SubMenu">$INFO[Skin.String(HomeItem.1.Sub)]</property>

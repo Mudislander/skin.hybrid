@@ -77,15 +77,6 @@
 					<altlabel>31050</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
-				<control type="radiobutton" id="94">
-					<description>Hide File List Poster</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31681]</label>
-					<onclick>Skin.ToggleSetting(HideFileListPoster)</onclick>
-					<selected>Skin.HasSetting(HideFileListPoster)</selected>
-					<visible>Control.IsVisible(50)</visible>
-				</control>
 				<control type="label" id="201">
 					<width>250</width>
 					<height>35</height>
@@ -115,6 +106,15 @@
 					<posy>210</posy>
 					<include>ButtonCommonValues</include>
 					<label>25001</label>
+				</control>
+				<control type="radiobutton" id="8">
+					<description>Hide File List Poster</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31681]</label>
+					<onclick>Skin.ToggleSetting(HideFileListPoster)</onclick>
+					<selected>Skin.HasSetting(HideFileListPoster)</selected>
+					<visible>Control.IsVisible(50)</visible>
 				</control>
 				<include>CommonNowPlaying_Controls</include>
 			</control>

@@ -171,6 +171,7 @@
 			<include>HomeSubMenuImage</include>
 			<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),Concerts)</visible>
 			<visible>
+				!Skin.HasSetting(HideDefaultSubItem) | 
 				[!IsEmpty(Skin.String(ConcertSubMenu.1.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.1.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.2.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.2.Label))] |
 				[!IsEmpty(Skin.String(ConcertSubMenu.3.Path)) + !IsEmpty(Skin.String(ConcertSubMenu.3.Label))]

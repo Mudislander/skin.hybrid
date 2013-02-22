@@ -238,12 +238,11 @@
 						<label>$LOCALIZE[31910]</label>
 						<onclick>Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(HomeItem.1.Label)])</onclick>
 						<onclick>Skin.SetString(HomeItemLastAction,$INFO[Skin.String(HomeItem.1.Path)])</onclick>
-						<onclick>Skin.Reset(HomeItem.1.Path)</onclick>
-						<onclick>Skin.Reset(HomeItem.1.Label)</onclick>
 						<onclick>Skin.ToggleSetting(StickyHomeMenuAction)</onclick>
 						<selected>Skin.HasSetting(StickyHomeMenuAction)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>!StringCompare(Skin.String(HomeItem.1.Sub),$LOCALIZE[31938])</enable>
 					</control>
 					<control type="button" id="104">
 						<width>750</width>
