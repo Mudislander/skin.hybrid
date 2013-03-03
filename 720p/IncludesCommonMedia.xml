@@ -17,7 +17,7 @@
 			<randomize>true</randomize>
 			<fadetime>700</fadetime>
 			<include>KBurnsAnimateFanart</include>
-			<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasAudio + Skin.HasSetting(EnableXtraFanArt)</visible>
+			<visible>!Skin.HasSetting(HideBackHomePlaying) + Player.HasAudio + Skin.HasSetting(EnableXtraFanArt) + ![substring(Player.FolderPath,pvr://) | substring(Player.FolderPath,http://) | substring(Player.FolderPath,https://) | substring(Player.FolderPath,htsp://)]</visible>
 		</control>
 		<control type="visualisation">
 			<include>Dimensions_Fullscreen</include>
@@ -89,6 +89,15 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(CurrentWeatherBackdrop)]</visible>
 			<visible>!Skin.HasSetting(GlobalMenuBackdrop)</visible>
+		</control>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include>
+			<imagepath background="true">$VAR[GlobalScreenBackground]</imagepath>
+			<timeperimage>8000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<visible>![StringCompare(Container(9000).ListItem.Property(HiLiteItem),Weather) + Skin.HasSetting(CurrentWeatherBackdrop)]</visible>
+			<visible>!Skin.HasSetting(GlobalMenuBackdrop) + IsEmpty(Container(9000).ListItem.Thumb)</visible>
 		</control>
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
@@ -333,7 +342,25 @@
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>700</fadetime>
-			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + !IsEmpty(ListItem.FileName) + substring(Container.FolderPath,videodb://1/)</visible>
+		</control>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
+			<timeperimage>5000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>700</fadetime>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + substring(Container.FolderPath,videodb://2/) + !Container.Content(Episodes)</visible>
+		</control>
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
+			<timeperimage>5000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>700</fadetime>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + substring(Container.FolderPath,videodb://2/) + Container.Content(Episodes)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -419,6 +446,7 @@
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<visible>!Skin.HasSetting(HideBackGroundFanart) + IsEmpty(ListItem.Art(fanart)) + Skin.HasSetting(EnableLocalFanArt)</visible>
 		</control>
+		<!--
 		<control type="multiimage">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio>scale</aspectratio>
@@ -426,8 +454,9 @@
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
 			<fadetime>700</fadetime>
-			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + !StringCompare(ListItem.Label,..)</visible>
+			<visible>!Skin.HasSetting(HideBackGroundFanart) + Skin.HasSetting(EnableXtraFanArt) + !IsEmpty(ListItem.Path) + ![substring(ListItem.Path,plugin://) | substring(ListItem.Path,special://musicplaylists/) | substring(Container.FolderPath,plugin://) | substring(Container.FolderPath,addons://)]</visible>
 		</control>
+		-->
 	</include>
 	<include name="CommonProgramsBackground">
 		<control type="multiimage">

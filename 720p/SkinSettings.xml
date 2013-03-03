@@ -3242,6 +3242,18 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
+						<label>$LOCALIZE[31995]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideSystemClock)</onclick>
+						<selected>!Skin.HasSetting(HideSystemClock)</selected>
+					</control>
+					<control type="radiobutton" id="504">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
 						<label>$LOCALIZE[29801]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
@@ -3250,7 +3262,7 @@
 						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
 						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
 					</control>
-					<control type="radiobutton" id="504">
+					<control type="radiobutton" id="505">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3262,7 +3274,7 @@
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
-					<control type="radiobutton" id="505">
+					<control type="radiobutton" id="506">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3274,7 +3286,7 @@
 						<onclick>Skin.ToggleSetting(EnableXtraFanArt)</onclick>
 						<selected>Skin.HasSetting(EnableXtraFanArt)</selected>
 					</control>
-					<control type="radiobutton" id="506">
+					<control type="radiobutton" id="507">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3286,7 +3298,7 @@
 						<onclick>Skin.ToggleSetting(EnableLocalFanArt)</onclick>
 						<selected>Skin.HasSetting(EnableLocalFanArt)</selected>
 					</control>
-					<control type="label" id="507">
+					<control type="label" id="508">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3296,7 +3308,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="508">
+					<control type="button" id="509">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3309,7 +3321,7 @@
 						<onclick>Control.Move(9008,1)</onclick>
 						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
 					</control>
-					<control type="radiobutton" id="509">
+					<control type="radiobutton" id="510">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3321,7 +3333,7 @@
 						<onclick>Skin.ToggleSetting(DisableMediaCases)</onclick>
 						<selected>Skin.HasSetting(DisableMediaCases)</selected>
 					</control>
-					<control type="radiobutton" id="510">
+					<control type="radiobutton" id="511">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3333,7 +3345,7 @@
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					<control type="radiobutton" id="511">
+					<control type="radiobutton" id="512">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3345,7 +3357,7 @@
 						<onclick>Skin.ToggleSetting(UseStatusBanners)</onclick>
 						<selected>Skin.HasSetting(UseStatusBanners)</selected>
 					</control>
-					<control type="radiobutton" id="512">
+					<control type="radiobutton" id="513">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3358,7 +3370,7 @@
 						<selected>!Skin.HasSetting(HideNewMediaStat)</selected>
 						<enable>Skin.HasSetting(UseStatusBanners)</enable>
 					</control>
-					<control type="radiobutton" id="513">
+					<control type="radiobutton" id="514">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3370,7 +3382,7 @@
 						<onclick>Skin.ToggleSetting(UsrGenreFanArt)</onclick>
 						<selected>Skin.HasSetting(UsrGenreFanArt)</selected>
 					</control>
-					<control type="radiobutton" id="514">
+					<control type="radiobutton" id="515">
 						<description>User Genre backgrounds</description>
 						<width>750</width>
 						<height>40</height>
@@ -3384,7 +3396,7 @@
 						<selected>Skin.HasSetting(UsrGenreBackground)</selected>
 						<enable>!Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="button" id="515">
+					<control type="button" id="516">
 						<description>User Genre FanArt Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -3398,7 +3410,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(UsrGenreBackground) + !Skin.HasSetting(HideBackGroundFanart)</enable>
 					</control>
-					<control type="radiobutton" id="516">
+					<control type="radiobutton" id="517">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3410,7 +3422,7 @@
 						<onclick>Skin.ToggleSetting(StopAutoScroll)</onclick>
 						<selected>!Skin.HasSetting(StopAutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="517">
+					<control type="radiobutton" id="518">
 						<description>Show Sub Flag Toggle</description>
 						<width>750</width>
 						<height>40</height>
@@ -3423,7 +3435,7 @@
 						<onclick>Skin.ToggleSetting(HideSubTitleFlags)</onclick>
 						<selected>!Skin.HasSetting(HideSubTitleFlags)</selected>
 					</control>
-					<control type="radiobutton" id="518">
+					<control type="radiobutton" id="519">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3435,7 +3447,7 @@
 						<onclick>Skin.ToggleSetting(HideEpisodeThumb)</onclick>
 						<selected>Skin.HasSetting(HideEpisodeThumb)</selected>
 					</control>
-					<control type="radiobutton" id="519">
+					<control type="radiobutton" id="520">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3447,7 +3459,7 @@
 						<onclick>Skin.ToggleSetting(UseTvSeasonArt)</onclick>
 						<selected>Skin.HasSetting(UseTvSeasonArt)</selected>
 					</control>
-					<control type="label" id="520">
+					<control type="label" id="521">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3457,18 +3469,18 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="group" id="521">
+					<control type="group" id="522">
 						<width>750</width>
 						<height>40</height>
-						<control type="grouplist" id="522">
+						<control type="grouplist" id="523">
 							<orientation>horizontal</orientation>
 							<width>750</width>
 							<height>40</height>
 							<itemgap>0</itemgap>
-							<onup>519</onup>
-							<ondown>534</ondown>
+							<onup>520</onup>
+							<ondown>535</ondown>
 							<align>left</align>
-							<control type="radiobutton" id="523">
+							<control type="radiobutton" id="524">
 								<description>Transparency Level 90</description>
 								<width>75</width>
 								<height>40</height>
@@ -3480,7 +3492,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,18FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),18FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="524">
+							<control type="radiobutton" id="525">
 								<description>Transparency Level 80</description>
 								<width>75</width>
 								<height>40</height>
@@ -3492,7 +3504,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,2FFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),2FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="525">
+							<control type="radiobutton" id="526">
 								<description>Transparency Level 70</description>
 								<width>75</width>
 								<height>40</height>
@@ -3504,7 +3516,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,48FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),48FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="526">
+							<control type="radiobutton" id="527">
 								<description>Transparency Level 60</description>
 								<width>75</width>
 								<height>40</height>
@@ -3516,7 +3528,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,5FFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),5FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="527">
+							<control type="radiobutton" id="528">
 								<description>Transparency Level 50</description>
 								<width>75</width>
 								<height>40</height>
@@ -3528,7 +3540,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,78FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),78FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="528">
+							<control type="radiobutton" id="529">
 								<description>Transparency Level 40</description>
 								<width>75</width>
 								<height>40</height>
@@ -3540,7 +3552,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,8FFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),8FFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="529">
+							<control type="radiobutton" id="530">
 								<description>Transparency Level 30</description>
 								<width>75</width>
 								<height>40</height>
@@ -3552,7 +3564,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,A8FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),A8FFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="530">
+							<control type="radiobutton" id="531">
 								<description>Transparency Level 20</description>
 								<width>75</width>
 								<height>40</height>
@@ -3564,7 +3576,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,BFFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),BFFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="531">
+							<control type="radiobutton" id="532">
 								<description>Transparency Level 10</description>
 								<width>75</width>
 								<height>40</height>
@@ -3576,7 +3588,7 @@
 								<onclick>Skin.SetString(MediaPanelTrans,DFFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DFFFFFFF)</selected>
 							</control>
-							<control type="radiobutton" id="532">
+							<control type="radiobutton" id="533">
 								<description>Transparency Level 0</description>
 								<width>70</width>
 								<height>40</height>
@@ -3590,7 +3602,7 @@
 							</control>
 						</control>
 					</control>
-					<control type="label" id="533">
+					<control type="label" id="534">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3600,7 +3612,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="534">
+					<control type="radiobutton" id="535">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3612,7 +3624,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="535">
+					<control type="radiobutton" id="536">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3624,7 +3636,7 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					<control type="radiobutton" id="536">
+					<control type="radiobutton" id="537">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3636,7 +3648,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="537">
+					<control type="radiobutton" id="538">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3648,7 +3660,7 @@
 						<onclick>Skin.ToggleSetting(TVShowUsesLogo)</onclick>
 						<selected>Skin.HasSetting(TVShowUsesLogo)</selected>
 					</control>
-					<control type="label" id="538">
+					<control type="label" id="539">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3658,7 +3670,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="539">
+					<control type="radiobutton" id="540">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3670,7 +3682,7 @@
 						<onclick>Skin.ToggleSetting(ShowMusicVizOnly)</onclick>
 						<selected>Skin.HasSetting(ShowMusicVizOnly)</selected>
 					</control>
-					<control type="radiobutton" id="540">
+					<control type="radiobutton" id="541">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3683,7 +3695,7 @@
 						<selected>Skin.HasSetting(ShowArtistSlideShow)</selected>
 						<enable>!Skin.HasSetting(DisableArtistSlideShow) + !Skin.HasSetting(ShowBackgroundAlbumWall) + !Skin.HasSetting(ShowMusicVizOnly)</enable>
 					</control>
-					<control type="radiobutton" id="541">
+					<control type="radiobutton" id="542">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3696,7 +3708,7 @@
 						<selected>Skin.HasSetting(ShowBackgroundAlbumWall)</selected>
 						<enable>!Skin.HasSetting(ShowArtistSlideShow) + !Skin.HasSetting(ShowMusicVizOnly) </enable>
 					</control>
-					<control type="button" id="542">
+					<control type="button" id="543">
 						<description>CD Wall Path</description>
 						<width>750</width>
 						<height>40</height>
@@ -3711,7 +3723,20 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(ShowBackgroundAlbumWall) + !Skin.HasSetting(ShowMusicVizOnly)</enable>
 					</control>
-					<control type="radiobutton" id="543">
+							<control type="radiobutton" id="544">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31992]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(TransparentVizFanArt)</onclick>
+						<selected>Skin.HasSetting(TransparentVizFanArt)</selected>
+						<enable>!Skin.HasSetting(ShowMusicVizOnly)</enable>
+					</control>
+					<control type="radiobutton" id="545">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3724,7 +3749,7 @@
 						<selected>Skin.HasSetting(NoAnimateFanArt)</selected>
 						<enable>!Skin.HasSetting(ShowMusicVizOnly)</enable>
 					</control>
-					<control type="radiobutton" id="544">
+					<control type="radiobutton" id="546">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3737,7 +3762,7 @@
 						<selected>Skin.HasSetting(HideCDArt)</selected>
 						<enable>!Skin.HasSetting(ShowMusicVizOnly)</enable>
 					</control>
-					<control type="label" id="545">
+					<control type="label" id="547">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -3747,7 +3772,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="546">
+					<control type="radiobutton" id="548">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3760,7 +3785,7 @@
 						<onclick>Skin.Reset(EnableStartupPlaylist)</onclick>
 						<selected>!Skin.HasSetting(HideXBMCIntro)</selected>
 					</control>
-					<control type="radiobutton" id="547">
+					<control type="radiobutton" id="549">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -3773,7 +3798,7 @@
 						<onclick>Skin.ToggleSetting(EnableStartupPlaylist)</onclick>
 						<selected>Skin.HasSetting(EnableStartupPlaylist)</selected>
 					</control>
-					<control type="button" id="548">
+					<control type="button" id="550">
 						<description>Startup Playlist Path</description>
 						<width>750</width>
 						<height>40</height>

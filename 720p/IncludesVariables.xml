@@ -40,8 +40,8 @@
 		<value>special://skin/backgrounds/SKINDEFAULT.jpg</value>
 	</variable>
 	<variable name="MenuPopUpNav" type="text">
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + !Skin.HasSetting(SubmenuPlayListMusic) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Playlists) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) + !Skin.HasSetting(SubmenuPlayListMusic) + System.HasAddon(script.playlists) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Playlists) + System.HasAddon(script.playlists) + !Skin.HasSetting(DisableSubmenuPlayList)">ActivateWindow(2122)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies)">ActivateWindow(2118)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows)">ActivateWindow(2119)</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)">ActivateWindow(2120)</value>

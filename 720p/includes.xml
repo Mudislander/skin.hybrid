@@ -73,6 +73,9 @@
 	<include name="TransparentWallEffect">
 		<colordiffuse>3FFFFFFF</colordiffuse>
 	</include>
+	<include name="TransparentMusicVizEffect">
+		<colordiffuse>3FFFFFFF</colordiffuse>
+	</include>
 	<include name="ButtonCommonValues">
 		<height>40</height>
 		<width>250</width>
@@ -959,6 +962,7 @@
 			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomPanelType.xml) | Window.IsVisible(CustomSubMenuAddon.xml) | Window.IsVisible(CustomMenuAddon.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
+			<visible>!Skin.HasSetting(HideSystemClock)</visible>
 		</control>
 		<control type="label">
 			<description>time label</description>
@@ -976,6 +980,7 @@
 			<animation effect="slide" start="0,0" end="350,0" time="200" condition="Window.IsVisible(extendedprogressdialog)">conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomPanelType.xml) | Window.IsVisible(CustomSubMenuAddon.xml) | Window.IsVisible(CustomMenuAddon.xml) | Window.IsVisible(CustomSubMenuType.xml) | Window.IsVisible(Favourites)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(CustomSuggestedMovies.xml) | Window.IsVisible(CustomSuggestedEpisodes.xml) | Window.IsVisible(CustomSuggestedAlbums.xml) | Window.IsVisible(CustomPlaylistsVideos.xml)">Conditional</animation>
+			<visible>!Skin.HasSetting(HideSystemClock)</visible>
 		</control>
 		<control type="group">
 			<posx>20</posx>
