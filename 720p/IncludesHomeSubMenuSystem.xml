@@ -756,10 +756,10 @@
 			<item>
 				<label>$VAR[SubMenuMoviesOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubMovies.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMovies,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubMovies.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(2125,return))</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuMoviesOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubMovies.1.Path))">ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubMovies.1.Path))">ActivateWindow(2125,return)</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubMovies.1.Path))">$INFO[Skin.String(SubMovies.1.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubMovies.1.Path),Hidden)</visible>
 			</item>
@@ -821,10 +821,10 @@
 			<item>
 				<label>$VAR[SubMenuTVShowsOne]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubTVShows.1.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,library://video/inprogressshows.xml/,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubTVShows.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(2124),return)</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuTVShowsOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubTVShows.1.Path))">ActivateWindow(Videos,library://video/inprogressshows.xml/,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubTVShows.1.Path))">ActivateWindow(2124),return</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubTVShows.1.Path))">$INFO[Skin.String(SubTVShows.1.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubTVShows.1.Path),Hidden)</visible>
 			</item>
@@ -1096,11 +1096,11 @@
 		<content>
 			<item>
 				<label>$VAR[SubMenuConcertsOne]</label>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Videos,RecentlyAddedMusicVideos,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(2126),return)</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubConcerts.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubConcerts.1.Path)])</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuConcertsOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubConcerts.1.Path))">ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubConcerts.1.Path))">ActivateWindow(2126),return</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubConcerts.1.Path))">$INFO[Skin.String(SubConcerts.1.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubConcerts.1.Path),Hidden)</visible>
 			</item>
