@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+	<onload condition="!IsEmpty(Window(home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
+	<onload condition="!IsEmpty(Window(home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
+	<onload condition="!IsEmpty(Window(home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
+	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
+	<!--onload condition="System.HasAddon(script.randomandlastitems)">HomePlayListContent</onload-->
+	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
+	<controls>
+		<include>ArtistExtraFanArt</include>
+		<include>CommonBackground</include>
+		<include>BackgroundRainDropEffect</include>
+		<include>HomeScreenFloor</include>
+		<control type="image">
+			<description>LOGO</description>
+			<posx>0</posx>
+			<posy>5</posy>
+			<width>170</width>
+			<height>100</height>
+			<aspectratio aligny="top" align="left">keep</aspectratio>
+			<texture>xbmc-logo.png</texture>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+		</control>
+		<control type="label">
+			<description>Logged User</description>
+			<posx>20</posx>
+			<posy>5</posy>
+			<height>45</height>
+			<width>350</width>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>C0FFFFFF</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<info>System.ProfileName</info>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!StringCompare(System.ProfileName,Master user)</visible>
+		</control>
+		<control type="group">
+			<posy>610</posy>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<include>HomeSubMenuControl</include>
+			<control type="image">
+				<posx>-100</posx>
+				<posy>0</posy>
+				<width>1480</width>
+				<height>75</height>
+				<texture border="0,6,0,6">HomeBack.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>1280</width>
+				<height>6</height>
+				<texture>HomeOverlay1.png</texture>
+			</control>
+			<control type="fixedlist" id="9000">
+				<posx>-210</posx>
+				<posy>5</posy>
+				<width>1700</width>
+				<height>60</height>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup condition="Control.IsVisible(601)">9002</onup>
+				<onup condition="!Control.IsVisible(601) + Control.IsVisible(510)">510</onup>
+				<onup condition="!Control.IsVisible(601) + !Control.IsVisible(510) + !StringCompare(Container(9000).ListItem.Property(AddOnSet),None)">9003</onup>
+				<ondown>9001</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+				<focusposition>2</focusposition>
+				<movement>1</movement>
+				<orientation>Horizontal</orientation>
+				<itemlayout height="60" width="340">
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
+					<control type="image">
+						<posx>339</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
+					<control type="label">
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>340</width>
+						<height>60</height>
+						<font>font_MainMenu</font>
+						<textcolor>grey3</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60" width="340">
+					<include>HomeSubMenuImage</include>
+					<control type="image">
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
+					<control type="image">
+						<posx>339</posx>
+						<posy>4</posy>
+						<width>1</width>
+						<height>52</height>
+						<texture>HomeSeperator.png</texture>
+					</control>
+					<control type="label">
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>330</width>
+						<height>60</height>
+						<font>font_MainMenu</font>
+						<textcolor>grey3</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>![Control.HasFocus(9000) + ControlGroup(9001).HasFocus]</visible>
+					</control>
+					<control type="label">
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>330</width>
+						<height>60</height>
+						<font>font_MainMenu</font>
+						<textcolor>red</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(9000) | ControlGroup(9001).HasFocus</visible>
+					</control>
+				</focusedlayout>
+				<include>HomeMainMenuContent</include>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>6</posy>
+				<width>128</width>
+				<height>50</height>
+				<texture>SideFade.png</texture>
+			</control>
+			<control type="image">
+				<posx>128r</posx>
+				<posy>6</posy>
+				<width>128</width>
+				<height>60</height>
+				<texture flipx="true">SideFade.png</texture>
+			</control>
+		</control>
+		<include>MovieInfoPanel</include>
+		<include>HomeAddonSystem</include>
+		<control type="group">
+			<posx>0</posx>
+			<posy>33r</posy>
+			<include>Window_OpenClose_Animation</include>
+			<control type="label">
+				<posx>1270</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1260</width>
+				<label>$VAR[InfoBarStats]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>C0FFFFFF</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>!Player.HasMedia + !system.getbool(lookandfeel.enablerssfeeds)</visible>
+			</control>
+			<control type="rss">
+				<description>RSS feed</description>
+				<posx>-10</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1300</width>
+				<font>font12</font>
+				<urlset>1</urlset>
+				<textcolor>red</textcolor>
+				<titlecolor>red</titlecolor>
+				<headlinecolor>white</headlinecolor>
+				<visible>!Player.HasAudio</visible>
+			</control>
+			<control type="fadelabel" id="1">
+				<description>Next Five Songs</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>30</height>
+				<width>1280</width>
+				<align>center</align>
+				<scroll>true</scroll>
+				<scrollout>true</scrollout>
+				<scrollspeed>30</scrollspeed>
+				<pauseatend>400</pauseatend>
+				<label>$VAR[NextFiveSongScroller]</label>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>MusicPlayer.HasNext</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+			</control>
+			<animation effect="slide" start="0,0" end="0,35" time="100" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus">Conditional</animation>
+		</control>
+		<include>TopClock</include>
+	</controls>
+</window>
