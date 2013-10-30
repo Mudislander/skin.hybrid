@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-	<include name="DefaultInitialSetup">
+	<include name="GothamtInitialSetup">
 		<onload condition="!System.HasAddon(service.skin.widgets)">Skin.Setbool(HideMovieDBFanart)</onload>
 		<onload condition="!System.HasAddon(service.skin.widgets)">Skin.Setbool(HideTVShowDBFanart)</onload>
 		<onload condition="!System.HasAddon(service.skin.widgets)">Skin.Setbool(HideMusicDBFanart)</onload>
@@ -37,14 +37,14 @@
 		<onload>Skin.SetString(HomeItem.4.Widget,None)</onload>
 		<onload>Skin.SetString(HomeItem.4.Type,Videos)</onload>
 		<onload>Skin.SetString(HomeItem.4.Fanart,special://skin/backgrounds/videos.jpg)</onload>
-		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[31257])</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[31145])</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Path,ActivateWindow(Videos,TVShowTitles,return))</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Sub,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Addon,None)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Widget,RecentEpisodes)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Type,TVShows)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/videos.jpg)</onload>
-		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[31258])</onload>
+		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[31669])</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.6.Path,ActivateWindow(Videos,MusicVideos,return))</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.6.Sub,Concerts)</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.6.Addon,None)</onload>

@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>3</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+	<include condition="!Skin.HasSetting(InitialSetUpRun)">GothamtInitialSetup</include>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<controls>
 		<include>CommonBackground</include>
@@ -231,7 +231,7 @@
 					<width>250</width>
 					<height>35</height>
 					<font>font12</font>
-					<label>31007</label>
+					<label>31038</label>
 					<textcolor>red</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
