@@ -2,20 +2,87 @@
 <window>
 	<defaultcontrol always="true">95</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<texture>floor.png</texture>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
+			<posx>480</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>
+		<include>MediaViewBackgrounds</include>
+				<control type="group">
+			<posx>100r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+	<control type="button" id="65">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<onclick>back</onclick>
+				<texturefocus border="5">FloorBackFO.png</texturefocus>
+				<texturenofocus border="5">FloorBackNF.png</texturenofocus>
+				<onleft>9000</onleft>
+				<onright>66</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="button" id="66">
+				<description>Home push button</description>
+				<posx>45</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">FloorHomeFO.png</texturefocus>
+				<texturenofocus border="5">FloorHomeNF.png</texturenofocus>
+				<onleft>65</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+		</control>	
+		<control type="label">
+			<posx>55</posx>
+			<posy>5</posy>
+			<width>1170</width>
+			<height>30</height>
+			<font>font30_title</font>
+			<textcolor>red</textcolor>
+			<scroll>true</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>[UPPERCASE]$LOCALIZE[138][/UPPERCASE]</label>
+		</control>
+		<control type="label" id="52">
+			<posx>10</posx>
+			<posy>45</posy>
+			<width>1260</width>
+			<height>20</height>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<scroll>false</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
 		</control>
 		<control type="group">
-			<posx>90</posx>
-			<posy>30</posy>
+			<posx>80</posx>
+			<posy>20</posy>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -24,180 +91,151 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
-			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>980</posx>
-				<posy>11</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onup>1</onup>
-				<ondown>1</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>Hybrid_Logo.png</texture>
-			</control>
 			<control type="grouplist" id="9000">
-				<posx>10</posx>
-				<posy>90</posy>
-				<width>260</width>
+<posx>30</posx>			
+				<posy>120</posy>
+				<width>300</width>
 				<height>481</height>
-				<itemgap>-1</itemgap>
+				<itemgap>-1</itemgap>				
 				<onup>9000</onup>
 				<ondown>9000</ondown>
+	<onleft>66</onleft>
+				<onright>65</onright>			
+					<animation type="Focus" reversible="false">
+					<effect type="zoom" start="80" end="100" center="auto" time="200" />
+					<effect type="fade" start="80" end="100" time="200" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="zoom" start="100" end="80" center="auto" time="200" />
+					<effect type="fade" start="100" end="80" time="200" />
+				</animation>
 				<control type="button" id="95">
 					<description>Button Summary Values</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
 					<label>20037</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
 				</control>
 				<control type="button" id="94">
 					<description>Button Storage</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
 					<label>13277</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+					
 				</control>
 				<control type="button" id="96">
 					<description>Button Network</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
 					<label>13279</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+					
 				</control>
 				<control type="button" id="97">
 					<description>Button Video</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
 					<label>13280</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+					
 				</control>
 				<control type="button" id="98">
 					<description>Button Hardware</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
-					<label>13281</label>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>					<label>13281</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+					
 				</control>
 				<control type="button" id="99">
 					<description>Button PVR</description>
 					<height>60</height>
-					<width>241</width>
-					<textoffsetx>0</textoffsetx>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font13_title</font>
-					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
-					<texturefocus border="5">MenuItemFO.png</texturefocus>
-					<texturenofocus border="5">MenuItemNF.png</texturenofocus>
-					<pulseonselect>false</pulseonselect>
+			<width>300</width>
+			<textoffsetx>10</textoffsetx>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font24_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<pulseonselect>false</pulseonselect>
 					<label>19191</label>
+			<animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
+			<animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+					
 				</control>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>100</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
 			</control>
 			<control type="label" id="40">
 				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
+					<posx>415</posx>
+				<posy>80</posy>
+				<width>750</width>
 				<height>30</height>
 				<font>font16</font>
 				<label>-</label>
-				<align>left</align>
+				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="group">
-				<posx>290</posx>
-				<posy>100</posy>
+				<posx>415</posx>
+				<posy>130</posy>
 				<control type="label" id="2">
 					<description>Label 2</description>
 					<posx>0</posx>
-					<posy>0</posy>
+					<posy>20</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -205,7 +243,7 @@
 				<control type="label" id="3">
 					<description>Label 3</description>
 					<posx>0</posx>
-					<posy>35</posy>
+					<posy>55</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -213,7 +251,7 @@
 				<control type="label" id="4">
 					<description>Label 4</description>
 					<posx>0</posx>
-					<posy>70</posy>
+					<posy>90</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -221,7 +259,7 @@
 				<control type="label" id="5">
 					<description>Label 5</description>
 					<posx>0</posx>
-					<posy>105</posy>
+					<posy>125</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -229,7 +267,7 @@
 				<control type="label" id="6">
 					<description>Label 6</description>
 					<posx>0</posx>
-					<posy>140</posy>
+					<posy>160</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -237,7 +275,7 @@
 				<control type="label" id="7">
 					<description>Label 7</description>
 					<posx>0</posx>
-					<posy>175</posy>
+					<posy>195</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -245,7 +283,7 @@
 				<control type="label" id="8">
 					<description>Label 8</description>
 					<posx>0</posx>
-					<posy>210</posy>
+					<posy>230</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -253,7 +291,7 @@
 				<control type="label" id="9">
 					<description>Label 9</description>
 					<posx>0</posx>
-					<posy>245</posy>
+					<posy>265</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -261,7 +299,7 @@
 				<control type="label" id="10">
 					<description>Label 10</description>
 					<posx>0</posx>
-					<posy>280</posy>
+					<posy>300</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
@@ -269,26 +307,15 @@
 				<control type="label" id="11">
 					<description>Label 11</description>
 					<posx>0</posx>
-					<posy>315</posy>
+					<posy>335</posy>
 					<width>750</width>
 					<label>-</label>
 					<font>font13</font>
 				</control>
-				<control type="label" id="52">
-					<description>XBMC BUILD Version</description>
-					<posx>750</posx>
-					<posy>400</posy>
-					<width>730</width>
-					<label>144</label>
-					<align>right</align>
-					<textcolor>red</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<font>font13_title</font>
-				</control>
 				<control type="label">
 					<description>CPU Text</description>
-					<posx>420</posx>
-					<posy>450</posy>
+					<posx>400</posx>
+					<posy>400</posy>
 					<width>350</width>
 					<height>25</height>
 					<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
@@ -300,16 +327,16 @@
 				</control>
 				<control type="progress">
 					<description>CPU BAR</description>
-					<posx>430</posx>
-					<posy>455</posy>
+					<posx>410</posx>
+					<posy>405</posy>
 					<width>320</width>
 					<height>16</height>
 					<info>System.CPUUsage</info>
 				</control>
 				<control type="label">
 					<description>Memory Text</description>
-					<posx>420</posx>
-					<posy>480</posy>
+					<posx>400</posx>
+					<posy>430</posy>
 					<width>350</width>
 					<height>25</height>
 					<label>$LOCALIZE[31309] $INFO[system.memory(used.percent)]</label>
@@ -321,8 +348,8 @@
 				</control>
 				<control type="progress">
 					<description>Memory BAR</description>
-					<posx>430</posx>
-					<posy>485</posy>
+					<posx>410</posx>
+					<posy>435</posy>
 					<width>320</width>
 					<height>16</height>
 					<info>system.memory(used)</info>
@@ -330,8 +357,8 @@
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<!--include>MainWindowMouseButtons</include-->
-		<!--include>Clock</include-->
-		<include>MainHeaderLabel</include>
+		<include>BottonLogoImage</include>
+		<include>BottomClock</include>
+		<include>BehindDialogFadeOut</include>
 	</controls>
 </window>
