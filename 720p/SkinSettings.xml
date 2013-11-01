@@ -15,6 +15,95 @@
 			<visible>!Skin.HasSetting(InitialSetUpRun)</visible>
 		</control>
 		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
+		<control type="image">
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
+			<posx>480</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>
+		<include>MediaViewBackgrounds</include>
+		<control type="group">
+			<posx>100r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<control type="button" id="65">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<onclick>back</onclick>
+				<texturefocus border="5">FloorBackFO.png</texturefocus>
+				<texturenofocus border="5">FloorBackNF.png</texturenofocus>
+				<onleft>9000</onleft>
+				<onright>66</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="button" id="66">
+				<description>Home push button</description>
+				<posx>45</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">FloorHomeFO.png</texturefocus>
+				<texturenofocus border="5">FloorHomeNF.png</texturenofocus>
+				<onleft>65</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+			</control>
+		</control>
+		<control type="label">
+			<posx>55</posx>
+			<posy>5</posy>
+			<width>1170</width>
+			<height>30</height>
+			<font>font30_title</font>
+			<textcolor>red</textcolor>
+			<scroll>true</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>[UPPERCASE]$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label][/UPPERCASE]</label>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<posy>45</posy>
+			<width>1260</width>
+			<height>20</height>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<scroll>false</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>$INFO[Container(9000).ListItem.Label] $INFO[Container(9000).ListItem.Label2]</label>
+		</control>
+		<!--
+################################################################################
+
+	<control type="image">
+			<include>VizableScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">special://skin/backgrounds/system.jpg</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!Skin.HasSetting(InitialSetUpRun)</visible>
+		</control>
+		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
 		<include>MediaViewBackgrounds</include>
 				<control type="group">
 			<posx>100r</posx>
@@ -81,13 +170,10 @@
 			<include>Window_OpenClose_Animation</include>
 			<label>$INFO[Container(9000).ListItem.Label] $INFO[Container(9000).ListItem.Label2]</label>
 		</control>
-	
-	
-		
-		
+	-->
 		<control type="group">
-			<posx>90</posx>
-			<posy>0</posy>
+			<posx>80</posx>
+			<posy>20</posy>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 				<effect type="fade" start="0" end="100" time="300" />
@@ -96,13 +182,13 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
+			<!--control type="image">
 				<posx>380</posx>
 				<posy>100</posy>
 				<width>810</width>
 				<height>520</height>
 				<texture border="5">black-back.png</texture>
-			</control>
+			</control-->
 			<!--control type="image">
 				<posx>5</posx>
 				<posy>5</posy>
@@ -148,6 +234,35 @@
 				<posy>120</posy>
 				<width>430</width>
 				<height>600</height>
+				<onleft>66</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+				<!--animation type="Focus" reversible="false">
+					<effect type="zoom" start="90" end="100" center="auto" time="200" />
+					<effect type="fade" start="00" end="100" time="200" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="zoom" start="100" end="90" center="auto" time="200" />
+					<effect type="fade" start="100" end="90" time="200" />
+				</animation-->
+				<!--animation effect="fade" start="0" end="100" time="200">Visible</animation-->
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" start="90" end="100" center="auto" time="200" />
+					<effect type="fade" start="90" end="100" time="200" />
+				</animation>
+				<animation type="UnFocus" reversible="false">
+					<effect type="zoom" start="100" end="90" center="auto" time="200" />
+					<effect type="fade" start="100" end="90" time="200" />
+				</animation>
+				<itemlayout height="42" width="380">
+					<!--control type="list" id="9000">
+				<posx>-20</posx>
+				<posy>120</posy>
+				<width>430</width>
+				<height>600</height>
 				<onleft>9010</onleft>
 				<onright>9010</onright>
 				<onup>9000</onup>
@@ -162,8 +277,8 @@
 					<effect type="zoom" start="100" end="90" center="auto" time="200" />
 					<effect type="fade" start="100" end="90" time="200" />
 				</animation>
-				<itemlayout height="42" width="380">
-					<control type="label">
+				<itemlayout height="42" width="380"-->
+					<!--control type="label">
 						<posx>380</posx>
 						<posy>21</posy>
 						<width>380</width>
@@ -174,9 +289,35 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="zoom" start="85" end="85" center="380,51" time="0" condition="true">Conditional</animation>
+					</control-->
+					<control type="label">
+						<posx>380</posx>
+						<posy>21</posy>
+						<width>380</width>
+						<height>40</height>
+						<font>font35_title</font>
+						<textcolor>grey3</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="zoom" start="65" end="65" center="380,51" time="0" condition="true">Conditional</animation>
 					</control>
 				</itemlayout>
 				<focusedlayout height="62" width="430">
+					<!--
+					<control type="label">
+					
+					<posy>21</posy>
+						<posx>380</posx>
+						<width>400</width>
+						<height>62</height>
+						<font>font35_title</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+`						<animation effect="zoom" start="85" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="85" center="380,51" time="200">UnFocus</animation></control>
+				-->
 					<control type="label">
 						<posy>21</posy>
 						<posx>380</posx>
@@ -187,7 +328,7 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-`						<animation effect="zoom" start="85" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="85" center="380,51" time="200">UnFocus</animation></control>
+`						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation></control>
 				</focusedlayout>
 				<content>
 					<item id="1">
@@ -256,10 +397,14 @@
 			<control type="group" id="9010">
 				<control type="grouplist" id="9001">
 					<visible>Container(9000).Hasfocus(1)</visible>
-					<posx>390</posx>
-					<posy>100</posy>
+					<posx>415</posx>
+					<posy>80</posy>
 					<width>750</width>
 					<height>520</height>
+					<!--posx>390</posx>
+					<posy>100</posy>
+					<width>750</width-->
+					<!--height>520</height-->
 					<itemgap>-1</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
@@ -290,44 +435,10 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
 					</control>
-					<control type="label" id="105">
-						<width>750</width>
-						<height>45</height>
-						<font>font13_title</font>
-						<label>31106</label>
-						<textcolor>red</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="111">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31103</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
-						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
-					</control>
-					<control type="radiobutton" id="112">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31104</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
-						<selected>Skin.HasSetting(WindowedTrailer)</selected>
-					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1160</posx>
-					<posy>110</posy>
+					<posx>1170</posx>
+					<posy>95</posy>
 					<width>25</width>
 					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -336,17 +447,21 @@
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9001</onleft>
-					<onright>9000</onright>
+					<onright>65</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
-					<posx>390</posx>
-					<posy>100</posy>
+					<posx>415</posx>
+					<posy>90</posy>
 					<width>750</width>
 					<height>520</height>
+					<!--posx>390</posx>
+					<posy>100</posy>
+					<width>750</width>
+					<height>520</height-->
 					<itemgap>-1</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
@@ -987,8 +1102,8 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1160</posx>
-					<posy>110</posy>
+					<posx>1170</posx>
+					<posy>95</posy>
 					<width>25</width>
 					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -997,15 +1112,19 @@
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9002</onleft>
-					<onright>9000</onright>
+					<onright>65</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(2)</visible>
 				</control>
 				<control type="grouplist" id="9003">
 					<visible>Container(9000).Hasfocus(3)</visible>
-					<posx>390</posx>
+					<!--posx>390</posx>
 					<posy>100</posy>
+					<width>750</width>
+					<height>520</height-->
+					<posx>415</posx>
+					<posy>80</posy>
 					<width>750</width>
 					<height>520</height>
 					<itemgap>-1</itemgap>
@@ -2076,8 +2195,8 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1160</posx>
-					<posy>110</posy>
+					<posx>1170</posx>
+					<posy>95</posy>
 					<width>25</width>
 					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -2086,7 +2205,7 @@
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9003</onleft>
-					<onright>9000</onright>
+					<onright>65</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(3)</visible>
@@ -2094,8 +2213,12 @@
 				<control type="group">
 					<control type="grouplist" id="9004">
 						<visible>Container(9000).Hasfocus(4)</visible>
-						<posx>390</posx>
+						<!--posx>390</posx>
 						<posy>100</posy>
+						<width>750</width>
+						<height>520</height-->
+						<posx>415</posx>
+						<posy>80</posy>
 						<width>750</width>
 						<height>520</height>
 						<itemgap>-1</itemgap>
@@ -2977,8 +3100,8 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1160</posx>
-					<posy>110</posy>
+					<posx>1170</posx>
+					<posy>95</posy>
 					<width>25</width>
 					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -2987,16 +3110,20 @@
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9004</onleft>
-					<onright>9000</onright>
+					<onright>65</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(4)</visible>
 				</control>
 				<control type="group">
-					<posx>390</posx>
-					<posy>100</posy>
+					<!--posx>390</posx>
+					<posy>100</posy-->
 					<!--width>750</width>
 					<height>530</height-->
+					<posx>415</posx>
+					<posy>90</posy>
+					<!--width>750</width>
+				<height>520</height-->
 					<visible>Container(9000).Hasfocus(5)</visible>
 					<control type="button" id="504">
 						<description>Menu Item Next Button</description>
@@ -3011,7 +3138,7 @@
 						<onclick>Control.Move(9005,1)</onclick>
 						<onleft>9000</onleft>
 						<onright>505</onright>
-						<onup>506</onup>
+						<onup>500</onup>
 						<ondown>500</ondown>
 					</control>
 					<control type="button" id="505">
@@ -3026,8 +3153,8 @@
 						<texturefocus>scroll-up-focus-2.png</texturefocus>
 						<onclick>Control.Move(9005,-1)</onclick>
 						<onleft>504</onleft>
-						<onright>9000</onright>
-						<onup>506</onup>
+						<onright>65</onright>
+						<onup>500</onup>
 						<ondown>500</ondown>
 					</control>
 					<control type="list" id="9005">
@@ -4308,8 +4435,12 @@
 				</control>
 				<control type="grouplist" id="9006">
 					<visible>Container(9000).Hasfocus(6)</visible>
-					<posx>390</posx>
+					<!--posx>390</posx>
 					<posy>100</posy>
+					<width>750</width>
+					<height>520</height-->
+					<posx>415</posx>
+					<posy>80</posy>
 					<width>750</width>
 					<height>520</height>
 					<itemgap>-1</itemgap>
@@ -4560,8 +4691,8 @@
 					</control>
 				</control>
 				<control type="scrollbar" id="60">
-					<posx>1160</posx>
-					<posy>110</posy>
+					<posx>1170</posx>
+					<posy>95</posy>
 					<width>25</width>
 					<height>510</height>
 					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
@@ -4570,7 +4701,7 @@
 					<textureslidernib>ScrollBarNib.png</textureslidernib>
 					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 					<onleft>9006</onleft>
-					<onright>9000</onright>
+					<onright>65</onright>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(6)</visible>
@@ -4578,18 +4709,8 @@
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<!--include>MainWindowMouseButtons</include-->
-		<control type="image">
-			<description>LOGO</description>
-			<posx>10</posx>
-			<posy>80r</posy>
-			<width>220</width>
-			<height>80</height>
-			<aspectratio>keep</aspectratio>
-			<texture>Hybrid_Logo.png</texture>
-			<animation effect="slide" end="0,100" time="500" tween="back" easing="out" condition="Window.IsVisible(infodialog) | Window.IsVisible(volumebar)" reversible="true">Conditional</animation>
-		</control>
-		<include>BehindDialogFadeOut</include>
+		<include>BottonLogoImage</include>
 		<include>BottomClock</include>
+		<include>BehindDialogFadeOut</include>
 	</controls>
 </window>

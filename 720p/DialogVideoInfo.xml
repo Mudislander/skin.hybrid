@@ -859,64 +859,64 @@
 					<visible>!Control.IsVisible(50)</visible>
 				</control>
 				<control type="label">
-							<posx>210</posx>
-							<posy>480</posy>
-							<width>650</width>
-							<height>40</height>
-							<font>font13_title</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>white</textcolor>
-							<info>Container(50).ListItem.Label</info>
-							<visible>Control.IsVisible(50)</visible>
-						</control>
+					<posx>210</posx>
+					<posy>480</posy>
+					<width>650</width>
+					<height>40</height>
+					<font>font13_title</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<info>Container(50).ListItem.Label</info>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
 				<control type="wraplist" id="50">
-	<posx>235</posx>
-	<posy>525</posy>			
-				<width>990</width>
-				<height>110</height>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<onup>61</onup>
-				<ondown>9000</ondown>
-				<viewtype label="">list</viewtype>
-				<pagecontrol>61</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<focusposition>4</focusposition>
-				<orientation>horizontal</orientation>
-				<itemlayout width="110" height="110">
-					<control type="image">
-						<posx>5</posx>
-						<posy>5</posy>
-						<width>100</width>
-						<height>100</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="thumb-diffuse.png">$INFO[ListItem.Icon]</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="110" height="110">
-					<control type="image">
-						<posx>2</posx>
-						<posy>2</posy>
-						<width>106</width>
-						<height>106</height>
-						<texture border="4">thumb-shadow2.png</texture>
-						<animation effect="zoom" start="2,2,106,106" end="-14,-14,138,138" time="200">focus</animation>
-						<animation effect="zoom" start="-14,-14,138,138" end="2,2,106,106" time="200">unfocus</animation>
-						<visible>Control.HasFocus(50)</visible>
-					</control>
-					<control type="image">
-						<posx>5</posx>
-						<posy>5</posy>
-						<width>100</width>
-						<height>100</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="thumb-diffuse.png">$INFO[ListItem.Icon]</texture>
-						<animation effect="zoom" start="5,5,100,100" end="-10,-10,130,130" time="200">focus</animation>
-						<animation effect="zoom" start="-10,-10,130,130" end="5,5,100,100" time="200">unfocus</animation>
-					</control>
-				</focusedlayout>
-			</control>
+					<posx>235</posx>
+					<posy>525</posy>
+					<width>990</width>
+					<height>110</height>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<onup>61</onup>
+					<ondown>9000</ondown>
+					<viewtype label="">list</viewtype>
+					<pagecontrol>61</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<focusposition>4</focusposition>
+					<orientation>horizontal</orientation>
+					<itemlayout width="110" height="110">
+						<control type="image">
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>100</width>
+							<height>100</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="thumb-diffuse.png">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="110" height="110">
+						<control type="image">
+							<posx>2</posx>
+							<posy>2</posy>
+							<width>106</width>
+							<height>106</height>
+							<texture border="4">thumb-shadow2.png</texture>
+							<animation effect="zoom" start="2,2,106,106" end="-14,-14,138,138" time="200">focus</animation>
+							<animation effect="zoom" start="-14,-14,138,138" end="2,2,106,106" time="200">unfocus</animation>
+							<visible>Control.HasFocus(50)</visible>
+						</control>
+						<control type="image">
+							<posx>5</posx>
+							<posy>5</posy>
+							<width>100</width>
+							<height>100</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="thumb-diffuse.png">$INFO[ListItem.Icon]</texture>
+							<animation effect="zoom" start="5,5,100,100" end="-10,-10,130,130" time="200">focus</animation>
+							<animation effect="zoom" start="-10,-10,130,130" end="5,5,100,100" time="200">unfocus</animation>
+						</control>
+					</focusedlayout>
+				</control>
 				<control type="grouplist" id="9000">
 					<posx>210</posx>
 					<posy>660</posy>

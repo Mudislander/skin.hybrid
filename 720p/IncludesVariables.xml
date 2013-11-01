@@ -612,7 +612,7 @@
 		<value condition="StringCompare(ListItem.Label,..)">$LOCALIZE[31025]</value>
 		<value>$LOCALIZE[31025]</value>
 	</variable>
-<variable name="UsrDefItemOneSubLabel" type="text">
+	<variable name="UsrDefItemOneSubLabel" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Videos) + !IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Videos) + IsEmpty(Skin.String(UserVideosSubMenu))">$LOCALIZE[3]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Movies) + !IsEmpty(Skin.String(UserMoviesSubMenu))">$INFO[Skin.String(UserMoviesSubMenu)]</value>
@@ -1416,7 +1416,6 @@
 		<value condition="!IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
 		<value>$LOCALIZE[31148]</value>
 	</variable>
-	
 	<variable name="SetMenuOneBackground" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.1.Path),RunAddon(plugin.program.advanced.launcher))">special://skin/backgrounds/launcher.jpg</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Path),RunScript(script.globalsearch))">special://skin/backgrounds/search.jpg</value>
@@ -1651,4 +1650,4 @@
 		<value condition="!IsEmpty(Container(9005).ListItem.Thumb)">$INFO[Container(9005).ListItem.Thumb]</value>
 		<value>$LOCALIZE[31189]</value>
 	</variable>
-	</includes>
+</includes>

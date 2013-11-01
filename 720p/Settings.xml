@@ -16,12 +16,12 @@
 		</control>
 		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
 		<include>MediaViewBackgrounds</include>
-				<control type="group">
+		<control type="group">
 			<posx>100r</posx>
 			<posy>55r</posy>
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
-	<control type="button" id="65">
+			<control type="button" id="65">
 				<description>Back push button</description>
 				<posx>0</posx>
 				<posy>0</posy>
@@ -53,7 +53,7 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 			</control>
-		</control>	
+		</control>
 		<control type="label">
 			<posx>55</posx>
 			<posy>5</posy>
@@ -132,10 +132,11 @@
 `						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation></control>
 				</focusedlayout>
 				<content>
-<item id="1">
+					<item id="1">
 						<label>480</label>
 						<label2>$LOCALIZE[31450]</label2>
 						<property name="Desc">$LOCALIZE[31460]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31460],Home)</onclick>
 						<onclick>ActivateWindow(AppearanceSettings)</onclick>
 						<icon>special://skin/backgrounds/settings.jpg</icon>
 					</item>
@@ -143,6 +144,7 @@
 						<label>157</label>
 						<label2>$LOCALIZE[31451]</label2>
 						<property name="Desc">$LOCALIZE[31461]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31461],Home)</onclick>
 						<onclick>ActivateWindow(VideosSettings)</onclick>
 						<icon>special://skin/backgrounds/videos.jpg</icon>
 					</item>
@@ -150,6 +152,7 @@
 						<label>31502</label>
 						<label2>$LOCALIZE[31458]</label2>
 						<property name="Desc">$LOCALIZE[31468]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31468],Home)</onclick>
 						<onclick>ActivateWindow(PVRSettings)</onclick>
 						<icon>special://skin/backgrounds/tv.jpg</icon>
 					</item>
@@ -157,6 +160,7 @@
 						<label>2</label>
 						<label2>$LOCALIZE[31452]</label2>
 						<property name="Desc">$LOCALIZE[31462]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31462],Home)</onclick>
 						<onclick>ActivateWindow(MusicSettings)</onclick>
 						<icon>special://skin/backgrounds/music.jpg</icon>
 					</item>
@@ -164,6 +168,7 @@
 						<label>1</label>
 						<label2>$LOCALIZE[31453]</label2>
 						<property name="Desc">$LOCALIZE[31463]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31463],Home)</onclick>
 						<onclick>ActivateWindow(PicturesSettings)</onclick>
 						<icon>special://skin/backgrounds/pictures.jpg</icon>
 					</item>
@@ -171,6 +176,7 @@
 						<label>8</label>
 						<label2>$LOCALIZE[31454]</label2>
 						<property name="Desc">$LOCALIZE[31464]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31464],Home)</onclick>
 						<onclick>ActivateWindow(WeatherSettings)</onclick>
 						<icon>special://skin/backgrounds/weather.jpg</icon>
 					</item>
@@ -178,6 +184,7 @@
 						<label>24001</label>
 						<label2>$LOCALIZE[31457]</label2>
 						<property name="Desc">$LOCALIZE[31467]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31467],Home)</onclick>
 						<onclick>ActivateWindow(AddonBrowser)</onclick>
 						<icon>special://skin/backgrounds/addons.jpg</icon>
 					</item>
@@ -185,6 +192,7 @@
 						<label>14036</label>
 						<label2>$LOCALIZE[31459]</label2>
 						<property name="Desc">$LOCALIZE[31469]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31469],Home)</onclick>
 						<onclick>ActivateWindow(ServiceSettings)</onclick>
 						<icon>special://skin/backgrounds/network.jpg</icon>
 					</item>
@@ -192,6 +200,7 @@
 						<label>13000</label>
 						<label2>$LOCALIZE[31455]</label2>
 						<property name="Desc">$LOCALIZE[31465]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31465],Home)</onclick>
 						<onclick>ActivateWindow(SystemSettings)</onclick>
 						<icon>special://skin/backgrounds/appearance.jpg</icon>
 						<icon>-</icon>
@@ -200,6 +209,7 @@
 						<label>166</label>
 						<label2>$LOCALIZE[31456]</label2>
 						<property name="Desc">$LOCALIZE[31466]</property>
+						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31466],Home)</onclick>
 						<onclick>ActivateWindow(SkinSettings)</onclick>
 						<icon>special://skin/backgrounds/SKINDEFAULT.jpg</icon>
 					</item>
@@ -228,7 +238,7 @@
 		</control>
 		<include>CommonNowPlaying</include>
 		<include>BottonLogoImage</include>
-		<include>BehindDialogFadeOut</include>
 		<include>BottomClock</include>
+		<include>BehindDialogFadeOut</include>
 	</controls>
 </window>

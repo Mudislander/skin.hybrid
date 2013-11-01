@@ -2,16 +2,100 @@
 <window>
 	<defaultcontrol always="true">2</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
-			<posx>0</posx>
-			<posy>100r</posy>
-			<width>1280</width>
-			<height>100</height>
-			<texture>floor.png</texture>
-			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
+			<posx>480</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control>
+		<include>MediaViewBackgrounds</include>
+		<control type="group">
+			<posx>100r</posx>
+			<posy>55r</posy>
+			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
+			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<control type="button" id="65">
+				<description>Back push button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>1036</label>
+				<font>-</font>
+				<onclick>back</onclick>
+				<texturefocus border="5">FloorBackFO.png</texturefocus>
+				<texturenofocus border="5">FloorBackNF.png</texturenofocus>
+				<onleft>2</onleft>
+				<onright>66</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			<control type="button" id="66">
+				<description>Home push button</description>
+				<posx>45</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>31003</label>
+				<font>-</font>
+				<onclick>ActivateWindow(home)</onclick>
+				<texturefocus border="5">FloorHomeFO.png</texturefocus>
+				<texturenofocus border="5">FloorHomeNF.png</texturenofocus>
+				<onleft>65</onleft>
+				<onright>2</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+		</control>
+		<control type="label">
+			<posx>55</posx>
+			<posy>5</posy>
+			<width>1170</width>
+			<height>30</height>
+			<font>font30_title</font>
+			<textcolor>red</textcolor>
+			<scroll>true</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>[UPPERCASE]$LOCALIZE[10034][/UPPERCASE]</label>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<posy>45</posy>
+			<width>1260</width>
+			<height>20</height>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<scroll>false</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>$LOCALIZE[20096] $LOCALIZE[305]</label>
+			<visible>System.HasLoginScreen</visible>
+		</control>
+		<control type="label">
+			<posx>10</posx>
+			<posy>45</posy>
+			<width>1260</width>
+			<height>20</height>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+			<scroll>false</scroll>
+			<align>center</align>
+			<aligny>center</aligny>
+			<include>Window_OpenClose_Animation</include>
+			<label>$LOCALIZE[20096] $LOCALIZE[1223]</label>
+			<visible>!System.HasLoginScreen</visible>
 		</control>
 		<control type="group">
 			<posx>90</posx>
@@ -24,46 +108,6 @@
 				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
 			</animation>
-			<control type="image">
-				<posx>5</posx>
-				<posy>5</posy>
-				<width>1090</width>
-				<height>630</height>
-				<texture border="15">ContentPanel.png</texture>
-			</control>
-			<control type="image">
-				<posx>5</posx>
-				<posy>625</posy>
-				<width>1090</width>
-				<height>64</height>
-				<texture border="15">ContentPanelMirror.png</texture>
-			</control>
-			<control type="button">
-				<description>Close Window button</description>
-				<posx>980</posx>
-				<posy>11</posy>
-				<width>64</width>
-				<height>32</height>
-				<label>-</label>
-				<font>-</font>
-				<onclick>PreviousMenu</onclick>
-				<texturefocus>DialogCloseButton-focus.png</texturefocus>
-				<texturenofocus>DialogCloseButton.png</texturenofocus>
-				<onleft>1</onleft>
-				<onright>1</onright>
-				<onup>1</onup>
-				<ondown>1</ondown>
-				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<posx>30</posx>
-				<posy>15</posy>
-				<width>220</width>
-				<height>80</height>
-				<aspectratio>keep</aspectratio>
-				<texture>Hybrid_Logo.png</texture>
-			</control>
 			<control type="button" id="4">
 				<description>Enable Login screen</description>
 				<posx>10</posx>
@@ -77,7 +121,7 @@
 				<aligny>top</aligny>
 				<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 				<texturefocus border="5">MenuItemFO.png</texturefocus>
-				<onleft>2</onleft>
+				<onleft>66</onleft>
 				<onright>2</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
@@ -120,7 +164,7 @@
 				<aligny>top</aligny>
 				<texturenofocus border="5">MenuItemNF.png</texturenofocus>
 				<texturefocus border="5">MenuItemFO.png</texturefocus>
-				<onleft>2</onleft>
+				<onleft>66</onleft>
 				<onright>2</onright>
 				<onup>4</onup>
 				<ondown>4</ondown>
@@ -220,37 +264,9 @@
 					<label fallback="13170">$INFO[Container(2).ListItem.Label2]</label>
 				</control>
 			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>790</width>
-				<height>618</height>
-				<texture border="5">black-back2.png</texture>
-			</control>
-			<control type="image">
-				<posx>268</posx>
-				<posy>10</posy>
-				<width>804</width>
-				<height>70</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>GlassTitleBar.png</texture>
-			</control>
-			<control type="label">
-				<description>header label</description>
-				<posx>300</posx>
-				<posy>20</posy>
-				<width>740</width>
-				<height>30</height>
-				<font>font30_title</font>
-				<label>$LOCALIZE[10034]</label>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-			</control>
 			<control type="panel" id="2">
-				<posx>283</posx>
-				<posy>70</posy>
+				<posx>390</posx>
+				<posy>75</posy>
 				<width>760</width>
 				<height>540</height>
 				<onleft>4</onleft>
@@ -308,25 +324,24 @@
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<posx>1060</posx>
-				<posy>60</posy>
+				<posx>1150</posx>
+				<posy>75</posy>
 				<width>25</width>
-				<height>530</height>
+				<height>510</height>
 				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
 				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
 				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onleft>2</onleft>
-				<onright>4</onright>
+				<onright>65</onright>
 				<showonepage>false</showonepage>
 				<orientation>vertical</orientation>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
-		<include>FloorReturnButtons</include>
-		<include>BehindDialogFadeOut</include>
+		<include>BottonLogoImage</include>
 		<include>BottomClock</include>
-		<include>MainHeaderLabel</include>
+		<include>BehindDialogFadeOut</include>
 	</controls>
 </window>
