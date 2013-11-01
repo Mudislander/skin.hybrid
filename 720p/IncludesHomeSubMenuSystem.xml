@@ -965,7 +965,7 @@
 				<onclick>ActivateWindow(SkinSettings),return</onclick>
 			</item>
 			<item>
-				<label>31123</label>
+				<label>31676</label>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 				<onclick condition="System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
 				<onclick condition="System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
