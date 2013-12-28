@@ -88,15 +88,15 @@
 					<width>180</width>
 					<height>180</height>
 					<aspectratio aligny="bottom">stretch</aspectratio>
-					<texture background="true" diffuse="cdmask.png" fallback="FallbackAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
+					<texture background="true" diffuse="CDCase/cdmask.png" fallback="FallbackAlbumCover.png">$INFO[MusicPlayer.Cover]</texture>
 				</control>
 				<control type="image">
 					<left>4</left>
 					<top>3</top>
 					<width>229</width>
 					<height>207</height>
-					<bordertexture>cdshadow.png</bordertexture>
-					<texture background="true">cdglass.png</texture>
+					<bordertexture>CDCase/cdshadow.png</bordertexture>
+					<texture background="true">CDCase/cdglass.png</texture>
 				</control>
 			</control>
 			<control type="group">
