@@ -603,7 +603,7 @@
 				<top>0</top>
 				<width>1</width>
 				<height>720</height>
-				<texture>HomeBladeSub_Part1.png</texture>
+				<texture>Home\BladeSub_Part1.png</texture>
 				<animation effect="zoom" start="379,0,1,720" end="379,0,229,720" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(9002)">Conditional</animation>
 			</control>
 			<control type="button" id="9002">
@@ -612,8 +612,8 @@
 				<width>48</width>
 				<height>720</height>
 				<font>-</font>
-				<texturefocus>HomeBladeSub_Part2.png</texturefocus>
-				<texturenofocus>HomeBladeSub_Part2.png</texturenofocus>
+				<texturefocus>Home\BladeSub_Part2.png</texturefocus>
+				<texturenofocus>Home\BladeSub_Part2.png</texturenofocus>
 				<animation effect="slide" end="228,0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus | Control.HasFocus(9002)">Conditional</animation>
 			</control>
 		</control>
@@ -624,7 +624,7 @@
 			<top>0</top>
 			<width>846</width>
 			<height>720</height>
-			<texture>HomeBlade_bottom.png</texture>
+			<texture>Home\Blade_bottom.png</texture>
 			<include condition="!IsEmpty(Skin.String(MediaPanelTrans))">TransparentEffect</include>
 		</control>
 	</include>
@@ -635,14 +635,14 @@
 				<top>-285</top>
 				<width>385</width>
 				<height>1130</height>
-				<texture>HomeBlade_middle.png</texture>
+				<texture>Home\Blade_middle.png</texture>
 			</control>
 			<control type="image">
 				<left>-450</left>
 				<top>0</top>
 				<width>846</width>
 				<height>720</height>
-				<texture>HomeBlade_top.png</texture>
+				<texture>Home\Blade_top.png</texture>
 			</control>
 		</control>
 	</include>
@@ -652,14 +652,14 @@
 			<top>0</top>
 			<width>1480</width>
 			<height>75</height>
-			<texture border="0,6,0,6">HomeBack.png</texture>
+			<texture border="0,6,0,6">Home/HomeBack.png</texture>
 		</control>
 		<control type="image">
 			<left>0</left>
 			<top>5</top>
 			<width>1280</width>
 			<height>6</height>
-			<texture>HomeOverlay1.png</texture>
+			<texture>Home/Overlay1.png</texture>
 		</control>
 	</include>
 	<include name="HomeHorizontalSideFade">
@@ -684,14 +684,14 @@
 			<top>4</top>
 			<width>1</width>
 			<height>52</height>
-			<texture>HomeSeperator.png</texture>
+			<texture>Home/Seperator.png</texture>
 		</control>
 		<control type="image">
 			<left>339</left>
 			<top>4</top>
 			<width>1</width>
 			<height>52</height>
-			<texture>HomeSeperator.png</texture>
+			<texture>Home/Seperator.png</texture>
 		</control>
 	</include>
 </includes>

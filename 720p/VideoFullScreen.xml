@@ -13,7 +13,7 @@
 				<top>230r</top>
 				<width>1480</width>
 				<height>230</height>
-				<texture>HomeNowPlayingBack.png</texture>
+				<texture>Home/NowPlayingBack.png</texture>
 			</control>
 			<include condition="VideoPlayer.Content(Movies)">OSDMovieCover</include>
 			<include condition="VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
@@ -43,7 +43,7 @@
 				<top>0</top>
 				<width>1480</width>
 				<height>156</height>
-				<texture flipy="true">HomeNowPlayingBack.png</texture>
+				<texture flipy="true">Home/NowPlayingBack.png</texture>
 				<visible>!Skin.HasSetting(HideSeekBarOSD) + Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 			</control>
 			<control type="image" id="1">
@@ -51,7 +51,7 @@
 				<top>230r</top>
 				<width>1480</width>
 				<height>230</height>
-				<texture>HomeNowPlayingBack.png</texture>
+				<texture>Home/NowPlayingBack.png</texture>
 				<visible>Player.ShowInfo | !Skin.HasSetting(HideSeekBarOSD)</visible>
 			</control>
 			<include>HomeScreenFloor</include>
