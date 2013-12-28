@@ -35,7 +35,7 @@
 				<top>146</top>
 				<width>99</width>
 				<height>140</height>
-				<texture flipy="true" fallback="ClearCase/DefaultVideoCover.png" diffuse="InfoWidget/PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
+				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="InfoWidget/PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 			</control>
@@ -44,7 +44,7 @@
 				<top>8</top>
 				<width>99</width>
 				<height>140</height>
-				<texture fallback="ClearCase/DefaultVideoCover.png" diffuse="InfoWidget/PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+				<texture fallback="DefaultVideoCover.png" diffuse="InfoWidget/PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 			</control>
 			<control type="image">
@@ -63,7 +63,7 @@
 				<top>146</top>
 				<width>99</width>
 				<height>140</height>
-				<texture flipy="true" fallback="ClearCase/DefaultVideoCover.png" diffuse="InfoWidget/PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
+				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="InfoWidget/PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -76,7 +76,7 @@
 				<top>8</top>
 				<width>99</width>
 				<height>140</height>
-				<texture fallback="ClearCase/DefaultVideoCover.png" diffuse="InfoWidget/PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+				<texture fallback="DefaultVideoCover.png" diffuse="InfoWidget/PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
@@ -448,7 +448,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecentMovie.1.Title)) + IsEmpty(Window(Home).Property(LatestMovie.1.Title))</visible>
 					</item-->
@@ -614,7 +614,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RandomMovie.1.Title))</visible>
 					</item-->
@@ -780,7 +780,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
 					</item-->
@@ -1094,7 +1094,7 @@
 						<visible>!IsEmpty(Window(Home).Property(LatestEpisode.10.EpisodeTitle)) + !SubString(Window(Home).Property(SkinWidgets_RecentItems),true)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecentEpisode.1.Title)) + IsEmpty(Window(Home).Property(LatestEpisode.10.EpisodeTitle))</visible>
 					</item-->
@@ -1270,7 +1270,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RandomEpisode.1.Title))</visible>
 					</item-->
@@ -1416,7 +1416,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))</visible>
 					</item-->
@@ -1690,7 +1690,7 @@
 						<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.10.Title)) + !SubString(Window(Home).Property(SkinWidgets_RecentItems),true)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecentMusicVideo.1.Title)) + IsEmpty(Window(Home).Property(LatestMusicVideo.1.Title))</visible>
 					</item-->
@@ -1836,7 +1836,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RandomMusicVideo.1.Title))</visible>
 					</item-->
@@ -1982,7 +1982,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 					</item>
 					<!--item>
-						<icon>ClearCase/DefaultVideoCover.png</icon>
+						<icon>DefaultVideoCover.png</icon>
 						<onclick>noop</onclick>
 						<visible>IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))</visible>
 					</item-->

@@ -105,7 +105,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.5.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.5.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.5.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentTwo">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.9.Art(thumb))]</value>
@@ -136,7 +136,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.9.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.9.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.9.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentThree">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.8.Art(thumb))]</value>
@@ -167,7 +167,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.8.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.8.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.8.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentFour">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.7.Art(thumb))]</value>
@@ -198,7 +198,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.7.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.7.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.7.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentFive">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.4.Art(thumb))]</value>
@@ -229,7 +229,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.4.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.4.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.4.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentSix">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.6.Art(thumb))]</value>
@@ -260,7 +260,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.6.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.6.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.6.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentSeven">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.10.Art(thumb))]</value>
@@ -291,7 +291,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.10.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.10.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.10.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentEight">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.3.Art(thumb))]</value>
@@ -322,7 +322,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.3.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.3.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.3.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentNine">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.2.Art(thumb))]</value>
@@ -353,7 +353,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.2.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.2.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.2.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="LiveContentTen">
 		<value condition="StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true)">$INFO[Window(home).Property(RandomAlbum.1.Art(thumb))]</value>
@@ -384,7 +384,7 @@
 		<value condition="Container(9000).HasFocus(9) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListNine.1.Art(tvshow.poster))]</value>
 		<value condition="Container(9000).HasFocus(10) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayListVideo) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode)">$INFO[Window(home).Property(HomePlayListTen.1.Art(tvshow.poster))]</value>
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.1.Thumb)]</value>
-		<value>ClearCase/DefaultVideoCover.png</value>
+		<value>DefaultVideoCover.png</value>
 	</variable>
 	<variable name="OS-Label">
 		<value condition="System.HasAddon(script.raspbmc.settings)">$LOCALIZE[31002]</value>

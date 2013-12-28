@@ -291,7 +291,7 @@
 			<width>160</width>
 			<height>194</height>
 			<aspectratio align="center" aligny="center">keep</aspectratio>
-			<texture fallback="ClearCase/DefaultVideoCover.png" background="true">$VAR[InfoWidgetPoster]</texture>
+			<texture fallback="DefaultVideoCover.png" background="true">$VAR[InfoWidgetPoster]</texture>
 			<bordertexture border="-29">posterframe.png</bordertexture>
 			<fadetime>FanartCrossFadeTime</fadetime>
 			<visible>Skin.HasSetting(HorizontalHomeScreen) + ![StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums)]</visible>

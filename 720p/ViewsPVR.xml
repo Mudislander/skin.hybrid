@@ -590,7 +590,7 @@
 						<top>5</top>
 						<width>30</width>
 						<height>30</height>
-						<texture background="true" fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
+						<texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<left>50</left>
@@ -665,7 +665,7 @@
 						<top>5</top>
 						<width>30</width>
 						<height>30</height>
-						<texture background="true" fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
+						<texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<left>50</left>
@@ -734,7 +734,7 @@
 					<height>230</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture fallback="DefaultVideoCover.png">$INFO[Container(13).ListItem.Icon]</texture>
+					<texture fallback="DefaultVideo.png">$INFO[Container(13).ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
 				</control>
