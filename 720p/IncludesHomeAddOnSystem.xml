@@ -253,7 +253,7 @@
 				<width>100</width>
 				<height>100</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture background="true" diffuse="WidgetPosterDiffuse.png">$INFO[ListItem.Icon]</texture>
+				<texture background="true" diffuse="InfoWidget/PosterDiffuse.png">$INFO[ListItem.Icon]</texture>
 			</control>
 			<control type="image">
 				<left>5</left>
@@ -261,7 +261,7 @@
 				<width>120</width>
 				<height>120</height>
 				<aspectratio>stretch</aspectratio>
-				<texture diffuse="WidgetPosterDiffuse.png">black-back.png</texture>
+				<texture diffuse="InfoWidget/PosterDiffuse.png">black-back.png</texture>
 				<colordiffuse>AAFFFFFF</colordiffuse>
 			</control>
 		</itemlayout>
@@ -281,7 +281,7 @@
 				<width>100</width>
 				<height>100</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture background="true" diffuse="WidgetPosterDiffuse.png">$INFO[ListItem.Icon]</texture>
+				<texture background="true" diffuse="InfoWidget/PosterDiffuse.png">$INFO[ListItem.Icon]</texture>
 				<animation effect="zoom" start="15,15,100,100" end="10,10,110,110" time="200">focus</animation>
 			</control>
 			<control type="image">
@@ -290,7 +290,7 @@
 				<width>120</width>
 				<height>120</height>
 				<aspectratio>stretch</aspectratio>
-				<texture diffuse="WidgetPosterDiffuse.png">black-back.png</texture>
+				<texture diffuse="InfoWidget/PosterDiffuse.png">black-back.png</texture>
 				<colordiffuse>AAFFFFFF</colordiffuse>
 				<animation effect="zoom" start="5,5,120,120" end="0,0,130,130" time="200">focus</animation>
 				<visible>!ControlGroup(9003).HasFocus</visible>
