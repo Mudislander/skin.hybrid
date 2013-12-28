@@ -1852,9 +1852,9 @@
 		<value condition="Player.HasMedia + Player.Paused">$LOCALIZE[31267]</value>
 	</variable>
 	<variable name="InfoWidgetPlayBtn">
-		<value condition="[Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidgetPlayBtn.png</value>
-		<value condition="Player.HasMedia + ![Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidgetPauseBtn.png</value>
-		<value condition="!Player.HasMedia">InfoWidgetPlayBtn.png</value>
+		<value condition="[Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidget/InfoWidgetPlayBtn.png</value>
+		<value condition="Player.HasMedia + ![Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidget/InfoWidgetPauseBtn.png</value>
+		<value condition="!Player.HasMedia">InfoWidget/InfoWidgetPlayBtn.png</value>
 	</variable>
 	<variable name="InfoWidgetResumeBtn">
 		<value condition="Player.HasVideo + Player.Paused">$LOCALIZE[31268]</value>
