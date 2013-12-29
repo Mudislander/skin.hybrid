@@ -478,7 +478,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<pagecontrol>61</pagecontrol>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Control.HasFocus(61) + !Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Control.HasFocus(61) + !Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>!Control.IsVisible(50)</visible>
 				</control>
 				<control type="image">

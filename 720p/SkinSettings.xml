@@ -543,7 +543,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[GeneralSectionInfo]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -680,6 +680,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.1.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.1.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.1.Type),Music) |
 							StringCompare(Skin.String(HomeItem.1.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.1.Type),Videos) |
@@ -763,6 +764,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.2.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.2.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.2.Type),Music) |
 							StringCompare(Skin.String(HomeItem.2.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.2.Type),Movies) |
@@ -845,6 +847,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.3.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.3.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.3.Type),Music) |
 							StringCompare(Skin.String(HomeItem.3.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.3.Type),Movies) |
@@ -927,6 +930,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.4.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.4.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.4.Type),Music) |
 							StringCompare(Skin.String(HomeItem.4.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.4.Type),Movies) |
@@ -1009,6 +1013,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.5.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.5.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.5.Type),Music) |
 							StringCompare(Skin.String(HomeItem.5.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.5.Type),Movies) |
@@ -1091,6 +1096,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.6.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.6.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.6.Type),Music) |
 							StringCompare(Skin.String(HomeItem.6.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.6.Type),Movies) |
@@ -1173,6 +1179,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.7.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.7.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.7.Type),Music) |
 							StringCompare(Skin.String(HomeItem.7.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.7.Type),Movies) |
@@ -1255,6 +1262,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.8.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.8.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.8.Type),Music) |
 							StringCompare(Skin.String(HomeItem.8.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.8.Type),Movies) |
@@ -1337,6 +1345,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.9.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.9.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.9.Type),Music) |
 							StringCompare(Skin.String(HomeItem.9.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.9.Type),Movies) |
@@ -1419,6 +1428,7 @@
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.10.Type),Weather) |
+							StringCompare(Skin.String(HomeItem.10.Type),PlayListVideo) |
 							StringCompare(Skin.String(HomeItem.10.Type),Music) |
 							StringCompare(Skin.String(HomeItem.10.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.10.Type),Movies) |
@@ -1528,7 +1538,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[HomeSectionInfo]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(2)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -2862,7 +2872,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[SubMenuSelectInfo]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(3)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -3776,7 +3786,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[AddOnSelectInfo]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(4)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -5791,6 +5801,46 @@
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
+					
+					
+					
+					
+					
+					<control type="radiobutton" id="634">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31380</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableScriptPlayList)</onclick>
+						<selected>!Skin.HasSetting(DisableScriptPlayList)</selected>
+						<enable>System.HasAddon(script.randomandlastitems)</enable>
+					</control>
+					<control type="button" id="635">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31381]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>ActivateWindow(2127)</onclick>
+						<enable>!Skin.HasSetting(DisableScriptPlayList)</enable>
+						<visible>System.HasAddon(script.randomandlastitems)</visible>
+					</control>
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					<control type="label" id="645">
 						<width>750</width>
 						<height>45</height>
@@ -5868,7 +5918,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[PathSelectionInfo]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(6)</visible>
 				</control>
 				<control type="scrollbar" id="60">

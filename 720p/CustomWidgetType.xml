@@ -114,14 +114,14 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
-					<!--item>
+					<item>
 						<description>Playlist Movies</description>
 						<label>$LOCALIZE[136]</label>
 						<onclick>Dialog.Close(2118)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayListVideo)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<include>MenuTypePlayListCheck</include>
-					</item-->
+					</item>
 					<!--item>
 						<description>Weather</description>
 						<label>$LOCALIZE[8]</label>
@@ -153,6 +153,15 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SuggestedMovies)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<include>MenuTypeMovieCheck</include>
+					</item>
+					<item>
+						<description>UnWatched Movies</description>
+						<label>$LOCALIZE[16101] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(2118)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,UnWatchedMovies)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<include>MenuTypeMovieCheck</include>
+						<visible>!Skin.HasSetting(DisableScriptPlayList)</visible>
 					</item>
 					<item>
 						<description>Recent Episodes</description>

@@ -53,7 +53,7 @@
 					<shadowcolor>black</shadowcolor>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[Container(11).ListItem.Plot]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -333,7 +333,7 @@
 					<shadowcolor>black</shadowcolor>
 					<pagecontrol>-</pagecontrol>
 					<label>$INFO[Container(12).ListItem.Plot]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -762,7 +762,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$INFO[Container(13).ListItem.Plot]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 		</control>
