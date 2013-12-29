@@ -1260,16 +1260,34 @@
 				<onclick condition="!IsEmpty(Skin.String(SubSystem.5.Path))">$INFO[Skin.String(SubSystem.5.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubSystem.5.Path),Hidden)</visible>
 			</item>
+			
+			
+			
 			<item>
 				<label>$VAR[SubMenuSystemSix]</label>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.6.Path)])</onclick>
-				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SystemInfo))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(ShutdownMenu))</onclick>
 				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemSix])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="IsEmpty(Skin.String(SubSystem.6.Path))">ActivateWindow(SystemInfo)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.6.Path))">ActivateWindow(ShutdownMenu)</onclick>
 				<onclick condition="!IsEmpty(Skin.String(SubSystem.6.Path))">$INFO[Skin.String(SubSystem.6.Path)]</onclick>
 				<visible>!stringcompare(Skin.String(SubSystem.6.Path),Hidden)</visible>
 			</item>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</content>
 	</include>
 	<include name="HomeSubMenuPlayDisc">
