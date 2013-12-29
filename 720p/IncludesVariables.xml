@@ -437,7 +437,7 @@
 	</variable>
 	<variable name="SubMenuMoviesOne" type="text">
 		<value condition="!IsEmpty(Skin.String(SubMovies.1.Label))">$INFO[Skin.String(SubMovies.1.Label)]</value>
-		<value>$LOCALIZE[31203]</value>
+		<value>$LOCALIZE[31251]</value>
 	</variable>
 	<variable name="SubMenuMoviesTwo" type="text">
 		<value condition="!IsEmpty(Skin.String(SubMovies.2.Label))">$INFO[Skin.String(SubMovies.2.Label)]</value>
@@ -461,7 +461,7 @@
 	</variable>
 	<variable name="SubMenuTVShowsOne" type="text">
 		<value condition="!IsEmpty(Skin.String(SubTVShows.1.Label))">$INFO[Skin.String(SubTVShows.1.Label)]</value>
-		<value>$LOCALIZE[31203]</value>
+		<value>$LOCALIZE[31251]</value>
 	</variable>
 	<variable name="SubMenuTVShowsTwo" type="text">
 		<value condition="!IsEmpty(Skin.String(SubTVShows.2.Label))">$INFO[Skin.String(SubTVShows.2.Label)]</value>
@@ -513,7 +513,7 @@
 	</variable>
 	<variable name="SubMenuConcertsOne" type="text">
 		<value condition="!IsEmpty(Skin.String(SubConcerts.1.Label))">$INFO[Skin.String(SubConcerts.1.Label)]</value>
-		<value>$LOCALIZE[31203]</value>
+		<value>$LOCALIZE[31251]</value>
 	</variable>
 	<variable name="SubMenuConcertsTwo" type="text">
 		<value condition="!IsEmpty(Skin.String(SubConcerts.2.Label))">$INFO[Skin.String(SubConcerts.2.Label)]</value>
@@ -630,7 +630,7 @@
 	</variable>
 	<variable name="UsersSubConcertsName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserConcertsSubMenu))">$INFO[Skin.String(UserConcertsSubMenu)]</value>
-		<value>$LOCALIZE[31203]</value>
+		<value>$LOCALIZE[31251]</value>
 	</variable>
 	<variable name="UsersSubMusicName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserMusicSubMenu))">$INFO[Skin.String(UserMusicSubMenu)]</value>

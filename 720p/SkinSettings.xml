@@ -404,7 +404,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
-						<selected>Skin.HasSetting(DisableAutoScroll)</selected>
+						<selected>!Skin.HasSetting(DisableAutoScroll)</selected>
 						
 						
 						
