@@ -227,7 +227,7 @@
 				<onclick>ActivateWindow(Settings)</onclick>
 				<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 				<thumb>$INFO[Skin.String(HomeItem.13.FanArt)]</thumb>
-				<property name="SubMenu">Settings</property>
+				<property name="SubMenu">$INFO[Skin.String(HomeItem.13.Sub)]</property>
 				<property name="HiLiteItem">Settings</property>
 				<property name="LibStats">Settings</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.13.Addon)]</property>
@@ -372,6 +372,7 @@
 		<onload>Skin.SetString(HomeItem.12.Fanart,special://skin/backgrounds/homescreen/playdisc.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.12.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.12.Widget,None)</onload>
+		<onload>Skin.SetString(HomeItem.13.Sub,Settings)</onload>
 		<onload>Skin.SetString(HomeItem.13.Fanart,special://skin/backgrounds/homescreen/settings.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.13.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.13.Widget,None)</onload>

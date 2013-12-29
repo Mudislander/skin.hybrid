@@ -1436,12 +1436,25 @@
 						<onclick>Skin.ToggleSetting(HideSytemMenuItem)</onclick>
 						<selected>!Skin.HasSetting(HideSytemMenuItem)</selected>
 					</control>
-					<!-- Add in Submenu	Option -->
 					<control type="button" id="253">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label> - $LOCALIZE[31292] Needs Adjusting</label>
+						<label> - $LOCALIZE[31291]</label>
+						<label2>[COLOR=grey2]$VAR[UsrDefSettingsSubLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,HomeItem.13,home)</onclick>
+						<onclick>ActivateWindow(2116)</onclick>
+						<enable>!Skin.HasSetting(HideSytemMenuItem)</enable>
+					</control>
+					<control type="button" id="254">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label> - $LOCALIZE[31292]</label>
 						<label2>[COLOR=grey2]$VAR[UsrDefSettingsAddOnLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
@@ -1451,11 +1464,11 @@
 						<onclick>ActivateWindow(2117)</onclick>
 						<enable>!Skin.HasSetting(HideSytemMenuItem)</enable>
 					</control>
-					<control type="button" id="254">
+					<control type="button" id="255">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label> - $LOCALIZE[31293] Needs Adjusting</label>
+						<label> - $LOCALIZE[31293]</label>
 						<label2>[COLOR=grey2]$VAR[UsrDefSettingsWidgetLabel][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
@@ -1465,7 +1478,7 @@
 						<onclick>ActivateWindow(2118)</onclick>
 						<enable>!Skin.HasSetting(HideSytemMenuItem)</enable>
 					</control>
-					<control type="label" id="255">
+					<control type="label" id="256">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -1475,7 +1488,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="256">
+					<control type="radiobutton" id="257">
 						<description>Enable PlayDisc Option Menu item 12</description>
 						<width>750</width>
 						<height>40</height>
@@ -1488,7 +1501,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="257">
+					<control type="radiobutton" id="258">
 						<description>Enable FullScreen Option Menu item 11</description>
 						<width>750</width>
 						<height>40</height>

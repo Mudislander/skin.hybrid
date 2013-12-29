@@ -1208,38 +1208,68 @@
 	<include name="HomeSubMenuSystem">
 		<content>
 			<item>
-				<label>20077</label>
+				<label>$VAR[SubMenuSystemOne]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.1.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SkinSettings,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(SkinSettings),return</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.1.Path))">ActivateWindow(SkinSettings),return</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.1.Path))">$INFO[Skin.String(SubSystem.1.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.1.Path),Hidden)</visible>
+			</item>		
+			<item>
+				<label>$VAR[SubMenuSystemTwo]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.2.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SkinSettings,return))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemTwo])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.2.Path)) + System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.2.Path)) + System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.2.Path)) + System.HasAddon(script.raspbmc.settings)">RunAddon(script.raspbmc.settings)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.2.Path))">$INFO[Skin.String(SubSystem.2.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubSystem.2.Path)) | System.HasAddon(os.openelec.settings) | System.HasAddon(service.openelec.settings) | System.HasAddon(script.raspbmc.settings)</visible>
+				<visible>!stringcompare(Skin.String(SubSystem.2.Path),Hidden)</visible>
+			</item>		
+			<item>
+				<label>$VAR[SubMenuSystemThree]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.3.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(FileManager))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemThree])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.3.Path))">ActivateWindow(FileManager)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.3.Path))">$INFO[Skin.String(SubSystem.3.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.3.Path),Hidden)</visible>
+			</item>	
+			<item>
+				<label>$VAR[SubMenuSystemFour]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.4.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(AddonBrowser),return)</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemFour])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.4.Path))">ActivateWindow(AddonBrowser),return</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.4.Path))">$INFO[Skin.String(SubSystem.4.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.4.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>$VAR[OS-Label]</label>
+				<label>$VAR[SubMenuSystemFive]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.5.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(Profiles))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick condition="System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
-				<onclick condition="System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
-				<onclick condition="System.HasAddon(script.raspbmc.settings)">RunAddon(script.raspbmc.settings)</onclick>
-				<visible>System.HasAddon(os.openelec.settings) | System.HasAddon(service.openelec.settings) | System.HasAddon(script.raspbmc.settings)</visible>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.5.Path))">ActivateWindow(Profiles)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.5.Path))">$INFO[Skin.String(SubSystem.5.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.5.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>7</label>
+				<label>$VAR[SubMenuSystemSix]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubSystem.6.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubSystem.6.Path))">Skin.SetString(HomeItemLastAction,ActivateWindow(SystemInfo))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuSystemSix])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(FileManager)</onclick>
-			</item>
-			<item>
-				<label>10040</label>
-				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(AddonBrowser),return</onclick>
-			</item>
-			<item>
-				<label>13200</label>
-				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(Profiles)</onclick>
-			</item>
-			<item>
-				<label>130</label>
-				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindow(SystemInfo)</onclick>
-			</item>
+				<onclick condition="IsEmpty(Skin.String(SubSystem.6.Path))">ActivateWindow(SystemInfo)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubSystem.6.Path))">$INFO[Skin.String(SubSystem.6.Path)]</onclick>
+				<visible>!stringcompare(Skin.String(SubSystem.6.Path),Hidden)</visible>
+			</item>	
 		</content>
 	</include>
 	<include name="HomeSubMenuPlayDisc">
@@ -1314,29 +1344,67 @@
 	<include name="HomeSubMenuLiveTV">
 		<content>
 			<item>
-				<label>19023</label>
+				<label>$VAR[SubMenuLiveTVOne]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.1.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.1.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.1.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 32,0, 11,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVOne])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.1.Path))">ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.1.Path))">$INFO[Skin.String(SubLiveTV.1.Path)]</onclick>
+				<visible>System.GetBool(pvrmanager.enabled) | !IsEmpty(Skin.String(SubLiveTV.1.Path))</visible>
+				<visible>!stringcompare(Skin.String(SubLiveTV.1.Path),Hidden)</visible>
+			</item>	
+			<item>
+				<label>$VAR[SubMenuLiveTVTwo]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.2.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.2.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.2.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 33,0, 12,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVTwo])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.2.Path))">ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.2.Path))">$INFO[Skin.String(SubLiveTV.2.Path)]</onclick>
+				<visible>System.GetBool(pvrmanager.enabled) | !IsEmpty(Skin.String(SubLiveTV.2.Path))</visible>
+				<visible>!stringcompare(Skin.String(SubLiveTV.2.Path),Hidden)</visible>
+			</item>	
+			<item>
+				<label>$VAR[SubMenuLiveTVThree]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.3.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.3.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.3.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 31,0, 10,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVThree])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.3.Path))">ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.3.Path))">$INFO[Skin.String(SubLiveTV.3.Path)]</onclick>
+				<visible>System.GetBool(pvrmanager.enabled) | !IsEmpty(Skin.String(SubLiveTV.3.Path))</visible>
+				<visible>!stringcompare(Skin.String(SubLiveTV.3.Path),Hidden)</visible>
+			</item>	
+			<item>
+				<label>$VAR[SubMenuLiveTVFour]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.4.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.4.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.4.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 34,0, 13,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVFour])</onclick>
+				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.4.Path))">ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.4.Path))">$INFO[Skin.String(SubLiveTV.4.Path)]</onclick>
+				<visible>System.GetBool(pvrmanager.enabled) | !IsEmpty(Skin.String(SubLiveTV.4.Path))</visible>
+				<visible>!stringcompare(Skin.String(SubLiveTV.4.Path),Hidden)</visible>
 			</item>
 			<item>
-				<label>19024</label>
+				<label>$VAR[SubMenuLiveTVFive]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + !IsEmpty(Skin.String(SubLiveTV.5.Path))">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.5.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction) + IsEmpty(Skin.String(SubLiveTV.5.Path))">Skin.SetString(HomeItemLastAction,ActivateWindowAndFocus(MyPVR, 35,0, 14,0))</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$VAR[SubMenuLiveTVFive])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
-			</item>
+				<onclick condition="IsEmpty(Skin.String(SubLiveTV.5.Path))">ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+				<onclick condition="!IsEmpty(Skin.String(SubLiveTV.5.Path))">$INFO[Skin.String(SubLiveTV.5.Path)]</onclick>
+				<visible>System.GetBool(pvrmanager.enabled) | !IsEmpty(Skin.String(SubLiveTV.5.Path))</visible>
+				<visible>!stringcompare(Skin.String(SubLiveTV.5.Path),Hidden)</visible>
+			</item>	
 			<item>
-				<label>19069</label>
+				<label>$INFO[Skin.String(SubLiveTV.6.Label)]</label>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastAction,$INFO[Skin.String(SubLiveTV.6.Path)])</onclick>
+				<onclick condition="Container(9000).Hasfocus(1) + Skin.HasSetting(StickyHomeMenuAction)">Skin.SetString(HomeItemLastLabel,$INFO[Skin.String(SubLiveTV.6.Label)])</onclick>
 				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
-			</item>
-			<item>
-				<label>19163</label>
-				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
-			</item>
-			<item>
-				<label>19040</label>
-				<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-				<onclick>ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+				<onclick>$INFO[Skin.String(SubLiveTV.6.Path)]</onclick>
+				<visible>!IsEmpty(Skin.String(SubLiveTV.6.Path))</visible>
 			</item>
 		</content>
 	</include>
@@ -1448,6 +1516,10 @@
 			</item>
 		</content>
 	</include>
+	
+	
+	
+	
 	<include name="HomeSubMenuUserOne">
 		<content>
 			<item>
@@ -1500,6 +1572,9 @@
 			</item>
 		</content>
 	</include>
+	
+	
+	
 	<include name="HomeSubMenuUserTwo">
 		<content>
 			<item>
@@ -1552,6 +1627,9 @@
 			</item>
 		</content>
 	</include>
+	
+	
+	
 	<include name="HomeSubMenuProg">
 		<content>
 			<item>

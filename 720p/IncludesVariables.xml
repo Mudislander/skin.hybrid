@@ -386,10 +386,6 @@
 		<value condition="Library.HasContent(Movies)">$INFO[Window(home).Property(LatestMovie.1.Thumb)]</value>
 		<value>DefaultVideoCover.png</value>
 	</variable>
-	<variable name="OS-Label">
-		<value condition="System.HasAddon(script.raspbmc.settings)">$LOCALIZE[31002]</value>
-		<value>$LOCALIZE[31001]</value>
-	</variable>
 	<variable name="FileMngrWindow">
 		<value condition="Control.HasFocus(20)">$LOCALIZE[31216] - $LOCALIZE[31218]</value>
 		<value condition="Control.HasFocus(21)">$LOCALIZE[31218] - $LOCALIZE[31217]</value>
@@ -559,6 +555,64 @@
 		<value condition="!IsEmpty(Skin.String(SubExit.6.Label))">$INFO[Skin.String(SubExit.6.Label)]</value>
 		<value>$LOCALIZE[20126]</value>
 	</variable>
+	<variable name="SubMenuLiveTVOne" type="text">
+		<value condition="!IsEmpty(Skin.String(SubLiveTV.1.Label))">$INFO[Skin.String(SubLiveTV.1.Label)]</value>
+		<value>$LOCALIZE[19023]</value>
+	</variable>
+	<variable name="SubMenuLiveTVTwo" type="text">
+		<value condition="!IsEmpty(Skin.String(SubLiveTV.2.Label))">$INFO[Skin.String(SubLiveTV.2.Label)]</value>
+		<value>$LOCALIZE[19024]</value>
+	</variable>
+	<variable name="SubMenuLiveTVThree" type="text">
+		<value condition="!IsEmpty(Skin.String(SubLiveTV.3.Label))">$INFO[Skin.String(SubLiveTV.3.Label)]</value>
+		<value>$LOCALIZE[19069]</value>
+	</variable>
+	<variable name="SubMenuLiveTVFour" type="text">
+		<value condition="!IsEmpty(Skin.String(SubLiveTV.4.Label))">$INFO[Skin.String(SubLiveTV.4.Label)]</value>
+		<value>$LOCALIZE[19163]</value>
+	</variable>
+	<variable name="SubMenuLiveTVFive" type="text">
+		<value condition="!IsEmpty(Skin.String(SubLiveTV.5.Label))">$INFO[Skin.String(SubLiveTV.5.Label)]</value>
+		<value>$LOCALIZE[19040]</value>
+	</variable>
+	<variable name="SubMenuSystemOne" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.1.Label))">$INFO[Skin.String(SubSystem.1.Label)]</value>
+		<value>$LOCALIZE[20077]</value>
+	</variable>
+	<variable name="SubMenuSystemTwo" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.2.Label))">$INFO[Skin.String(SubSystem.2.Label)]</value>
+		<value condition="IsEmpty(Skin.String(SubSystem.2.Label)) + System.HasAddon(script.raspbmc.settings)">$LOCALIZE[31002]</value>
+		<value>$LOCALIZE[31001]</value>
+	</variable>
+	<variable name="SubMenuSystemThree" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.3.Label))">$INFO[Skin.String(SubSystem.3.Label)]</value>
+		<value>$LOCALIZE[7]</value>
+	</variable>
+	<variable name="SubMenuSystemFour" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.4.Label))">$INFO[Skin.String(SubSystem.4.Label)]</value>
+		<value>$LOCALIZE[10040]</value>
+	</variable>
+	<variable name="SubMenuSystemFive" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.5.Label))">$INFO[Skin.String(SubSystem.5.Label)]</value>
+		<value>$LOCALIZE[13200]</value>
+	</variable>
+	<variable name="SubMenuSystemSix" type="text">
+		<value condition="!IsEmpty(Skin.String(SubSystem.6.Label))">$INFO[Skin.String(SubSystem.6.Label)]</value>
+		<value>$LOCALIZE[130]</value>
+	</variable>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<variable name="UsersSubVideosName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
 		<value>$LOCALIZE[3]</value>
@@ -599,6 +653,9 @@
 		<value condition="!IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
 		<value>$LOCALIZE[31232]</value>
 	</variable>
+	
+	
+	
 	<variable name="UsrDefItemOneSubLabel" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Playlists)">$LOCALIZE[31241]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),AddOns)">$LOCALIZE[31250]</value>
