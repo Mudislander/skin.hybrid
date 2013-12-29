@@ -610,9 +610,6 @@
 					</item>
 				</content>
 			</control>
-			
-			
-			
 			<control type="panel" id="510">
 				<!-- Movies In Progress -->
 				<include>WidgetVideoPanel</include>
@@ -774,17 +771,6 @@
 					</item>
 				</content>
 			</control>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			<control type="panel" id="510">
 				<!-- UnWatched Movies -->
 				<include>WidgetVideoPanel</include>
@@ -946,22 +932,12 @@
 					</item>
 				</content>
 			</control>
-
-
-
-
-
-			
-			
-<!--			
+			<!--			
 <visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !Skin.HasSetting(DisableScriptPlayList)</visible>
 <visible>StringCompare(Container(9000).ListItem.Property(PlayListType),Movie)</visible>
 
 <visible>Container(9000).HasFocus(1)</visible>
--->	
-			
-			
-			
+-->
 			<control type="panel" id="510">
 				<!-- Playlist One  Movies -->
 				<include>WidgetVideoPanel</include>
@@ -1131,13 +1107,6 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
-					
-					
-					
-					
-					
-					
-					
 					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListTwo.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListTwo.1.Tagline)]</label2>
@@ -1300,15 +1269,6 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
-					
-					
-					
-					
-					
-					
-					
-					
-					
 					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListThree.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListThree.1.Tagline)]</label2>
@@ -1471,11 +1431,6 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
-					
-					
-					
-					
-					
 					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListFour.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListFour.1.Tagline)]</label2>
@@ -1638,9 +1593,6 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
-					
-					
-					
 					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListFive.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListFive.1.Tagline)]</label2>
@@ -1803,10 +1755,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
-					
-					
-					
-	<item>
+					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListSix.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListSix.1.Tagline)]</label2>
 						<icon>$INFO[Window(Home).Property(HomePlayListSix.1.Art(poster))]</icon>
@@ -1968,14 +1917,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
-					
-									
-					
-					
-					
-					
-					
-	<item>
+					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListSeven.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListSeven.1.Tagline)]</label2>
 						<icon>$INFO[Window(Home).Property(HomePlayListSeven.1.Art(poster))]</icon>
@@ -2137,12 +2079,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
-					
-									
-				
-
-
-<item>
+					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListEight.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListEight.1.Tagline)]</label2>
 						<icon>$INFO[Window(Home).Property(HomePlayListEight.1.Art(poster))]</icon>
@@ -2304,12 +2241,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
-					
-						
-
-
-
-<item>
+					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListNine.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListNine.1.Tagline)]</label2>
 						<icon>$INFO[Window(Home).Property(HomePlayListNine.1.Art(poster))]</icon>
@@ -2471,11 +2403,7 @@
 						<visible>Skin.HasSetting(HorizontalHomeScreen)</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
-					
-					
-
-
-<item>
+					<item>
 						<label>$INFO[Window(Home).Property(HomePlayListTen.1.Title)]</label>
 						<label2>$INFO[Window(Home).Property(HomePlayListTen.1.Tagline)]</label2>
 						<icon>$INFO[Window(Home).Property(HomePlayListTen.1.Art(poster))]</icon>

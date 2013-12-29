@@ -579,9 +579,6 @@
 		<value condition="!IsEmpty(Skin.String(SubLiveTV.5.Label))">$INFO[Skin.String(SubLiveTV.5.Label)]</value>
 		<value>$LOCALIZE[19040]</value>
 	</variable>
-	
-	
-	
 	<variable name="SubMenuSystemOne" type="text">
 		<value condition="!IsEmpty(Skin.String(SubSystem.1.Label))">$INFO[Skin.String(SubSystem.1.Label)]</value>
 		<value>$LOCALIZE[20077]</value>
@@ -607,19 +604,6 @@
 		<value condition="!IsEmpty(Skin.String(SubSystem.6.Label))">$INFO[Skin.String(SubSystem.6.Label)]</value>
 		<value>$LOCALIZE[13005]</value>
 	</variable>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<variable name="UsersSubVideosName" type="text">
 		<value condition="!IsEmpty(Skin.String(UserVideosSubMenu))">$INFO[Skin.String(UserVideosSubMenu)]</value>
 		<value>$LOCALIZE[3]</value>
@@ -668,9 +652,6 @@
 		<value condition="!IsEmpty(Skin.String(UserSelectThreeSubMenu))">$INFO[Skin.String(UserSelectThreeSubMenu)]</value>
 		<value>$LOCALIZE[31232]</value>
 	</variable>
-	
-	
-	
 	<variable name="UsrDefItemOneSubLabel" type="text">
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),Playlists)">$LOCALIZE[31241]</value>
 		<value condition="stringcompare(Skin.String(HomeItem.1.Sub),AddOns)">$LOCALIZE[31250]</value>

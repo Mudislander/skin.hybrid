@@ -249,7 +249,6 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Widget,PlayListVideo)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Type,PlayListVideo)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
-	
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[31206])</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Path,PlayMedia("special://skin/extras/Streaming/Radio105NetworkTV.strm"))</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Sub,None)</onload>
@@ -258,7 +257,6 @@
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Widget,None)</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Type,Streaming)</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Fanart,special://skin/backgrounds/homescreen/musicvideos.jpg)</onload>
-
 		<onload condition="IsEmpty(Weather.Plugin) + !Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[13005])</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + !Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Path,XBMC.Shutdown())</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + !Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Sub,Shutdown)</onload>
@@ -346,7 +344,6 @@
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Type,Concerts)</onload>
 		<!--onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Live,LiveContent)</onload-->
 		<onload>Skin.SetString(HomeItem.8.Fanart,special://skin/backgrounds/homescreen/musicvideos.jpg)</onload>
-		
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[8])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Path,ActivateWindow(Weather))</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Sub,None)</onload>
@@ -356,7 +353,6 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,Weather)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Live,LiveContent)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/weather.jpg)</onload>
-		
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[31207])</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
@@ -366,7 +362,6 @@
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Widget,PlayListVideo)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,PlayListVideo)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
-		
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(HomeItem.10.Label,$LOCALIZE[0])</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher) + !System.Platform.Android">Skin.SetString(HomeItem.10.Path,ActivateWindow(Programs,Addons,return))</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher) + System.Platform.Android">Skin.SetString(HomeItem.10.Path,ActivateWindow(Programs))</onload>

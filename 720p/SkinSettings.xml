@@ -405,9 +405,6 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
 						<selected>!Skin.HasSetting(DisableAutoScroll)</selected>
-						
-						
-						
 					</control>
 					<control type="radiobutton" id="190">
 						<width>750</width>
@@ -2311,7 +2308,6 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.6.Label))">Skin.SetString(SubPictures.6.Label)</onclick>
 					</control>
-					
 					<control type="label" id="356">
 						<width>750</width>
 						<height>45</height>
@@ -2347,8 +2343,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.1.Label)) + !stringcompare(Skin.String(SubLiveTV.1.Path),Hidden)">Skin.SetString(SubLiveTV.1.Label)</onclick>
-					</control>					
-					
+					</control>
 					<control type="button" id="359">
 						<width>750</width>
 						<height>40</height>
@@ -2362,8 +2357,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.2.Label)) + !stringcompare(Skin.String(SubLiveTV.2.Path),Hidden)">Skin.SetString(SubLiveTV.2.Label)</onclick>
-					</control>	
-					
+					</control>
 					<control type="button" id="360">
 						<width>750</width>
 						<height>40</height>
@@ -2377,9 +2371,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.3.Label)) + !stringcompare(Skin.String(SubLiveTV.3.Path),Hidden)">Skin.SetString(SubLiveTV.3.Label)</onclick>
-					</control>	
-					
-					
+					</control>
 					<control type="button" id="361">
 						<width>750</width>
 						<height>40</height>
@@ -2393,8 +2385,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.4.Label)) + !stringcompare(Skin.String(SubLiveTV.4.Path),Hidden)">Skin.SetString(SubLiveTV.4.Label)</onclick>
-					</control>	
-					
+					</control>
 					<control type="button" id="362">
 						<width>750</width>
 						<height>40</height>
@@ -2408,10 +2399,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.5.Label)) + !stringcompare(Skin.String(SubLiveTV.5.Path),Hidden)">Skin.SetString(SubLiveTV.5.Label)</onclick>
-					</control>	
-					
-					
-					
+					</control>
 					<control type="button" id="363">
 						<width>750</width>
 						<height>40</height>
@@ -2426,7 +2414,7 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.6.Label))">Skin.SetString(SubLiveTV.6.Label)</onclick>
 					</control>
-<control type="label" id="364">
+					<control type="label" id="364">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -2461,8 +2449,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.1.Label)) + !stringcompare(Skin.String(SubSystem.1.Path),Hidden)">Skin.SetString(SubSystem.1.Label)</onclick>
-					</control>					
-					
+					</control>
 					<control type="button" id="367">
 						<width>750</width>
 						<height>40</height>
@@ -2476,8 +2463,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.2.Label)) + !stringcompare(Skin.String(SubSystem.2.Path),Hidden)">Skin.SetString(SubSystem.2.Label)</onclick>
-					</control>	
-					
+					</control>
 					<control type="button" id="368">
 						<width>750</width>
 						<height>40</height>
@@ -2491,9 +2477,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.3.Label)) + !stringcompare(Skin.String(SubSystem.3.Path),Hidden)">Skin.SetString(SubSystem.3.Label)</onclick>
-					</control>	
-					
-					
+					</control>
 					<control type="button" id="369">
 						<width>750</width>
 						<height>40</height>
@@ -2507,8 +2491,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.4.Label)) + !stringcompare(Skin.String(SubSystem.4.Path),Hidden)">Skin.SetString(SubSystem.4.Label)</onclick>
-					</control>	
-					
+					</control>
 					<control type="button" id="370">
 						<width>750</width>
 						<height>40</height>
@@ -2522,10 +2505,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.5.Label)) + !stringcompare(Skin.String(SubSystem.5.Path),Hidden)">Skin.SetString(SubSystem.5.Label)</onclick>
-					</control>	
-					
-					
-					
+					</control>
 					<control type="button" id="371">
 						<width>750</width>
 						<height>40</height>
@@ -2539,10 +2519,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubSystem.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubSystem.6.Label)) + !stringcompare(Skin.String(SubSystem.6.Path),Hidden)">Skin.SetString(SubSystem.6.Label)</onclick>
-					</control>	
-					
-					
-					
+					</control>
 					<control type="label" id="372">
 						<width>750</width>
 						<height>45</height>
@@ -5801,11 +5778,6 @@
 						<enable>!Skin.HasSetting(DisableWatchItLater)</enable>
 						<visible>System.HasAddon(script.simpleplaylists)</visible>
 					</control>
-					
-					
-					
-					
-					
 					<control type="radiobutton" id="634">
 						<width>750</width>
 						<height>40</height>
@@ -5832,15 +5804,6 @@
 						<enable>!Skin.HasSetting(DisableScriptPlayList)</enable>
 						<visible>System.HasAddon(script.randomandlastitems)</visible>
 					</control>
-					
-					
-					
-					
-					
-					
-					
-					
-					
 					<control type="label" id="645">
 						<width>750</width>
 						<height>45</height>

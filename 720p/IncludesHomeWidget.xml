@@ -513,10 +513,6 @@
 				<label>$VAR[InfoWidgetSuggestedRunTime]</label>
 				<scroll>false</scroll>
 				<visible>![Player.HasMedia | Control.HasFocus(510)]</visible>
-				
-				
-				
-				
 				<visible>[SubString(Container(9000).ListItem.Property(WidgetSet),Movies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))]|
 					[StringCompare(Container(9000).ListItem.Property(WidgetSet),PlayListVideo) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))] |
 					[SubString(Container(9000).ListItem.Property(WidgetSet),Episodes)  + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))]|
@@ -525,9 +521,6 @@
 					[SubString(Container(9000).ListItem.Property(WidgetSet),Albums)+ IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))]|
 					[SubString(Container(9000).ListItem.Property(WidgetSet),Artists)	+ IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))]
 			</visible>
-			
-			
-			
 			</control>
 			<control type="label">
 				<width min="75" max="140">auto</width>
