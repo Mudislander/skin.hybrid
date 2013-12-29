@@ -29,7 +29,7 @@
 				<textcolor>white</textcolor>
 				<font>font13</font>
 				<label>$VAR[VideoPlayingDescription,[B][COLOR=red]$LOCALIZE[207]$LOCALIZE[31000] [/COLOR][/B]]</label>
-				<autoscroll time="4000" delay="3000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 			</control>
 		</control>
 	</include>

@@ -1167,7 +1167,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Plot)]</label>
-				<autoscroll time="3000" delay="20000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
 			</control>
 			<control type="textbox">
@@ -1180,7 +1180,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Artist_Description)]</label>
-				<autoscroll time="3000" delay="20000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				<visible>Control.IsVisible(160)</visible>
 			</control>
 			<control type="textbox">
@@ -1193,7 +1193,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Album_Description)]</label>
-				<autoscroll time="3000" delay="20000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				<visible>Control.IsVisible(170)</visible>
 			</control>
 			<control type="textbox">
@@ -1206,7 +1206,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Comment)]</label>
-				<autoscroll time="3000" delay="20000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				<visible>Control.IsVisible(180)</visible>
 			</control>
 			<control type="spincontrol" id="195">

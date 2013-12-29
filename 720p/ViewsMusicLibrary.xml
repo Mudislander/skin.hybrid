@@ -437,7 +437,7 @@
 					<pagecontrol>-</pagecontrol>
 					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
-					<autoscroll time="4000" delay="3000" repeat="5000">true</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 		</control>
@@ -867,7 +867,7 @@
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$INFO[ListItem.Property(Artist_Description)]</label>
-						<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 				</control>
 			</control>
@@ -1030,7 +1030,7 @@
 					<pagecontrol>-</pagecontrol>
 					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.Property(Album_Description)]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 		</control>

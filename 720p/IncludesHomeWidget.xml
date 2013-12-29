@@ -567,7 +567,7 @@
 			<label>$VAR[InfoWidgetMediaPlot]</label>
 			<textcolor>white</textcolor>
 			<font>font12</font>
-			<autoscroll delay="20000" time="3000" repeat="20000">Skin.HasSetting(AutoScroll)</autoscroll>
+			<autoscroll time="20000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 		</control>
 		<control type="group" id="600">
 			<left>5</left>

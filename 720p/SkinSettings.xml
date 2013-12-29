@@ -403,8 +403,11 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
-						<selected>Skin.HasSetting(AutoScroll)</selected>
+						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
+						<selected>Skin.HasSetting(DisableAutoScroll)</selected>
+						
+						
+						
 					</control>
 					<control type="radiobutton" id="190">
 						<width>750</width>
@@ -540,7 +543,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[GeneralSectionInfo]</label>
-					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -1525,7 +1528,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[HomeSectionInfo]</label>
-					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(2)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -2859,7 +2862,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[SubMenuSelectInfo]</label>
-					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(3)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -3773,7 +3776,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[AddOnSelectInfo]</label>
-					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(4)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -5865,7 +5868,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[PathSelectionInfo]</label>
-					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>Container(9000).Hasfocus(6)</visible>
 				</control>
 				<control type="scrollbar" id="60">

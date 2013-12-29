@@ -183,7 +183,7 @@
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll time="2000" delay="6000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -361,7 +361,7 @@
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll time="2000" delay="6000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -514,7 +514,7 @@
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll time="2000" delay="6000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 				</control>
 				<control type="image">
@@ -656,7 +656,7 @@
 						<align>justify</align>
 						<textcolor>white</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll time="2000" delay="6000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
