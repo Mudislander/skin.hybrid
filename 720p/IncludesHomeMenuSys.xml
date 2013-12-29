@@ -240,7 +240,7 @@
 		<onload condition="System.Date(11-24,1-6)">Skin.Setbool(HolidayEffects)</onload>
 		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
 		<!--onload>Skin.SetString(MPAACountryCert,$LOCALIZE[##31701])</onload-->
-		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[31207])</onload>
+		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[31610])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Sub,Movies)</onload>
@@ -353,7 +353,7 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,Weather)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Live,LiveContent)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/weather.jpg)</onload>
-		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[31207])</onload>
+		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[31610])</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Sub,Movies)</onload>
