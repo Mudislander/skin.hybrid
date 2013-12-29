@@ -204,7 +204,7 @@
 				<aspectratio>stretch</aspectratio>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
-				<texture background="true" diffuse="AddonCaseMask.png">$INFO[Container(9000).ListItem.ActualIcon]</texture>
+				<texture background="true" diffuse="AddOnCase/AddonCaseMask.png">$INFO[Container(9000).ListItem.ActualIcon]</texture>
 			</control>
 			<control type="image">
 				<left>500</left>
@@ -214,7 +214,7 @@
 				<aspectratio>stretch</aspectratio>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
-				<texture background="true">AddonCase.png</texture>
+				<texture background="true">AddOnCase/AddonCase.png</texture>
 			</control>
 		</control>
 		<include>CommonNowPlaying</include>
