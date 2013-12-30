@@ -248,11 +248,11 @@
 				<onup>604</onup>
 				<ondown>604</ondown>
 				<onclick>Close</onclick>
-				<onclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
-				<altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
+				<onclick>XBMC.RunScript($INFO[Skin.String(LyricScriptPath)])</onclick>
+				<altclick>Skin.SetAddon(LyricScriptPath,xbmc.python.lyrics)</altclick>
 				<altclick>Close</altclick>
-				<altclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
-				<usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
+				<altclick>XBMC.RunScript($INFO[Skin.String(LyricScriptPath)])</altclick>
+				<usealttexture>IsEmpty(Skin.String(LyricScriptPath))</usealttexture>
 			</control>
 			<control type="button" id="500">
 				<left>55</left>

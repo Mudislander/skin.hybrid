@@ -118,7 +118,7 @@
 						<description>Playlist Movies</description>
 						<label>$LOCALIZE[136]</label>
 						<onclick>Dialog.Close(2118)</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayListVideo)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,PlayList)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<include>MenuTypePlayListCheck</include>
 					</item>

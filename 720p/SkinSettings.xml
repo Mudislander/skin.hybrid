@@ -667,17 +667,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.1.Live)">Skin.SetString(HomeItem.1.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.1.Live)">Skin.Reset(HomeItem.1.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather) + !Skin.String(HomeItem.1.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather) + Skin.String(HomeItem.1.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.1.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.1.Display)">Skin.SetString(HomeItem.1.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.1.Display)">Skin.Reset(HomeItem.1.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather) + !Skin.String(HomeItem.1.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.1.Type),Weather) + Skin.String(HomeItem.1.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.1.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.1.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.1.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.1.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.1.Type),Music) |
 							StringCompare(Skin.String(HomeItem.1.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.1.Type),Videos) |
@@ -751,17 +751,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.2.Live)">Skin.SetString(HomeItem.2.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.2.Live)">Skin.Reset(HomeItem.2.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather) + !Skin.String(HomeItem.2.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather) + Skin.String(HomeItem.2.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.2.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.2.Display)">Skin.SetString(HomeItem.2.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.2.Display)">Skin.Reset(HomeItem.2.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather) + !Skin.String(HomeItem.2.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.2.Type),Weather) + Skin.String(HomeItem.2.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.2.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.2.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.2.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.2.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.2.Type),Music) |
 							StringCompare(Skin.String(HomeItem.2.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.2.Type),Movies) |
@@ -834,17 +834,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.3.Live)">Skin.SetString(HomeItem.3.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.3.Live)">Skin.Reset(HomeItem.3.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather) + !Skin.String(HomeItem.3.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather) + Skin.String(HomeItem.3.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.3.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.3.Display)">Skin.SetString(HomeItem.3.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.3.Display)">Skin.Reset(HomeItem.3.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather) + !Skin.String(HomeItem.3.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.3.Type),Weather) + Skin.String(HomeItem.3.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.3.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.3.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.3.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.3.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.3.Type),Music) |
 							StringCompare(Skin.String(HomeItem.3.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.3.Type),Movies) |
@@ -917,17 +917,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.4.Live)">Skin.SetString(HomeItem.4.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.4.Live)">Skin.Reset(HomeItem.4.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather) + !Skin.String(HomeItem.4.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather) + Skin.String(HomeItem.4.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.4.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.4.Display)">Skin.SetString(HomeItem.4.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.4.Display)">Skin.Reset(HomeItem.4.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather) + !Skin.String(HomeItem.4.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.4.Type),Weather) + Skin.String(HomeItem.4.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.4.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.4.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.4.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.4.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.4.Type),Music) |
 							StringCompare(Skin.String(HomeItem.4.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.4.Type),Movies) |
@@ -1000,17 +1000,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.5.Live)">Skin.SetString(HomeItem.5.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.5.Live)">Skin.Reset(HomeItem.5.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather) + !Skin.String(HomeItem.5.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather) + Skin.String(HomeItem.5.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.5.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.5.Display)">Skin.SetString(HomeItem.5.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.5.Display)">Skin.Reset(HomeItem.5.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather) + !Skin.String(HomeItem.5.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.5.Type),Weather) + Skin.String(HomeItem.5.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.5.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.5.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.5.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.5.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.5.Type),Music) |
 							StringCompare(Skin.String(HomeItem.5.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.5.Type),Movies) |
@@ -1083,17 +1083,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.6.Live)">Skin.SetString(HomeItem.6.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.6.Live)">Skin.Reset(HomeItem.6.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather) + !Skin.String(HomeItem.6.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather) + Skin.String(HomeItem.6.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.6.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.6.Display)">Skin.SetString(HomeItem.6.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.6.Display)">Skin.Reset(HomeItem.6.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather) + !Skin.String(HomeItem.6.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.6.Type),Weather) + Skin.String(HomeItem.6.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.6.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.6.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.6.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.6.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.6.Type),Music) |
 							StringCompare(Skin.String(HomeItem.6.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.6.Type),Movies) |
@@ -1166,17 +1166,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.7.Live)">Skin.SetString(HomeItem.7.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.7.Live)">Skin.Reset(HomeItem.7.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather) + !Skin.String(HomeItem.7.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather) + Skin.String(HomeItem.7.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.7.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.7.Display)">Skin.SetString(HomeItem.7.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.7.Display)">Skin.Reset(HomeItem.7.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather) + !Skin.String(HomeItem.7.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.7.Type),Weather) + Skin.String(HomeItem.7.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.7.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.7.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.7.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.7.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.7.Type),Music) |
 							StringCompare(Skin.String(HomeItem.7.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.7.Type),Movies) |
@@ -1249,17 +1249,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.8.Live)">Skin.SetString(HomeItem.8.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.8.Live)">Skin.Reset(HomeItem.8.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather) + !Skin.String(HomeItem.8.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather) + Skin.String(HomeItem.8.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.8.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.8.Display)">Skin.SetString(HomeItem.8.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.8.Display)">Skin.Reset(HomeItem.8.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather) + !Skin.String(HomeItem.8.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.8.Type),Weather) + Skin.String(HomeItem.8.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.8.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.8.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.8.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.8.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.8.Type),Music) |
 							StringCompare(Skin.String(HomeItem.8.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.8.Type),Movies) |
@@ -1332,17 +1332,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.9.Live)">Skin.SetString(HomeItem.9.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.9.Live)">Skin.Reset(HomeItem.9.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather) + !Skin.String(HomeItem.9.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather) + Skin.String(HomeItem.9.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.9.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.9.Display)">Skin.SetString(HomeItem.9.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.9.Display)">Skin.Reset(HomeItem.9.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather) + !Skin.String(HomeItem.9.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.9.Type),Weather) + Skin.String(HomeItem.9.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.9.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.9.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.9.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.9.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.9.Type),Music) |
 							StringCompare(Skin.String(HomeItem.9.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.9.Type),Movies) |
@@ -1415,17 +1415,17 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label> - $LOCALIZE[31294]</label>
-						<onclick condition="!Skin.String(HomeItem.10.Live)">Skin.SetString(HomeItem.10.Live,LiveContent)</onclick>
-						<onclick condition="Skin.String(HomeItem.10.Live)">Skin.Reset(HomeItem.10.Live)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather) + !Skin.String(HomeItem.10.Live)">Skin.SetBool(ShowWeatherFanart)</onclick>
-						<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather) + Skin.String(HomeItem.10.Live)">Skin.Reset(ShowWeatherFanart)</onclick>
-						<selected>Skin.String(HomeItem.10.Live)</selected>
+						<onclick condition="!Skin.String(HomeItem.10.Display)">Skin.SetString(HomeItem.10.Display,LiveContent)</onclick>
+						<onclick condition="Skin.String(HomeItem.10.Display)">Skin.Reset(HomeItem.10.Display)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather) + !Skin.String(HomeItem.10.Display)">Skin.SetBool(ShowWeatherFanart)</onclick>
+						<onclick condition="stringcompare(Skin.String(HomeItem.10.Type),Weather) + Skin.String(HomeItem.10.Display)">Skin.Reset(ShowWeatherFanart)</onclick>
+						<selected>Skin.String(HomeItem.10.Display)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>
 							!Skin.HasSetting(HolidayEffects) +
 							[StringCompare(Skin.String(HomeItem.10.Type),Weather) |
-							StringCompare(Skin.String(HomeItem.10.Type),PlayListVideo) |
+							StringCompare(Skin.String(HomeItem.10.Type),PlayList) |
 							StringCompare(Skin.String(HomeItem.10.Type),Music) |
 							StringCompare(Skin.String(HomeItem.10.Type),Videos) |
 							StringCompare(Skin.String(HomeItem.10.Type),Movies) |
@@ -3905,7 +3905,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.1.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.1.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.String(HomeItem.1.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.String(HomeItem.1.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="2">
 								<description>Home Menu Item Two</description>
@@ -3914,7 +3914,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.2.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.2.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.String(HomeItem.2.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.2.Path)) + !Skin.String(HomeItem.2.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="3">
 								<description>Home Menu Item Three</description>
@@ -3923,7 +3923,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.3.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.3.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.String(HomeItem.3.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.3.Path)) + !Skin.String(HomeItem.3.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="4">
 								<description>Home Menu Item Four</description>
@@ -3932,7 +3932,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.4.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.4.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.String(HomeItem.4.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.4.Path)) + !Skin.String(HomeItem.4.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="5">
 								<description>Home Menu Item Five</description>
@@ -3941,7 +3941,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.5.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.5.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.String(HomeItem.5.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.5.Path)) + !Skin.String(HomeItem.5.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="6">
 								<description>Home Menu Item Six</description>
@@ -3950,7 +3950,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.6.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.6.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.String(HomeItem.6.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.6.Path)) + !Skin.String(HomeItem.6.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="7">
 								<description>Home Menu Item Seven</description>
@@ -3959,7 +3959,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.7.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.7.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.String(HomeItem.7.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.7.Path)) + !Skin.String(HomeItem.7.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="8">
 								<description>Home Menu Item Eight</description>
@@ -3968,7 +3968,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.8.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.8.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.String(HomeItem.8.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.8.Path)) + !Skin.String(HomeItem.8.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="9">
 								<description>Home Menu Item Nine</description>
@@ -3977,7 +3977,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.9.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.9.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.String(HomeItem.9.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.9.Path)) + !Skin.String(HomeItem.9.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="10">
 								<description>Home Menu Item Ten</description>
@@ -3986,7 +3986,7 @@
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.10.FanArt)]</thumb>
 								<property name="HiLiteItem">$INFO[Skin.String(HomeItem.10.Type)]</property>
-								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.String(HomeItem.10.Live) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
+								<visible>!IsEmpty(Skin.String(HomeItem.10.Path)) + !Skin.String(HomeItem.10.Display) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
 							</item>
 							<item id="11">
 								<description>Fullscreen</description>
@@ -5634,8 +5634,8 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>15311</label>
-						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
-						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+						<label2>$INFO[Skin.String(StartupPlaylist)]</label2>
+						<onclick>Skin.SetFile(StartupPlaylist,,special://MusicPlaylists/)</onclick>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
@@ -5655,12 +5655,12 @@
 						<height>40</height>
 						<font>font13</font>
 						<label>$LOCALIZE[31305]</label>
-						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
+						<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScriptPath))][/COLOR]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+						<onclick>Skin.SetAddon(LyricScriptPath,xbmc.python.lyrics)</onclick>
 					</control>
 					<control type="button" id="614">
 						<width>750</width>
@@ -5671,8 +5671,8 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
-						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
+						<enable>!IsEmpty(Skin.String(LyricScriptPath))</enable>
+						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScriptPath)])</onclick>
 					</control>
 					<control type="radiobutton" id="626">
 						<width>750</width>

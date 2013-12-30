@@ -16,7 +16,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.1.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.1.Display)]</property>
 				<visible>
 					[!IsEmpty(Skin.String(HomeItem.1.Path)) + !Skin.HasSetting(StickyHomeMenuAction)]|
 					[IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)]
@@ -36,7 +36,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.1.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.1.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListOne.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.1.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.1.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItemLastAction)) + Skin.HasSetting(StickyHomeMenuAction)</visible>
 			</item>
 			<item id="2">
@@ -53,7 +53,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.2.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.2.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListTwo.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.2.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.2.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.2.Path))</visible>
 			</item>
 			<item id="3">
@@ -70,7 +70,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.3.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.3.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListThree.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.3.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.3.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.3.Path))</visible>
 			</item>
 			<item id="4">
@@ -87,7 +87,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.4.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.4.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListFour.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.4.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.4.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.4.Path))</visible>
 			</item>
 			<item id="5">
@@ -104,7 +104,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.5.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.5.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListFive.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.5.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.5.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.5.Path))</visible>
 			</item>
 			<item id="6">
@@ -121,7 +121,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.6.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.6.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListSix.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.6.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.6.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.6.Path))</visible>
 			</item>
 			<item id="7">
@@ -138,7 +138,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.7.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.7.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListSeven.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.7.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.7.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.7.Path))</visible>
 			</item>
 			<item id="8">
@@ -155,7 +155,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.8.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.8.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListEight.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.8.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.8.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.8.Path))</visible>
 			</item>
 			<item id="9">
@@ -172,7 +172,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.9.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.9.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListNine.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.9.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.9.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.9.Path))</visible>
 			</item>
 			<item id="10">
@@ -189,7 +189,7 @@
 				<property name="AddOnSet">$INFO[Skin.String(HomeItem.10.Addon)]</property>
 				<property name="WidgetSet">$INFO[Skin.String(HomeItem.10.Widget)]</property>
 				<property name="PlayListType">$INFO[Window(home).Property(HomePlayListTen.Type)]</property>
-				<property name="Background">$INFO[Skin.String(HomeItem.10.Live)]</property>
+				<property name="Background">$INFO[Skin.String(HomeItem.10.Display)]</property>
 				<visible>!IsEmpty(Skin.String(HomeItem.10.Path))</visible>
 			</item>
 			<item id="11">
@@ -246,8 +246,8 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Sub,Movies)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Stats,Playlists)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Addon,None)</onload>
-		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Widget,PlayListVideo)</onload>
-		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Type,PlayListVideo)</onload>
+		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Widget,PlayList)</onload>
+		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Type,PlayList)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[31206])</onload>
 		<onload condition="IsEmpty(Weather.Plugin) + Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.1.Path,PlayMedia("special://skin/extras/Streaming/Radio105NetworkTV.strm"))</onload>
@@ -288,7 +288,7 @@
 		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv)">Skin.SetString(HomeItem.3.Addon,None)</onload>
 		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv)">Skin.SetString(HomeItem.3.Widget,RecentEpisodes)</onload>
 		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv)">Skin.SetString(HomeItem.3.Type,TVShows)</onload>
-		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv) + Library.HasContent(TVShows)">Skin.SetString(HomeItem.3.Live,LiveContent)</onload>
+		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv) + Library.HasContent(TVShows)">Skin.SetString(HomeItem.3.Display,LiveContent)</onload>
 		<onload condition="!System.GetBool(pvrmanager.enabled) + System.HasAddon(script.pseudotv)">Skin.SetString(HomeItem.3.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.4.Label,$LOCALIZE[3])</onload>
 		<onload>Skin.SetString(HomeItem.4.Path,ActivateWindow(Videos,Files,return))</onload>
@@ -297,7 +297,7 @@
 		<onload>Skin.SetString(HomeItem.4.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.4.Widget,UnWatched)</onload>
 		<onload>Skin.SetString(HomeItem.4.Type,Videos)</onload>
-		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.4.Live,LiveContent)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.4.Display,LiveContent)</onload>
 		<onload>Skin.SetString(HomeItem.4.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="Library.HasContent(Movies) + !System.HasAddon(script.cinema.experience)">Skin.SetString(HomeItem.5.Label,$LOCALIZE[20342])</onload>
 		<onload condition="Library.HasContent(Movies) + !System.HasAddon(script.cinema.experience)">Skin.SetString(HomeItem.5.Path,ActivateWindow(Videos,MovieTitles,return))</onload>
@@ -308,7 +308,7 @@
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Addon,None)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Widget,RecentMovies)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Type,Movies)</onload>
-		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Live,LiveContent)</onload>
+		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Display,LiveContent)</onload>
 		<onload condition="Library.HasContent(Movies)">Skin.SetString(HomeItem.5.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Label,$LOCALIZE[20343])</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Path,ActivateWindow(Videos,TVShowTitles,return))</onload>
@@ -317,7 +317,7 @@
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Addon,None)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Widget,RecentEpisodes)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Type,TVShows)</onload>
-		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Live,LiveContent)</onload>
+		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Display,LiveContent)</onload>
 		<onload condition="Library.HasContent(TVShows)">Skin.SetString(HomeItem.6.Fanart,special://skin/backgrounds/homescreen/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeItem.7.Label,$LOCALIZE[2])</onload>
 		<onload>Skin.SetString(HomeItem.7.Path,ActivateWindow(Music))</onload>
@@ -326,7 +326,7 @@
 		<onload>Skin.SetString(HomeItem.7.Addon,None)</onload>
 		<onload>Skin.SetString(HomeItem.7.Widget,RecentAlbums)</onload>
 		<onload>Skin.SetString(HomeItem.7.Type,Music)</onload>
-		<onload condition="Library.HasContent(Music)">Skin.SetString(HomeItem.7.Live,LiveContent)</onload>
+		<onload condition="Library.HasContent(Music)">Skin.SetString(HomeItem.7.Display,LiveContent)</onload>
 		<onload>Skin.SetString(HomeItem.7.Fanart,special://skin/backgrounds/homescreen/music.jpg)</onload>
 		<onload condition="!Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Label,$LOCALIZE[31206])</onload>
 		<onload condition="!Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Path,PlayMedia("special://skin/extras/Streaming/Radio105NetworkTV.strm"))</onload>
@@ -342,7 +342,7 @@
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Addon,None)</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Widget,RecentConcerts)</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Type,Concerts)</onload>
-		<!--onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Live,LiveContent)</onload-->
+		<!--onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeItem.8.Display,LiveContent)</onload-->
 		<onload>Skin.SetString(HomeItem.8.Fanart,special://skin/backgrounds/homescreen/musicvideos.jpg)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[8])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Path,ActivateWindow(Weather))</onload>
@@ -351,7 +351,7 @@
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Addon,None)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Widget,Weather)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,Weather)</onload>
-		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Live,LiveContent)</onload>
+		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Display,LiveContent)</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/weather.jpg)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Label,$LOCALIZE[31610])</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
@@ -359,8 +359,8 @@
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Sub,Movies)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Stats,Playlists)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Addon,None)</onload>
-		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Widget,PlayListVideo)</onload>
-		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,PlayListVideo)</onload>
+		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Widget,PlayList)</onload>
+		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Type,PlayList)</onload>
 		<onload condition="IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.9.Fanart,special://skin/backgrounds/homescreen/playlist.jpg)</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(HomeItem.10.Label,$LOCALIZE[0])</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher) + !System.Platform.Android">Skin.SetString(HomeItem.10.Path,ActivateWindow(Programs,Addons,return))</onload>
