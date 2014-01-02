@@ -411,14 +411,14 @@
 		<value condition="Skin.HasSetting(PlayFavouriteList)">XBMC.RunScript(script.favourites,playlists=play)</value>
 		<value>XBMC.RunScript(script.favourites)</value>
 	</variable>
-	
-	
 	<variable name="PlaylistSortOrder" type="text">
 		<value condition="Skin.HasSetting(EnableRandomPlaylist)">Random</value>
 		<value>Playlist</value>
 	</variable>
-	
-	
+	<variable name="UsrMPAACountry" type="text">
+		<value condition="!IsEmpty(Skin.String(MPAACountryCert))">$INFO[Skin.String(MPAACountryCert)]</value>
+		<value>$LOCALIZE[31700]</value>
+	</variable>
 	<variable name="SubMenuVideosOne" type="text">
 		<value condition="!IsEmpty(Skin.String(SubVideos.1.Label))">$INFO[Skin.String(SubVideos.1.Label)]</value>
 		<value>$LOCALIZE[342]</value>
@@ -1666,39 +1666,47 @@
 		<value>dv</value>
 	</variable>
 	<variable name="InfoWidgetMediaGenre">
-		<value condition="Player.HasVideo + !Control.HasFocus(510)">$INFO[VideoPlayer.Genre]</value>
 		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[MusicPlayer.Genre]</value>
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Property(Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Genre)]</value>
 	</variable>
 	<variable name="InfoWidgetMediaPlot">
-		<value condition="Player.HasVideo + !Control.HasFocus(510)">$INFO[VideoPlayer.Plot]</value>
+		<value condition="Player.HasVideo + !Control.HasFocus(510)">$VAR[VideoPlayingDescription]</value>
 		<value condition="Player.HasAudio + !Skin.HasSetting(DisableSlideShowArt) + ![IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) | Control.HasFocus(510)]">[COLOR=white]$LOCALIZE[31263]$LOCALIZE[31000] [/COLOR]$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]   $INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), - ]</value>
 		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(Artist_Description)]</value>
 		<value condition="Player.HasAudio + Skin.HasSetting(DisableSlideShowArt) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(Artist_Description)]</value>
+		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Property(PlotOutline))">$INFO[Container(510).ListItem.Property(PlotOutline)]</value>
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Property(Plot)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.PlotOutline))">$INFO[Window(home).Property(RecommendedMovie.1.PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.PlotOutline))">$INFO[Window(home).Property(RecommendedMovie.1.PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.PlotOutline))">$INFO[Window(home).Property(RecommendedMovie.1.PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.PlotOutline))">$INFO[Window(home).Property(RecommendedMovie.1.PlotOutline)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Plot)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Container(510).ListItem.Property(PlotOutline))">$INFO[Container(510).ListItem.Property(PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Container(510).ListItem.Property(PlotOutline))">$INFO[Container(510).ListItem.Property(PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Container(510).ListItem.Property(PlotOutline))">$INFO[Container(510).ListItem.Property(PlotOutline)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + !IsEmpty(Container(510).ListItem.Property(PlotOutline))">$INFO[Container(510).ListItem.Property(PlotOutline)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Plot)]</value>
@@ -1734,47 +1742,35 @@
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Plot)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Plot)]</value>
 	</variable>
-	<variable name="InfoWidgetPlayPercent">
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
-		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicVideo) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
-	
-	
+	<variable name="PlayingTimeDuration">
+		<value condition="Player.HasMedia + !Player.Paused">$INFO[Player.Time]$INFO[Player.Duration, / ]</value>
+		<value condition="Player.HasMedia + Player.Paused">$LOCALIZE[31068]</value>
 	</variable>
 	<variable name="InfoWidgetSuggestedRunTime">
-		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
-		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
-		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black]  |  [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
+		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMovie.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMovie.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</value>
+		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedEpisode.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedEpisode.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedEpisode.1.Runtime)]</value>
+		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![SubString(RecommendedMusicVideo.1.Runtime,min) | Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)] $LOCALIZE[12391]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + SubString(RecommendedMusicVideo.1.Runtime,min) + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$LOCALIZE[31264]  $VAR[InfoWidgetPlayPercent][COLOR=black] $LOCALIZE[31084] [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
@@ -1782,66 +1778,6 @@
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[31265]</value>
-	</variable>
-	<variable name="InfoWidgetMPAA">
-		<value condition="Player.HasVideo + !Control.HasFocus(510)">$INFO[VideoPlayer.mpaa]</value>
-		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Property(Mpaa)]</value>
-	</variable>
-	<variable name="InfoWidgetMovieRating">
-		<!--value condition="!IntegerGreaterThan(Container(510).ListItem.Property(Rating),2)">LeftRating/rating1.png</value-->
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Rating),2) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),4)">LeftRating/rating2.png</value>
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Rating),4) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),7)">LeftRating/rating3.png</value>
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Rating),7) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),9)">LeftRating/rating4.png</value>
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Rating),9)">LeftRating/rating5.png</value>
-	</variable>
-	<variable name="InfoWidgetMusicRating">
-		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[Player.StarRating,LeftRating/]</value>
-		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),1)">LeftRating/rating1.png</value>
-		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),2)">LeftRating/rating2.png</value>
-		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),3)">LeftRating/rating3.png</value>
-		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),4)">LeftRating/rating4.png</value>
-		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),5)">LeftRating/rating5.png</value>
-	</variable>
-	<variable name="InfoWidgetMediaYear">
-		<value condition="Player.HasVideo + !Control.HasFocus(510)">$INFO[VideoPlayer.Year]</value>
-		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[MusicPlayer.Year]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Year),0)">$INFO[Container(510).ListItem.Property(Year)]</value>
-		<value>$LOCALIZE[31266]</value>
 	</variable>
 	<variable name="InfoWidgetMediaRunTime">
 		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Property(Runtime)) + !SubString(Container(510).ListItem.Property(Runtime),min)">$INFO[Container(510).ListItem.Property(Runtime)] $LOCALIZE[12391]</value>
@@ -1870,7 +1806,133 @@
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title)) + SubString(Container(510).ListItem.Property(Runtime),min)">$INFO[Container(510).ListItem.Property(Runtime)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title)) + !IsEmpty(Container(510).ListItem.Property(Runtime)) + !SubString(Container(510).ListItem.Property(Runtime),min)">$INFO[Container(510).ListItem.Property(Runtime)] $LOCALIZE[12391]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title)) + SubString(Container(510).ListItem.Property(Runtime),min)">$INFO[Container(510).ListItem.Property(Runtime)]</value>
-		</variable>
+	</variable>
+	<variable name="InfoWidgetMediaYear">
+		<value condition="Player.HasVideo + !Control.HasFocus(510)  + !IsEmpty(VideoPlayer.Year)">$INFO[VideoPlayer.Year]</value>
+		<value condition="Player.HasAudio + !Control.HasFocus(510)  + !IsEmpty(MusicPlayer.Year)">$INFO[MusicPlayer.Year]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),MusicVideo) + !IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Year),0)">$INFO[Container(510).ListItem.Property(Year)]</value>
+		<value>$LOCALIZE[31266]</value>
+	</variable>
+	<variable name="InfoWidgetMediaRating">
+		<value condition="Player.HasVideo + !Control.HasFocus(510) + !IsEmpty(VideoPlayer.Rating)">$LOCALIZE[563]$LOCALIZE[31000] $INFO[VideoPlayer.Rating]</value>
+		<value condition="Player.HasAudio + !Control.HasFocus(510) + !IsEmpty(MusicPlayer.Rating)">$LOCALIZE[563]$LOCALIZE[31000] $INFO[MusicPlayer.Rating]</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),0)">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedMovie.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedMovie.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedMovie.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedMovie.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + !IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Window(home).Property(RecommendedAlbum.1.Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$LOCALIZE[563]$LOCALIZE[31000] $INFO[Container(510).ListItem.Property(Rating)]</value>
+		<value>$LOCALIZE[31229]</value>
+	</variable>
+	<variable name="InfoWidgetPlayerRating">
+		<value condition="Player.HasAudio">$INFO[Player.StarRating,LeftRating/]</value>
+		<value condition="Player.HasVideo + !IntegerGreaterThan(VideoPlayer.Rating,2)">LeftRating/rating1.png</value>
+		<value condition="Player.HasVideo + IntegerGreaterThan(VideoPlayer.Rating,2) + !IntegerGreaterThan(VideoPlayer.Rating,4)">LeftRating/rating2.png</value>
+		<value condition="Player.HasVideo + IntegerGreaterThan(VideoPlayer.Rating,4) + !IntegerGreaterThan(VideoPlayer.Rating,7)">LeftRating/rating3.png</value>
+		<value condition="Player.HasVideo + IntegerGreaterThan(VideoPlayer.Rating,7) + !IntegerGreaterThan(VideoPlayer.Rating,9)">LeftRating/rating4.png</value>
+		<value condition="Player.HasVideo + IntegerGreaterThan(VideoPlayer.Rating,9)">LeftRating/rating5.png</value>
+	</variable>
+	<variable name="InfoWidgetMovieRating">
+		<value condition="Control.HasFocus(510) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),2)">LeftRating/rating1.png</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),2) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),4)">LeftRating/rating2.png</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),4) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),7)">LeftRating/rating3.png</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),7) + !IntegerGreaterThan(Container(510).ListItem.Property(Rating),9)">LeftRating/rating4.png</value>
+		<value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IntegerGreaterThan(Window(Home).Property(RecentMovie.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating5.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2)">LeftRating/rating1.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),2) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4)">LeftRating/rating2.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),4) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7)">LeftRating/rating3.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),7) + !IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating4.png</value>
+		<value condition="!Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + IntegerGreaterThan(Window(Home).Property(RecentEpisode.1.Rating),9)">LeftRating/rating5.png</value>
+	</variable>
+	<variable name="InfoWidgetPlayPercent">
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicVideo) + !Player.HasMedia">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayed)]</value>
+	</variable>
 	<variable name="InfoWidgetFanArt">
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>
@@ -1910,9 +1972,9 @@
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Music) + IsEmpty(Window(Home).Property(RecommendedAlbum.1.Title))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
-		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(DisableSlideShowArt)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
-		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(DisableSlideShowArt)] + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
-		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(DisableSlideShowArt)] + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
+		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | Skin.HasSetting(DisableSlideShowArt)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
+		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | Skin.HasSetting(DisableSlideShowArt)] + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
+		<value condition="Player.HasAudio + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | Skin.HasSetting(DisableSlideShowArt)] + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Property(Fanart)]</value>
 		<value>SmallFanartFallback.jpg</value>
 	</variable>
@@ -1959,10 +2021,6 @@
 		<value condition="Player.HasVideo + ![Control.HasFocus(510)]">$INFO[VideoPlayer.Cover]</value>
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Icon]</value>
 	</variable>
-	<variable name="PlayingTimeDuration">
-		<value condition="Player.HasMedia + !Player.Paused">$INFO[Player.Time]$INFO[Player.Duration, / ]</value>
-		<value condition="Player.HasMedia + Player.Paused">$LOCALIZE[31068]</value>
-	</variable>
 	<variable name="InfoWidgetPlayBtn">
 		<value condition="[Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidget/InfoWidgetPlayBtn.png</value>
 		<value condition="Player.HasMedia + ![Player.Paused | Player.Forwarding | Player.Rewinding]">InfoWidget/InfoWidgetPauseBtn.png</value>
@@ -1986,10 +2044,10 @@
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Label]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Label]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Movie) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))">$INFO[Container(510).ListItem.Label]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
-		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</value>
+		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(PlayListType),Episode) + !IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))">$INFO[Container(510).ListItem.Label]</value>
@@ -2045,11 +2103,13 @@
 		<value condition="IsEmpty(Container(510).ListItem.Property(EpisodeNumber)) + Control.HasFocus(510)">$INFO[Container(510).ListItem.Label2]</value>
 		<value condition="!IsEmpty(Container(510).ListItem.Property(EpisodeNumber))">$INFO[Container(510).ListItem.Label2]$INFO[Container(510).ListItem.Property(EpisodeNumber),[COLOR=80FFFFFF] | [/COLOR]]</value>
 	</variable>
-	<variable name="InfoWidgetMediaRating">
-		<value condition="Player.HasVideo + !Control.HasFocus(510)">$INFO[VideoPlayer.Rating]</value>
-		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[MusicPlayer.Rating]</value>
-		<!--value condition="Control.HasFocus(510) + IntegerGreaterThan(Container(510).ListItem.Property(Rating),0)">$INFO[Container(510).ListItem.Property(Rating)]</value-->
-		<value condition="IntegerGreaterThan(Container(510).ListItem.Property(Rating),0)">$INFO[Container(510).ListItem.Property(Rating)]</value>
+	<variable name="InfoWidgetMusicRating">
+		<value condition="Player.HasAudio + !Control.HasFocus(510)">$INFO[Player.StarRating,LeftRating/]</value>
+		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),1)">LeftRating/rating1.png</value>
+		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),2)">LeftRating/rating2.png</value>
+		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),3)">LeftRating/rating3.png</value>
+		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),4)">LeftRating/rating4.png</value>
+		<value condition="Control.HasFocus(510) + StringCompare(Container(510).ListItem.Property(Rating),5)">LeftRating/rating5.png</value>
 	</variable>
 	<variable name="MediaWidgetMode">
 		<value condition="StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies)">$LOCALIZE[31198]</value>
@@ -2201,20 +2261,20 @@
 		<value condition="substring(ListItem.FilenameAndPath,vhs)">vhs</value>
 		<value>$INFO[ListItem.VideoResolution]</value>
 	</variable>
-	<variable name="rating">
+	<variable name="RatingMPAA">
 		<value condition="substring(ListItem.Mpaa,TV-Y) + ![substring(ListItem.Mpaa,TV-Y7) | substring(ListItem.Mpaa,TV-Y7-FV)]">TV/tv-y</value>
 		<value condition="substring(ListItem.Mpaa,TV-Y7) | substring(ListItem.Mpaa,TV-Y7-FV)">TV/tv-y7</value>
 		<value condition="substring(ListItem.Mpaa,TV-G)">TV/tv-g</value>
 		<value condition="substring(ListItem.Mpaa,TV-PG)">TV/tv-pg</value>
 		<value condition="substring(ListItem.Mpaa,TV-14)">TV/tv-14</value>
 		<value condition="substring(ListItem.Mpaa,TV-MA)">TV/tv-ma</value>
-		<value condition="substring(ListItem.Mpaa,UK) + substring(ListItem.Mpaa,R18)">UK/bbfc_r18</value>
-		<value condition="substring(ListItem.Mpaa,UK) + substring(ListItem.Mpaa,18)">UK/bbfc_18</value>
-		<value condition="substring(ListItem.Mpaa,UK:) + substring(ListItem.Mpaa,15)">UK/bbfc_15</value>
-		<value condition="substring(ListItem.Mpaa,UK) + substring(ListItem.Mpaa,12A)">UK/bbfc_12a</value>
-		<value condition="substring(ListItem.Mpaa,UK) + substring(ListItem.Mpaa,12)">UK/bbfc_12</value>
-		<value condition="substring(ListItem.Mpaa,UK) + substring(ListItem.Mpaa,PG)">UK/bbfc_pg</value>
-		<value condition="substring(ListItem.Mpaa,UK U) | substring(ListItem.Mpaa,UK:U)">UK/bbfc_u</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:R18)">UK/bbfc_r18</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:18)">UK/bbfc_18</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:15)">UK/bbfc_15</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:12A)">UK/bbfc_12a</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:12)">UK/bbfc_12</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:PG)">UK/bbfc_pg</value>
+		<value condition="StringCompare(ListItem.Mpaa,UK:U)">UK/bbfc_u</value>
 		<value condition="substring(ListItem.Mpaa,FSK18) | substring(ListItem.Mpaa,FSK 18) | substring(ListItem.Mpaa,ab 18)">DE/fsk_18</value>
 		<value condition="substring(ListItem.Mpaa,FSK16) | substring(ListItem.Mpaa,FSK 16) | substring(ListItem.Mpaa,ab 16)">DE/fsk_16</value>
 		<value condition="substring(ListItem.Mpaa,FSK12) | substring(ListItem.Mpaa,FSK 12) | substring(ListItem.Mpaa,ab 12)">DE/fsk_12</value>
@@ -2236,15 +2296,367 @@
 		<value condition="substring(ListItem.mpaa,15세)">KR/KR_Certificate_15</value>
 		<value condition="substring(ListItem.mpaa,불가)">KR/KR_Certificate_18</value>
 		<value condition="substring(ListItem.mpaa,제한)">KR/KR_Certificate_R</value>
-		<value condition="substring(ListItem.Mpaa,13)">mpaa_pg13</value>
-		<value condition="substring(ListItem.Mpaa,PG)">mpaa_pg</value>
-		<value condition="substring(ListItem.Mpaa,G)">mpaa_general</value>
-		<value condition="substring(ListItem.Mpaa,17)">mpaa_nc17</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + [substring(ListItem.Mpaa,Rated R) | substring(ListItem.Mpaa,Rated: R)]">UK/bbfc_r18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,R) + !substring(listitem.mpaa,Rated)">UK/bbfc_r18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,18)">UK/bbfc_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,15)">UK/bbfc_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12A)">UK/bbfc_12a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,12)">UK/bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,PG)">UK/bbfc_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(listitem.mpaa,U)">UK/bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,18)">DE/fsk_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,16)">DE/fsk_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,12)">DE/fsk_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,6)">DE/fsk_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(listitem.mpaa,0)">DE/fsk_0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,PG)">Aus/oflcPG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,G)">Aus/oflcG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,MA)">Aus/oflcMA15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,M)">Aus/oflcM</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + [substring(ListItem.Mpaa,Rated R) | substring(ListItem.Mpaa,Rated: R)]">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(listitem.mpaa,R) + !substring(listitem.mpaa,Rated)">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,G)">Jpn/jpn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,12)">Jpn/jpn_pg12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,15)">Jpn/jpn_15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(listitem.mpaa,18)">Jpn/jpn_18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,III)">HK/hk_3</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,IIB)">HK/hk_2b</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,IIA)">HK/hk_2a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,II)">HK/hk_2</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(listitem.mpaa,I)">HK/hk_1</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,blicos)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,GA)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,10)">Bra/br_10</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,12)">Bra/br_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,14)">Bra/br_14</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,16)">Bra/br_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(listitem.mpaa,18)">Bra/br_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,A)">DK/dk_a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,7)">DK/dk_7</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,11)">DK/dk_11</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,15)">DK/dk_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(listitem.mpaa,F)">DK/dk_f</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,PG)">Can/cn_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,G)">Can/cn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,14)">Can/cn_14a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,18)">Can/cn_18a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + [substring(ListItem.Mpaa,Rated R) | substring(ListItem.Mpaa,Rated: R)]">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(listitem.mpaa,R) + !substring(listitem.mpaa,Rated)">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,G)">Ire/ie_12APG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,12)">Ire/ie_12A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,15)">Ire/ie_12A15A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,16)">Ire/ie_12A16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(listitem.mpaa,18)">Ire/ie_12A18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,A)">NL/nl_AL</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,6)">NL/nl_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,9)">NL/nl_9</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,12)">NL/nl_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(listitem.mpaa,16)">NL/nl_16</value>
+		<value condition="substring(ListItem.Mpaa,Rated G) | substring(ListItem.Mpaa,Rated: G)">mpaa_general</value>
+		<value condition="[substring(ListItem.Mpaa,Rated PG) | substring(ListItem.Mpaa,Rated: PG)] + !substring(ListItem.Mpaa,Rated PG-13) + !substring(ListItem.Mpaa,Rated: PG-13)">mpaa_pg</value>
+		<value condition="substring(ListItem.Mpaa,Rated PG-13) | substring(ListItem.Mpaa,Rated: PG-13)">mpaa_pg13</value>
 		<value condition="substring(ListItem.Mpaa,Rated R) | substring(ListItem.Mpaa,Rated: R)">mpaa_restricted</value>
+		<value condition="substring(ListItem.Mpaa,Rated NC-17) | substring(ListItem.Mpaa,Rated: NC-17)">mpaa_nc17</value>
+	</variable>
+	<variable name="MovieMPAAImage">
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-Y) + ![substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-Y7) | substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-Y7-FV)]">TV/tv-y</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-Y7) | substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-Y7-FV)">TV/tv-y7</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-G)">TV/tv-g</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-PG)">TV/tv-pg</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-14)">TV/tv-14</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),TV-MA)">TV/tv-ma</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:R18)">UK/bbfc_r18</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:18)">UK/bbfc_18</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:15)">UK/bbfc_15</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:12A)">UK/bbfc_12a</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:12)">UK/bbfc_12</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:PG)">UK/bbfc_pg</value>
+		<value condition="StringCompare(Window(home).Property(RecommendedMovie.1.mpaa),UK:U)">UK/bbfc_u</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK18) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK 18) | substring(Window(home).Property(RecommendedMovie.1.mpaa),ab 18)">DE/fsk_18</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK16) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK 16) | substring(Window(home).Property(RecommendedMovie.1.mpaa),ab 16)">DE/fsk_16</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK12) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK 12) | substring(Window(home).Property(RecommendedMovie.1.mpaa),ab 12)">DE/fsk_12</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK6) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK 6) | substring(Window(home).Property(RecommendedMovie.1.mpaa),ab 6)">DE/fsk_6</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK0) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK 0) | substring(Window(home).Property(RecommendedMovie.1.mpaa),FSK o.A.)">DE/fsk_0</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),G)">Aus/oflcG</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),MA)">Aus/oflcMA15+</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),M)">Aus/oflcM</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),PG)">Aus/oflcPG</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),R)">Aus/oflcR18+</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Aus) + substring(Window(home).Property(RecommendedMovie.1.mpaa),X)">Aus/oflcX18+</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),France:U) | substring(Window(home).Property(RecommendedMovie.1.mpaa),partir de 3 ans) | substring(Window(home).Property(RecommendedMovie.1.mpaa),partir de 6 ans)">Fr/csaU</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),France:-10) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Interdit aux moins de 10 ans) | substring(Window(home).Property(RecommendedMovie.1.mpaa),des propos ou des images peuvent heurter)">Fr/csa10</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),France:-12) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Interdit aux moins de 12 ans)">Fr/csa12</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),France:-16) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Interdit aux moins de 16 ans)">Fr/csa16</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),France:-18) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Interdit aux moins de 18 ans)">Fr/csa18</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),전체)">KR/KR_Certificate_All</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),12세)">KR/KR_Certificate_12</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),15세)">KR/KR_Certificate_15</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),불가)">KR/KR_Certificate_18</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),제한)">KR/KR_Certificate_R</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + [substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated R) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: R)]">UK/bbfc_r18</value>
+		<!--value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),R) + !substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated)">UK/bbfc_r18</value-->
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">UK/bbfc_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),15)">UK/bbfc_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12A)">UK/bbfc_12a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">UK/bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),PG)">UK/bbfc_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),U)">UK/bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">DE/fsk_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),16)">DE/fsk_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">DE/fsk_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),6)">DE/fsk_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),0)">DE/fsk_0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),PG)">Aus/oflcPG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),G)">Aus/oflcG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),MA)">Aus/oflcMA15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),M)">Aus/oflcM</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + [substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated R) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: R)]">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),R) + !substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated)">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),G)">Jpn/jpn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">Jpn/jpn_pg12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),15)">Jpn/jpn_15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">Jpn/jpn_18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),III)">HK/hk_3</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),IIB)">HK/hk_2b</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),IIA)">HK/hk_2a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),II)">HK/hk_2</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),I)">HK/hk_1</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),blicos)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),GA)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),10)">Bra/br_10</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">Bra/br_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),14)">Bra/br_14</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),16)">Bra/br_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">Bra/br_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),A)">DK/dk_a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),7)">DK/dk_7</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),11)">DK/dk_11</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),15)">DK/dk_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),F)">DK/dk_f</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),PG)">Can/cn_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),G)">Can/cn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),14)">Can/cn_14a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">Can/cn_18a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + [substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated R) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: R)]">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),R) + !substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated)">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),G)">Ire/ie_12APG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">Ire/ie_12A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),15)">Ire/ie_12A15A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),16)">Ire/ie_12A16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),18)">Ire/ie_12A18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),A)">NL/nl_AL</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),6)">NL/nl_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),9)">NL/nl_9</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),12)">NL/nl_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Window(home).Property(RecommendedMovie.1.mpaa),16)">NL/nl_16</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated G) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: G)">mpaa_general</value>
+		<value condition="[substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated PG) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: PG)] + !substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated PG-13) + !substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: PG-13)">mpaa_pg</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated PG-13) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: PG-13)">mpaa_pg13</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated R) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: R)">mpaa_restricted</value>
+		<value condition="substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated NC-17) | substring(Window(home).Property(RecommendedMovie.1.mpaa),Rated: NC-17)">mpaa_nc17</value>
+	</variable>
+	<variable name="WidgetMPAAImage">
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-Y) + ![substring(Container(510).ListItem.Property(Mpaa),TV-Y7) | substring(Container(510).ListItem.Property(Mpaa),TV-Y7-FV)]">TV/tv-y</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-Y7) | substring(Container(510).ListItem.Property(Mpaa),TV-Y7-FV)">TV/tv-y7</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-G)">TV/tv-g</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-PG)">TV/tv-pg</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-14)">TV/tv-14</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),TV-MA)">TV/tv-ma</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:R18)">UK/bbfc_r18</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:18)">UK/bbfc_18</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:15)">UK/bbfc_15</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:12A)">UK/bbfc_12a</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:12)">UK/bbfc_12</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:PG)">UK/bbfc_pg</value>
+		<value condition="StringCompare(Container(510).ListItem.Property(Mpaa),UK:U)">UK/bbfc_u</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),FSK18) | substring(Container(510).ListItem.Property(Mpaa),FSK 18) | substring(Container(510).ListItem.Property(Mpaa),ab 18)">DE/fsk_18</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),FSK16) | substring(Container(510).ListItem.Property(Mpaa),FSK 16) | substring(Container(510).ListItem.Property(Mpaa),ab 16)">DE/fsk_16</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),FSK12) | substring(Container(510).ListItem.Property(Mpaa),FSK 12) | substring(Container(510).ListItem.Property(Mpaa),ab 12)">DE/fsk_12</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),FSK6) | substring(Container(510).ListItem.Property(Mpaa),FSK 6) | substring(Container(510).ListItem.Property(Mpaa),ab 6)">DE/fsk_6</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),FSK0) | substring(Container(510).ListItem.Property(Mpaa),FSK 0) | substring(Container(510).ListItem.Property(Mpaa),FSK o.A.)">DE/fsk_0</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),G)">Aus/oflcG</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),MA)">Aus/oflcMA15+</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),M)">Aus/oflcM</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),PG)">Aus/oflcPG</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),R)">Aus/oflcR18+</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Aus) + substring(Container(510).ListItem.Property(Mpaa),X)">Aus/oflcX18+</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),France:U) | substring(Container(510).ListItem.Property(Mpaa),partir de 3 ans) | substring(Container(510).ListItem.Property(Mpaa),partir de 6 ans)">Fr/csaU</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),France:-10) | substring(Container(510).ListItem.Property(Mpaa),Interdit aux moins de 10 ans) | substring(Container(510).ListItem.Property(Mpaa),des propos ou des images peuvent heurter)">Fr/csa10</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),France:-12) | substring(Container(510).ListItem.Property(Mpaa),Interdit aux moins de 12 ans)">Fr/csa12</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),France:-16) | substring(Container(510).ListItem.Property(Mpaa),Interdit aux moins de 16 ans)">Fr/csa16</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),France:-18) | substring(Container(510).ListItem.Property(Mpaa),Interdit aux moins de 18 ans)">Fr/csa18</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),전체)">KR/KR_Certificate_All</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),12세)">KR/KR_Certificate_12</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),15세)">KR/KR_Certificate_15</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),불가)">KR/KR_Certificate_18</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),제한)">KR/KR_Certificate_R</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + [substring(Container(510).ListItem.Property(Mpaa),Rated R) | substring(Container(510).ListItem.Property(Mpaa),Rated: R)]">UK/bbfc_r18</value>
+		<!--value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),R) + !substring(Container(510).ListItem.Property(Mpaa),Rated)">UK/bbfc_r18</value-->
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),18)">UK/bbfc_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),15)">UK/bbfc_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),12A)">UK/bbfc_12a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),12)">UK/bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),PG)">UK/bbfc_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(Container(510).ListItem.Property(Mpaa),U)">UK/bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Container(510).ListItem.Property(Mpaa),18)">DE/fsk_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Container(510).ListItem.Property(Mpaa),16)">DE/fsk_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Container(510).ListItem.Property(Mpaa),12)">DE/fsk_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Container(510).ListItem.Property(Mpaa),6)">DE/fsk_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(Container(510).ListItem.Property(Mpaa),0)">DE/fsk_0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),PG)">Aus/oflcPG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),G)">Aus/oflcG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),MA)">Aus/oflcMA15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),M)">Aus/oflcM</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + [substring(Container(510).ListItem.Property(Mpaa),Rated R) | substring(Container(510).ListItem.Property(Mpaa),Rated: R)]">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(Container(510).ListItem.Property(Mpaa),R) + !substring(Container(510).ListItem.Property(Mpaa),Rated)">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Container(510).ListItem.Property(Mpaa),G)">Jpn/jpn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Container(510).ListItem.Property(Mpaa),12)">Jpn/jpn_pg12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Container(510).ListItem.Property(Mpaa),15)">Jpn/jpn_15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(Container(510).ListItem.Property(Mpaa),18)">Jpn/jpn_18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Container(510).ListItem.Property(Mpaa),III)">HK/hk_3</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Container(510).ListItem.Property(Mpaa),IIB)">HK/hk_2b</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Container(510).ListItem.Property(Mpaa),IIA)">HK/hk_2a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Container(510).ListItem.Property(Mpaa),II)">HK/hk_2</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(Container(510).ListItem.Property(Mpaa),I)">HK/hk_1</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),blicos)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),GA)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),10)">Bra/br_10</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),12)">Bra/br_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),14)">Bra/br_14</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),16)">Bra/br_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(Container(510).ListItem.Property(Mpaa),18)">Bra/br_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Container(510).ListItem.Property(Mpaa),A)">DK/dk_a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Container(510).ListItem.Property(Mpaa),7)">DK/dk_7</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Container(510).ListItem.Property(Mpaa),11)">DK/dk_11</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Container(510).ListItem.Property(Mpaa),15)">DK/dk_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(Container(510).ListItem.Property(Mpaa),F)">DK/dk_f</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Container(510).ListItem.Property(Mpaa),PG)">Can/cn_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Container(510).ListItem.Property(Mpaa),G)">Can/cn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Container(510).ListItem.Property(Mpaa),14)">Can/cn_14a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Container(510).ListItem.Property(Mpaa),18)">Can/cn_18a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + [substring(Container(510).ListItem.Property(Mpaa),Rated R) | substring(Container(510).ListItem.Property(Mpaa),Rated: R)]">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(Container(510).ListItem.Property(Mpaa),R) + !substring(Container(510).ListItem.Property(Mpaa),Rated)">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Container(510).ListItem.Property(Mpaa),G)">Ire/ie_12APG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Container(510).ListItem.Property(Mpaa),12)">Ire/ie_12A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Container(510).ListItem.Property(Mpaa),15)">Ire/ie_12A15A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Container(510).ListItem.Property(Mpaa),16)">Ire/ie_12A16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(Container(510).ListItem.Property(Mpaa),18)">Ire/ie_12A18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Container(510).ListItem.Property(Mpaa),A)">NL/nl_AL</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Container(510).ListItem.Property(Mpaa),6)">NL/nl_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Container(510).ListItem.Property(Mpaa),9)">NL/nl_9</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Container(510).ListItem.Property(Mpaa),12)">NL/nl_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(Container(510).ListItem.Property(Mpaa),16)">NL/nl_16</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Rated G) | substring(Container(510).ListItem.Property(Mpaa),Rated: G)">mpaa_general</value>
+		<value condition="[substring(Container(510).ListItem.Property(Mpaa),Rated PG) | substring(Container(510).ListItem.Property(Mpaa),Rated: PG)] + !substring(Container(510).ListItem.Property(Mpaa),Rated PG-13) + !substring(Container(510).ListItem.Property(Mpaa),Rated: PG-13)">mpaa_pg</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Rated PG-13) | substring(Container(510).ListItem.Property(Mpaa),Rated: PG-13)">mpaa_pg13</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Rated R) | substring(Container(510).ListItem.Property(Mpaa),Rated: R)">mpaa_restricted</value>
+		<value condition="substring(Container(510).ListItem.Property(Mpaa),Rated NC-17) | substring(Container(510).ListItem.Property(Mpaa),Rated: NC-17)">mpaa_nc17</value>
+	</variable>
+	<variable name="VideoPlayerMPAA">
+		<value condition="substring(VideoPlayer.mpaa,TV-Y) + ![substring(VideoPlayer.mpaa,TV-Y7) | substring(VideoPlayer.mpaa,TV-Y7-FV)]">TV/tv-y</value>
+		<value condition="substring(VideoPlayer.mpaa,TV-Y7) | substring(VideoPlayer.mpaa,TV-Y7-FV)">TV/tv-y7</value>
+		<value condition="substring(VideoPlayer.mpaa,TV-G)">TV/tv-g</value>
+		<value condition="substring(VideoPlayer.mpaa,TV-PG)">TV/tv-pg</value>
+		<value condition="substring(VideoPlayer.mpaa,TV-14)">TV/tv-14</value>
+		<value condition="substring(VideoPlayer.mpaa,TV-MA)">TV/tv-ma</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:R18)">UK/bbfc_r18</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:18)">UK/bbfc_18</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:15)">UK/bbfc_15</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:12A)">UK/bbfc_12a</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:12)">UK/bbfc_12</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:PG)">UK/bbfc_pg</value>
+		<value condition="StringCompare(VideoPlayer.mpaa,UK:U)">UK/bbfc_u</value>
+		<value condition="substring(VideoPlayer.mpaa,FSK18) | substring(VideoPlayer.mpaa,FSK 18) | substring(VideoPlayer.mpaa,ab 18)">DE/fsk_18</value>
+		<value condition="substring(VideoPlayer.mpaa,FSK16) | substring(VideoPlayer.mpaa,FSK 16) | substring(VideoPlayer.mpaa,ab 16)">DE/fsk_16</value>
+		<value condition="substring(VideoPlayer.mpaa,FSK12) | substring(VideoPlayer.mpaa,FSK 12) | substring(VideoPlayer.mpaa,ab 12)">DE/fsk_12</value>
+		<value condition="substring(VideoPlayer.mpaa,FSK6) | substring(VideoPlayer.mpaa,FSK 6) | substring(VideoPlayer.mpaa,ab 6)">DE/fsk_6</value>
+		<value condition="substring(VideoPlayer.mpaa,FSK0) | substring(VideoPlayer.mpaa,FSK 0) | substring(VideoPlayer.mpaa,FSK o.A.)">DE/fsk_0</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,G)">Aus/oflcG</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,MA)">Aus/oflcMA15+</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,M)">Aus/oflcM</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,PG)">Aus/oflcPG</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,R)">Aus/oflcR18+</value>
+		<value condition="substring(VideoPlayer.mpaa,Aus) + substring(VideoPlayer.mpaa,X)">Aus/oflcX18+</value>
+		<value condition="substring(VideoPlayer.mpaa,France:U) | substring(VideoPlayer.mpaa,partir de 3 ans) | substring(VideoPlayer.mpaa,partir de 6 ans)">Fr/csaU</value>
+		<value condition="substring(VideoPlayer.mpaa,France:-10) | substring(VideoPlayer.mpaa,Interdit aux moins de 10 ans) | substring(VideoPlayer.mpaa,des propos ou des images peuvent heurter)">Fr/csa10</value>
+		<value condition="substring(VideoPlayer.mpaa,France:-12) | substring(VideoPlayer.mpaa,Interdit aux moins de 12 ans)">Fr/csa12</value>
+		<value condition="substring(VideoPlayer.mpaa,France:-16) | substring(VideoPlayer.mpaa,Interdit aux moins de 16 ans)">Fr/csa16</value>
+		<value condition="substring(VideoPlayer.mpaa,France:-18) | substring(VideoPlayer.mpaa,Interdit aux moins de 18 ans)">Fr/csa18</value>
+		<value condition="substring(VideoPlayer.mpaa,전체)">KR/KR_Certificate_All</value>
+		<value condition="substring(VideoPlayer.mpaa,12세)">KR/KR_Certificate_12</value>
+		<value condition="substring(VideoPlayer.mpaa,15세)">KR/KR_Certificate_15</value>
+		<value condition="substring(VideoPlayer.mpaa,불가)">KR/KR_Certificate_18</value>
+		<value condition="substring(VideoPlayer.mpaa,제한)">KR/KR_Certificate_R</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + [substring(VideoPlayer.mpaa,Rated R) | substring(VideoPlayer.mpaa,Rated: R)]">UK/bbfc_r18</value>
+		<!--value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,R) + !substring(VideoPlayer.mpaa,Rated)">UK/bbfc_r18</value-->
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,18)">UK/bbfc_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,15)">UK/bbfc_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,12A)">UK/bbfc_12a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,12)">UK/bbfc_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,PG)">UK/bbfc_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701]) + substring(VideoPlayer.mpaa,U)">UK/bbfc_u</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(VideoPlayer.mpaa,18)">DE/fsk_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(VideoPlayer.mpaa,16)">DE/fsk_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(VideoPlayer.mpaa,12)">DE/fsk_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(VideoPlayer.mpaa,6)">DE/fsk_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702]) + substring(VideoPlayer.mpaa,0)">DE/fsk_0</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,PG)">Aus/oflcPG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,G)">Aus/oflcG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,MA)">Aus/oflcMA15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,M)">Aus/oflcM</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,X)">Aus/oflcX18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + [substring(VideoPlayer.mpaa,Rated R) | substring(VideoPlayer.mpaa,Rated: R)]">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703]) + substring(VideoPlayer.mpaa,R) + !substring(VideoPlayer.mpaa,Rated)">Aus/oflcR18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(VideoPlayer.mpaa,G)">Jpn/jpn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(VideoPlayer.mpaa,12)">Jpn/jpn_pg12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(VideoPlayer.mpaa,15)">Jpn/jpn_15+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704]) + substring(VideoPlayer.mpaa,18)">Jpn/jpn_18+</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(VideoPlayer.mpaa,III)">HK/hk_3</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(VideoPlayer.mpaa,IIB)">HK/hk_2b</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(VideoPlayer.mpaa,IIA)">HK/hk_2a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(VideoPlayer.mpaa,II)">HK/hk_2</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705]) + substring(VideoPlayer.mpaa,I)">HK/hk_1</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,blicos)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,GA)">Bra/br_L</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,10)">Bra/br_10</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,12)">Bra/br_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,14)">Bra/br_14</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,16)">Bra/br_16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706]) + substring(VideoPlayer.mpaa,18)">Bra/br_18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(VideoPlayer.mpaa,A)">DK/dk_a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(VideoPlayer.mpaa,7)">DK/dk_7</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(VideoPlayer.mpaa,11)">DK/dk_11</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(VideoPlayer.mpaa,15)">DK/dk_15</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707]) + substring(VideoPlayer.mpaa,F)">DK/dk_f</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(VideoPlayer.mpaa,PG)">Can/cn_pg</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(VideoPlayer.mpaa,G)">Can/cn_g</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(VideoPlayer.mpaa,14)">Can/cn_14a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(VideoPlayer.mpaa,18)">Can/cn_18a</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + [substring(VideoPlayer.mpaa,Rated R) | substring(VideoPlayer.mpaa,Rated: R)]">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708]) + substring(VideoPlayer.mpaa,R) + !substring(VideoPlayer.mpaa,Rated)">Can/cn_r</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(VideoPlayer.mpaa,G)">Ire/ie_12APG</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(VideoPlayer.mpaa,12)">Ire/ie_12A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(VideoPlayer.mpaa,15)">Ire/ie_12A15A</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(VideoPlayer.mpaa,16)">Ire/ie_12A16</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709]) + substring(VideoPlayer.mpaa,18)">Ire/ie_12A18</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(VideoPlayer.mpaa,A)">NL/nl_AL</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(VideoPlayer.mpaa,6)">NL/nl_6</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(VideoPlayer.mpaa,9)">NL/nl_9</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(VideoPlayer.mpaa,12)">NL/nl_12</value>
+		<value condition="stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710]) + substring(VideoPlayer.mpaa,16)">NL/nl_16</value>
+		<value condition="substring(VideoPlayer.mpaa,Rated G) | substring(VideoPlayer.mpaa,Rated: G)">mpaa_general</value>
+		<value condition="[substring(VideoPlayer.mpaa,Rated PG) | substring(VideoPlayer.mpaa,Rated: PG)] + !substring(VideoPlayer.mpaa,Rated PG-13) + !substring(VideoPlayer.mpaa,Rated: PG-13)">mpaa_pg</value>
+		<value condition="substring(VideoPlayer.mpaa,Rated PG-13) | substring(VideoPlayer.mpaa,Rated: PG-13)">mpaa_pg13</value>
+		<value condition="substring(VideoPlayer.mpaa,Rated R) | substring(VideoPlayer.mpaa,Rated: R)">mpaa_restricted</value>
+		<value condition="substring(VideoPlayer.mpaa,Rated NC-17) | substring(VideoPlayer.mpaa,Rated: NC-17)">mpaa_nc17</value>
 	</variable>
 	<variable name="GeneralSectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label] $INFO[Container(9000).ListItem.Label2]</value>
-		<value condition="Control.HasFocus(101)">$LOCALIZE[31906]</value>
+		<value condition="Control.HasFocus(101)">$LOCALIZE[31911]</value>
+		<value condition="Control.HasFocus(102)">$LOCALIZE[31906]</value>
 		<value condition="Control.HasFocus(103)">$LOCALIZE[31907]</value>
 		<value condition="Control.HasFocus(104)">$LOCALIZE[31908]</value>
 		<value condition="Control.HasFocus(105)">$LOCALIZE[31909]</value>

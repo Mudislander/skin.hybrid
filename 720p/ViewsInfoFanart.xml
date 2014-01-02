@@ -384,7 +384,7 @@
 					<width>50</width>
 					<height>54</height>
 					<aspectratio align="right">stretch</aspectratio>
-					<texture>$VAR[rating,flagging/ratings/,.png]</texture>
+					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="image">
@@ -394,7 +394,7 @@
 					<width>50</width>
 					<height>54</height>
 					<aspectratio align="right">stretch</aspectratio>
-					<texture diffuse="diffuse_mirror.png" flipy="true" background="true">$VAR[rating,flagging/ratings/,.png]</texture>
+					<texture diffuse="diffuse_mirror.png" flipy="true" background="true">$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="grouplist">
@@ -585,7 +585,7 @@
 					<width>50</width>
 					<height>54</height>
 					<aspectratio align="right">stretch</aspectratio>
-					<texture>$VAR[rating,flagging/ratings/,.png]</texture>
+					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 				<control type="image">
@@ -595,7 +595,7 @@
 					<width>50</width>
 					<height>54</height>
 					<aspectratio align="right">stretch</aspectratio>
-					<texture diffuse="diffuse_mirror.png" flipy="true" background="true">$VAR[rating,flagging/ratings/,.png]</texture>
+					<texture diffuse="diffuse_mirror.png" flipy="true" background="true">$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 			</control>

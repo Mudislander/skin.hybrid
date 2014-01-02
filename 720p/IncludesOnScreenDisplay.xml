@@ -22,7 +22,7 @@
 			<control type="textbox" id="1">
 				<description>Description Value The Movie</description>
 				<left>20</left>
-				<top>30</top>
+				<top>20</top>
 				<width>880</width>
 				<height>145</height>
 				<align>justify</align>
@@ -30,6 +30,16 @@
 				<font>font13</font>
 				<label>$VAR[VideoPlayingDescription,[B][COLOR=red]$LOCALIZE[207]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+			</control>
+			<control type="grouplist" id="1">
+				<description>Media Genre Flagging</description>
+				<left>20</left>
+				<top>175</top>
+				<width>880</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<include>MediaWidgetGenre</include>
 			</control>
 		</control>
 	</include>
@@ -169,14 +179,15 @@
 	</include>
 	<include name="OSDMediaFlagging">
 		<control type="grouplist" id="1">
-			<left>20</left>
+			<left>0</left>
 			<top>60</top>
 			<width>910</width>
 			<height>35</height>
 			<itemgap>5</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="label" id="1">
-				<width min="10" max="710">auto</width>
+				<!--width min="10" max="710">auto</width-->
+				<width min="10" max="690">auto</width>
 				<height>30</height>
 				<font>font30</font>
 				<align>left</align>
@@ -184,6 +195,14 @@
 				<label>$VAR[VideoNowPlaying]</label>
 				<textcolor>orange</textcolor>
 				<scroll>true</scroll>
+			</control>
+			<control type="image" id="1">
+				<description>MPAA Image</description>
+				<width>75</width>
+				<height>35</height>
+				<aspectratio align="center">keep</aspectratio>
+				<texture>$VAR[VideoPlayerMPAA,flagging/ratings/,.png]</texture>
+				<visible>!IsEmpty(VideoPlayer.mpaa)</visible>
 			</control>
 			<control type="image" id="1">
 				<description>Video Resolution Image</description>
@@ -206,7 +225,15 @@
 				<aspectratio align="center">keep</aspectratio>
 				<texture>$INFO[VideoPlayer.AudioChannels,flagging/audio/,.png]</texture>
 			</control>
-			<control type="group" id="1">
+			<control type="image" id="1">
+				<description>Audio Language</description>
+				<width>48</width>
+				<height>35</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>$INFO[VideoPlayer.AudioLanguage,flagging/country/,.png]</texture>
+				<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
+			</control>
+			<!--control type="group" id="1">
 				<width>85</width>
 				<height>35</height>
 				<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
@@ -228,7 +255,7 @@
 					<label>$INFO[VideoPlayer.AudioLanguage]</label>
 					<textcolor>grey</textcolor>
 				</control>
-			</control>
+			</control-->
 		</control>
 	</include>
 	<include name="OSDMediaHeading">
@@ -271,9 +298,9 @@
 		</control>
 		<control type="label" id="1">
 			<description>Studio label</description>
-			<left>20</left>
+			<left>0</left>
 			<top>30</top>
-			<width>910</width>
+			<width>930</width>
 			<height>25</height>
 			<align>left</align>
 			<font>font12</font>
@@ -284,9 +311,9 @@
 		</control>
 		<control type="label" id="1">
 			<description>TV Show label</description>
-			<left>20</left>
+			<left>0</left>
 			<top>30</top>
-			<width>910</width>
+			<width>930</width>
 			<height>25</height>
 			<align>left</align>
 			<font>font12</font>
@@ -297,9 +324,9 @@
 		</control>
 		<control type="label" id="1">
 			<description>Music Info label</description>
-			<left>20</left>
+			<left>0</left>
 			<top>30</top>
-			<width>910</width>
+			<width>930</width>
 			<height>25</height>
 			<align>left</align>
 			<font>font12</font>
@@ -310,9 +337,9 @@
 		</control>
 		<control type="label" id="1">
 			<description>LiveTV Info label</description>
-			<left>20</left>
+			<left>0</left>
 			<top>30</top>
-			<width>910</width>
+			<width>930</width>
 			<height>25</height>
 			<align>left</align>
 			<font>font12</font>

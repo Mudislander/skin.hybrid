@@ -23,6 +23,15 @@
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Skin.String(HomeItem.8.Widget),PlayList) + !IsEmpty(Skin.String(HomeItem.8.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.8.Playlist)],method=$VAR[PlaylistSortOrder],limit=10,unwatched=True,resume=False,property=HomePlayListEight)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Skin.String(HomeItem.9.Widget),PlayList) + !IsEmpty(Skin.String(HomeItem.9.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.9.Playlist)],method=$VAR[PlaylistSortOrder],limit=10,unwatched=True,resume=False,property=HomePlayListNine)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlayList) + StringCompare(Skin.String(HomeItem.10.Widget),PlayList) + !IsEmpty(Skin.String(HomeItem.10.Playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeItem.10.Playlist)],method=$VAR[PlaylistSortOrder],limit=10,unwatched=True,resume=False,property=HomePlayListTen)</onload>
+	
+	
+	
+	
+	
+	<onload condition="Window.Previous(startup) | !Skin.HasSetting(HorizontalHomeScreen)">Control.Move(9000,$INFO[Skin.String(InitialMenuItem)])</onload>
+	
+	
+	
 	<controls>
 		<include>ArtistExtraFanArt</include>
 		<include>CommonBackground</include>

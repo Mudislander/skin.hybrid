@@ -26,7 +26,7 @@
 			<width>75</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture>$VAR[rating,flagging/ratings/,.png]</texture>
+			<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 		</control>
 	</include>
 	<include name="VideoMPAAFlaggingReflection">
@@ -35,7 +35,7 @@
 			<width>75</width>
 			<height>35</height>
 			<aspectratio align="right">keep</aspectratio>
-			<texture diffuse="diffuse_mirror2.png" flipy="true">$VAR[rating,flagging/ratings/,.png]</texture>
+			<texture diffuse="diffuse_mirror2.png" flipy="true">$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
 		</control>
 	</include>
 	<include name="VideoSubTitleFlagging">

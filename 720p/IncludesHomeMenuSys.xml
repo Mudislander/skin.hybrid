@@ -239,7 +239,11 @@
 	<include name="DefaultInitialSetup">
 		<onload condition="System.Date(11-24,1-6)">Skin.Setbool(HolidayEffects)</onload>
 		<onload>Skin.SetBool(ShowWeatherFanart)</onload>
-		<!--onload>Skin.SetString(MPAACountryCert,$LOCALIZE[##31701])</onload-->
+		<onload>Skin.SetString(MPAACountryCert,$LOCALIZE[31701])</onload>
+		<onload>Skin.SetString(InitialMenuItem,0)</onload>
+		<onload>Skin.SetString(InitialMenuPosi,2)</onload>
+		
+		
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Label,$LOCALIZE[31610])</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.Path,ActivateWindow(VideoLibrary,"special://skin/extras/Playlists/GenreFamily.xsp",return))</onload>
 		<onload condition="!IsEmpty(Weather.Plugin)">Skin.SetString(HomeItem.1.PlayList,special://skin/extras/Playlists/GenreFamily.xsp)</onload>
@@ -480,10 +484,19 @@
 		<onup condition="!Control.IsVisible(601) + Control.IsVisible(510)">510</onup>
 		<onup condition="!Control.IsVisible(601) + !Control.IsVisible(510) + !StringCompare(Container(9000).ListItem.Property(AddOnSet),None)">9003</onup>
 		<ondown>9001</ondown>
+		
 		<pagecontrol>-</pagecontrol>
 		<scrolltime>300</scrolltime>
 		<focusposition>2</focusposition>
 		<movement>1</movement>
+		
+		
+		<!--
+		<pagecontrol>-</pagecontrol>
+		<scrolltime>300</scrolltime>
+		<focusposition>2</focusposition>
+		<movement>1</movement>
+		-->
 		<orientation>Horizontal</orientation>
 		<itemlayout height="60" width="340">
 			<include>HomeSeperator</include>

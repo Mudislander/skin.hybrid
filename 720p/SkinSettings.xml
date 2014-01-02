@@ -4,6 +4,17 @@
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="System.HasAddon(script.favourites)">$VAR[RunFavouriteCmd]</onload>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
+	<onload condition="stringcompare(Container(9009).Position,0) + !stringcompare(Skin.String(InitialMenuPosi),0)">Control.Move(9009,$INFO[Skin.String(InitialMenuPosi)])</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31701])">Control.Move(9008,1)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31703])">Control.Move(9008,2)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31706])">Control.Move(9008,3)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31708])">Control.Move(9008,4)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31707])">Control.Move(9008,5)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31702])">Control.Move(9008,6)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31705])">Control.Move(9008,7)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31709])">Control.Move(9008,8)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31704])">Control.Move(9008,9)</onload>
+	<onload condition="stringcompare(Container(9008).ListItem.Label,$LOCALIZE[31700]) + stringcompare(Skin.String(MPAACountryCert),$LOCALIZE[31710])">Control.Move(9008,10)</onload>
 	<controls>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -175,14 +186,38 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="101">
+					<control type="button" id="101">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31014]</label>
+						<label2>[COLOR=selected]$INFO[Container(9009).ListItem.Label][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Control.Move(9009,1)</onclick>	
+						<onclick>Skin.SetString(InitialMenuPosi,$INFO[Container(9009).Position])</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,0)">Skin.SetString(InitialMenuItem,-1)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,1)">Skin.SetString(InitialMenuItem,0)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,2)">Skin.SetString(InitialMenuItem,1)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,3)">Skin.SetString(InitialMenuItem,2)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,4)">Skin.SetString(InitialMenuItem,3)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,5)">Skin.SetString(InitialMenuItem,4)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,6)">Skin.SetString(InitialMenuItem,5)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,7)">Skin.SetString(InitialMenuItem,6)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,8)">Skin.SetString(InitialMenuItem,7)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,9)">Skin.SetString(InitialMenuItem,8)</onclick>
+					<onclick condition="StringCompare(Container(9009).Position,10)">Skin.SetString(InitialMenuItem,-2)</onclick>
+					</control>
+					<control type="radiobutton" id="102">
 						<description>enable wrap around menu</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31273]</label>
+						<label>  $LOCALIZE[31273]</label>
 						<onclick>Skin.ToggleSetting(WrapAroundHomeMenu)</onclick>
 						<selected>Skin.HasSetting(WrapAroundHomeMenu)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -195,7 +230,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31274]</label>
+						<label>  $LOCALIZE[31274]</label>
 						<onclick>Skin.ToggleSetting(HorizontalHomeScreen)</onclick>
 						<selected>!Skin.HasSetting(HorizontalHomeScreen)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -208,7 +243,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31275]</label>
+						<label>  $LOCALIZE[31275]</label>
 						<onclick>Skin.ToggleSetting(AutoVisableSubMenu)</onclick>
 						<selected>!Skin.HasSetting(AutoVisableSubMenu)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -222,7 +257,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31276]</label>
+						<label>  $LOCALIZE[31276]</label>
 						<onclick>Skin.ToggleSetting(HideSubMenuAdvise)</onclick>
 						<selected>!Skin.HasSetting(HideSubMenuAdvise)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -236,7 +271,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31277]</label>
+						<label>  $LOCALIZE[31277]</label>
 						<onclick>Skin.ToggleSetting(HideRainDropEffect)</onclick>
 						<selected>!Skin.HasSetting(HideRainDropEffect)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -250,7 +285,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31278]</label>
+						<label>  $LOCALIZE[31278]</label>
 						<onclick>Skin.ToggleSetting(HideHomeStats)</onclick>
 						<selected>!Skin.HasSetting(HideHomeStats)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -260,7 +295,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31279]</label>
+						<label>  $LOCALIZE[31279]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -272,7 +307,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31280]</label>
+						<label>  $LOCALIZE[31280]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -284,7 +319,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31281]</label>
+						<label>  $LOCALIZE[31281]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -309,7 +344,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31013]</label>
+						<label>  $LOCALIZE[31013]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(SingleGlobalBackground)</onclick>
@@ -322,7 +357,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31272]</label>
+						<label>  $LOCALIZE[31272]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HolidayEffects)</onclick>
@@ -336,7 +371,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31338]</label>
+						<label>  $LOCALIZE[31338]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(NoAnimateVizFanart)</onclick>
@@ -349,7 +384,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31339]</label>
+						<label>  $LOCALIZE[31339]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideAutoMusicViz)</onclick>
@@ -362,7 +397,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31372]</label>
+						<label>  $LOCALIZE[31372]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
@@ -375,7 +410,7 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31373]</label>
+						<label>  $LOCALIZE[31373]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
@@ -388,17 +423,44 @@
 						<font>font13</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>$LOCALIZE[31374]</label>
+						<label>  $LOCALIZE[31374]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
+					<control type="button" id="153">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31698]</label>
+						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Control.Move(9008,1)</onclick>
+						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
+					</control>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					<control type="radiobutton" id="189">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>20189</label>
+						<label>  $LOCALIZE[20189]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -410,7 +472,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[29801]</label>
+						<label>  $LOCALIZE[29801]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -422,7 +484,7 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
-						<label>$LOCALIZE[31320]</label>
+						<label>  $LOCALIZE[31320]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
@@ -559,6 +621,167 @@
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
+				<control type="list" id="9008">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$LOCALIZE[31700]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31701]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31703]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31706]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31708]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31707]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31702]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31705]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31709]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31704]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31710]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+					</content>
+				</control>
+				
+				<control type="list" id="9009">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.1.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.2.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.3.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.4.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.5.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.6.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.7.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.8.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.9.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.10.Path))</visible>
+						</item>
+					</content>
+				</control>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
 					<left>415</left>
