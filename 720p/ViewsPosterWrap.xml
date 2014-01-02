@@ -8,7 +8,7 @@
 			<width>1280</width>
 			<height>460</height>
 			<onup>9000</onup>
-			<ondown>65</ondown>
+			<ondown>803</ondown>
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>VisibleFadeEffect</include>
 			<control type="fixedlist" id="501">
@@ -268,8 +268,8 @@
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
 				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
 				<onup>501</onup>
-				<ondown>800</ondown>
-				<showonepage>true</showonepage>
+				<ondown>803</ondown>
+				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<visible>Control.IsVisible(501)</visible>
 			</control>
@@ -313,13 +313,13 @@
 				<top>600</top>
 				<width>1280</width>
 				<height>20</height>
-				<font>font13</font>
+				<font>font12</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Duration,$LOCALIZE[2050] , $LOCALIZE[12391]]</label>
+				<label>$INFO[ListItem.Duration,[B][COLOR=red]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.LastPlayed, [B][COLOR=red]$LOCALIZE[568][/COLOR][/B] ]</label>
 			</control>
 		</control>
 		<control type="group">
@@ -383,7 +383,7 @@
 				<top>555</top>
 				<width>1280</width>
 				<height>35</height>
-				<font>font14</font>
+				<font>font12</font>
 				<textcolor>white</textcolor>
 				<scroll>false</scroll>
 				<align>center</align>
@@ -396,7 +396,7 @@
 				<top>555</top>
 				<width>1280</width>
 				<height>35</height>
-				<font>font14</font>
+				<font>font12</font>
 				<textcolor>white</textcolor>
 				<scroll>false</scroll>
 				<align>center</align>
