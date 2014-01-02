@@ -35,12 +35,12 @@
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Sub,None)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,Weather)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Addon,None)</onclick>
-				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,Weather)</onclick>
+				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,None)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Type,Weather)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/homescreen/weather.jpg)</onclick>
 				<onclick condition="Window.IsVisible(2114)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Display,LiveContent)</onclick>
 				<include>CloseMenuChoice</include>
-				<visible>!IsEmpty(Weather.Plugin)</visible>
+				<enable>!IsEmpty(Weather.Plugin)</enable>
 			</item>
 			<item>
 				<description>Pictures</description>

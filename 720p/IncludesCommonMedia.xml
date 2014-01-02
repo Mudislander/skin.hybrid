@@ -83,7 +83,7 @@
 				<include>Window_OpenClose_Animation</include>
 				<visible>!Player.HasVideo</visible>
 			</control>
-			<visible>!Player.HasAudio | Player.Paused | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
+			<visible>!Player.HasAudio | Player.Paused | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) | Window.IsVisible(weather)</visible>
 		</control>
 		<control type="group">
 			<include>AlbumArtMusicVizWall</include>
@@ -131,6 +131,10 @@
 				<visible>Window.IsVisible(home)</visible>
 				<visible>!IsEmpty(Visualisation.Name) + stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
 			</control>
+			
+			 
+			<visible>!Window.IsVisible(weather)</visible>
+			
 			<visible>Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) + !Player.Paused + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 		<control type="group">
