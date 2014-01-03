@@ -70,7 +70,7 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>!IsEmpty(Fanart.Image)</visible>
+				<visible>!IsEmpty(Fanart.Image) + !Skin.HasSetting(HideBackGroundFanart)</visible>
 				<visible>!Player.HasVideo + StringCompare(ListItem.Label,..) + [Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 			</control>
 			<control type="image">
@@ -81,9 +81,9 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
 				<include>Window_OpenClose_Animation</include>
-				<visible>!Player.HasVideo</visible>
+				<visible>!Player.HasVideo + !Skin.HasSetting(HideBackGroundFanart)</visible>
 			</control>
-			<visible>!Player.HasAudio | Player.Paused | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) | Window.IsVisible(weather)</visible>
+			<visible>Skin.HasSetting(HideNowPlayingFanart) | !Player.HasAudio | Player.Paused | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) | Window.IsVisible(weather)</visible>
 		</control>
 		<control type="group">
 			<include>AlbumArtMusicVizWall</include>
@@ -122,7 +122,6 @@
 				<include>Dimensions_Fullscreen</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
-				<!--colordiffuse>AAFFFFFF</colordiffuse-->
 				<visible>!IsEmpty(Player.Art(fanart)) + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(DisableSlideShowArt)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))</visible>
 				<fadetime>600</fadetime>
 			</control>
@@ -131,14 +130,11 @@
 				<visible>Window.IsVisible(home)</visible>
 				<visible>!IsEmpty(Visualisation.Name) + stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
 			</control>
-			
-			 
-			<visible>!Window.IsVisible(weather)</visible>
-			
-			<visible>Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) + !Player.Paused + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
+				<visible>!Window.IsVisible(weather)</visible>
+				<visible>[!Skin.HasSetting(HideNowPlayingFanart) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),FullScreen)] + Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE) + !Player.Paused + ![Window.IsVisible(PVR) + [Control.IsVisible(11) | Control.IsVisible(12)]]</visible>
 		</control>
 		<control type="group">
-			<!--visible>!Skin.HasSetting(HideBackGroundFanart) + !Skin.HasSetting(HideWidgetFanArt)</visible-->
+			<visible>!Skin.HasSetting(HideBackGroundFanart)</visible>
 			<visible>Window.IsActive(script-globalsearch-main.xml)</visible>
 			<include>VisibleFadeEffect</include>
 			<control type="image">
@@ -286,7 +282,6 @@
 			<left>0</left>
 			<top>70r</top>
 			<width>1280</width>
-			<!--height>70</height-->
 			<height>85</height>
 			<texture>floor.png</texture>
 			<animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>

@@ -329,7 +329,7 @@
 			<textureslidernib>Slider/Slider_nibNF.png</textureslidernib>
 			<textureslidernibfocus>Slider/Slider_nib.png</textureslidernibfocus>
 			<animation effect="fade" time="200">VisibleChange</animation>
-			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)] + IntegerGreaterThan(Player.time,5)</visible>
 		</control>
 	</controls>
 </window>

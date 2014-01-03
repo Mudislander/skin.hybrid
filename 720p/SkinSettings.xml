@@ -291,18 +291,10 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="108">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[31279]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
-						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
-					</control>
+					
+					
+					
+					
 					<control type="radiobutton" id="109">
 						<width>750</width>
 						<height>40</height>
@@ -327,6 +319,14 @@
 						<onclick>Skin.ToggleSetting(HideHomeNowPlaying)</onclick>
 						<selected>!Skin.HasSetting(HideHomeNowPlaying)</selected>
 					</control>
+					
+					
+					
+					
+					
+					
+					
+					
 					<control type="label" id="120">
 						<width>750</width>
 						<height>45</height>
@@ -364,20 +364,140 @@
 						<selected>Skin.HasSetting(HolidayEffects)</selected>
 						<visible>System.Date(11-24,1-6)</visible>
 					</control>
+					
+					
+					
+					
 					<control type="radiobutton" id="123">
-						<description>Ken Burns Effect</description>
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
+						<label>  $LOCALIZE[31391]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
-						<label>  $LOCALIZE[31338]</label>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(NoAnimateVizFanart)</onclick>
-						<selected>!Skin.HasSetting(NoAnimateVizFanart)</selected>
+						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
+						<selected>!Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
+					
+					
+					
+					
+					
 					<control type="radiobutton" id="124">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31388]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideNowPlayingFanart)</onclick>
+						<selected>!Skin.HasSetting(HideNowPlayingFanart)</selected>
+					</control>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<control type="button" id="126">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31698]</label>
+						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Control.Move(9008,1)</onclick>
+						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
+					</control>
+					<control type="radiobutton" id="127">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31389]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
+						<selected>!Skin.HasSetting(DisableAutoScroll)</selected>
+					</control>
+					<control type="radiobutton" id="128">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31390]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
+						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
+					</control>
+					<control type="radiobutton" id="129">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31320]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
+						<selected>Skin.HasSetting(KioskMode)</selected>
+					</control>
+					
+					<control type="radiobutton" id="130">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31279]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
+						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
+					</control>
+										
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+	################################################################################################				
+					
+					<control type="label" id="140">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31386]</label>
+						<textcolor>red</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					
+					<control type="radiobutton" id="141">
 						<description>Auto Music Viz</description>
 						<width>750</width>
 						<height>40</height>
@@ -390,7 +510,63 @@
 						<onclick>Skin.ToggleSetting(HideAutoMusicViz)</onclick>
 						<selected>!Skin.HasSetting(HideAutoMusicViz)</selected>
 					</control>
-					<control type="radiobutton" id="140">
+					<control type="radiobutton" id="142">
+						<description>Enable Artist FanArt</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>  $LOCALIZE[31385]</label>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideArtistArtOSD)</onclick>
+						<selected>!Skin.HasSetting(HideArtistArtOSD)</selected>
+					</control>
+					<control type="radiobutton" id="143">
+						<description>Enable Music Thumbnail</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>  $LOCALIZE[31384]</label>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideAlbumThumbOSD)</onclick>
+						<selected>!Skin.HasSetting(HideAlbumThumbOSD)</selected>
+					</control>
+					
+					<control type="radiobutton" id="144">
+						<description>Ken Burns Effect</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>  $LOCALIZE[31338]</label>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(NoAnimateVizFanart)</onclick>
+						<selected>!Skin.HasSetting(NoAnimateVizFanart)</selected>
+					</control>
+					
+					
+					
+					
+	######################################################################				
+					
+					<control type="label" id="160">
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>$LOCALIZE[31387]</label>
+						<textcolor>red</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>					
+					<control type="radiobutton" id="161">
 						<description>OSD Start Media Intro</description>
 						<width>750</width>
 						<height>40</height>
@@ -403,7 +579,7 @@
 						<onclick>Skin.ToggleSetting(HideInfoStartOSD)</onclick>
 						<selected>!Skin.HasSetting(HideInfoStartOSD)</selected>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="162">
 						<description>OSD Plot on Media Pause</description>
 						<width>750</width>
 						<height>40</height>
@@ -416,7 +592,7 @@
 						<onclick>Skin.ToggleSetting(HidePauseInfo)</onclick>
 						<selected>!Skin.HasSetting(HidePauseInfo)</selected>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="radiobutton" id="163">
 						<description>OSD Info on Seek bar</description>
 						<width>750</width>
 						<height>40</height>
@@ -437,7 +613,7 @@
 					
 					
 					
-					<control type="radiobutton" id="143">
+					<control type="radiobutton" id="191">
 						<description>Hide OSD Thumbnail</description>
 						<width>750</width>
 						<height>40</height>
@@ -450,73 +626,6 @@
 						<onclick>Skin.ToggleSetting(HideArtworkOSD)</onclick>
 						<selected>!Skin.HasSetting(HideArtworkOSD)</selected>
 					</control>					
-					
-					
-					
-					
-					<control type="button" id="153">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>$LOCALIZE[31698]</label>
-						<label2>[COLOR=selected]$VAR[UsrMPAACountry][/COLOR]</label2>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Control.Move(9008,1)</onclick>
-						<onclick>Skin.SetString(MPAACountryCert,$INFO[Container(9008).ListItem.Label])</onclick>
-					</control>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					<control type="radiobutton" id="189">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[20189]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
-						<selected>!Skin.HasSetting(DisableAutoScroll)</selected>
-					</control>
-					<control type="radiobutton" id="190">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[29801]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(ABCKeyBoard)</onclick>
-						<selected>!Skin.HasSetting(ABCKeyBoard)</selected>
-					</control>
-					<control type="radiobutton" id="191">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[31320]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
-						<selected>Skin.HasSetting(KioskMode)</selected>
-					</control>
 					<control type="label" id="192">
 						<width>750</width>
 						<height>45</height>
