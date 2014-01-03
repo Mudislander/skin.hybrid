@@ -1661,8 +1661,16 @@
 	<variable name="VideoPlayerCase">
 		<value condition="VideoPlayer.IsStereoscopic">3DCase</value>
 		<value condition="VideoPlayer.Content(LiveTV) | VideoPlayer.Content(Episodes)">TVseries</value>
-		<value condition="stringcompare(VideoPlayer.VideoResolution,720) | stringcompare(VideoPlayer.VideoResolution,1080)">bd</value>
-		<value condition="stringcompare(VideoPlayer.VideoResolution,480) | stringcompare(VideoPlayer.VideoResolution,576) | stringcompare(VideoPlayer.VideoResolution,540)">dvd</value>
+		<value condition="substring(Player.Filenameandpath,.avi,right)">avi</value>
+		<value condition="substring(Player.Filenameandpath,.divx,right)">divx</value>
+		<value condition="substring(Player.Filenameandpath,.h264,right)">h264</value>
+		<value condition="substring(Player.Filenameandpath,.mkv,right)">mkv</value>
+		<value condition="substring(Player.Filenameandpath,.mov,right)">mov</value>
+		<value condition="substring(Player.Filenameandpath,.mp4,right)">mp4</value>
+		<value condition="substring(Player.Filenameandpath,.mpeg,right)">mpeg</value>
+		<value condition="substring(Player.Filenameandpath,.qt,right)">qt</value>
+		<value condition="substring(Player.Filenameandpath,.wmv,right)">wmv</value>
+		<value condition="substring(Player.Filenameandpath,.xvid,right)">xvid</value>
 		<value>dv</value>
 	</variable>
 	<variable name="InfoWidgetMediaGenre">

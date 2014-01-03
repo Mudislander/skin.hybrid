@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- Switches
-	Skin.HasSetting(HideSeekBarOSD)
-	
-	-->
 	<include name="OSDMediaPlot">
 		<control type="group" id="1">
-			<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + Player.Paused + !Player.Caching</visible>
-			<!--animation effect="slide" end="-300,160" time="100" tween="back" easing="out" condition="!Window.IsActive(VideoOSD) + !Player.ShowInfo + Skin.HasSetting(HideSeekBarOSD)" reversible="true">Conditional</animation-->
+			<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + IntegerGreaterThan(Player.time,8) + Player.Paused + !Player.Caching</visible>
 			<animation effect="slide" end="-140,110" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideSeekBarOSD) + !Player.ShowInfo" reversible="true">Conditional</animation>
+			<animation effect="slide" end="-140,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideArtworkOSD) + [!Skin.HasSetting(HideSeekBarOSD) | Player.ShowInfo]" reversible="true">Conditional</animation>						
+			<animation effect="slide" start="0,0" end="0,25" time="0" condition="Player.ShowInfo + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
 			<left>320</left>
 			<top>395r</top>
 			<control type="image" id="1">
@@ -43,43 +40,11 @@
 			</control>
 		</control>
 	</include>
-	<include name="OSDChapterDisplay">
-		<control type="label" id="1">
-			<description>Chapter Count Header label</description>
-			<left>10</left>
-			<top>80r</top>
-			<width>300</width>
-			<height>80</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<font>font13</font>
-			<textcolor>C0FFFFFF</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<label>[B]$LOCALIZE[21396]$LOCALIZE[31000] [/B][CR]$INFO[player.chapter]$INFO[player.chaptercount, $LOCALIZE[31084] ]</label>
-			<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV)</visible>
-		</control>
-		<control type="label" id="1">
-			<description>Channel Group label</description>
-			<left>10</left>
-			<top>80r</top>
-			<width>300</width>
-			<height>80</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<font>font13</font>
-			<textcolor>C0FFFFFF</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<label>$INFO[VideoPlayer.ChannelGroup,$LOCALIZE[31509]$LOCALIZE[31000][CR]]</label>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-		</control>
-	</include>
 	<include name="OSDMovieCover">
-		<!--control type="group" id="1"-->
 		<control type="image" id="1">
 			<description>clearart image</description>
 			<left>10</left>
-			<!--top>320r</top-->
-			<posy>260r</posy>
+			<top>235r</top>
 			<width>300</width>
 			<height>230</height>
 			<texture>$INFO[Player.Art(clearart)]</texture>
@@ -89,8 +54,7 @@
 		<control type="image" id="1">
 			<description>logo image</description>
 			<left>10</left>
-			<!--top>320r</top-->
-			<posy>260r</posy>
+			<top>235r</top>
 			<width>300</width>
 			<height>230</height>
 			<texture>$INFO[Player.Art(clearlogo)]</texture>
@@ -100,8 +64,7 @@
 		<control type="image" id="1">
 			<description>Cover image</description>
 			<left>63</left>
-			<!--top>404r</top-->
-			<top>344r</top>
+			<top>339r</top>
 			<width>210</width>
 			<height>320</height>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -110,19 +73,15 @@
 		</control>
 		<control type="image" id="1">
 			<left>30</left>
-			<!--top>415r</top-->
-			<top>355r</top>
+			<top>350r</top>
 			<width>255</width>
 			<height>345</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
 			<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
-		<!--visible>VideoPlayer.Content(Movies)</visible-->
-		<!--/control-->
 	</include>
 	<include name="OSDTVShowCover">
-		<!--control type="group" id="1"-->
 		<control type="image" id="1">
 			<description>clearart image</description>
 			<left>10</left>
@@ -174,8 +133,6 @@
 			<bordersize>8</bordersize>
 			<visible>IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + IsEmpty(Player.Art(tvshow.thumb))</visible>
 		</control>
-		<!--visible>VideoPlayer.Content(Episodes)</visible-->
-		<!--/control-->
 	</include>
 	<include name="OSDMediaFlagging">
 		<control type="grouplist" id="1">
@@ -186,7 +143,6 @@
 			<itemgap>5</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="label" id="1">
-				<!--width min="10" max="710">auto</width-->
 				<width min="10" max="690">auto</width>
 				<height>30</height>
 				<font>font30</font>
@@ -233,34 +189,11 @@
 				<texture>$INFO[VideoPlayer.AudioLanguage,flagging/country/,.png]</texture>
 				<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
 			</control>
-			<!--control type="group" id="1">
-				<width>85</width>
-				<height>35</height>
-				<visible>!IsEmpty(VideoPlayer.AudioLanguage)</visible>
-				<control type="image" id="1">
-					<left>5</left>
-					<top>0</top>
-					<description>Audio Language Image</description>
-					<width>80</width>
-					<height>35</height>
-					<texture>flagging/AudioLang.png</texture>
-				</control>
-				<control type="label" id="1">
-					<left>38</left>
-					<top>2</top>
-					<width>47</width>
-					<height>35</height>
-					<font>font13</font>
-					<align>left</align>
-					<label>$INFO[VideoPlayer.AudioLanguage]</label>
-					<textcolor>grey</textcolor>
-				</control>
-			</control-->
 		</control>
 	</include>
 	<include name="OSDMediaHeading">
 		<control type="label" id="1">
-			<description>Heading label</description>
+			<description>Now Playing Heading label</description>
 			<left>0</left>
 			<top>0</top>
 			<width>910</width>
@@ -268,11 +201,25 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13</font>
-			<label>$LOCALIZE[31040]</label>
+			<label>$LOCALIZE[31040] - $LOCALIZE[21396]$LOCALIZE[31000] $INFO[player.chapter]$INFO[player.chaptercount, $LOCALIZE[31084] ]</label>
 			<textcolor>white</textcolor>
 			<shadowcolor>black</shadowcolor>
-			<visible>![VideoPlayer.Content(LiveTV) + Player.Recording]</visible>
+			<visible>Player.ChapterCount + !VideoPlayer.Content(LiveTV)</visible>
 			<animation effect="slide" start="0,0" end="0,25" time="0" condition="!VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
+		</control>
+		<control type="label" id="1">
+			<description>Now Playing LiveTV Heading label</description>
+			<left>0</left>
+			<top>0</top>
+			<width>910</width>
+			<height>25</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font13</font>
+			<label>$LOCALIZE[31040] - $INFO[VideoPlayer.ChannelGroup,$LOCALIZE[31509]$LOCALIZE[31000] ]</label>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<visible>VideoPlayer.Content(LiveTV) + VideoPlayer.ChannelGroup + !Player.Recording</visible>
 		</control>
 		<control type="image" id="1">
 			<top>0</top>

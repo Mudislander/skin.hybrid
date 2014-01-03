@@ -429,6 +429,31 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
+					
+					
+					
+					
+					
+					
+					
+					
+					<control type="radiobutton" id="143">
+						<description>Hide OSD Thumbnail</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>  $LOCALIZE[31383]</label>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideArtworkOSD)</onclick>
+						<selected>!Skin.HasSetting(HideArtworkOSD)</selected>
+					</control>					
+					
+					
+					
+					
 					<control type="button" id="153">
 						<width>750</width>
 						<height>40</height>
