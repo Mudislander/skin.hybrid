@@ -291,10 +291,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					
-					
-					
-					
 					<control type="radiobutton" id="109">
 						<width>750</width>
 						<height>40</height>
@@ -319,14 +315,6 @@
 						<onclick>Skin.ToggleSetting(HideHomeNowPlaying)</onclick>
 						<selected>!Skin.HasSetting(HideHomeNowPlaying)</selected>
 					</control>
-					
-					
-					
-					
-					
-					
-					
-					
 					<control type="label" id="120">
 						<width>750</width>
 						<height>45</height>
@@ -364,10 +352,6 @@
 						<selected>Skin.HasSetting(HolidayEffects)</selected>
 						<visible>System.Date(11-24,1-6)</visible>
 					</control>
-					
-					
-					
-					
 					<control type="radiobutton" id="123">
 						<width>750</width>
 						<height>40</height>
@@ -380,11 +364,6 @@
 						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
 						<selected>!Skin.HasSetting(HideBackGroundFanart)</selected>
 					</control>
-					
-					
-					
-					
-					
 					<control type="radiobutton" id="124">
 						<width>750</width>
 						<height>40</height>
@@ -397,19 +376,6 @@
 						<onclick>Skin.ToggleSetting(HideNowPlayingFanart)</onclick>
 						<selected>!Skin.HasSetting(HideNowPlayingFanart)</selected>
 					</control>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
 					<control type="button" id="126">
 						<width>750</width>
 						<height>40</height>
@@ -459,7 +425,6 @@
 						<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 						<selected>Skin.HasSetting(KioskMode)</selected>
 					</control>
-					
 					<control type="radiobutton" id="130">
 						<width>750</width>
 						<height>40</height>
@@ -472,20 +437,6 @@
 						<onclick>Skin.ToggleSetting(HideNextSongsInfo)</onclick>
 						<selected>!Skin.HasSetting(HideNextSongsInfo)</selected>
 					</control>
-										
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-	################################################################################################				
-					
 					<control type="label" id="140">
 						<width>750</width>
 						<height>45</height>
@@ -496,7 +447,6 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					
 					<control type="radiobutton" id="141">
 						<description>Auto Music Viz</description>
 						<width>750</width>
@@ -550,12 +500,6 @@
 						<onclick>Skin.ToggleSetting(NoAnimateVizFanart)</onclick>
 						<selected>!Skin.HasSetting(NoAnimateVizFanart)</selected>
 					</control>
-					
-					
-					
-					
-	######################################################################				
-					
 					<control type="label" id="160">
 						<width>750</width>
 						<height>45</height>
@@ -605,14 +549,6 @@
 						<onclick>Skin.ToggleSetting(HideSeekBarOSD)</onclick>
 						<selected>!Skin.HasSetting(HideSeekBarOSD)</selected>
 					</control>
-					
-					
-					
-					
-					
-					
-					
-					
 					<control type="radiobutton" id="191">
 						<description>Hide OSD Thumbnail</description>
 						<width>750</width>
@@ -680,10 +616,6 @@
 								<align>left</align>
 								<texturefocus>MenuItemFO.png</texturefocus>
 								<texturenofocus>MenuItemNF.png</texturenofocus>
-								<!--
-								<onclick>Skin.SetString(MediaPanelTrans,DDDDDDDD)</onclick>
-								<selected>stringcompare(Skin.String(MediaPanelTrans),DDDDDDDD)</selected>
-								-->
 								<onclick>Skin.SetString(MediaPanelTrans,DFFFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),DFFFFFFF)</selected>
 							</control>
@@ -696,14 +628,6 @@
 								<align>left</align>
 								<texturefocus>MenuItemFO.png</texturefocus>
 								<texturenofocus>MenuItemNF.png</texturenofocus>
-								<!--
-								<onclick>Skin.SetString(MediaPanelTrans,CCCCCCCC)</onclick>
-								<selected>stringcompare(Skin.String(MediaPanelTrans),CCCCCCCC)</selected>
-								-->
-								<!--
-								<onclick>Skin.SetString(MediaPanelTrans,A8FFFFFF)</onclick>
-								<selected>stringcompare(Skin.String(MediaPanelTrans),A8FFFFFF)</selected>
-								-->
 								<onclick>Skin.SetString(MediaPanelTrans,A8FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),A8FFFFFF)</selected>
 							</control>
@@ -716,10 +640,6 @@
 								<align>left</align>
 								<texturefocus>MenuItemFO.png</texturefocus>
 								<texturenofocus>MenuItemNF.png</texturenofocus>
-								<!--
-								<onclick>Skin.SetString(MediaPanelTrans,99999999)</onclick>
-								<selected>stringcompare(Skin.String(MediaPanelTrans),99999999)</selected>
-								-->
 								<onclick>Skin.SetString(MediaPanelTrans,48FFFFFF)</onclick>
 								<selected>stringcompare(Skin.String(MediaPanelTrans),48FFFFFF)</selected>
 							</control>
@@ -755,167 +675,6 @@
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
-				<control type="list" id="9008">
-					<visible>Container(9000).Hasfocus(1)</visible>
-					<itemlayout height="1" width="750"></itemlayout>
-					<focusedlayout height="1" width="750"></focusedlayout>
-					<content>
-						<item>
-							<label>$LOCALIZE[31700]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31701]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31703]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31706]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31708]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31707]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31702]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31705]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31709]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31704]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-						<item>
-							<label>$LOCALIZE[31710]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-						</item>
-					</content>
-				</control>
-				
-				<control type="list" id="9009">
-					<visible>Container(9000).Hasfocus(1)</visible>
-					<itemlayout height="1" width="750"></itemlayout>
-					<focusedlayout height="1" width="750"></focusedlayout>
-					<content>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.1.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.2.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.3.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.4.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.5.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.6.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.7.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.8.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.9.Path))</visible>
-						</item>
-						<item>
-							<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
-							<onclick>noop</onclick>
-							<icon>-</icon>
-							<thumb>-</thumb>
-							<visible>!IsEmpty(Skin.String(HomeItem.10.Path))</visible>
-						</item>
-					</content>
-				</control>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				<control type="grouplist" id="9002">
 					<visible>Container(9000).Hasfocus(2)</visible>
 					<left>415</left>
@@ -2665,6 +2424,10 @@
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubPictures.6.Label))">Skin.SetString(SubPictures.6.Label)</onclick>
 					</control>
+					
+					
+					
+					
 					<control type="label" id="356">
 						<width>750</width>
 						<height>45</height>
@@ -2674,6 +2437,7 @@
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="357">
 						<width>750</width>
@@ -2686,6 +2450,7 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.SetString(UserLiveTVSubMenu)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="358">
 						<width>750</width>
@@ -2700,6 +2465,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.1,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.1.Label)) + !stringcompare(Skin.String(SubLiveTV.1.Path),Hidden)">Skin.SetString(SubLiveTV.1.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="359">
 						<width>750</width>
@@ -2714,6 +2480,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.2,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.2.Label)) + !stringcompare(Skin.String(SubLiveTV.2.Path),Hidden)">Skin.SetString(SubLiveTV.2.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="360">
 						<width>750</width>
@@ -2728,6 +2495,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.3,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.3.Label)) + !stringcompare(Skin.String(SubLiveTV.3.Path),Hidden)">Skin.SetString(SubLiveTV.3.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="361">
 						<width>750</width>
@@ -2742,6 +2510,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.4,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.4.Label)) + !stringcompare(Skin.String(SubLiveTV.4.Path),Hidden)">Skin.SetString(SubLiveTV.4.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="362">
 						<width>750</width>
@@ -2756,6 +2525,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.5,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.5.Label)) + !stringcompare(Skin.String(SubLiveTV.5.Path),Hidden)">Skin.SetString(SubLiveTV.5.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="button" id="363">
 						<width>750</width>
@@ -2770,6 +2540,7 @@
 						<onclick>SetProperty(UsrSelectBtn,SubLiveTV.6,home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<onclick condition="!IsEmpty(Skin.String(SubLiveTV.6.Label))">Skin.SetString(SubLiveTV.6.Label)</onclick>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="label" id="364">
 						<width>750</width>
@@ -4357,7 +4128,6 @@
 								<description>DVD Tray</description>
 								<label>$LOCALIZE[31365]</label>
 								<onclick>noop</onclick>
-								<!--icon>special://skin/backgrounds/homescreen/playdisc.jpg)</icon-->
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(HomeItem.12.FanArt)]</thumb>
 								<property name="HiLiteItem">PlayDisc</property>
@@ -4368,7 +4138,6 @@
 								<label>$LOCALIZE[13000]</label>
 								<onclick>noop</onclick>
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
-								<!--icon>special://skin/backgrounds/homescreen/settings.jpg</icon-->
 								<thumb>$INFO[Skin.String(HomeItem.13.FanArt)]</thumb>
 								<property name="HiLiteItem">Settings</property>
 								<visible>!Skin.HasSetting(HideHomeMenuSystem) + !Skin.HasSetting(HolidayEffects) + !Skin.HasSetting(SingleGlobalBackground)</visible>
@@ -4385,7 +4154,6 @@
 								<description>Search Button</description>
 								<label>$LOCALIZE[137]</label>
 								<onclick>noop</onclick>
-								<!--icon>special://skin/backgrounds/homescreen/search.jpg</icon-->
 								<icon>$INFO[Skin.CurrentTheme,special://skin/backgrounds/,.jpg]</icon>
 								<thumb>$INFO[Skin.String(SearchBtnBackground)]</thumb>
 								<property name="HiLiteItem">SearchBtn</property>
@@ -6256,6 +6024,165 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 					<visible>Container(9000).Hasfocus(6)</visible>
+				</control>
+				<control type="list" id="9008">
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<onleft>9001</onleft>
+					<onright>9001</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$LOCALIZE[31700]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31701]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31703]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31706]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31708]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31707]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31702]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31705]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31709]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31704]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+						<item>
+							<label>$LOCALIZE[31710]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+						</item>
+					</content>
+				</control>
+				
+				<control type="list" id="9009">
+					<onleft>9001</onleft>
+					<onright>9001</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<itemlayout height="1" width="750"></itemlayout>
+					<focusedlayout height="1" width="750"></focusedlayout>
+					<content>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.1.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.1.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.2.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.2.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.3.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.3.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.4.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.4.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.5.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.5.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.6.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.6.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.7.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.7.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.8.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.8.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.9.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.9.Path))</visible>
+						</item>
+						<item>
+							<label>$INFO[Skin.String(HomeItem.10.Label)]</label>
+							<onclick>noop</onclick>
+							<icon>-</icon>
+							<thumb>-</thumb>
+							<visible>!IsEmpty(Skin.String(HomeItem.10.Path))</visible>
+						</item>
+					</content>
 				</control>
 			</control>
 		</control>

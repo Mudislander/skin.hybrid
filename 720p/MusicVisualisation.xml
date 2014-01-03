@@ -108,7 +108,7 @@
 					<top>-10</top>
 					<width>200</width>
 					<height>78</height>
-					<texture fallback="xbmc-logo.png">$INFO[Player.FolderPath,,../logo.png]</texture>
+					<texture>$INFO[Player.FolderPath,,../logo.png]</texture>
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 					<visible>IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 					<visible>!Skin.HasSetting(HideAlbumThumbOSD)</visible>
@@ -118,7 +118,7 @@
 					<top>-10</top>
 					<width>200</width>
 					<height>78</height>
-					<texture fallback="xbmc-logo.png">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist]/logo.png</texture>
+					<texture>$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist]/logo.png</texture>
 					<aspectratio aligny="bottom" align="left">keep</aspectratio>
 					<visible>!IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
 					<visible>!Skin.HasSetting(HideAlbumThumbOSD)</visible>
