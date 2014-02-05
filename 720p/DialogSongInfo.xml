@@ -76,7 +76,7 @@
 				<width>200</width>
 				<height>200</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[ListItem.icon]</texture>
 			</control>
 			<control type="image">
 				<left>40</left>
@@ -84,7 +84,7 @@
 				<width>200</width>
 				<height>200</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Icon]</texture>
+				<texture flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.icon]</texture>
 			</control>
 			<control type="group">
 				<left>250</left>
@@ -98,7 +98,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[557]$LOCALIZE[31000]</label>
 				</control>
 				<control type="fadelabel">
@@ -124,7 +124,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[558]$LOCALIZE[31000]</label>
 				</control>
 				<control type="fadelabel">
@@ -150,7 +150,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[515]$LOCALIZE[31000]</label>
 					<scrollout>false</scrollout>
 					<pauseatend>2000</pauseatend>
@@ -176,7 +176,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[562]$LOCALIZE[31000]</label>
 				</control>
 				<control type="fadelabel">
@@ -200,7 +200,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[554]$LOCALIZE[31000]</label>
 				</control>
 				<control type="fadelabel">
@@ -224,7 +224,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[563]$LOCALIZE[31000]</label>
 				</control>
 				<control type="group">
@@ -277,7 +277,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>red</textcolor>
+					<textcolor>blue</textcolor>
 					<label>$LOCALIZE[569]$LOCALIZE[31000]</label>
 				</control>
 				<control type="textbox">

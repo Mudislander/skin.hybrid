@@ -36,35 +36,14 @@
 						<fadetime>200</fadetime>
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
-					<control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultWatched.png">StatusBanner/$LOCALIZE[16102].png</texture>
-							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultUnwatched.png">StatusBanner/$LOCALIZE[16101].png</texture>
-							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultInProgress.png">StatusBanner/$LOCALIZE[31344].png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
+					<control type="image">
+						<left>48</left>
+						<top>24</top>
+						<width>70</width>
+						<height>70</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+						<visible>!Skin.HasSetting(diablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 					<control type="image">
 						<left>6</left>
@@ -74,17 +53,6 @@
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
-					</control>
-					<control type="image">
-						<left>2</left>
-						<top>180</top>
-						<width>120</width>
-						<height>160</height>
-						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
-						<bordersize>4</bordersize>
-						<fadetime>200</fadetime>
-						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="310" width="120">
@@ -102,63 +70,27 @@
 						<animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
 					</control>
 					<control type="image">
-						<left>2</left>
-						<top>180</top>
-						<width>120</width>
-						<height>160</height>
-						<aspectratio>stretch</aspectratio>
-						<bordertexture border="5" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
-						<bordersize>4</bordersize>
-						<fadetime>200</fadetime>
-						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$VAR[PosterThumb]</texture>
+						<left>48</left>
+						<top>24</top>
+						<width>70</width>
+						<height>70</height>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+						<animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
+						<visible>!Skin.HasSetting(diablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
-					<control type="group">
-						<visible>!IsEmpty(ListItem.Overlay)</visible>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultWatched.png">StatusBanner/$LOCALIZE[16102].png</texture>
-							<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultUnwatched.png">StatusBanner/$LOCALIZE[16101].png</texture>
-							<visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>48</left>
-							<top>24</top>
-							<width>70</width>
-							<height>70</height>
-							<animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
-							<fadetime>IconCrossfadeTime</fadetime>
-							<texture background="true" fallback="StatusBanner/DefaultInProgress.png">StatusBanner/$LOCALIZE[31344].png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>6</left>
-							<top>24</top>
-							<width>112</width>
-							<height>152</height>
-							<aspectratio>stretch</aspectratio>
-							<texture>black-back.png</texture>
-							<colordiffuse>AAFFFFFF</colordiffuse>
-							<animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
-							<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
-							<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
-						</control>
+					<control type="image">
+						<left>6</left>
+						<top>24</top>
+						<width>112</width>
+						<height>152</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
+						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
 					</control>
 				</focusedlayout>
 			</control>
@@ -182,10 +114,9 @@
 		<control type="group">
 			<left>180</left>
 			<top>100</top>
-			<animation effect="fade" start="0" end="100" time="1600" delay="2000">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
-			<visible>!StringCompare(ListItem.Label,..) + !Container.OnNext + !Container.OnPrevious</visible>
-			<visible>Control.IsVisible(508) + ![ListItem.IsFolder + Container.Content(Movies)] + !Container.Content(Sets)</visible>
+			<include>MediaInfoPopup</include>
+			<visible>!Skin.String(mediapopupcontrol,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+			<visible>Control.IsVisible(508) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
 			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<left>0</left>
@@ -206,7 +137,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>31345</label>
@@ -218,10 +148,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Genre,[B][COLOR=red]$LOCALIZE[515]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Genre,[B][COLOR=blue]$LOCALIZE[515]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -230,10 +159,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Year,[B][COLOR=red]$LOCALIZE[562]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Year,[B][COLOR=blue]$LOCALIZE[562]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -242,10 +170,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Duration,[B][COLOR=red]$LOCALIZE[2050]$LOCALIZE[31000] [/COLOR][/B],$LOCALIZE[12391]]</label>
+					<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050]$LOCALIZE[31000] [/COLOR][/B],$LOCALIZE[12391]]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -254,10 +181,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.LastPlayed,[B][COLOR=red]$LOCALIZE[568]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.LastPlayed,[B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -266,24 +192,22 @@
 				<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 				<control type="label">
 					<left>0</left>
-					<top>0</top>
+					<top>10</top>
 					<width>400</width>
 					<height>30</height>
-					<font>font12_title</font>
-					<textcolor>red</textcolor>
-					<shadowcolor>black</shadowcolor>
+					<font>font12</font>
+					<textcolor>blue</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>20339</label>
+					<label>[B]$LOCALIZE[20339]$LOCALIZE[31000][/B]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
-					<top>30</top>
+					<top>40</top>
 					<width>400</width>
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Director]</label>
@@ -293,12 +217,11 @@
 					<top>75</top>
 					<width>400</width>
 					<height>30</height>
-					<font>font12_title</font>
-					<textcolor>red</textcolor>
-					<shadowcolor>black</shadowcolor>
+					<font>font12</font>
+					<textcolor>blue</textcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>20417</label>
+					<label>[B]$LOCALIZE[20417]$LOCALIZE[31000][/B]</label>
 					<visible>!IsEmpty(ListItem.Writer)</visible>
 				</control>
 				<control type="label">
@@ -308,7 +231,6 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>top</aligny>
 					<label>$INFO[ListItem.Writer]</label>
@@ -326,7 +248,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>20351</label>
@@ -338,10 +259,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Genre,[B][COLOR=red]$LOCALIZE[515]$LOCALIZE[31000][/COLOR][/B] ]</label>
+					<label>$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -350,10 +270,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Year,[B][COLOR=red]$LOCALIZE[562]$LOCALIZE[31000][/COLOR][/B] ]</label>
+					<label>$INFO[ListItem.Year,[B][COLOR=blue]$LOCALIZE[562]$LOCALIZE[31000][/COLOR][/B] ]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -362,10 +281,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.RatingAndVotes,[B][COLOR=red]$LOCALIZE[563]$LOCALIZE[31000][/COLOR][/B] ]</label>
+					<label>$INFO[ListItem.RatingAndVotes,[B][COLOR=blue]$LOCALIZE[563]$LOCALIZE[31000][/COLOR][/B] ]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -374,10 +292,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.LastPlayed,[B][COLOR=red]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
+					<label>$INFO[ListItem.LastPlayed,[B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -391,7 +308,6 @@
 					<height>30</height>
 					<font>font13_title</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>20360</label>
@@ -403,10 +319,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Episode,[B][COLOR=red]$LOCALIZE[20161]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Episode,[B][COLOR=blue]$LOCALIZE[20161]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -415,10 +330,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Property(WatchedEpisodes),[B][COLOR=red]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Property(WatchedEpisodes),[B][COLOR=blue]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -427,10 +341,9 @@
 					<height>30</height>
 					<font>font12</font>
 					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Property(UnWatchedEpisodes),[B][COLOR=red]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</label>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes),[B][COLOR=blue]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</label>
 				</control>
 			</control>
 			<control type="group">
@@ -446,7 +359,7 @@
 					<align>justify</align>
 					<textcolor>white</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 				</control>
 			</control>
 			<control type="image">
@@ -461,13 +374,14 @@
 			</control>
 			<control type="grouplist">
 				<description>Media Codec Flagging Images</description>
-				<left>405</left>
+				<left>332</left>
 				<top>305</top>
-				<width>488</width>
+				<width>561</width>
 				<align>right</align>
-				<itemgap>2</itemgap>
+				<itemgap>1</itemgap>
 				<orientation>horizontal</orientation>
 				<include>VideoMPAAFlaggingConditions</include>
+				<include>VideoSudioFlagging</include>
 				<include>VideoSubTitleFlagging</include>
 				<include>VideoCodecFlaggingConditions</include>
 				<include>AudioCodecFlaggingConditions</include>
@@ -478,18 +392,28 @@
 			<control type="image">
 				<description>Rating image</description>
 				<left>815</left>
-				<top>288</top>
-				<width>50</width>
-				<height>54</height>
+				<top>307</top>
+				<width>73</width>
+				<height>35</height>
 				<aspectratio align="right">stretch</aspectratio>
 				<texture>flagging/ratings/TV/tv-ma.png</texture>
 				<visible>Container.Content(TVShows)</visible>
 			</control>
+			<control type="image">
+				<description>Studio image</description>
+				<left>737</left>
+				<top>307</top>
+				<width>73</width>
+				<height>35</height>
+				<aspectratio align="right">stretch</aspectratio>
+				<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+				<visible>Container.Content(TVShows)</visible>
+			</control>
 			<control type="grouplist">
 				<description>Media Genre Flagging</description>
-				<left>425</left>
-				<top>288</top>
-				<width>385</width>
+				<left>430</left>
+				<top>307</top>
+				<width>304</width>
 				<align>right</align>
 				<itemgap>5</itemgap>
 				<orientation>horizontal</orientation>

@@ -49,7 +49,7 @@
 						<width>120</width>
 						<height>120</height>
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.icon]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="200" width="160">
@@ -72,7 +72,7 @@
 						<width>120</width>
 						<height>120</height>
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.icon]</texture>
 						<animation reversible="false" effect="zoom" start="20,70,120,120" end="0,30,160,160" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="20,70,120,120" start="0,30,160,160" time="200">unfocus</animation>
 					</control>
@@ -103,7 +103,6 @@
 				<left>60</left>
 				<top>100</top>
 				<width>402</width>
-				<!--height>576</height-->
 				<height>536</height>
 				<onleft>2</onleft>
 				<onright>60</onright>
@@ -131,7 +130,7 @@
 						<width>114</width>
 						<height>114</height>
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.icon]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout height="134" width="134">
@@ -152,7 +151,7 @@
 						<width>114</width>
 						<height>114</height>
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.icon]</texture>
 					</control>
 				</focusedlayout>
 			</control>
@@ -192,7 +191,7 @@
 					<top>510</top>
 					<width>640</width>
 					<height>15</height>
-					<label>$INFO[ListItem.PictureDateTime,[COLOR=red]$LOCALIZE[31513][/COLOR] - ]</label>
+					<label>$INFO[ListItem.PictublueateTime,[COLOR=blue]$LOCALIZE[31513][/COLOR] - ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13</font>
@@ -205,7 +204,7 @@
 					<top>535</top>
 					<width>640</width>
 					<height>15</height>
-					<label>$INFO[ListItem.PictureResolution,[COLOR=red]$LOCALIZE[31514][/COLOR] - ]</label>
+					<label>$INFO[ListItem.PictureResolution,[COLOR=blue]$LOCALIZE[31514][/COLOR] - ]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font13</font>

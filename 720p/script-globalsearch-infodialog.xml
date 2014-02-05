@@ -56,7 +56,7 @@
 				<aligny>center</aligny>
 				<textcolor>white</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
-				<label>$INFO[Container(100).ListItem.Label]</label>
+				<label>$INFO[Container(100).ListItem.label]</label>
 			</control>
 			<control type="image">
 				<left>40</left>
@@ -72,7 +72,7 @@
 				<width>360</width>
 				<height>360</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$INFO[Container(100).ListItem.Icon]</texture>
+				<texture>$INFO[Container(100).ListItem.icon]</texture>
 			</control>
 			<control type="group">
 				<visible>Control.IsVisible(110) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
@@ -138,9 +138,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -152,7 +152,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -172,9 +172,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -186,7 +186,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -284,9 +284,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -298,7 +298,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -318,9 +318,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -332,7 +332,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -344,9 +344,9 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[20416]$LOCALIZE[31000]</label>
-							<label2>$INFO[Container(100).ListItem.Property(Premiered)]</label2>
+							<label2>$INFO[Container(100).ListItem.Property(Premieblue)]</label2>
 							<onclick>-</onclick>
-							<visible>!IsEmpty(Container(100).ListItem.Property(Premiered))</visible>
+							<visible>!IsEmpty(Container(100).ListItem.Property(Premieblue))</visible>
 						</item>
 						<item>
 							<label>$LOCALIZE[572]$LOCALIZE[31000]</label>
@@ -412,9 +412,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -426,7 +426,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -446,9 +446,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -460,7 +460,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -510,9 +510,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -524,7 +524,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -544,9 +544,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -558,7 +558,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -588,9 +588,9 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[20416]$LOCALIZE[31000]</label>
-							<label2>$INFO[Container(100).ListItem.Property(Premiered)]</label2>
+							<label2>$INFO[Container(100).ListItem.Property(Premieblue)]</label2>
 							<onclick>-</onclick>
-							<visible>!IsEmpty(Container(100).ListItem.Property(Premiered))</visible>
+							<visible>!IsEmpty(Container(100).ListItem.Property(Premieblue))</visible>
 						</item>
 						<item>
 							<label>$LOCALIZE[2050]$LOCALIZE[31000]</label>
@@ -644,9 +644,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -658,7 +658,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -678,9 +678,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -692,7 +692,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -772,9 +772,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -786,7 +786,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -806,9 +806,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -820,7 +820,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -900,9 +900,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -914,7 +914,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -934,9 +934,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -948,7 +948,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -1034,9 +1034,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -1048,7 +1048,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout width="800" height="30">
@@ -1068,9 +1068,9 @@
 							<font>font13</font>
 							<align>right</align>
 							<aligny>center</aligny>
-							<textcolor>red</textcolor>
-							<selectedcolor>red</selectedcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<textcolor>blue</textcolor>
+							<selectedcolor>blue</selectedcolor>
+							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
 							<left>175</left>
@@ -1082,7 +1082,7 @@
 							<aligny>center</aligny>
 							<textcolor>white</textcolor>
 							<selectedcolor>white</selectedcolor>
-							<label>$INFO[ListItem.Label2]</label>
+							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
 					<content>
@@ -1167,7 +1167,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Plot)]</label>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 				<visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
 			</control>
 			<control type="textbox">
@@ -1180,7 +1180,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Artist_Description)]</label>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 				<visible>Control.IsVisible(160)</visible>
 			</control>
 			<control type="textbox">
@@ -1193,7 +1193,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Album_Description)]</label>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 				<visible>Control.IsVisible(170)</visible>
 			</control>
 			<control type="textbox">
@@ -1206,7 +1206,7 @@
 				<textcolor>white</textcolor>
 				<pagecontrol>195</pagecontrol>
 				<label>$INFO[Container(100).ListItem.Property(Comment)]</label>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 				<visible>Control.IsVisible(180)</visible>
 			</control>
 			<control type="spincontrol" id="195">
@@ -1216,9 +1216,9 @@
 				<spinwidth>33</spinwidth>
 				<spinheight>22</spinheight>
 				<textureup>scroll-up-2.png</textureup>
-				<texturedown>scroll-down-2.png</texturedown>
+				<textublueown>scroll-down-2.png</textublueown>
 				<textureupfocus>scroll-up-focus-2.png</textureupfocus>
-				<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
+				<textublueownfocus>scroll-down-focus-2.png</textublueownfocus>
 				<subtype>page</subtype>
 				<showonepage>false</showonepage>
 				<onup>101</onup>

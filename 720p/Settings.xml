@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+	<include condition="!Skin.HasSetting(initialsetuprun)">DefaultInitialSetup</include>
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
@@ -12,9 +12,9 @@
 			<include>BackgroundFade</include>
 			<fadetime>FanartCrossfadeTime</fadetime>
 			<include>Window_OpenClose_Animation</include>
-			<visible>!Skin.HasSetting(InitialSetUpRun)</visible>
+			<visible>!Skin.HasSetting(initialsetuprun)</visible>
 		</control>
-		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
+		<include condition="Skin.HasSetting(initialsetuprun)">CommonBackground</include>
 		<control type="button" id="800">
 			<include>InvisibleButton</include>
 			<onleft>801</onleft>
@@ -42,12 +42,12 @@
 			<width>1170</width>
 			<height>30</height>
 			<font>font30_title</font>
-			<textcolor>red</textcolor>
+			<textcolor>blue</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
 			<aligny>center</aligny>
 			<include>Window_OpenClose_Animation</include>
-			<label>[UPPERCASE]$INFO[Container(9000).ListItem.Label2][/UPPERCASE]</label>
+			<label>[UPPERCASE]$INFO[Container(9000).ListItem.label2][/UPPERCASE]</label>
 		</control>
 		<control type="label">
 			<left>10</left>
@@ -96,7 +96,7 @@
 						<textcolor>grey3</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 						<animation effect="zoom" start="65" end="65" center="380,51" time="0" condition="true">Conditional</animation>
 					</control>
 				</itemlayout>
@@ -110,7 +110,7 @@
 						<textcolor>white</textcolor>
 						<align>right</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 `						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation></control>
 				</focusedlayout>
 				<content>
@@ -131,7 +131,7 @@
 						<icon>special://skin/backgrounds/homescreen/videos.jpg</icon>
 					</item>
 					<item id="3">
-						<label>31252</label>
+						<label>31202</label>
 						<label2>$LOCALIZE[31458]</label2>
 						<property name="Desc">$LOCALIZE[31468]</property>
 						<onclick>SetProperty(SettingsItemActive,$LOCALIZE[31468],Home)</onclick>

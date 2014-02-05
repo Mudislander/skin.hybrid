@@ -6,8 +6,7 @@
 	<include file="IncludesSubMenuSys.xml" />
 	<include file="IncludesBackgroundEffect.xml" />
 	<include file="IncludesCommonMedia.xml" />
-	<include file="IncludesHomeWidget.xml" />
-	<include file="IncludesWidgetContent.xml" />
+	<include file="IncludesInfoWidget.xml" />
 	<include file="IncludesHomeAddOnSystem.xml" />
 	<include file="IncludesMenuContentItems.xml" />
 	<include file="IncludesCDWall.xml" />
@@ -22,6 +21,8 @@
 	<include file="ViewsFullWidthList.xml" />
 	<include file="ViewsWideIcon.xml" />
 	<include file="ViewsCoverFlow.xml" />
+	<include file="ViewsLogoVertical.xml" />
+	<include file="ViewsFullWall.xml" />
 	<include file="ViewsThumbnailList.xml" />
 	<include file="ViewsFileMode.xml" />
 	<include file="ViewsMusicLibrary.xml" />
@@ -33,11 +34,14 @@
 	<constant name="FanartCrossfadeTime">600</constant>
 	<constant name="IconCrossfadeTime">500</constant>
 	<include name="TransparentEffect">
-		<colordiffuse>$INFO[Skin.String(MediaPanelTrans)]</colordiffuse>
+		<animation effect="fade" start="100" end="85" time="0" condition="SubString(skin.string(mediapaneltrans),85)">Conditional</animation>
+		<animation effect="fade" start="100" end="65" time="0" condition="SubString(skin.string(mediapaneltrans),65)">Conditional</animation>
+		<animation effect="fade" start="100" end="45" time="0" condition="SubString(skin.string(mediapaneltrans),45)">Conditional</animation>
+		<animation effect="fade" start="100" end="25" time="0" condition="SubString(skin.string(mediapaneltrans),25)">Conditional</animation>
 	</include>
 	<include name="KBurnsAnimateFanart">
-		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateFanArt)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(noanimatefanart)">Conditional</animation>
+		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(noanimatefanart)">Conditional</animation>
 	</include>
 	<include name="Dimensions_Fullscreen">
 		<left>0</left>
@@ -46,35 +50,26 @@
 		<height>720</height>
 	</include>
 	<include name="ClearButtonChoice">
-		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Label)</onclick>
-		<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Path)</onclick>
-		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(UsrSelectBtn),HomeItem.1)">Skin.Reset(HomeItemLastAction)</onclick>
-		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(UsrSelectBtn),HomeItem.1)">Skin.Reset(HomeItemLastLabel)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].PlayList)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Sub)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Stats)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Addon)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Type)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Fanart)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Widget)</onclick>
-		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Display)</onclick>
+		<onclick>Skin.Reset($INFO[Window(home).Property(usrselectbtn)].label)</onclick>
+		<onclick>Skin.Reset($INFO[Window(home).Property(usrselectbtn)].path)</onclick>
+		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(usrselectbtn),homeitem.1)">Skin.Reset(homeitemlastaction)</onclick>
+		<onclick condition="Window.IsVisible(2114) + stringcompare(Skin.String(usrselectbtn),homeitem.1)">Skin.Reset(homeitemlastlabel)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].playlist)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].sub)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].stats)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].addon)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].type)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].fanart)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].widget)</onclick>
+		<onclick condition="Window.IsVisible(2114)">Skin.Reset($INFO[Window(home).Property(usrselectbtn)].display)</onclick>
 	</include>
 	<include name="CloseMenuChoice">
 		<onclick condition="Window.IsVisible(2114)">Dialog.Close(2114)</onclick>
 		<onclick condition="Window.IsVisible(2115)">Dialog.Close(2115)</onclick>
-		<onclick>Skin.Reset(UsrSelectAddon)</onclick>
-		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+		<onclick>Skin.SetString($INFO[Window(home).Property(usrselectbtn)].label)</onclick>
+		<onclick>Skin.Reset(usrselectaddon)</onclick>
+		<onclick>ClearProperty(usrselectbtn,Home)</onclick>
 	</include>
-	<!--
-	<include name="InfoWidgetVizability">
-		<visible>
-			[Library.HasContent(Music) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) | [SubString(Window(Home).Property(SkinWidgets_RandomItems),true) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)] | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)] |
-			[Library.HasContent(Movies) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)]|
-			[Library.HasContent(TVShows) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)]|
-			[Library.HasContent(MusicVideos) + StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) + SubString(Window(Home).Property(SkinWidgets_RandomItems),true) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) + SubString(Window(Home).Property(SkinWidgets_Recommended),true)]
-		</visible>
-	</include>
-	-->
 	<include name="InvisibleButton">
 		<left>-20</left>
 		<top>-20</top>
@@ -88,6 +83,12 @@
 	<include name="BackgroundFade">
 		<animation effect="fade" time="600">Visible</animation>
 		<animation effect="fade" time="600">Hidden</animation>
+	</include>
+	<include name="Animation_Fade">
+		<animation effect="fade" time="500">WindowOpen</animation>
+		<animation effect="fade" time="200">Visible</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+		<animation effect="fade" time="200">Hidden</animation>
 	</include>
 	<include name="Window_OpenClose_Animation">
 		<animation effect="fade" time="250">WindowOpen</animation>
@@ -159,6 +160,60 @@
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
+	<include name="ButtonVideoInfoDialogsValues">
+		<height>40</height>
+		<width>160</width>
+		<textoffsetx>20</textoffsetx>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font12_title</font>
+		<texturefocus border="5">button-focus.png</texturefocus>
+		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="HomeFlagSeparator">
+		<width>15</width>
+		<height>40</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label> | </label>
+		<font>font10</font>
+		<textcolor>50101010</textcolor>
+	</include>
+	<include name="HomeFlagLabel">
+		<height>41</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font10</font>
+		<textcolor>E4101010</textcolor>
+		<fadetime>FanartCrossFadeTime</fadetime>
+	</include>
+	<include name="WidgetPanelVizability">
+		<visible>
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(disablescriptplaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(disablescriptplaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(disablescriptplaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RomGames) + !IsEmpty(Window(home).Property(MostPlayedROM.1.Title))] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))] |
+		[Player.HasMedia + !Skin.HasSetting(hidehomenowplaying)]
+		</visible>
+	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001) | Control.HasFocus(8999)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-300,0" time="400" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus | Control.HasFocus(9001)">WindowClose</animation>
@@ -192,15 +247,6 @@
 			<height>720</height>
 			<texture border="0,0,10,0">Home/MediaBladeSub.png</texture>
 		</control>
-		<!--control type="image">
-			<description>LOGO</description>
-			<left>15</left>
-			<top>0</top>
-			<width>220</width>
-			<height>80</height>
-			<aspectratio>keep</aspectratio>
-			<texture>Hybrid_Logo.png</texture>
-		</control-->
 		<include>BottonLogoImage</include>
 	</include>
 	<include name="MainHeaderLabel">
@@ -210,13 +256,13 @@
 			<width>1170</width>
 			<height>30</height>
 			<font>font30_title</font>
-			<textcolor>red</textcolor>
+			<textcolor>blue</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
 			<aligny>center</aligny>
 			<include>Window_OpenClose_Animation</include>
 			<label>[UPPERCASE]$VAR[ContentHeaderLabel][/UPPERCASE]</label>
-			<!--visible>!Control.IsVisible(510)</visible-->
+			<visible>!Control.IsVisible(510)</visible>
 		</control>
 		<control type="label">
 			<left>10</left>
@@ -235,14 +281,14 @@
 		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
-			<visible>!StringCompare(ListItem.Label,..) + [Container.Content(Seasons) | Container.Content(TVShows)]</visible>
+			<visible>!StringCompare(ListItem.label,..) + [Container.Content(Seasons) | Container.Content(TVShows)]</visible>
 			<control type="label">
 				<description>Episodes Value</description>
 				<left>10</left>
 				<top>45</top>
 				<width>1260</width>
 				<height>20</height>
-				<label>[B][COLOR=red]$LOCALIZE[20360]$LOCALIZE[31000][/COLOR][/B] $INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
+				<label>[B][COLOR=blue]$LOCALIZE[20360]$LOCALIZE[31000][/COLOR][/B] $INFO[listitem.episode] [COLOR=grey] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])[/COLOR]</label>
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
@@ -254,17 +300,17 @@
 			<include>Window_OpenClose_Animation</include>
 			<visible>Container.Content(Episodes)</visible>
 			<control type="label">
-				<description>First Aired txt</description>
+				<description>First Aiblue txt</description>
 				<left>10</left>
 				<top>45</top>
 				<width>1260</width>
 				<height>20</height>
-				<label>[B][COLOR=red]$LOCALIZE[20416]$LOCALIZE[31000][/COLOR][/B][COLOR=grey] $INFO[listitem.premiered][/COLOR]</label>
+				<label>[B][COLOR=blue]$LOCALIZE[20416]$LOCALIZE[31000][/COLOR][/B][COLOR=grey] $INFO[listitem.premieblue][/COLOR]</label>
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font12_title</font>
 				<scroll>true</scroll>
-				<visible>!IsEmpty(listitem.premiered)</visible>
+				<visible>!IsEmpty(listitem.premieblue)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -410,13 +456,6 @@
 			<top>55r</top>
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
-			<!--control type="button" id="800">
-				<include>InvisibleButton</include>
-				<onleft>804</onleft>
-				<onright>802</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-			</control-->
 			<control type="button" id="801">
 				<description>Now Playing</description>
 				<left>45</left>
@@ -433,7 +472,26 @@
 				<onup>800</onup>
 				<ondown>800</ondown>
 				<visible>Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
-				<animation effect="slide" start="0,0" end="-45,00" time="0" condition="System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+				<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Skin.HasSetting(disableglobalsearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			</control>
+			<control type="button" id="801">
+				<description>Trailer Button</description>
+				<left>45</left>
+				<top>0</top>
+				<width>45</width>
+				<height>45</height>
+				<label>33061</label>
+				<font>-</font>
+				<onclick>PlayMedia("$INFO[ListItem.Trailer]")</onclick>
+				<texturefocus border="5">FloorButtons/FloorTrailerFO.png</texturefocus>
+				<texturenofocus border="5">FloorButtons/FloorTrailerNF.png</texturenofocus>
+				<onleft>804</onleft>
+				<onright>802</onright>
+				<onup>800</onup>
+				<ondown>800</ondown>
+				<visible>!Player.HasMedia + !IsEmpty(ListItem.Trailer)</visible>
+				<visible>![Control.IsVisible(500) | Control.IsVisible(732)]</visible>
+				<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Skin.HasSetting(disableglobalsearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
 			</control>
 			<control type="button" id="802">
 				<description>Search Button</description>
@@ -451,7 +509,7 @@
 				<ondown>800</ondown>
 				<onclick>Control.Setfocus(9000,0)</onclick>
 				<onclick>SendClick(198)</onclick>
-				<visible>System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch)</visible>
+				<visible>!Skin.HasSetting(disableglobalsearch)</visible>
 				<visible>Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)</visible>
 			</control>
 			<control type="button" id="802">
@@ -469,7 +527,7 @@
 				<onup>800</onup>
 				<ondown>800</ondown>
 				<onclick>RunScript(script.globalsearch)</onclick>
-				<visible>System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch)</visible>
+				<visible>!Skin.HasSetting(disableglobalsearch)</visible>
 				<visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
 				<visible>Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)</visible>
 			</control>
@@ -517,13 +575,13 @@
 			<include>VisibleFadeEffect</include>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
-			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Skin.HasSetting(disableglobalsearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
 			<control type="label">
 				<left>0</left>
 				<top>2</top>
 				<width>450</width>
 				<height>20</height>
-				<label>[B]$INFO[MusicPlayer.Title]$INFO[VideoPlayer.Title][/B]  ([COLOR=red]$INFO[Player.Time] / $INFO[Player.Duration,][/COLOR])</label>
+				<label>$VAR[CommonMediaPlaying]</label>
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -587,7 +645,7 @@
 				<top>25</top>
 				<width>450</width>
 				<height>20</height>
-				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=red],[/COLOR])]</label>
+				<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 				<align>right</align>
 				<aligny>center</aligny>
 				<font>font12</font>
@@ -675,7 +733,7 @@
 			<top>120</top>
 			<height>30</height>
 			<width>325</width>
-			<label>[COLOR=red]$LOCALIZE[209] $LOCALIZE[31000][/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
+			<label>[COLOR=blue]$LOCALIZE[209] $LOCALIZE[31000][/COLOR] $INFO[MusicPlayer.offset(1).Title]</label>
 			<align>right</align>
 			<aligny>center</aligny>
 			<font>font12</font>
@@ -701,6 +759,31 @@
 			<height>130</height>
 			<aspectratio>keep</aspectratio>
 			<texture>$INFO[VideoPlayer.cover]</texture>
+			<visible>!Player.IsInternetStream</visible>
+		</control>
+		<control type="image">
+			<description>Streaming image</description>
+			<left>20</left>
+			<top>17</top>
+			<width>130</width>
+			<height>130</height>
+			<aspectratio>keep</aspectratio>
+			<texture>$VAR[StreamingVideoIcon]</texture>
+			<visible>Player.IsInternetStream</visible>
+		</control>
+		<control type="label">
+			<description>Streaming label</description>
+			<left>160</left>
+			<top>20</top>
+			<height>30</height>
+			<width>325</width>
+			<label>$LOCALIZE[31212]</label>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font12_title</font>
+			<textcolor>grey2</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<visible>Player.IsInternetStream</visible>
 		</control>
 		<control type="label">
 			<description>Studio label</description>
@@ -714,7 +797,7 @@
 			<font>font12_title</font>
 			<textcolor>grey2</textcolor>
 			<shadowcolor>black</shadowcolor>
-			<visible>!videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
+			<visible>!Player.IsInternetStream + !videoplayer.content(episodes) + !videoplayer.content(musicvideos)</visible>
 		</control>
 		<control type="label">
 			<description>TV Show Title label</description>
@@ -752,7 +835,7 @@
 			<top>43</top>
 			<height>30</height>
 			<width>325</width>
-			<label>$INFO[Player.Title]</label>
+			<label>$VAR[VideoNowPlaying]</label>
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>font13_title</font>
@@ -830,6 +913,12 @@
 		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
 		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
 	</include>
+	<include name="MediaInfoPopup">
+		<animation effect="fade" start="0" end="100" time="1600" delay="2000" condition="IsEmpty(Skin.String(mediapopupcontrol))">Visible</animation>
+		<animation effect="fade" start="0" end="100" time="300" delay="300" condition="Skin.String(mediapopupcontrol,Instant)">Visible</animation>
+		<animation effect="fade" start="0" end="100" time="1600" delay="3000" condition="Skin.String(mediapopupcontrol,Delayed)">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+	</include>
 	<include name="VideoBoxDimensions">
 		<left>26</left>
 		<top>6</top>
@@ -872,7 +961,7 @@
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<texture fallback="special://skin/backgrounds/SKINDEFAULT.jpg">$INFO[Skin.String(GlobalBackgroundPath)]</texture>
+				<texture fallback="special://skin/backgrounds/SKINDEFAULT.jpg">$INFO[Skin.String(globalbackgroundpath)]</texture>
 			</control>
 			<control type="group">
 				<left>-133</left>
@@ -991,7 +1080,7 @@
 					</control>
 					<include>CDBoxGlass</include>
 				</control>
-				<visible>Library.HasContent(Music) + StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music)</visible>
+				<visible>Library.HasContent(Music) + [StringCompare(Container(9000).ListItem.Property(HiLiteItem),Music) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),MusicPlayList)]</visible>
 			</control>
 			<control type="group">
 				<left>-133</left>
@@ -1115,9 +1204,180 @@
 					</control>
 					<include>VideoBoxGlass</include>
 				</control>
-				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),PlayList)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),Movies) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),TVShows) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Videos) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),Concerts) | StringCompare(Container(9000).ListItem.Property(HiLiteItem),VideoPlayList)</visible>
 			</control>
 		</control>
+	</include>
+	<include name="TVNextAiredListCommonLayout">
+		<itemlayout height="150" width="280">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>280</width>
+				<height>145</height>
+				<texture border="10">button-nofocus.png</texture>
+			</control>
+			<control type="image">
+				<description>Thumb</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(poster))]</texture>
+				<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),0)</visible>
+			</control>
+			<control type="image">
+				<description>Banner</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(banner))]</texture>
+				<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),1)</visible>
+			</control>
+			<control type="image">
+				<description>Logo</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Path),,logo.png]</texture>
+				<animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
+			</control>
+			<control type="label">
+				<description>Episode Number</description>
+				<left>140</left>
+				<top>60</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>white</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Episode Name</description>
+				<left>140</left>
+				<top>80</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(NextTitle)]</label>
+				<textcolor>white</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Next air date/time</description>
+				<left>140</left>
+				<top>100</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>grey2</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Duration</description>
+				<left>140</left>
+				<top>120</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
+				<textcolor>grey2</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+		</itemlayout>
+		<focusedlayout height="150" width="280">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>280</width>
+				<height>145</height>
+				<texture border="10">button-focus2.png</texture>
+			</control>
+			<control type="image">
+				<description>Thumb</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(poster))]</texture>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),0)</visible>
+			</control>
+			<control type="image">
+				<description>Banner</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Art(banner))]</texture>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),1)</visible>
+			</control>
+			<control type="image">
+				<description>Logo</description>
+				<left>5</left>
+				<top>5</top>
+				<width>270</width>
+				<height>55</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Path),,logo.png]</texture>
+				<visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
+			</control>
+			<control type="label">
+				<description>Episode Number</description>
+				<left>140</left>
+				<top>60</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>selected</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Episode Name</description>
+				<left>140</left>
+				<top>80</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(NextTitle)]</label>
+				<textcolor>selected</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Next air date/time</description>
+				<left>140</left>
+				<top>100</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=blue]-[/COLOR] ]</label>
+				<textcolor>white</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+			<control type="label">
+				<description>Duration</description>
+				<left>140</left>
+				<top>120</top>
+				<width>260</width>
+				<height>15</height>
+				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=blue]-[/COLOR] (,)]</label>
+				<textcolor>white</textcolor>
+				<font>font12</font>
+				<align>center</align>
+			</control>
+		</focusedlayout>
 	</include>
 	<include name="BottomClock">
 		<control type="label" id="1">
@@ -1134,7 +1394,8 @@
 			<label>$INFO[System.Time]</label>
 			<include>Window_OpenClose_Animation</include>
 			<animation effect="fade" start="100" end="0" time="100" condition="Window.IsVisible(movieinformation)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Window.IsVisible(loginscreen) + System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Window.IsVisible(loginscreen) + !Skin.HasSetting(disableglobalsearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!IsEmpty(ListItem.Trailer) + ![Control.IsVisible(500) | Control.IsVisible(732)]">conditional</animation>
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
 		</control>
 		<control type="label" id="1">
@@ -1151,7 +1412,8 @@
 			<label>$INFO[System.Date]</label>
 			<include>Window_OpenClose_Animation</include>
 			<animation effect="fade" start="100" end="0" time="100" condition="Window.IsVisible(movieinformation)">Conditional</animation>
-			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Window.IsVisible(loginscreen) + System.HasAddon(script.globalsearch) + !Skin.HasSetting(DisableGlobalSearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Window.IsVisible(loginscreen) + !Skin.HasSetting(disableglobalsearch) + [Window.IsVisible(musiclibrary) | Window.IsVisible(videolibrary)] | [Window.IsVisible(script-globalsearch-main.xml) + Control.IsVisible(198)] ">conditional</animation>
+			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!IsEmpty(ListItem.Trailer) + ![Control.IsVisible(500) | Control.IsVisible(732)]">conditional</animation>
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),TRUE)</visible>
 		</control>
 	</include>
@@ -1168,74 +1430,32 @@
 			<animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
 		</control>
 	</include>
-	<include name="MenuTypeMovieCheck">
+	<include name="MenuMoviePlayListCheck">
 		<visible>
-		[Skin.String(HomeItem.1.Type,Videos) | Skin.String(HomeItem.1.Type,Movies) | Skin.String(HomeItem.1.Type,PlayList)] + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
-		[Skin.String(HomeItem.2.Type,Videos) | Skin.String(HomeItem.2.Type,Movies) | Skin.String(HomeItem.2.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
-		[Skin.String(HomeItem.3.Type,Videos) | Skin.String(HomeItem.3.Type,Movies) | Skin.String(HomeItem.3.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
-		[Skin.String(HomeItem.4.Type,Videos) | Skin.String(HomeItem.4.Type,Movies) | Skin.String(HomeItem.4.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
-		[Skin.String(HomeItem.5.Type,Videos) | Skin.String(HomeItem.5.Type,Movies) | Skin.String(HomeItem.5.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
-		[Skin.String(HomeItem.6.Type,Videos) | Skin.String(HomeItem.6.Type,Movies) | Skin.String(HomeItem.6.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
-		[Skin.String(HomeItem.7.Type,Videos) | Skin.String(HomeItem.7.Type,Movies) | Skin.String(HomeItem.7.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
-		[Skin.String(HomeItem.8.Type,Videos) | Skin.String(HomeItem.8.Type,Movies) | Skin.String(HomeItem.8.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
-		[Skin.String(HomeItem.9.Type,Videos) | Skin.String(HomeItem.9.Type,Movies) | Skin.String(HomeItem.9.Type,PlayList)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-		[Skin.String(HomeItem.10.Type,Videos) | Skin.String(HomeItem.10.Type,Movies) | Skin.String(HomeItem.10.Type,PlayList)] + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
+			!IsEmpty(Skin.String(homeitem.1.playlist)) + Skin.String(homeitem.1.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.1) |
+			!IsEmpty(Skin.String(homeitem.2.playlist)) + Skin.String(homeitem.2.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.2) |
+			!IsEmpty(Skin.String(homeitem.3.playlist)) + Skin.String(homeitem.3.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.3) |
+			!IsEmpty(Skin.String(homeitem.4.playlist)) + Skin.String(homeitem.4.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.4) |
+			!IsEmpty(Skin.String(homeitem.5.playlist)) + Skin.String(homeitem.5.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.5) |
+			!IsEmpty(Skin.String(homeitem.6.playlist)) + Skin.String(homeitem.6.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.6) |
+			!IsEmpty(Skin.String(homeitem.7.playlist)) + Skin.String(homeitem.7.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.7) |
+			!IsEmpty(Skin.String(homeitem.8.playlist)) + Skin.String(homeitem.8.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.8) |
+			!IsEmpty(Skin.String(homeitem.9.playlist)) + Skin.String(homeitem.9.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.9) |
+			!IsEmpty(Skin.String(homeitem.10.playlist)) + Skin.String(homeitem.10.type,VideoPlayList) + StringCompare(Window(home).Property(usrselectbtn),homeitem.10)
 		</visible>
 	</include>
-	<include name="MenuTypeTVShowCheck">
+	<include name="MenuMusicPlayListCheck">
 		<visible>
-		[Skin.String(HomeItem.1.Type,Videos) | Skin.String(HomeItem.1.Type,TVShows)] + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
-		[Skin.String(HomeItem.2.Type,Videos) | Skin.String(HomeItem.2.Type,TVShows)] + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
-		[Skin.String(HomeItem.3.Type,Videos) | Skin.String(HomeItem.3.Type,TVShows)] + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
-		[Skin.String(HomeItem.4.Type,Videos) | Skin.String(HomeItem.4.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
-		[Skin.String(HomeItem.5.Type,Videos) | Skin.String(HomeItem.5.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
-		[Skin.String(HomeItem.6.Type,Videos) | Skin.String(HomeItem.6.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
-		[Skin.String(HomeItem.7.Type,Videos) | Skin.String(HomeItem.7.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
-		[Skin.String(HomeItem.8.Type,Videos) | Skin.String(HomeItem.8.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
-		[Skin.String(HomeItem.9.Type,Videos) | Skin.String(HomeItem.9.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-		[Skin.String(HomeItem.10.Type,Videos) | Skin.String(HomeItem.10.Type,TVShows)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
-		</visible>
-	</include>
-	<include name="MenuTypeMusicCheck">
-		<visible>
-			Skin.String(HomeItem.1.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
-			Skin.String(HomeItem.2.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
-			Skin.String(HomeItem.3.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
-			Skin.String(HomeItem.4.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
-			Skin.String(HomeItem.5.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
-			Skin.String(HomeItem.6.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
-			Skin.String(HomeItem.7.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
-			Skin.String(HomeItem.8.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
-			Skin.String(HomeItem.9.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-			Skin.String(HomeItem.10.Type,Music)  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
-		</visible>
-	</include>
-	<include name="MenuTypeConcertCheck">
-		<visible>
-			[Skin.String(HomeItem.1.Type,Videos) | Skin.String(HomeItem.1.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
-			[Skin.String(HomeItem.2.Type,Videos) | Skin.String(HomeItem.2.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
-			[Skin.String(HomeItem.3.Type,Videos) | Skin.String(HomeItem.3.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
-			[Skin.String(HomeItem.4.Type,Videos) | Skin.String(HomeItem.4.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
-			[Skin.String(HomeItem.5.Type,Videos) | Skin.String(HomeItem.5.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
-			[Skin.String(HomeItem.6.Type,Videos) | Skin.String(HomeItem.6.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
-			[Skin.String(HomeItem.7.Type,Videos) | Skin.String(HomeItem.7.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
-			[Skin.String(HomeItem.8.Type,Videos) | Skin.String(HomeItem.8.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
-			[Skin.String(HomeItem.9.Type,Videos) | Skin.String(HomeItem.9.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-			[Skin.String(HomeItem.10.Type,Videos) |	Skin.String(HomeItem.10.Type,Concerts)]  + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
-		</visible>
-	</include>
-	<include name="MenuTypePlayListCheck">
-		<visible>
-			!IsEmpty(Skin.String(HomeItem.1.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.1) |
-			!IsEmpty(Skin.String(HomeItem.2.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.2) |
-			!IsEmpty(Skin.String(HomeItem.3.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.3) |
-			!IsEmpty(Skin.String(HomeItem.4.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.4) |
-			!IsEmpty(Skin.String(HomeItem.5.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.5) |
-			!IsEmpty(Skin.String(HomeItem.6.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.6) |
-			!IsEmpty(Skin.String(HomeItem.7.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.7) |
-			!IsEmpty(Skin.String(HomeItem.8.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.8) |
-			!IsEmpty(Skin.String(HomeItem.9.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.9) |
-			!IsEmpty(Skin.String(HomeItem.10.Playlist)) + StringCompare(Window(home).Property(UsrSelectBtn),HomeItem.10)
+			!IsEmpty(Skin.String(homeitem.1.playlist)) + Skin.String(homeitem.1.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.1) |
+			!IsEmpty(Skin.String(homeitem.2.playlist)) + Skin.String(homeitem.2.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.2) |
+			!IsEmpty(Skin.String(homeitem.3.playlist)) + Skin.String(homeitem.3.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.3) |
+			!IsEmpty(Skin.String(homeitem.4.playlist)) + Skin.String(homeitem.4.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.4) |
+			!IsEmpty(Skin.String(homeitem.5.playlist)) + Skin.String(homeitem.5.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.5) |
+			!IsEmpty(Skin.String(homeitem.6.playlist)) + Skin.String(homeitem.6.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.6) |
+			!IsEmpty(Skin.String(homeitem.7.playlist)) + Skin.String(homeitem.7.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.7) |
+			!IsEmpty(Skin.String(homeitem.8.playlist)) + Skin.String(homeitem.8.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.8) |
+			!IsEmpty(Skin.String(homeitem.9.playlist)) + Skin.String(homeitem.9.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.9) |
+			!IsEmpty(Skin.String(homeitem.10.playlist)) + Skin.String(homeitem.10.type,MusicPlaylist) + StringCompare(Window(home).Property(usrselectbtn),homeitem.10)
 		</visible>
 	</include>
 </includes>

@@ -6,9 +6,6 @@
 			<texture background="true">black-back.png</texture>
 			<visible>Control.IsVisible(555)</visible>
 		</control>
-		
-		
-		
 		<control type="group" id="7001">
 			<include>Window_OpenClose_Animation</include>
 			<top>120</top>
@@ -37,14 +34,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-4).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -53,14 +50,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-4).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -69,7 +66,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-4).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-4).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -104,14 +101,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -120,14 +117,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -136,7 +133,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -171,14 +168,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -187,14 +184,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-2).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -203,7 +200,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -240,14 +237,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -256,14 +253,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -272,7 +269,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -307,14 +304,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -323,14 +320,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(2).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -339,7 +336,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -374,14 +371,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(1).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -390,14 +387,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(1).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -406,7 +403,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(1).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -446,14 +443,14 @@
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>38</left>
 							<top>455</top>
 							<width>248</width>
 							<height>410</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(0).Art(poster)]</texture>
-						</control>
+						</control-->
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -462,14 +459,14 @@
 							<aspectratio>stretch</aspectratio>
 							<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(0).FileExtension,ClearCase/,.png]</texture>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>0</left>
 							<top>440</top>
 							<width>300</width>
 							<height>440</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-						</control>
+						</control-->
 						<visible>!IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -478,7 +475,7 @@
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+						<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -514,14 +511,14 @@
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>38</left>
 							<top>455</top>
 							<width>248</width>
 							<height>410</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-1).Art(poster)]</texture>
-						</control>
+						</control-->
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -530,14 +527,14 @@
 							<aspectratio>stretch</aspectratio>
 							<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-1).FileExtension,ClearCase/,.png]</texture>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>0</left>
 							<top>440</top>
 							<width>300</width>
 							<height>440</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-						</control>
+						</control-->
 						<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -546,7 +543,7 @@
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+						<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
 						<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -590,14 +587,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(4).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -606,14 +603,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(4).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -622,7 +619,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(4).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(4).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -657,14 +654,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -673,14 +670,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -689,7 +686,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -724,14 +721,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -740,14 +737,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(2).FileExtension(2),ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -756,7 +753,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -793,14 +790,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -809,14 +806,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -825,7 +822,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -860,14 +857,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -876,14 +873,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-2).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -892,7 +889,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -927,14 +924,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-1).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -943,14 +940,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-1).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -959,7 +956,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -999,14 +996,14 @@
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>38</left>
 							<top>455</top>
 							<width>248</width>
 							<height>410</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(0).Art(poster)]</texture>
-						</control>
+						</control-->
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -1015,14 +1012,14 @@
 							<aspectratio>stretch</aspectratio>
 							<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(0).FileExtension,ClearCase/,.png]</texture>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>0</left>
 							<top>440</top>
 							<width>300</width>
 							<height>440</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-						</control>
+						</control-->
 						<visible>!IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -1031,7 +1028,7 @@
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+						<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 						<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -1067,14 +1064,14 @@
 							<colordiffuse>AAFFFFFF</colordiffuse>
 							<aspectratio aligny="bottom">stretch</aspectratio>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>38</left>
 							<top>455</top>
 							<width>248</width>
 							<height>410</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(1).Art(poster)]</texture>
-						</control>
+						</control-->
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
@@ -1083,14 +1080,14 @@
 							<aspectratio>stretch</aspectratio>
 							<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(1).FileExtension,ClearCase/,.png]</texture>
 						</control>
-						<control type="image">
+						<!--control type="image">
 							<left>0</left>
 							<top>440</top>
 							<width>300</width>
 							<height>440</height>
 							<aspectratio aligny="top">stretch</aspectratio>
 							<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-						</control>
+						</control-->
 						<visible>!IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -1099,7 +1096,7 @@
 						<width>300</width>
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+						<texture>$INFO[Container(555).ListItem(1).icon]</texture>
 						<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 					</control>
 					<control type="image">
@@ -1140,14 +1137,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1156,14 +1153,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1172,7 +1169,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1207,14 +1204,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1223,14 +1220,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-2).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1239,7 +1236,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1274,14 +1271,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(-1).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1290,14 +1287,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(-1).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1306,7 +1303,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(-1).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1341,14 +1338,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(3).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1357,14 +1354,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(3).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1373,7 +1370,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(3).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1408,14 +1405,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(2).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1424,14 +1421,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(2).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1440,7 +1437,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(2).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1475,14 +1472,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(1).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1491,14 +1488,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(1).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 					<visible>!IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1507,7 +1504,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(1).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(1).icon]</texture>
 					<visible>IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
@@ -1543,14 +1540,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(0).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1559,14 +1556,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(0).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1574,7 +1571,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 					<visible>Control.HasFocus(555)</visible>
 					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
@@ -1612,14 +1609,14 @@
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[Container(555).ListItem(0).Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1628,14 +1625,14 @@
 						<aspectratio>stretch</aspectratio>
 						<texture fallback="ClearCase/dv.png">$INFO[Container(555).ListItem(0).FileExtension,ClearCase/,.png]</texture>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>0</left>
 						<top>440</top>
 						<width>300</width>
 						<height>440</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">ClearCase/ClearCase.png</texture>
-					</control>
+					</control-->
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1643,7 +1640,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[Container(555).ListItem(0).Icon]</texture>
+					<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 					<visible>!Control.HasFocus(555)</visible>
 					<visible>IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
@@ -1668,8 +1665,8 @@
 			<top>120</top>
 			<width>306</width>
 			<height>440</height>
-			<onleft>57</onleft>
-			<onright>57</onright>
+			<onleft>555</onleft>
+			<onright>555</onright>
 			<onup>9000</onup>
 			<ondown>60</ondown>
 			<viewtype label="31647">list</viewtype>
@@ -1700,14 +1697,14 @@
 						<aspectratio aligny="bottom">stretch</aspectratio>
 						<visible>!Control.HasFocus(555)</visible>
 					</control>
-					<control type="image">
+					<!--control type="image">
 						<left>38</left>
 						<top>455</top>
 						<width>248</width>
 						<height>410</height>
 						<aspectratio aligny="top">stretch</aspectratio>
 						<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[ListItem.Art(poster)]</texture>
-					</control>
+					</control-->
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -1723,7 +1720,7 @@
 					<width>300</width>
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.icon]</texture>
 					<visible>!Control.IsVisible(7001) + !Control.IsVisible(7002)</visible>
 					<visible>IsEmpty(ListItem.Art(poster))</visible>
 				</control>
@@ -1741,14 +1738,23 @@
 				</control>
 			</focusedlayout>
 		</control>
-		
-		
-		
-		
-		
-		
-		
-		
+		<control type="group">
+			<visible>Control.IsVisible(555)</visible>
+			<control type="image">
+				<left>-2</left>
+				<top>0</top>
+				<width>531</width>
+				<height>780</height>
+				<texture>SideFade.png</texture>
+			</control>
+			<control type="image">
+				<left>753</left>
+				<top>0</top>
+				<width>531</width>
+				<height>780</height>
+				<texture flipx="true">SideFade.png</texture>
+			</control>
+		</control>
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<visible>Control.IsVisible(555)</visible>
@@ -1764,7 +1770,7 @@
 				<scroll>false</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Duration,[B][COLOR=red]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.LastPlayed, [B][COLOR=red]$LOCALIZE[568][/COLOR][/B] ]</label>
+				<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 			</control>
 			<control type="scrollbar" id="60">
 				<left>90</left>
@@ -1779,7 +1785,7 @@
 				<showonepage>true</showonepage>
 				<orientation>horizontal</orientation>
 				<onup>555</onup>
-				<ondown>800</ondown>
+				<ondown>803</ondown>
 			</control>
 		</control>
 		<control type="group">
@@ -1791,14 +1797,44 @@
 				<top>595</top>
 				<width>1280</width>
 				<align>center</align>
-				<itemgap>2</itemgap>
+				<itemgap>5</itemgap>
 				<orientation>horizontal</orientation>
 				<include>VideoMPAAFlaggingConditions</include>
+				<include>VideoSudioFlagging</include>
 				<include>VideoSubTitleFlagging</include>
 				<include>VideoCodecFlaggingConditions</include>
 				<include>AudioCodecFlaggingConditions</include>
 				<include>AudioChannelsFlaggingConditions</include>
 				<include>AspectCodecFlaggingConditions</include>
+				<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<left>0</left>
+				<top>595</top>
+				<width>1280</width>
+				<align>center</align>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="image">
+					<description>Rating image</description>
+					<width>73</width>
+					<height>35</height>
+					<aspectratio>keep</aspectratio>
+					<fadetime>IconCrossfadeTime</fadetime>
+					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="image">
+					<description>Studio image</description>
+					<width>73</width>
+					<height>35</height>
+					<aspectratio align="right">stretch</aspectratio>
+					<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+				<include>SmallVideoGenreFlagging</include>
+				<visible>Container.Content(Seasons) | Container.Content(TVShows)</visible>
 			</control>
 		</control>
 	</include>

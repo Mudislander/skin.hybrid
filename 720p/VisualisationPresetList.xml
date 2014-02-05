@@ -93,7 +93,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="45" width="720">
@@ -125,7 +125,7 @@
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 					</control>
 				</focusedlayout>
 			</control>
@@ -157,7 +157,7 @@
 				<aligny>center</aligny>
 				<scroll>true</scroll>
 				<textcolor>grey</textcolor>
-				<label>([COLOR=red]$INFO[Container(2).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=red]$INFO[Container(2).CurrentPage]/$INFO[Container(2).NumPages][/COLOR])</label>
+				<label>([COLOR=blue]$INFO[Container(2).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=blue]$INFO[Container(2).CurrentPage]/$INFO[Container(2).NumPages][/COLOR])</label>
 			</control>
 		</control>
 	</controls>

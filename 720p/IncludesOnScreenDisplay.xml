@@ -2,9 +2,9 @@
 <includes>
 	<include name="OSDMediaPlot">
 		<control type="group" id="1">
-			<visible>!Skin.HasSetting(HidePauseInfo) + !IsEmpty(VideoPlayer.Plot) + IntegerGreaterThan(Player.time,8) + Player.Paused + !Player.Caching</visible>
-			<animation effect="slide" end="-140,110" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideSeekBarOSD) + !Player.ShowInfo" reversible="true">Conditional</animation>
-			<animation effect="slide" end="-140,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideArtworkOSD) + [!Skin.HasSetting(HideSeekBarOSD) | Player.ShowInfo]" reversible="true">Conditional</animation>						
+			<visible>!Skin.HasSetting(hidepauseinfo) + !IsEmpty(VideoPlayer.Plot) + IntegerGreaterThan(Player.time,8) + Player.Paused + !Player.Caching</visible>
+			<animation effect="slide" end="-140,110" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
+			<animation effect="slide" end="-140,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) + [!Skin.HasSetting(hideseekbarosd) | Player.ShowInfo]" reversible="true">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,25" time="0" condition="Player.ShowInfo + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes) + !VideoPlayer.Content(MusicVideos) + !VideoPlayer.Content(LiveTV)">conditional</animation>
 			<left>320</left>
 			<top>395r</top>
@@ -25,8 +25,8 @@
 				<align>justify</align>
 				<textcolor>white</textcolor>
 				<font>font13</font>
-				<label>$VAR[VideoPlayingDescription,[B][COLOR=red]$LOCALIZE[207]$LOCALIZE[31000] [/COLOR][/B]]</label>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+				<label>$VAR[VideoPlayingDescription,[B][COLOR=blue]$LOCALIZE[207]$LOCALIZE[31000] [/COLOR][/B]]</label>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
 			</control>
 			<control type="grouplist" id="1">
 				<description>Media Genre Flagging</description>
@@ -58,7 +58,7 @@
 			<width>300</width>
 			<height>230</height>
 			<texture>$INFO[Player.Art(clearlogo)]</texture>
-			<aspectratio aligny="bottom">keep</aspectratio>
+			<aspectratio aligny="bottom" align="center">keep</aspectratio>
 			<visible>!IsEmpty(Player.Art(clearlogo)) + IsEmpty(Player.Art(clearart))</visible>
 		</control>
 		<control type="image" id="1">
@@ -68,8 +68,8 @@
 			<width>210</width>
 			<height>320</height>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="ClearCase/EmptyCaseMask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(poster)]</texture>
-			<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
+			<texture diffuse="ClearCase/EmptyCaseMask.png" fallback="DefaultVideo.png">$INFO[Player.Art(poster)]</texture>
+			<visible>!Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
 		<control type="image" id="1">
 			<left>30</left>
@@ -78,14 +78,24 @@
 			<height>345</height>
 			<aspectratio>stretch</aspectratio>
 			<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
-			<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
+			<visible>!Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
+		</control>
+		<control type="image" id="1">
+			<description>clearart image</description>
+			<left>10</left>
+			<top>235r</top>
+			<width>300</width>
+			<height>230</height>
+			<texture>$VAR[StreamingVideoIcon]</texture>
+			<aspectratio aligny="bottom">keep</aspectratio>
+			<visible>Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
 	</include>
 	<include name="OSDTVShowCover">
 		<control type="image" id="1">
 			<description>clearart image</description>
 			<left>10</left>
-			<top>320r</top>
+			<top>235r</top>
 			<width>300</width>
 			<height>230</height>
 			<texture>$INFO[Player.Art(tvshow.clearart)]</texture>
@@ -95,7 +105,7 @@
 		<control type="image" id="1">
 			<description>logo image</description>
 			<left>10</left>
-			<top>320r</top>
+			<top>235r</top>
 			<width>300</width>
 			<height>230</height>
 			<texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
@@ -105,7 +115,7 @@
 		<control type="image" id="1">
 			<description>Cover image</description>
 			<left>63</left>
-			<top>404r</top>
+			<top>319r</top>
 			<width>210</width>
 			<height>320</height>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -114,7 +124,7 @@
 		</control>
 		<control type="image" id="1">
 			<left>30</left>
-			<top>415r</top>
+			<top>326r</top>
 			<width>255</width>
 			<height>345</height>
 			<aspectratio>stretch</aspectratio>
@@ -124,7 +134,7 @@
 		<control type="image" id="1">
 			<description>cover image</description>
 			<left>20</left>
-			<top>320r</top>
+			<top>235r</top>
 			<width>300</width>
 			<height>230</height>
 			<texture fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
@@ -290,7 +300,7 @@
 			<height>25</height>
 			<align>left</align>
 			<font>font12</font>
-			<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=red],[/COLOR])]</label>
+			<label>$INFO[VideoPlayer.ChannelName]$INFO[VideoPlayer.ChannelNumber, - ([COLOR=blue],[/COLOR])]</label>
 			<textcolor>grey2</textcolor>
 			<shadowcolor>black</shadowcolor>
 			<visible>VideoPlayer.Content(LiveTV)</visible>

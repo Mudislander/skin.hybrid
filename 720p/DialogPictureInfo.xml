@@ -111,7 +111,7 @@
 						<shadowcolor>black</shadowcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 					</control>
 					<control type="label">
 						<left>710</left>
@@ -124,7 +124,7 @@
 						<shadowcolor>black</shadowcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<info>ListItem.Label2</info>
+						<info>ListItem.label2</info>
 					</control>
 				</itemlayout>
 				<focusedlayout height="45">
@@ -155,7 +155,7 @@
 						<shadowcolor>black</shadowcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>left</align>
-						<label>$INFO[ListItem.Label]</label>
+						<label>$INFO[ListItem.label]</label>
 					</control>
 					<control type="label">
 						<left>710</left>
@@ -168,7 +168,7 @@
 						<shadowcolor>black</shadowcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<info>ListItem.Label2</info>
+						<info>ListItem.label2</info>
 					</control>
 				</focusedlayout>
 			</control>
@@ -183,7 +183,7 @@
 				<aligny>center</aligny>
 				<scroll>true</scroll>
 				<textcolor>grey</textcolor>
-				<label>([COLOR=red]$INFO[Container(5).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=red]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR])</label>
+				<label>([COLOR=blue]$INFO[Container(5).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=blue]$INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages][/COLOR])</label>
 			</control>
 		</control>
 	</controls>

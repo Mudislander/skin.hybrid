@@ -66,7 +66,7 @@
 				<label>$LOCALIZE[20344]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>red</textcolor>
+				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="spincontrolex" id="3">
@@ -108,7 +108,7 @@
 				<label>$LOCALIZE[31322]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>red</textcolor>
+				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="image">
@@ -118,7 +118,7 @@
 				<width>320</width>
 				<height>130</height>
 				<aspectratio>keep</aspectratio>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[ListItem.icon]</texture>
 			</control>
 			<control type="label">
 				<description>Used Scaper Label</description>
@@ -127,7 +127,7 @@
 				<width>320</width>
 				<height>30</height>
 				<font>font13</font>
-				<label>[B]$INFO[ListItem.Label][/B]</label>
+				<label>[B]$INFO[ListItem.label][/B]</label>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>selected</textcolor>
@@ -151,7 +151,7 @@
 				<label>$LOCALIZE[31323]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>red</textcolor>
+				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="list" id="4">
@@ -178,7 +178,7 @@
 						<top>5</top>
 						<width>35</width>
 						<height>30</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture>$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<left>50</left>
@@ -190,7 +190,7 @@
 						<aligny>center</aligny>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<info>ListItem.Label</info>
+						<info>ListItem.label</info>
 					</control>
 				</itemlayout>
 				<focusedlayout height="45">
@@ -215,7 +215,7 @@
 						<top>5</top>
 						<width>35</width>
 						<height>30</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture>$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<left>50</left>
@@ -227,7 +227,7 @@
 						<aligny>center</aligny>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
-						<info>ListItem.Label</info>
+						<info>ListItem.label</info>
 					</control>
 				</focusedlayout>
 			</control>
@@ -256,7 +256,7 @@
 				<label>$LOCALIZE[31324]</label>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>red</textcolor>
+				<textcolor>blue</textcolor>
 				<shadowcolor>black</shadowcolor>
 			</control>
 			<control type="grouplist" id="5">
