@@ -36,7 +36,7 @@
 			</control>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
-				<imagepath background="true">special://skin/backgrounds/weather/$INFO[Window(Weather).Property(Current.fanartCode)]</imagepath>
+				<imagepath background="true">$VAR[WeatherBackground]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -86,7 +86,6 @@
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<!--texture background="true">$INFO[ListItem.Label,special://skin/backgrounds/genres/,.jpg]</texture-->
 				<texture background="true">$VAR[GenreLabelFanart,special://skin/backgrounds/genres/,.jpg]</texture>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -96,7 +95,6 @@
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<!--texture background="true">$INFO[Container.FolderName,special://skin/backgrounds/genres/,.jpg]</texture-->
 				<texture background="true">$VAR[GenreFolderFanart,special://skin/backgrounds/genres/,.jpg]</texture>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
@@ -116,7 +114,7 @@
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(noanimatevizfanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-				<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + !Skin.HasSetting(disableslideshowart)</visible>
+				<visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + !Skin.HasSetting(disableslideshowart) + !Player.IsInternetStream</visible>
 			</control>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
@@ -126,6 +124,7 @@
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(noanimatevizfanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
+				<visible>!Player.IsInternetStream</visible>
 				<visible>[IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(disableslideshowart)] + !IsEmpty(Control.GetLabel(5043))</visible>
 			</control>
 			<control type="multiimage">
@@ -136,19 +135,21 @@
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(noanimatevizfanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Skin.String(physicalmusicfolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-				<visible>[IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(disableslideshowart)] + IsEmpty(Control.GetLabel(5043))</visible>
+				<visible>[IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(disableslideshowart)] + IsEmpty(Control.GetLabel(5043)) + !Player.IsInternetStream</visible>
 			</control>
 			<control type="image">
 				<description>Fanart Image for Artist</description>
 				<include>Dimensions_Fullscreen</include>
 				<include condition="!Skin.HasSetting(noanimatevizfanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<visible>!Player.IsInternetStream</visible>
 				<visible>!IsEmpty(Player.Art(fanart)) + [IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) |  Skin.HasSetting(disableslideshowart)] + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))</visible>
 				<fadetime>600</fadetime>
 			</control>
 			<control type="visualisation">
 				<include>Dimensions_Fullscreen</include>
 				<visible>Window.IsVisible(home)</visible>
+				<visible>!Player.IsInternetStream</visible>
 				<visible>!IsEmpty(Visualisation.Name) + stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
 			</control>
 			<visible>!Window.IsVisible(weather)</visible>
@@ -339,6 +340,7 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
+			<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 		</control>
 		<control type="label" id="1">
 			<description>Top Right Date Label</description>
@@ -356,6 +358,7 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
+			<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 		</control>
 	</include>
 	<include name="MediaViewBackgrounds">
@@ -422,27 +425,17 @@
 			<texture>black-back.png</texture>
 			<visible>!Control.IsVisible(508) + !Control.IsVisible(509)</visible>
 		</control>
-		<control type="image">
-			<include>Window_OpenClose_Animation</include>
-			<include>Dimensions_Fullscreen</include>
-			<include>VisibleFadeEffect</include>
-			<aspectratio>stretch</aspectratio>
-			<texture>black-back.png</texture>
-			<visible>!Skin.HasSetting(disabledarkbackground)</visible>
-			<!-- Better to check which views do NOT need -->
-			<visible>Control.IsVisible(515) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(500) | Control.IsVisible(550) | Control.IsVisible(551)</visible>
-		</control>
 	</include>
 	<include name="ArtistExtraFanArt">
 		<control type="multiimage" id="5043">
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
-			<visible>Player.HasAudio</visible>
+			<visible>Player.HasAudio + !Player.IsInternetStream</visible>
 		</control>
 		<control type="multiimage" id="5044">
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[Skin.String(physicalmusicfolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-			<visible>Player.HasAudio + IsEmpty(Control.GetLabel(5043))</visible>
+			<visible>Player.HasAudio + !Player.IsInternetStream + IsEmpty(Control.GetLabel(5043))</visible>
 		</control>
 	</include>
 </includes>

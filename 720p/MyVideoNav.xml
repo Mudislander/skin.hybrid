@@ -104,7 +104,7 @@
 					<description>Filter</description>
 					<include>ButtonCommonValues</include>
 					<label>587</label>
-					<selected>Container.Filteblue</selected>
+					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
 				</control>
@@ -143,37 +143,6 @@
 					<selected>system.ismaster</selected>
 					<visible>system.haslocks</visible>
 				</control>
-				<!--
-				<control type="label" id="100">
-					<width>250</width>
-					<height>35</height>
-					<font>font12</font>
-					<label>31037</label>
-					<textcolor>blue</textcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(515) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(500) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(730)</visible>
-				</control>
-				<control type="radiobutton" id="101">
-					<description>Show Info Toggle</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>31018</label>
-					<onclick>Skin.ToggleSetting(disabledarkbackground)</onclick>
-					<selected>!Skin.HasSetting(disabledarkbackground)</selected>
-					<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(730)</visible>
-				</control>
-				<control type="radiobutton" id="102">
-					<description>Darken Background</description>
-					<textwidth>170</textwidth>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[31019]</label>
-					<onclick>Skin.ToggleSetting(enablebannernotlogo)</onclick>
-					<selected>Skin.HasSetting(enablebannernotlogo)</selected>
-					<visible>Control.IsVisible(730) + Container.Content(tvshows) | Container.Content(Movies)</visible>
-					<visible>Control.IsVisible(515) | Control.IsVisible(504) | Control.IsVisible(505) | Control.IsVisible(500) | Control.IsVisible(550) | Control.IsVisible(551)</visible>
-				</control>
-				-->
 				<control type="label" id="203">
 					<width>250</width>
 					<height>35</height>
