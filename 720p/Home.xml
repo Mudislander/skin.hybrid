@@ -23,10 +23,7 @@
 	<onload condition="!Skin.HasSetting(disablescriptplaylist) + !IsEmpty(Skin.String(homeitem.8.playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(homeitem.8.playlist)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomeplaylistEight)</onload>
 	<onload condition="!Skin.HasSetting(disablescriptplaylist) + !IsEmpty(Skin.String(homeitem.9.playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(homeitem.9.playlist)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomeplaylistNine)</onload>
 	<onload condition="!Skin.HasSetting(disablescriptplaylist) + !IsEmpty(Skin.String(homeitem.10.playlist))">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(homeitem.10.playlist)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomeplaylistTen)</onload>
-	<!--
 	<onload condition="!IsEmpty(Weather.Plugin) + !Weather.IsFetched">Weather.Refresh</onload>
-	<onload condition="!IsEmpty(Weather.Plugin) + !System.HasAlarm(WeatherUpdate)">AlarmClock(WeatherUpdate,Weather.Refresh,21600,true,true)</onload>
-	-->
 	<onload condition="Window.Previous(startup)">Control.Move(9000,$INFO[Skin.String(initialmenuitem)])</onload>
 	<controls>
 		<include>CommonBackground</include>
