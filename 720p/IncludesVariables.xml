@@ -2715,12 +2715,17 @@
 	</variable>
 	<variable name="PathSelectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<value condition="Control.HasFocus(601)">$LOCALIZE[31900]</value>
-		<value condition="Control.HasFocus(602)">$LOCALIZE[31901]</value>
-		<value condition="Control.HasFocus(603)">$LOCALIZE[31902]</value>
-		<value condition="Control.HasFocus(604)">$LOCALIZE[31903]</value>
-		<value condition="Control.HasFocus(605)">$LOCALIZE[31904]</value>
-		<value>$LOCALIZE[36102]</value>
+		
+		
+		<value condition="Control.HasFocus(702)">$LOCALIZE[31925]</value>
+		
+		<value condition="Control.HasFocus(706)">$LOCALIZE[31904]</value>
+		<value condition="Control.HasFocus(707)">$LOCALIZE[31900]</value>
+		<value condition="Control.HasFocus(708)">$LOCALIZE[31901]</value>
+		<value condition="Control.HasFocus(709)">$LOCALIZE[31903]</value>
+		<value condition="Control.HasFocus(710)">$LOCALIZE[31902]</value>
+		
+		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="GeneralSectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
@@ -2746,18 +2751,18 @@
 		<value condition="Control.HasFocus(132)">$LOCALIZE[31922]</value>
 		<value condition="Control.HasFocus(133)">$LOCALIZE[31923]</value>
 		<value condition="Control.HasFocus(134)">$LOCALIZE[31924]</value>
-		<value>$LOCALIZE[36102]</value>
+		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="HomeSectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<value>$LOCALIZE[36102]</value>
+		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="SubMenuSelectInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<value>$LOCALIZE[36102]</value>
+		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="AddOnSelectInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<value>$LOCALIZE[36102]</value>
+		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 </includes>
