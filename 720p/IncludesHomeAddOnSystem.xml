@@ -10,7 +10,7 @@
 				<visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetone)</visible>
 				<left>0</left>
 				<top>148r</top>
-				<include>VisibleFadeEffect</include>
+				<!--include>VisibleFadeEffect</include-->
 				<control type="panel" id="700">
 					<animation effect="slide" start="0,0" end="56,0" time="0" condition="StringCompare(Container(700).NumItems,4)">conditional</animation>
 					<animation effect="slide" start="0,0" end="112,0" time="0" condition="StringCompare(Container(700).NumItems,3)">conditional</animation>

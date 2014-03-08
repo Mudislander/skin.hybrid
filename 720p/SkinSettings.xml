@@ -118,7 +118,9 @@
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.label]</label>
-`						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation><animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation></control>
+						<animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation>
+						<animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation>
+					</control>
 				</focusedlayout>
 				<content>
 					<item id="1">
@@ -4444,7 +4446,7 @@
 								<description>Holiday Theme</description>
 								<label>$LOCALIZE[31364]</label>
 								<onclick>noop</onclick>
-								<icon>special://skin/extras/Holiday/xmastree.jpg</icon>
+								<icon>special://skin/extras/holiday/xmastree.jpg</icon>
 								<thumb>$INFO[Skin.String(holidaythemepath)]</thumb>
 								<property name="HiLiteItem">Holiday</property>
 								<visible>Skin.HasSetting(holidayeffects)</visible>
@@ -5626,7 +5628,7 @@
 								<align>center</align>
 								<texturenofocus border="5">button-nofocus.png</texturenofocus>
 								<texturefocus border="5">button-focus.png</texturefocus>
-								<onclick>Skin.SetString(holidaythemepath,special://skin/extras/Holiday/xmastree.jpg)</onclick>
+								<onclick>Skin.SetString(holidaythemepath,special://skin/extras/holiday/xmastree.jpg)</onclick>
 								<onleft>501</onleft>
 								<onright>500</onright>
 								<onup>504</onup>
@@ -5780,7 +5782,6 @@
 						<width>700</width>
 						<height>419</height>
 						<aspectratio>stretch</aspectratio>
-						<animation effect="fade" start="100" end="60" time="0">Conditional</animation>
 						<texture>black-back.png</texture>
 					</control>
 					<control type="list" id="9006">

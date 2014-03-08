@@ -2300,7 +2300,7 @@
 		<value condition="StringCompare(VideoPlayer.Title,player.swf playpath=rmc1 live=true)">special://skin/extras/Streaming/RadioMontecarloTV.png</value>
 		<value condition="SubString(VideoPlayer.Title,Virgin 1,Left)">special://skin/extras/Streaming/Virgin.png</value>
 		<value condition="!IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
-		<value>$INFO[Player.Art(thumb)]</value> 
+		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="VideoPlayerCase">
 		<value condition="VideoPlayer.IsStereoscopic">3DCase</value>
@@ -2552,7 +2552,7 @@
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),MusicPlayList) + stringcompare(Container(9005).ListItem.Thumb,special://skin/backgrounds/homescreen/musicvideos.jpg)">$LOCALIZE[31257]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),PlayDisc) + stringcompare(Container(9005).ListItem.Thumb,special://skin/backgrounds/homescreen/playdisc.jpg)">$LOCALIZE[31257]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),SearchBtn) + stringcompare(Container(9005).ListItem.Thumb,special://skin/backgrounds/homescreen/search.jpg)">$LOCALIZE[31257]</value>
-		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Holiday) + stringcompare(Container(9005).ListItem.Thumb,special://skin/extras/Holiday/xmastree.jpg)">$LOCALIZE[31257]</value>
+		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Holiday) + stringcompare(Container(9005).ListItem.Thumb,special://skin/extras/holiday/xmastree.jpg)">$LOCALIZE[31257]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + Skin.HasSetting(hidestartupbackground)">$LOCALIZE[31313]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),StartUp) + stringcompare(Container(9005).ListItem.Thumb,special://skin/backgrounds/homescreen/startup.jpg)">$LOCALIZE[31257]</value>
 		<value condition="StringCompare(Container(9005).ListItem.Property(HiLiteItem),Global) + IsEmpty(Skin.String(globalbackgroundpath))">$LOCALIZE[31366]</value>
@@ -2715,16 +2715,12 @@
 	</variable>
 	<variable name="PathSelectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		
-		
 		<value condition="Control.HasFocus(702)">$LOCALIZE[31925]</value>
-		
 		<value condition="Control.HasFocus(706)">$LOCALIZE[31904]</value>
 		<value condition="Control.HasFocus(707)">$LOCALIZE[31900]</value>
 		<value condition="Control.HasFocus(708)">$LOCALIZE[31901]</value>
 		<value condition="Control.HasFocus(709)">$LOCALIZE[31903]</value>
 		<value condition="Control.HasFocus(710)">$LOCALIZE[31902]</value>
-		
 		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="GeneralSectionInfo">
