@@ -437,31 +437,31 @@
 						<onclick condition="Skin.String(mpaacertificate,NL)">Skin.SetString(mpaacertificate,USA)</onclick>
 						<enable>!Skin.HasSetting(enablefullmpaa)</enable>
 					</control>
-					<control type="radiobutton" id="127">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[31036]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(diablewatchedcheck)</onclick>
-						<selected>!Skin.HasSetting(diablewatchedcheck)</selected>
-					</control>
-					<control type="radiobutton" id="128">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>  $LOCALIZE[31035]</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(hidenewmediastat)</onclick>
-						<selected>!Skin.HasSetting(hidenewmediastat)</selected>
-						<enable>!Skin.HasSetting(diablewatchedcheck)</enable>
-					</control>
+					<!--control type="radiobutton" id="127">
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <label>  $LOCALIZE[31036]</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(disablewatchedcheck)</onclick>
+                        <selected>!Skin.HasSetting(disablewatchedcheck)</selected>
+                    </control-->
+					<!--control type="radiobutton" id="128">
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <label>  $LOCALIZE[31035]</label>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick>Skin.ToggleSetting(hidenewmediastat)</onclick>
+                        <selected>!Skin.HasSetting(hidenewmediastat)</selected>
+                        <enable>!Skin.HasSetting(disablewatchedcheck)</enable>
+                    </control-->
 					<control type="radiobutton" id="129">
 						<width>750</width>
 						<height>40</height>
@@ -474,21 +474,21 @@
 						<onclick>Skin.ToggleSetting(hideyearintitle)</onclick>
 						<selected>!Skin.HasSetting(hideyearintitle)</selected>
 					</control>
-					<control type="button" id="130">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>$LOCALIZE[31399]</label>
-						<label2>[COLOR=selected]$VAR[PopupInfoType][/COLOR]</label2>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick condition="IsEmpty(Skin.String(mediapopupcontrol))">Skin.SetString(mediapopupcontrol,Delayed)</onclick>
-						<onclick condition="Skin.String(mediapopupcontrol,Delayed)">Skin.SetString(mediapopupcontrol,Hidden)</onclick>
-						<onclick condition="Skin.String(mediapopupcontrol,Hidden)">Skin.SetString(mediapopupcontrol,Instant)</onclick>
-						<onclick condition="Skin.String(mediapopupcontrol,Instant)">Skin.Reset(mediapopupcontrol)</onclick>
-					</control>
+					<!--control type="button" id="130">
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <label>$LOCALIZE[31399]</label>
+                        <label2>[COLOR=selected]$VAR[PopupInfoType][/COLOR]</label2>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                        <onclick condition="IsEmpty(Skin.String(mediapopupcontrol))">Skin.SetString(mediapopupcontrol,Delayed)</onclick>
+                        <onclick condition="Skin.String(mediapopupcontrol,Delayed)">Skin.SetString(mediapopupcontrol,Hidden)</onclick>
+                        <onclick condition="Skin.String(mediapopupcontrol,Hidden)">Skin.SetString(mediapopupcontrol,Instant)</onclick>
+                        <onclick condition="Skin.String(mediapopupcontrol,Instant)">Skin.Reset(mediapopupcontrol)</onclick>
+                    </control-->
 					<control type="radiobutton" id="131">
 						<width>750</width>
 						<height>40</height>
@@ -757,6 +757,8 @@
 						<onclick>Skin.Reset(stickyhomemenuaction)</onclick>
 						<onclick>Skin.Reset(homeitemlastlabel)</onclick>
 						<onclick>Skin.Reset(homeitemlastaction)</onclick>
+						<onclick condition="Skin.String(homeitem.1.path) + !Skin.String(homeitem.1.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.1.path) + Skin.String(homeitem.1.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
@@ -891,6 +893,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.2.path) + !Skin.String(homeitem.2.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.2.path) + Skin.String(homeitem.2.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="210">
@@ -1000,7 +1004,9 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.3,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.3.path) + !Skin.String(homeitem.3.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.3.path) + Skin.String(homeitem.3.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.3.path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="217">
@@ -1111,6 +1117,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.4.path) + !Skin.String(homeitem.4.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.4.path) + Skin.String(homeitem.4.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="224">
@@ -1221,6 +1229,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.5.path) + !Skin.String(homeitem.5.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.5.path) + Skin.String(homeitem.5.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="231">
@@ -1331,6 +1341,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.6.path) + !Skin.String(homeitem.6.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.6.path) + Skin.String(homeitem.6.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="238">
@@ -1441,6 +1453,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.7.path) + !Skin.String(homeitem.7.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.7.path) + Skin.String(homeitem.7.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="245">
@@ -1551,6 +1565,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.8.path) + !Skin.String(homeitem.8.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.8.path) + Skin.String(homeitem.8.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="252">
@@ -1661,6 +1677,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.9.path) + !Skin.String(homeitem.9.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.9.path) + Skin.String(homeitem.9.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="259">
@@ -1771,6 +1789,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick condition="Skin.String(homeitem.10.path) + !Skin.String(homeitem.10.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+						<onclick condition="Skin.String(homeitem.10.path) + Skin.String(homeitem.10.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="266">
@@ -2079,8 +2099,12 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(usrselectbtn,subvideos.1,Home)</onclick>
+						<!--onclick condition="!stringcompare(Skin.String(subvideos.1.path),Hidden)">SetProperty(UsrSelectPath,InUse,home)</onclick-->
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
+					<!--
+					<onclick condition="!IsEmpty(Skin.String(subvideos.1.path)) + !stringcompare(Skin.String(subvideos.1.path),Hidden)">SetProperty(UsrSelectPath,InUse,home)</onclick>
+					-->
 					<control type="button" id="303">
 						<width>750</width>
 						<height>40</height>

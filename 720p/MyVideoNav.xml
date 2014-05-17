@@ -107,6 +107,22 @@
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
 				</control>
+				<control type="button" id="99">
+					<width>250</width>
+					<height>40</height>
+					<font>font13</font>
+					<label>$LOCALIZE[31123] $VAR[PopupInfoType]</label>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="5">button-focus.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<onclick condition="IsEmpty(Skin.String(mediapopupcontrol))">Skin.SetString(mediapopupcontrol,Delayed)</onclick>
+					<onclick condition="Skin.String(mediapopupcontrol,Delayed)">Skin.SetString(mediapopupcontrol,Hidden)</onclick>
+					<onclick condition="Skin.String(mediapopupcontrol,Hidden)">Skin.SetString(mediapopupcontrol,Instant)</onclick>
+					<onclick condition="Skin.String(mediapopupcontrol,Instant)">Skin.Reset(mediapopupcontrol)</onclick>
+					<visible>Control.IsVisible(508) | Control.IsVisible(515)</visible>
+				</control>
 				<control type="label" id="201">
 					<width>250</width>
 					<height>35</height>
@@ -121,6 +137,32 @@
 					<textwidth>170</textwidth>
 					<include>ButtonCommonValues</include>
 					<label>20367</label>
+				</control>
+				<control type="radiobutton" id="205">
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31133]</label>
+					<textwidth>170</textwidth>
+					<onclick>Skin.ToggleSetting(disablewatchedcheck)</onclick>
+					<selected>Skin.HasSetting(disablewatchedcheck)</selected>
+					<visible>!system.setting(hidewatched)</visible>
+				</control>
+				<control type="radiobutton" id="206">
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31134]</label>
+					<textwidth>170</textwidth>
+					<onclick>Skin.ToggleSetting(hidenewmediastat)</onclick>
+					<selected>!Skin.HasSetting(hidenewmediastat)</selected>
+					<enable>!Skin.HasSetting(disablewatchedcheck)</enable>
+					<visible>!system.setting(hidewatched)</visible>
+					<visible>Control.IsVisible(501) | Control.IsVisible(508) | Control.IsVisible(732)</visible>
+				</control>
+				<control type="radiobutton" id="207">
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31135]</label>
+					<textwidth>170</textwidth>
+					<onclick>Skin.ToggleSetting(disableanimatedcase)</onclick>
+					<selected>Skin.HasSetting(disableanimatedcase)</selected>
+					<visible>Control.IsVisible(501)</visible>
 				</control>
 				<control type="button" id="8">
 					<description>Search</description>

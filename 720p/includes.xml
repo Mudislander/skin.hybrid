@@ -76,7 +76,6 @@
 	<include name="CloseMenuChoice">
 		<onclick condition="Window.IsVisible(2114)">Dialog.Close(2114)</onclick>
 		<onclick condition="Window.IsVisible(2115)">Dialog.Close(2115)</onclick>
-		<onclick>Skin.SetString($INFO[Window(home).Property(usrselectbtn)].label)</onclick>
 		<onclick>Skin.Reset(usrselectaddon)</onclick>
 		<onclick>ClearProperty(usrselectbtn,Home)</onclick>
 	</include>
