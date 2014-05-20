@@ -194,7 +194,7 @@
 					<timeperimage>5000</timeperimage>
 					<randomize>true</randomize>
 					<imagepath diffuse="Fanart_Diffuse.png" background="true">$INFO[ListItem.path,,extrathumbs/]</imagepath>
-					<visible>!IsEmpty(Control.GetLabel(5045)</visible>
+					<visible>!IsEmpty(Control.GetLabel(5045))</visible>
 					<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
 					
 				</control>

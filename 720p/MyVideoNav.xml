@@ -123,7 +123,7 @@
 					<onclick condition="Skin.String(mediapopupcontrol,Delayed)">Skin.SetString(mediapopupcontrol,Hidden)</onclick>
 					<onclick condition="Skin.String(mediapopupcontrol,Hidden)">Skin.SetString(mediapopupcontrol,Instant)</onclick>
 					<onclick condition="Skin.String(mediapopupcontrol,Instant)">Skin.Reset(mediapopupcontrol)</onclick>
-					<visible>Control.IsVisible(508) | Control.IsVisible(515)) | Control.IsVisible(730)</visible>
+					<visible>Control.IsVisible(508) | Control.IsVisible(515) | Control.IsVisible(730)</visible>
 				</control>
 				<control type="label" id="201">
 					<width>250</width>
