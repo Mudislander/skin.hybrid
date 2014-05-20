@@ -757,9 +757,9 @@
 						<onclick>Skin.Reset(stickyhomemenuaction)</onclick>
 						<onclick>Skin.Reset(homeitemlastlabel)</onclick>
 						<onclick>Skin.Reset(homeitemlastaction)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.1,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.1.path) + !Skin.String(homeitem.1.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.1.path) + Skin.String(homeitem.1.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
-						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="202">
@@ -810,7 +810,7 @@
 						<onclick>Skin.Reset(stickyhomemenuaction)</onclick>
 						<onclick>Skin.Reset(homeitemlastlabel)</onclick>
 						<onclick>Skin.Reset(homeitemlastaction)</onclick>
-						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.1,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.1.label))</visible>
 					</control>
@@ -824,7 +824,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.1,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.1.label))</visible>
 					</control>
@@ -838,7 +838,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.1,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.1.label))</visible>
 					</control>
@@ -867,7 +867,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.1,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.1.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.1.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.1.sub)],Home)</onclick>
@@ -892,7 +892,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.2,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.2.path) + !Skin.String(homeitem.2.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.2.path) + Skin.String(homeitem.2.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -922,7 +922,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.2,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.2.label))</visible>
 					</control>
@@ -936,7 +936,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.2,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.2.label))</visible>
 					</control>
@@ -950,7 +950,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.2,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.2.label))</visible>
 					</control>
@@ -979,7 +979,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.2,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.2.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.2.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.2.sub)],Home)</onclick>
@@ -1004,9 +1004,9 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.3,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.3.path) + !Skin.String(homeitem.3.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.3.path) + Skin.String(homeitem.3.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
-						<onclick condition="Skin.String(homeitem.3.path)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
 					</control>
 					<control type="radiobutton" id="217">
@@ -1034,7 +1034,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.3,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.3.label))</visible>
 					</control>
@@ -1048,7 +1048,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.3,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.3.label))</visible>
 					</control>
@@ -1062,7 +1062,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.3,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.3.label))</visible>
 					</control>
@@ -1091,7 +1091,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.3,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.3.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.3.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.3.sub)],Home)</onclick>
@@ -1116,7 +1116,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.4,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.4.path) + !Skin.String(homeitem.4.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.4.path) + Skin.String(homeitem.4.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1146,7 +1146,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.4,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.4.label))</visible>
 					</control>
@@ -1160,7 +1160,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.4,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.4.label))</visible>
 					</control>
@@ -1174,7 +1174,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.4,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.4.label))</visible>
 					</control>
@@ -1203,7 +1203,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.4,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.4.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.4.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.4.sub)],Home)</onclick>
@@ -1228,7 +1228,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.5,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.5.path) + !Skin.String(homeitem.5.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.5.path) + Skin.String(homeitem.5.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1258,7 +1258,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.5,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.5.label))</visible>
 					</control>
@@ -1272,7 +1272,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.5,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.5.label))</visible>
 					</control>
@@ -1286,7 +1286,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.5,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.5.label))</visible>
 					</control>
@@ -1315,7 +1315,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.5,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.5.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.5.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.5.sub)],Home)</onclick>
@@ -1340,7 +1340,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.6,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.6.path) + !Skin.String(homeitem.6.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.6.path) + Skin.String(homeitem.6.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1370,7 +1370,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.6,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.6.label))</visible>
 					</control>
@@ -1384,7 +1384,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.6,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.6.label))</visible>
 					</control>
@@ -1398,7 +1398,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.6,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.6.label))</visible>
 					</control>
@@ -1427,7 +1427,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.6,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.6.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.6.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.6.sub)],Home)</onclick>
@@ -1452,7 +1452,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.7,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.7.path) + !Skin.String(homeitem.7.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.7.path) + Skin.String(homeitem.7.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1482,7 +1482,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.7,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.7.label))</visible>
 					</control>
@@ -1496,7 +1496,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.7,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.7.label))</visible>
 					</control>
@@ -1510,7 +1510,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.7,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.7.label))</visible>
 					</control>
@@ -1539,7 +1539,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.7,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.7,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.7.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.7.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.7.sub)],Home)</onclick>
@@ -1564,7 +1564,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.8,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.8.path) + !Skin.String(homeitem.8.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.8.path) + Skin.String(homeitem.8.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1594,7 +1594,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.8,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.8.label))</visible>
 					</control>
@@ -1608,7 +1608,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.8,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.8.label))</visible>
 					</control>
@@ -1622,7 +1622,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.8,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.8.label))</visible>
 					</control>
@@ -1651,7 +1651,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.8,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.8,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.8.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.8.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.8.sub)],Home)</onclick>
@@ -1676,7 +1676,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.9,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.9.path) + !Skin.String(homeitem.9.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.9.path) + Skin.String(homeitem.9.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1706,7 +1706,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.9,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.9.label))</visible>
 					</control>
@@ -1720,7 +1720,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.9,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.9.label))</visible>
 					</control>
@@ -1734,7 +1734,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.9,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.9.label))</visible>
 					</control>
@@ -1763,7 +1763,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.9,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.9,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.9.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.9.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.9.sub)],Home)</onclick>
@@ -1788,7 +1788,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.10,Home)</onclick>
 						<onclick condition="Skin.String(homeitem.10.path) + !Skin.String(homeitem.10.playlist)">SetProperty(UsrSelectPath,InUse,home)</onclick>
 						<onclick condition="Skin.String(homeitem.10.path) + Skin.String(homeitem.10.playlist)">SetProperty(UsrSelectPath,PlaylistInUse,home)</onclick>
 						<onclick>ActivateWindow(2114)</onclick>
@@ -1818,7 +1818,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.10,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.10.label))</visible>
 					</control>
@@ -1832,7 +1832,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.10,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.10.label))</visible>
 					</control>
@@ -1846,7 +1846,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.10,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<visible>!IsEmpty(Skin.String(homeitem.10.label))</visible>
 					</control>
@@ -1875,7 +1875,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.10,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.10,Home)</onclick>
 						<onclick>SetProperty(SwapItemLabel,$INFO[Skin.String(homeitem.10.label)],Home)</onclick>
 						<onclick>SetProperty(SwapItemPath,$INFO[Skin.String(homeitem.10.path)],Home)</onclick>
 						<onclick>SetProperty(SwapItemSub,$INFO[Skin.String(homeitem.10.sub)],Home)</onclick>
@@ -1927,7 +1927,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.13,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.13,Home)</onclick>
 						<onclick>ActivateWindow(2116)</onclick>
 						<enable>!Skin.HasSetting(hidesytemmenuitem)</enable>
 					</control>
@@ -1941,7 +1941,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.13,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.13,Home)</onclick>
 						<onclick>ActivateWindow(2117)</onclick>
 						<enable>!Skin.HasSetting(hidesytemmenuitem)</enable>
 					</control>
@@ -1955,7 +1955,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,homeitem.13,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,homeitem.13,Home)</onclick>
 						<onclick>ActivateWindow(2118)</onclick>
 						<enable>!Skin.HasSetting(hidesytemmenuitem)</enable>
 					</control>
@@ -2098,7 +2098,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.1,Home)</onclick>
 						<!--onclick condition="!stringcompare(Skin.String(subvideos.1.path),Hidden)">SetProperty(UsrSelectPath,InUse,home)</onclick-->
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
@@ -2115,7 +2115,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="304">
@@ -2128,7 +2128,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="305">
@@ -2141,7 +2141,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="306">
@@ -2154,7 +2154,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="307">
@@ -2167,7 +2167,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subvideos.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subvideos.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="308">
@@ -2202,7 +2202,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="311">
@@ -2215,7 +2215,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="312">
@@ -2228,7 +2228,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="313">
@@ -2241,7 +2241,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="314">
@@ -2254,7 +2254,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="315">
@@ -2267,7 +2267,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submovies.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submovies.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="316">
@@ -2302,7 +2302,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="319">
@@ -2315,7 +2315,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="320">
@@ -2328,7 +2328,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="321">
@@ -2341,7 +2341,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="322">
@@ -2354,7 +2354,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="323">
@@ -2367,7 +2367,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subtvshows.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subtvshows.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="324">
@@ -2402,7 +2402,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="327">
@@ -2415,7 +2415,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="328">
@@ -2428,7 +2428,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="329">
@@ -2441,7 +2441,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="330">
@@ -2454,7 +2454,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="331">
@@ -2467,7 +2467,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subconcerts.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subconcerts.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="332">
@@ -2502,7 +2502,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="335">
@@ -2515,7 +2515,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="336">
@@ -2528,7 +2528,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="337">
@@ -2541,7 +2541,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="338">
@@ -2554,7 +2554,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="339">
@@ -2567,7 +2567,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,submusic.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,submusic.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="340">
@@ -2602,7 +2602,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="343">
@@ -2615,7 +2615,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="344">
@@ -2628,7 +2628,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="345">
@@ -2641,7 +2641,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="346">
@@ -2654,7 +2654,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="347">
@@ -2667,7 +2667,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subprog.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subprog.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="348">
@@ -2702,7 +2702,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="351">
@@ -2715,7 +2715,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="352">
@@ -2728,7 +2728,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="353">
@@ -2741,7 +2741,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="354">
@@ -2754,7 +2754,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="355">
@@ -2767,7 +2767,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subpictures.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subpictures.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="356">
@@ -2804,7 +2804,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2818,7 +2818,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2832,7 +2832,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2846,7 +2846,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2860,7 +2860,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2874,7 +2874,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,sublivetv.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,sublivetv.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 						<visible>System.GetBool(pvrmanager.enabled)</visible>
 					</control>
@@ -2910,7 +2910,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="367">
@@ -2923,7 +2923,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="368">
@@ -2936,7 +2936,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="369">
@@ -2949,7 +2949,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="370">
@@ -2962,7 +2962,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="371">
@@ -2975,7 +2975,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,subsystem.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,subsystem.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="372">
@@ -3010,7 +3010,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="375">
@@ -3023,7 +3023,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="376">
@@ -3036,7 +3036,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="377">
@@ -3049,7 +3049,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="378">
@@ -3062,7 +3062,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="379">
@@ -3075,7 +3075,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubone.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubone.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="380">
@@ -3110,7 +3110,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="383">
@@ -3123,7 +3123,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="384">
@@ -3136,7 +3136,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="385">
@@ -3149,7 +3149,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="386">
@@ -3162,7 +3162,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="387">
@@ -3175,7 +3175,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubtwo.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubtwo.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="label" id="388">
@@ -3210,7 +3210,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.1,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.1,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="391">
@@ -3223,7 +3223,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.2,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.2,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="392">
@@ -3236,7 +3236,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.3,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.3,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="393">
@@ -3249,7 +3249,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.4,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.4,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="394">
@@ -3262,7 +3262,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.5,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.5,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 					<control type="button" id="395">
@@ -3275,7 +3275,7 @@
 						<focusedcolor>white</focusedcolor>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>SetProperty(usrselectbtn,usersubthree.6,Home)</onclick>
+						<onclick>SetProperty(UsrSelectBtn,usersubthree.6,Home)</onclick>
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
 				</control>
@@ -3353,7 +3353,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetone.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetone.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="403">
@@ -3366,7 +3366,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetone.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetone.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="404">
@@ -3379,7 +3379,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetone.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetone.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="405">
@@ -3392,7 +3392,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetone.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetone.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="406">
@@ -3405,7 +3405,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetone.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetone.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="407">
@@ -3440,7 +3440,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsettwo.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsettwo.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="410">
@@ -3453,7 +3453,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsettwo.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsettwo.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="411">
@@ -3466,7 +3466,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsettwo.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsettwo.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="412">
@@ -3479,7 +3479,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsettwo.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsettwo.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="413">
@@ -3492,7 +3492,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsettwo.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsettwo.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="414">
@@ -3527,7 +3527,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetthree.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetthree.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="417">
@@ -3540,7 +3540,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetthree.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetthree.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="418">
@@ -3553,7 +3553,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetthree.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetthree.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="419">
@@ -3566,7 +3566,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetthree.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetthree.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="420">
@@ -3579,7 +3579,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetthree.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetthree.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="421">
@@ -3614,7 +3614,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfour.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfour.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="424">
@@ -3627,7 +3627,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfour.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfour.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="425">
@@ -3640,7 +3640,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfour.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfour.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="426">
@@ -3653,7 +3653,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfour.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfour.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="427">
@@ -3666,7 +3666,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfour.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfour.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="428">
@@ -3701,7 +3701,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfive.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfive.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="431">
@@ -3714,7 +3714,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfive.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfive.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="432">
@@ -3727,7 +3727,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfive.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfive.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="433">
@@ -3740,7 +3740,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfive.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfive.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="434">
@@ -3753,7 +3753,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetfive.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetfive.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="435">
@@ -3788,7 +3788,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetsix.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetsix.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="438">
@@ -3801,7 +3801,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetsix.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetsix.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="439">
@@ -3814,7 +3814,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetsix.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetsix.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="440">
@@ -3827,7 +3827,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetsix.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetsix.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="441">
@@ -3840,7 +3840,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetsix.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetsix.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="442">
@@ -3875,7 +3875,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetseven.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetseven.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="445">
@@ -3888,7 +3888,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetseven.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetseven.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="446">
@@ -3901,7 +3901,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetseven.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetseven.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="447">
@@ -3914,7 +3914,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetseven.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetseven.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="448">
@@ -3927,7 +3927,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetseven.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetseven.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="449">
@@ -3962,7 +3962,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonseteight.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonseteight.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="452">
@@ -3975,7 +3975,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonseteight.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonseteight.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="453">
@@ -3988,7 +3988,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonseteight.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonseteight.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="454">
@@ -4001,7 +4001,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonseteight.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonseteight.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="455">
@@ -4014,7 +4014,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonseteight.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonseteight.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="456">
@@ -4049,7 +4049,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetnine.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetnine.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="459">
@@ -4062,7 +4062,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetnine.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetnine.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="460">
@@ -4075,7 +4075,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetnine.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetnine.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="461">
@@ -4088,7 +4088,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetnine.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetnine.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="462">
@@ -4101,7 +4101,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetnine.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetnine.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="label" id="463">
@@ -4136,7 +4136,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetten.1,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetten.1,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="466">
@@ -4149,7 +4149,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetten.2,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetten.2,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="467">
@@ -4162,7 +4162,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetten.3,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetten.3,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="468">
@@ -4175,7 +4175,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetten.4,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetten.4,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 						<control type="button" id="469">
@@ -4188,7 +4188,7 @@
 							<focusedcolor>white</focusedcolor>
 							<texturefocus>MenuItemFO.png</texturefocus>
 							<texturenofocus>MenuItemNF.png</texturenofocus>
-							<onclick>SetProperty(usrselectbtn,addonsetten.5,Home)</onclick>
+							<onclick>SetProperty(UsrSelectBtn,addonsetten.5,Home)</onclick>
 							<onclick>ActivateWindow(2119)</onclick>
 						</control>
 					</control>
