@@ -69,7 +69,7 @@
 			<height>320</height>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<texture diffuse="ClearCase/EmptyCaseMask.png" fallback="DefaultVideo.png">$INFO[Player.Art(poster)]</texture>
-			<visible>!Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
+			<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
 		<control type="image" id="1">
 			<left>30</left>

@@ -12,7 +12,7 @@
 		<control type="group" id="100">
 			<left>325</left>
 			<top>60r</top>
-			<defaultcontrol always="true">202</defaultcontrol>
+			<defaultcontrol always="true">203</defaultcontrol>
 			<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 			<animation effect="slide" end="-55,0" time="0" tween="back" easing="out" condition="Window.IsActive(script.pseudotv.TVOverlay.xml)" reversible="true">Conditional</animation>
 			<animation effect="fade" time="200">VisibleChange</animation>
@@ -120,7 +120,7 @@
 		<control type="group" id="100">
 			<left>325</left>
 			<top>60r</top>
-			<defaultcontrol always="true">301</defaultcontrol>
+			<defaultcontrol always="true">304</defaultcontrol>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
