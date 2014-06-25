@@ -556,7 +556,7 @@
 			<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<left>455r</left>
-			<top>350r</top>
+			<top>310r</top>
 			<width>256</width>
 			<height>300</height>
 			<itemgap>0</itemgap>
@@ -597,7 +597,7 @@
 				<textoffsetx>30</textoffsetx>
 				<aligny>center</aligny>
 				<font>font13</font>
-				<label>31375</label>
+				<label>31377</label>
 				<radioleft>200</radioleft>
 				<texturefocus border="25,5,25,5">SubMenuBack-MiddleFO.png</texturefocus>
 				<texturenofocus border="25,5,25,5">SubMenuBack-MiddleNF.png</texturenofocus>
@@ -654,8 +654,8 @@
 			<visible>videoplayer.isstereoscopic + ![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 			<animation effect="fade" time="200">VisibleChange</animation>
-			<left>340r</left>
-			<top>350r</top>
+			<left>400r</left>
+			<top>310r</top>
 			<width>256</width>
 			<height>300</height>
 			<itemgap>0</itemgap>
@@ -696,7 +696,7 @@
 				<textoffsetx>30</textoffsetx>
 				<aligny>center</aligny>
 				<font>font13</font>
-				<label>31375</label>
+				<label>31377</label>
 				<radioleft>200</radioleft>
 				<texturefocus border="25,5,25,5">SubMenuBack-MiddleFO.png</texturefocus>
 				<texturenofocus border="25,5,25,5">SubMenuBack-MiddleNF.png</texturenofocus>
