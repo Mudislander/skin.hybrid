@@ -47,6 +47,7 @@
 				<width>1480</width>
 				<height>160</height>
 				<texture flipy="true">Home/NowPlayingBack.png</texture>
+				<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 				<visible>!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
 				<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 			</control>

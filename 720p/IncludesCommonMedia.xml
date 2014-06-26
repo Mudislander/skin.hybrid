@@ -296,8 +296,10 @@
 			<texture flipy="true">floor.png</texture>
 			<animation effect="fade" time="250" condition="Window.Previous(Home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(Home)">WindowClose</animation>
+			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsVisible(fullscreenvideo)</visible>
 		</control>
+		
 		<control type="image" id="1">
 			<description>LOGO</description>
 			<left>0</left>
@@ -309,6 +311,7 @@
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
 		</control>
 		<control type="label" id="1">
@@ -326,6 +329,7 @@
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
 			<visible>!StringCompare(System.ProfileName,Master user)</visible>
+			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
 		</control>
 		<control type="label" id="1">
@@ -344,6 +348,7 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
+			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 		</control>
 		<control type="label" id="1">
@@ -362,6 +367,7 @@
 			<animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
 			<visible>!Window.IsVisible(fullscreenvideo) | [!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo]</visible>
+			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
 		</control>
 	</include>

@@ -1372,15 +1372,16 @@
 				<top>555</top>
 				<width>1200</width>
 				<height>35</height>
-				<font>font13</font>
+				<font>font10</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<wrapmultiline>true</wrapmultiline>
 				<scroll>false</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
+				<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 			</control>
+			
 			<control type="scrollbar" id="60">
 				<left>90</left>
 				<top>635</top>

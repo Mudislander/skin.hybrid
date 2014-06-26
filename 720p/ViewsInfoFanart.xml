@@ -308,23 +308,13 @@
 						<top>200</top>
 						<width>520</width>
 						<height>30</height>
-						<font>font12</font>
+						<font>font10</font>
 						<textcolor>white</textcolor>
 						<scroll>true</scroll>
-						<align>left</align>
+						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
+						<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 					</control>
-					<!--control type="grouplist">
-						<description>Media Genre Flagging</description>
-						<left>15</left>
-						<top>233</top>
-						<width>532</width>
-						<align>right</align>
-						<itemgap>5</itemgap>
-						<orientation>horizontal</orientation>
-						<include>SmallVideoGenreFlagging</include>
-					</control-->
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -469,44 +459,14 @@
 						<top>235</top>
 						<width>520</width>
 						<height>30</height>
-						<font>font12</font>
+						<font>font10</font>
 						<textcolor>white</textcolor>
 						<scroll>true</scroll>
-						<align>left</align>
+						<align>center</align>
 						<aligny>center</aligny>
-						<label>$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
+						<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 					</control>
 				</control>
-				<!--control type="image">
-					<description>Rating image</description>
-					<left>5</left>
-					<top>531</top>
-					<width>73</width>
-					<height>35</height>
-					<aspectratio align="right">stretch</aspectratio>
-					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="image">
-					<description>Studio image</description>
-					<left>83</left>
-					<top>531</top>
-					<width>73</width>
-					<height>35</height>
-					<aspectratio align="right">stretch</aspectratio>
-					<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="grouplist">
-					<description>Media Genre Flagging</description>
-					<left>161</left>
-					<top>531</top>
-					<width>380</width>
-					<align>right</align>
-					<itemgap>5</itemgap>
-					<orientation>horizontal</orientation>
-					<include>SmallVideoGenreFlagging</include>
-				</control-->
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
 					<left>0</left>

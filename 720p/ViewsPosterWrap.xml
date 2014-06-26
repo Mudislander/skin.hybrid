@@ -318,36 +318,6 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501) + !IsEmpty(ListItem.FileExtension) + [Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)]</visible>
-			<!--control type="grouplist">
-				<description>Media Codec Flagging Images</description>
-				<left>0</left>
-				<top>616</top>
-				<width>1280</width>
-				<align>center</align>
-				<itemgap>2</itemgap>
-				<orientation>horizontal</orientation>
-				<include condition="!Skin.HasSetting(enablefullmpaa)">VideoMPAAFlaggingConditions</include>
-				
-				<include>VideoSubTitleFlagging</include>
-				<include>VideoCodecFlaggingConditions</include>
-				<include>AudioCodecFlaggingConditions</include>
-				<include>AudioChannelsFlaggingConditions</include>
-				<include>AspectCodecFlaggingConditions</include>
-				<visible>Skin.HasSetting(hidegenreicons)</visible>
-			</control>
-			<control type="grouplist">
-				<description>Media Codec Flagging Images</description>
-				<left>0</left>
-				<top>616</top>
-				<width>1280</width>
-				<align>center</align>
-				<itemgap>5</itemgap>
-				<orientation>horizontal</orientation>
-				<include condition="!Skin.HasSetting(enablefullmpaa)">VideoMPAAFlaggingConditions</include>
-				<include>VideoStudioFlagging</include>
-				<include>SmallVideoGenreFlagging</include>
-				<visible>!Skin.HasSetting(hidegenreicons)</visible>
-			</control-->
 			<control type="label">
 				<left>0</left>
 				<top>570</top>
@@ -359,7 +329,7 @@
 				<scroll>true</scroll>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
+				<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 			</control>
 		</control>
 		<control type="group">

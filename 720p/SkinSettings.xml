@@ -339,12 +339,26 @@
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<label>  $LOCALIZE[31278]</label>
-						<onclick>Skin.ToggleSetting(hideHomestats)</onclick>
-						<selected>!Skin.HasSetting(hideHomestats)</selected>
+						<onclick>Skin.ToggleSetting(hidehomestats)</onclick>
+						<selected>!Skin.HasSetting(hidehomestats)</selected>
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="112">
+						<description>enable home weather info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>  $LOCALIZE[31413]</label>
+						<onclick>Skin.ToggleSetting(homepageweatherinfo)</onclick>
+						<selected>Skin.HasSetting(homepageweatherinfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>!IsEmpty(Weather.Plugin)</enable>
+					</control>
+					<control type="radiobutton" id="113">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -527,6 +541,27 @@
 						<onclick>Skin.ToggleSetting(hidenextsongsinfo)</onclick>
 						<selected>!Skin.HasSetting(hidenextsongsinfo)</selected>
 					</control>
+					
+					
+					
+					
+					<control type="radiobutton" id="135">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>  $LOCALIZE[31414]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(hideosdprofileclock)</onclick>
+						<selected>!Skin.HasSetting(hideosdprofileclock)</selected>
+					</control>
+					
+					
+					
+					
+					
 					<control type="label" id="140">
 						<width>750</width>
 						<height>45</height>

@@ -131,7 +131,6 @@
 				<include>AudioCodecFlaggingConditions</include>
 				<include>AudioChannelsFlaggingConditions</include>
 				<include>AspectCodecFlaggingConditions</include>
-				<!--include>VideoStudioFlagging</include-->
 				<include condition="!Skin.HasSetting(enablefullmpaa)">VideoMPAAFlaggingConditions</include>
 				<visible>![Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 				<visible>Skin.HasSetting(hidegenreicons)</visible>
@@ -163,31 +162,6 @@
 				</control>
 				<visible>Container.Content(TVShows) | Container.Content(Seasons) | !Skin.HasSetting(hidegenreicons)</visible>
 			</control>
-			<!--
-			<control type="image">
-				<description>Rating image</description>
-				<left>70</left>
-				<top>620</top>
-				<width>73</width>
-				<height>35</height>
-				<aspectratio>keep</aspectratio>
-				<fadetime>IconCrossfadeTime</fadetime>
-				<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-				<visible>!IsEmpty(ListItem.Title)</visible>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
-			</control>
-			<control type="image">
-				<description>Studio image</description>
-				<left>148</left>
-				<top>620</top>
-				<width>73</width>
-				<height>35</height>
-				<aspectratio align="right">stretch</aspectratio>
-				<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-				<visible>!IsEmpty(ListItem.Title) + Container.Content(TVShows)</visible>
-			</control>
-			
-			-->
 			<control type="group">
 				<left>0</left>
 				<top>190</top>
@@ -219,12 +193,12 @@
 					<top>385</top>
 					<width>540</width>
 					<height>30</height>
-					<font>font12</font>
+					<font>font10</font>
 					<textcolor>white</textcolor>
 					<scroll>true</scroll>
-					<align>left</align>
+					<align>center</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
+					<label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
 				</control>
 			</control>
 		</control>
