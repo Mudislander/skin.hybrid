@@ -819,7 +819,7 @@
 			<texture>xbmc-logo.png</texture>
 			<include>VisibleFadeEffect</include>
 			<include>Window_OpenClose_Animation</include>
-			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
+			<!--animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation-->
 			<visible>StringCompare(System.ProfileName,Master user) + !Skin.HasSetting(homepageweatherinfo)</visible>
 		</control>
 		<control type="label">
@@ -835,7 +835,7 @@
 			<shadowcolor>black</shadowcolor>
 			<info>System.ProfileName</info>
 			<include>Window_OpenClose_Animation</include>
-			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
+			<!--animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation-->
 			<visible>!StringCompare(System.ProfileName,Master user) + !Skin.HasSetting(homepageweatherinfo)</visible>
 		</control>
 		<control type="label">
@@ -850,7 +850,7 @@
 			<shadowcolor>black</shadowcolor>
 			<label>$LOCALIZE[31370]</label>
 			<include>Window_OpenClose_Animation</include>
-			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation>
+			<!--animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(infodialog)">Conditional</animation-->
 			<visible>!StringCompare(System.ProfileName,Master user) + !Skin.HasSetting(homepageweatherinfo)</visible>
 		</control>
 		<control type="group">
