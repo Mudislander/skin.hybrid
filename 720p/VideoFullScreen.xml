@@ -8,6 +8,7 @@
 			<visible>!Window.IsActive(script.pseudotv.TVOverlay.xml) + !Window.IsActive(script.pseudotv.EPG.xml)</visible>
 			<visible>IntegerGreaterThan(Player.time,3) + !IntegerGreaterThan(Player.time,8) + !Skin.HasSetting(hideinfostartosd)</visible>
 			<visible>![Window.IsActive(VideoOSD) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+			<visible>!Player.Paused  + !Player.ShowInfo</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="image" id="1">
 				<left>-100</left>
@@ -16,12 +17,11 @@
 				<height>230</height>
 				<texture>Home/NowPlayingBack.png</texture>
 			</control>
-			<include condition="!Skin.HasSetting(hideartworkosd) + VideoPlayer.Content(Movies)">OSDMovieCover</include>
-			<include condition="!Skin.HasSetting(hideartworkosd) + VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
+			<include condition="VideoPlayer.Content(Movies)">OSDMovieCover</include>
+			<include condition="VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
 			<control type="group" id="1">
 				<left>330</left>
 				<top>125r</top>
-				<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 				<include>OSDMediaHeading</include>
 				<include>OSDMediaFlagging</include>
 			</control>

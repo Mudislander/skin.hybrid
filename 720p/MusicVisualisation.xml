@@ -59,7 +59,11 @@
 			<aspectratio>stretch</aspectratio>
 			<include>TransparentEffect</include>
 			<texture>black-back.png</texture>
-			<visible>[!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			
+			
+			<visible>!Skin.String(musicosdinfo,never)</visible>
+			
+			<visible>Skin.String(musicosdinfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 		</control>
 		<control type="visualisation" id="2">
 			<include>Dimensions_Fullscreen</include>
@@ -67,9 +71,11 @@
 		</control>
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
-			<visible>[!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			
+			<visible>Skin.String(musicosdinfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<include>HomeScreenFloor</include>
 			<control type="group">
+				<visible>!Skin.String(musicosdinfo,never)</visible>
 				<left>10</left>
 				<top>265r</top>
 				<control type="image">
@@ -102,6 +108,7 @@
 				<visible>!Skin.HasSetting(hidealbumthumbosd)</visible>
 			</control>
 			<control type="group">
+				<visible>!Skin.String(musicosdinfo,never)</visible>
 				<left>330</left>
 				<top>255r</top>
 				<control type="image">
@@ -213,11 +220,14 @@
 				<font>font12</font>
 				<textcolor>white</textcolor>
 				<shadowcolor>black</shadowcolor>
-				<visible>MusicPlayer.HasNext + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
+				<visible>[Skin.String(musicosdinfo,permanent) | MusicPlayer.HasNext] + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
 				<visible>![Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<visible>!Skin.HasSetting(hidenextsongsinfo)</visible>
+				<visible>!Skin.String(musicosdinfo,never)</visible>
 			</control>
+			
+			
 			<control type="group">
 				<left>330</left>
 				<top>95r</top>
@@ -249,7 +259,11 @@
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
-				<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd)" reversible="true">Conditional</animation>
+				
+				<visible>!Skin.String(musicosdinfo,never) | Window.IsActive(MusicOSD)</visible>
+				
+				<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd) + !Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
+				<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
 			</control>
 		</control>
 		<!-- codec & viz infos -->

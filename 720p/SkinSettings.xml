@@ -563,7 +563,21 @@
 						<onclick>Skin.ToggleSetting(hideautomusicviz)</onclick>
 						<selected>!Skin.HasSetting(hideautomusicviz)</selected>
 					</control>
-					<control type="radiobutton" id="142">
+					<control type="button" id="142">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31034]</label>
+						<label2>[COLOR=selected]$VAR[OSDInfoType][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick condition="IsEmpty(Skin.String(musicosdinfo))">Skin.SetString(musicosdinfo,permanent)</onclick>
+						<onclick condition="Skin.String(musicosdinfo,permanent)">Skin.SetString(musicosdinfo,never)</onclick>
+						<onclick condition="Skin.String(musicosdinfo,never)">Skin.Reset(musicosdinfo)</onclick>
+					</control>
+					<control type="radiobutton" id="143">
 						<description>Enable Artist FanArt</description>
 						<width>750</width>
 						<height>40</height>
@@ -576,7 +590,7 @@
 						<onclick>Skin.ToggleSetting(hideartistartosd)</onclick>
 						<selected>!Skin.HasSetting(hideartistartosd)</selected>
 					</control>
-					<control type="radiobutton" id="143">
+					<control type="radiobutton" id="144">
 						<description>Enable Music Thumbnail</description>
 						<width>750</width>
 						<height>40</height>
@@ -588,8 +602,9 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>Skin.ToggleSetting(hidealbumthumbosd)</onclick>
 						<selected>!Skin.HasSetting(hidealbumthumbosd)</selected>
+						<enable> !Skin.String(musicosdinfo,never)</enable>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="145">
 						<description>Ken Burns Effect</description>
 						<width>750</width>
 						<height>40</height>

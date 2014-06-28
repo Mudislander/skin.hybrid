@@ -750,6 +750,7 @@
 			<textureslidernib>Slider/Slider_nibNF.png</textureslidernib>
 			<textureslidernibfocus>Slider/Slider_nib.png</textureslidernibfocus>
 			<animation effect="fade" time="200">VisibleChange</animation>
+			<animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
 			<visible>!StringCompare(Player.Filenameandpath,special://skin/extras/Intro/XBMC-Intro-Video.mkv) + IntegerGreaterThan(Player.time,8)</visible>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | VideoPlayer.Content(LiveTV)]</visible>
 		</control>

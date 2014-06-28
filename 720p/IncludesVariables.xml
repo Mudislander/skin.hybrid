@@ -2435,6 +2435,16 @@
 		<value condition="Skin.String(mediapopupcontrol,Delayed)">$LOCALIZE[31401]</value>
 		<value>$LOCALIZE[31257]</value>
 	</variable>
+	
+	
+	<variable name="OSDInfoType">
+		<value condition="IsEmpty(Skin.String(musicosdinfo))">$LOCALIZE[31033]</value>
+		<value condition="Skin.String(musicosdinfo,permanent)">$LOCALIZE[31032]</value>
+		<value condition="Skin.String(musicosdinfo,never)">$LOCALIZE[31031]</value>
+		<value>$LOCALIZE[31033]</value>
+	</variable>
+	
+	
 	<variable name="TransparentValue">
 		<value condition="!IsEmpty(Skin.String(mediapaneltrans))">$LOCALIZE[31248]</value>
 		<value>$LOCALIZE[31257]</value>
@@ -2855,7 +2865,14 @@
 		<value condition="Control.HasFocus(134)">$LOCALIZE[31924]</value>
 		<value condition="Control.HasFocus(135)">$LOCALIZE[31934]</value>
 		<value condition="Control.HasFocus(141)">$LOCALIZE[31935]</value>
-		<value condition="Control.HasFocus(142)">$LOCALIZE[31936]</value>
+		<value condition="Control.HasFocus(142)">$LOCALIZE[31937]</value>
+		<value condition="Control.HasFocus(143)">$LOCALIZE[31936]</value>
+		<value condition="Control.HasFocus(144)">$LOCALIZE[31938]</value>
+		<value condition="Control.HasFocus(145)">$LOCALIZE[31939]</value>
+		<value condition="Control.HasFocus(161)">$LOCALIZE[31940]</value>
+		<value condition="Control.HasFocus(162)">$LOCALIZE[31941]</value>
+		<value condition="Control.HasFocus(163)">$LOCALIZE[31942]</value>
+		<value condition="Control.HasFocus(190)">$LOCALIZE[31943]</value>
 		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="HomeSectionInfo">

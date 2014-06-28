@@ -41,6 +41,7 @@
 		</control>
 	</include>
 	<include name="OSDMovieCover">
+		<control type="group" id="1">
 		<control type="image" id="1">
 			<description>clearart image</description>
 			<left>10</left>
@@ -90,8 +91,11 @@
 			<aspectratio aligny="bottom">keep</aspectratio>
 			<visible>Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
 		</control>
+		<visible>!Skin.HasSetting(hideartworkosd)</visible>
+		</control>
 	</include>
 	<include name="OSDTVShowCover">
+		<control type="group" id="1">
 		<control type="image" id="1">
 			<description>clearart image</description>
 			<left>10</left>
@@ -142,6 +146,8 @@
 			<bordertexture border="8">ThumbShadow.png</bordertexture>
 			<bordersize>8</bordersize>
 			<visible>IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + IsEmpty(Player.Art(tvshow.thumb))</visible>
+		</control>
+		<visible>!Skin.HasSetting(hideartworkosd)</visible>
 		</control>
 	</include>
 	<include name="OSDMediaFlagging">
