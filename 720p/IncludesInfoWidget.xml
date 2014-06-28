@@ -2430,7 +2430,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.1.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.1.Title))</visible>
 					</item>
 					<item>
@@ -2441,7 +2441,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.2.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.2.Title))</visible>
 					</item>
 					<item>
@@ -2452,7 +2452,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.3.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.3.Title))</visible>
 					</item>
 					<item>
@@ -2463,7 +2463,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.4.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.4.Title))</visible>
 					</item>
 					<item>
@@ -2474,7 +2474,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.5.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.5.Title))</visible>
 					</item>
 					<item>
@@ -2485,7 +2485,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.6.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.6.Title))</visible>
 					</item>
 					<item>
@@ -2496,7 +2496,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.7.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.7.Title))</visible>
 					</item>
 					<item>
@@ -2507,7 +2507,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.8.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.8.Title))</visible>
 					</item>
 					<item>
@@ -2518,7 +2518,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.9.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.9.Title))</visible>
 					</item>
 					<item>
@@ -2529,7 +2529,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.10.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.10.Title))</visible>
 					</item>
 					<item>
@@ -2540,7 +2540,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.11.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.11.Title))</visible>
 					</item>
 					<item>
@@ -2551,7 +2551,7 @@
 						<property name="Year">$INFO[Window(home).Property(LatestSong.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($INFO[Window(home).Property(LatestSong.12.path)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(LatestSong.12.Title))</visible>
 					</item>
 					<item>
@@ -2577,7 +2577,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.1.Title))</visible>
 					</item>
 					<item>
@@ -2591,7 +2591,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.2.Title))</visible>
 					</item>
 					<item>
@@ -2605,7 +2605,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.3.Title))</visible>
 					</item>
 					<item>
@@ -2619,7 +2619,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.4.Title))</visible>
 					</item>
 					<item>
@@ -2633,7 +2633,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.5.Title))</visible>
 					</item>
 					<item>
@@ -2647,7 +2647,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.6.Title))</visible>
 					</item>
 					<item>
@@ -2661,7 +2661,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.7.Title))</visible>
 					</item>
 					<item>
@@ -2675,7 +2675,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.8.Title))</visible>
 					</item>
 					<item>
@@ -2689,7 +2689,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.9.Title))</visible>
 					</item>
 					<item>
@@ -2703,7 +2703,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.10.Title))</visible>
 					</item>
 					<item>
@@ -2717,7 +2717,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.11.Title))</visible>
 					</item>
 					<item>
@@ -2731,7 +2731,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecentAlbum.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecentAlbum.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecentAlbum.12.Title))</visible>
 					</item>
 					<item>
@@ -2754,7 +2754,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.1.Title))</visible>
 					</item>
 					<item>
@@ -2765,7 +2765,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.2.Title))</visible>
 					</item>
 					<item>
@@ -2776,7 +2776,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.3.Title))</visible>
 					</item>
 					<item>
@@ -2787,7 +2787,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.4.Title))</visible>
 					</item>
 					<item>
@@ -2798,7 +2798,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.5.Title))</visible>
 					</item>
 					<item>
@@ -2809,7 +2809,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.6.Title))</visible>
 					</item>
 					<item>
@@ -2820,7 +2820,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.7.Title))</visible>
 					</item>
 					<item>
@@ -2831,7 +2831,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.8.Title))</visible>
 					</item>
 					<item>
@@ -2842,7 +2842,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.9.Title))</visible>
 					</item>
 					<item>
@@ -2853,7 +2853,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.10.Title))</visible>
 					</item>
 					<item>
@@ -2864,7 +2864,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.11.Title))</visible>
 					</item>
 					<item>
@@ -2875,7 +2875,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomSong.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomSong.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomSong.12.Title))</visible>
 					</item>
 					<item>
@@ -2901,7 +2901,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.1.Title))</visible>
 					</item>
 					<item>
@@ -2915,7 +2915,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.2.Title))</visible>
 					</item>
 					<item>
@@ -2929,7 +2929,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.3.Title))</visible>
 					</item>
 					<item>
@@ -2943,7 +2943,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.4.Title))</visible>
 					</item>
 					<item>
@@ -2957,7 +2957,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.5.Title))</visible>
 					</item>
 					<item>
@@ -2971,7 +2971,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.6.Title))</visible>
 					</item>
 					<item>
@@ -2985,7 +2985,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.7.Title))</visible>
 					</item>
 					<item>
@@ -2999,7 +2999,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.8.Title))</visible>
 					</item>
 					<item>
@@ -3013,7 +3013,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.9.Title))</visible>
 					</item>
 					<item>
@@ -3027,7 +3027,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.10.Title))</visible>
 					</item>
 					<item>
@@ -3041,7 +3041,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.11.Title))</visible>
 					</item>
 					<item>
@@ -3055,7 +3055,7 @@
 						<property name="Year">$INFO[Window(home).Property(RandomAlbum.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RandomAlbum.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomAlbum.12.Title))</visible>
 					</item>
 					<item>
@@ -3077,7 +3077,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.1.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.1.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.1.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.1.Title))</visible>
 					</item>
 					<item>
@@ -3087,7 +3087,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.2.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.2.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.2.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.2.Title))</visible>
 					</item>
 					<item>
@@ -3097,7 +3097,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.3.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.3.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.3.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.3.Title))</visible>
 					</item>
 					<item>
@@ -3107,7 +3107,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.4.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.4.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.4.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.4.Title))</visible>
 					</item>
 					<item>
@@ -3117,7 +3117,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.5.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.5.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.5.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.5.Title))</visible>
 					</item>
 					<item>
@@ -3127,7 +3127,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.6.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.6.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.6.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.6.Title))</visible>
 					</item>
 					<item>
@@ -3137,7 +3137,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.7.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.7.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.7.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.7.Title))</visible>
 					</item>
 					<item>
@@ -3147,7 +3147,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.8.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.8.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.8.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.8.Title))</visible>
 					</item>
 					<item>
@@ -3157,7 +3157,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.9.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.9.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.9.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.9.Title))</visible>
 					</item>
 					<item>
@@ -3167,7 +3167,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.10.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.10.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.10.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.10.Title))</visible>
 					</item>
 					<item>
@@ -3177,7 +3177,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.11.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.11.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.11.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.11.Title))</visible>
 					</item>
 					<item>
@@ -3187,7 +3187,7 @@
 						<property name="Genre">$INFO[Window(home).Property(RandomArtist.12.Genre)]</property>
 						<property name="Plot">$INFO[Window(home).Property(RandomArtist.12.Description)]</property>
 						<onclick>ActivateWindow(MusicLibrary,$INFO[Window(home).Property(RandomArtist.12.LibraryPath)])</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RandomArtist.12.Title))</visible>
 					</item>
 					<item>
@@ -3213,7 +3213,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.1.Title))</visible>
 					</item>
 					<item>
@@ -3227,7 +3227,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.2.Title))</visible>
 					</item>
 					<item>
@@ -3241,7 +3241,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.3.Title))</visible>
 					</item>
 					<item>
@@ -3255,7 +3255,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.4.Title))</visible>
 					</item>
 					<item>
@@ -3269,7 +3269,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.5.Title))</visible>
 					</item>
 					<item>
@@ -3283,7 +3283,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.6.Title))</visible>
 					</item>
 					<item>
@@ -3297,7 +3297,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.7.Title))</visible>
 					</item>
 					<item>
@@ -3311,7 +3311,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.8.Title))</visible>
 					</item>
 					<item>
@@ -3325,7 +3325,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.9.Title))</visible>
 					</item>
 					<item>
@@ -3339,7 +3339,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.10.Title))</visible>
 					</item>
 					<item>
@@ -3353,7 +3353,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.11.Title))</visible>
 					</item>
 					<item>
@@ -3367,7 +3367,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedAlbum.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(RecommendedAlbum.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(RecommendedAlbum.12.Title))</visible>
 					</item>
 					<item>
@@ -8187,7 +8187,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.1.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8202,7 +8202,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.2.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8217,7 +8217,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.3.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8232,7 +8232,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.4.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8247,7 +8247,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.5.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8262,7 +8262,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.6.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8277,7 +8277,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.7.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8292,7 +8292,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.8.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8307,7 +8307,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.9.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8322,7 +8322,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.10.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8337,7 +8337,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.11.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8352,7 +8352,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListOne.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListOne.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.12.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
@@ -8372,7 +8372,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.1.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8387,7 +8387,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.2.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8402,7 +8402,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.3.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8417,7 +8417,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.4.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8432,7 +8432,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.5.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8447,7 +8447,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.6.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8462,7 +8462,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.7.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8477,7 +8477,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.8.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8492,7 +8492,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.9.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8507,7 +8507,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.10.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8522,7 +8522,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.11.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8537,7 +8537,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTwo.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTwo.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.12.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
@@ -8557,7 +8557,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.1.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8572,7 +8572,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.2.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8587,7 +8587,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.3.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8602,7 +8602,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.4.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8617,7 +8617,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.5.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8632,7 +8632,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.6.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8647,7 +8647,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.7.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8662,7 +8662,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.8.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8677,7 +8677,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.9.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8692,7 +8692,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.10.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8707,7 +8707,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.11.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8722,7 +8722,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListThree.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListThree.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.12.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
@@ -8742,7 +8742,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.1.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8757,7 +8757,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.2.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8772,7 +8772,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.3.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8787,7 +8787,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.4.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8802,7 +8802,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.5.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8817,7 +8817,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.6.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8832,7 +8832,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.7.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8847,7 +8847,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.8.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8862,7 +8862,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.9.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8877,7 +8877,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.10.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8892,7 +8892,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.11.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8907,7 +8907,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFour.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFour.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.12.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
@@ -8927,7 +8927,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.1.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -8942,7 +8942,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.2.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -8957,7 +8957,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.3.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -8972,7 +8972,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.4.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -8987,7 +8987,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.5.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9002,7 +9002,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.6.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9017,7 +9017,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.7.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9032,7 +9032,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.8.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9047,7 +9047,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.9.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9062,7 +9062,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.10.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9077,7 +9077,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.11.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9092,7 +9092,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListFive.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListFive.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.12.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
@@ -9112,7 +9112,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.1.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9127,7 +9127,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.2.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9142,7 +9142,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.3.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9157,7 +9157,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.4.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9172,7 +9172,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.5.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9187,7 +9187,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.6.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9202,7 +9202,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.7.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9217,7 +9217,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.8.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9232,7 +9232,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.9.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9247,7 +9247,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.10.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9262,7 +9262,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.11.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9277,7 +9277,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSix.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSix.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.12.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
@@ -9297,7 +9297,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.1.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9312,7 +9312,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.2.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9327,7 +9327,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.3.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9342,7 +9342,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.4.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9357,7 +9357,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.5.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9372,7 +9372,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.6.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9387,7 +9387,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.7.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9402,7 +9402,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.8.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9417,7 +9417,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.9.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9432,7 +9432,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.10.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9447,7 +9447,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.11.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9462,7 +9462,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListSeven.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListSeven.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.12.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
@@ -9482,7 +9482,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.1.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9497,7 +9497,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.2.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9512,7 +9512,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.3.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9527,7 +9527,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.4.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9542,7 +9542,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.5.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9557,7 +9557,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.6.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9572,7 +9572,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.7.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9587,7 +9587,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.8.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9602,7 +9602,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.9.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9617,7 +9617,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.10.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9632,7 +9632,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.11.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9647,7 +9647,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListEight.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListEight.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.12.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
@@ -9667,7 +9667,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.1.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9682,7 +9682,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.2.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9697,7 +9697,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.3.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9712,7 +9712,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.4.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9727,7 +9727,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.5.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9742,7 +9742,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.6.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9757,7 +9757,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.7.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9772,7 +9772,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.8.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9787,7 +9787,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.9.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9802,7 +9802,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.10.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9817,7 +9817,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.11.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9832,7 +9832,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListNine.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListNine.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.12.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
@@ -9852,7 +9852,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.1.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.1.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.1.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9867,7 +9867,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.2.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.2.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.2.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9882,7 +9882,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.3.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.3.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.3.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9897,7 +9897,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.4.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.4.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.4.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9912,7 +9912,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.5.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.5.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.5.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9927,7 +9927,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.6.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.6.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.6.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9942,7 +9942,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.7.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.7.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.7.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9957,7 +9957,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.8.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.8.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.8.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9972,7 +9972,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.9.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.9.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.9.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -9987,7 +9987,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.10.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.10.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.10.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -10002,7 +10002,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.11.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.11.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.11.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
@@ -10017,7 +10017,7 @@
 						<property name="Year">$INFO[Window(home).Property(HomePlayListTen.12.Year)]</property>
 						<onclick>PlayList.Clear</onclick>
 						<onclick>$INFO[Window(home).Property(HomePlayListTen.12.Play)]</onclick>
-						<onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick>
+						<!--onclick condition="!Skin.HasSetting(disableslideshowart)">AlarmClock(artistslideshow,RunScript(script.artistslideshow),0:01,true)</onclick-->
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.12.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>

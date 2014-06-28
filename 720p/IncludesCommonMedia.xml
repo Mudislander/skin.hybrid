@@ -175,7 +175,7 @@
 				<visible>!IsEmpty(Player.Art(fanart)) + [IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))] | !Skin.HasSetting(disableslideshowart)</visible>
 				<fadetime>600</fadetime>
 			</control>
-					<control type="multiimage">
+			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<timeperimage>10000</timeperimage>
 				<randomize>true</randomize>
@@ -299,7 +299,6 @@
 			<visible>!Skin.HasSetting(hideosdprofileclock)</visible>
 			<visible>!Window.IsVisible(fullscreenvideo)</visible>
 		</control>
-		
 		<control type="image" id="1">
 			<description>LOGO</description>
 			<left>0</left>
@@ -435,7 +434,7 @@
 		<control type="multiimage" id="5044">
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[Skin.String(physicalmusicfolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
-			<visible>Player.HasAudio + !Player.IsInternetStream + IsEmpty(Control.GetLabel(5043))</visible>
+			<visible>Player.HasAudio + IsEmpty(Control.GetLabel(5043))</visible>
 		</control>
 	</include>
 	<include name="FanArtExtraThumbs">

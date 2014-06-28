@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<onload condition="!Skin.HasSetting(disableslideshowart) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=True)</onload>
 	<defaultcontrol>-</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -38,7 +39,8 @@
 			<include condition="!Skin.HasSetting(noanimatevizfanart)">KBurnsAnimateFanart</include>
 			<texture background="true">$INFO[Player.Art(fanart)]</texture>
 			<colordiffuse>AAFFFFFF</colordiffuse>
-			<visible>!Skin.HasSetting(hideartistartosd) + !IsEmpty(Player.Art(fanart)) + [IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))] | !Skin.HasSetting(disableslideshowart)</visible>
+			<visible>!Skin.HasSetting(hideartistartosd)</visible>
+			<visible>[!IsEmpty(Player.Art(fanart)) + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))] | !Skin.HasSetting(disableslideshowart)</visible>
 			<fadetime>600</fadetime>
 		</control>
 		<control type="multiimage">
