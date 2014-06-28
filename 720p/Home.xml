@@ -90,6 +90,9 @@
 				<height>262</height>
 				<texture>InfoWidget/fanartframe.png</texture>
 			</control>
+			
+			
+			
 			<control type="multiimage">
 				<left>6</left>
 				<top>116</top>
@@ -111,8 +114,13 @@
 				<fadetime>1000</fadetime>
 				<aspectratio>keep</aspectratio>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-				<visible>Player.HasAudio + !Player.IsInternetStream + !Control.HasFocus(510)</visible>
+				<visible>Player.HasAudio + !Skin.HasSetting(disableslideshowart) + !Control.HasFocus(510)</visible>
 			</control>
+			
+			
+			
+			
+			
 			<control type="image">
 				<left>12</left>
 				<top>120</top>

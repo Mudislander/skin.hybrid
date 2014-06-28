@@ -1138,9 +1138,11 @@
 	<variable name="InfoWidgetFanArt">
 		<value condition="Control.HasFocus(510) + StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)">$INFO[Container(510).ListItem.Label,special://skin/backgrounds/favourites/,.jpg]</value>
 		<value condition="Control.HasFocus(510)">$INFO[Container(510).ListItem.Property(Fanart)]</value>
-		<value condition="Player.HasAudio + IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
-		<value condition="Player.HasAudio + !Player.IsInternetStream + IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
-		<value condition="Player.HasAudio + !Player.IsInternetStream + IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
+		
+		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>
+		<value condition="Player.HasAudio + ![IsEmpty(Control.GetLabel(5043)) | Control.HasFocus(510)]">$INFO[Player.FolderPath,,../extrafanart/]</value>
+		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + !Control.HasFocus(510)">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
+		
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + [StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies)]">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(disablescriptplaylist)">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</value>
 		<value condition="![Player.HasMedia | Control.HasFocus(510)] + [StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) | StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) | StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes)]">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</value>
