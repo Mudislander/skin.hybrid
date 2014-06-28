@@ -267,19 +267,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>Skin.HasSetting(autovisablesubmenu) | Skin.HasSetting(enablecleanHome)</enable>
 					</control>
-					<!--control type="radiobutton" id="106">
-						<description>enable home power button</description>
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<label>  $LOCALIZE[31019]</label>
-						<onclick>Skin.ToggleSetting(enablehomepowerbtn)</onclick>
-						<selected>Skin.HasSetting(enablehomepowerbtn)</selected>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-					</control-->
+					
 					<control type="radiobutton" id="107">
 						<width>750</width>
 						<height>40</height>
@@ -541,10 +529,6 @@
 						<onclick>Skin.ToggleSetting(hidenextsongsinfo)</onclick>
 						<selected>!Skin.HasSetting(hidenextsongsinfo)</selected>
 					</control>
-					
-					
-					
-					
 					<control type="radiobutton" id="135">
 						<width>750</width>
 						<height>40</height>
@@ -557,11 +541,6 @@
 						<onclick>Skin.ToggleSetting(hideosdprofileclock)</onclick>
 						<selected>!Skin.HasSetting(hideosdprofileclock)</selected>
 					</control>
-					
-					
-					
-					
-					
 					<control type="label" id="140">
 						<width>750</width>
 						<height>45</height>

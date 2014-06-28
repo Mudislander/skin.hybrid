@@ -19,8 +19,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(700).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(700).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+					<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>700</onleft>
 					<onright>700</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -40,8 +42,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(703).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(703).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+								<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>703</onleft>
 					<onright>703</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -61,8 +65,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(704).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(704).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+			<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>704</onleft>
 					<onright>704</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -82,9 +88,11 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(705).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(705).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
-					<onleft>705</onleft>
+					<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+			<onleft>705</onleft>
 					<onright>705</onright>
 					<include>HomeAddonsCommonLayout</include>
 					<content>
@@ -103,8 +111,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(706).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(706).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+				<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>706</onleft>
 					<onright>706</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -124,8 +134,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(707).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(707).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+			<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>707</onleft>
 					<onright>707</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -145,8 +157,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(708).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(708).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+			<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>708</onleft>
 					<onright>708</onright>
 					<include>HomeAddonsCommonLayout</include>
@@ -166,9 +180,11 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(709).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(709).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
-					<onleft>709</onleft>
+				<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+				<onleft>709</onleft>
 					<onright>709</onright>
 					<include>HomeAddonsCommonLayout</include>
 					<content>
@@ -187,9 +203,11 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(710).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(710).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
-					<onleft>710</onleft>
+						<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+				<onleft>710</onleft>
 					<onright>710</onright>
 					<include>HomeAddonsCommonLayout</include>
 					<content>
@@ -208,8 +226,10 @@
 					<animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(711).NumItems,2)">conditional</animation>
 					<animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(711).NumItems,1)">conditional</animation>
 					<onup>9000</onup>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-					<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+			<ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
 					<onleft>711</onleft>
 					<onright>711</onright>
 					<include>HomeAddonsCommonLayout</include>
