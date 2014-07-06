@@ -37,6 +37,15 @@
 						<texture background="true">$VAR[PosterThumb]</texture>
 					</control>
 					<control type="image">
+						<left>6</left>
+						<top>24</top>
+						<width>112</width>
+						<height>152</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+					<control type="image">
 						<left>48</left>
 						<top>24</top>
 						<width>70</width>
@@ -77,6 +86,17 @@
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
+					</control>
+					<control type="image">
+						<left>6</left>
+						<top>24</top>
+						<width>112</width>
+						<height>152</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
+						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 					<control type="image">
 						<left>48</left>

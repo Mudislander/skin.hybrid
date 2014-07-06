@@ -97,6 +97,16 @@
 						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + Skin.HasSetting(hideepisodethumb)</visible>
 					</control>
+					<control type="image">
+						<left>18</left>
+						<top>24</top>
+						<width>169</width>
+						<height>102</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture diffuse="episodematte.png">black-back.png</texture>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
 					<control type="label">
 						<left>202</left>
 						<top>22</top>
@@ -303,6 +313,16 @@
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + Skin.HasSetting(hideepisodethumb)</visible>
+					</control>
+					<control type="image">
+						<left>18</left>
+						<top>24</top>
+						<width>169</width>
+						<height>102</height>
+						<aspectratio>stretch</aspectratio>
+						<fadetime>IconCrossfadeTime</fadetime>
+						<texture diffuse="episodematte.png">black-back.png</texture>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
 					</control>
 					<control type="label">
 						<left>202</left>

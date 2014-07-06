@@ -216,6 +216,15 @@
 					<selected>Skin.HasSetting(view515hidebanners)</selected>
 					<visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
 				</control>
+				<control type="radiobutton" id="213">
+					<description>Darken Watched</description>
+					<textwidth>170</textwidth>
+					<include>ButtonCommonValues</include>
+					<label>31026</label>
+					<onclick>Skin.ToggleSetting(darkenwatchedmedia)</onclick>
+					<selected>Skin.HasSetting(darkenwatchedmedia)</selected>
+					<visible>Control.IsVisible(732) | Control.IsVisible(529)  | Control.IsVisible(508) | Control.IsVisible(501)</visible>
+				</control>
 				<control type="button" id="8">
 					<description>Search</description>
 					<include>ButtonCommonValues</include>

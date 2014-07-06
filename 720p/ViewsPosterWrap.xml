@@ -55,6 +55,23 @@
 							<aspectratio>stretch</aspectratio>
 							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
 						</control>
+						
+						
+						
+						
+						<control type="image">
+							<left>25</left>
+							<top>10</top>
+							<width>170</width>
+							<height>290</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">black-back.png</texture>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						
+						
+						
+						
 						<control type="image">
 							<left>90</left>
 							<top>10</top>
@@ -159,6 +176,24 @@
 							<width>170</width>
 							<height>290</height>
 							<aspectratio>stretch</aspectratio>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">black-back.png</texture>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="25,10,170,290" end="10,-20,204,348" time="250" />
+								<effect type="rotatey" delay="800" center="1" start="0" end="85" time="1000" tween="quadratic" easing="out" />
+							</animation>
+							<animation type="UnFocus" reversible="true">
+								<effect type="zoom" start="10,-20,204,348" end="25,10,170,290" time="250" reversible="true" />
+								<effect type="rotatey" center="1" start="85" end="0" time="250" reversible="true" />
+							</animation>
+							<visible>!Skin.HasSetting(disableanimatedcase)</visible>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="image">
+							<left>25</left>
+							<top>10</top>
+							<width>170</width>
+							<height>290</height>
+							<aspectratio>stretch</aspectratio>
 							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" start="25,10,170,290" end="10,-20,204,348" time="250" />
@@ -169,6 +204,22 @@
 							<visible>Skin.HasSetting(disableanimatedcase)</visible>
 						</control>
 						<control type="image">
+							<left>25</left>
+							<top>10</top>
+							<width>170</width>
+							<height>290</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">black-back.png</texture>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" start="25,10,170,290" end="10,-20,204,348" time="250" />
+							</animation>
+							<animation type="UnFocus" reversible="true">
+								<effect type="zoom" start="10,-20,204,348" end="25,10,170,290" time="250" reversible="true" />
+							</animation>
+							<visible>Skin.HasSetting(disableanimatedcase)</visible>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+							<control type="image">
 							<left>90</left>
 							<top>10</top>
 							<width>105</width>
