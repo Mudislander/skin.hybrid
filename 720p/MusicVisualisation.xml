@@ -59,10 +59,7 @@
 			<aspectratio>stretch</aspectratio>
 			<include>TransparentEffect</include>
 			<texture>black-back.png</texture>
-			
-			
 			<visible>!Skin.String(musicosdinfo,never)</visible>
-			
 			<visible>Skin.String(musicosdinfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 		</control>
 		<control type="visualisation" id="2">
@@ -71,7 +68,6 @@
 		</control>
 		<control type="group">
 			<animation effect="fade" time="200">VisibleChange</animation>
-			
 			<visible>Skin.String(musicosdinfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 			<include>HomeScreenFloor</include>
 			<control type="group">
@@ -226,8 +222,6 @@
 				<visible>!Skin.HasSetting(hidenextsongsinfo)</visible>
 				<visible>!Skin.String(musicosdinfo,never)</visible>
 			</control>
-			
-			
 			<control type="group">
 				<left>330</left>
 				<top>95r</top>
@@ -259,9 +253,7 @@
 					<aligny>center</aligny>
 					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 				</control>
-				
 				<visible>!Skin.String(musicosdinfo,never) | Window.IsActive(MusicOSD)</visible>
-				
 				<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd) + !Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
 				<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
 			</control>

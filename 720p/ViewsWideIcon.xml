@@ -34,7 +34,8 @@
 						<width>35</width>
 						<height>35</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="104" width="540">
@@ -53,7 +54,8 @@
 						<width>35</width>
 						<height>35</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</focusedlayout>
 			</control>

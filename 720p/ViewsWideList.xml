@@ -193,24 +193,13 @@
 						<info>ListItem.TVShowTitle</info>
 						<visible>Container.Content(Seasons)</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>530</left>
-							<top>7</top>
-							<width>40</width>
-							<height>40</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>530</left>
-							<top>7</top>
-							<width>40</width>
-							<height>40</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>530</left>
+						<top>7</top>
+						<width>40</width>
+						<height>40</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 					<control type="image">
 						<left>202</left>
@@ -412,24 +401,13 @@
 						<info>ListItem.TVShowTitle</info>
 						<visible>Container.Content(Seasons)</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>530</left>
-							<top>7</top>
-							<width>40</width>
-							<height>40</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>530</left>
-							<top>7</top>
-							<width>40</width>
-							<height>40</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>530</left>
+						<top>7</top>
+						<width>40</width>
+						<height>40</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 					<control type="image">
 						<left>202</left>

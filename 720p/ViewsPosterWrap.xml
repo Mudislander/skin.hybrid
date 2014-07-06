@@ -347,25 +347,6 @@
 				<label>$INFO[ListItem.Director ,  [COLOR=blue][B]$LOCALIZE[20339]$LOCALIZE[31000][/B][/COLOR]] $INFO[ListItem.Studio,  [COLOR=blue][B]$LOCALIZE[572]$LOCALIZE[31000][/B][/COLOR]]</label>
 				<visible>!IsEmpty(ListItem.Director) | !IsEmpty(ListItem.Studio)</visible>
 			</control>
-			<!--control type="grouplist">
-				<description>Media Genre Flagging</description>
-				<left>0</left>
-				<top>596</top>
-				<width>1280</width>
-				<align>center</align>
-				<itemgap>5</itemgap>
-				<orientation>horizontal</orientation>
-				<control type="image">
-					<description>Rating image</description>
-					<width>116</width>
-					<height>54</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<include>SmallVideoGenreFlagging</include>
-			</control-->
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(501) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
@@ -395,33 +376,6 @@
 				<label>$INFO[ListItem.Property(UnWatchedEpisodes),  [COLOR=blue][B]$LOCALIZE[31041]$LOCALIZE[31000][/B][/COLOR]] $INFO[ListItem.Studio,  [COLOR=blue][B]$LOCALIZE[572]$LOCALIZE[31000][/B][/COLOR]]</label>
 				<visible>Container.Content(Seasons) + !IsEmpty(ListItem.Property(UnWatchedEpisodes)) + !IsEmpty(ListItem.Studio)</visible>
 			</control>
-			<!--control type="grouplist">
-				<description>Media Genre Flagging</description>
-				<left>0</left>
-				<top>598</top>
-				<width>1280</width>
-				<align>center</align>
-				<itemgap>5</itemgap>
-				<orientation>horizontal</orientation>
-				<control type="image">
-					<description>Rating image</description>
-					<width>73</width>
-					<height>35</height>
-					<aspectratio>keep</aspectratio>
-					<fadetime>IconCrossfadeTime</fadetime>
-					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="image">
-					<description>Studio image</description>
-					<width>73</width>
-					<height>35</height>
-					<aspectratio align="right">stretch</aspectratio>
-					<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<include>SmallVideoGenreFlagging</include>
-			</control-->
 		</control>
 	</include>
 </includes>

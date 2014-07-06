@@ -24,31 +24,12 @@
 						<height>41</height>
 						<texture border="0,2,0,2">MenuItemNF.png</texture>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayBase.png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
+					<control type="image">
+						<left>0</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + !Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 					<control type="label">
@@ -134,31 +115,12 @@
 						<texture border="0,0,14,0">MediaItemDetailBG.png</texture>
 						<visible>Control.HasFocus(51) + [!IsEmpty(ListItem.label2) | StringCompare(Container.FolderName,Genres)]</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">MediaStatus/OverlayBase.png</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
+					<control type="image">
+						<left>0</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>Window.IsVisible(Videos) + !Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 					<control type="label">

@@ -59,24 +59,13 @@
 						<texture>$VAR[VideoResolutionFlag]</texture>
 						<visible>Window.IsVisible(Videos) + Container.Content(Episodes)</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="610">
@@ -140,24 +129,13 @@
 						<texture>$VAR[VideoResolutionFlag]</texture>
 						<visible>Window.IsVisible(Videos) + Container.Content(Episodes)</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -236,7 +214,6 @@
 						<texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
 						<visible>!IsEmpty(ListItem.Studio)</visible>
 					</control>
-					<!--visible>!Skin.HasSetting(hidegenreicons) | Container.Content(TVShows)</visible-->
 				</control>
 				<control type="label">
 					<description>Episodes txt</description>
@@ -377,26 +354,6 @@
 					<texture>separator.png</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
-				<!--control type="grouplist">
-					<description>Media Genre Flagging</description>
-					<left>18</left>
-					<top>517</top>
-					<width>494</width>
-					<align>left</align>
-					<itemgap>5</itemgap>
-					<orientation>horizontal</orientation>
-					<control type="image">
-						<description>Studio image</description>
-						<left>83</left>
-						<top>531</top>
-						<width>73</width>
-						<height>35</height>
-						<aspectratio align="right">stretch</aspectratio>
-						<texture>$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-						<visible>!IsEmpty(ListItem.Title)</visible>
-					</control>
-					<include>SmallVideoGenreFlagging</include>
-				</control-->
 			</control>
 		</control>
 	</include>

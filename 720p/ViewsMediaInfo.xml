@@ -60,24 +60,13 @@
 						<texture>$VAR[VideoResolutionFlag]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40" width="610">
@@ -141,24 +130,13 @@
 						<texture>$VAR[VideoResolutionFlag]</texture>
 						<visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</focusedlayout>
 			</control>

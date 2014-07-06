@@ -2435,39 +2435,50 @@
 		<value condition="Skin.String(mediapopupcontrol,Delayed)">$LOCALIZE[31401]</value>
 		<value>$LOCALIZE[31257]</value>
 	</variable>
-	
-	
 	<variable name="OSDInfoType">
 		<value condition="IsEmpty(Skin.String(musicosdinfo))">$LOCALIZE[31033]</value>
 		<value condition="Skin.String(musicosdinfo,permanent)">$LOCALIZE[31032]</value>
 		<value condition="Skin.String(musicosdinfo,never)">$LOCALIZE[31031]</value>
 		<value>$LOCALIZE[31033]</value>
 	</variable>
-	
-	
 	<variable name="TransparentValue">
 		<value condition="!IsEmpty(Skin.String(mediapaneltrans))">$LOCALIZE[31248]</value>
 		<value>$LOCALIZE[31257]</value>
 	</variable>
+	<variable name="WatchTypeName">
+		<value condition="Skin.HasSetting(disablewatchedcheck)">$LOCALIZE[31328]</value>
+		<value condition="IsEmpty(Skin.String(watchstatustype))">$LOCALIZE[571]</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Red)">$LOCALIZE[13343]</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Blue)">$LOCALIZE[762]</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Green)">$LOCALIZE[13341]</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Yellow)">$LOCALIZE[743]</value>
+	</variable>
+	<variable name="WatchTypePath">
+		<value condition="IsEmpty(Skin.String(watchstatustype))">default/</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Red)">red/</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Blue)">blue/</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Green)">green/</value>
+		<value condition="stringcompare(Skin.String(watchstatustype),Yellow)">yellow/</value>
+	</variable>
 	<variable name="PartlyWatched">
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),0) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19)">OverlayPartlywatched1</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),31)">OverlayPartlywatched2</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),31) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),43)">OverlayPartlywatched3</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),43) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),56)">OverlayPartlywatched4</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),56) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),68)">OverlayPartlywatched5</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),68) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),81)">OverlayPartlywatched6</value>
-		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),81)">OverlayPartlywatched7</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">OverlayPartlywatched1</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">OverlayPartlywatched2</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,31) + !IntegerGreaterThan(ListItem.PercentPlayed,43)">OverlayPartlywatched3</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,43) + !IntegerGreaterThan(ListItem.PercentPlayed,56)">OverlayPartlywatched4</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,56) + !IntegerGreaterThan(ListItem.PercentPlayed,68)">OverlayPartlywatched5</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,68) + !IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched6</value>
-		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,81)">OverlayPartlywatched7</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),0) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19)">$VAR[WatchTypePath]OverlayPartlywatched1</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),19) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),31)">$VAR[WatchTypePath]OverlayPartlywatched2</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),31) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),43)">$VAR[WatchTypePath]OverlayPartlywatched3</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),43) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),56)">$VAR[WatchTypePath]OverlayPartlywatched4</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),56) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),68)">$VAR[WatchTypePath]OverlayPartlywatched5</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),68) + !IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),81)">$VAR[WatchTypePath]OverlayPartlywatched6</value>
+		<value condition="[Window.IsVisible(2125) | Window.IsVisible(2124)] + IntegerGreaterThan(Container(450).listItem.Property(PercentPlayed),81)">$VAR[WatchTypePath]OverlayPartlywatched7</value>
+		<value condition="StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable">$VAR[WatchTypePath]OverlayWatched</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,19)">$VAR[WatchTypePath]OverlayPartlywatched1</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,19) + !IntegerGreaterThan(ListItem.PercentPlayed,31)">$VAR[WatchTypePath]OverlayPartlywatched2</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,31) + !IntegerGreaterThan(ListItem.PercentPlayed,43)">$VAR[WatchTypePath]OverlayPartlywatched3</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,43) + !IntegerGreaterThan(ListItem.PercentPlayed,56)">$VAR[WatchTypePath]OverlayPartlywatched4</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,56) + !IntegerGreaterThan(ListItem.PercentPlayed,68)">$VAR[WatchTypePath]OverlayPartlywatched5</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,68) + !IntegerGreaterThan(ListItem.PercentPlayed,81)">$VAR[WatchTypePath]OverlayPartlywatched6</value>
+		<value condition="IntegerGreaterThan(ListItem.PercentPlayed,81)">$VAR[WatchTypePath]OverlayPartlywatched7</value>
 	</variable>
 	<variable name="StatusBanner">
 		<!-- Watched -->
-		<!-- <value>$INFO[System.Language,Watched/,.png]</value> NOT WORK ?? -->
 		<value condition="StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable + StringCompare(System.Language,English)">Watched/English</value>
 		<value condition="StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable + StringCompare(System.Language,Afrikaans)">Watched/Afrikaans</value>
 		<value condition="StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable + StringCompare(System.Language,Albanian)">Watched/Albanian</value>
@@ -2833,7 +2844,6 @@
 		<value condition="Control.HasFocus(708)">$LOCALIZE[31901]</value>
 		<value condition="Control.HasFocus(709)">$LOCALIZE[31903]</value>
 		<value condition="Control.HasFocus(710)">$LOCALIZE[31902]</value>
-		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="GeneralSectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
@@ -2854,9 +2864,9 @@
 		<value condition="Control.HasFocus(123)">$LOCALIZE[31916]</value>
 		<value condition="Control.HasFocus(124)">$LOCALIZE[31917]</value>
 		<value condition="Control.HasFocus(125)">$LOCALIZE[31931]</value>
-		<value condition="Control.HasFocus(126)">$LOCALIZE[31932]</value>
-		<value condition="Control.HasFocus(127)">$LOCALIZE[31933]</value>
-		<value condition="Control.HasFocus(128)">$LOCALIZE[31919]</value>
+		<value condition="Control.HasFocus(126)">$LOCALIZE[31946]</value>
+		<value condition="Control.HasFocus(127)">$LOCALIZE[31932]</value>
+		<value condition="Control.HasFocus(128)">$LOCALIZE[31933]</value>
 		<value condition="Control.HasFocus(129)">$LOCALIZE[31926]</value>
 		<value condition="Control.HasFocus(130)">$LOCALIZE[31920]</value>
 		<value condition="Control.HasFocus(131)">$LOCALIZE[31921]</value>
@@ -2873,22 +2883,19 @@
 		<value condition="Control.HasFocus(162)">$LOCALIZE[31941]</value>
 		<value condition="Control.HasFocus(163)">$LOCALIZE[31942]</value>
 		<value condition="Control.HasFocus(190)">$LOCALIZE[31943]</value>
-		<!--value>$LOCALIZE[36102]</value-->
+		<value condition="Control.HasFocus(198)">$LOCALIZE[31944]</value>
+		<value condition="Control.HasFocus(199)">$LOCALIZE[31945]</value>
 	</variable>
 	<variable name="HomeSectionInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="SubMenuSelectInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="AddOnSelectInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 	<variable name="FloorBtnInfo">
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
-		<!--value>$LOCALIZE[36102]</value-->
 	</variable>
 </includes>

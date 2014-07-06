@@ -300,7 +300,6 @@
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd) + !Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
 			<animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
-
 			<visible>IntegerGreaterThan(Player.time,5)</visible>
 			<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
 		</control>

@@ -458,7 +458,7 @@
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.widget,None)</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.type,Programs)</onload>
 		<onload condition="!System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.fanart,special://skin/backgrounds/homescreen/programs.jpg)</onload>
-		<onload condition="System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.label,31208])</onload>
+		<onload condition="System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.label,$LOCALIZE[31208])</onload>
 		<onload condition="System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.path,RunAddon(plugin.program.advanced.launcher))</onload>
 		<onload condition="System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.icon,$INFO[system.addonicon(plugin.program.advanced.launcher)])</onload>
 		<onload condition="System.HasAddon(plugin.program.advanced.launcher)">Skin.SetString(homeitem.10.display,Default)</onload>

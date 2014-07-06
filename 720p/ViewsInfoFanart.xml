@@ -8,7 +8,6 @@
 				<left>40</left>
 				<top>98</top>
 				<width>390</width>
-				<!--height>560</height-->
 				<height>520</height>
 				<onleft>2</onleft>
 				<onright>60</onright>
@@ -38,24 +37,13 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.label]</label>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="!Container.Content(TVShows) | Skin.HasSetting(view515hidebanners)" height="40" width="390">
@@ -89,24 +77,13 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.label]</label>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>8</top>
-							<width>24</width>
-							<height>24</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>3</left>
+						<top>6</top>
+						<width>28</width>
+						<height>28</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</focusedlayout>
 				<itemlayout condition="Container.Content(TVShows) + !Skin.HasSetting(view515hidebanners)" height="74" width="390">
@@ -142,24 +119,13 @@
 						<label>$INFO[ListItem.label]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>5</top>
-							<width>32</width>
-							<height>32</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>5</top>
-							<width>32</width>
-							<height>32</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>32</width>
+						<height>32</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="Container.Content(TVShows) + !Skin.HasSetting(view515hidebanners)" height="74" width="390">
@@ -205,24 +171,13 @@
 						<label>$INFO[ListItem.label]</label>
 						<visible>IsEmpty(ListItem.Art(banner))</visible>
 					</control>
-					<control type="group">
-						<control type="image">
-							<left>5</left>
-							<top>5</top>
-							<width>32</width>
-							<height>32</height>
-							<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-							<visible>ListItem.IsResumable</visible>
-						</control>
-						<control type="image">
-							<left>5</left>
-							<top>5</top>
-							<width>32</width>
-							<height>32</height>
-							<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
-							<visible>!ListItem.IsResumable</visible>
-						</control>
-						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>32</width>
+						<height>32</height>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+						<visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -618,26 +573,6 @@
 					<texture>ClearCase/TVseries.png</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
-				<!--control type="image">
-					<description>Rating image</description>
-					<left>5</left>
-					<top>531</top>
-					<width>73</width>
-					<height>35</height>
-					<aspectratio align="right">stretch</aspectratio>
-					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-					<visible>!IsEmpty(ListItem.Title)</visible>
-				</control>
-				<control type="grouplist">
-					<description>Media Genre Flagging</description>
-					<left>161</left>
-					<top>531</top>
-					<width>380</width>
-					<align>right</align>
-					<itemgap>5</itemgap>
-					<orientation>horizontal</orientation>
-					<include>SmallVideoGenreFlagging</include>
-				</control-->
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
 					<left>0</left>

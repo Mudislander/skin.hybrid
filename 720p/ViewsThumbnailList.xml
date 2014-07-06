@@ -67,7 +67,7 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
 					</control>
 				</itemlayout>
@@ -121,7 +121,7 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
 					</control>
 				</focusedlayout>
@@ -162,7 +162,7 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
 					</control>
 				</itemlayout>
@@ -203,7 +203,7 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[ListItem.Overlay,MediaStatus/]</texture>
+						<texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
 						<visible>!IsEmpty(ListItem.Overlay) + !Skin.HasSetting(disablewatchedcheck)</visible>
 					</control>
 				</focusedlayout>

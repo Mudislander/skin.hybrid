@@ -432,7 +432,24 @@
 						<onclick>Skin.ToggleSetting(usedisctypecase)</onclick>
 						<selected>Skin.HasSetting(usedisctypecase)</selected>
 					</control>
-					<control type="radiobutton" id="126">
+					<control type="button" id="126">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31697]</label>
+						<label2>[COLOR=selected]$VAR[WatchTypeName][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick condition="Skin.HasSetting(disablewatchedcheck)">Skin.Reset(disablewatchedcheck)</onclick>
+						<onclick condition="IsEmpty(Skin.String(watchstatustype))">Skin.SetString(watchstatustype,Red)</onclick>
+						<onclick condition="Skin.String(watchstatustype,Red)">Skin.SetString(watchstatustype,Blue)</onclick>
+						<onclick condition="Skin.String(watchstatustype,Blue)">Skin.SetString(watchstatustype,Green)</onclick>
+						<onclick condition="Skin.String(watchstatustype,Green)">Skin.SetString(watchstatustype,Yellow)</onclick>
+						<onclick condition="Skin.String(watchstatustype,Yellow)">Skin.Reset(watchstatustype)</onclick>
+					</control>
+					<control type="radiobutton" id="127">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -444,7 +461,7 @@
 						<onclick>Skin.ToggleSetting(enablefullmpaa)</onclick>
 						<selected>Skin.HasSetting(enablefullmpaa)</selected>
 					</control>
-					<control type="button" id="127">
+					<control type="button" id="128">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -2117,12 +2134,8 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<onclick>SetProperty(UsrSelectBtn,subvideos.1,Home)</onclick>
-						<!--onclick condition="!stringcompare(Skin.String(subvideos.1.path),Hidden)">SetProperty(UsrSelectPath,InUse,home)</onclick-->
 						<onclick>ActivateWindow(2115)</onclick>
 					</control>
-					<!--
-					<onclick condition="!IsEmpty(Skin.String(subvideos.1.path)) + !stringcompare(Skin.String(subvideos.1.path),Hidden)">SetProperty(UsrSelectPath,InUse,home)</onclick>
-					-->
 					<control type="button" id="303">
 						<width>750</width>
 						<height>40</height>
@@ -6180,7 +6193,6 @@
 							<include>SubMenuPicturesIcons</include>
 							<include>SubMenuLiveTVIcons</include>
 							<include>SubMenuConcertsIcons</include>
-							<!--include>SubMenuFavouritesIcons</include-->
 							<include>SubMenuUserOneIcons</include>
 							<include>SubMenuUserTwoIcons</include>
 							<include>SubMenuProgIcons</include>
@@ -6820,19 +6832,6 @@
 						<onclick>Skin.ToggleSetting(hidetrailerbtn)</onclick>
 						<selected>!Skin.HasSetting(hidetrailerbtn)</selected>
 					</control>
-					<!--control type="radiobutton" id="903">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31677</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(SmallVolumeJump)</onclick>
-						<selected>!Skin.HasSetting(SmallVolumeJump)</selected>
-						<enable>!Skin.HasSetting(DisableFloorVolumeButtons)</enable>
-					</control-->
 					<control type="label" id="904">
 						<width>750</width>
 						<height>45</height>
@@ -6856,18 +6855,6 @@
 						<texturefocus>MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<!--control type="radiobutton" id="905">
-						<width>750</width>
-						<height>40</height>
-						<font>font13</font>
-						<label>31114</label>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>MenuItemFO.png</texturefocus>
-						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(AutoHidePowerBtn)</onclick>
-						<selected>Skin.HasSetting(enablehomepowerbtn)</selected>
-					</control-->
 					<control type="radiobutton" id="906">
 						<width>750</width>
 						<height>40</height>
