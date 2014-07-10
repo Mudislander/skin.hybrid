@@ -55,10 +55,6 @@
 							<aspectratio>stretch</aspectratio>
 							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">$VAR[PosterThumb]</texture>
 						</control>
-						
-						
-						
-						
 						<control type="image">
 							<left>25</left>
 							<top>10</top>
@@ -66,12 +62,8 @@
 							<height>290</height>
 							<aspectratio>stretch</aspectratio>
 							<texture background="true" diffuse="ClearCase/EmptyCaseMask.png">black-back.png</texture>
-							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 						</control>
-						
-						
-						
-						
 						<control type="image">
 							<left>90</left>
 							<top>10</top>
@@ -186,7 +178,7 @@
 								<effect type="rotatey" center="1" start="85" end="0" time="250" reversible="true" />
 							</animation>
 							<visible>!Skin.HasSetting(disableanimatedcase)</visible>
-							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
 							<left>25</left>
@@ -217,7 +209,7 @@
 								<effect type="zoom" start="10,-20,204,348" end="25,10,170,290" time="250" reversible="true" />
 							</animation>
 							<visible>Skin.HasSetting(disableanimatedcase)</visible>
-							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 						</control>
 							<control type="image">
 							<left>90</left>

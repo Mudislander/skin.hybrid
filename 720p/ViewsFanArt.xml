@@ -43,7 +43,7 @@
 						<height>152</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<left>48</left>
@@ -71,6 +71,8 @@
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>!StringCompare(ListItem.label,..)</visible>
+						<visible>!Skin.HasSetting(darkenwatchedmedia) | [Skin.HasSetting(darkenwatchedmedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="310" width="120">
@@ -96,7 +98,7 @@
 						<texture>black-back.png</texture>
 						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
-						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<left>48</left>
@@ -131,6 +133,8 @@
 						<animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
 						<animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
+						<visible>!StringCompare(ListItem.label,..)</visible>
+						<visible>!Skin.HasSetting(darkenwatchedmedia) | [Skin.HasSetting(darkenwatchedmedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
 					</control>
 				</focusedlayout>
 			</control>

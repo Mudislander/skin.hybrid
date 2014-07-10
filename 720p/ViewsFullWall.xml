@@ -42,7 +42,7 @@
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<left>46</left>
@@ -73,6 +73,7 @@
 						<texture>black-back.png</texture>
 						<colordiffuse>AAFFFFFF</colordiffuse>
 						<visible>!StringCompare(ListItem.label,..)</visible>
+						<visible>!Skin.HasSetting(darkenwatchedmedia) | [Skin.HasSetting(darkenwatchedmedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="190" width="131">

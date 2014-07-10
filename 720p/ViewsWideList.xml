@@ -105,7 +105,7 @@
 						<aspectratio>stretch</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture diffuse="episodematte.png">black-back.png</texture>
-						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
 						<left>202</left>
@@ -322,7 +322,7 @@
 						<aspectratio>stretch</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture diffuse="episodematte.png">black-back.png</texture>
-						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 					</control>
 					<control type="label">
 						<left>202</left>
