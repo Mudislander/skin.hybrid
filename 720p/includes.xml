@@ -1,412 +1,487 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include file="IncludesVariables.xml" />
-	<include file="IncludesHomeMenuSys.xml" />
-	<include file="IncludesCommonMedia.xml" />
-	<include file="IncludesSubMenuSys.xml" />
-	<include file="IncludesHomeAddOnSystem.xml" />
-	<include file="IncludesInfoWidget.xml" />
-	<include file="IncludesCDWall.xml" />
-	<include file="IncludesOnScreenDisplay.xml" />
-	<include file="IncludesCodecFlagging.xml" />
-	<include file="IncludesGenreFlagging.xml" />
-	<include file="IncludesMenuContentItems.xml" />
-	<include file="ViewsVideoLibrary.xml" />
-	<include file="ViewsMusicLibrary.xml" />
-	<include file="ViewsFileMode.xml" />
-	<include file="ViewsPictures.xml" />
-	<include file="ViewsAddonBrowser.xml" />
-	<include file="ViewsLiveTV.xml" />
-	<include file="ViewsPVRGuide.xml" />
-	<include file="ViewsWeather.xml" />
-	<include file="ViewsLogoVertical.xml" />
-	<include file="ViewsPosterWrap.xml" />
-	<include file="ViewsWideList.xml" />
-	<include file="ViewsEpisodes.xml" />
-	<include file="ViewsCoverFlow.xml" />
-	<include file="ViewsBannerInfo.xml" />
-	<include file="ViewsFullWidthList.xml" />
-	<include file="ViewsLowlist.xml" />
-	<include file="IncludesPVR.xml" />
-	<include file="IncludesCommonRoutines.xml" />
-	<constant name="FanartCrossfadeTime">500</constant>
-	<constant name="IconCrossfadeTime">400</constant>
-	<default type="image">
-		<left>0</left>
-		<top>0</top>
-		<texture>-</texture>
-		<colorkey>0</colorkey>
-	</default>
-	<default type="label">
-		<label>-</label>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-	</default>
-	<default type="fadelabel">
-		<left>80</left>
-		<top>60</top>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-	</default>
-	<default type="button">
-		<width>300</width>
-		<height>42</height>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<default type="togglebutton">
-		<left>140</left>
-		<top>167</top>
-		<width>20</width>
-		<height>20</height>
-		<texturefocus>scroll-up-focus.png</texturefocus>
-		<texturenofocus>scroll-up.png</texturenofocus>
-		<alttexturefocus>scroll-down-focus.png</alttexturefocus>
-		<alttexturenofocus>scroll-down.png</alttexturenofocus>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<label>-</label>
-		<font>font13</font>
-		<disabledcolor>grey3</disabledcolor>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<default type="textbox">
-		<left>220</left>
-		<top>222</top>
-		<width>410</width>
-		<height>213</height>
-		<align>left</align>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<font>font13</font>
-	</default>
-	<default type="progress">
-		<left>100</left>
-		<top>325</top>
-		<texturebg colordiffuse="$VAR[MainColorOne]" border="6,0,6,0">OSDProgressBack.png</texturebg>
-		<lefttexture>-</lefttexture>
-		<midtexture colordiffuse="$VAR[MainColorOne]" border="6,0,6,0">OSDProgressMid.png</midtexture>
-		<righttexture>-</righttexture>
-		<overlaytexture>-</overlaytexture>
-	</default>
-	<default type="spincontrol">
-		<left>330</left>
-		<top>126</top>
-		<textureup>scroll-up-2.png</textureup>
-		<texturedown>scroll-down-2.png</texturedown>
-		<textureupfocus>scroll-up-focus-2.png</textureupfocus>
-		<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
-		<align>right</align>
-		<width>33</width>
-		<height>22</height>
-		<font>font13</font>
-		<reverse>yes</reverse>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<subtype>text</subtype>
-		<textoffsetx>-5</textoffsetx>
-		<textoffsety>0</textoffsety>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<default type="spincontrolex">
-		<left>530</left>
-		<top>160</top>
-		<width>300</width>
-		<height>42</height>
-		<spinwidth>33</spinwidth>
-		<spinheight>22</spinheight>
-		<texturefocus colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<textureup>scroll-up-2.png</textureup>
-		<texturedown>scroll-down-2.png</texturedown>
-		<textureupfocus>scroll-up-focus-2.png</textureupfocus>
-		<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
-		<reverse>yes</reverse>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<default type="radiobutton">
-		<left>300</left>
-		<top>200</top>
-		<width>300</width>
-		<height>42</height>
-		<radiowidth>24</radiowidth>
-		<radioheight>24</radioheight>
-		<textureradioonfocus colordiffuse="$VAR[MainColorOne]">radiobutton-focus.png</textureradioonfocus>
-		<textureradioonnofocus colordiffuse="$VAR[MainColorOne]">radiobutton-focus.png</textureradioonnofocus>
-		<textureradioofffocus>radiobutton-nofocus.png</textureradioofffocus>
-		<textureradiooffnofocus>radiobutton-nofocus.png</textureradiooffnofocus>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<label>215</label>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<default type="selectbutton">
-		<left>490</left>
-		<top>335</top>
-		<width>300</width>
-		<height>50</height>
-		<label>-</label>
-		<font>font12</font>
-		<texturefocus>-</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<texturebg colordiffuse="$VAR[MainColorOne]">button-focus.png</texturebg>
-		<textureleft>scroll-left.png</textureleft>
-		<textureleftfocus>scroll-left-focus.png</textureleftfocus>
-		<textureright>scroll-right.png</textureright>
-		<texturerightfocus>scroll-right-focus.png</texturerightfocus>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<aligny>center</aligny>
-	</default>
-	<default type="slider">
-		<controloffsetx>75</controloffsetx>
-		<controloffsety>0</controloffsety>
-	</default>
-	<default type="sliderex">
-		<height>35</height>
-		<textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<sliderwidth>150</sliderwidth>
-		<sliderheight>20</sliderheight>
-		<texturesliderbar colordiffuse="$VAR[MainColorOne]">osd_slider_bg.png</texturesliderbar>
-		<textureslidernib colordiffuse="$VAR[MainColorOne]">Slider_nibNF.png</textureslidernib>
-		<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">Slider_nib.png</textureslidernibfocus>
-		<font>font12</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-	</default>
-	<default type="mover">
-		<left>60</left>
-		<top>192</top>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-	</default>
-	<default type="resize">
-		<left>60</left>
-		<top>192</top>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-	</default>
-	<default type="edit">
-		<left>300</left>
-		<top>200</top>
-		<width>300</width>
-		<height>42</height>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<font>font13</font>
-		<textcolor>$VAR[MainColorTwo]</textcolor>
-		<disabledcolor>grey3</disabledcolor>
-		<invalidcolor>invalid</invalidcolor>
-		<textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
-		<pulseonselect>no</pulseonselect>
-	</default>
-	<include name="TransparentEffect">
-		<animation effect="fade" start="100" end="15" time="0" condition="SubString(skin.string(MediaPanelTrans),85)">Conditional</animation>
-		<animation effect="fade" start="100" end="30" time="0" condition="SubString(skin.string(MediaPanelTrans),70)">Conditional</animation>
-		<animation effect="fade" start="100" end="45" time="0" condition="SubString(skin.string(MediaPanelTrans),55)">Conditional</animation>
-		<animation effect="fade" start="100" end="60" time="0" condition="SubString(skin.string(MediaPanelTrans),40)">Conditional</animation>
-		<animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(MediaPanelTrans),25)">Conditional</animation>
-		<animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(MediaPanelTrans),10)">Conditional</animation>
-	</include>
-	<include name="WidgetTransparency">
-		<animation effect="fade" start="100" end="60" time="0" condition="SubString(skin.string(MediaPanelTrans),85) | SubString(skin.string(MediaPanelTrans),70)">Conditional</animation>
-		<animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(MediaPanelTrans),55) | SubString(skin.string(MediaPanelTrans),40)">Conditional</animation>
-		<animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(MediaPanelTrans),25) | SubString(skin.string(MediaPanelTrans),10)">Conditional</animation>
-	</include>
-	<include name="BackgroundFade">
-		<animation effect="fade" time="600">Visible</animation>
-		<animation effect="fade" time="600">Hidden</animation>
-	</include>
-	<include name="Animation_Fade">
-		<animation effect="fade" time="500">WindowOpen</animation>
-		<animation effect="fade" time="200">Visible</animation>
-		<animation effect="fade" time="200">WindowClose</animation>
-		<animation effect="fade" time="200">Hidden</animation>
-	</include>
-	<include name="Window_OpenClose_Animation">
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-	</include>
-	<include name="DialogEffect">
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-	</include>
-	<include name="VisibleFadeEffect">
-		<animation effect="fade" time="300">Visible</animation>
-		<animation effect="fade" time="300">Hidden</animation>
-	</include>
-	<include name="KBurnsAnimateFanart">
-		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
-		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
-	</include>
-	<include name="KeyboardButton">
-		<width>50</width>
-		<height>50</height>
-		<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">KeyboardKey.png</texturefocus>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font13</font>
-		<focusedcolor>black</focusedcolor>
-	</include>
-	<include name="ButtonCommonValues">
-		<height>40</height>
-		<width>250</width>
-		<textoffsetx>10</textoffsetx>
-		<textwidth>200</textwidth>
-		<aligny>center</aligny>
-		<font>font12</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
-	<include name="VideoBoxGlass">
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>184</width>
-			<height>240</height>
-			<include>BackgroundFade</include>
-			<fadetime>800</fadetime>
-			<include>Window_OpenClose_Animation</include>
-			<texture background="true">ClearCase/ClearCase.png</texture>
+    <include file="IncludesVariables.xml" />
+    <include file="IncludesHomeMenuSys.xml" />
+    <include file="IncludesCommonMedia.xml" />
+    <include file="IncludesSubMenuSys.xml" />
+    <include file="IncludesHomeAddOnSystem.xml" />
+    <include file="IncludesInfoWidget.xml" />
+    <include file="IncludesCDWall.xml" />
+    <include file="IncludesOnScreenDisplay.xml" />
+    <include file="IncludesCodecFlagging.xml" />
+    <include file="IncludesGenreFlagging.xml" />
+    <include file="IncludesMenuContentItems.xml" />
+    <include file="ViewsVideoLibrary.xml" />
+    <include file="ViewsMusicLibrary.xml" />
+    <include file="ViewsFileMode.xml" />
+    <include file="ViewsPictures.xml" />
+    <include file="ViewsAddonBrowser.xml" />
+    <include file="ViewsLiveTV.xml" />
+    <include file="ViewsPVRGuide.xml" />
+    <include file="ViewsWeather.xml" />
+    <include file="ViewsLogoVertical.xml" />
+    <include file="ViewsPosterWrap.xml" />
+    <include file="ViewsWideList.xml" />
+    <include file="ViewsEpisodes.xml" />
+    <include file="ViewsCoverFlow.xml" />
+    <include file="ViewsBannerInfo.xml" />
+    <include file="ViewsFullWidthList.xml" />
+    <include file="ViewsLowlist.xml" />
+    <include file="IncludesPVR.xml" />
+    <include file="IncludesCommonRoutines.xml" />
+    <constant name="FanartCrossfadeTime">500</constant>
+    <constant name="IconCrossfadeTime">400</constant>
+    <default type="image">
+        <left>0</left>
+        <top>0</top>
+        <texture>-</texture>
+        <colorkey>0</colorkey>
+    </default>
+    <default type="label">
+        <label>-</label>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+    </default>
+    <default type="fadelabel">
+        <left>80</left>
+        <top>60</top>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+    </default>
+    <default type="button">
+        <width>300</width>
+        <height>42</height>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <textoffsetx>7</textoffsetx>
+        <aligny>center</aligny>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <default type="togglebutton">
+        <left>140</left>
+        <top>167</top>
+        <width>20</width>
+        <height>20</height>
+        <texturefocus>scroll-up-focus.png</texturefocus>
+        <texturenofocus>scroll-up.png</texturenofocus>
+        <alttexturefocus>scroll-down-focus.png</alttexturefocus>
+        <alttexturenofocus>scroll-down.png</alttexturenofocus>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <label>-</label>
+        <font>font13</font>
+        <disabledcolor>grey3</disabledcolor>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <default type="textbox">
+        <left>220</left>
+        <top>222</top>
+        <width>410</width>
+        <height>213</height>
+        <align>left</align>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <font>font13</font>
+    </default>
+    <default type="progress">
+        <left>100</left>
+        <top>325</top>
+        <texturebg colordiffuse="$VAR[MainColorOne]" border="6,0,6,0">OSDProgressBack.png</texturebg>
+        <lefttexture>-</lefttexture>
+        <midtexture colordiffuse="$VAR[MainColorOne]" border="6,0,6,0">OSDProgressMid.png</midtexture>
+        <righttexture>-</righttexture>
+        <overlaytexture>-</overlaytexture>
+    </default>
+    <default type="spincontrol">
+        <left>330</left>
+        <top>126</top>
+        <textureup>scroll-up-2.png</textureup>
+        <texturedown>scroll-down-2.png</texturedown>
+        <textureupfocus>scroll-up-focus-2.png</textureupfocus>
+        <texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
+        <align>right</align>
+        <width>33</width>
+        <height>22</height>
+        <font>font13</font>
+        <reverse>yes</reverse>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <subtype>text</subtype>
+        <textoffsetx>-5</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <default type="spincontrolex">
+        <left>530</left>
+        <top>160</top>
+        <width>300</width>
+        <height>42</height>
+        <spinwidth>33</spinwidth>
+        <spinheight>22</spinheight>
+        <texturefocus colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <textureup>scroll-up-2.png</textureup>
+        <texturedown>scroll-down-2.png</texturedown>
+        <textureupfocus>scroll-up-focus-2.png</textureupfocus>
+        <texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <textoffsetx>7</textoffsetx>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <default type="radiobutton">
+        <left>300</left>
+        <top>200</top>
+        <width>300</width>
+        <height>42</height>
+        <radiowidth>24</radiowidth>
+        <radioheight>24</radioheight>
+        <textureradioonfocus colordiffuse="$VAR[MainColorOne]">radiobutton-focus.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="$VAR[MainColorOne]">radiobutton-focus.png</textureradioonnofocus>
+        <textureradioofffocus>radiobutton-nofocus.png</textureradioofffocus>
+        <textureradiooffnofocus>radiobutton-nofocus.png</textureradiooffnofocus>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <label>215</label>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <textoffsetx>7</textoffsetx>
+        <aligny>center</aligny>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <default type="selectbutton">
+        <left>490</left>
+        <top>335</top>
+        <width>300</width>
+        <height>50</height>
+        <label>-</label>
+        <font>font12</font>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <texturebg colordiffuse="$VAR[MainColorOne]">button-focus.png</texturebg>
+        <textureleft>scroll-left.png</textureleft>
+        <textureleftfocus>scroll-left-focus.png</textureleftfocus>
+        <textureright>scroll-right.png</textureright>
+        <texturerightfocus>scroll-right-focus.png</texturerightfocus>
+        <font>font13</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <aligny>center</aligny>
+    </default>
+    <default type="slider">
+        <controloffsetx>75</controloffsetx>
+        <controloffsety>0</controloffsety>
+    </default>
+    <default type="sliderex">
+        <height>35</height>
+        <textoffsetx>7</textoffsetx>
+        <aligny>center</aligny>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <sliderwidth>150</sliderwidth>
+        <sliderheight>20</sliderheight>
+        <texturesliderbar colordiffuse="$VAR[MainColorOne]">osd_slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="$VAR[MainColorOne]">Slider_nibNF.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">Slider_nib.png</textureslidernibfocus>
+        <font>font12</font>
+        <textcolor>$VAR[MainColorTwo]</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+    </default>
+    <default type="mover">
+        <left>60</left>
+        <top>192</top>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+    </default>
+    <default type="resize">
+        <left>60</left>
+        <top>192</top>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+    </default>
+    <default type="edit">
+        <left>300</left>
+        <top>200</top>
+        <width>300</width>
+        <height>42</height>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <font>font13</font>
+        <!-- Needs to stay at White for Keyboard -->
+        <textcolor>white</textcolor>
+        <disabledcolor>grey3</disabledcolor>
+        <invalidcolor>invalid</invalidcolor>
+        <textoffsetx>7</textoffsetx>
+        <aligny>center</aligny>
+        <pulseonselect>no</pulseonselect>
+    </default>
+    <include name="TransparentEffect">
+        <animation effect="fade" start="100" end="15" time="0" condition="SubString(skin.string(MediaPanelTrans),85)">Conditional</animation>
+        <animation effect="fade" start="100" end="30" time="0" condition="SubString(skin.string(MediaPanelTrans),70)">Conditional</animation>
+        <animation effect="fade" start="100" end="45" time="0" condition="SubString(skin.string(MediaPanelTrans),55)">Conditional</animation>
+        <animation effect="fade" start="100" end="60" time="0" condition="SubString(skin.string(MediaPanelTrans),40)">Conditional</animation>
+        <animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(MediaPanelTrans),25)">Conditional</animation>
+        <animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(MediaPanelTrans),10)">Conditional</animation>
+    </include>
+    <include name="WidgetTransparency">
+        <animation effect="fade" start="100" end="60" time="0" condition="SubString(skin.string(MediaPanelTrans),85) | SubString(skin.string(MediaPanelTrans),70)">Conditional</animation>
+        <animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(MediaPanelTrans),55) | SubString(skin.string(MediaPanelTrans),40)">Conditional</animation>
+        <animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(MediaPanelTrans),25) | SubString(skin.string(MediaPanelTrans),10)">Conditional</animation>
+    </include>
+    <include name="BackgroundFade">
+        <animation effect="fade" time="600">Visible</animation>
+        <animation effect="fade" time="600">Hidden</animation>
+    </include>
+    <include name="Animation_Fade">
+        <animation effect="fade" time="500">WindowOpen</animation>
+        <animation effect="fade" time="200">Visible</animation>
+        <animation effect="fade" time="200">WindowClose</animation>
+        <animation effect="fade" time="200">Hidden</animation>
+    </include>
+    <include name="Window_OpenClose_Animation">
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+    </include>
+    <include name="DialogEffect">
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+    </include>
+    <include name="VisibleFadeEffect">
+        <animation effect="fade" time="300">Visible</animation>
+        <animation effect="fade" time="300">Hidden</animation>
+    </include>
+    <include name="KBurnsAnimateFanart">
+        <animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
+        <animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
+    </include>
+    <include name="KeyboardButton">
+        <width>50</width>
+        <height>50</height>
+        <texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">KeyboardKey.png</texturefocus>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font13</font>
+        <focusedcolor>black</focusedcolor>
+    </include>
+    <include name="ButtonCommonValues">
+        <height>40</height>
+        <width>250</width>
+        <textoffsetx>10</textoffsetx>
+        <textwidth>200</textwidth>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>false</pulseonselect>
+    </include>
+    <include name="VideoNodeStatsList">
+        <control type="list" id="8051">
+            <visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),VideoNode)</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout />
+            <itemlayout />
+            <content>$VAR[VideoNodeStats]</content>
+        </control>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    </include>
+    <!--include name="VideoNodeContentList">
+        <control type="list" id="8052">
+            <visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),VideoNode)</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1</width>
+            <height>1</height>
+            <focusedlayout />
+            <itemlayout />
+            <content target="video" limit="12">$VAR[VideoNodeContent]</content>
+        </control>
+    </include-->
+    <!--
+	
+	
+	<control type="group">
+			<control type="wraplist" id="8050">
+				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2frecentlyaddedmovies.xml%2f/</content>
+			</control>
+			<control type="wraplist" id="8051">
+				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2frecentlyaddedepisodes.xml%2f/</content>
+			</control>
+			<control type="wraplist" id="8053">
+				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2fmusicvideos%2ftitles.xml%2f/</content>
+			</control>
+			<control type="wraplist" id="8054">
+				<content target="music" limit="12">$INFO[Skin.String(UPnP_Path)]musicdb%3a%2f%2frecentlyplayedalbums%2f/</content>
+			</control>
+			<control type="wraplist" id="8052">
+				<content target="music" limit="50">$INFO[Skin.String(UPnP_Path)]musicdb%3a%2f%2fartists%2f/</content>
+			</control>
+			<control type="wraplist" id="8055">
+				<content target="video" limit="50">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2fmovies%2ftitles.xml%2f/</content>
+			</control>
+			<control type="wraplist" id="8056">
+				<content target="video" limit="50">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2ftvshows%2ftitles.xml%2f/</content>
+			</control>
+			<visible>Skin.HasSetting(UPnP_Mode) + Skin.String(UPnPServer,XBMC)</visible>
 		</control>
-	</include>
-	<include name="CDBoxDimensions">
-		<left>36</left>
-		<top>11</top>
-		<width>201</width>
-		<height>201</height>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<include>BackgroundFade</include>
-		<fadetime>FanartCrossfadeTime</fadetime>
-		<include>Window_OpenClose_Animation</include>
-	</include>
-	<include name="CDBoxGlass">
-		<control type="image">
-			<width>250</width>
-			<height>228</height>
-			<include>BackgroundFade</include>
-			<fadetime>FanartCrossfadeTime</fadetime>
-			<include>Window_OpenClose_Animation</include>
-			<bordertexture>CDCase/cdshadow.png</bordertexture>
-			<texture background="true">CDCase/cdglass.png</texture>
-		</control>
-	</include>
-	<include name="VideoBoxDimensions">
-		<left>26</left>
-		<top>6</top>
-		<width>149</width>
-		<height>223</height>
-		<include>BackgroundFade</include>
-		<fadetime>FanartCrossfadeTime</fadetime>
-		<include>Window_OpenClose_Animation</include>
-		<align>center</align>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-	</include>
-	<include name="MediaInfoPopup">
-		<animation effect="fade" start="0" end="100" time="1600" delay="2000" condition="IsEmpty(Skin.String(MediaPopUpControl))">Visible</animation>
-		<animation effect="fade" start="0" end="100" time="300" delay="300" condition="Skin.String(MediaPopUpControl,Instant)">Visible</animation>
-		<animation effect="fade" start="0" end="100" time="1600" delay="3000" condition="Skin.String(MediaPopUpControl,Delayed)">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
-	</include>
-	<include name="CDArtSpinner">
-		<animation effect="slide" start="0,0" end="70,0" time="1200" delay="500" condition="Player.Playing | Player.Forwarding | Player.Rewinding">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="2400" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="Player.Forwarding2x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="1600" loop="true" reversible="false" condition="Player.Forwarding4x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="1200" loop="true" reversible="false" condition="Player.Forwarding8x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="800" loop="true" reversible="false" condition="Player.Forwarding16x">Conditional</animation>
-		<animation effect="rotate" end="-360" center="auto" time="400" loop="true" reversible="false" condition="Player.Forwarding32x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="2000" loop="true" reversible="false" condition="Player.Rewinding2x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="1600" loop="true" reversible="false" condition="Player.Rewinding4x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="1200" loop="true" reversible="false" condition="Player.Rewinding8x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
-		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
-	</include>
-	<include name="Dimensions_Fullscreen">
-		<left>0</left>
-		<top>0</top>
-		<width>1280</width>
-		<height>720</height>
-	</include>
-	<include name="BehindDialogFadeOut">
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<texture>black-back.png</texture>
-			<animation effect="fade" time="400">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<visible>Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation) | Window.IsActive(Peripherals) | Window.IsActive(PeripheralSettings) | Window.IsActive(script-cu-lrclyrics-main.xml) | Window.IsActive(PVRChannelManager) | Window.IsActive(MediaFilter)</visible>
-		</control>
-	</include>
-	<include name="InvisibleButton">
-		<left>1480</left>
-		<top>920</top>
-		<width>1</width>
-		<height>1</height>
-		<texturenofocus>-</texturenofocus>
-		<texturefocus>-</texturefocus>
-	</include>
-	<include name="ClearButtonChoice">
-		<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
-		<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Path)</onclick>
-		<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Fanart)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Sub)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Playlist)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Addon)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Type)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Widget)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Stats)</onclick>
-		<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Display)</onclick>
-	</include>
-	<include name="CloseMenuChoice">
-		<onclick condition="Window.IsVisible(1105)">Dialog.Close(1105)</onclick>
-		<onclick condition="Window.IsVisible(1110)">Dialog.Close(1110)</onclick>
-		<onclick condition="Window.IsVisible(1135)">Dialog.Close(1135)</onclick>
-		<onclick>Skin.Reset(UsrSelectAddon)</onclick>
-		<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-	</include>
-	<include name="HomeFlagSeparator">
-		<width>15</width>
-		<height>40</height>
-		<align>center</align>
-		<aligny>center</aligny>
-		<label> | </label>
-		<font>font10</font>
-		<textcolor>50101010</textcolor>
-	</include>
-	<include name="HomeFlagLabel">
-		<height>41</height>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font10</font>
-		<textcolor>E4101010</textcolor>
-		<fadetime>FanartCrossFadeTime</fadetime>
-	</include>
-	<include name="WidgetPanelVizability">
-		<visible>
+	
+	
+	
+	
+	
+	
+	-->
+    <include name="VideoBoxGlass">
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>184</width>
+            <height>240</height>
+            <include>BackgroundFade</include>
+            <fadetime>800</fadetime>
+            <include>Window_OpenClose_Animation</include>
+            <texture background="true">ClearCase/ClearCase.png</texture>
+        </control>
+    </include>
+    <include name="CDBoxDimensions">
+        <left>36</left>
+        <top>11</top>
+        <width>201</width>
+        <height>201</height>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+        <include>BackgroundFade</include>
+        <fadetime>FanartCrossfadeTime</fadetime>
+        <include>Window_OpenClose_Animation</include>
+    </include>
+    <include name="CDBoxGlass">
+        <control type="image">
+            <width>250</width>
+            <height>228</height>
+            <include>BackgroundFade</include>
+            <fadetime>FanartCrossfadeTime</fadetime>
+            <include>Window_OpenClose_Animation</include>
+            <bordertexture>CDCase/cdshadow.png</bordertexture>
+            <texture background="true">CDCase/cdglass.png</texture>
+        </control>
+    </include>
+    <include name="VideoBoxDimensions">
+        <left>26</left>
+        <top>6</top>
+        <width>149</width>
+        <height>223</height>
+        <include>BackgroundFade</include>
+        <fadetime>FanartCrossfadeTime</fadetime>
+        <include>Window_OpenClose_Animation</include>
+        <align>center</align>
+        <aspectratio scalediffuse="false">scale</aspectratio>
+    </include>
+    <include name="MediaInfoPopup">
+        <animation effect="fade" start="0" end="100" time="1600" delay="2000" condition="IsEmpty(Skin.String(MediaPopUpControl))">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="300" delay="300" condition="Skin.String(MediaPopUpControl,Instant)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="1600" delay="3000" condition="Skin.String(MediaPopUpControl,Delayed)">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+    </include>
+    <include name="CDArtSpinner">
+        <animation effect="slide" start="0,0" end="70,0" time="1200" delay="500" condition="Player.Playing | Player.Forwarding | Player.Rewinding">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="2400" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="Player.Forwarding2x">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="1600" loop="true" reversible="false" condition="Player.Forwarding4x">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="1200" loop="true" reversible="false" condition="Player.Forwarding8x">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="800" loop="true" reversible="false" condition="Player.Forwarding16x">Conditional</animation>
+        <animation effect="rotate" end="-360" center="auto" time="400" loop="true" reversible="false" condition="Player.Forwarding32x">Conditional</animation>
+        <animation effect="rotate" end="720" center="auto" time="2000" loop="true" reversible="false" condition="Player.Rewinding2x">Conditional</animation>
+        <animation effect="rotate" end="720" center="auto" time="1600" loop="true" reversible="false" condition="Player.Rewinding4x">Conditional</animation>
+        <animation effect="rotate" end="720" center="auto" time="1200" loop="true" reversible="false" condition="Player.Rewinding8x">Conditional</animation>
+        <animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
+        <animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
+    </include>
+    <include name="Dimensions_Fullscreen">
+        <left>0</left>
+        <top>0</top>
+        <width>1280</width>
+        <height>720</height>
+    </include>
+    <include name="BehindDialogFadeOut">
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture>black-back.png</texture>
+            <animation effect="fade" time="400">Visible</animation>
+            <animation effect="fade" time="200">Hidden</animation>
+            <visible>Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation) | Window.IsActive(Peripherals) | Window.IsActive(PeripheralSettings) | Window.IsActive(script-cu-lrclyrics-main.xml) | Window.IsActive(PVRChannelManager) | Window.IsActive(MediaFilter)</visible>
+        </control>
+    </include>
+    <include name="InvisibleButton">
+        <left>1480</left>
+        <top>920</top>
+        <width>1</width>
+        <height>1</height>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>-</texturefocus>
+    </include>
+    <include name="ClearButtonChoice">
+        <onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
+        <onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Path)</onclick>
+        <onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Fanart)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Sub)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Data)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Addon)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Type)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Widget)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Stats)</onclick>
+        <onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Display)</onclick>
+    </include>
+    <include name="CloseMenuChoice">
+        <onclick condition="Window.IsVisible(1105)">Dialog.Close(1105)</onclick>
+        <onclick condition="Window.IsVisible(1110)">Dialog.Close(1110)</onclick>
+        <onclick condition="Window.IsVisible(1135)">Dialog.Close(1135)</onclick>
+        <onclick>Skin.Reset(UsrSelectAddon)</onclick>
+        <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+    </include>
+    <include name="HomeFlagSeparator">
+        <width>15</width>
+        <height>40</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <label> | </label>
+        <font>font10</font>
+        <textcolor>50101010</textcolor>
+    </include>
+    <include name="HomeFlagLabel">
+        <height>41</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font10</font>
+        <textcolor>E4101010</textcolor>
+        <fadetime>FanartCrossFadeTime</fadetime>
+    </include>
+    <include name="WidgetPanelVizability">
+	
+	 <visible>true </visible>
+	<!--
+        <visible>
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
+		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
+		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)] |
 		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) |
@@ -426,46 +501,117 @@
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)]] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Window(home).Property(favourite.count),0)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(disablescriptplaylist)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(disablescriptplaylist)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(disablescriptplaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(DisableScriptPlaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
 		</visible>
-		<!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
-	</include>
-	<include name="ButtonHomeSubCommonValues">
-		<height>35</height>
-		<width>180</width>
-		<textwidth>195</textwidth>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font12</font>
-		<textcolor>grey2</textcolor>
-		<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">HomeSubFO.png</texturefocus>
-		<texturenofocus border="5">HomeSubNF.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
-	<include name="ButtonMediaSubCommonValues">
-		<height>40</height>
-		<width>221</width>
-		<textoffsetx>20</textoffsetx>
-		<textwidth>195</textwidth>
-		<aligny>center</aligny>
-		<font>font12_title</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
-	<include name="ButtonInfoDialogsCommonValues">
-		<height>40</height>
-		<width>170</width>
-		<textoffsetx>20</textoffsetx>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font12_title</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
+		-->
+        <!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
+    </include>
+    <include name="MenuMoviePlayListCheck">
+        <visible>
+			!IsEmpty(Skin.String(HomeMenu.1.Data)) + Skin.String(HomeMenu.1.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.1) |
+			!IsEmpty(Skin.String(HomeMenu.2.Data)) + Skin.String(HomeMenu.2.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.2) |
+			!IsEmpty(Skin.String(HomeMenu.3.Data)) + Skin.String(HomeMenu.3.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.3) |
+			!IsEmpty(Skin.String(HomeMenu.4.Data)) + Skin.String(HomeMenu.4.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.4) |
+			!IsEmpty(Skin.String(HomeMenu.5.Data)) + Skin.String(HomeMenu.5.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.5) |
+			!IsEmpty(Skin.String(HomeMenu.6.Data)) + Skin.String(HomeMenu.6.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.6) |
+			!IsEmpty(Skin.String(HomeMenu.7.Data)) + Skin.String(HomeMenu.7.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.7) |
+			!IsEmpty(Skin.String(HomeMenu.8.Data)) + Skin.String(HomeMenu.8.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.8) |
+			!IsEmpty(Skin.String(HomeMenu.9.Data)) + Skin.String(HomeMenu.9.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.9) |
+			!IsEmpty(Skin.String(HomeMenu.10.Data)) + Skin.String(HomeMenu.10.Type,VideoPlayList) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.10)
+		</visible>
+    </include>
+    <include name="MenuMusicPlayListCheck">
+        <visible>
+			!IsEmpty(Skin.String(HomeMenu.1.Data)) + Skin.String(HomeMenu.1.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.1) |
+			!IsEmpty(Skin.String(HomeMenu.2.Data)) + Skin.String(HomeMenu.2.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.2) |
+			!IsEmpty(Skin.String(HomeMenu.3.Data)) + Skin.String(HomeMenu.3.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.3) |
+			!IsEmpty(Skin.String(HomeMenu.4.Data)) + Skin.String(HomeMenu.4.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.4) |
+			!IsEmpty(Skin.String(HomeMenu.5.Data)) + Skin.String(HomeMenu.5.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.5) |
+			!IsEmpty(Skin.String(HomeMenu.6.Data)) + Skin.String(HomeMenu.6.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.6) |
+			!IsEmpty(Skin.String(HomeMenu.7.Data)) + Skin.String(HomeMenu.7.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.7) |
+			!IsEmpty(Skin.String(HomeMenu.8.Data)) + Skin.String(HomeMenu.8.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.8) |
+			!IsEmpty(Skin.String(HomeMenu.9.Data)) + Skin.String(HomeMenu.9.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.9) |
+			!IsEmpty(Skin.String(HomeMenu.10.Data)) + Skin.String(HomeMenu.10.Type,MusicPlaylist) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.10)
+		</visible>
+    </include>
+    <include name="MenuVideoNodeListCheck">
+        <visible>
+			!IsEmpty(Skin.String(HomeMenu.1.Data)) + Skin.String(HomeMenu.1.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.1) |
+			!IsEmpty(Skin.String(HomeMenu.2.Data)) + Skin.String(HomeMenu.2.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.2) |
+			!IsEmpty(Skin.String(HomeMenu.3.Data)) + Skin.String(HomeMenu.3.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.3) |
+			!IsEmpty(Skin.String(HomeMenu.4.Data)) + Skin.String(HomeMenu.4.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.4) |
+			!IsEmpty(Skin.String(HomeMenu.5.Data)) + Skin.String(HomeMenu.5.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.5) |
+			!IsEmpty(Skin.String(HomeMenu.6.Data)) + Skin.String(HomeMenu.6.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.6) |
+			!IsEmpty(Skin.String(HomeMenu.7.Data)) + Skin.String(HomeMenu.7.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.7) |
+			!IsEmpty(Skin.String(HomeMenu.8.Data)) + Skin.String(HomeMenu.8.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.8) |
+			!IsEmpty(Skin.String(HomeMenu.9.Data)) + Skin.String(HomeMenu.9.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.9) |
+			!IsEmpty(Skin.String(HomeMenu.10.Data)) + Skin.String(HomeMenu.10.Type,VideoNode) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.10)
+		</visible>
+    </include>
+    <include name="MenuUPnPMovieListCheck">
+        <visible>
+			!IsEmpty(Skin.String(HomeMenu.1.Data)) + Skin.String(HomeMenu.1.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.1) |
+			!IsEmpty(Skin.String(HomeMenu.2.Data)) + Skin.String(HomeMenu.2.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.2) |
+			!IsEmpty(Skin.String(HomeMenu.3.Data)) + Skin.String(HomeMenu.3.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.3) |
+			!IsEmpty(Skin.String(HomeMenu.4.Data)) + Skin.String(HomeMenu.4.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.4) |
+			!IsEmpty(Skin.String(HomeMenu.5.Data)) + Skin.String(HomeMenu.5.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.5) |
+			!IsEmpty(Skin.String(HomeMenu.6.Data)) + Skin.String(HomeMenu.6.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.6) |
+			!IsEmpty(Skin.String(HomeMenu.7.Data)) + Skin.String(HomeMenu.7.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.7) |
+			!IsEmpty(Skin.String(HomeMenu.8.Data)) + Skin.String(HomeMenu.8.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.8) |
+			!IsEmpty(Skin.String(HomeMenu.9.Data)) + Skin.String(HomeMenu.9.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.9) |
+			!IsEmpty(Skin.String(HomeMenu.10.Data)) + Skin.String(HomeMenu.10.Type,UPnPMovies) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.10)
+		</visible>
+    </include>
+    <include name="MenuUPnPMusicListCheck">
+        <visible>
+			!IsEmpty(Skin.String(HomeMenu.1.Data)) + Skin.String(HomeMenu.1.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.1) |
+			!IsEmpty(Skin.String(HomeMenu.2.Data)) + Skin.String(HomeMenu.2.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.2) |
+			!IsEmpty(Skin.String(HomeMenu.3.Data)) + Skin.String(HomeMenu.3.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.3) |
+			!IsEmpty(Skin.String(HomeMenu.4.Data)) + Skin.String(HomeMenu.4.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.4) |
+			!IsEmpty(Skin.String(HomeMenu.5.Data)) + Skin.String(HomeMenu.5.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.5) |
+			!IsEmpty(Skin.String(HomeMenu.6.Data)) + Skin.String(HomeMenu.6.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.6) |
+			!IsEmpty(Skin.String(HomeMenu.7.Data)) + Skin.String(HomeMenu.7.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.7) |
+			!IsEmpty(Skin.String(HomeMenu.8.Data)) + Skin.String(HomeMenu.8.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.8) |
+			!IsEmpty(Skin.String(HomeMenu.9.Data)) + Skin.String(HomeMenu.9.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.9) |
+			!IsEmpty(Skin.String(HomeMenu.10.Data)) + Skin.String(HomeMenu.10.Type,UPnPMusic) + StringCompare(Window(home).Property(UsrSelectBtn),HomeMenu.10)
+		</visible>
+    </include>
+    <include name="ButtonHomeSubCommonValues">
+        <height>35</height>
+        <width>180</width>
+        <textwidth>195</textwidth>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <textcolor>grey2</textcolor>
+        <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">HomeSubFO.png</texturefocus>
+        <texturenofocus border="5">HomeSubNF.png</texturenofocus>
+        <pulseonselect>false</pulseonselect>
+    </include>
+    <include name="ButtonMediaSubCommonValues">
+        <height>40</height>
+        <width>221</width>
+        <textoffsetx>20</textoffsetx>
+        <textwidth>195</textwidth>
+        <aligny>center</aligny>
+        <font>font12_title</font>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <pulseonselect>false</pulseonselect>
+    </include>
+    <include name="ButtonInfoDialogsCommonValues">
+        <height>40</height>
+        <width>170</width>
+        <textoffsetx>20</textoffsetx>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font12_title</font>
+        <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+        <texturenofocus border="5">button-nofocus.png</texturenofocus>
+        <pulseonselect>false</pulseonselect>
+    </include>
 </includes>
