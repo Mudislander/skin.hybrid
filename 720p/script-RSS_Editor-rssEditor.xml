@@ -33,7 +33,7 @@
             <font>font13_title</font>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>selected</textcolor>
+            <textcolor>$VAR[SelectedColor]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="button">
@@ -42,13 +42,23 @@
             <top>15</top>
             <width>64</width>
             <height>32</height>
+            <label>-</label>
+            <font>-</font>
             <onclick>PreviousMenu</onclick>
-            <texturefocus>DialogCloseButton-focus.png</texturefocus>
-            <texturenofocus>DialogCloseButton.png</texturenofocus>
+            <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+            <texturenofocus>DialogClose.png</texturenofocus>
             <onleft>10</onleft>
             <onright>10</onright>
             <onup>10</onup>
             <ondown>10</ondown>
+            <visible>system.getbool(input.enablemouse)</visible>
+        </control>
+        <control type="image">
+            <left>710</left>
+            <top>15</top>
+            <width>64</width>
+            <height>32</height>
+            <texture>DialogCloseBtn.png</texture>
             <visible>system.getbool(input.enablemouse)</visible>
         </control>
         <control type="label" id="3">
@@ -60,7 +70,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>font12</font>
-            <textcolor>blue</textcolor>
+            <textcolor>$VAR[MainColorOne]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="list" id="10">
@@ -91,8 +101,8 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <textcolor>grey2</textcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <info>ListItem.label</info>
+                    <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                    <info>ListItem.Label</info>
                 </control>
             </itemlayout>
             <focusedlayout height="45">
@@ -110,7 +120,7 @@
                     <width>520</width>
                     <height>40</height>
                     <visible>Control.hasfocus(14) | Control.HasFocus(10)</visible>
-                    <texture border="5">button-focus2.png</texture>
+                    <texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
                 </control>
                 <control type="label">
                     <left>10</left>
@@ -120,8 +130,8 @@
                     <font>font13</font>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <selectedcolor>selected</selectedcolor>
-                    <info>ListItem.label</info>
+                    <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                    <info>ListItem.Label</info>
                 </control>
             </focusedlayout>
         </control>
@@ -132,12 +142,12 @@
             <height>225</height>
             <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
             <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-            <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+            <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
             <textureslidernib>ScrollBarNib.png</textureslidernib>
-            <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+            <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
             <onleft>10</onleft>
             <onright>9000</onright>
-            <showonepage>true</showonepage>
+            <showonepage>false</showonepage>
             <orientation>vertical</orientation>
         </control>
         <control type="group" id="9000">

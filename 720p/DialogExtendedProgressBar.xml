@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol />
+    <onload condition="Library.IsScanningVideo + Skin.HasSetting(EnableAutoUpdateArt)">SetProperty(UpdateArt,1)</onload>
+    <onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(EnableAutoUpdateArt)">XBMC.RunScript(script.artwork.downloader,silent=true)</onunload>
+    <onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(EnableAutoUpdateArt)">ClearProperty(UpdateArt)</onunload>
     <animation effect="slide" start="0,-70" end="0,0" time="100">WindowOpen</animation>
     <animation effect="slide" start="0,0" end="0,-70" delay="400" time="100">WindowClose</animation>
     <controls>
         <control type="group">
-            <left>870</left>
+            <left>720</left>
             <top>0</top>
             <animation effect="slide" end="0,-80" time="200" condition="Window.IsVisible(FullscreenVideo) | Window.IsVisible(Visualisation)">conditional</animation>
-            <animation effect="slide" end="-300,0" time="200" condition="Window.IsVisible(volumebar)">conditional</animation>
-            <animation effect="slide" start="0,0" end="-40,0" time="100" condition="Window.IsVisible(Mutebug)">conditional</animation>
-            <animation effect="slide" start="0,0" end="0,-50" time="100" condition="Window.IsVisible(busydialog)">conditional</animation>
             <control type="image">
+                <description>background image</description>
                 <left>0</left>
-                <top>-10</top>
+                <top>0</top>
                 <width>400</width>
-                <height>65</height>
-                <texture flipy="true" border="20,20,20,2">InfoMessagePanel.png</texture>
+                <height>70</height>
+                <colordiffuse>AAFFFFFF</colordiffuse>
+                <texture border="20">ContentPanel.png</texture>
             </control>
             <control type="label" id="30">
                 <description>Header Label</description>
                 <left>15</left>
-                <top>4</top>
+                <top>14</top>
                 <width>370</width>
                 <height>18</height>
                 <font>font10_title</font>
-                <textcolor>selected</textcolor>
+                <textcolor>$VAR[SelectedColor]</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
             </control>
             <control type="label" id="31">
                 <description>Title Label</description>
                 <left>15</left>
-                <top>20</top>
+                <top>30</top>
                 <width>370</width>
                 <height>20</height>
                 <font>font10</font>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
             </control>
             <control type="progress" id="32">
                 <description>progress control</description>
                 <left>15</left>
-                <top>42</top>
+                <top>52</top>
                 <width>370</width>
-                <height>10</height>
+                <height>8</height>
             </control>
         </control>
     </controls>

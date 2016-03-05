@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.hybrid"
-  version="2.3.7"
+  version="4.0.0"
   name="Hybrid"
   provider-name="Mudislander">
   <requires>
-    <import addon="xbmc.gui" version="5.0.0"/>
-	<import addon="script.favourites" version="5.0.2"/>
-	<import addon="service.skin.widgets" version="0.0.27"/>
-	<import addon="script.randomandlastitems" version="2.2.0"/>
-  </requires>
+		<import	addon="xbmc.gui" version="5.10.0"/>
+		<import addon="script.favourites" version="6.0.2"/>
+		<import addon="script.artwork.downloader" version="12.0.29"/>
+		<import addon="script.globalsearch" version="5.0.0"/>
+		<import addon="service.skin.widgets" version="0.0.30"/>
+		<import addon="script.image.resource.select" version="0.0.5"/>
+		<import addon="resource.images.weatherfanart.prairie" version="0.0.4"/>
+		<import addon="resource.images.weatherfanart.multi" version="0.0.4"/>
+	</requires>
   <extension
     point="xbmc.gui.skin"
-    defaultthemename="textures.xbt"
     debugging="false"
-    effectslowdown="0.75">
+    effectslowdown="1.0">
     <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
   </extension>
-	<extension point="xbmc.addon.metadata">
+  <extension point="xbmc.addon.metadata">
     <summary lang="be">Hybrid a customizable skin</summary>
     <summary lang="ca">Hybrid una aparença personalitzable</summary>
     <summary lang="da">Hybrid er et tilpasningsvenligt skin</summary>
@@ -100,5 +103,10 @@
     <disclaimer lang="zh">自己打破的碎片自己收拾</disclaimer>
     <disclaimer lang="zh_TW">You break it - You get to keep the pieces</disclaimer>
     <platform>all</platform>
+	<license>Creative Commons Attribution-ShareAlike 3.0 license</license>
+	<forum>http://forum.kodi.tv/forumdisplay.php?fid=177</forum>
+	<website></website>
+	<email></email>
+	<source>https://github.com/Mudislander/skin.hybrid/</source>
   </extension>
 </addon>

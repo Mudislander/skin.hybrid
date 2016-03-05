@@ -34,7 +34,7 @@
             <label>$LOCALIZE[298]</label>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>selected</textcolor>
+            <textcolor>$VAR[SelectedColor]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="button">
@@ -43,13 +43,23 @@
             <top>15</top>
             <width>64</width>
             <height>32</height>
+            <label>-</label>
+            <font>-</font>
             <onclick>PreviousMenu</onclick>
-            <texturefocus>DialogCloseButton-focus.png</texturefocus>
-            <texturenofocus>DialogCloseButton.png</texturenofocus>
+            <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+            <texturenofocus>DialogClose.png</texturenofocus>
             <onleft>3</onleft>
             <onright>3</onright>
             <onup>3</onup>
             <ondown>3</ondown>
+            <visible>system.getbool(input.enablemouse)</visible>
+        </control>
+        <control type="image">
+            <left>710</left>
+            <top>15</top>
+            <width>64</width>
+            <height>32</height>
+            <texture>DialogCloseBtn.png</texture>
             <visible>system.getbool(input.enablemouse)</visible>
         </control>
         <control type="label">
@@ -63,7 +73,7 @@
             <aligny>center</aligny>
             <scroll>true</scroll>
             <textcolor>grey</textcolor>
-            <label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
+            <label>([COLOR=$VAR[MainColorOne]]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[31025] - $LOCALIZE[31319] ([COLOR=$VAR[MainColorOne]]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
         </control>
         <control type="panel" id="11">
             <left>40</left>
@@ -92,18 +102,18 @@
                     <width>220</width>
                     <height>150</height>
                     <aspectratio>scale</aspectratio>
-                    <info>ListItem.icon</info>
+                    <info>ListItem.Icon</info>
                 </control>
                 <control type="label">
-                    <left>112</left>
+                    <left>7</left>
                     <top>185</top>
-                    <width>225</width>
+                    <width>226</width>
                     <height>15</height>
                     <font>font12</font>
-                    <selectedcolor>selected</selectedcolor>
+                    <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <info>ListItem.label</info>
+                    <info>ListItem.Label</info>
                 </control>
             </itemlayout>
             <focusedlayout height="215" width="240">
@@ -112,7 +122,7 @@
                     <top>2</top>
                     <width>235</width>
                     <height>211</height>
-                    <texture border="3">folder-focus.png</texture>
+                    <texture border="3" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
                 </control>
                 <control type="image">
                     <left>7</left>
@@ -120,18 +130,18 @@
                     <width>220</width>
                     <height>150</height>
                     <aspectratio>scale</aspectratio>
-                    <info>ListItem.icon</info>
+                    <info>ListItem.Icon</info>
                 </control>
                 <control type="label">
-                    <left>112</left>
+                    <left>7</left>
                     <top>185</top>
-                    <width>225</width>
+                    <width>226</width>
                     <height>15</height>
                     <font>font12</font>
-                    <selectedcolor>selected</selectedcolor>
+                    <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <info>ListItem.label</info>
+                    <info>ListItem.Label</info>
                 </control>
             </focusedlayout>
         </control>

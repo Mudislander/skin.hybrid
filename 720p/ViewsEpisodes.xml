@@ -21,10 +21,10 @@
                 <onleft>2</onleft>
                 <onright>800</onright>
                 <pagecontrol>-</pagecontrol>
-                <visible>Window.IsActive(videolibrary) + Container.Content(episodes)</visible>
+                <visible>Window.IsActive(videolibrary) + Container.Content(Episodes)</visible>
                 <itemlayout width="600" height="60">
                     <control type="label">
-                        <left>100</left>
+                        <left>20</left>
                         <top>0</top>
                         <width>80</width>
                         <height>60</height>
@@ -32,8 +32,8 @@
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Episode]</label>
                         <font>font28_title</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>white</selectedcolor>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                     </control>
                     <control type="label">
                         <left>125</left>
@@ -43,8 +43,8 @@
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
                         <font>font24_title</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>white</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                         <visible>IsEmpty(ListItem.Title)</visible>
                     </control>
                     <control type="label">
@@ -55,8 +55,8 @@
                         <align>left</align>
                         <label>$INFO[ListItem.Title]</label>
                         <font>font24_title</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>white</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                         <visible>!IsEmpty(ListItem.Title)</visible>
                     </control>
                     <control type="label">
@@ -67,8 +67,8 @@
                         <align>left</align>
                         <label>$INFO[ListItem.Premiered,$LOCALIZE[31342]: ]</label>
                         <font>font12</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>white</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                     </control>
                 </itemlayout>
                 <focusedlayout width="600" height="164">
@@ -77,7 +77,7 @@
                         <top>13</top>
                         <width>253</width>
                         <height>139</height>
-                        <texture background="true" diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]" diffuse="episodematte.png">DefaultLogoReturn.png</texture>
                         <aspectratio scalediffuse="false">keep</aspectratio>
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
@@ -94,7 +94,7 @@
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
                         </animation>
-                        <visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>13</left>
@@ -106,7 +106,7 @@
                         <animation type="Focus" reversible="false">
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
                         </animation>
-                        <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>0</left>
@@ -131,7 +131,7 @@
                             <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
                             <effect type="fade" start="0" end="100" time="200" />
                         </animation>
-                        <visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="label">
                         <description>INFO txt</description>
@@ -139,25 +139,26 @@
                         <top>5</top>
                         <width>830</width>
                         <height>20</height>
-                        <label>$INFO[ListItem.premiered,[COLOR=blue] $LOCALIZE[31342] :[/COLOR] ]</label>
+                        <label>[COLOR=$VAR[MainColorOne]]$LOCALIZE[31342]:[/COLOR] $INFO[ListItem.premiered]</label>
                         <align>left</align>
                         <aligny>top</aligny>
                         <font>font12</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <wrapmultiline>false</wrapmultiline>
                         <animation type="Focus" reversible="false">
                             <effect type="fade" start="0" end="100" time="200" />
                         </animation>
+                        <visible>!IsEmpty(ListItem.premiered)</visible>
                     </control>
                     <control type="label">
                         <left>292</left>
                         <top>25</top>
                         <width>830</width>
-                        <label>[COLOR blue]$INFO[ListItem.Episode][/COLOR]. $INFO[ListItem.Title]</label>
+                        <label>[COLOR=$VAR[MainColorOne]]$INFO[ListItem.Episode][/COLOR]. $INFO[ListItem.Title]</label>
                         <font>font24_title</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>white</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                         <animation type="Focus" reversible="false">
                             <effect type="fade" start="0" end="100" time="200" />
                         </animation>
@@ -173,7 +174,7 @@
                 <fadetime>IconCrossfadeTime</fadetime>
                 <aspectratio aligny="bottom">keep</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(tvshow.clearlogo)]</texture>
-                <visible>Control.IsVisible(728) + !StringCompare(ListItem.Label,..) + Container.Content(episodes)</visible>
+                <visible>Control.IsVisible(728) + !StringCompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
             </control>
             <control type="textbox">
                 <animation effect="slide" end="0,60" time="0" condition="Container(728).Row(1)">Conditional</animation>
@@ -188,13 +189,14 @@
                 <width>830</width>
                 <height>100</height>
                 <align>justify</align>
+                <font>font12</font>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <label>$VAR[VideoDescription]</label>
-                <textcolor>white</textcolor>
-                <selectedcolor>white</selectedcolor>
+                <selectedcolor>$VAR[MainColorTwo]</selectedcolor>
                 <animation type="Conditional" reversible="false" condition="Control.HasFocus(728) + [!Container(728).OnNext + !Container(728).OnPrevious]">
                     <effect type="fade" start="0" end="100" time="200" />
                 </animation>
-                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
             </control>
         </control>
     </include>

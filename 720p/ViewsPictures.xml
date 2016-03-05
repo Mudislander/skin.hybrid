@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="PictureWrapView">
-        <control type="image">
-            <left>0</left>
-            <top>0</top>
-            <width>1280</width>
-            <height>45</height>
-            <texture flipy="true">floor.png</texture>
-            <animation effect="slide" start="0,-10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,-10" time="200" condition="Window.Next(Home)">WindowClose</animation>
-            <visible>Control.IsVisible(510)</visible>
-        </control>
         <control type="group">
             <visible>Control.IsVisible(510)</visible>
             <include>VisibleFadeEffect</include>
             <left>0</left>
             <top>440</top>
             <control type="wraplist" id="510">
-                <left>-80</left>
+                <left>-25</left>
                 <top>5</top>
-                <width>1600</width>
+                <width>1330</width>
                 <height>250</height>
                 <onleft>510</onleft>
                 <onright>510</onright>
@@ -28,15 +18,15 @@
                 <viewtype label="31645">wrap</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
-                <focusposition>4</focusposition>
+                <focusposition>3</focusposition>
                 <orientation>horizontal</orientation>
                 <preloaditems>4</preloaditems>
-                <itemlayout height="200" width="160">
+                <itemlayout height="200" width="190">
                     <control type="image">
-                        <left>10</left>
-                        <top>60</top>
-                        <width>140</width>
-                        <height>140</height>
+                        <left>15</left>
+                        <top>40</top>
+                        <width>160</width>
+                        <height>160</height>
                         <aspectratio>stretch</aspectratio>
                         <bordertexture border="10">ThumbShadow.png</bordertexture>
                         <bordersize>8</bordersize>
@@ -44,37 +34,37 @@
                         <texture border="2">ThumbBG.png</texture>
                     </control>
                     <control type="image">
-                        <left>20</left>
-                        <top>70</top>
-                        <width>120</width>
-                        <height>120</height>
+                        <left>25</left>
+                        <top>50</top>
+                        <width>140</width>
+                        <height>140</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.icon]</texture>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout height="200" width="160">
+                <focusedlayout height="200" width="190">
                     <control type="image">
-                        <left>10</left>
-                        <top>60</top>
-                        <width>140</width>
-                        <height>140</height>
+                        <left>15</left>
+                        <top>40</top>
+                        <width>160</width>
+                        <height>160</height>
                         <aspectratio>stretch</aspectratio>
                         <bordertexture border="10">ThumbShadow.png</bordertexture>
                         <bordersize>8</bordersize>
                         <fadetime>200</fadetime>
                         <texture border="2">ThumbBG.png</texture>
-                        <animation reversible="false" effect="zoom" start="10,60,140,140" end="-15,15,190,190" time="200">focus</animation>
-                        <animation reversible="false" effect="zoom" end="10,60,140,140" start="-15,15,190,190" time="200">unfocus</animation>
+                        <animation reversible="false" effect="zoom" start="15,40,160,160" end="-10,-5,210,210" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="15,40,160,160" start="-10,-5,210,210" time="200">unfocus</animation>
                     </control>
                     <control type="image">
-                        <left>20</left>
-                        <top>70</top>
-                        <width>120</width>
-                        <height>120</height>
+                        <left>25</left>
+                        <top>50</top>
+                        <width>140</width>
+                        <height>140</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.icon]</texture>
-                        <animation reversible="false" effect="zoom" start="20,70,120,120" end="0,30,160,160" time="200">focus</animation>
-                        <animation reversible="false" effect="zoom" end="20,70,120,120" start="0,30,160,160" time="200">unfocus</animation>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <animation reversible="false" effect="zoom" start="25,50,140,140" end="5,10,180,180" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="25,50,140,140" start="5,10,180,180" time="200">unfocus</animation>
                     </control>
                 </focusedlayout>
             </control>
@@ -85,11 +75,11 @@
                 <height>25</height>
                 <texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
                 <texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="14,0,14,0">ScrollBarH_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="14,0,14,0" colordiffuse="$VAR[MainColorOne]">ScrollBarH_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onup>510</onup>
-                <ondown>800</ondown>
+                <ondown>803</ondown>
                 <showonepage>true</showonepage>
                 <orientation>horizontal</orientation>
                 <visible>Control.IsVisible(510)</visible>
@@ -101,9 +91,9 @@
             <visible>Control.IsVisible(514)</visible>
             <control type="panel" id="514">
                 <left>60</left>
-                <top>100</top>
-                <width>402</width>
-                <height>536</height>
+                <top>75</top>
+                <width>432</width>
+                <height>576</height>
                 <onleft>2</onleft>
                 <onright>60</onright>
                 <onup>514</onup>
@@ -112,12 +102,12 @@
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <preloaditems>2</preloaditems>
-                <itemlayout height="134" width="134">
+                <itemlayout height="144" width="144">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
-                        <width>134</width>
-                        <height>134</height>
+                        <width>144</width>
+                        <height>144</height>
                         <aspectratio>stretch</aspectratio>
                         <bordertexture border="10">ThumbShadow.png</bordertexture>
                         <bordersize>8</bordersize>
@@ -127,20 +117,20 @@
                     <control type="image">
                         <left>10</left>
                         <top>10</top>
-                        <width>114</width>
-                        <height>114</height>
+                        <width>124</width>
+                        <height>124</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.icon]</texture>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout height="134" width="134">
+                <focusedlayout height="144" width="144">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
-                        <width>134</width>
-                        <height>134</height>
+                        <width>144</width>
+                        <height>144</height>
                         <aspectratio>stretch</aspectratio>
-                        <bordertexture border="10">folder-Focus.png</bordertexture>
+                        <bordertexture border="10" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
                         <bordersize>8</bordersize>
                         <fadetime>200</fadetime>
                         <texture border="2">ThumbBG.png</texture>
@@ -148,25 +138,25 @@
                     <control type="image">
                         <left>10</left>
                         <top>10</top>
-                        <width>114</width>
-                        <height>114</height>
+                        <width>124</width>
+                        <height>124</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[ListItem.icon]</texture>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="60">
                 <left>500</left>
-                <top>110</top>
+                <top>70</top>
                 <width>25</width>
-                <height>516</height>
+                <height>576</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>514</onleft>
-                <onright>2</onright>
+                <onright>800</onright>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(514)</visible>
@@ -174,6 +164,19 @@
             <control type="group">
                 <left>570</left>
                 <top>80</top>
+                <control type="label">
+                    <description>Title txt</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>640</width>
+                    <height>15</height>
+                    <label>$INFO[ListItem.PictureAuthor,[COLOR=grey2]$LOCALIZE[21863][/COLOR] - ]</label>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <font>font12_title</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                </control>
                 <control type="image">
                     <left>0</left>
                     <top>30</top>
@@ -191,11 +194,11 @@
                     <top>510</top>
                     <width>640</width>
                     <height>15</height>
-                    <label>$INFO[ListItem.PicturedateTime,[COLOR=blue]$LOCALIZE[31513][/COLOR] - ]</label>
+                    <label>$INFO[ListItem.PictureDateTime,[COLOR=grey2]$LOCALIZE[31513][/COLOR] - ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
@@ -204,11 +207,11 @@
                     <top>535</top>
                     <width>640</width>
                     <height>15</height>
-                    <label>$INFO[ListItem.PictureResolution,[COLOR=blue]$LOCALIZE[31514][/COLOR] - ]</label>
+                    <label>$INFO[ListItem.PictureResolution,[COLOR=grey2]$LOCALIZE[31514][/COLOR] - ]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
             </control>

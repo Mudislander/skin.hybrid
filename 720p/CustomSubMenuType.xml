@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<window type="dialog" id="2116">
+<window type="dialog" id="1115">
     <defaultcontrol always="true">450</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -15,7 +15,7 @@
                 <top>0</top>
                 <width>400</width>
                 <height>720</height>
-                <texture border="15,0,0,0" flipx="true">Home\MediaBladeSub.png</texture>
+                <texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
             </control>
             <control type="button">
                 <description>Close Window button</description>
@@ -24,12 +24,20 @@
                 <width>64</width>
                 <height>32</height>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <left>380r</left>
+                <top>0</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
             <control type="label">
@@ -40,7 +48,7 @@
                 <font>font13_title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <label>$LOCALIZE[31335]</label>
             </control>
@@ -50,7 +58,7 @@
                 <width>440</width>
                 <height>480</height>
                 <onup>450</onup>
-                <onleft>Dialog.Close(2116)</onleft>
+                <onleft>Dialog.Close(1115)</onleft>
                 <onright>60</onright>
                 <ondown>450</ondown>
                 <pagecontrol>60</pagecontrol>
@@ -71,8 +79,8 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
-                        <info>ListItem.label</info>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
                 <focusedlayout height="40">
@@ -90,7 +98,7 @@
                         <width>360</width>
                         <height>40</height>
                         <visible>Control.HasFocus(450)</visible>
-                        <texture border="3">button-focus.png</texture>
+                        <texture border="3" colordiffuse="$VAR[MainColorOne]">button-focus.png</texture>
                     </control>
                     <control type="label">
                         <left>10</left>
@@ -100,166 +108,96 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
-                        <info>ListItem.label</info>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <info>ListItem.Label</info>
                     </control>
                 </focusedlayout>
                 <content>
                     <item>
                         <description>Clear Setting</description>
                         <label>$LOCALIZE[31317]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,None)</onclick>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,None)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Video</description>
-                        <label>$VAR[UsersSubVideosName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Videos)</onclick>
+                        <description>Sub Set One</description>
+                        <label>$VAR[SubSetOneName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetOne)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Movie</description>
-                        <label>$VAR[UsersSubMoviesName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Movies)</onclick>
+                        <description>Sub Set Two</description>
+                        <label>$VAR[SubSetTwoName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetTwo)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>TVShows</description>
-                        <label>$VAR[UsersSubTVShowsName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,TVShows)</onclick>
+                        <description>Sub Set Three</description>
+                        <label>$VAR[SubSetThreeName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetThree)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Concerts</description>
-                        <label>$VAR[UsersSubConcertsName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Concerts)</onclick>
+                        <description>Sub Set Four</description>
+                        <label>$VAR[SubSetFourName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetFour)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Music</description>
-                        <label>$VAR[UsersSubMusicName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Music)</onclick>
+                        <description>Sub Set Five</description>
+                        <label>$VAR[SubSetFiveName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetFive)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Programs</description>
-                        <label>$VAR[UsersSubProgsName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Programs)</onclick>
+                        <description>Sub Set Six</description>
+                        <label>$VAR[SubSetSixName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetSix)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Pictures</description>
-                        <label>$VAR[UsersSubPicturesName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Pictures)</onclick>
+                        <description>Sub Set Seven</description>
+                        <label>$VAR[SubSetSevenName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetSeven)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>User Selection 1</description>
-                        <label>$VAR[UsersSubSelectOneName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,UserOne)</onclick>
+                        <description>Sub Set Eight</description>
+                        <label>$VAR[SubSetEightName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetEight)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>User Selection 2</description>
-                        <label>$VAR[UsersSubSelectTwoName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,UserTwo)</onclick>
+                        <description>Sub Set Nine</description>
+                        <label>$VAR[SubSetNineName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetNine)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>User Selection 3</description>
-                        <label>$VAR[UsersSubSelectThreeName]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,UserThree)</onclick>
+                        <description>Sub Set Ten</description>
+                        <label>$VAR[SubSetTenName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetTen)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                     <item>
-                        <description>Favourites</description>
-                        <label>$LOCALIZE[1036]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Favourites)</onclick>
-                        <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-                    </item>
-                    <item>
-                        <description>LiveTV</description>
-                        <label>$LOCALIZE[31502]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,LiveTV)</onclick>
-                        <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-                        <visible>System.GetBool(pvrmanager.enabled)</visible>
-                    </item>
-                    <item>
-                        <description>system</description>
-                        <label>$LOCALIZE[10004]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Settings)</onclick>
-                        <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-                    </item>
-                    <item>
-                        <description>Shutdown</description>
-                        <label>$LOCALIZE[13005]</label>
-                        <onclick>Dialog.Close(2116)</onclick>
-                        <onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].sub,Shutdown)</onclick>
+                        <description>Sub Set Eleven</description>
+                        <label>$VAR[SubSetElevenName]</label>
+                        <onclick>Dialog.Close(1115)</onclick>
+                        <onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,SubSetEleven)</onclick>
                         <onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
                     </item>
                 </content>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>390r</left>
-                <top>95</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>60r</left>
-                <top>95</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>390r</left>
-                <top>605</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>60r</left>
-                <top>605</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
             </control>
             <control type="scrollbar" id="60">
                 <left>1250</left>
@@ -270,10 +208,10 @@
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
                 <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
-                <showonepage>true</showonepage>
+                <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(450)</visible>
             </control>

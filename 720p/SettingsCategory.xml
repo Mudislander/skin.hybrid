@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <include condition="!Skin.HasSetting(initialsetuprun)">DefaultInitialSetup</include>
+    <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
     <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <defaultcontrol always="true">3</defaultcontrol>
     <allowoverlay>no</allowoverlay>
@@ -8,12 +8,12 @@
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <aspectratio>scale</aspectratio>
-            <texture background="true">special://skin/backgrounds/homescreen/settings.jpg</texture>
+            <texture background="true">special://skin/backgrounds/settings.jpg</texture>
             <include>BackgroundFade</include>
             <fadetime>FanartCrossfadeTime</fadetime>
             <include>Window_OpenClose_Animation</include>
         </control>
-        <include condition="Skin.HasSetting(initialsetuprun)">CommonBackground</include>
+        <include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
         <control type="button" id="800">
             <include>InvisibleButton</include>
             <onleft>801</onleft>
@@ -41,7 +41,7 @@
             <width>1170</width>
             <height>30</height>
             <font>font30_title</font>
-            <textcolor>blue</textcolor>
+            <textcolor>$VAR[MainColorOne]</textcolor>
             <scroll>true</scroll>
             <align>center</align>
             <aligny>center</aligny>
@@ -75,22 +75,22 @@
             </animation>
             <control type="grouplist" id="3">
                 <description>left button area</description>
-                <left>30</left>
+                <left>80</left>
                 <top>120</top>
-                <width>300</width>
-                <height>481</height>
+                <width>430</width>
+                <height>600</height>
                 <itemgap>-1</itemgap>
                 <onleft>5</onleft>
                 <onright>5</onright>
                 <onup>3</onup>
                 <ondown>3</ondown>
                 <animation type="Focus" reversible="false">
-                    <effect type="zoom" start="80" end="100" center="auto" time="200" />
-                    <effect type="fade" start="80" end="100" time="200" />
+                    <animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation>
+                    <effect type="fade" start="90" end="100" time="200" />
                 </animation>
                 <animation type="UnFocus" reversible="false">
-                    <effect type="zoom" start="100" end="80" center="auto" time="200" />
-                    <effect type="fade" start="100" end="80" time="200" />
+                    <animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation>
+                    <effect type="fade" start="100" end="90" time="200" />
                 </animation>
             </control>
             <control type="button" id="20">
@@ -104,10 +104,10 @@
                 <height>40</height>
                 <font>font13</font>
                 <label>$LOCALIZE[10130]</label>
-                <label2>[COLOR=selected]$INFO[Control.GetLabel(20)][/COLOR]</label2>
-                <textcolor>grey2</textcolor>
-                <focusedcolor>white</focusedcolor>
-                <texturefocus>MenuItemFO.png</texturefocus>
+                <label2>[COLOR=$VAR[SelectedColor]]$INFO[Control.GetLabel(20)][/COLOR]</label2>
+                <textcolor>$VAR[MainColorOne]</textcolor>
+                <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                 <texturenofocus>MenuItemNF.png</texturenofocus>
                 <onclick>settingslevelchange</onclick>
                 <onleft>3</onleft>
@@ -120,7 +120,7 @@
                 <top>122</top>
                 <width>750</width>
                 <height>2</height>
-                <texture>separator2.png</texture>
+                <texture colordiffuse="$VAR[MainColorOne]">separator2.png</texture>
             </control>
             <control type="grouplist" id="5">
                 <description>right control area</description>
@@ -142,9 +142,9 @@
                 <height>385</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>5</onleft>
                 <onright>800</onright>
                 <showonepage>true</showonepage>
@@ -158,7 +158,7 @@
                 <height>85</height>
                 <font>font12</font>
                 <align>justify</align>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
             </control>
         </control>
@@ -171,7 +171,7 @@
             <aligny>center</aligny>
             <font>font24_title</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
             <texturefocus>-</texturefocus>
             <texturenofocus>-</texturenofocus>
             <pulseonselect>false</pulseonselect>
@@ -185,9 +185,9 @@
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
             <invalidcolor>invalid</invalidcolor>
-            <texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+            <texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
             <texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
         </control>
         <control type="radiobutton" id="8">
@@ -197,8 +197,8 @@
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+            <texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
             <texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
         </control>
         <control type="spincontrolex" id="9">
@@ -208,8 +208,8 @@
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <texturefocus border="0,2,0,2">MenuItemFO.png</texturefocus>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+            <texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
             <texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
             <aligny>center</aligny>
             <reverse>yes</reverse>
@@ -217,7 +217,7 @@
         <control type="image" id="11">
             <description>separator image</description>
             <height>2</height>
-            <texture>separator2.png</texture>
+            <texture colordiffuse="$VAR[MainColorOne]">separator2.png</texture>
         </control>
         <control type="label" id="2">
             <description>Fake Label so we can pass it value down to the one below</description>

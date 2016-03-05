@@ -17,10 +17,10 @@
                 <height>530</height>
                 <width>650</width>
                 <onleft>9000</onleft>
-                <onright>60</onright>
+                <onright>73060</onright>
                 <onup>730</onup>
                 <ondown>730</ondown>
-                <pagecontrol>60</pagecontrol>
+                <pagecontrol>73060</pagecontrol>
                 <viewtype label="$LOCALIZE[31649]">list</viewtype>
                 <orientation>vertical</orientation>
                 <scrolltime>300</scrolltime>
@@ -29,12 +29,12 @@
                 <visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
                 <itemlayout condition="![Container.Content(Episodes) | Container.Content(Seasons)]" width="650" height="110">
                     <control type="image">
-                        <visible>!StringCompare(ListItem.label,..) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        <visible>!StringCompare(ListItem.label,..) + !IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableLogoArt)</visible>
                         <left>200</left>
                         <top>10</top>
                         <width>450</width>
                         <height>140</height>
-                        <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                        <texture background="true">$VAR[MediaLogoArt]</texture>
                         <fadetime>300</fadetime>
                         <aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
                         <animation effect="zoom" start="65" end="65" center="auto" time="0" condition="true">Conditional</animation>
@@ -46,15 +46,15 @@
                         <top>10</top>
                         <width>450</width>
                         <height>140</height>
-                        <texture background="true">DefaultLogoReturn.png</texture>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
                         <fadetime>300</fadetime>
                         <aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
                         <animation effect="zoom" start="65" end="65" center="auto" time="0" condition="true">Conditional</animation>
                         <animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
                     </control>
                     <control type="label">
-                        <visible>!StringCompare(ListItem.label,..) + IsEmpty(ListItem.Art(clearlogo))</visible>
-                        <left>650</left>
+                        <visible>!StringCompare(ListItem.label,..) + [IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableLogoArt)]</visible>
+                        <left>200</left>
                         <top>10</top>
                         <width>450</width>
                         <height>140</height>
@@ -67,12 +67,12 @@
                 </itemlayout>
                 <focusedlayout condition="![Container.Content(Episodes) | Container.Content(Seasons)]" width="550" height="200">
                     <control type="image">
-                        <visible>!StringCompare(ListItem.label,..) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        <visible>!StringCompare(ListItem.label,..) + !IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableLogoArt)</visible>
                         <left>200</left>
                         <top>30</top>
                         <width>450</width>
                         <height>140</height>
-                        <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+                        <texture background="true">$VAR[MediaLogoArt]</texture>
                         <fadetime>300</fadetime>
                         <aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
                         <animation effect="zoom" start="65" end="100" center="auto" time="200">Focus</animation>
@@ -83,35 +83,35 @@
                         <top>30</top>
                         <width>450</width>
                         <height>140</height>
-                        <texture background="true">DefaultLogoReturn.png</texture>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
                         <fadetime>300</fadetime>
                         <aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
                         <animation effect="zoom" start="65" end="100" center="auto" time="200">Focus</animation>
                     </control>
                     <control type="label">
-                        <visible>!StringCompare(ListItem.label,..) + IsEmpty(ListItem.Art(clearlogo))</visible>
-                        <left>650</left>
+                        <visible>!StringCompare(ListItem.label,..) + [IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableLogoArt)]</visible>
+                        <left>50</left>
                         <top>30</top>
                         <width>600</width>
                         <height>140</height>
                         <align>right</align>
                         <aligny>center</aligny>
                         <font>font35_title</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <label>[B]$INFO[ListItem.Label][/B]</label>
                     </control>
                 </focusedlayout>
             </control>
-            <control type="scrollbar" id="60">
+            <control type="scrollbar" id="73060">
                 <left>35r</left>
                 <top>95</top>
                 <width>25</width>
                 <height>550</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>730</onleft>
                 <onright>800</onright>
                 <showonepage>true</showonepage>
@@ -122,51 +122,22 @@
                 <description>Media Codec Flagging Images</description>
                 <left>50</left>
                 <top>622</top>
-                <width>580</width>
+                <width>530</width>
                 <align>left</align>
-                <itemgap>5</itemgap>
+                <itemgap>2</itemgap>
                 <orientation>horizontal</orientation>
-                <include>VideoExtraInfoFlagging</include>
+                <include>VideoMPAAFlaggingConditions</include>
                 <include>VideoCodecFlaggingConditions</include>
                 <include>AudioCodecFlaggingConditions</include>
                 <include>AudioChannelsFlaggingConditions</include>
                 <include>AspectCodecFlaggingConditions</include>
-                <include condition="!Skin.HasSetting(enablefullmpaa)">VideoMPAAFlaggingConditions</include>
-                <visible>![Container.Content(TVShows) | Container.Content(Seasons)]</visible>
-                <visible>Skin.HasSetting(hidegenreicons)</visible>
-            </control>
-            <control type="grouplist">
-                <description>Media Genre Flagging</description>
-                <left>50</left>
-                <top>620</top>
-                <width>580</width>
-                <align>left</align>
-                <itemgap>5</itemgap>
-                <orientation>horizontal</orientation>
-                <include>SmallVideoGenreFlagging</include>
-                <control type="image">
-                    <description>Rating image</description>
-                    <width>96</width>
-                    <height>46</height>
-                    <aspectratio align="right">keep</aspectratio>
-                    <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-                    <visible>!IsEmpty(ListItem.Mpaa)</visible>
-                </control>
-                <control type="image">
-                    <description>Studio image</description>
-                    <width>96</width>
-                    <height>46</height>
-                    <aspectratio align="center">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-                    <visible>!IsEmpty(ListItem.Studio)</visible>
-                </control>
-                <visible>Container.Content(TVShows) | Container.Content(Seasons) | !Skin.HasSetting(hidegenreicons)</visible>
+                <include>VideoStudioFlagging</include>
             </control>
             <control type="group">
                 <left>0</left>
                 <top>190</top>
                 <include>MediaInfoPopup</include>
-                <visible>!Skin.String(mediapopupcontrol,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+                <visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
                 <visible>Control.IsVisible(730) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
                 <control type="image">
                     <left>50</left>
@@ -184,9 +155,9 @@
                     <height>165</height>
                     <font>font12</font>
                     <align>justify</align>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <label>$VAR[VideoDescription]</label>
-                    <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                    <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                 </control>
                 <control type="label">
                     <left>70</left>
@@ -194,11 +165,13 @@
                     <width>540</width>
                     <height>30</height>
                     <font>font10</font>
-                    <textcolor>white</textcolor>
-                    <scroll>true</scroll>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <scroll>false</scroll>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Duration,[B][COLOR=blue]$LOCALIZE[2050][/COLOR][/B] , $LOCALIZE[12391]] $INFO[ListItem.RatingAndVotes, [B][COLOR=blue]$LOCALIZE[563][/COLOR][/B] ]$INFO[ListItem.LastPlayed, [B][COLOR=blue]$LOCALIZE[568][/COLOR][/B] ]</label>
+                    <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]]     $VAR[MediaRating]     $VAR[MediaLastPlayed]</label>
                 </control>
             </control>
         </control>

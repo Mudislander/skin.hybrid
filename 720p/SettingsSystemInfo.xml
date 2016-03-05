@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <include condition="!Skin.HasSetting(initialsetuprun)">DefaultInitialSetup</include>
+    <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+    <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <defaultcontrol always="true">95</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <controls>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <aspectratio>scale</aspectratio>
-            <texture background="true">special://skin/backgrounds/homescreen/settings.jpg</texture>
+            <texture background="true">special://skin/backgrounds/settings.jpg</texture>
             <include>BackgroundFade</include>
             <fadetime>FanartCrossfadeTime</fadetime>
             <include>Window_OpenClose_Animation</include>
-            <visible>!Skin.HasSetting(initialsetuprun)</visible>
         </control>
-        <include condition="Skin.HasSetting(initialsetuprun)">CommonBackground</include>
+        <include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
         <control type="button" id="800">
             <include>InvisibleButton</include>
             <onleft>801</onleft>
@@ -36,18 +35,26 @@
         <include>BehindDialogFadeOut</include>
         <include>MediaViewBackgrounds</include>
         <include>FloorReturnButtons</include>
+        <control type="label" id="40">
+            <description>Invisible label</description>
+            <left>0</left>
+            <top>0</top>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+        </control>
         <control type="label">
             <left>55</left>
             <top>5</top>
             <width>1170</width>
             <height>30</height>
             <font>font30_title</font>
-            <textcolor>blue</textcolor>
+            <textcolor>$VAR[MainColorOne]</textcolor>
             <scroll>true</scroll>
             <align>center</align>
             <aligny>center</aligny>
             <include>Window_OpenClose_Animation</include>
-            <label>[UPPERCASE]$LOCALIZE[138][/UPPERCASE]</label>
+            <label>[UPPERCASE]$LOCALIZE[13000] - $INFO[Control.GetLabel(40)][/UPPERCASE]</label>
         </control>
         <control type="label" id="52">
             <left>10</left>
@@ -74,137 +81,120 @@
                 <effect type="fade" start="100" end="0" time="300" />
             </animation>
             <control type="grouplist" id="9000">
-                <left>30</left>
+                <left>80</left>
                 <top>120</top>
-                <width>300</width>
-                <height>481</height>
+                <width>430</width>
+                <height>600</height>
                 <itemgap>-1</itemgap>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
                 <onleft>800</onleft>
                 <onright>800</onright>
                 <animation type="Focus" reversible="false">
-                    <effect type="zoom" start="80" end="100" center="auto" time="200" />
-                    <effect type="fade" start="80" end="100" time="200" />
+                    <animation effect="zoom" start="65" end="125" center="380,51" time="200">Focus</animation>
+                    <effect type="fade" start="90" end="100" time="200" />
                 </animation>
                 <animation type="UnFocus" reversible="false">
-                    <effect type="zoom" start="100" end="80" center="auto" time="200" />
-                    <effect type="fade" start="100" end="80" time="200" />
+                    <animation effect="zoom" start="125" end="65" center="380,51" time="200">UnFocus</animation>
+                    <effect type="fade" start="100" end="90" time="200" />
                 </animation>
                 <control type="button" id="95">
-                    <description>Button Summary Values</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>20037</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
                 <control type="button" id="94">
-                    <description>Button Storage</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>13277</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
                 <control type="button" id="96">
-                    <description>Button Network</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>13279</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
                 <control type="button" id="97">
-                    <description>Button Video</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>13280</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
                 <control type="button" id="98">
                     <description>Button Hardware</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>13281</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
                 <control type="button" id="99">
-                    <description>Button PVR</description>
                     <height>60</height>
                     <width>300</width>
-                    <textoffsetx>10</textoffsetx>
-                    <align>center</align>
+                    <textoffsetx>0</textoffsetx>
+                    <align>right</align>
                     <aligny>center</aligny>
                     <font>font24_title</font>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <texturefocus>-</texturefocus>
                     <texturenofocus>-</texturenofocus>
                     <pulseonselect>false</pulseonselect>
                     <label>19191</label>
-                    <animation effect="zoom" start="110" end="145" center="auto" time="200">Focus</animation>
-                    <animation effect="zoom" start="145" end="110" center="auto" time="200">UnFocus</animation>
+                    <animation effect="zoom" start="110" end="145" center="300,30" time="200">Focus</animation>
+                    <animation effect="zoom" start="145" end="110" center="300,30" time="200">UnFocus</animation>
                 </control>
-            </control>
-            <control type="label" id="40">
-                <description>header label</description>
-                <left>415</left>
-                <top>80</top>
-                <width>750</width>
-                <height>30</height>
-                <font>font16</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
             </control>
             <control type="group">
                 <left>415</left>
@@ -288,7 +278,7 @@
                     <label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
                     <align>right</align>
                     <aligny>center</aligny>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <font>font12_title</font>
                 </control>
@@ -309,7 +299,7 @@
                     <label>$LOCALIZE[31369] $INFO[system.memory(used.percent)]</label>
                     <align>right</align>
                     <aligny>center</aligny>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <font>font12_title</font>
                 </control>

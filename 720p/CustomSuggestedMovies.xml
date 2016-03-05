@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<window type="dialog" id="2125">
+<window type="dialog" id="1190">
     <defaultcontrol always="true">450</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -15,7 +15,7 @@
                 <top>0</top>
                 <width>400</width>
                 <height>720</height>
-                <texture border="15,0,0,0" flipx="true">Home\MediaBladeSub.png</texture>
+                <texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
             </control>
             <control type="button">
                 <description>Close Window button</description>
@@ -24,12 +24,20 @@
                 <width>64</width>
                 <height>32</height>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <left>380r</left>
+                <top>0</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
             <control type="label">
@@ -40,7 +48,7 @@
                 <font>font14</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <label>[B]$LOCALIZE[31197][/B]</label>
             </control>
             <control type="image">
@@ -50,7 +58,7 @@
                 <height>200</height>
                 <aspectratio align="center">stretch</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
-                <texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
+                <texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
                 <bordertexture border="8">ThumbShadow.png</bordertexture>
                 <bordersize>8</bordersize>
             </control>
@@ -63,21 +71,13 @@
                 <texture background="true">$INFO[Container(450).ListItem.Property(Logo)]</texture>
                 <visible>!IsEmpty(Container(450).ListItem.Property(Logo))</visible>
             </control>
-            <control type="image">
-                <left>78r</left>
-                <top>43</top>
-                <width>40</width>
-                <height>40</height>
-                <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                <visible>!Skin.HasSetting(disablewatchedcheck)</visible>
-            </control>
             <control type="list" id="450">
                 <left>390r</left>
                 <top>280</top>
                 <width>450</width>
                 <height>400</height>
                 <onup>450</onup>
-                <onleft>Dialog.Close(2125)</onleft>
+                <onleft>Dialog.Close(1190)</onleft>
                 <onright>60</onright>
                 <ondown>450</ondown>
                 <pagecontrol>60</pagecontrol>
@@ -98,7 +98,7 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <label>$INFO[ListItem.label]</label>
                     </control>
                 </itemlayout>
@@ -117,7 +117,7 @@
                         <width>360</width>
                         <height>40</height>
                         <visible>Control.HasFocus(450)</visible>
-                        <texture border="3">button-focus.png</texture>
+                        <texture border="3" colordiffuse="$VAR[MainColorOne]">button-focus.png</texture>
                     </control>
                     <control type="label">
                         <left>10</left>
@@ -127,7 +127,7 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <label>$INFO[ListItem.label]</label>
                     </control>
                 </focusedlayout>
@@ -135,7 +135,7 @@
                     <item id="1">
                         <label>$INFO[Window(home).Property(RecommendedMovie.1.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.1.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.1.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</thumb>
@@ -146,7 +146,7 @@
                     <item id="2">
                         <label>$INFO[Window(home).Property(RecommendedMovie.2.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.2.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.2.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.2.Art(fanart))]</thumb>
@@ -157,7 +157,7 @@
                     <item id="3">
                         <label>$INFO[Window(home).Property(RecommendedMovie.3.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.3.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.3.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.3.Art(fanart))]</thumb>
@@ -168,7 +168,7 @@
                     <item id="4">
                         <label>$INFO[Window(home).Property(RecommendedMovie.4.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.4.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.4.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.4.Art(fanart))]</thumb>
@@ -179,7 +179,7 @@
                     <item id="5">
                         <label>$INFO[Window(home).Property(RecommendedMovie.5.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.5.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.5.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.5.Art(fanart))]</thumb>
@@ -190,7 +190,7 @@
                     <item id="6">
                         <label>$INFO[Window(home).Property(RecommendedMovie.6.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.6.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.6.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.6.Art(fanart))]</thumb>
@@ -201,7 +201,7 @@
                     <item id="7">
                         <label>$INFO[Window(home).Property(RecommendedMovie.7.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.7.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.7.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.7.Art(fanart))]</thumb>
@@ -212,7 +212,7 @@
                     <item id="8">
                         <label>$INFO[Window(home).Property(RecommendedMovie.8.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.8.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.8.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.8.Art(fanart))]</thumb>
@@ -223,7 +223,7 @@
                     <item id="9">
                         <label>$INFO[Window(home).Property(RecommendedMovie.9.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.9.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.9.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.9.Art(fanart))]</thumb>
@@ -234,7 +234,7 @@
                     <item id="10">
                         <label>$INFO[Window(home).Property(RecommendedMovie.10.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.10.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.10.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.10.Art(fanart))]</thumb>
@@ -245,7 +245,7 @@
                     <item id="11">
                         <label>$INFO[Window(home).Property(RecommendedMovie.11.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.11.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.11.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.11.Art(fanart))]</thumb>
@@ -256,7 +256,7 @@
                     <item id="12">
                         <label>$INFO[Window(home).Property(RecommendedMovie.12.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.12.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.12.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.12.Art(fanart))]</thumb>
@@ -267,7 +267,7 @@
                     <item id="13">
                         <label>$INFO[Window(home).Property(RecommendedMovie.13.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.13.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.13.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.13.Art(fanart))]</thumb>
@@ -278,7 +278,7 @@
                     <item id="14">
                         <label>$INFO[Window(home).Property(RecommendedMovie.14.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.14.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.14.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.14.Art(fanart))]</thumb>
@@ -289,7 +289,7 @@
                     <item id="15">
                         <label>$INFO[Window(home).Property(RecommendedMovie.15.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.15.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.15.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.15.Art(fanart))]</thumb>
@@ -300,7 +300,7 @@
                     <item id="16">
                         <label>$INFO[Window(home).Property(RecommendedMovie.16.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.16.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.16.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.16.Art(fanart))]</thumb>
@@ -311,7 +311,7 @@
                     <item id="17">
                         <label>$INFO[Window(home).Property(RecommendedMovie.17.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.17.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.17.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.17.Art(fanart))]</thumb>
@@ -322,7 +322,7 @@
                     <item id="18">
                         <label>$INFO[Window(home).Property(RecommendedMovie.18.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.18.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.18.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.18.Art(fanart))]</thumb>
@@ -333,7 +333,7 @@
                     <item id="19">
                         <label>$INFO[Window(home).Property(RecommendedMovie.19.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.19.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.19.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.19.Art(fanart))]</thumb>
@@ -344,7 +344,7 @@
                     <item id="20">
                         <label>$INFO[Window(home).Property(RecommendedMovie.20.Title)]</label>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2125)</onclick>
+                        <onclick>Dialog.Close(1190)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedMovie.20.File)])</onclick>
                         <icon>$INFO[Window(home).Property(RecommendedMovie.20.Art(poster))]</icon>
                         <thumb>$INFO[Window(home).Property(RecommendedMovie.20.Art(fanart))]</thumb>
@@ -357,58 +357,10 @@
                         <label2>31252</label2>
                         <onclick>PreviousMenu</onclick>
                         <icon>DefaultVideo.png</icon>
-                        <thumb>SmallFanartFallback.jpg</thumb>
+                        <thumb>Fanart_Fallback_Small.jpg</thumb>
                         <visible>IsEmpty(Window(home).Property(RecommendedMovie.1.Title))</visible>
                     </item>
                 </content>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>390r</left>
-                <top>240</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>35r</left>
-                <top>240</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>390r</left>
-                <top>680</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>35r</left>
-                <top>680</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
             </control>
             <control type="scrollbar" id="60">
                 <left>1256</left>
@@ -419,10 +371,10 @@
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
                 <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
-                <showonepage>true</showonepage>
+                <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(450)</visible>
             </control>

@@ -23,13 +23,23 @@
                 <top>15</top>
                 <width>64</width>
                 <height>32</height>
+                <label>-</label>
+                <font>-</font>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>2</onleft>
                 <onright>2</onright>
                 <onup>2</onup>
                 <ondown>2</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <left>390</left>
+                <top>15</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
             <control type="image">
@@ -50,7 +60,7 @@
                 <label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <visible>!pvr.IsPlayingRadio</visible>
             </control>
@@ -64,7 +74,7 @@
                 <label>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <visible>pvr.IsPlayingRadio</visible>
             </control>
@@ -112,7 +122,7 @@
                         <aligny>center</aligny>
                         <textcolor>grey</textcolor>
                         <selectedcolor>grey</selectedcolor>
-                        <info>ListItem.ChannelNumber</info>
+                        <info>ListItem.ChannelNumberLabel</info>
                     </control>
                     <control type="image">
                         <left>5</left>
@@ -128,11 +138,11 @@
                         <width>350</width>
                         <height>25</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -145,7 +155,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
-                        <visible>IsEmpty(Listitem.icon)</visible>
+                        <visible>IsEmpty(Listitem.Icon)</visible>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -158,7 +168,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
-                        <visible>!IsEmpty(Listitem.icon)</visible>
+                        <visible>!IsEmpty(Listitem.Icon)</visible>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -166,8 +176,8 @@
                         <width>60</width>
                         <height>20</height>
                         <font>font10_title</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <selectedcolor>$VAR[MainColorOne]</selectedcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.StartTime]</label>
                         <visible>ListItem.HasEpg</visible>
@@ -188,8 +198,8 @@
                         <width>60</width>
                         <height>20</height>
                         <font>font10_title</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <selectedcolor>$VAR[MainColorOne]</selectedcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.EndTime]</label>
                         <visible>ListItem.HasEpg</visible>
@@ -199,7 +209,8 @@
                         <top>4</top>
                         <width>40</width>
                         <height>40</height>
-                        <texture>$INFO[ListItem.icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
                     </control>
                 </itemlayout>
                 <focusedlayout height="70" width="410">
@@ -217,7 +228,7 @@
                         <top>0</top>
                         <width>410</width>
                         <height>65</height>
-                        <texture border="5">button-focus2.png</texture>
+                        <texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
                         <visible>Control.HasFocus(11)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
@@ -231,7 +242,7 @@
                         <aligny>center</aligny>
                         <textcolor>grey</textcolor>
                         <selectedcolor>grey</selectedcolor>
-                        <info>ListItem.ChannelNumber</info>
+                        <info>ListItem.ChannelNumberLabel</info>
                     </control>
                     <control type="image">
                         <left>5</left>
@@ -247,11 +258,11 @@
                         <width>350</width>
                         <height>25</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -264,7 +275,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
-                        <visible>IsEmpty(Listitem.icon)</visible>
+                        <visible>IsEmpty(Listitem.Icon)</visible>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -277,7 +288,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
-                        <visible>!IsEmpty(Listitem.icon)</visible>
+                        <visible>!IsEmpty(Listitem.Icon)</visible>
                     </control>
                     <control type="label">
                         <left>50</left>
@@ -285,8 +296,8 @@
                         <width>60</width>
                         <height>20</height>
                         <font>font10_title</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <selectedcolor>$VAR[MainColorOne]</selectedcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.StartTime]</label>
                         <visible>ListItem.HasEpg</visible>
@@ -307,8 +318,8 @@
                         <width>60</width>
                         <height>20</height>
                         <font>font10_title</font>
-                        <textcolor>blue</textcolor>
-                        <selectedcolor>blue</selectedcolor>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <selectedcolor>$VAR[MainColorOne]</selectedcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.EndTime]</label>
                         <visible>ListItem.HasEpg</visible>
@@ -318,7 +329,8 @@
                         <top>4</top>
                         <width>40</width>
                         <height>40</height>
-                        <texture>$INFO[ListItem.icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
                     </control>
                 </focusedlayout>
             </control>
@@ -329,14 +341,14 @@
                 <height>520</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>11</onleft>
                 <onright>NextChannelGroup</onright>
                 <ondown>61</ondown>
                 <onup>61</onup>
-                <showonepage>true</showonepage>
+                <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
             </control>
             <control type="label">
@@ -350,7 +362,7 @@
                 <scroll>false</scroll>
                 <align>right</align>
                 <aligny>center</aligny>
-                <label>([COLOR=blue]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31319] ([COLOR=blue]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
+                <label>([COLOR=$VAR[MainColorOne]]$INFO[Container(11).NumItems][/COLOR]) $LOCALIZE[19019] - $LOCALIZE[31319] ([COLOR=$VAR[MainColorOne]]$INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages][/COLOR])</label>
                 <include>Window_OpenClose_Animation</include>
             </control>
         </control>

@@ -4,7 +4,7 @@
     <coordinates>
         <system>1</system>
         <left>185</left>
-        <top>60</top>
+        <top>40</top>
         <origin x="185" y="10">!IsEmpty(ListItem.Property(Addon.broken))</origin>
     </coordinates>
     <include>DialogEffect</include>
@@ -17,7 +17,7 @@
                 <left>0</left>
                 <top>0</top>
                 <width>920</width>
-                <height>600</height>
+                <height>639</height>
                 <texture border="40">DialogBack.png</texture>
             </control>
             <control type="image">
@@ -38,7 +38,7 @@
                 <label>$LOCALIZE[24003]</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>selected</textcolor>
+                <textcolor>$VAR[SelectedColor]</textcolor>
                 <shadowcolor>black</shadowcolor>
             </control>
             <control type="button">
@@ -47,13 +47,23 @@
                 <top>15</top>
                 <width>64</width>
                 <height>32</height>
+                <label>-</label>
+                <font>-</font>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>3</onleft>
                 <onright>3</onright>
                 <onup>3</onup>
                 <ondown>3</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <left>830</left>
+                <top>15</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
             <control type="image">
@@ -62,7 +72,7 @@
                 <width>220</width>
                 <height>220</height>
                 <aspectratio>keep</aspectratio>
-                <texture>$INFO[ListItem.icon]</texture>
+                <texture>$INFO[ListItem.Icon]</texture>
                 <bordertexture border="8">ThumbShadow.png</bordertexture>
                 <bordersize>8</bordersize>
             </control>
@@ -76,7 +86,7 @@
                 <aligny>center</aligny>
                 <font>font13</font>
                 <label>[B]$INFO[ListItem.Property(Addon.Name)][/B]</label>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <scroll>true</scroll>
             </control>
             <control type="group">
@@ -92,7 +102,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                 </control>
                 <control type="label">
                     <description>Type Value</description>
@@ -100,7 +110,7 @@
                     <top>0</top>
                     <width>440</width>
                     <height>25</height>
-                    <label fallback="416">$INFO[ListItem.Property(Addon.type)]</label>
+                    <label fallback="416">$INFO[ListItem.Property(Addon.Type)]</label>
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>font13</font>
@@ -112,11 +122,11 @@
                     <top>30</top>
                     <width>140</width>
                     <height>25</height>
-                    <label>$LOCALIZE[21863]$LOCALIZE[31000]</label>
+                    <label>$LOCALIZE[21863]:</label>
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                 </control>
                 <control type="label">
                     <description>Author Value</description>
@@ -140,7 +150,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                 </control>
                 <control type="label">
                     <description>Version Value</description>
@@ -155,42 +165,21 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
-                    <description>Rating txt</description>
-                    <left>10</left>
-                    <top>90</top>
-                    <width>140</width>
-                    <height>25</height>
-                    <label>$LOCALIZE[563]$LOCALIZE[31000]</label>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <font>font13</font>
-                    <textcolor>blue</textcolor>
-                </control>
-                <control type="image">
-                    <description>Rating value</description>
-                    <left>155</left>
-                    <top>90</top>
-                    <width>160</width>
-                    <height>32</height>
-                    <aspectratio align="left">keep</aspectratio>
-                    <texture fallback="LeftRating/rating0.png">$INFO[ListItem.Property(Addon.StarRating),LeftRating/]</texture>
-                </control>
-                <control type="label">
                     <description>Summary txt</description>
                     <left>10</left>
-                    <top>120</top>
+                    <top>90</top>
                     <width>140</width>
                     <height>25</height>
-                    <label>$LOCALIZE[20037]$LOCALIZE[31000]</label>
+                    <label>$LOCALIZE[20037]:</label>
                     <align>right</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                 </control>
                 <control type="fadelabel">
                     <description>Summary Value</description>
                     <left>160</left>
-                    <top>120</top>
+                    <top>90</top>
                     <width>440</width>
                     <height>25</height>
                     <label fallback="416">$INFO[ListItem.Property(Addon.Summary)]</label>
@@ -217,7 +206,7 @@
                     <align>left</align>
                     <aligny>center</aligny>
                     <font>font13</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                 </control>
                 <control type="group">
                     <visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
@@ -227,7 +216,7 @@
                         <top>170</top>
                         <width>300</width>
                         <height>25</height>
-                        <label>$INFO[Container(400).CurrentPage, $LOCALIZE[31319] [COLOR=blue]([/COLOR]]$INFO[Container(400).NumPages,/,[COLOR=blue])[/COLOR]]</label>
+                        <label>$INFO[Container(400).CurrentPage, $LOCALIZE[31319] [COLOR=grey3]([/COLOR]]$INFO[Container(400).NumPages,/,[COLOR=grey3])[/COLOR]]</label>
                         <align>right</align>
                         <aligny>center</aligny>
                         <font>font12</font>
@@ -238,10 +227,10 @@
                         <left>10</left>
                         <top>195</top>
                         <width>600</width>
-                        <height>170</height>
+                        <height>190</height>
                         <font>font13</font>
                         <align>justify</align>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <label>$INFO[ListItem.Property(Addon.Description)]</label>
                         <pagecontrol>60</pagecontrol>
                     </control>
@@ -249,40 +238,40 @@
                         <left>610</left>
                         <top>195</top>
                         <width>25</width>
-                        <height>170</height>
+                        <height>190</height>
                         <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                         <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                        <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                        <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                         <textureslidernib>ScrollBarNib.png</textureslidernib>
-                        <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                        <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                         <onleft>9000</onleft>
                         <onright>61</onright>
-                        <showonepage>true</showonepage>
+                        <showonepage>false</showonepage>
                         <orientation>vertical</orientation>
                     </control>
                     <control type="label">
                         <description>Disclaimer txt</description>
                         <left>0</left>
-                        <top>370</top>
+                        <top>400</top>
                         <width>600</width>
                         <height>25</height>
                         <label>$LOCALIZE[24052]</label>
                         <align>left</align>
                         <aligny>center</aligny>
                         <font>font13</font>
-                        <textcolor>orange</textcolor>
+                        <textcolor>$VAR[SelectedColor]</textcolor>
                     </control>
                     <control type="textbox">
                         <description>Disclaimer</description>
                         <left>10</left>
-                        <top>395</top>
+                        <top>425</top>
                         <width>600</width>
-                        <height>40</height>
+                        <height>66</height>
                         <font>font12</font>
                         <align>left</align>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <label>$INFO[ListItem.Property(Addon.Disclaimer)]</label>
-                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                        <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
                     </control>
                 </control>
                 <control type="group">
@@ -293,7 +282,7 @@
                         <top>170</top>
                         <width>300</width>
                         <height>25</height>
-                        <label>$INFO[Container(401).CurrentPage, $LOCALIZE[31319] [COLOR=blue]([/COLOR]]$INFO[Container(401).NumPages,/,[COLOR=blue])[/COLOR]]</label>
+                        <label>$INFO[Container(401).CurrentPage, $LOCALIZE[31319] [COLOR=grey3]([/COLOR]]$INFO[Container(401).NumPages,/,[COLOR=grey3])[/COLOR]]</label>
                         <align>right</align>
                         <aligny>center</aligny>
                         <font>font12</font>
@@ -304,10 +293,10 @@
                         <left>10</left>
                         <top>205</top>
                         <width>600</width>
-                        <height>240</height>
+                        <height>260</height>
                         <font>font13</font>
                         <align>justify</align>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <label>$INFO[ListItem.Property(Addon.Description)]</label>
                         <pagecontrol>61</pagecontrol>
                     </control>
@@ -315,24 +304,24 @@
                         <left>610</left>
                         <top>205</top>
                         <width>25</width>
-                        <height>240</height>
+                        <height>260</height>
                         <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                         <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                        <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                        <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                         <textureslidernib>ScrollBarNib.png</textureslidernib>
-                        <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                        <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                         <onleft>60</onleft>
                         <onright>9000</onright>
-                        <showonepage>true</showonepage>
+                        <showonepage>false</showonepage>
                         <orientation>vertical</orientation>
                     </control>
                 </control>
             </control>
             <control type="grouplist" id="9000">
                 <left>30</left>
-                <top>310</top>
+                <top>300</top>
                 <width>220</width>
-                <height>270</height>
+                <height>313</height>
                 <onleft>60</onleft>
                 <onright>60</onright>
                 <onup>9000</onup>
@@ -351,6 +340,14 @@
                     <width>220</width>
                     <height>43</height>
                     <label>24069</label>
+                    <align>center</align>
+                    <font>font12_title</font>
+                </control>
+                <control type="button" id="12">
+                    <description>Launch Addon button</description>
+                    <width>220</width>
+                    <height>43</height>
+                    <label>518</label>
                     <align>center</align>
                     <font>font12_title</font>
                 </control>
@@ -417,7 +414,7 @@
                     <label>24096</label>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <textcolor>selected</textcolor>
+                    <textcolor>$VAR[SelectedColor]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
                 <control type="textbox">
@@ -429,7 +426,7 @@
                     <font>font13</font>
                     <label>$INFO[ListItem.Property(Addon.broken)]</label>
                     <align>left</align>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
             </control>

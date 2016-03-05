@@ -17,20 +17,12 @@
             <include>AddonInfoThumbView1</include>
             <!-- view id = 551 -->
         </control>
-        <control type="button" id="800">
-            <include>InvisibleButton</include>
-            <onleft>801</onleft>
-            <onright>804</onright>
-            <onup>50</onup>
-            <ondown>50</ondown>
-            <visible>false</visible>
-        </control>
         <include>CommonPageCount</include>
-        <include>FloorReturnButtons</include>
         <include>CommonNowPlaying</include>
+        <!--include>MainWindowMouseButtons</include-->
         <include>BehindDialogFadeOut</include>
+        <!--include>ScrollOffsetLabel</include-->
         <control type="group">
-            <visible>!Skin.HasSetting(kioskmode)</visible>
             <left>-250</left>
             <include>SideBladeLeft</include>
             <control type="grouplist" id="9000">
@@ -49,7 +41,7 @@
                     <height>35</height>
                     <font>font12</font>
                     <label>31006</label>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
@@ -57,6 +49,7 @@
                     <description>View As button</description>
                     <textwidth>235</textwidth>
                     <include>ButtonCommonValues</include>
+                    <label>-</label>
                 </control>
                 <control type="button" id="3">
                     <description>Sort by button</description>
@@ -66,7 +59,7 @@
                 <control type="togglebutton" id="4">
                     <description>Sort asc</description>
                     <include>ButtonCommonValues</include>
-                    <alttexturefocus border="5">button-focus.png</alttexturefocus>
+                    <alttexturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</alttexturefocus>
                     <alttexturenofocus>-</alttexturenofocus>
                     <label>31051</label>
                     <altlabel>31050</altlabel>
@@ -77,34 +70,34 @@
                     <height>35</height>
                     <font>font12</font>
                     <label>31011</label>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
-                <control type="radiobutton" id="5">
-                    <description>Enable auto-updates</description>
-                    <left>0</left>
-                    <top>130</top>
+                <control type="button" id="5">
+                    <description>addon-updates</description>
+                    <textwidth>235</textwidth>
                     <include>ButtonCommonValues</include>
                     <label>24063</label>
                 </control>
                 <control type="radiobutton" id="6">
                     <description>No notifications</description>
-                    <left>0</left>
-                    <top>170</top>
                     <include>ButtonCommonValues</include>
                     <label>25000</label>
                 </control>
                 <control type="radiobutton" id="7">
                     <description>Hide foreign</description>
-                    <left>0</left>
-                    <top>210</top>
                     <include>ButtonCommonValues</include>
                     <label>25001</label>
                 </control>
+                <control type="radiobutton" id="8">
+                    <description>Hide broken</description>
+                    <include>ButtonCommonValues</include>
+                    <label>24999</label>
+                </control>
+                <!--include>CommonNowPlaying_Controls</include-->
             </control>
         </control>
         <include>BottomClock</include>
-        <include>MainHeaderLabel</include>
     </controls>
 </window>

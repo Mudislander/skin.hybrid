@@ -8,19 +8,19 @@
                 <left>70</left>
                 <top>88</top>
                 <width>690</width>
-                <height>560</height>
+                <height>521</height>
                 <onleft>2</onleft>
-                <onright>60</onright>
+                <onright>5060</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
                 <viewtype label="535">list</viewtype>
-                <pagecontrol>60</pagecontrol>
+                <pagecontrol>5060</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="40" width="580">
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
-                        <width>695</width>
+                        <width>690</width>
                         <height>41</height>
                         <texture border="0,2,0,2">MenuItemNF.png</texture>
                     </control>
@@ -29,46 +29,45 @@
                         <top>6</top>
                         <width>28</width>
                         <height>28</height>
-                        <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                        <visible>Window.IsVisible(Videos) + !Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="label">
                         <left>30</left>
-                        <left>46</left>
                         <top>0</top>
-                        <width>610</width>
+                        <width>660</width>
                         <height>40</height>
                         <font>font13</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <left>680</left>
+                        <left>300</left>
                         <top>0</top>
-                        <width>400</width>
+                        <width>385</width>
                         <height>40</height>
                         <font>font12</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.Label2]</label>
                         <visible>!Window.IsVisible(Videos)</visible>
                     </control>
                     <control type="label">
-                        <left>635</left>
+                        <left>240</left>
                         <top>0</top>
-                        <width>400</width>
+                        <width>385</width>
                         <height>40</height>
                         <font>font12</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.Label2]</label>
                         <visible>Window.IsVisible(Videos)</visible>
                         <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
                     </control>
@@ -80,20 +79,20 @@
                         <texture>$VAR[VideoResolutionFlag]</texture>
                         <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
                     </control>
-                    <control type="image">
-                        <left>656</left>
-                        <top>8</top>
-                        <width>24</width>
-                        <height>26</height>
-                        <texture>$VAR[SmallGenreIcons,flagging/genre/,.png]</texture>
-                        <visible>StringCompare(Container.FolderName,Genres)</visible>
-                    </control>
                 </itemlayout>
                 <focusedlayout height="40" width="580">
                     <control type="image">
                         <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
                         <top>0</top>
-                        <width>695</width>
+                        <width>690</width>
                         <height>41</height>
                         <texture border="0,2,0,2">MenuItemNF.png</texture>
                         <visible>!Control.HasFocus(50)</visible>
@@ -102,64 +101,56 @@
                     <control type="image">
                         <left>0</left>
                         <top>0</top>
-                        <width>695</width>
+                        <width>690</width>
                         <height>41</height>
-                        <texture border="0,2,0,2">MenuItemFO.png</texture>
+                        <texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                         <visible>Control.HasFocus(50)</visible>
                         <include>VisibleFadeEffect</include>
                     </control>
-                    <control type="image">
-                        <left>490</left>
-                        <top>4</top>
-                        <width>200</width>
-                        <height>33</height>
-                        <texture border="0,0,14,0">MediaItemDetailBG.png</texture>
-                        <visible>Control.HasFocus(50) + [!IsEmpty(ListItem.label2) | StringCompare(Container.FolderName,Genres)]</visible>
-                    </control>
-                    <control type="image">
-                        <left>0</left>
-                        <top>6</top>
-                        <width>28</width>
-                        <height>28</height>
-                        <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                        <visible>Window.IsVisible(Videos) + !Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
-                    </control>
+                    <!--control type="image">
+						<left>490</left>
+						<top>4</top>
+						<width>200</width>
+						<height>33</height>
+						<texture border="0,0,14,0" colordiffuse="$VAR[MainColorOne]">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(50) + !IsEmpty(ListItem.Label2)</visible>
+					</control-->
                     <control type="label">
                         <left>30</left>
                         <top>0</top>
-                        <width>610</width>
+                        <width>660</width>
                         <height>40</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
-                        <left>680</left>
+                        <left>300</left>
                         <top>0</top>
-                        <width>400</width>
+                        <width>385</width>
                         <height>40</height>
                         <font>font12</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.Label2]</label>
                         <visible>!Window.IsVisible(Videos)</visible>
                     </control>
                     <control type="label">
-                        <left>635</left>
+                        <left>240</left>
                         <top>0</top>
-                        <width>400</width>
+                        <width>385</width>
                         <height>40</height>
                         <font>font12</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>right</align>
                         <aligny>center</aligny>
-                        <label>$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.Label2]</label>
                         <visible>Window.IsVisible(Videos)</visible>
                         <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
                     </control>
@@ -171,26 +162,18 @@
                         <texture>$VAR[VideoResolutionFlag]</texture>
                         <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
                     </control>
-                    <control type="image">
-                        <left>656</left>
-                        <top>8</top>
-                        <width>24</width>
-                        <height>26</height>
-                        <texture>$VAR[SmallGenreIcons,flagging/genre/,.png]</texture>
-                        <visible>StringCompare(Container.FolderName,Genres)</visible>
-                    </control>
                 </focusedlayout>
             </control>
-            <control type="scrollbar" id="60">
+            <control type="scrollbar" id="5060">
                 <left>760</left>
-                <top>92</top>
+                <top>95</top>
                 <width>25</width>
-                <height>552</height>
+                <height>510</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>50</onleft>
                 <onright>800</onright>
                 <showonepage>true</showonepage>
@@ -199,19 +182,32 @@
             </control>
             <control type="group">
                 <left>850</left>
-                <top>86</top>
+                <top>78</top>
                 <visible>Control.IsVisible(50)</visible>
                 <control type="image">
                     <left>0</left>
                     <top>0</top>
-                    <width>420</width>
-                    <height>565</height>
+                    <width>360</width>
+                    <height>540</height>
+                    <aspectratio aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>stringcompare(ListItem.Label,..)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>360</width>
+                    <height>540</height>
                     <aspectratio aligny="bottom">keep</aspectratio>
                     <fadetime>IconCrossfadeTime</fadetime>
                     <texture background="true">$VAR[PosterThumb]</texture>
                     <bordertexture border="8">ThumbShadow.png</bordertexture>
                     <bordersize>8</bordersize>
-                    <visible>!Container.Content(episodes) | IsEmpty(ListItem.Title) | [Container.Content(episodes) + !Skin.HasSetting(hideepisodethumb)]</visible>
+                    <visible>!stringcompare(ListItem.Label,..)</visible>
+                    <visible>!Container.Content(Episodes) | [Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb)]</visible>
                 </control>
                 <control type="image">
                     <left>0</left>
@@ -223,8 +219,598 @@
                     <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                     <bordertexture border="8">ThumbShadow.png</bordertexture>
                     <bordersize>8</bordersize>
-                    <visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + Skin.HasSetting(hideepisodethumb)</visible>
+                    <visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
                 </control>
+            </control>
+            <include>VideoLogoArt</include>
+            <control type="image">
+                <description>Rating image</description>
+                <left>1172</left>
+                <top>615</top>
+                <width>96</width>
+                <height>46</height>
+                <aspectratio align="right">keep</aspectratio>
+                <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+                <visible>!IsEmpty(ListItem.Mpaa)</visible>
+            </control>
+        </control>
+    </include>
+    <include name="FullWidthList">
+        <control type="group">
+            <visible>Control.IsVisible(51)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="list" id="51">
+                <left>45</left>
+                <top>110</top>
+                <width>1175</width>
+                <height>480</height>
+                <onleft>2</onleft>
+                <onright>5160</onright>
+                <onup>51</onup>
+                <ondown>51</ondown>
+                <viewtype label="537">list</viewtype>
+                <pagecontrol>5160</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="40" width="1175">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>1175</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="label">
+                        <left>45</left>
+                        <top>0</top>
+                        <width>1075</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="label">
+                        <left>60</left>
+                        <top>0</top>
+                        <width>1000</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>!Window.IsVisible(Videos)</visible>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>0</top>
+                        <width>1035</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>Window.IsVisible(Videos)</visible>
+                        <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>1120</left>
+                        <top>8</top>
+                        <width>40</width>
+                        <height>26</height>
+                        <texture>$VAR[VideoResolutionFlag]</texture>
+                        <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="40" width="1175">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>1175</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                        <visible>!Control.HasFocus(51)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>1175</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+                        <visible>Control.HasFocus(51)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <!--control type="image">
+						<left>970</left>
+						<top>4</top>
+						<width>200</width>
+						<height>33</height>
+						<texture border="0,0,14,0" colordiffuse="$VAR[MainColorOne]">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(51) + !IsEmpty(ListItem.label2)</visible>
+					</control-->
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="label">
+                        <left>45</left>
+                        <top>0</top>
+                        <width>1075</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="label">
+                        <left>60</left>
+                        <top>0</top>
+                        <width>1000</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>!Window.IsVisible(Videos)</visible>
+                    </control>
+                    <control type="label">
+                        <left>80</left>
+                        <top>0</top>
+                        <width>1035</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>Window.IsVisible(Videos)</visible>
+                        <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>1120</left>
+                        <top>8</top>
+                        <width>40</width>
+                        <height>26</height>
+                        <texture>$VAR[VideoResolutionFlag]</texture>
+                        <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="5160">
+                <left>1230</left>
+                <top>114</top>
+                <width>25</width>
+                <height>472</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>50</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(51)</visible>
+            </control>
+            <control type="group">
+                <visible>Control.IsVisible(51)</visible>
+                <left>90</left>
+                <top>610</top>
+                <include>FullScreenMediaFlagging</include>
+            </control>
+            <include>VideoLogoArt</include>
+        </control>
+    </include>
+    <include name="ThumbnailView">
+        <control type="group">
+            <visible>Control.IsVisible(500)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="panel" id="500">
+                <left>90</left>
+                <top>80</top>
+                <width>1080</width>
+                <height>558</height>
+                <onleft>2</onleft>
+                <onright>50060</onright>
+                <onup>500</onup>
+                <ondown>500</ondown>
+                <viewtype label="21371">list</viewtype>
+                <pagecontrol>50060</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <preloaditems>2</preloaditems>
+                <itemlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(TVShows) + !Container.Content(Sets)" height="186" width="216">
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[Listitem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <aspectratio>scale</aspectratio>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[Listitem.Icon]</texture>
+                        <visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>216</width>
+                        <height>186</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <left>8</left>
+                        <top>160</top>
+                        <width>200</width>
+                        <height>25</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout condition="!Container.Content(Movies) + !Container.Content(Seasons) + !Container.Content(TVShows) + !Container.Content(Sets)" height="186" width="216">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>216</width>
+                        <height>186</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[Listitem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>160</height>
+                        <aspectratio>scale</aspectratio>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[Listitem.Icon]</texture>
+                        <visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
+                    </control>
+                    <control type="label">
+                        <left>8</left>
+                        <top>160</top>
+                        <width>200</width>
+                        <height>25</height>
+                        <font>font12_title</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </focusedlayout>
+                <itemlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="279" width="216">
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>240</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>240</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$VAR[PosterThumb]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>216</width>
+                        <height>279</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <left>8</left>
+                        <top>240</top>
+                        <width>200</width>
+                        <height>25</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout condition="Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Sets)" height="276" width="216">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>216</width>
+                        <height>279</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>240</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>214</width>
+                        <height>240</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$VAR[PosterThumb]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="label">
+                        <left>8</left>
+                        <top>240</top>
+                        <width>200</width>
+                        <height>25</height>
+                        <font>font12_title</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <info>ListItem.Label</info>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="50060">
+                <left>1170</left>
+                <top>80</top>
+                <width>25</width>
+                <height>550</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>500</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(500)</visible>
+            </control>
+            <include>VideoLogoArt</include>
+        </control>
+    </include>
+    <include name="WideIconView">
+        <control type="group">
+            <visible>Control.IsVisible(505)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="panel" id="505">
+                <visible>Container.Content(TVShows) | Container.Content(Files)</visible>
+                <left>95</left>
+                <top>80</top>
+                <width>1080</width>
+                <height>550</height>
+                <onleft>2</onleft>
+                <onright>60</onright>
+                <onup>505</onup>
+                <ondown>505</ondown>
+                <viewtype label="$LOCALIZE[539]">list</viewtype>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <preloaditems>2</preloaditems>
+                <itemlayout height="110" width="540">
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>538</width>
+                        <height>105</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>538</width>
+                        <height>105</height>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$VAR[BannerThumb]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>540</width>
+                        <height>110</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="110" width="540">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>540</width>
+                        <height>110</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>538</width>
+                        <height>105</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>1</left>
+                        <top>0</top>
+                        <width>538</width>
+                        <height>105</height>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$VAR[BannerThumb]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="60">
+                <left>1170</left>
+                <top>80</top>
+                <width>25</width>
+                <height>550</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>505</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(505)</visible>
             </control>
         </control>
     </include>

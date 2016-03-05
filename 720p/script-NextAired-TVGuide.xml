@@ -10,70 +10,107 @@
     <allowoverlay>no</allowoverlay>
     <controls>
         <include>CommonBackground</include>
-        <control type="button" id="800">
-            <include>InvisibleButton</include>
-            <onleft>801</onleft>
-            <onright>804</onright>
-            <onup>2000</onup>
-            <ondown>2000</ondown>
-            <visible>false</visible>
+        <control type="group">
+            <visible>!IsEmpty(Window(home).Property(TVGuide.BackgroundFanart))</visible>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(200).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(200)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(201).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(201)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(202).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(202)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(203).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(203)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(204).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(204)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(205).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(205)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(206).ListItem.Property(Fanart)]</texture>
+                <visible>Control.HasFocus(206)</visible>
+                <fadetime>600</fadetime>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+            </control>
         </control>
         <control type="image">
             <left>0</left>
-            <top>600r</top>
+            <top>100r</top>
             <width>1280</width>
-            <height>600</height>
-            <include>TransparentEffect</include>
+            <height>100</height>
             <texture>floor.png</texture>
-        </control>
-        <control type="image">
-            <left>0</left>
-            <top>0</top>
-            <width>1280</width>
-            <height>200</height>
-            <include>TransparentEffect</include>
-            <texture flipy="true">floor.png</texture>
-        </control>
-        <control type="image">
-            <include>Window_OpenClose_Animation</include>
-            <include>Dimensions_Fullscreen</include>
-            <include>VisibleFadeEffect</include>
             <aspectratio>stretch</aspectratio>
-            <include>TransparentEffect</include>
-            <texture>black-back.png</texture>
+            <animation effect="slide" start="0,10" end="0,0" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,10" time="200" condition="Window.Next(Home)">WindowClose</animation>
         </control>
-        <control type="label">
-            <left>55</left>
-            <top>5</top>
-            <width>1170</width>
-            <height>30</height>
-            <font>font30_title</font>
-            <textcolor>blue</textcolor>
-            <scroll>true</scroll>
-            <align>center</align>
-            <aligny>center</aligny>
-            <include>Window_OpenClose_Animation</include>
-            <label>[UPPERCASE]$ADDON[script.tv.show.next.aired 450][/UPPERCASE]</label>
-        </control>
-        <control type="label">
-            <left>10</left>
-            <top>45</top>
-            <width>1260</width>
-            <height>20</height>
-            <font>font12_title</font>
-            <textcolor>grey2</textcolor>
-            <wrapmultiline>true</wrapmultiline>
-            <scroll>false</scroll>
-            <align>center</align>
-            <aligny>center</aligny>
-            <include>Window_OpenClose_Animation</include>
-            <label>$LOCALIZE[31207]</label>
-        </control>
-        <include>FloorReturnButtons</include>
         <control type="grouplist" id="2000">
             <include>Window_OpenClose_Animation</include>
             <left>40</left>
-            <top>70</top>
+            <top>60</top>
             <width>1200</width>
             <height>660</height>
             <orientation>horizontal</orientation>
@@ -84,6 +121,20 @@
                 <visible>IntegerGreaterThan(Container(200).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -93,7 +144,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="200">
                     <left>10</left>
@@ -113,6 +164,20 @@
                 <visible>IntegerGreaterThan(Container(201).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -122,7 +187,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="201">
                     <left>10</left>
@@ -142,6 +207,20 @@
                 <visible>IntegerGreaterThan(Container(202).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -151,7 +230,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="202">
                     <left>10</left>
@@ -171,6 +250,20 @@
                 <visible>IntegerGreaterThan(Container(203).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -180,7 +273,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="203">
                     <left>10</left>
@@ -200,6 +293,20 @@
                 <visible>IntegerGreaterThan(Container(204).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -209,7 +316,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="204">
                     <left>10</left>
@@ -229,6 +336,20 @@
                 <visible>IntegerGreaterThan(Container(205).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -238,7 +359,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="205">
                     <left>10</left>
@@ -258,6 +379,20 @@
                 <visible>IntegerGreaterThan(Container(206).NumItems,0)</visible>
                 <width>300</width>
                 <height>660</height>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>300</width>
+                    <height>600</height>
+                    <texture border="15">ContentPanel.png</texture>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>592</top>
+                    <width>300</width>
+                    <height>64</height>
+                    <texture border="15">ContentPanelMirror.png</texture>
+                </control>
                 <control type="label">
                     <left>20</left>
                     <top>13</top>
@@ -267,7 +402,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font13_title</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                 </control>
                 <control type="panel" id="206">
                     <left>10</left>
@@ -278,7 +413,7 @@
                     <onup>206</onup>
                     <ondown>206</ondown>
                     <onleft>205</onleft>
-                    <onright>800</onright>
+                    <onright>206</onright>
                     <include>TVNextAiredListCommonLayout</include>
                 </control>
             </control>
@@ -326,6 +461,8 @@
                 <include>VisibleFadeEffect</include>
             </control>
         </control>
+        <include>CommonNowPlaying</include>
+        <!--include>MainWindowMouseButtons</include-->
         <include>BehindDialogFadeOut</include>
         <control type="group">
             <left>-250</left>
@@ -353,7 +490,7 @@
                     <height>35</height>
                     <font>font12</font>
                     <label>31006</label>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                 </control>
@@ -364,6 +501,7 @@
                     <label>5</label>
                     <onright>200</onright>
                 </control>
+                <!-- include>CommonNowPlaying_Controls</include -->
             </control>
         </control>
         <include>BottomClock</include>

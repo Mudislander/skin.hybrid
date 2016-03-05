@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <include condition="!Skin.HasSetting(initialsetuprun)">DefaultInitialSetup</include>
+    <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+    <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <defaultcontrol always="true">2</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <controls>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <aspectratio>scale</aspectratio>
-            <texture background="true">special://skin/backgrounds/homescreen/settings.jpg</texture>
+            <texture background="true">special://skin/backgrounds/settings.jpg</texture>
             <include>BackgroundFade</include>
             <fadetime>FanartCrossfadeTime</fadetime>
             <include>Window_OpenClose_Animation</include>
-            <visible>!Skin.HasSetting(initialsetuprun)</visible>
         </control>
-        <include condition="Skin.HasSetting(initialsetuprun)">CommonBackground</include>
+        <include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
         <control type="button" id="800">
             <include>InvisibleButton</include>
             <onleft>801</onleft>
@@ -42,7 +41,7 @@
             <width>1170</width>
             <height>30</height>
             <font>font30_title</font>
-            <textcolor>blue</textcolor>
+            <textcolor>$VAR[MainColorOne]</textcolor>
             <scroll>true</scroll>
             <align>center</align>
             <aligny>center</aligny>
@@ -91,6 +90,8 @@
                 <effect type="fade" start="100" end="0" time="300" />
             </animation>
             <control type="button" id="4">
+                <texturefocus></texturefocus>
+                <texturenofocus></texturenofocus>
                 <description>Enable Login screen</description>
                 <left>10</left>
                 <top>90</top>
@@ -101,10 +102,8 @@
                 <font>font24_title</font>
                 <align>right</align>
                 <aligny>top</aligny>
-                <texturenofocus></texturenofocus>
-                <texturefocus></texturefocus>
                 <textcolor>grey2</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                 <onleft>800</onleft>
                 <onright>2</onright>
                 <onup>5</onup>
@@ -138,6 +137,8 @@
                 <visible>!System.HasLoginScreen</visible>
             </control>
             <control type="button" id="5">
+                <texturefocus></texturefocus>
+                <texturenofocus></texturenofocus>
                 <description>Choose auto login user</description>
                 <left>10</left>
                 <top>161</top>
@@ -148,10 +149,8 @@
                 <font>font24_title</font>
                 <align>right</align>
                 <aligny>top</aligny>
-                <texturenofocus></texturenofocus>
-                <texturefocus></texturefocus>
                 <textcolor>grey2</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                 <onleft>800</onleft>
                 <onright>2</onright>
                 <onup>4</onup>
@@ -162,6 +161,8 @@
                 <enable>!Window.IsVisible(ProfileSettings) + !System.HasLoginScreen</enable>
             </control>
             <control type="button">
+                <texturefocus></texturefocus>
+                <texturenofocus></texturenofocus>
                 <description>Choose auto login user (grayed out)</description>
                 <left>10</left>
                 <top>161</top>
@@ -173,8 +174,6 @@
                 <textcolor>grey2</textcolor>
                 <align>right</align>
                 <aligny>top</aligny>
-                <texturenofocus></texturenofocus>
-                <texturefocus></texturefocus>
                 <onleft>2</onleft>
                 <onright>2</onright>
                 <onup>4</onup>
@@ -204,7 +203,7 @@
                     <top>0</top>
                     <width>240</width>
                     <height>200</height>
-                    <aspectratio>keep</aspectratio>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <bordertexture border="12">ThumbBorder.png</bordertexture>
                     <bordersize>10</bordersize>
                     <texture fallback="unknown-user.png">$INFO[Container(2).Listitem.icon]</texture>
@@ -215,7 +214,7 @@
                     <width>240</width>
                     <height>20</height>
                     <font>font12_title</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[31370]</label>
@@ -226,7 +225,7 @@
                     <width>240</width>
                     <height>20</height>
                     <font>font13</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label>$INFO[Container(2).ListItem.label]</label>
@@ -237,7 +236,7 @@
                     <width>240</width>
                     <height>30</height>
                     <font>font12_title</font>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label>$LOCALIZE[31371]</label>
@@ -248,7 +247,7 @@
                     <width>240</width>
                     <height>30</height>
                     <font>font13</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <label fallback="13170">$INFO[Container(2).ListItem.label2]</label>
@@ -274,16 +273,17 @@
                         <height>145</height>
                         <bordertexture border="5">button-nofocus.png</bordertexture>
                         <bordersize>5</bordersize>
+                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
                         <texture fallback="unknown-user.png">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
-                        <left>94</left>
+                        <left>1</left>
                         <top>145</top>
                         <width>178</width>
                         <height>25</height>
                         <font>font11</font>
                         <textcolor>grey2</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>center</align>
                         <aligny>center</aligny>
                         <info>ListItem.label</info>
@@ -295,18 +295,19 @@
                         <top>0</top>
                         <width>188</width>
                         <height>145</height>
-                        <bordertexture border="5">folder-focus.png</bordertexture>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
                         <bordersize>5</bordersize>
+                        <aspectratio align="center" aligny="bottom">keep</aspectratio>
                         <texture fallback="unknown-user.png">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
-                        <left>94</left>
+                        <left>1</left>
                         <top>145</top>
                         <width>178</width>
                         <height>25</height>
                         <font>font11</font>
-                        <textcolor>white</textcolor>
-                        <selectedcolor>selected</selectedcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <align>center</align>
                         <aligny>center</aligny>
                         <info>ListItem.label</info>
@@ -320,9 +321,9 @@
                 <height>510</height>
                 <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>2</onleft>
                 <onright>800</onright>
                 <showonepage>true</showonepage>

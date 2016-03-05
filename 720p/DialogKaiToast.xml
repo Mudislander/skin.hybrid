@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <animation effect="slide" start="0,-70" end="0,0" time="100">WindowOpen</animation>
-    <animation effect="slide" start="0,0" end="0,-70" delay="400" time="100">WindowClose</animation>
+    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
     <coordinates>
         <left>0</left>
         <top>0</top>
@@ -11,29 +11,31 @@
             <left>0</left>
             <top>0</top>
             <control type="image">
+                <description>background image</description>
                 <left>0</left>
-                <top>-10</top>
+                <top>0</top>
                 <width>400</width>
                 <height>65</height>
-                <texture flipy="true" border="20,20,20,2">InfoMessagePanel.png</texture>
+                <colordiffuse>AAFFFFFF</colordiffuse>
+                <texture border="20">ContentPanel.png</texture>
             </control>
             <control type="image" id="400">
                 <description>avatar</description>
                 <left>10</left>
-                <top>0</top>
+                <top>8</top>
                 <width>50</width>
                 <height>50</height>
                 <aspectratio>keep</aspectratio>
-                <texture>DefaultFile.png</texture>
+                <texture>DefaultIconInfo.png</texture>
             </control>
             <control type="fadelabel" id="401">
                 <description>Line 1 Label</description>
                 <left>65</left>
-                <top>5</top>
-                <width>310</width>
+                <top>15</top>
+                <width>320</width>
                 <height>18</height>
                 <font>font12_title</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <align>left</align>
                 <aligny>center</aligny>
                 <scrollout>false</scrollout>
@@ -42,8 +44,8 @@
             <control type="fadelabel" id="402">
                 <description>Line 2 Label</description>
                 <left>65</left>
-                <top>25</top>
-                <width>310</width>
+                <top>35</top>
+                <width>320</width>
                 <height>20</height>
                 <font>font12_title</font>
                 <textcolor>grey2</textcolor>
@@ -55,7 +57,7 @@
             <control type="image" id="403">
                 <description>avatar</description>
                 <left>10</left>
-                <top>0</top>
+                <top>8</top>
                 <width>50</width>
                 <height>50</height>
                 <aspectratio>keep</aspectratio>
@@ -65,7 +67,7 @@
             <control type="image" id="404">
                 <description>avatar</description>
                 <left>10</left>
-                <top>0</top>
+                <top>8</top>
                 <width>50</width>
                 <height>50</height>
                 <aspectratio>keep</aspectratio>
@@ -75,7 +77,7 @@
             <control type="image" id="405">
                 <description>avatar</description>
                 <left>10</left>
-                <top>0</top>
+                <top>8</top>
                 <width>50</width>
                 <height>50</height>
                 <aspectratio>keep</aspectratio>

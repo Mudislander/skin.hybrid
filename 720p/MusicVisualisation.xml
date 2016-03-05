@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <onload condition="!Skin.HasSetting(disableslideshowart) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=True)</onload>
+    <onload condition="!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=true)</onload>
     <defaultcontrol>-</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <controls>
         <control type="group">
-            <visible>!Skin.HasSetting(hideartistartosd)</visible>
+            <visible>!Skin.HasSetting(HideArtistArtOSD)</visible>
             <include>ArtistExtraFanArt</include>
         </control>
         <control type="group">
-            <visible>Skin.HasSetting(nodiffusevizfanart) | IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+            <visible>Skin.HasSetting(NoDiffuseVizFanart) | IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
             <include>AlbumArtMusicVizWall</include>
         </control>
         <include>MusicArtUnderVisualisation</include>
@@ -18,16 +18,31 @@
             <include>Dimensions_Fullscreen</include>
         </control>
         <control type="group">
-            <visible>!Skin.HasSetting(nodiffusevizfanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum) + !stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+            <visible>!Skin.HasSetting(NoDiffuseVizFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum) + !stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
             <include>AlbumArtMusicVizWall</include>
         </control>
         <include>MusicArtOverVisualisation</include>
         <control type="group">
             <animation effect="fade" time="200">VisibleChange</animation>
-            <visible>Skin.String(musicosdinfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
-            <include>HomeScreenFloor</include>
+            <visible>Skin.String(MusicOSDInfo,permanent) | [!IntegerGreaterThan(Player.time,5) | Player.ShowInfo | Window.IsActive(MusicOSD) | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+            <control type="image" id="1">
+                <left>-100</left>
+                <top>-60</top>
+                <width>1480</width>
+                <height>160</height>
+                <texture flipy="true">NowPlayingBack.png</texture>
+                <visible>!Skin.HasSetting(HideOSDProfileClock)</visible>
+            </control>
+            <control type="image" id="1">
+                <left>-100</left>
+                <top>230r</top>
+                <width>1480</width>
+                <height>230</height>
+                <texture>NowPlayingBack.png</texture>
+            </control>
+            <include>FullScreenUsrInfo</include>
             <control type="group">
-                <visible>!Skin.String(musicosdinfo,never)</visible>
+                <visible>!Skin.String(MusicOSDInfo,never)</visible>
                 <left>10</left>
                 <top>265r</top>
                 <control type="image">
@@ -37,8 +52,9 @@
                     <width>170</width>
                     <height>175</height>
                     <include>CDArtSpinner</include>
-                    <texture fallback="DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+                    <texture fallback="Disks/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
                     <aspectratio align="center">keep</aspectratio>
+                    <visible>!Skin.HasSetting(DisableDiscArt) + !Player.IsInternetStream</visible>
                 </control>
                 <control type="image">
                     <description>Cover Image</description>
@@ -57,10 +73,10 @@
                     <bordertexture>CDCase/cdshadow.png</bordertexture>
                     <texture background="true">CDCase/cdglass.png</texture>
                 </control>
-                <visible>!Skin.HasSetting(hidealbumthumbosd)</visible>
+                <visible>!Skin.HasSetting(HideAlbumThumbOSD)</visible>
             </control>
             <control type="group">
-                <visible>!Skin.String(musicosdinfo,never)</visible>
+                <visible>!Skin.String(MusicOSDInfo,never)</visible>
                 <left>330</left>
                 <top>255r</top>
                 <control type="image">
@@ -70,18 +86,19 @@
                     <height>78</height>
                     <texture>$INFO[Player.FolderPath,,../logo.png]</texture>
                     <aspectratio aligny="bottom" align="left">keep</aspectratio>
-                    <visible>IsEmpty(Skin.String(physicalmusicfolder))</visible>
-                    <visible>!Skin.HasSetting(hidealbumthumbosd) + !Player.IsInternetStream</visible>
+                    <visible>IsEmpty(Skin.String(PhysicalMusicFolder))</visible>
+                    <visible>!Skin.HasSetting(HideAlbumThumbOSD) + !Player.IsInternetStream</visible>
+                    <visible>!Skin.HasSetting(DisableLogoArt)</visible>
                 </control>
                 <control type="image">
                     <left>0</left>
                     <top>-10</top>
                     <width>200</width>
                     <height>78</height>
-                    <texture>$INFO[Skin.String(physicalmusicfolder)]$INFO[MusicPlayer.Artist]/logo.png</texture>
+                    <texture>$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist]/logo.png</texture>
                     <aspectratio aligny="bottom" align="left">keep</aspectratio>
-                    <visible>!IsEmpty(Skin.String(physicalmusicfolder))</visible>
-                    <visible>!Skin.HasSetting(hidealbumthumbosd) + !Player.IsInternetStream</visible>
+                    <visible>!IsEmpty(Skin.String(PhysicalMusicFolder)) + !Skin.HasSetting(DisableLogoArt)</visible>
+                    <visible>!Skin.HasSetting(HideAlbumThumbOSD) + !Player.IsInternetStream</visible>
                 </control>
                 <control type="label" id="1">
                     <description>Artist label</description>
@@ -121,7 +138,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[Player.Title]</label>
-                        <textcolor>orange</textcolor>
+                        <textcolor>$VAR[SelectedColor]</textcolor>
                         <scroll>true</scroll>
                     </control>
                     <control type="image">
@@ -151,11 +168,11 @@
                             <width>100</width>
                             <height>35</height>
                             <aspectratio align="center">keep</aspectratio>
-                            <texture fallback="LeftRating/rating0.png">$INFO[Player.StarRating,LeftRating/]</texture>
+                            <texture colordiffuse="lightgrey" fallback="LeftRating/rating0.png">$INFO[Player.StarRating,LeftRating/]</texture>
                         </control>
                     </control>
                 </control>
-                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd)" reversible="true">Conditional</animation>
+                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideAlbumThumbOSD)" reversible="true">Conditional</animation>
             </control>
             <control type="fadelabel" id="1">
                 <description>Next Five Songs</description>
@@ -170,13 +187,13 @@
                 <pauseatend>400</pauseatend>
                 <label>$VAR[NextFiveSongScroller]</label>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <shadowcolor>black</shadowcolor>
-                <visible>[Skin.String(musicosdinfo,permanent) | MusicPlayer.HasNext] + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
+                <visible>[Skin.String(MusicOSDInfo,permanent) | MusicPlayer.HasNext] + !Window.IsVisible(MusicOSD) + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
                 <visible>![Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
                 <animation effect="fade" time="200">VisibleChange</animation>
-                <visible>!Skin.HasSetting(hidenextsongsinfo)</visible>
-                <visible>!Skin.String(musicosdinfo,never)</visible>
+                <visible>!Skin.HasSetting(HideNextSongsInfo)</visible>
+                <visible>!Skin.String(MusicOSDInfo,never)</visible>
             </control>
             <control type="group">
                 <left>330</left>
@@ -210,16 +227,16 @@
                     <label>$INFO[Player.Duration(hh:mm:ss)]</label>
                 </control>
                 <visible>IntegerGreaterThan(Player.time,0)</visible>
-                <visible>!Skin.String(musicosdinfo,never) | Window.IsActive(MusicOSD)</visible>
-                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hidealbumthumbosd) + !Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
-                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.String(musicosdinfo,never)" reversible="true">Conditional</animation>
+                <visible>!Skin.String(MusicOSDInfo,never) | Window.IsActive(MusicOSD)</visible>
+                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideAlbumThumbOSD) + !Skin.String(MusicOSDInfo,never)" reversible="true">Conditional</animation>
+                <animation effect="slide" end="-150,0" time="0" tween="back" easing="out" condition="Skin.String(MusicOSDInfo,never)" reversible="true">Conditional</animation>
             </control>
         </control>
         <!-- codec & viz infos -->
         <control type="group" id="0">
             <left>0</left>
             <top>50</top>
-            <visible>Player.ShowCodec + ![Window.IsVisible(script-XBMC_Lyrics-main.xml) | Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)]</visible>
+            <visible>Player.ShowCodec + ![Window.IsVisible(script-cu-lrclyrics-main.xml) | Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)]</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
             <control type="image">
                 <description>media info background image</description>
@@ -234,14 +251,16 @@
                 <description>row 1 label</description>
                 <left>50</left>
                 <top>10</top>
+                <label>-</label>
                 <align>left</align>
-                <label>$INFO[musicplayer.Codec,$LOCALIZE[21446]$LOCALIZE[31000] ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]$LOCALIZE[31000] ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]$LOCALIZE[31000] ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]$LOCALIZE[31000] ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]$LOCALIZE[31000] ]</label>
+                <label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, · $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, · $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, · $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, · $LOCALIZE[21444]: ]</label>
                 <font>font12</font>
             </control>
             <control type="label">
                 <description>row 2 label</description>
                 <left>50</left>
                 <top>40</top>
+                <label>-</label>
                 <align>left</align>
                 <label>$INFO[Visualisation.Name,, [I][COLOR=orange]($LOCALIZE[20166])[/COLOR][/I] · ]fps: $INFO[System.FPS]</label>
                 <font>font12</font>
@@ -251,6 +270,7 @@
                 <description>Unlocked row 2 label</description>
                 <left>50</left>
                 <top>40</top>
+                <label>-</label>
                 <align>left</align>
                 <label>$INFO[Visualisation.Name,, · ]fps: $INFO[System.FPS]</label>
                 <font>font12</font>
@@ -260,8 +280,9 @@
                 <description>row 3 label</description>
                 <left>50</left>
                 <top>70</top>
+                <label>-</label>
                 <align>left</align>
-                <label>$INFO[Visualisation.Preset,$LOCALIZE[13388]$LOCALIZE[31000] ]</label>
+                <label>$INFO[Visualisation.Preset,$LOCALIZE[13388]: ]</label>
                 <font>font12</font>
             </control>
         </control>

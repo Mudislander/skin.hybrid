@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="InfoFanArtView">
+        <control type="group">
+            <visible>Control.IsVisible(515)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="list" id="515">
+                <left>40</left>
+                <top>98</top>
+                <width>390</width>
+                <height>520</height>
+                <onleft>2</onleft>
+                <onright>51560</onright>
+                <onup>515</onup>
+                <ondown>515</ondown>
+                <viewtype label="$LOCALIZE[31639]">list</viewtype>
+                <pagecontrol>51560</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(MusicVideos) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
+                <itemlayout condition="[!Container.Content(TVShows) + !Container.Content(Movies)] | Skin.HasSetting(View515HideBanners)" height="40" width="390">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>35</left>
+                        <top>0</top>
+                        <width>350</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout condition="[!Container.Content(TVShows) + !Container.Content(Movies)] | Skin.HasSetting(View515HideBanners)" height="40" width="390">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                        <visible>!Control.HasFocus(515)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+                        <visible>Control.HasFocus(515)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="label">
+                        <left>35</left>
+                        <top>0</top>
+                        <width>350</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </focusedlayout>
+                <itemlayout condition="[Container.Content(TVShows) | Container.Content(Movies)] + !Skin.HasSetting(View515HideBanners)" height="74" width="390">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>73</height>
+                        <texture border="5">button-nofocus.png</texture>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <visible>IsEmpty(ListItem.Art(banner))</visible>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>0</top>
+                        <width>370</width>
+                        <height>72</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>72</height>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[ListItem.Art(banner)]</texture>
+                        <visible>!IsEmpty(ListItem.Art(banner))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>73</height>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <texture background="true">black-back.png</texture>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <colordiffuse>88FFFFFF</colordiffuse>
+                        <visible>!IsEmpty(ListItem.Art(banner))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout condition="[Container.Content(TVShows) | Container.Content(Movies)]" height="74" width="390">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>73</height>
+                        <texture border="5">button-nofocus.png</texture>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <visible>!Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>73</height>
+                        <texture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <visible>Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="label">
+                        <left>10</left>
+                        <top>0</top>
+                        <width>370</width>
+                        <height>72</height>
+                        <font>font13</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>390</width>
+                        <height>72</height>
+                        <aspectratio align="left" aligny="bottom">stretch</aspectratio>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <texture background="true">$INFO[ListItem.Art(banner)]</texture>
+                        <visible>!IsEmpty(ListItem.Art(banner))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="51560">
+                <left>435</left>
+                <top>109</top>
+                <width>25</width>
+                <height>520</height>
+                <texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>515</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(515)</visible>
+            </control>
+            <control type="group">
+                <left>470</left>
+                <top>86</top>
+                <visible>Control.IsVisible(515) + [Container.Content(Movies) | Container.Content(MusicVideos)]</visible>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>496</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="group">
+                    <left>-5</left>
+                    <top>262</top>
+                    <include>MediaInfoPopup</include>
+                    <visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+                    <visible>Control.IsVisible(515) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>240</height>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <texture border="20">ContentPanel.png</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Description Value for Video</description>
+                        <left>20</left>
+                        <top>15</top>
+                        <width>520</width>
+                        <height>185</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <label>$VAR[VideoDescription]</label>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <top>200</top>
+                        <width>520</width>
+                        <height>30</height>
+                        <font>font10</font>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <wrapmultiline>true</wrapmultiline>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]] $VAR[MediaRating] $VAR[MediaLastPlayed]</label>
+                        <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]] $VAR[MediaRating] $VAR[MediaLastPlayed]</label>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>0</left>
+                    <top>500</top>
+                    <width>151</width>
+                    <align>left</align>
+                    <itemgap>1</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include condition="!Skin.HasSetting(EnableFullMPAA)">VideoMPAAFlaggingConditions</include>
+                    <include>VideoStudioFlagging</include>
+                    <include>MovieSetFlaggingConditions</include>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>280</left>
+                    <top>500</top>
+                    <width>275</width>
+                    <align>right</align>
+                    <itemgap>1</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include>VideoCodecFlaggingConditions</include>
+                    <include>AudioCodecFlaggingConditions</include>
+                    <include>AudioChannelsFlaggingConditions</include>
+                    <include>AspectCodecFlaggingConditions</include>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>131</top>
+                    <width>250</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>593</left>
+                    <top>270</top>
+                    <width>205</width>
+                    <height>291</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="ClearCase/EmptyCaseMask.png" background="true">$VAR[PosterThumb]</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>260</top>
+                    <width>250</width>
+                    <height>316</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>470</left>
+                <top>85</top>
+                <visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>477</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="group">
+                    <left>-5</left>
+                    <top>207</top>
+                    <include>MediaInfoPopup</include>
+                    <visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>275</height>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <texture border="20">ContentPanel.png</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Description Value for Video</description>
+                        <left>20</left>
+                        <top>25</top>
+                        <width>520</width>
+                        <height>200</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <label>$VAR[VideoDescription]</label>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <top>235</top>
+                        <width>520</width>
+                        <height>30</height>
+                        <font>font10</font>
+                        <font>font10</font>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <wrapmultiline>true</wrapmultiline>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]] $VAR[MediaRating] $VAR[MediaLastPlayed]</label>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>0</left>
+                    <top>480</top>
+                    <width>561</width>
+                    <align>left</align>
+                    <itemgap>5</itemgap>
+                    <orientation>horizontal</orientation>
+                    <control type="image">
+                        <description>Rating image</description>
+                        <width>96</width>
+                        <height>46</height>
+                        <aspectratio align="right">keep</aspectratio>
+                        <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+                        <visible>!IsEmpty(ListItem.Mpaa)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Studio image</description>
+                        <width>96</width>
+                        <height>46</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+                        <visible>!IsEmpty(ListItem.Studio)</visible>
+                    </control>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>131</top>
+                    <width>250</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>131</top>
+                    <width>250</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.icon]</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>!IsEmpty(ListItem.Title) + IsEmpty(ListItem.Art(poster))</visible>
+                </control>
+                <control type="image">
+                    <left>593</left>
+                    <top>270</top>
+                    <width>205</width>
+                    <height>291</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="ClearCase/EmptyCaseMask.png" background="true">$VAR[PosterThumb]</texture>
+                    <visible>!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(poster))</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>260</top>
+                    <width>250</width>
+                    <height>316</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>ClearCase/TVseries.png</texture>
+                    <visible>!IsEmpty(ListItem.Title) + !IsEmpty(ListItem.Art(poster))</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>470</left>
+                <top>85</top>
+                <visible>Control.IsVisible(515) + Container.Content(Seasons)</visible>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>477</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <visible>!IsEmpty(ListItem.Art(fanart))</visible>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>477</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[Fanart.Image]</texture>
+                    <visible>IsEmpty(ListItem.Art(fanart))</visible>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="group">
+                    <left>-5</left>
+                    <top>207</top>
+                    <include>MediaInfoPopup</include>
+                    <visible>!Skin.String(MediaPopUpControl,Hidden) + !Container.OnNext + !Container.OnPrevious</visible>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>560</width>
+                        <height>275</height>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <texture border="20">ContentPanel.png</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Description Value for Video</description>
+                        <left>20</left>
+                        <top>25</top>
+                        <width>520</width>
+                        <height>200</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <label>$VAR[VideoDescription]</label>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                    </control>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>131</top>
+                    <width>250</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>593</left>
+                    <top>270</top>
+                    <width>205</width>
+                    <height>291</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="ClearCase/EmptyCaseMask.png" background="true">$INFO[ListItem.icon]</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <top>260</top>
+                    <width>250</width>
+                    <height>316</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>ClearCase/TVseries.png</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>0</left>
+                    <top>480</top>
+                    <width>561</width>
+                    <align>left</align>
+                    <itemgap>5</itemgap>
+                    <orientation>horizontal</orientation>
+                    <control type="image">
+                        <description>Rating image</description>
+                        <width>96</width>
+                        <height>46</height>
+                        <aspectratio align="right">keep</aspectratio>
+                        <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+                        <visible>!IsEmpty(ListItem.Mpaa)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Studio image</description>
+                        <width>96</width>
+                        <height>46</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+                        <visible>!IsEmpty(ListItem.Studio)</visible>
+                    </control>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>470</left>
+                <top>85</top>
+                <visible>Control.IsVisible(515) + Container.Content(Episodes)</visible>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>477</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <visible>!IsEmpty(ListItem.Art(fanart))</visible>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>810</width>
+                    <height>477</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[Fanart.Image]</texture>
+                    <visible>IsEmpty(ListItem.Art(fanart))</visible>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="group">
+                    <left>-5</left>
+                    <top>207</top>
+                    <include>MediaInfoPopup</include>
+                    <visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+                    <visible>Control.IsVisible(515) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>480</width>
+                        <height>275</height>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <texture border="20">ContentPanel.png</texture>
+                    </control>
+                    <control type="textbox">
+                        <description>Description Value for Video</description>
+                        <left>20</left>
+                        <top>25</top>
+                        <width>440</width>
+                        <height>200</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <label>$VAR[VideoDescription]</label>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                    </control>
+                    <control type="label">
+                        <left>20</left>
+                        <top>240</top>
+                        <width>440</width>
+                        <height>30</height>
+                        <font>font12</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <scroll>true</scroll>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.LastPlayed, [B][COLOR=$VAR[MainColorOne]]$LOCALIZE[568]$LOCALIZE[31000][/COLOR][/B] ]</label>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>0</left>
+                    <top>480</top>
+                    <width>192</width>
+                    <align>left</align>
+                    <itemgap>1</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include>VideoMPAAFlaggingConditions</include>
+                    <include>VideoStudioFlagging</include>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>200</left>
+                    <top>480</top>
+                    <width>275</width>
+                    <align>right</align>
+                    <itemgap>1</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include>VideoCodecFlaggingConditions</include>
+                    <include>AudioCodecFlaggingConditions</include>
+                    <include>AudioChannelsFlaggingConditions</include>
+                    <include>AspectCodecFlaggingConditions</include>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>480</left>
+                    <top>131</top>
+                    <width>330</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>480</left>
+                    <top>131</top>
+                    <width>330</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.icon]</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(HideEpisodeThumb)</visible>
+                </control>
+                <control type="image">
+                    <left>480</left>
+                    <top>131</top>
+                    <width>330</width>
+                    <height>440</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <bordertexture border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(HideEpisodeThumb)</visible>
+                </control>
+            </control>
+            <include>VideoLogoArt</include>
+        </control>
+    </include>
+    <include name="MediaFanArtView">
+        <control type="group">
+            <visible>Control.IsVisible(508)</visible>
+            <include>VisibleFadeEffect</include>
+            <left>0</left>
+            <top>460</top>
+            <control type="wraplist" id="508">
+                <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
+                <hitrect x="0" y="-10" w="1280" h="190" />
+                <left>-20</left>
+                <top>0</top>
+                <width>1320</width>
+                <height>250</height>
+                <onleft>508</onleft>
+                <onright>508</onright>
+                <onup>2</onup>
+                <ondown>50860</ondown>
+                <viewtype label="31418">wrap</viewtype>
+                <pagecontrol>50860</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <focusposition>5</focusposition>
+                <movement>3</movement>
+                <orientation>horizontal</orientation>
+                <preloaditems>4</preloaditems>
+                <itemlayout height="200" width="120">
+                    <control type="image">
+                        <left>2</left>
+                        <top>20</top>
+                        <width>120</width>
+                        <height>160</height>
+                        <aspectratio>stretch</aspectratio>
+                        <fadetime>200</fadetime>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>2</left>
+                        <top>20</top>
+                        <width>120</width>
+                        <height>160</height>
+                        <aspectratio>stretch</aspectratio>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <bordersize>4</bordersize>
+                        <fadetime>200</fadetime>
+                        <texture background="true">$VAR[PosterThumb]</texture>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>6</left>
+                        <top>24</top>
+                        <width>112</width>
+                        <height>152</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <top>24</top>
+                        <width>70</width>
+                        <height>70</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>StatusBanner/3DBanner.png</texture>
+                        <!--visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,SBS)| SubString(ListItem.FilenameAndPath,TAB)</visible-->
+                        <visible>ListItem.IsStereoscopic</visible>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <top>24</top>
+                        <width>70</width>
+                        <height>70</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>6</left>
+                        <top>24</top>
+                        <width>112</width>
+                        <height>152</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                        <visible>!Skin.HasSetting(DarkenWatchedMedia) | [Skin.HasSetting(DarkenWatchedMedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="310" width="120">
+                    <control type="image">
+                        <left>-2</left>
+                        <top>16</top>
+                        <width>128</width>
+                        <height>168</height>
+                        <aspectratio>stretch</aspectratio>
+                        <fadetime>200</fadetime>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>-2</left>
+                        <top>16</top>
+                        <width>128</width>
+                        <height>168</height>
+                        <aspectratio>stretch</aspectratio>
+                        <bordertexture border="8">ThumbBorder.png</bordertexture>
+                        <bordersize>8</bordersize>
+                        <fadetime>200</fadetime>
+                        <texture background="true">$VAR[PosterThumb]</texture>
+                        <animation reversible="false" effect="zoom" start="-2,16,128,168" end="-12,-10,148,198" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="-2,16,128,168" start="-12,-10,148,198" time="200">unfocus</animation>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>6</left>
+                        <top>24</top>
+                        <width>112</width>
+                        <height>152</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
+                        <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <top>24</top>
+                        <width>70</width>
+                        <height>70</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>StatusBanner/3DBanner.png</texture>
+                        <animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
+                        <!--visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,SBS)| SubString(ListItem.FilenameAndPath,TAB)</visible-->
+                        <visible>ListItem.IsStereoscopic</visible>
+                    </control>
+                    <control type="image">
+                        <left>48</left>
+                        <top>24</top>
+                        <width>70</width>
+                        <height>70</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+                        <animation reversible="false" effect="zoom" start="48,24,70,70" end="47,-2,80,80" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="48,24,70,70" start="47,-2,80,80" time="200">unfocus</animation>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>6</left>
+                        <top>24</top>
+                        <width>112</width>
+                        <height>152</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <animation reversible="false" effect="fade" start="100" end="0" time="0">focus</animation>
+                        <animation reversible="false" effect="zoom" start="6,24,112,152" end="-3,-1,130,180" time="200">focus</animation>
+                        <animation reversible="false" effect="zoom" end="6,24,112,152" start="-3,-1,130,180" time="200">unfocus</animation>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                        <visible>!Skin.HasSetting(DarkenWatchedMedia) | [Skin.HasSetting(DarkenWatchedMedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="50860">
+                <left>310</left>
+                <top>185</top>
+                <width>660</width>
+                <height>25</height>
+                <texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+                <texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="14,0,14,0" colordiffuse="$VAR[MainColorOne]">ScrollBarH_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onup>508</onup>
+                <ondown>803</ondown>
+                <showonepage>true</showonepage>
+                <orientation>horizontal</orientation>
+                <visible>Control.IsVisible(508)</visible>
+            </control>
+        </control>
+        <control type="group">
+            <left>180</left>
+            <top>100</top>
+            <include>MediaInfoPopup</include>
+            <visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
+            <visible>Control.IsVisible(508) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="image">
+                <left>0</left>
+                <top>0</top>
+                <width>920</width>
+                <height>350</height>
+                <colordiffuse>AAFFFFFF</colordiffuse>
+                <texture border="20">ContentPanel.png</texture>
+            </control>
+            <control type="group">
+                <left>40</left>
+                <top>10</top>
+                <visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font13_title</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>31345</label>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>30</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[515]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.Genre][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>55</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[562]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.Year][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Year)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>80</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[2050]$LOCALIZE[31000][/B] [COLOR=lightgrey]$VAR[MediaRuntime][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Duration)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>105</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[568]$LOCALIZE[31000][/B] [COLOR=lightgrey]$VAR[ListItem.LastPlayed][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.LastPlayed)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>480</left>
+                <top>10</top>
+                <visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                <control type="label">
+                    <left>0</left>
+                    <top>10</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[20339]$LOCALIZE[31000][/B]</label>
+                    <visible>!IsEmpty(ListItem.Director)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>40</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>lightgrey</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem.Director]</label>
+                    <visible>!IsEmpty(ListItem.Director)</visible>
+                </control>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
+                <control type="label">
+                    <left>0</left>
+                    <top>75</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[20417]$LOCALIZE[31000][/B]</label>
+                    <visible>!IsEmpty(ListItem.Writer)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>105</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>lightgrey</textcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <label>$INFO[ListItem.Writer]</label>
+                    <visible>!IsEmpty(ListItem.Writer)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>40</left>
+                <top>10</top>
+                <visible>Container.Content(TVShows)</visible>
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font13_title</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>20351</label>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>30</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[515]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.Genre][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>55</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[562]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.Year][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Year)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>80</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[563]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.RatingAndVotes][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.RatingAndVotes)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>105</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[568]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.LastPlayed][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.LastPlayed)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>480</left>
+                <top>10</top>
+                <visible>Container.Content(TVShows)</visible>
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font13_title</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>20360</label>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>30</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>$INFO[ListItem.Episode,[B][COLOR=grey2]$LOCALIZE[20161]$LOCALIZE[31000] [/COLOR][/B]]</label>
+                    <label>[B]$LOCALIZE[20161]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.Episode][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.Episode)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>55</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[16102]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.WatchedEpisodes][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.WatchedEpisodes)</visible>
+                </control>
+                <control type="label">
+                    <left>0</left>
+                    <top>80</top>
+                    <width>400</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <label>[B]$LOCALIZE[16101]$LOCALIZE[31000][/B] [COLOR=lightgrey]$INFO[ListItem.UnWatchedEpisodes][/COLOR]</label>
+                    <visible>!IsEmpty(ListItem.UnWatchedEpisodes)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>40</left>
+                <top>145</top>
+                <control type="textbox">
+                    <description>Description Value The Movie</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>850</width>
+                    <height>120</height>
+                    <font>font12</font>
+                    <align>justify</align>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <label>$VAR[VideoDescription]</label>
+                    <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                </control>
+            </control>
+            <control type="image">
+                <left>15</left>
+                <top>275</top>
+                <width>390</width>
+                <height>65</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                <fadetime>IconCrossfadeTime</fadetime>
+                <texture background="true">$VAR[MediaLogoArt]</texture>
+                <visible>!Skin.HasSetting(EnableAdditionalArtWork) + !IsEmpty(ListItem.Art(clearlogo)) + !Skin.HasSetting(DisableLogoArt)</visible>
+            </control>
+            <control type="grouplist">
+                <description>Media Codec Flagging Images</description>
+                <left>760</left>
+                <top>305</top>
+                <width>151</width>
+                <align>right</align>
+                <itemgap>1</itemgap>
+                <orientation>horizontal</orientation>
+                <include>VideoStudioFlagging</include>
+                <include>VideoMPAAFlaggingConditions</include>
+            </control>
+            <control type="grouplist">
+                <description>Media Codec Flagging Images</description>
+                <animation effect="slide" start="0,0" end="-420,0" delay="0" time="0" condition="Skin.HasSetting(EnableAdditionalArtWork)">conditional</animation>
+                <left>432</left>
+                <top>312</top>
+                <width>275</width>
+                <align>left</align>
+                <itemgap>1</itemgap>
+                <orientation>horizontal</orientation>
+                <include>VideoCodecFlaggingConditions</include>
+                <include>AudioCodecFlaggingConditions</include>
+                <include>AudioChannelsFlaggingConditions</include>
+                <include>AspectCodecFlaggingConditions</include>
+            </control>
+        </control>
+        <control type="group">
+            <include>VideoLogoArt</include>
+            <visible>Control.IsVisible(508)</visible>
+        </control>
+    </include>
+    <include name="MediaInfoView">
+        <control type="group">
+            <visible>Control.IsVisible(504)</visible>
+            <include>VisibleFadeEffect</include>
+            <include>FanArtExtraThumbs</include>
+            <control type="list" id="504">
+                <left>40</left>
+                <top>86</top>
+                <width>610</width>
+                <height>520</height>
+                <onleft>2</onleft>
+                <onright>50460</onright>
+                <onup>504</onup>
+                <ondown>504</ondown>
+                <viewtype label="$LOCALIZE[31641]">list</viewtype>
+                <pagecontrol>50460</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
+                <itemlayout height="40" width="610">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>580</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="label">
+                        <left>34</left>
+                        <top>0</top>
+                        <width>550</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="label">
+                        <left>555</left>
+                        <top>0</top>
+                        <width>500</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>Window.IsVisible(Videos)</visible>
+                        <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>560</left>
+                        <top>8</top>
+                        <width>40</width>
+                        <height>26</height>
+                        <texture>$VAR[VideoResolutionFlag]</texture>
+                        <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="40" width="610">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>610</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2">MenuItemNF.png</texture>
+                        <visible>!Control.HasFocus(504)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>610</width>
+                        <height>41</height>
+                        <texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+                        <visible>Control.HasFocus(504)</visible>
+                        <include>VisibleFadeEffect</include>
+                    </control>
+                    <!--control type="image">
+						<left>410</left>
+						<top>4</top>
+						<width>200</width>
+						<height>33</height>
+						<texture border="0,0,14,0" colordiffuse="$VAR[MainColorOne]">MediaItemDetailBG.png</texture>
+						<visible>Control.HasFocus(504) + !IsEmpty(ListItem.label2)</visible>
+					</control-->
+                    <control type="image">
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="label">
+                        <left>34</left>
+                        <top>0</top>
+                        <width>550</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                    <control type="label">
+                        <left>555</left>
+                        <top>0</top>
+                        <width>500</width>
+                        <height>40</height>
+                        <font>font12</font>
+                        <textcolor>grey2</textcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.label2]</label>
+                        <visible>Window.IsVisible(Videos)</visible>
+                        <animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]">conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>560</left>
+                        <top>8</top>
+                        <width>40</width>
+                        <height>26</height>
+                        <texture>$VAR[VideoResolutionFlag]</texture>
+                        <visible>Window.IsVisible(Videos) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="50460">
+                <left>650</left>
+                <top>96</top>
+                <width>25</width>
+                <height>512</height>
+                <texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>504</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(504)</visible>
+            </control>
+            <control type="group">
+                <left>710</left>
+                <top>94</top>
+                <visible>Control.IsVisible(504) + [Container.Content(Movies) | Container.Content(MusicVideos) | Container.Content(TVShows)]</visible>
+                <control type="multiimage">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>286</height>
+                    <aspectratio>keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <timeperimage>5000</timeperimage>
+                    <randomize>true</randomize>
+                    <imagepath background="true">$INFO[ListItem.path,,extrathumbs/]</imagepath>
+                    <!--bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+					<bordersize>8</bordersize-->
+                    <visible>!IsEmpty(Control.GetLabel(5045))</visible>
+                    <visible>!Skin.HasSetting(Disable504FanArt) + !Skin.HasSetting(UPnP_Mode)</visible>
+                    <visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>286</height>
+                    <aspectratio>keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture diffuse="Fanart_Diffuse.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                    <bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>Container.Content(TVShows) | Skin.HasSetting(Disable504FanArt) | IsEmpty(Control.GetLabel(5045))</visible>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <top>218</top>
+                    <width>480</width>
+                    <height>60</height>
+                    <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$VAR[MediaLogoArt]</texture>
+                    <visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(EnableAdditionalArtWork)</visible>
+                </control>
+                <control type="group">
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                    <control type="grouplist">
+                        <description>Media Codec Flagging Images</description>
+                        <left>8</left>
+                        <top>290</top>
+                        <width>488</width>
+                        <align>center</align>
+                        <itemgap>2</itemgap>
+                        <orientation>horizontal</orientation>
+                        <include condition="!Skin.HasSetting(EnableFullMPAA)">VideoMPAAFlaggingConditions</include>
+                        <include>VideoCodecFlaggingConditions</include>
+                        <include>AudioCodecFlaggingConditions</include>
+                        <include>AudioChannelsFlaggingConditions</include>
+                        <include>AspectCodecFlaggingConditions</include>
+                        <include>VideoStudioFlagging</include>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>284</top>
+                        <width>510</width>
+                        <height>4</height>
+                        <texture>separator.png</texture>
+                        <visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                    </control>
+                    <control type="textbox">
+                        <description>Description Value for Video</description>
+                        <left>10</left>
+                        <top>335</top>
+                        <width>490</width>
+                        <height>200</height>
+                        <font>font12</font>
+                        <align>justify</align>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <label>$VAR[VideoDescription]</label>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>538</top>
+                        <width>510</width>
+                        <height>4</height>
+                        <texture>separator.png</texture>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <left>710</left>
+                <top>98</top>
+                <visible>Control.IsVisible(504) + Container.Content(Episodes)</visible>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>286</height>
+                    <aspectratio>keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                    <bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>286</height>
+                    <aspectratio>keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.icon]</texture>
+                    <bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>!IsEmpty(ListItem.Title) + !Skin.HasSetting(HideEpisodeThumb)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>510</width>
+                    <height>286</height>
+                    <aspectratio>keep</aspectratio>
+                    <fadetime>IconCrossfadeTime</fadetime>
+                    <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <bordertexture background="true" border="8">ThumbShadow.png</bordertexture>
+                    <bordersize>8</bordersize>
+                    <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(HideEpisodeThumb)</visible>
+                </control>
+                <control type="grouplist">
+                    <description>Media Codec Flagging Images</description>
+                    <left>8</left>
+                    <top>290</top>
+                    <width>488</width>
+                    <align>center</align>
+                    <itemgap>2</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include>VideoMPAAFlaggingConditions</include>
+                    <include>VideoCodecFlaggingConditions</include>
+                    <include>AudioCodecFlaggingConditions</include>
+                    <include>AudioChannelsFlaggingConditions</include>
+                    <include>AspectCodecFlaggingConditions</include>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>332</top>
+                    <width>510</width>
+                    <height>4</height>
+                    <texture>separator.png</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="label">
+                    <description>Writer txt</description>
+                    <left>10</left>
+                    <top>334</top>
+                    <width>140</width>
+                    <height>25</height>
+                    <label>[B]$LOCALIZE[20417]$LOCALIZE[31000][/B]</label>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="fadelabel">
+                    <description>Writer Value</description>
+                    <left>160</left>
+                    <top>334</top>
+                    <width>340</width>
+                    <height>25</height>
+                    <label fallback="416">$INFO[ListItem.Writer]</label>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>font12</font>
+                    <scrollout>false</scrollout>
+                    <pauseatend>1000</pauseatend>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="label">
+                    <description>Director txt</description>
+                    <left>10</left>
+                    <top>360</top>
+                    <width>140</width>
+                    <height>25</height>
+                    <label>[B]$LOCALIZE[20339]$LOCALIZE[31000][/B]</label>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>font12</font>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="fadelabel">
+                    <description>Director Value</description>
+                    <left>160</left>
+                    <top>360</top>
+                    <width>340</width>
+                    <height>25</height>
+                    <label fallback="416">$INFO[ListItem.Director]</label>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>font12</font>
+                    <scrollout>false</scrollout>
+                    <pauseatend>1000</pauseatend>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>560</top>
+                    <width>510</width>
+                    <height>4</height>
+                    <texture>separator.png</texture>
+                    <visible>!IsEmpty(ListItem.Title)</visible>
+                </control>
+                <control type="textbox">
+                    <description>Description Value for Video</description>
+                    <left>10</left>
+                    <top>393</top>
+                    <width>490</width>
+                    <height>165</height>
+                    <font>font12</font>
+                    <align>justify</align>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <label>$VAR[VideoDescription]</label>
+                    <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+                </control>
+            </control>
+            <include>VideoLogoArt</include>
+        </control>
+    </include>
+    <include name="FullWallView">
+        <control type="group">
+            <visible>Control.IsVisible(732)</visible>
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <texture background="true">black-back.png</texture>
+            </control>
+            <control type="panel" id="732">
+                <left>45</left>
+                <top>85</top>
+                <width>1189</width>
+                <height>570</height>
+                <onleft>2</onleft>
+                <onright>73260</onright>
+                <onup>732</onup>
+                <ondown>732</ondown>
+                <viewtype label="31648">panel</viewtype>
+                <pagecontrol>73260</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <preloaditems>200</preloaditems>
+                <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Sets) | Container.Content(MusicVideos)</visible>
+                <itemlayout height="190" width="131">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>131</width>
+                        <height>190</height>
+                        <aspectratio>stretch</aspectratio>
+                        <include>VisibleFadeEffect</include>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>131</width>
+                        <height>190</height>
+                        <aspectratio>stretch</aspectratio>
+                        <include>VisibleFadeEffect</include>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <visible>!IsEmpty(ListItem.Title) + IsEmpty(ListItem.Art(poster))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>131</width>
+                        <height>190</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <include>VisibleFadeEffect</include>
+                        <bordersize>7</bordersize>
+                        <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+                        <bordertexture border="8">ThumbBorder.png</bordertexture>
+                        <visible>!IsEmpty(ListItem.Art(poster))</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>131</width>
+                        <height>190</height>
+                        <bordersize>5</bordersize>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+                    </control>
+                    <control type="image">
+                        <left>46</left>
+                        <top>5</top>
+                        <width>80</width>
+                        <height>80</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>StatusBanner/3DBanner.png</texture>
+                        <!--visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,SBS)| SubString(ListItem.FilenameAndPath,TAB)</visible-->
+                        <visible>ListItem.IsStereoscopic</visible>
+                    </control>
+                    <control type="image">
+                        <left>46</left>
+                        <top>5</top>
+                        <width>80</width>
+                        <height>80</height>
+                        <fadetime>IconCrossfadeTime</fadetime>
+                        <texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <width>131</width>
+                        <height>190</height>
+                        <bordersize>5</bordersize>
+                        <bordertexture border="5">button-nofocus.png</bordertexture>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>black-back.png</texture>
+                        <colordiffuse>AAFFFFFF</colordiffuse>
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                        <visible>!Skin.HasSetting(DarkenWatchedMedia) | [Skin.HasSetting(DarkenWatchedMedia) + !StringCompare(ListItem.Overlay,OverlayWatched.png) | ListItem.IsResumable]</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="190" width="131">
+                    <control type="group">
+                        <left>0</left>
+                        <top>0</top>
+                        <animation effect="slide" end="0,27" time="200" reversible="true" condition="Container.Row(0)">conditional</animation>
+                        <animation effect="slide" end="0,-37" time="200" reversible="true" condition="Container.Row(2)">conditional</animation>
+                        <animation effect="slide" end="26,0" time="200" reversible="true" condition="Container.Column(0)">conditional</animation>
+                        <animation effect="slide" end="-26,0" time="200" reversible="true" condition="Container.Column(8)">conditional</animation>
+                        <animation reversible="false" effect="zoom" end="-27,-33,185,267" time="100">focus</animation>
+                        <animation reversible="false" effect="zoom" start="-27,-33,185,267" time="100">unfocus</animation>
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>131</width>
+                            <height>190</height>
+                            <aspectratio>stretch</aspectratio>
+                            <include>VisibleFadeEffect</include>
+                            <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                            <visible>IsEmpty(ListItem.Title)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>131</width>
+                            <height>190</height>
+                            <aspectratio>stretch</aspectratio>
+                            <include>VisibleFadeEffect</include>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <visible>!IsEmpty(ListItem.Title) + IsEmpty(ListItem.Art(poster))</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>131</width>
+                            <height>190</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <include>VisibleFadeEffect</include>
+                            <bordersize>7</bordersize>
+                            <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+                            <bordertexture border="8">ThumbBorder.png</bordertexture>
+                            <visible>!IsEmpty(ListItem.Art(poster))</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>0</top>
+                            <width>131</width>
+                            <height>190</height>
+                            <bordersize>5</bordersize>
+                            <bordertexture border="8">ThumbBorder.png</bordertexture>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>black-back.png</texture>
+                            <visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+                        <control type="image">
+                            <left>44</left>
+                            <top>6</top>
+                            <width>80</width>
+                            <height>80</height>
+                            <fadetime>IconCrossfadeTime</fadetime>
+                            <texture>StatusBanner/3DBanner.png</texture>
+                            <!--visible>SubString(ListItem.FilenameAndPath,3dbd) | SubString(ListItem.FilenameAndPath,SBS)| SubString(ListItem.FilenameAndPath,TAB)</visible-->
+                            <visible>ListItem.IsStereoscopic</visible>
+                        </control>
+                        <control type="image">
+                            <left>44</left>
+                            <top>6</top>
+                            <width>80</width>
+                            <height>80</height>
+                            <fadetime>IconCrossfadeTime</fadetime>
+                            <texture>$VAR[StatusBanner,StatusBanner/,.png]</texture>
+                            <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="73260">
+                <left>40r</left>
+                <top>95</top>
+                <width>25</width>
+                <height>550</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <onleft>732</onleft>
+                <onright>800</onright>
+                <showonepage>true</showonepage>
+                <orientation>vertical</orientation>
+                <visible>Control.IsVisible(732)</visible>
+            </control>
+        </control>
+    </include>
+    <include name="LogoWallView">
+        <control type="group">
+            <visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+            <include>VisibleFadeEffect</include>
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <aspectratio>stretch</aspectratio>
+                <colordiffuse>AAFFFFFF</colordiffuse>
+                <texture>black_content.png</texture>
+                <visible>Control.IsVisible(594)</visible>
+            </control>
+            <control type="panel" id="594">
+                <left>70</left>
+                <top>80</top>
+                <width>1200</width>
+                <height>525</height>
+                <scrolltime>300</scrolltime>
+                <orientation>horizontal</orientation>
+                <pagecontrol>59460</pagecontrol>
+                <viewtype label="$LOCALIZE[31650]">Panel</viewtype>
+                <onleft>594</onleft>
+                <onright>594</onright>
+                <onup>9000</onup>
+                <ondown>59460</ondown>
+                <preloaditems>4</preloaditems>
+                <include>VisibleFadeEffect</include>
+                <visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                <itemlayout width="300" height="100">
+                    <control type="image">
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>230</width>
+                        <height>89</height>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <fadetime>300</fadetime>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
+                    </control>
+                    <control type="group">
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                        <control type="image">
+                            <visible>Container.Content(tvshows)| Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                            <visible>!IsEmpty(ListItem.Art(clearlogo)) + !IsEmpty(ListItem.Title) + !Skin.HasSetting(DisableLogoArt)</visible>
+                            <left>0</left>
+                            <top>0</top>
+                            <width>230</width>
+                            <height>89</height>
+                            <texture background="true">$VAR[MediaLogoArt]</texture>
+                            <fadetime>300</fadetime>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <animation effect="fade" start="60" end="60" time="0" condition="true">conditional</animation>
+                        </control>
+                        <control type="label">
+                            <visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo)) |  Skin.HasSetting(DisableLogoArt)</visible>
+                            <left>0</left>
+                            <top>30</top>
+                            <width>270</width>
+                            <height>89</height>
+                            <align>center</align>
+                            <font>font28_title</font>
+                            <textcolor>grey2</textcolor>
+                            <label>[B][I]$INFO[ListItem.Label][/I][/B]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="340" height="125">
+                    <control type="image">
+                        <visible>IsEmpty(ListItem.Title)</visible>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>300</width>
+                        <height>116</height>
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
+                        <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                        <bordersize>5</bordersize>
+                        <fadetime>200</fadetime>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="51" end="100" time="600" tween="back" easing="out" />
+                            <effect type="slide" end="-20,-10" time="0" />
+                        </animation>
+                    </control>
+                    <control type="group">
+                        <visible>!IsEmpty(ListItem.Title)</visible>
+                        <control type="image">
+                            <visible>Container.Content(tvshows)| Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+                            <visible>!IsEmpty(ListItem.Art(clearlogo)) + !IsEmpty(ListItem.Title) + !Skin.HasSetting(DisableLogoArt)</visible>
+                            <left>0</left>
+                            <top>0</top>
+                            <width>300</width>
+                            <height>116</height>
+                            <texture background="true">$VAR[MediaLogoArt]</texture>
+                            <bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+                            <bordersize>5</bordersize>
+                            <fadetime>200</fadetime>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" center="auto" start="51" end="100" time="600" tween="back" easing="out" />
+                                <effect type="slide" end="-20,-10" time="0" />
+                            </animation>
+                        </control>
+                        <control type="image">
+                            <visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo)) | Skin.HasSetting(DisableLogoArt)</visible>
+                            <left>0</left>
+                            <top>0</top>
+                            <width>270</width>
+                            <height>84</height>
+                            <texture background="true" border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
+                            <bordersize>5</bordersize>
+                            <fadetime>200</fadetime>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" center="auto" start="100" end="135" time="600" tween="back" easing="out" />
+                            </animation>
+                        </control>
+                        <control type="label">
+                            <visible>IsEmpty(ListItem.Title) | IsEmpty(ListItem.Art(clearlogo))  | Skin.HasSetting(DisableLogoArt)</visible>
+                            <left>0</left>
+                            <top>30</top>
+                            <width>270</width>
+                            <height>84</height>
+                            <align>center</align>
+                            <font>font28_title</font>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <scroll>true</scroll>
+                            <label>[B][I]$INFO[ListItem.Label][/I][/B]</label>
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" center="auto" start="100" end="125" time="600" tween="back" easing="out" />
+                            </animation>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="59460">
+                <left>90</left>
+                <top>638</top>
+                <width>1100</width>
+                <height>25</height>
+                <texturesliderbackground border="14,0,14,0">ScrollBarH.png</texturesliderbackground>
+                <texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="14,0,14,0" colordiffuse="$VAR[MainColorOne]">ScrollBarH_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+                <showonepage>true</showonepage>
+                <orientation>horizontal</orientation>
+                <onup>594</onup>
+                <ondown>803</ondown>
+                <visible>Control.IsVisible(594)</visible>
+            </control>
+            <control type="group">
+                <left>90</left>
+                <top>592</top>
+                <include>FullScreenMediaFlagging</include>
+                <visible>Control.IsVisible(594)</visible>
+            </control>
+        </control>
+    </include>
+</includes>

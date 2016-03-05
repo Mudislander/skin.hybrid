@@ -15,11 +15,14 @@
                 <description>Fake button for mouse control</description>
                 <left>880</left>
                 <top>0</top>
-                <width>20</width>
+                <width>80</width>
                 <height>720</height>
+                <label>-</label>
+                <font>-</font>
                 <texturenofocus>-</texturenofocus>
                 <texturefocus>-</texturefocus>
                 <visible>true</visible>
+                <onfocus>SetFocus(150)</onfocus>
             </control>
             <control type="image">
                 <description>media info background image</description>
@@ -27,7 +30,8 @@
                 <top>0</top>
                 <width>1150</width>
                 <height>720</height>
-                <texture border="20,0,0,0" flipx="true">Home/MediaBladeSub.png</texture>
+                <colordiffuse>BBFFFFFF</colordiffuse>
+                <texture border="20,0,0,0" flipx="true">MediaBladeSub.png</texture>
             </control>
             <control type="button">
                 <description>Close Window button</description>
@@ -35,93 +39,92 @@
                 <top>0</top>
                 <width>64</width>
                 <height>32</height>
+                <label>-</label>
+                <font>-</font>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>101</onleft>
                 <onright>101</onright>
                 <onup>101</onup>
                 <ondown>101</ondown>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
+            <control type="image">
+                <left>20</left>
+                <top>0</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
             <control type="group">
                 <control type="label" id="100">
                     <description>header label</description>
-                    <left>100</left>
-                    <top>10</top>
-                    <width>780</width>
+                    <left>330</left>
+                    <top>80</top>
+                    <width>550</width>
                     <height>30</height>
                     <font>font30_title</font>
-                    <align>center</align>
+                    <align>right</align>
                     <aligny>center</aligny>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
                 <control type="label">
                     <description>Video label</description>
-                    <left>100</left>
-                    <top>50</top>
-                    <width>780</width>
-                    <height>20</height>
-                    <font>font12_title</font>
-                    <textcolor>grey2</textcolor>
+                    <left>330</left>
+                    <top>110</top>
+                    <width>550</width>
+                    <height>30</height>
+                    <font>font13_title</font>
                     <label>$INFO[Player.Filename]</label>
-                    <align>center</align>
+                    <align>right</align>
                     <aligny>center</aligny>
+                    <textcolor>grey</textcolor>
                     <shadowcolor>black</shadowcolor>
                 </control>
                 <control type="image">
                     <left>30</left>
-                    <top>75</top>
+                    <top>140</top>
                     <width>820</width>
                     <height>4</height>
                     <texture>separator.png</texture>
                 </control>
+                <control type="image" id="110">
+                    <description>Service Logo</description>
+                    <left>0</left>
+                    <top>80</top>
+                    <width>250</width>
+                    <height>40</height>
+                    <aspectratio>keep</aspectratio>
+                </control>
                 <control type="label" id="140">
                     <description>textarea</description>
                     <left>50</left>
-                    <top>85</top>
-                    <width>840</width>
+                    <top>140</top>
+                    <width>780</width>
                     <height>40</height>
-                    <font>font12</font>
-                    <textcolor>white</textcolor>
+                    <font>font13</font>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
                     <wrapmultiline>true</wrapmultiline>
                 </control>
-            </control>
-            <control type="group" id="130">
-                <control type="grouplist">
-                    <left>50</left>
-                    <top>130</top>
-                    <width>840</width>
-                    <height>26</height>
-                    <align>left</align>
-                    <orientation>horizontal</orientation>
-                    <itemgap>5</itemgap>
-                    <control type="image">
-                        <width>26</width>
-                        <height>26</height>
-                        <aligny>center</aligny>
-                        <texture>DefaultIconInfo.png</texture>
-                    </control>
-                    <control type="label">
-                        <description>notification</description>
-                        <width>809</width>
-                        <height>26</height>
-                        <font>font12</font>
-                        <textcolor>white</textcolor>
-                        <label>31066</label>
-                        <aligny>center</aligny>
-                    </control>
+                <control type="image">
+                    <left>30</left>
+                    <top>176</top>
+                    <width>820</width>
+                    <height>4</height>
+                    <texture>separator.png</texture>
                 </control>
             </control>
             <control type="group">
                 <control type="list" id="120">
                     <left>50</left>
-                    <top>166</top>
+                    <top>206</top>
                     <width>800</width>
-                    <height>470</height>
+                    <height>434</height>
                     <onleft>121</onleft>
                     <onright>150</onright>
                     <onup>120</onup>
@@ -142,7 +145,8 @@
                             <top>5</top>
                             <width>26</width>
                             <height>26</height>
-                            <texture>flagging/country/$INFO[ListItem.Thumb].png</texture>
+                            <texture>Subtitles/flags/$INFO[ListItem.Thumb].png</texture>
+                            <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
                             <left>40</left>
@@ -151,10 +155,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label</info>
+                            <info>ListItem.Label</info>
                         </control>
                         <control type="image">
                             <left>135</left>
@@ -179,10 +183,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label2</info>
+                            <info>ListItem.Label2</info>
                         </control>
                         <control type="image">
                             <left>710</left>
@@ -190,6 +194,7 @@
                             <width>90</width>
                             <height>17</height>
                             <texture>LeftRating/rating$INFO[ListItem.ActualIcon].png</texture>
+                            <aspectratio>keep</aspectratio>
                         </control>
                     </itemlayout>
                     <focusedlayout width="800" height="36">
@@ -205,7 +210,7 @@
                             <top>0</top>
                             <width>780</width>
                             <height>38</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(120)</visible>
                         </control>
                         <control type="image">
@@ -213,7 +218,8 @@
                             <top>5</top>
                             <width>26</width>
                             <height>26</height>
-                            <texture>flagging/country/$INFO[ListItem.Thumb].png</texture>
+                            <texture>Subtitles/flags/$INFO[ListItem.Thumb].png</texture>
+                            <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
                             <left>40</left>
@@ -222,10 +228,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label</info>
+                            <info>ListItem.Label</info>
                         </control>
                         <control type="image">
                             <left>135</left>
@@ -250,10 +256,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label2</info>
+                            <info>ListItem.Label2</info>
                         </control>
                         <control type="image">
                             <left>710</left>
@@ -261,6 +267,7 @@
                             <width>90</width>
                             <height>17</height>
                             <texture>LeftRating/rating$INFO[ListItem.ActualIcon].png</texture>
+                            <aspectratio>keep</aspectratio>
                         </control>
                     </focusedlayout>
                 </control>
@@ -274,7 +281,7 @@
                     <align>right</align>
                     <aligny>center</aligny>
                     <subtype>page</subtype>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <onleft>120</onleft>
                     <onright>120</onright>
                     <ondown>120</ondown>
@@ -284,8 +291,32 @@
                     <texturedown>scroll-down.png</texturedown>
                     <textureupfocus>scroll-up-focus.png</textureupfocus>
                     <texturedownfocus>scroll-down-focus.png</texturedownfocus>
-                    <showonepage>true</showonepage>
+                    <showonepage>false</showonepage>
                     <visible>Control.IsVisible(120)</visible>
+                </control>
+                <control type="group" id="130">
+                    <control type="grouplist">
+                        <left>50</left>
+                        <top>659</top>
+                        <width>605</width>
+                        <height>30</height>
+                        <orientation>horizontal</orientation>
+                        <itemgap>5</itemgap>
+                        <control type="image">
+                            <width>30</width>
+                            <height>30</height>
+                            <texture>DefaultIconInfo.png</texture>
+                        </control>
+                        <control type="label">
+                            <description>notification</description>
+                            <width min="10" max="560">auto</width>
+                            <height>30</height>
+                            <font>font13</font>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <label>$LOCALIZE[31413]</label>
+                            <aligny>center</aligny>
+                        </control>
+                    </control>
                 </control>
                 <control type="image">
                     <left>866</left>
@@ -294,14 +325,6 @@
                     <height>24</height>
                     <texture>scroll-right-focus.png</texture>
                 </control>
-            </control>
-            <control type="image" id="110">
-                <description>Service Logo</description>
-                <left>0</left>
-                <top>660</top>
-                <width>250</width>
-                <height>40</height>
-                <aspectratio>keep</aspectratio>
             </control>
             <control type="group">
                 <control type="image">
@@ -322,7 +345,7 @@
                     <font>font13</font>
                     <align>center</align>
                     <aligny>top</aligny>
-                    <textcolor>blue</textcolor>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <wrapmultiline>true</wrapmultiline>
                 </control>
@@ -360,10 +383,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label</info>
+                            <info>ListItem.Label</info>
                         </control>
                     </itemlayout>
                     <focusedlayout width="400" height="36">
@@ -379,7 +402,7 @@
                             <top>0</top>
                             <width>230</width>
                             <height>38</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(150)</visible>
                         </control>
                         <control type="label">
@@ -389,10 +412,10 @@
                             <height>38</height>
                             <font>font18</font>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
-                            <selectedcolor>selected</selectedcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
+                            <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                             <align>left</align>
-                            <info>ListItem.label</info>
+                            <info>ListItem.Label</info>
                         </control>
                     </focusedlayout>
                 </control>
@@ -408,8 +431,8 @@
                     <ondown>150</ondown>
                     <label>$LOCALIZE[24120]</label>
                     <font>font12_title</font>
-                    <textcolor>white</textcolor>
-                    <focusedcolor>white</focusedcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
+                    <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                     <align>center</align>
                 </control>
             </control>

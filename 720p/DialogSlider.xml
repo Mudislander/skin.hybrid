@@ -25,7 +25,7 @@
             <align>left</align>
             <aligny>center</aligny>
             <font>font12_title</font>
-            <textcolor>blue</textcolor>
+            <textcolor>$VAR[MainColorOne]</textcolor>
         </control>
         <control type="label" id="12">
             <description>Slider Value</description>
@@ -36,7 +36,7 @@
             <align>right</align>
             <aligny>center</aligny>
             <font>font12_title</font>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[MainColorTwo]</textcolor>
         </control>
         <control type="slider" id="11">
             <description>Slider</description>
@@ -47,9 +47,9 @@
             <aligny>center</aligny>
             <texturefocus>-</texturefocus>
             <texturenofocus>-</texturenofocus>
-            <texturesliderbar>Slider/Slider_bg_2.png</texturesliderbar>
-            <textureslidernib>Slider/Slider_nibNF.png</textureslidernib>
-            <textureslidernibfocus>Slider/Slider_nib.png</textureslidernibfocus>
+            <texturesliderbar>osd_slider_bg_2.png</texturesliderbar>
+            <textureslidernib>osd_slider_nibNF.png</textureslidernib>
+            <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
             <onup>11</onup>
             <ondown>11</ondown>
             <onleft>11</onleft>

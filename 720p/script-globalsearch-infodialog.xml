@@ -24,7 +24,7 @@
                 <top>0</top>
                 <width>1260</width>
                 <height>720</height>
-                <texture border="15,0,0,0" flipx="true">Home/MediaBladeSub.png</texture>
+                <texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
             </control>
             <control type="image" id="199">
                 <left>20</left>
@@ -53,7 +53,7 @@
                 <font>font24_title</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <shadowcolor>FF000000</shadowcolor>
                 <label>$INFO[Container(100).ListItem.label]</label>
             </control>
@@ -130,14 +130,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -149,7 +149,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -160,18 +160,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(110)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -183,7 +183,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -276,14 +276,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -295,7 +295,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -306,18 +306,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(120)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -329,7 +329,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -404,14 +404,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -423,7 +423,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -434,18 +434,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(130)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -457,7 +457,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -502,14 +502,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -521,7 +521,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -532,18 +532,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(140)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -555,7 +555,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -636,14 +636,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -655,7 +655,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -666,18 +666,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(150)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -689,7 +689,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -764,14 +764,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -783,7 +783,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -794,18 +794,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(160)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -817,7 +817,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -892,14 +892,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -911,7 +911,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -922,18 +922,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(170)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -945,7 +945,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -1026,14 +1026,14 @@
                     <scrolltime>200</scrolltime>
                     <itemlayout width="800" height="30">
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -1045,7 +1045,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -1056,18 +1056,18 @@
                             <top>0</top>
                             <width>800</width>
                             <height>30</height>
-                            <texture>MenuItemFO.png</texture>
+                            <texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
                             <visible>Control.HasFocus(180)</visible>
                         </control>
                         <control type="label">
-                            <left>165</left>
+                            <left>0</left>
                             <top>0</top>
                             <width>165</width>
                             <height>30</height>
                             <font>font13</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <textcolor>blue</textcolor>
+                            <textcolor>$VAR[MainColorOne]</textcolor>
                             <selectedcolor>blue</selectedcolor>
                             <label>$INFO[ListItem.label]</label>
                         </control>
@@ -1079,7 +1079,7 @@
                             <font>font13</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <textcolor>white</textcolor>
+                            <textcolor>$VAR[MainColorTwo]</textcolor>
                             <selectedcolor>white</selectedcolor>
                             <label>$INFO[ListItem.label2]</label>
                         </control>
@@ -1163,10 +1163,10 @@
                 <height>100</height>
                 <font>font12</font>
                 <align>justify</align>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <pagecontrol>195</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Plot)]</label>
-                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                 <visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
             </control>
             <control type="textbox">
@@ -1176,10 +1176,10 @@
                 <height>100</height>
                 <font>font12</font>
                 <align>justify</align>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <pagecontrol>195</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Artist_Description)]</label>
-                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                 <visible>Control.IsVisible(160)</visible>
             </control>
             <control type="textbox">
@@ -1189,10 +1189,10 @@
                 <height>100</height>
                 <font>font12</font>
                 <align>justify</align>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <pagecontrol>195</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Album_Description)]</label>
-                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                 <visible>Control.IsVisible(170)</visible>
             </control>
             <control type="textbox">
@@ -1202,10 +1202,10 @@
                 <height>100</height>
                 <font>font12</font>
                 <align>justify</align>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
                 <pagecontrol>195</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Comment)]</label>
-                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                 <visible>Control.IsVisible(180)</visible>
             </control>
             <control type="spincontrol" id="195">
@@ -1218,7 +1218,7 @@
                 <textureupfocus>scroll-up-focus-2.png</textureupfocus>
                 <texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
                 <subtype>page</subtype>
-                <showonepage>true</showonepage>
+                <showonepage>false</showonepage>
                 <onup>101</onup>
                 <ondown>190</ondown>
                 <onleft>180</onleft>
@@ -1242,30 +1242,30 @@
                     <height>40</height>
                     <label>$LOCALIZE[186]</label>
                     <font>font12</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <texturefocus border="5">button-focus.png</texturefocus>
+                    <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
                     <texturenofocus border="5">button-nofocus.png</texturenofocus>
                 </control>
                 <control type="button" id="192">
                     <width>250</width>
                     <height>40</height>
                     <font>font12</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <texturefocus border="5">button-focus.png</texturefocus>
+                    <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
                     <texturenofocus border="5">button-nofocus.png</texturenofocus>
                 </control>
                 <control type="button" id="193">
                     <width>250</width>
                     <height>40</height>
                     <font>font12</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[MainColorTwo]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <texturefocus border="5">button-focus.png</texturefocus>
+                    <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
                     <texturenofocus border="5">button-nofocus.png</texturenofocus>
                 </control>
             </control>

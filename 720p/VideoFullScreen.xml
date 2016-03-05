@@ -4,9 +4,8 @@
     <controls>
         <!-- Intro infos -->
         <control type="group" id="1">
-            <visible>!StringCompare(Player.Filenameandpath,special://skin/extras/Intro/XBMC-Intro-Video.mkv)</visible>
-            <visible>!Window.IsActive(script.pseudotv.TVOverlay.xml) + !Window.IsActive(script.pseudotv.EPG.xml)</visible>
-            <visible>IntegerGreaterThan(Player.time,3) + !IntegerGreaterThan(Player.time,8) + !Skin.HasSetting(hideinfostartosd)</visible>
+            <visible>!StringCompare(Player.Filenameandpath,special://skin/extras/Intro/KODI-Intro-Video.mp4)</visible>
+            <visible>IntegerGreaterThan(Player.time,3) + !IntegerGreaterThan(Player.time,8) + !Skin.HasSetting(HideInfoStartOSD)</visible>
             <visible>![Window.IsActive(VideoOSD) | Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <visible>!Player.Paused  + !Player.ShowInfo</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
@@ -15,7 +14,7 @@
                 <top>230r</top>
                 <width>1480</width>
                 <height>230</height>
-                <texture>Home/NowPlayingBack.png</texture>
+                <texture>NowPlayingBack.png</texture>
             </control>
             <include condition="VideoPlayer.Content(Movies)">OSDMovieCover</include>
             <include condition="VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
@@ -28,42 +27,32 @@
         </control>
         <!-- media infos -->
         <control type="group" id="1">
-            <visible>!StringCompare(Player.Filenameandpath,special://skin/extras/Intro/XBMC-Intro-Video.mkv)</visible>
-            <visible>!Window.IsActive(script.pseudotv.EPG.xml)</visible>
-            <visible>[Player.ShowInfo | Window.IsActive(VideoOSD) | Window.IsVisible(infodialog)] | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
+            <visible>!StringCompare(Player.Filenameandpath,special://skin/extras/Intro/KODI-Intro-Video.mp4)</visible>
+            <visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] | Player.Seeking | Player.displayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding</visible>
             <visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <animation effect="fade" time="200">VisibleChange</animation>
-            <control type="image" id="1">
-                <include>VisibleFadeEffect</include>
-                <include>Dimensions_Fullscreen</include>
-                <aspectratio>stretch</aspectratio>
-                <include>TransparentEffect</include>
-                <texture>black-back.png</texture>
-                <visible>Player.Paused + !Player.Caching</visible>
-            </control>
             <control type="image" id="1">
                 <left>-100</left>
                 <top>-60</top>
                 <width>1480</width>
                 <height>160</height>
-                <texture flipy="true">Home/NowPlayingBack.png</texture>
-                <visible>!Skin.HasSetting(hideosdprofileclock)</visible>
-                <visible>!Skin.HasSetting(hideseekbarosd) + Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
-                <visible>!Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
+                <texture flipy="true">NowPlayingBack.png</texture>
+                <visible>!Skin.HasSetting(HideOSDProfileClock)</visible>
+                <visible>!Skin.HasSetting(HideSeekBarOSD) + Window.IsActive(VideoOSD) | Player.ShowInfo</visible>
             </control>
             <control type="image" id="1">
                 <left>-100</left>
                 <top>230r</top>
                 <width>1480</width>
                 <height>230</height>
-                <texture>Home/NowPlayingBack.png</texture>
-                <visible>Player.ShowInfo | !Skin.HasSetting(hideseekbarosd) | Window.IsActive(VideoOSD)</visible>
+                <texture>NowPlayingBack.png</texture>
+                <visible>Player.ShowInfo | !Skin.HasSetting(HideSeekBarOSD) | Window.IsActive(VideoOSD)</visible>
             </control>
-            <include>HomeScreenFloor</include>
+            <include>FullScreenUsrInfo</include>
             <include>OSDMediaPlot</include>
             <control type="group" id="1">
-                <include condition="!Skin.HasSetting(hideartworkosd) + VideoPlayer.Content(Movies)">OSDMovieCover</include>
-                <include condition="!Skin.HasSetting(hideartworkosd) + VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
+                <include condition="!Skin.HasSetting(HideArtWorkOSD) + VideoPlayer.Content(Movies)">OSDMovieCover</include>
+                <include condition="!Skin.HasSetting(HideArtWorkOSD) + VideoPlayer.Content(Episodes)">OSDTVShowCover</include>
                 <control type="image" id="1">
                     <description>cover image</description>
                     <left>20</left>
@@ -74,14 +63,14 @@
                     <aspectratio aligny="bottom">keep</aspectratio>
                     <bordertexture border="8">ThumbShadow.png</bordertexture>
                     <bordersize>8</bordersize>
-                    <visible>!Skin.HasSetting(hideartworkosd) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
+                    <visible>!Skin.HasSetting(HideArtWorkOSD) + !VideoPlayer.Content(Movies) + !VideoPlayer.Content(Episodes)</visible>
                 </control>
-                <visible>Player.ShowInfo | !Skin.HasSetting(hideseekbarosd)</visible>
+                <visible>Player.ShowInfo | !Skin.HasSetting(HideSeekBarOSD)</visible>
             </control>
             <control type="group" id="1">
                 <left>330</left>
                 <top>185r</top>
-                <animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
+                <animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideArtWorkOSD) | Skin.HasSetting(HideSeekBarOSD) + !Player.ShowInfo" reversible="true">Conditional</animation>
                 <include>OSDMediaHeading</include>
                 <include>OSDMediaFlagging</include>
                 <control type="label" id="1">
@@ -112,14 +101,14 @@
                     <visible>!Window.IsVisible(VideoOSD) + VideoPlayer.Content(LiveTV)</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
                 </control>
-                <visible>Player.ShowInfo | !Skin.HasSetting(hideseekbarosd)</visible>
+                <visible>Player.ShowInfo | !Skin.HasSetting(HideSeekBarOSD)</visible>
             </control>
             <control type="group" id="1">
                 <left>330</left>
                 <top>95r</top>
-                <animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(hideartworkosd) | Skin.HasSetting(hideseekbarosd) + !Player.ShowInfo" reversible="true">Conditional</animation>
+                <animation effect="slide" end="-145,0" time="0" tween="back" easing="out" condition="Skin.HasSetting(HideArtWorkOSD) | Skin.HasSetting(HideSeekBarOSD) + !Player.ShowInfo" reversible="true">Conditional</animation>
                 <visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
-                <visible>Player.ShowInfo | Window.IsVisible(VideoOSD) | !Skin.HasSetting(hideseekbarosd)</visible>
+                <visible>Player.ShowInfo | Window.IsVisible(VideoOSD) | !Skin.HasSetting(HideSeekBarOSD)</visible>
                 <control type="label" id="1">
                     <visible>!VideoPlayer.Content(LiveTV)</visible>
                     <left>0</left>
@@ -149,7 +138,7 @@
                     <width>720</width>
                     <height>16</height>
                     <info>Player.ProgressCache</info>
-                    <midtexture border="6,0,6,0">Slider/OSDProgressMid.png</midtexture>
+                    <midtexture border="6,0,6,0">OSDProgressMid.png</midtexture>
                 </control>
                 <control type="progress" id="1">
                     <description>Progressbar</description>
@@ -193,7 +182,7 @@
                 <left>0</left>
                 <top>0</top>
                 <width>1280</width>
-                <height>140</height>
+                <height>160</height>
                 <texture>black-back.png</texture>
             </control>
             <control type="label" id="10">
@@ -205,6 +194,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
+                <label>-</label>
             </control>
             <control type="label" id="11">
                 <description>row 2 label</description>
@@ -215,35 +205,23 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
+                <label>-</label>
             </control>
             <control type="label" id="12">
                 <description>row 3 label</description>
                 <left>50</left>
                 <top>100</top>
                 <width>1180</width>
-                <height>30</height>
+                <height>45</height>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
+                <label>-</label>
             </control>
-        </control>
-        <control type="selectbutton" id="503">
-            <left>440</left>
-            <top>100</top>
-            <width>400</width>
-            <height>100</height>
-            <font>font13caps</font>
-            <description>TV Channel Group Select Button</description>
-            <texturebg border="20">OverlayDialogBackground.png</texturebg>
-            <onleft>503</onleft>
-            <onright>503</onright>
-            <onup>500</onup>
-            <ondown>500</ondown>
-            <include>VisibleFadeEffect</include>
         </control>
         <control type="group">
             <visible>Player.ShowCodec + VideoPlayer.Content(LiveTV) + system.getbool(pvrplayback.signalquality)</visible>
-            <top>165</top>
+            <top>185</top>
             <control type="image">
                 <description>media info background image</description>
                 <left>0</left>
@@ -262,7 +240,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font13_title</font>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
             </control>
             <control type="label">
                 <description>Backend</description>
@@ -270,7 +248,7 @@
                 <top>40</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19012]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19012]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -286,7 +264,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Device</description>
@@ -294,7 +272,7 @@
                 <top>65</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19006]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19006]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -310,7 +288,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Status</description>
@@ -318,7 +296,7 @@
                 <top>90</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19007]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19007]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -334,7 +312,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Signal</description>
@@ -342,7 +320,7 @@
                 <top>115</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19008]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19008]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -366,7 +344,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>SNR</description>
@@ -374,7 +352,7 @@
                 <top>140</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19009]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19009]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -399,7 +377,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>BER</description>
@@ -407,7 +385,7 @@
                 <top>165</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19010]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19010]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -423,7 +401,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>UNC</description>
@@ -431,7 +409,7 @@
                 <top>165</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19011]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19011]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -447,7 +425,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Service</description>
@@ -455,7 +433,7 @@
                 <top>165</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19099]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19099]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -471,7 +449,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Encryption</description>
@@ -479,7 +457,7 @@
                 <top>190</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19015]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19015]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -495,7 +473,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Provider</description>
@@ -503,7 +481,7 @@
                 <top>190</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19101]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19101]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -519,7 +497,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
             <control type="label">
                 <description>Mux</description>
@@ -527,7 +505,7 @@
                 <top>190</top>
                 <width>165</width>
                 <height>25</height>
-                <label>$LOCALIZE[19100]$LOCALIZE[31000]</label>
+                <label>$LOCALIZE[19100]:</label>
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
@@ -543,7 +521,7 @@
                 <align>left</align>
                 <aligny>center</aligny>
                 <font>font12</font>
-                <textcolor>white</textcolor>
+                <textcolor>$VAR[MainColorTwo]</textcolor>
             </control>
         </control>
     </controls>

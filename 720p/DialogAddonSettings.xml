@@ -41,9 +41,10 @@
             <width>720</width>
             <height>30</height>
             <font>font13_title</font>
+            <label>-</label>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>selected</textcolor>
+            <textcolor>$VAR[SelectedColor]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="button">
@@ -52,13 +53,23 @@
             <top>15</top>
             <width>64</width>
             <height>32</height>
+            <label>-</label>
+            <font>-</font>
             <onclick>PreviousMenu</onclick>
-            <texturefocus>DialogCloseButton-focus.png</texturefocus>
-            <texturenofocus>DialogCloseButton.png</texturenofocus>
+            <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+            <texturenofocus>DialogClose.png</texturenofocus>
             <onleft>3</onleft>
             <onright>3</onright>
             <onup>3</onup>
             <ondown>3</ondown>
+            <visible>system.getbool(input.enablemouse)</visible>
+        </control>
+        <control type="image">
+            <left>710</left>
+            <top>15</top>
+            <width>64</width>
+            <height>32</height>
+            <texture>DialogCloseBtn.png</texture>
             <visible>system.getbool(input.enablemouse)</visible>
         </control>
         <control type="grouplist" id="9">
@@ -113,12 +124,12 @@
             <height>380</height>
             <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
             <texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
-            <texturesliderbarfocus border="2,16,2,16">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+            <texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
             <textureslidernib>ScrollBarNib.png</textureslidernib>
-            <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+            <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
             <onleft>2</onleft>
-            <onright>9</onright>
-            <showonepage>true</showonepage>
+            <onright>2</onright>
+            <showonepage>false</showonepage>
             <orientation>vertical</orientation>
         </control>
         <control type="group" id="9001">
@@ -137,7 +148,7 @@
                 <onleft>12</onleft>
                 <onright>11</onright>
                 <onup>2</onup>
-                <ondown>9</ondown>
+                <ondown>2</ondown>
             </control>
             <control type="button" id="11">
                 <description>Cancel Button</description>
@@ -152,7 +163,7 @@
                 <onleft>10</onleft>
                 <onright>12</onright>
                 <onup>2</onup>
-                <ondown>9</ondown>
+                <ondown>2</ondown>
             </control>
             <control type="button" id="12">
                 <description>Defaults Button</description>
@@ -167,7 +178,7 @@
                 <onleft>11</onleft>
                 <onright>10</onright>
                 <onup>2</onup>
-                <ondown>9</ondown>
+                <ondown>2</ondown>
             </control>
         </control>
         <control type="button" id="13">
@@ -177,7 +188,7 @@
             <align>center</align>
             <aligny>center</aligny>
             <font>font12_title</font>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[MainColorTwo]</textcolor>
             <pulseonselect>false</pulseonselect>
         </control>
         <control type="button" id="3">
@@ -185,24 +196,24 @@
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
         </control>
         <control type="radiobutton" id="4">
             <description>Default RadioButton</description>
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
         </control>
         <control type="spincontrolex" id="5">
             <description>Default spincontrolex</description>
             <height>40</height>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
             <texturenofocus border="5">button-nofocus.png</texturenofocus>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
             <aligny>center</aligny>
             <reverse>yes</reverse>
@@ -210,7 +221,8 @@
         <control type="label" id="7">
             <height>35</height>
             <font>font13_title</font>
-            <textcolor>blue</textcolor>
+            <label>-</label>
+            <textcolor>$VAR[MainColorOne]</textcolor>
             <shadowcolor>black</shadowcolor>
             <align>left</align>
             <aligny>center</aligny>
@@ -225,8 +237,8 @@
             <height>40</height>
             <font>font13</font>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
         </control>
     </controls>
 </window>

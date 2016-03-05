@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="PVRHeader">
+        <control type="label" id="29">
+            <description>Empty so we can pass the values up one level</description>
+            <visible>False</visible>
+        </control>
+        <control type="label" id="30">
+            <description>Empty so we can pass the values up one level</description>
+            <visible>False</visible>
+        </control>
+    </include>
+    <include name="PVRSideBlade">
+        <control type="group">
+            <visible>!Skin.HasSetting(EnableEnableKioskMode)</visible>
+            <left>-250</left>
+            <include>SideBladeLeft</include>
+            <control type="grouplist" id="9000">
+                <left>0</left>
+                <top>55</top>
+                <width>250</width>
+                <onfocus condition="IsEmpty(Window.Property(SideBladeOpen))">SetProperty(SideBladeOpen,true,Home)</onfocus>
+                <onleft>9000</onleft>
+                <onright>ClearProperty(SideBladeOpen,Home)</onright>
+                <onright>50</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <onback>ClearProperty(SideBladeOpen,Home)</onback>
+                <onback>50</onback>
+                <itemgap>0</itemgap>
+                <control type="label" id="200">
+                    <width>250</width>
+                    <height>35</height>
+                    <font>font12caps</font>
+                    <label>33063</label>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="button" id="100">
+                    <description>Channels</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>19019</label>
+                    <onclick>ClearProperty(SideBladeOpen,Home)</onclick>
+                    <onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
+                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+                </control>
+                <control type="button" id="101">
+                    <description>TV Guide</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>22020</label>
+                    <onclick>ClearProperty(SideBladeOpen,Home)</onclick>
+                    <onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
+                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+                </control>
+                <control type="button" id="102">
+                    <description>Recordings</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>19163</label>
+                    <onclick>ClearProperty(SideBladeOpen,Home)</onclick>
+                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+                </control>
+                <control type="button" id="103">
+                    <description>Timers</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>19040</label>
+                    <onclick>ClearProperty(SideBladeOpen,Home)</onclick>
+                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+                </control>
+                <control type="button" id="104">
+                    <description>Search</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>137</label>
+                    <onclick>ClearProperty(SideBladeOpen,Home)</onclick>
+                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+                </control>
+                <control type="label" id="201">
+                    <width>250</width>
+                    <height>35</height>
+                    <font>font12</font>
+                    <label>31006</label>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                </control>
+                <control type="button" id="28">
+                    <description>Channel Groups</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>-</label>
+                </control>
+                <control type="button" id="2">
+                    <description>View As button</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>-</label>
+                    <!-- <visible>Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</visible> -->
+                </control>
+                <control type="button" id="3">
+                    <description>Sort by button</description>
+                    <include>ButtonCommonValues</include>
+                    <label>103</label>
+                </control>
+                <control type="togglebutton" id="4">
+                    <description>Sort asc</description>
+                    <include>ButtonCommonValues</include>
+                    <alttexturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</alttexturefocus>
+                    <alttexturenofocus>-</alttexturenofocus>
+                    <label>31051</label>
+                    <altlabel>31050</altlabel>
+                    <usealttexture>Container.SortDirection(Ascending)</usealttexture>
+                </control>
+                <control type="radiobutton" id="31">
+                    <description>Filter</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>587</label>
+                    <selected>Container.Filtered</selected>
+                    <onclick>right</onclick>
+                    <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+                </control>
+                <!-- Misc Options (ID is completely arbitrary) -->
+                <control type="label" id="205">
+                    <width>250</width>
+                    <height>35</height>
+                    <font>font12</font>
+                    <label>31011</label>
+                    <textcolor>$VAR[MainColorOne]</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <visible>Control.IsVisible(5) | Control.IsVisible(6)</visible>
+                </control>
+                <control type="radiobutton" id="5">
+                    <description>Group recording items by folder structure</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>19270</label>
+                    <visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+                </control>
+                <control type="radiobutton" id="6">
+                    <description>Show hidden channels</description>
+                    <textwidth>235</textwidth>
+                    <include>ButtonCommonValues</include>
+                    <label>19051</label>
+                    <visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

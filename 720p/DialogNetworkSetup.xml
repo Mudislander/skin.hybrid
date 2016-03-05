@@ -34,7 +34,7 @@
             <label>$LOCALIZE[1007]</label>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>selected</textcolor>
+            <textcolor>$VAR[SelectedColor]</textcolor>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="button">
@@ -43,13 +43,23 @@
             <top>15</top>
             <width>64</width>
             <height>32</height>
+            <label>-</label>
+            <font>-</font>
             <onclick>PreviousMenu</onclick>
-            <texturefocus>DialogCloseButton-focus.png</texturefocus>
-            <texturenofocus>DialogCloseButton.png</texturenofocus>
+            <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+            <texturenofocus>DialogClose.png</texturenofocus>
             <onleft>10</onleft>
             <onright>10</onright>
             <onup>10</onup>
             <ondown>10</ondown>
+            <visible>system.getbool(input.enablemouse)</visible>
+        </control>
+        <control type="image">
+            <left>710</left>
+            <top>15</top>
+            <width>64</width>
+            <height>32</height>
+            <texture>DialogCloseBtn.png</texture>
             <visible>system.getbool(input.enablemouse)</visible>
         </control>
         <control type="spincontrolex" id="10">
@@ -58,9 +68,9 @@
             <top>70</top>
             <height>40</height>
             <width>740</width>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <texturenofocus border="5">button-nofocus.png</texturenofocus>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[MainColorTwo]</textcolor>
             <disabledcolor>grey3</disabledcolor>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
@@ -72,7 +82,7 @@
             <onleft>10</onleft>
             <onright>10</onright>
         </control>
-        <control type="button" id="11">
+        <control type="edit" id="11">
             <description>Server Address Button</description>
             <left>30</left>
             <top>115</top>
@@ -80,8 +90,9 @@
             <height>40</height>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
+            <label>-</label>
             <onup>10</onup>
             <onleft>12</onleft>
             <onright>12</onright>
@@ -103,7 +114,7 @@
             <onright>11</onright>
             <ondown>16</ondown>
         </control>
-        <control type="button" id="16">
+        <control type="edit" id="16">
             <description>Remote path Button</description>
             <left>30</left>
             <top>160</top>
@@ -111,14 +122,15 @@
             <height>40</height>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
+            <label>-</label>
             <onup>11</onup>
             <onleft>16</onleft>
             <onright>16</onright>
             <ondown>13</ondown>
         </control>
-        <control type="button" id="13">
+        <control type="edit" id="13">
             <description>Port Button</description>
             <left>30</left>
             <top>205</top>
@@ -126,7 +138,7 @@
             <height>40</height>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
             <label>1013</label>
             <onup>16</onup>
@@ -134,7 +146,7 @@
             <onright>13</onright>
             <ondown>14</ondown>
         </control>
-        <control type="button" id="14">
+        <control type="edit" id="14">
             <description>Username Button</description>
             <left>30</left>
             <top>250</top>
@@ -142,7 +154,7 @@
             <height>40</height>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
             <label>1014</label>
             <onup>13</onup>
@@ -150,7 +162,7 @@
             <onright>14</onright>
             <ondown>15</ondown>
         </control>
-        <control type="button" id="15">
+        <control type="edit" id="15">
             <description>Password Button</description>
             <left>30</left>
             <top>295</top>
@@ -158,7 +170,7 @@
             <height>40</height>
             <textoffsetx>12</textoffsetx>
             <aligny>center</aligny>
-            <texturefocus border="5">button-focus2.png</texturefocus>
+            <texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
             <font>font13</font>
             <label>15052</label>
             <onup>14</onup>

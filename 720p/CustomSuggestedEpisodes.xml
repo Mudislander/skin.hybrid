@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<window type="dialog" id="2124">
+<window type="dialog" id="1185">
     <defaultcontrol always="true">450</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -15,7 +15,7 @@
                 <top>0</top>
                 <width>400</width>
                 <height>720</height>
-                <texture border="15,0,0,0" flipx="true">Home\MediaBladeSub.png</texture>
+                <texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
             </control>
             <control type="button">
                 <description>Close Window button</description>
@@ -24,12 +24,20 @@
                 <width>64</width>
                 <height>32</height>
                 <onclick>PreviousMenu</onclick>
-                <texturefocus>DialogCloseButton-focus.png</texturefocus>
-                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                <texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+                <texturenofocus>DialogClose.png</texturenofocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
                 <onup>450</onup>
                 <ondown>450</ondown>
+                <visible>system.getbool(input.enablemouse)</visible>
+            </control>
+            <control type="image">
+                <left>380r</left>
+                <top>0</top>
+                <width>64</width>
+                <height>32</height>
+                <texture>DialogCloseBtn.png</texture>
                 <visible>system.getbool(input.enablemouse)</visible>
             </control>
             <control type="label">
@@ -40,7 +48,7 @@
                 <font>font14</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>blue</textcolor>
+                <textcolor>$VAR[MainColorOne]</textcolor>
                 <label>[B]$LOCALIZE[31194][/B]</label>
             </control>
             <control type="image">
@@ -50,7 +58,7 @@
                 <height>200</height>
                 <aspectratio align="center">stretch</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
-                <texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
+                <texture fallback="Fanart_Fallback_Small.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
                 <bordertexture border="8">ThumbShadow.png</bordertexture>
                 <bordersize>8</bordersize>
             </control>
@@ -63,21 +71,13 @@
                 <texture background="true">$INFO[Container(450).ListItem.Property(Logo)]</texture>
                 <visible>!IsEmpty(Container(450).ListItem.Property(Logo))</visible>
             </control>
-            <control type="image">
-                <left>78r</left>
-                <top>43</top>
-                <width>40</width>
-                <height>40</height>
-                <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                <visible>!Skin.HasSetting(disablewatchedcheck)</visible>
-            </control>
             <control type="list" id="450">
                 <left>390r</left>
                 <top>280</top>
                 <width>450</width>
                 <height>400</height>
                 <onup>450</onup>
-                <onleft>Dialog.Close(2124)</onleft>
+                <onleft>Dialog.Close(1185)</onleft>
                 <onright>60</onright>
                 <ondown>450</ondown>
                 <pagecontrol>60</pagecontrol>
@@ -98,7 +98,7 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <label>$INFO[ListItem.label2]</label>
                     </control>
                 </itemlayout>
@@ -117,7 +117,7 @@
                         <width>360</width>
                         <height>40</height>
                         <visible>Control.HasFocus(450)</visible>
-                        <texture border="3">button-focus.png</texture>
+                        <texture border="3" colordiffuse="$VAR[MainColorOne]">button-focus.png</texture>
                     </control>
                     <control type="label">
                         <left>10</left>
@@ -127,7 +127,7 @@
                         <font>font12_title</font>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <selectedcolor>selected</selectedcolor>
+                        <selectedcolor>$VAR[SelectedColor]</selectedcolor>
                         <label>$INFO[ListItem.label2]</label>
                     </control>
                 </focusedlayout>
@@ -136,7 +136,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.1.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.1.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.1.Art(thumb))]</icon>
@@ -148,7 +148,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.2.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.2.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.2.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.2.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.2.Art(thumb))]</icon>
@@ -160,7 +160,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.3.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.3.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.3.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.3.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.3.Art(thumb))]</icon>
@@ -172,7 +172,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.4.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.4.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.4.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.4.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.4.Art(thumb))]</icon>
@@ -184,7 +184,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.5.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.5.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.5.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.5.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.5.Art(thumb))]</icon>
@@ -196,7 +196,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.6.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.6.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.6.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.6.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.6.Art(thumb))]</icon>
@@ -208,7 +208,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.7.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.7.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.7.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.7.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.7.Art(thumb))]</icon>
@@ -220,7 +220,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.8.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.8.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.8.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.8.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.8.Art(thumb))]</icon>
@@ -232,7 +232,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.9.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.9.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.9.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.9.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.9.Art(thumb))]</icon>
@@ -244,7 +244,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.10.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.10.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.10.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.10.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.10.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.10.Art(thumb))]</icon>
@@ -256,7 +256,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.11.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.11.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.11.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.11.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.11.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.11.Art(thumb))]</icon>
@@ -268,7 +268,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.12.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.12.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.12.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.12.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.12.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.12.Art(thumb))]</icon>
@@ -280,7 +280,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.13.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.13.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.13.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.13.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.13.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.13.Art(thumb))]</icon>
@@ -292,7 +292,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.14.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.14.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.14.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.14.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.14.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.14.Art(thumb))]</icon>
@@ -304,7 +304,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.15.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.15.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.15.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.15.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.15.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.15.Art(thumb))]</icon>
@@ -316,7 +316,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.16.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.16.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.16.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.16.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.16.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.16.Art(thumb))]</icon>
@@ -328,7 +328,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.17.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.17.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.17.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.17.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.17.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.17.Art(thumb))]</icon>
@@ -340,7 +340,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.18.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.18.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.18.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.18.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.18.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.18.Art(thumb))]</icon>
@@ -352,7 +352,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.19.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.19.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.19.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.19.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.19.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.19.Art(thumb))]</icon>
@@ -364,7 +364,7 @@
                         <label>$INFO[Window(home).Property(RecommendedEpisode.20.Title)]</label>
                         <label2>$INFO[Window(home).Property(RecommendedEpisode.20.TVshowTitle)] - $INFO[Window(home).Property(RecommendedEpisode.20.EpisodeNo)]</label2>
                         <onclick>PlayList.Clear</onclick>
-                        <onclick>Dialog.Close(2124)</onclick>
+                        <onclick>Dialog.Close(1185)</onclick>
                         <onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.20.File)])</onclick>
                         <thumb>$INFO[Window(home).Property(RecommendedEpisode.20.Art(tvshow.fanart))]</thumb>
                         <icon>$INFO[Window(home).Property(RecommendedEpisode.20.Art(thumb))]</icon>
@@ -377,58 +377,10 @@
                         <label2>31252</label2>
                         <onclick>PreviousMenu</onclick>
                         <icon>DefaultVideo.png</icon>
-                        <thumb>SmallFanartFallback.jpg</thumb>
+                        <thumb>Fanart_Fallback_Small.jpg</thumb>
                         <visible>IsEmpty(Window(home).Property(RecommendedEpisode.1.TVshowTitle))</visible>
                     </item>
                 </content>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>390r</left>
-                <top>240</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Up Arrow</description>
-                <left>35r</left>
-                <top>240</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-up.png</texturefocus>
-                <texturenofocus>arrow-big-up.png</texturenofocus>
-                <onclick>Control.Move(450,-1)</onclick>
-                <visible>Container(450).HasPrevious</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>390r</left>
-                <top>680</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
-            </control>
-            <control type="button">
-                <description>Down Arrow</description>
-                <left>35r</left>
-                <top>680</top>
-                <width>30</width>
-                <height>40</height>
-                <texturefocus>arrow-big-down.png</texturefocus>
-                <texturenofocus>arrow-big-down.png</texturenofocus>
-                <onclick>Control.Move(450,1)</onclick>
-                <visible>Container(450).HasNext</visible>
-                <include>VisibleFadeEffect</include>
             </control>
             <control type="scrollbar" id="60">
                 <left>1256</left>
@@ -439,10 +391,10 @@
                 <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
                 <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>450</onleft>
                 <onright>450</onright>
-                <showonepage>true</showonepage>
+                <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <visible>Control.IsVisible(450)</visible>
             </control>

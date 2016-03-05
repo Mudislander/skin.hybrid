@@ -4,12 +4,12 @@
         <control type="group" id="9003">
             <animation effect="fade" time="300" delay="1000">WindowOpen</animation>
             <animation effect="fade" time="200">WindowClose</animation>
-            <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-            <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-            <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-            <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+            <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+            <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+            <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+            <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetone)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetOne)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <control type="panel" id="700">
@@ -18,10 +18,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(700).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(700).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>700</onleft>
                     <onright>700</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -31,7 +31,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsettwo)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTwo)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -41,10 +41,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(703).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(703).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>703</onleft>
                     <onright>703</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -54,7 +54,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetthree)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetThree)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -64,10 +64,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(704).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(704).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>704</onleft>
                     <onright>704</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -77,7 +77,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetfour)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFour)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -87,10 +87,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(705).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(705).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>705</onleft>
                     <onright>705</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -100,7 +100,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetfive)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetFive)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -110,10 +110,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(706).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(706).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>706</onleft>
                     <onright>706</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -123,7 +123,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetsix)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSix)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -133,10 +133,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(707).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(707).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>707</onleft>
                     <onright>707</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -146,7 +146,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetseven)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetSeven)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -156,10 +156,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(708).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(708).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>708</onleft>
                     <onright>708</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -169,7 +169,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonseteight)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetEight)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -179,10 +179,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(709).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(709).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>709</onleft>
                     <onright>709</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -192,7 +192,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetnine)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetNine)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -202,10 +202,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(710).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(710).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>710</onleft>
                     <onright>710</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -215,7 +215,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),addonsetten)</visible>
+                <visible>StringCompare(Container(9000).ListItem.Property(AddOnSet),AddonSetTen)</visible>
                 <left>0</left>
                 <top>148r</top>
                 <include>VisibleFadeEffect</include>
@@ -225,10 +225,10 @@
                     <animation effect="slide" start="0,0" end="168,0" time="0" condition="StringCompare(Container(711).NumItems,2)">conditional</animation>
                     <animation effect="slide" start="0,0" end="224,0" time="0" condition="StringCompare(Container(711).NumItems,1)">conditional</animation>
                     <onup>9000</onup>
-                    <ondown condition="Skin.HasSetting(enablehomepowerbtn)">20</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + Skin.HasSetting(enablehomedvdbtn)">21</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
-                    <ondown condition="!Skin.HasSetting(enablehomepowerbtn) + !Skin.HasSetting(enablehomedvdbtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
+                    <ondown condition="!Skin.HasSetting(HideHomePowerBtn)">20</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + !Skin.HasSetting(HideHomeDVDBtn)">21</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(disablescriptfavourites)">ActivateWindow(Favourites)</ondown>
+                    <ondown condition="Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(disablescriptfavourites)]">9000</ondown>
                     <onleft>711</onleft>
                     <onright>711</onright>
                     <include>HomeAddonsCommonLayout</include>
@@ -237,7 +237,6 @@
                     </content>
                 </control>
             </control>
-            <include>CheckMenuAltPage</include>
         </control>
     </include>
     <include name="HomeAddonsCommonLayout">
@@ -266,7 +265,7 @@
                 <width>80</width>
                 <height>80</height>
                 <aspectratio aligny="bottom">keep</aspectratio>
-                <texture background="true" diffuse="InfoWidget/PosterDiffuse.png">$INFO[ListItem.icon]</texture>
+                <texture background="true" diffuse="PosterDiffuse.png">$INFO[ListItem.icon]</texture>
             </control>
             <control type="image">
                 <left>5</left>
@@ -274,7 +273,7 @@
                 <width>100</width>
                 <height>100</height>
                 <aspectratio>stretch</aspectratio>
-                <texture diffuse="InfoWidget/PosterDiffuse.png">black-back.png</texture>
+                <texture diffuse="PosterDiffuse.png">black-back.png</texture>
                 <colordiffuse>AAFFFFFF</colordiffuse>
             </control>
         </itemlayout>
@@ -294,7 +293,7 @@
                 <width>80</width>
                 <height>80</height>
                 <aspectratio aligny="bottom">keep</aspectratio>
-                <texture background="true" diffuse="InfoWidget/PosterDiffuse.png">$INFO[ListItem.icon]</texture>
+                <texture background="true" diffuse="PosterDiffuse.png">$INFO[ListItem.icon]</texture>
                 <animation effect="zoom" start="15,15,80,80" end="10,10,90,90" time="200">focus</animation>
             </control>
             <control type="image">
@@ -303,7 +302,7 @@
                 <width>100</width>
                 <height>100</height>
                 <aspectratio>stretch</aspectratio>
-                <texture diffuse="InfoWidget/PosterDiffuse.png">black-back.png</texture>
+                <texture diffuse="PosterDiffuse.png">black-back.png</texture>
                 <colordiffuse>AAFFFFFF</colordiffuse>
                 <animation effect="zoom" start="5,5,100,100" end="0,0,110,110" time="200">focus</animation>
                 <visible>!ControlGroup(9003).HasFocus</visible>
@@ -312,472 +311,472 @@
     </include>
     <include name="HomeAddonSetOne">
         <item>
-            <label>$INFO[Skin.String(addonsetone.1.label)]</label>
-            <label2 fallback="31230">$INFO[Skin.String(userselectaddon.1.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetone.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetOne.1.label)]</label>
+            <label2 fallback="31230">$INFO[Skin.String(UserSelectAddon.1.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetOne.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetone.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetone.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetone.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetOne.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetOne.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetOne.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetone.2.label)]</label>
-            <label2 fallback="31230">$INFO[Skin.String(userselectaddon.1.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetone.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetOne.2.label)]</label>
+            <label2 fallback="31230">$INFO[Skin.String(UserSelectAddon.1.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetOne.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetone.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetone.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetone.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetOne.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetOne.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetOne.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetone.3.label)]</label>
-            <label2 fallback="31230">$INFO[Skin.String(userselectaddon.1.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetone.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetOne.3.label)]</label>
+            <label2 fallback="31230">$INFO[Skin.String(UserSelectAddon.1.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetOne.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetone.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetone.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetone.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetOne.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetOne.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetOne.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetone.4.label)]</label>
-            <label2 fallback="31230">$INFO[Skin.String(userselectaddon.1.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetone.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetOne.4.label)]</label>
+            <label2 fallback="31230">$INFO[Skin.String(UserSelectAddon.1.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetOne.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetone.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetone.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetone.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetOne.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetOne.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetOne.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetone.5.label)]</label>
-            <label2 fallback="31230">$INFO[Skin.String(userselectaddon.1.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetone.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetOne.5.label)]</label>
+            <label2 fallback="31230">$INFO[Skin.String(UserSelectAddon.1.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetOne.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetone.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetone.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetone.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetOne.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetOne.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetOne.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetTwo">
         <item>
-            <label>$INFO[Skin.String(addonsettwo.1.label)]</label>
-            <label2 fallback="31231">$INFO[Skin.String(userselectaddon.2.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsettwo.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTwo.1.label)]</label>
+            <label2 fallback="31231">$INFO[Skin.String(UserSelectAddon.2.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTwo.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsettwo.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsettwo.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsettwo.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTwo.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTwo.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTwo.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsettwo.2.label)]</label>
-            <label2 fallback="31231">$INFO[Skin.String(userselectaddon.2.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsettwo.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTwo.2.label)]</label>
+            <label2 fallback="31231">$INFO[Skin.String(UserSelectAddon.2.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTwo.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsettwo.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsettwo.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsettwo.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTwo.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTwo.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTwo.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsettwo.3.label)]</label>
-            <label2 fallback="31231">$INFO[Skin.String(userselectaddon.2.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsettwo.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTwo.3.label)]</label>
+            <label2 fallback="31231">$INFO[Skin.String(UserSelectAddon.2.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTwo.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsettwo.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsettwo.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsettwo.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTwo.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTwo.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTwo.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsettwo.4.label)]</label>
-            <label2 fallback="31231">$INFO[Skin.String(userselectaddon.2.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsettwo.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTwo.4.label)]</label>
+            <label2 fallback="31231">$INFO[Skin.String(UserSelectAddon.2.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTwo.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsettwo.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsettwo.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsettwo.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTwo.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTwo.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTwo.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsettwo.5.label)]</label>
-            <label2 fallback="31231">$INFO[Skin.String(userselectaddon.2.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsettwo.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTwo.5.label)]</label>
+            <label2 fallback="31231">$INFO[Skin.String(UserSelectAddon.2.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTwo.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsettwo.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsettwo.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsettwo.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTwo.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTwo.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTwo.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetThree">
         <item>
-            <label>$INFO[Skin.String(addonsetthree.1.label)]</label>
-            <label2 fallback="31232">$INFO[Skin.String(userselectaddon.3.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetthree.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetThree.1.label)]</label>
+            <label2 fallback="31232">$INFO[Skin.String(UserSelectAddon.3.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetThree.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetthree.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetthree.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetthree.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetThree.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetThree.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetThree.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetthree.2.label)]</label>
-            <label2 fallback="31232">$INFO[Skin.String(userselectaddon.3.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetthree.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetThree.2.label)]</label>
+            <label2 fallback="31232">$INFO[Skin.String(UserSelectAddon.3.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetThree.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetthree.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetthree.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetthree.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetThree.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetThree.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetThree.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetthree.3.label)]</label>
-            <label2 fallback="31232">$INFO[Skin.String(userselectaddon.3.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetthree.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetThree.3.label)]</label>
+            <label2 fallback="31232">$INFO[Skin.String(UserSelectAddon.3.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetThree.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetthree.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetthree.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetthree.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetThree.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetThree.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetThree.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetthree.4.label)]</label>
-            <label2 fallback="31232">$INFO[Skin.String(userselectaddon.3.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetthree.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetThree.4.label)]</label>
+            <label2 fallback="31232">$INFO[Skin.String(UserSelectAddon.3.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetThree.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetthree.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetthree.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetthree.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetThree.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetThree.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetThree.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetthree.5.label)]</label>
-            <label2 fallback="31232">$INFO[Skin.String(userselectaddon.3.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetthree.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetThree.5.label)]</label>
+            <label2 fallback="31232">$INFO[Skin.String(UserSelectAddon.3.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetThree.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetthree.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetthree.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetthree.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetThree.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetThree.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetThree.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetFour">
         <item>
-            <label>$INFO[Skin.String(addonsetfour.1.label)]</label>
-            <label2 fallback="31233">$INFO[Skin.String(userselectaddon.4.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfour.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFour.1.label)]</label>
+            <label2 fallback="31233">$INFO[Skin.String(UserSelectAddon.4.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFour.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfour.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfour.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfour.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFour.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFour.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFour.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfour.2.label)]</label>
-            <label2 fallback="31233">$INFO[Skin.String(userselectaddon.4.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfour.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFour.2.label)]</label>
+            <label2 fallback="31233">$INFO[Skin.String(UserSelectAddon.4.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFour.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfour.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfour.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfour.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFour.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFour.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFour.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfour.3.label)]</label>
-            <label2 fallback="31233">$INFO[Skin.String(userselectaddon.4.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfour.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFour.3.label)]</label>
+            <label2 fallback="31233">$INFO[Skin.String(UserSelectAddon.4.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFour.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfour.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfour.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfour.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFour.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFour.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFour.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfour.4.label)]</label>
-            <label2 fallback="31233">$INFO[Skin.String(userselectaddon.4.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfour.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFour.4.label)]</label>
+            <label2 fallback="31233">$INFO[Skin.String(UserSelectAddon.4.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFour.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfour.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfour.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfour.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFour.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFour.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFour.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfour.5.label)]</label>
-            <label2 fallback="31233">$INFO[Skin.String(userselectaddon.4.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfour.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFour.5.label)]</label>
+            <label2 fallback="31233">$INFO[Skin.String(UserSelectAddon.4.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFour.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfour.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfour.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfour.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFour.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFour.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFour.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetFive">
         <item>
-            <label>$INFO[Skin.String(addonsetfive.1.label)]</label>
-            <label2 fallback="31234">$INFO[Skin.String(userselectaddon.5.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfive.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFive.1.label)]</label>
+            <label2 fallback="31234">$INFO[Skin.String(UserSelectAddon.5.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFive.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfive.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfive.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfive.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFive.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFive.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFive.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfive.2.label)]</label>
-            <label2 fallback="31234">$INFO[Skin.String(userselectaddon.5.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfive.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFive.2.label)]</label>
+            <label2 fallback="31234">$INFO[Skin.String(UserSelectAddon.5.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFive.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfive.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfive.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfive.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFive.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFive.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFive.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfive.3.label)]</label>
-            <label2 fallback="31234">$INFO[Skin.String(userselectaddon.5.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfive.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFive.3.label)]</label>
+            <label2 fallback="31234">$INFO[Skin.String(UserSelectAddon.5.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFive.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfive.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfive.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfive.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFive.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFive.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFive.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfive.4.label)]</label>
-            <label2 fallback="31234">$INFO[Skin.String(userselectaddon.5.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfive.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFive.4.label)]</label>
+            <label2 fallback="31234">$INFO[Skin.String(UserSelectAddon.5.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFive.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfive.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfive.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfive.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFive.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFive.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFive.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetfive.5.label)]</label>
-            <label2 fallback="31234">$INFO[Skin.String(userselectaddon.5.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetfive.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetFive.5.label)]</label>
+            <label2 fallback="31234">$INFO[Skin.String(UserSelectAddon.5.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetFive.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetfive.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetfive.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetfive.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetFive.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetFive.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetFive.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetSix">
         <item>
-            <label>$INFO[Skin.String(addonsetsix.1.label)]</label>
-            <label2 fallback="31235">$INFO[Skin.String(userselectaddon.6.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetsix.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSix.1.label)]</label>
+            <label2 fallback="31235">$INFO[Skin.String(UserSelectAddon.6.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSix.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetsix.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetsix.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetsix.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSix.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSix.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSix.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetsix.2.label)]</label>
-            <label2 fallback="31235">$INFO[Skin.String(userselectaddon.6.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetsix.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSix.2.label)]</label>
+            <label2 fallback="31235">$INFO[Skin.String(UserSelectAddon.6.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSix.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetsix.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetsix.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetsix.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSix.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSix.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSix.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetsix.3.label)]</label>
-            <label2 fallback="31235">$INFO[Skin.String(userselectaddon.6.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetsix.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSix.3.label)]</label>
+            <label2 fallback="31235">$INFO[Skin.String(UserSelectAddon.6.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSix.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetsix.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetsix.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetsix.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSix.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSix.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSix.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetsix.4.label)]</label>
-            <label2 fallback="31235">$INFO[Skin.String(userselectaddon.6.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetsix.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSix.4.label)]</label>
+            <label2 fallback="31235">$INFO[Skin.String(UserSelectAddon.6.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSix.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetsix.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetsix.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetsix.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSix.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSix.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSix.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetsix.5.label)]</label>
-            <label2 fallback="31235">$INFO[Skin.String(userselectaddon.6.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetsix.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSix.5.label)]</label>
+            <label2 fallback="31235">$INFO[Skin.String(UserSelectAddon.6.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSix.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetsix.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetsix.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetsix.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSix.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSix.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSix.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetSeven">
         <item>
-            <label>$INFO[Skin.String(addonsetseven.1.label)]</label>
-            <label2 fallback="31236">$INFO[Skin.String(userselectaddon.7.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetseven.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSeven.1.label)]</label>
+            <label2 fallback="31236">$INFO[Skin.String(UserSelectAddon.7.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSeven.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetseven.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetseven.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetseven.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSeven.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSeven.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSeven.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetseven.2.label)]</label>
-            <label2 fallback="31236">$INFO[Skin.String(userselectaddon.7.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetseven.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSeven.2.label)]</label>
+            <label2 fallback="31236">$INFO[Skin.String(UserSelectAddon.7.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSeven.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetseven.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetseven.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetseven.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSeven.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSeven.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSeven.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetseven.3.label)]</label>
-            <label2 fallback="31236">$INFO[Skin.String(userselectaddon.7.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetseven.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSeven.3.label)]</label>
+            <label2 fallback="31236">$INFO[Skin.String(UserSelectAddon.7.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSeven.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetseven.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetseven.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetseven.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSeven.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSeven.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSeven.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetseven.4.label)]</label>
-            <label2 fallback="31236">$INFO[Skin.String(userselectaddon.7.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetseven.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSeven.4.label)]</label>
+            <label2 fallback="31236">$INFO[Skin.String(UserSelectAddon.7.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSeven.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetseven.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetseven.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetseven.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSeven.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSeven.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSeven.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetseven.5.label)]</label>
-            <label2 fallback="31236">$INFO[Skin.String(userselectaddon.7.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetseven.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetSeven.5.label)]</label>
+            <label2 fallback="31236">$INFO[Skin.String(UserSelectAddon.7.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetSeven.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetseven.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetseven.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetseven.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetSeven.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetSeven.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetSeven.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetEight">
         <item>
-            <label>$INFO[Skin.String(addonseteight.1.label)]</label>
-            <label2 fallback="31237">$INFO[Skin.String(userselectaddon.8.label)]</label2>
-            <onclick>$INFO[Skin.String(addonseteight.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetEight.1.label)]</label>
+            <label2 fallback="31237">$INFO[Skin.String(UserSelectAddon.8.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetEight.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonseteight.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonseteight.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonseteight.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetEight.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetEight.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetEight.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonseteight.2.label)]</label>
-            <label2 fallback="31237">$INFO[Skin.String(userselectaddon.8.label)]</label2>
-            <onclick>$INFO[Skin.String(addonseteight.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetEight.2.label)]</label>
+            <label2 fallback="31237">$INFO[Skin.String(UserSelectAddon.8.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetEight.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonseteight.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonseteight.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonseteight.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetEight.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetEight.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetEight.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonseteight.3.label)]</label>
-            <label2 fallback="31237">$INFO[Skin.String(userselectaddon.8.label)]</label2>
-            <onclick>$INFO[Skin.String(addonseteight.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetEight.3.label)]</label>
+            <label2 fallback="31237">$INFO[Skin.String(UserSelectAddon.8.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetEight.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonseteight.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonseteight.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonseteight.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetEight.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetEight.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetEight.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonseteight.4.label)]</label>
-            <label2 fallback="31237">$INFO[Skin.String(userselectaddon.8.label)]</label2>
-            <onclick>$INFO[Skin.String(addonseteight.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetEight.4.label)]</label>
+            <label2 fallback="31237">$INFO[Skin.String(UserSelectAddon.8.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetEight.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonseteight.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonseteight.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonseteight.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetEight.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetEight.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetEight.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonseteight.5.label)]</label>
-            <label2 fallback="31237">$INFO[Skin.String(userselectaddon.8.label)]</label2>
-            <onclick>$INFO[Skin.String(addonseteight.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetEight.5.label)]</label>
+            <label2 fallback="31237">$INFO[Skin.String(UserSelectAddon.8.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetEight.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonseteight.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonseteight.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonseteight.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetEight.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetEight.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetEight.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetNine">
         <item>
-            <label>$INFO[Skin.String(addonsetnine.1.label)]</label>
-            <label2 fallback="31238">$INFO[Skin.String(userselectaddon.9.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetnine.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetNine.1.label)]</label>
+            <label2 fallback="31238">$INFO[Skin.String(UserSelectAddon.9.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetNine.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetnine.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetnine.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetnine.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetNine.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetNine.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetNine.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetnine.2.label)]</label>
-            <label2 fallback="31238">$INFO[Skin.String(userselectaddon.9.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetnine.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetNine.2.label)]</label>
+            <label2 fallback="31238">$INFO[Skin.String(UserSelectAddon.9.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetNine.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetnine.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetnine.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetnine.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetNine.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetNine.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetNine.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetnine.3.label)]</label>
-            <label2 fallback="31238">$INFO[Skin.String(userselectaddon.9.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetnine.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetNine.3.label)]</label>
+            <label2 fallback="31238">$INFO[Skin.String(UserSelectAddon.9.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetNine.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetnine.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetnine.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetnine.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetNine.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetNine.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetNine.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetnine.4.label)]</label>
-            <label2 fallback="31238">$INFO[Skin.String(userselectaddon.9.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetnine.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetNine.4.label)]</label>
+            <label2 fallback="31238">$INFO[Skin.String(UserSelectAddon.9.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetNine.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetnine.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetnine.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetnine.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetNine.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetNine.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetNine.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetnine.5.label)]</label>
-            <label2 fallback="31238">$INFO[Skin.String(userselectaddon.9.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetnine.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetNine.5.label)]</label>
+            <label2 fallback="31238">$INFO[Skin.String(UserSelectAddon.9.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetNine.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetnine.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetnine.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetnine.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetNine.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetNine.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetNine.5.Path))</visible>
         </item>
     </include>
     <include name="HomeAddonSetTen">
         <item>
-            <label>$INFO[Skin.String(addonsetten.1.label)]</label>
-            <label2 fallback="31239">$INFO[Skin.String(userselectaddon.10.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetten.1.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTen.1.label)]</label>
+            <label2 fallback="31239">$INFO[Skin.String(UserSelectAddon.10.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTen.1.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetten.1.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetten.1.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetten.1.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTen.1.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTen.1.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTen.1.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetten.2.label)]</label>
-            <label2 fallback="31239">$INFO[Skin.String(userselectaddon.10.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetten.2.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTen.2.label)]</label>
+            <label2 fallback="31239">$INFO[Skin.String(UserSelectAddon.10.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTen.2.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetten.2.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetten.2.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetten.2.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTen.2.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTen.2.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTen.2.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetten.3.label)]</label>
-            <label2 fallback="31239">$INFO[Skin.String(userselectaddon.10.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetten.3.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTen.3.label)]</label>
+            <label2 fallback="31239">$INFO[Skin.String(UserSelectAddon.10.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTen.3.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetten.3.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetten.3.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetten.3.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTen.3.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTen.3.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTen.3.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetten.4.label)]</label>
-            <label2 fallback="31239">$INFO[Skin.String(userselectaddon.10.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetten.4.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTen.4.label)]</label>
+            <label2 fallback="31239">$INFO[Skin.String(UserSelectAddon.10.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTen.4.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetten.4.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetten.4.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetten.4.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTen.4.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTen.4.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTen.4.Path))</visible>
         </item>
         <item>
-            <label>$INFO[Skin.String(addonsetten.5.label)]</label>
-            <label2 fallback="31239">$INFO[Skin.String(userselectaddon.10.label)]</label2>
-            <onclick>$INFO[Skin.String(addonsetten.5.path)]</onclick>
+            <label>$INFO[Skin.String(AddonSetTen.5.label)]</label>
+            <label2 fallback="31239">$INFO[Skin.String(UserSelectAddon.10.label)]</label2>
+            <onclick>$INFO[Skin.String(AddonSetTen.5.Path)]</onclick>
             <icon>DefaultAddon.png</icon>
-            <thumb>$INFO[Skin.String(addonsetten.5.icon)]</thumb>
-            <property name="Fanart">$INFO[Skin.String(addonsetten.5.fanart)]</property>
-            <visible>!IsEmpty(Skin.String(addonsetten.5.path))</visible>
+            <thumb>$INFO[Skin.String(AddonSetTen.5.icon)]</thumb>
+            <property name="Fanart">$INFO[Skin.String(AddonSetTen.5.fanart)]</property>
+            <visible>!IsEmpty(Skin.String(AddonSetTen.5.Path))</visible>
         </item>
     </include>
 </includes>

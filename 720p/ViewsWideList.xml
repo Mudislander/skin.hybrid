@@ -11,7 +11,7 @@
                 <include>TransparentEffect</include>
             </control>
             <control type="panel" id="529">
-                <visible>SubString(Container.FolderPath,program.advanced.launcher) | Container.Content(Movies) | Container.Content(TVshows) | Container.Content(episodes) | Container.Content(seasons)</visible>
+                <visible>Container.Content(Movies) | Container.Content(TVshows) | Container.Content(Episodes) | Container.Content(seasons)</visible>
                 <visible>!Container.Content(LiveTV)</visible>
                 <viewtype label="$LOCALIZE[31652]">panel</viewtype>
                 <wraparound>true</wraparound>
@@ -19,9 +19,9 @@
                 <top>85</top>
                 <width>1176</width>
                 <height>575</height>
-                <pagecontrol>60</pagecontrol>
+                <pagecontrol>52960</pagecontrol>
                 <onleft>9000</onleft>
-                <onright>60</onright>
+                <onright>52960</onright>
                 <onup>529</onup>
                 <ondown>529</ondown>
                 <preloaditems>2</preloaditems>
@@ -40,8 +40,7 @@
                         <top>24</top>
                         <width>71</width>
                         <height>102</height>
-                        <info>ListItem.Icon</info>
-                        <texture background="true" diffuse="EmptyCaseMask.png" />
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
                         <aspectratio>stretch</aspectratio>
                         <visible>StringCompare(ListItem.Label,..)</visible>
                     </control>
@@ -54,7 +53,7 @@
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture background="true" fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
                         <visible>Window.IsVisible(Videos) + !Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
-                        <visible>!Skin.HasSetting(enable529clearart) | [Skin.HasSetting(enable529clearart) + IsEmpty(ListItem.Art(clearart))]</visible>
+                        <visible>!Skin.HasSetting(EnableAdditionalArtWork) | Skin.HasSetting(DisableClearArt) | [Skin.HasSetting(EnableAdditionalArtWork) + IsEmpty(ListItem.Art(clearart))]</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -65,17 +64,7 @@
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture background="true" diffuse="episodematte.png">$INFO[ListItem.Art(clearart)]</texture>
                         <visible>Container.Content(Movies) | Container.Content(TVshows)</visible>
-                        <visible>Skin.HasSetting(enable529clearart) + !IsEmpty(ListItem.Art(clearart))</visible>
-                    </control>
-                    <control type="image">
-                        <left>18</left>
-                        <top>24</top>
-                        <width>169</width>
-                        <height>102</height>
-                        <aspectratio>stretch</aspectratio>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                        <texture background="true" fallback="SmallFanartFallback.png" diffuse="episodematte.png">$INFO[ListItem.Property(fanart_image)]</texture>
-                        <visible>SubString(Container.FolderPath,program.advanced.launcher) + !StringCompare(ListItem.Label,..)</visible>
+                        <visible>Skin.HasSetting(EnableAdditionalArtWork) + !Skin.HasSetting(DisableClearArt) + !IsEmpty(ListItem.Art(clearart))</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -85,7 +74,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture fallback="SmallFanartFallback.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
-                        <visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + !Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -95,7 +84,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
-                        <visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -105,7 +94,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture diffuse="episodematte.png">black-back.png</texture>
-                        <visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+                        <visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
                     </control>
                     <control type="label">
                         <left>202</left>
@@ -113,7 +102,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font18</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.label</info>
                     </control>
@@ -123,7 +112,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.Year</info>
                         <visible>Container.Content(Movies)</visible>
@@ -134,11 +123,11 @@
                         <width>356</width>
                         <height>80</height>
                         <font>font12</font>
-                        <textcolor>grey</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <label fallback="31028">$INFO[ListItem.Plot]</label>
                         <align>justify</align>
-                        <visible>[Container.Content(episodes) | SubString(Container.FolderPath,program.advanced.launcher)] + !StringCompare(ListItem.Label,..)</visible>
+                        <visible>Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
                     </control>
                     <control type="label">
                         <left>202</left>
@@ -146,7 +135,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>left</align>
                         <aligny>top</aligny>
@@ -161,7 +150,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>left</align>
                         <aligny>top</aligny>
@@ -176,7 +165,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <label>$LOCALIZE[31346]</label>
                         <visible>StringCompare(ListItem.Label,..)</visible>
@@ -187,7 +176,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.Genre</info>
                         <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies)</visible>
@@ -198,41 +187,41 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.TVShowTitle</info>
                         <visible>Container.Content(Seasons)</visible>
                     </control>
                     <control type="image">
-                        <left>530</left>
-                        <top>7</top>
-                        <width>40</width>
-                        <height>40</height>
-                        <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                        <visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="image">
                         <left>202</left>
                         <top>110</top>
                         <width>160</width>
                         <height>20</height>
-                        <texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
+                        <texture fallback="LeftRating/rating0.png" colordiffuse="lightgrey">LeftRating/$INFO[ListItem.StarRating]</texture>
                         <aspectratio>keep</aspectratio>
                         <visible>!StringCompare(ListItem.Label,..)</visible>
                         <visible>Container.Content(Movies) | Container.Content(TVshows)</visible>
                     </control>
                     <control type="label">
-                        <left>560</left>
+                        <left>360</left>
                         <top>104</top>
                         <width>200</width>
                         <height>20</height>
-                        <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <font>font10</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                         <aligny>top</aligny>
-                        <label>$VAR[MediaRuntime]</label>
+                        <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]]</label>
                         <visible>!IsEmpty(ListItem.Duration) + !Container.Content(Episodes)</visible>
                     </control>
                 </itemlayout>
@@ -258,8 +247,7 @@
                         <top>24</top>
                         <width>71</width>
                         <height>102</height>
-                        <info>ListItem.Icon</info>
-                        <texture background="true" diffuse="EmptyCaseMask.png" />
+                        <texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
                         <aspectratio>stretch</aspectratio>
                         <visible>StringCompare(ListItem.Label,..)</visible>
                     </control>
@@ -272,7 +260,7 @@
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture background="true" fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
                         <visible>Window.IsVisible(Videos) + !Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
-                        <visible>!Skin.HasSetting(enable529clearart) | [Skin.HasSetting(enable529clearart) + IsEmpty(ListItem.Art(clearart))]</visible>
+                        <visible>!Skin.HasSetting(EnableAdditionalArtWork) | Skin.HasSetting(DisableClearArt) | [Skin.HasSetting(EnableAdditionalArtWork) + IsEmpty(ListItem.Art(clearart))]</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -282,17 +270,7 @@
                         <aspectratio aligny="bottom">keep</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture background="true" diffuse="episodematte.png">$INFO[ListItem.Art(clearart)]</texture>
-                        <visible>Skin.HasSetting(enable529clearart) + !IsEmpty(ListItem.Art(clearart))</visible>
-                    </control>
-                    <control type="image">
-                        <left>18</left>
-                        <top>24</top>
-                        <width>169</width>
-                        <height>102</height>
-                        <aspectratio>stretch</aspectratio>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                        <texture background="true" fallback="SmallFanartFallback.png" diffuse="episodematte.png">$INFO[ListItem.Property(fanart_image)]</texture>
-                        <visible>SubString(Container.FolderPath,program.advanced.launcher) + !StringCompare(ListItem.Label,..)</visible>
+                        <visible>Skin.HasSetting(EnableAdditionalArtWork) + !Skin.HasSetting(DisableClearArt) + !IsEmpty(ListItem.Art(clearart))</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -302,7 +280,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture fallback="SmallFanartFallback.jpg" background="true" diffuse="episodematte.png">$INFO[ListItem.Thumb]</texture>
-                        <visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + !Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -312,7 +290,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
-                        <visible>!IsEmpty(ListItem.Title) + Container.Content(episodes) + Skin.HasSetting(hideepisodethumb)</visible>
+                        <visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
                     </control>
                     <control type="image">
                         <left>18</left>
@@ -322,7 +300,7 @@
                         <aspectratio>stretch</aspectratio>
                         <fadetime>IconCrossfadeTime</fadetime>
                         <texture diffuse="episodematte.png">black-back.png</texture>
-                        <visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(darkenwatchedmedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+                        <visible>!StringCompare(ListItem.label,..) + Skin.HasSetting(DarkenWatchedMedia) + StringCompare(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
                     </control>
                     <control type="label">
                         <left>202</left>
@@ -330,7 +308,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font18</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.label</info>
                     </control>
@@ -340,7 +318,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.Year</info>
                         <visible>Container.Content(Movies)</visible>
@@ -354,9 +332,9 @@
                         <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <label fallback="31028">$INFO[ListItem.Plot]</label>
-                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+                        <autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
                         <align>justify</align>
-                        <visible>[Container.Content(episodes) | SubString(Container.FolderPath,program.advanced.launcher)] + !StringCompare(ListItem.Label,..)</visible>
+                        <visible>Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
                     </control>
                     <control type="label">
                         <left>202</left>
@@ -364,7 +342,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>left</align>
                         <aligny>top</aligny>
@@ -379,7 +357,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>left</align>
                         <aligny>top</aligny>
@@ -394,7 +372,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <label>$LOCALIZE[31346]</label>
                         <visible>StringCompare(ListItem.Label,..)</visible>
@@ -405,7 +383,7 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.Genre</info>
                         <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies)</visible>
@@ -416,61 +394,65 @@
                         <width>356</width>
                         <height>20</height>
                         <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <textcolor>lightgrey</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <info>ListItem.TVShowTitle</info>
                         <visible>Container.Content(Seasons)</visible>
                     </control>
                     <control type="image">
-                        <left>530</left>
-                        <top>7</top>
-                        <width>40</width>
-                        <height>40</height>
-                        <texture diffuse="poster-diffuse.png">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
-                        <visible>!Skin.HasSetting(disablewatchedcheck) + !IsEmpty(ListItem.Overlay)</visible>
+                        <left>0</left>
+                        <top>6</top>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture diffuse="poster-diffuse.png" colordiffuse="$VAR[MainColorOne]">$VAR[PartlyWatched,MediaStatus/,.png]</texture>
+                        <visible>!Skin.HasSetting(DisableWatchedCheck) + !IsEmpty(ListItem.Overlay)</visible>
                     </control>
                     <control type="image">
                         <left>202</left>
                         <top>110</top>
                         <width>160</width>
                         <height>20</height>
-                        <texture fallback="LeftRating/rating0.png">LeftRating/$INFO[ListItem.StarRating]</texture>
+                        <texture fallback="LeftRating/rating0.png" colordiffuse="lightgrey">LeftRating/$INFO[ListItem.StarRating]</texture>
                         <aspectratio>keep</aspectratio>
                         <visible>!StringCompare(ListItem.Label,..)</visible>
                         <visible>Container.Content(Movies) | Container.Content(TVshows)</visible>
                     </control>
                     <control type="label">
-                        <left>560</left>
+                        <left>360</left>
                         <top>104</top>
                         <width>200</width>
                         <height>20</height>
-                        <font>font13</font>
-                        <textcolor>white</textcolor>
+                        <font>font10</font>
+                        <textcolor>$VAR[MainColorTwo]</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                         <aligny>top</aligny>
-                        <label>$VAR[MediaRuntime]</label>
+                        <label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]]</label>
                         <visible>!IsEmpty(ListItem.Duration) + !Container.Content(Episodes)</visible>
                     </control>
                 </focusedlayout>
             </control>
-            <control type="scrollbar" id="60">
+            <control type="scrollbar" id="52960">
                 <left>1225</left>
                 <top>105</top>
                 <width>25</width>
                 <height>550</height>
                 <texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
                 <texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-                <texturesliderbarfocus border="10,14,10,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
                 <textureslidernib>ScrollBarNib.png</textureslidernib>
-                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
                 <onleft>529</onleft>
                 <onright>800</onright>
                 <onup>60</onup>
                 <ondown>60</ondown>
                 <showonepage>true</showonepage>
                 <orientation>vertical</orientation>
+                <visible>Control.IsVisible(529)</visible>
+            </control>
+            <control type="group">
+                <include>VideoLogoArt</include>
                 <visible>Control.IsVisible(529)</visible>
             </control>
         </control>
