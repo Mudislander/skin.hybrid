@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.hybrid"
-  version="4.0.0"
+  version="4.0.1"
   name="Hybrid"
   provider-name="Mudislander">
   <requires>
 		<import	addon="xbmc.gui" version="5.10.0"/>
+		<import addon="script.simpleplaylists" version="1.1.1"/>
 		<import addon="script.favourites" version="6.0.2"/>
 		<import addon="script.artwork.downloader" version="12.0.29"/>
 		<import addon="script.globalsearch" version="5.0.0"/>
 		<import addon="service.skin.widgets" version="0.0.30"/>
 		<import addon="script.image.resource.select" version="0.0.5"/>
 		<import addon="resource.images.weatherfanart.prairie" version="0.0.4"/>
-		<import addon="resource.images.weatherfanart.multi" version="0.0.4"/>
 	</requires>
   <extension
     point="xbmc.gui.skin"

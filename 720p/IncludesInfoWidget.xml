@@ -9298,7 +9298,11 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day0.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</icon>
+                        <!--icon>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</icon-->
+						
+						<icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Current.OutlookIcon)]</icon>
+						
+						
                         <property name="Title">$INFO[Window(Weather).Property(Day0.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day0.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.1.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day0.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>
@@ -9309,7 +9313,8 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day1.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
+                        <!--icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon-->
+						<icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</icon>
                         <property name="Title">$INFO[Window(Weather).Property(Day1.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day1.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.2.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day1.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>
@@ -9320,7 +9325,9 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day2.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                        <icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</icon>
+						
+						
                         <property name="Title">$INFO[Window(Weather).Property(Day2.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day2.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.3.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day2.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>
@@ -9331,7 +9338,7 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day3.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                        <icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Daily.3.OutlookIcon)]</icon>
                         <property name="Title">$INFO[Window(Weather).Property(Day3.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day3.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.4.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day3.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>
@@ -9342,7 +9349,7 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day4.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                        <icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</icon>
                         <property name="Title">$INFO[Window(Weather).Property(Day4.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day4.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.5.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day4.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>
@@ -9353,7 +9360,7 @@
                     <item>
                         <label>$INFO[Window(Weather).Property(Location)] - $INFO[Window(Weather).Property(Day5.Title)]</label>
                         <label2>$LOCALIZE[31176] $LOCALIZE[31000] [B]$INFO[Window(weather).Property(WeatherProvider)][/B]</label2>
-                        <icon>$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                        <icon>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Daily.5.OutlookIcon)]</icon>
                         <property name="Title">$INFO[Window(Weather).Property(Day5.Title)]</property>
                         <property name="Fanart" fallback="SmallFanartFallback.jpg">special://skin/extras/Weather/$INFO[Window(Weather).Property(Day5.FanartCode)]</property>
                         <property name="Plot">[COLOR=grey2]$LOCALIZE[419] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day5.HighTemp)]$INFO[System.TemperatureUnits]     [COLOR=grey2]$LOCALIZE[418] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Day5.LowTemp)]$INFO[System.TemperatureUnits][CR][COLOR=grey2]$LOCALIZE[31173] $LOCALIZE[31000] [/COLOR]$INFO[Window(Weather).Property(Daily.6.ChancePrecipitation)][CR]$INFO[Window(Weather).Property(Day5.Outlook),[COLOR=grey2]$LOCALIZE[33030] $LOCALIZE[31000] [/COLOR]]</property>

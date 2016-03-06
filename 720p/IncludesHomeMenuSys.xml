@@ -369,6 +369,16 @@
         <onload>Skin.SetString(StickyMenuSelect.Path,ActivateWindow(Pictures))</onload>
         <onload>Skin.SetString(HolidayThemePath,special://skin/extras/holiday/xmastree.jpg)</onload>
         <onload>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/splash.jpg)</onload>
+		
+		
+		
+		<onload>Skin.Reset(resource.images.weathericons.multi)</onload>
+		<onload>Skin.SetString(resource.images.weathericons.name,Weather Icons - Default)</onload>
+		<onload>Skin.SetString(resource.images.weathericons.path,resource://resource.images.weathericons.default/)</onload>
+		<onload>Skin.SetString(resource.images.weathericons.ext,.png)</onload>
+		
+			 
+		 
         <onload>Skin.SetString(WeatherFanartDir,special://skin/extras/Weather/)</onload>
         <onload condition="System.Date(11-24,1-6)">Skin.Setbool(EnableHolidayEffects)</onload>
         <onload>Skin.SetString(FanArtCycleRate,10)</onload>

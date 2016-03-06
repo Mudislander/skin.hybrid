@@ -6935,7 +6935,11 @@
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="button" id="719">
+                    
+					
+					
+					
+					<control type="button" id="719">
                         <description>User Weather FanArt Path</description>
                         <width>750</width>
                         <height>40</height>
@@ -6944,12 +6948,67 @@
                         <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
                         <label>31100</label>
                         <label2>[COLOR=$VAR[SelectedColor]]$VAR[WeatherFanArtDirLabel][/COLOR]</label2>
-                        <onclick>Skin.Reset(WeatherFanartDir)</onclick>
-                        <onclick>Skin.SetPath(WeatherFanartDir)</onclick>
+                        <!--onclick>Skin.Reset(WeatherFanartDir)</onclick>
+                        <onclick>Skin.SetPath(WeatherFanartDir)</onclick-->
+						
+						
+						<onclick>RunScript(script.image.resource.select,type=resource.images.weatherfanart&amp;property=resource.images.homeweatherfanart)</onclick>
+						
+						
+						
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="label" id="720">
+					
+					
+					
+					
+					
+					<!-- RONIE
+					<control type="button" id="523">
+						<label>31205</label>
+						<label2>$INFO[Skin.String(resource.images.weathericons.name)]</label2>
+						<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=resource.images.weathericons)</onclick>
+					</control>
+					-->
+					
+					 <control type="label" id="720">
+                        <width>750</width>
+                        <height>45</height>
+                        <font>font13_title</font>
+                        <label>*** User Defined Icon sets</label>
+                        <textcolor>$VAR[MainColorOne]</textcolor>
+                        <shadowcolor>black</shadowcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                    </control>
+					<control type="button" id="721">
+                        <description>User Weather Icon Pack</description>
+                        <width>750</width>
+                        <height>40</height>
+                        <font>font13</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+                        <label>*** Weather Icon Pack</label>
+                        <label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(resource.images.weathericons.name)][/COLOR]</label2>
+               			
+						<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=resource.images.weathericons)</onclick>
+						
+						
+                        <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+                        <texturenofocus>MenuItemNF.png</texturenofocus>
+                    </control>
+					
+                   
+
+
+
+
+				   
+					
+					
+					
+					<control type="label" id="730">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -6959,7 +7018,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="radiobutton" id="721">
+                    <control type="radiobutton" id="731">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -6971,7 +7030,7 @@
                         <onclick>Skin.ToggleSetting(usedisctypecase)</onclick>
                         <selected>Skin.HasSetting(usedisctypecase)</selected>
                     </control>
-                    <control type="radiobutton" id="722">
+                    <control type="radiobutton" id="732">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -6983,7 +7042,7 @@
                         <onclick>Skin.ToggleSetting(DisableLogoArt)</onclick>
                         <selected>!Skin.HasSetting(DisableLogoArt)</selected>
                     </control>
-                    <control type="radiobutton" id="723">
+                    <control type="radiobutton" id="733">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -6995,7 +7054,7 @@
                         <onclick>Skin.ToggleSetting(DisableDiscArt)</onclick>
                         <selected>!Skin.HasSetting(DisableDiscArt)</selected>
                     </control>
-                    <control type="radiobutton" id="724">
+                    <control type="radiobutton" id="734">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7007,7 +7066,7 @@
                         <onclick>Skin.ToggleSetting(DisableClearArt)</onclick>
                         <selected>!Skin.HasSetting(DisableClearArt)</selected>
                     </control>
-                    <control type="radiobutton" id="725">
+                    <control type="radiobutton" id="735">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7020,7 +7079,7 @@
                         <selected>!Skin.HasSetting(DisableSlideShowArt)</selected>
                         <enable>System.HasAddon(script.artistslideshow)</enable>
                     </control>
-                    <control type="radiobutton" id="726">
+                    <control type="radiobutton" id="736">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7033,7 +7092,7 @@
                         <selected>Skin.HasSetting(EnableFanartScript)</selected>
                         <enable>System.HasAddon(script.grab.fanart)</enable>
                     </control>
-                    <control type="button" id="727">
+                    <control type="button" id="737">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7046,7 +7105,7 @@
                         <onclick>Skin.SetNumeric(FanArtCycleRate)</onclick>
                         <enable>Skin.HasSetting(EnableFanartScript)</enable>
                     </control>
-                    <control type="radiobutton" id="728">
+                    <control type="radiobutton" id="738">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7059,7 +7118,7 @@
                         <selected>Skin.HasSetting(EnableAutoUpdateArt)</selected>
                         <enable>System.HasAddon(script.artwork.downloader)</enable>
                     </control>
-                    <control type="radiobutton" id="729">
+                    <control type="radiobutton" id="739">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7072,7 +7131,7 @@
                         <selected>Skin.HasSetting(EnableFileSysArt)</selected>
                         <enable>!Skin.HasSetting(DisableDiscArt) | !Skin.HasSetting(DisableClearArt) | !Skin.HasSetting(DisableLogoArt)</enable>
                     </control>
-                    <control type="label" id="730">
+                    <control type="label" id="740">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -7082,7 +7141,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="button" id="731">
+                    <control type="button" id="741">
                         <description>Main Colour One</description>
                         <width>750</width>
                         <height>40</height>
@@ -7096,7 +7155,7 @@
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="button" id="732">
+                    <control type="button" id="742">
                         <description>Main Colour Two</description>
                         <width>750</width>
                         <height>40</height>
@@ -7110,7 +7169,7 @@
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="button" id="733">
+                    <control type="button" id="743">
                         <description>Selected Colour</description>
                         <width>750</width>
                         <height>40</height>
@@ -7124,7 +7183,7 @@
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
-                    <control type="label" id="735">
+                    <control type="label" id="745">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -7134,7 +7193,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="button" id="736">
+                    <control type="button" id="746">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7146,7 +7205,7 @@
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                         <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
                     </control>
-                    <control type="radiobutton" id="737">
+                    <control type="radiobutton" id="747">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7159,7 +7218,7 @@
                         <selected>!Skin.HasSetting(DisableTVTunes)</selected>
                         <enable>System.HasAddon(script.tvtunes)</enable>
                     </control>
-                    <control type="radiobutton" id="738">
+                    <control type="radiobutton" id="748">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7172,7 +7231,7 @@
                         <selected>!Skin.HasSetting(DisableGlobalSearch)</selected>
                         <enable>System.HasAddon(script.globalsearch)</enable>
                     </control>
-                    <control type="radiobutton" id="739">
+                    <control type="radiobutton" id="749">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7185,7 +7244,7 @@
                         <selected>!Skin.HasSetting(DisableTVNextAired)</selected>
                         <enable>System.HasAddon(script.tv.show.next.aired)</enable>
                     </control>
-                    <control type="radiobutton" id="740">
+                    <control type="radiobutton" id="750">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7198,7 +7257,7 @@
                         <selected>!Skin.HasSetting(DisableWatchitLater)</selected>
                         <enable>System.HasAddon(script.simpleplaylists)</enable>
                     </control>
-                    <!--control type="radiobutton" id="741">
+                    <!--control type="radiobutton" id="751">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7211,7 +7270,7 @@
                         <selected>!Skin.HasSetting(DisableScriptPlaylist)</selected>
                         <enable>System.HasAddon(script.randomandlastitems)</enable>
                     </control-->
-                    <control type="label" id="750">
+                    <control type="label" id="760">
                         <width>750</width>
                         <height>45</height>
                         <font>font13_title</font>
@@ -7221,13 +7280,13 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
-                    <control type="image" id="751">
+                    <control type="image" id="761">
                         <width>750</width>
                         <height>140</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>warning.png</texture>
                     </control>
-                    <control type="button" id="752">
+                    <control type="button" id="762">
                         <description>Reset Skin Values</description>
                         <width>750</width>
                         <height>45</height>

@@ -58,7 +58,7 @@
                 <height>200</height>
                 <aspectratio align="center">stretch</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
-                <texture fallback="Fanart_Fallback_Music_Small.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
+                <texture fallback="fanart_fallback_small.jpg" diffuse="episodematte.png">$INFO[Container(450).ListItem.Thumb]</texture>
                 <bordertexture border="8">ThumbShadow.png</bordertexture>
                 <bordersize>8</bordersize>
             </control>
@@ -359,7 +359,7 @@
                         <label2>31252</label2>
                         <onclick>PreviousMenu</onclick>
                         <icon>DefaultAlbumCover.png</icon>
-                        <thumb>Fanart_Fallback_Music_Small.jpg</thumb>
+                        <thumb>fanart_fallback_small.jpg</thumb>
                         <visible>IsEmpty(Window(home).Property(RecommendedAlbum.1.Title)) + IsEmpty(Window(home).Property(RecentAlbum.1.Title))</visible>
                     </item>
                 </content>
