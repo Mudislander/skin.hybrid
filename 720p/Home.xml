@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+
     <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
-    <onload>SetProperty(RefreshList,1,Home)</onload>
-    <onload condition="!IsEmpty(Window(Home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
+    
+	<onload>SetProperty(RefreshList,1,Home)</onload>
+    
+	<onload condition="!IsEmpty(Window(Home).Property(MenuItemSelected))">ClearProperty(MenuItemSelected,Home)</onload>
     <onload condition="!IsEmpty(Window(Home).Property(MenuItemActive))">ClearProperty(MenuItemActive,Home)</onload>
     <onload condition="!IsEmpty(Window(Home).Property(SubMenuBackground))">ClearProperty(SubMenuBackground,Home)</onload>
     <onload condition="!IsEmpty(Window(Home).Property(MenuBackground))">ClearProperty(MenuBackground,Home)</onload>
     <onload condition="Skin.HasSetting(EnableHolidayEffects) + System.Date(1-6,11-23)">Skin.Reset(EnableHolidayEffects)</onload>
     <onload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(WOLPingTimer) + Skin.String(PingMacAddr)">AlarmClock(WOLPingAlarm,WakeOnLan($INFO[Skin.String(PingMacAddr)]),$INFO[Skin.String(WOLPingTimer)]:00,silent,loop)</onload>
     <onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
-    <onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,special://skin/extras/Weather/)</onload>
+    <onload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,resource://resource.images.weatherfanart.prairie/)</onload>
     <onload condition="!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=true)</onload>
-    <!--
+   
 	<onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Library.HasContent(Movies)">XBMC.RunScript(script.randomandlastitems,type=Movie,limit=12,method=Random,playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
     <onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.1.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.1.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistOne)</onload>
     <onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.2.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.2.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistTwo)</onload>
@@ -25,25 +27,15 @@
     <onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.8.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.8.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistEight)</onload>
     <onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.9.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.9.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistNine)</onload>
     <onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.10.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.10.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistTen)</onload>
-    -->
+   
 	<onload condition="!IsEmpty(Weather.Plugin) + !Weather.IsFetched">Weather.Refresh</onload>
     <onload condition="Window.Previous(Startup)">Control.Move(9000,$INFO[Skin.String(InitialMenuItem)])</onload>
     <controls>
         
 		
-		
-		
-					
-	
-		
-		
-		
-		
-		
-		
-		
 		<include condition="!Skin.HasSetting(DisableDataService) + !Skin.HasSetting(HideHomeStats)">VideoNodeStatsList</include>
-        <include>CommonBackground</include>
+        
+		<include>CommonBackground</include>
         <include condition="!Skin.HasSetting(HideRainDropEffect) | Skin.HasSetting(EnableHolidayEffects)">AnimatedBackgroundEffect</include>
         <control type="image">
             <left>0</left>
@@ -148,33 +140,28 @@
                 <width>165</width>
                 <height>234</height>
                 <aspectratio align="left" aligny="center">keep</aspectratio>
-                <!--texture background="true">$VAR[InfoWidgetPoster]</texture-->
-                
-				<!--texture background="true">$INFO[Skin.String(resource.images.weathericons.path)]30.png</texture-->
-				<texture>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
-				
+                <texture background="true">$VAR[InfoWidgetPoster]</texture>
 				<bordertexture border="-29">posterframe.png</bordertexture>
                 <fadetime>FanartCrossFadeTime</fadetime>
 				
-				<!--visible>![Player.HasMedia | Control.HasFocus(510)] + !StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather)</visible-->
-				
+				<visible>![Player.HasMedia | Control.HasFocus(510)]</visible>
 				<visible>!StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) | !Skin.HasSetting(resource.images.weathericons.multi)</visible>
-				
-				
+							
             </control>
 			
 			<control type="multiimage">
-			<description>animated weather icon</description>
-						<left>1042</left>
+				<description>animated weather icon</description>
+				<left>1042</left>
                 <top>180</top>
  				 <width>165</width>
                 <height>165</height>
-			<imagepath>$INFO[Skin.String(resource.images.weathericons.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
-			<timeperimage>100</timeperimage>
-			<randomize>false</randomize>
-			<fadetime>1</fadetime>
-			<visible>![Player.HasMedia | Control.HasFocus(510)] + StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) + Skin.HasSetting(resource.images.weathericons.multi)</visible>
-		</control>
+				<imagepath>$INFO[Skin.String(resource.images.weathericons.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>100</timeperimage>
+				<randomize>false</randomize>
+				<fadetime>1</fadetime>
+				<visible>![Player.HasMedia | Control.HasFocus(510)]</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) + Skin.HasSetting(resource.images.weathericons.multi)</visible>
+			</control>
 			
 			
 			<control type="button" id="9004">
@@ -835,10 +822,6 @@
         </control>
         
 		
-		
-		
-		
-		
 		<control type="image">
             <left>10</left>
             <top>-8</top>
@@ -1101,6 +1084,10 @@
             <textcolor>lightgrey</textcolor>
             <shadowcolor>black</shadowcolor>
             <label>$INFO[System.Date]</label>
+			
+			
+			
+			
             <include>Window_OpenClose_Animation</include>
             <animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomePowerBtn)">conditional</animation>
             <animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomeDVDBtn)">conditional</animation>

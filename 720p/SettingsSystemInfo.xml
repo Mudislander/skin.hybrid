@@ -3,7 +3,7 @@
     <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
     <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <defaultcontrol always="true">95</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+
     <controls>
         <control type="image">
             <include>Dimensions_Fullscreen</include>

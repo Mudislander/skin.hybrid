@@ -5,7 +5,11 @@
     <onload>SetProperty(MenuItemActive,Settings,Home)</onload>
     <onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
     <onload condition="stringcompare(Container(9011).Position,0) + !stringcompare(Skin.String(InitialMenuPosi),0)">Control.Move(9011,$INFO[Skin.String(InitialMenuPosi)])</onload>
-    <onunload condition="IsEmpty(Skin.String(WeatherFanartDir)) | SubString(Skin.String(WeatherFanartDir),skin.ccm.helix\extras\Weather\,right)">Skin.SetString(WeatherFanartDir,special://skin/extras/Weather/)</onunload>
+    
+	
+	<!--onunload condition="IsEmpty(Skin.String(WeatherFanartDir))">Skin.SetString(WeatherFanartDir,resource://resource.images.weatherfanart.prairie/)</onunload-->
+	
+	
     <onunload condition="!Skin.HasSetting(DisableFanartScript) + IntegerGreaterThan(Skin.String(FanArtCycleRate),0)">RunScript(script.grab.fanart,mode=random,refresh=$INFO[Skin.String(FanArtCycleRate)])</onunload>
     <onunload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(PingMacAddr)">WakeOnLan($INFO[Skin.String(PingMacAddr)])</onunload>
     <controls>
@@ -6949,12 +6953,10 @@
                         <label>31100</label>
                         <label2>[COLOR=$VAR[SelectedColor]]$VAR[WeatherFanArtDirLabel][/COLOR]</label2>
                         <!--onclick>Skin.Reset(WeatherFanartDir)</onclick>
-                        <onclick>Skin.SetPath(WeatherFanartDir)</onclick-->
+ 					   <!--onclick>Skin.SetPath(WeatherFanartDir)</onclick-->
 						
-						
+						<onclick>Skin.Reset(resource.images.weatherfanart.path)</onclick>
 						<onclick>RunScript(script.image.resource.select,type=resource.images.weatherfanart&amp;property=resource.images.homeweatherfanart)</onclick>
-						
-						
 						
                         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
@@ -6982,6 +6984,8 @@
                         <align>left</align>
                         <aligny>center</aligny>
                     </control>
+					
+					
 					<control type="button" id="721">
                         <description>User Weather Icon Pack</description>
                         <width>750</width>
@@ -6989,13 +6993,10 @@
                         <font>font13</font>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-                        <label>*** Weather Icon Pack</label>
-                        <label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(resource.images.weathericons.name)][/COLOR]</label2>
-               			
-						<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=resource.images.weathericons)</onclick>
-						
-						
-                        <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+                        <label>$LOCALIZE[31359]</label>
+                        <label2>[COLOR=$VAR[SelectedColor]]$VAR[WeatherIconName][/COLOR]</label2>
+               			<onclick>RunScript(script.image.resource.select,type=resource.images.weathericons&amp;property=resource.images.weathericons)</onclick>
+				         <texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
                         <texturenofocus>MenuItemNF.png</texturenofocus>
                     </control>
 					
@@ -7257,7 +7258,7 @@
                         <selected>!Skin.HasSetting(DisableWatchitLater)</selected>
                         <enable>System.HasAddon(script.simpleplaylists)</enable>
                     </control>
-                    <!--control type="radiobutton" id="751">
+                    <control type="radiobutton" id="751">
                         <width>750</width>
                         <height>40</height>
                         <font>font13</font>
@@ -7269,7 +7270,7 @@
                         <onclick>Skin.ToggleSetting(DisableScriptPlaylist)</onclick>
                         <selected>!Skin.HasSetting(DisableScriptPlaylist)</selected>
                         <enable>System.HasAddon(script.randomandlastitems)</enable>
-                    </control-->
+                    </control>
                     <control type="label" id="760">
                         <width>750</width>
                         <height>45</height>

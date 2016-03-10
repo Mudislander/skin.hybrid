@@ -2,7 +2,7 @@
 <window>
     <onload>SetProperty(Weather.CurrentView,$INFO[Skin.String(LastWeatherView)])</onload>
     <defaultcontrol always="true">50</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+
     <onunload>ClearProperty(SideBladeOpen,Home)</onunload>
     <onunload>Skin.SetString(LastWeatherView,$INFO[Window.Property(Weather.CurrentView)])</onunload>
     <controls>
@@ -15,7 +15,9 @@
             <texture>black-back.png</texture>
             <colordiffuse>AAFFFFFF</colordiffuse>
         </control>
+		
         <include>MediaViewBackgrounds</include>
+		
         <control type="group">
             <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />

@@ -70,7 +70,7 @@
         <control type="group">
             <!-- Multi Image Backgounds NOT on Home  -->
             <visible>!Window.IsVisible(Home) + Skin.HasSetting(MultiImageBackground) + !Skin.HasSetting(EnableHolidayEffects)</visible>
-            <visible>!Player.HasVideo | Skin.HasSetting(HideNowPlayingFanart)</visible>
+			<visible>!Player.HasVideo | Skin.HasSetting(HideNowPlayingFanart)</visible>
             <control type="multiimage">
                 <include>Dimensions_Fullscreen</include>
                 <aspectratio>scale</aspectratio>

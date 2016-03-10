@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+
     <views>50,51,500,551,560,515,724,508,504,503,501,555,732,594,730,529,505,728,550,511</views>
     <onload condition="!Skin.HasSetting(DisableTVTunes) + !SubString(Window(Videos).Property(CinemaExperienceRunning),true)">RunScript(script.tvtunes,backend=true)</onload>
     <onload condition="!Skin.HasSetting(DisableTVNextAired)">RunScript(script.tv.show.next.aired,backend=true,silent=true)</onload>

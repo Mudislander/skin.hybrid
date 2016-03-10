@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol always="true">10</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+
     <include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
     <onload condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onload>
     <onload condition="!Skin.HasSetting(DisableDataService) + !System.HasAddon(service.library.data.provider)">Skin.Setbool(DisableDataService)</onload>

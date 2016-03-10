@@ -3248,11 +3248,11 @@
                 <visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies)</visible>
                 <include>WidgetVideoLayout</include>
                 
-				 <content target="video" limit="12">special://skin/extras/Playlists/UnwatchedMovies.xsp</content>
+				 <!--content target="video" limit="12">special://skin/extras/Playlists/UnwatchedMovies.xsp</content-->
 				
 				
 				
-				<!--
+				<!-- -->
 				<content>
                     <item>
                         <label>$INFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.Title)]</label>
@@ -3448,13 +3448,13 @@
                     </item>
                    
                 </content>
-				-->
+				<!-- -->
             </control>
         </control>
     </include>
    
 	
-	<!--
+	<!-- -->
 	<include name="WidgetVideoPlayListContent">
         <control type="group">
             <left>0</left>
@@ -7456,7 +7456,7 @@
         </control>
 		
     </include>
-	-->
+	<!-- -->
 	
 	
     <include name="WidgetMusicPlayListContent">

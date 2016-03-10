@@ -1047,6 +1047,9 @@
             <onclick condition="!IsEmpty(Skin.String(SubSetSeven.3.Path))">$INFO[Skin.String(SubSetSeven.3.Path)]</onclick>
             <visible>!stringcompare(Skin.String(SubSetSeven.3.Path),Hidden)</visible>
         </item>
+		
+		
+		
         <item>
             <label>$VAR[SubSetSevenItemFour]</label>
             <onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
@@ -1061,6 +1064,12 @@
             <onclick condition="!IsEmpty(Skin.String(SubSetSeven.5.Path))">$INFO[Skin.String(SubSetSeven.5.Path)]</onclick>
             <visible>!stringcompare(Skin.String(SubSetSeven.5.Path),Hidden)</visible>
         </item>
+		
+		
+		
+		
+		
+		
         <item>
             <label>$VAR[SubSetSevenItemSix]</label>
             <onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>

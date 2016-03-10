@@ -469,7 +469,10 @@
                 <font>font12</font>
                 <textcolor>grey</textcolor>
                 <shadowcolor>black</shadowcolor>
-                <label>$INFO[Window(Home).Property(NextAired.NextNumber),[COLOR=$VAR[MainColorOne]]$LOCALIZE[209]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.NextTitle), • ]</label>
+                <!--label>$INFO[Window(Home).Property(NextAired.NextNumber),[COLOR=$VAR[MainColorOne]]$LOCALIZE[209]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.NextTitle), • ]</label-->
+				
+				<label>$INFO[Window(Home).Property(NextAired.NextNumber),[COLOR=white]$LOCALIZE[209]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.NextTitle), • ]</label>
+				
                 <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
             </control>
             <control type="label">
@@ -482,7 +485,10 @@
                 <font>font10</font>
                 <textcolor>grey</textcolor>
                 <shadowcolor>black</shadowcolor>
-                <label>$INFO[Window(Home).Property(NextAired.NextDate),[COLOR=$VAR[MainColorOne]]$LOCALIZE[552]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.AirTime), • ]</label>
+                <!--label>$INFO[Window(Home).Property(NextAired.NextDate),[COLOR=$VAR[MainColorOne]]$LOCALIZE[552]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.AirTime), • ]</label-->
+				
+				<label>$INFO[Window(Home).Property(NextAired.NextDate),[COLOR=white]$LOCALIZE[552]:[/COLOR] ]$INFO[Window(Home).Property(NextAired.AirTime), • ]</label>
+				
                 <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
             </control>
         </control>

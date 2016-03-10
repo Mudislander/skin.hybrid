@@ -377,15 +377,20 @@
 		<onload>Skin.SetString(resource.images.weathericons.path,resource://resource.images.weathericons.default/)</onload>
 		<onload>Skin.SetString(resource.images.weathericons.ext,.png)</onload>
 		
-			 
+		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.Reset(resource.images.weatherfanart.multi)</onload>
+		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.name,Weather Fanart - Prairie)</onload>
+		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.path,resource://resource.images.weatherfanart.prairie/)</onload>
+		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.ext,.jpg)</onload>	 
 		 
-        <onload>Skin.SetString(WeatherFanartDir,special://skin/extras/Weather/)</onload>
-        <onload condition="System.Date(11-24,1-6)">Skin.Setbool(EnableHolidayEffects)</onload>
+        <!--onload>Skin.SetString(WeatherFanartDir,resource://resource.images.weatherfanart.prairie/)</onload-->
+       
+
+	   <onload condition="System.Date(11-24,1-6)">Skin.Setbool(EnableHolidayEffects)</onload>
         <onload>Skin.SetString(FanArtCycleRate,10)</onload>
         <onload>Skin.SetBool(UseStickyHomeMenu)</onload>
-        <!--
+       
 		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlaylist)</onload>
-		-->
+		
         <onload>Skin.SetBool(InitialSetUpRun)</onload>
     </include>
     <include name="WrapHomeMainMenu">

@@ -293,16 +293,6 @@
             <itemlayout />
             <content>$VAR[VideoNodeStats]</content>
         </control>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
     </include>
     <!--include name="VideoNodeContentList">
         <control type="list" id="8052">
@@ -343,12 +333,6 @@
 			</control>
 			<visible>Skin.HasSetting(UPnP_Mode) + Skin.String(UPnPServer,XBMC)</visible>
 		</control>
-	
-	
-	
-	
-	
-	
 	-->
     <include name="VideoBoxGlass">
         <control type="image">
@@ -475,8 +459,8 @@
     </include>
     <include name="WidgetPanelVizability">
 	
-	 <visible>true </visible>
-	<!--
+	 <!--visible>true </visible-->
+	<!---->
         <visible>
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
@@ -506,7 +490,7 @@
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
 		</visible>
-		-->
+		<!-- -->
         <!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
     </include>
     <include name="MenuMoviePlayListCheck">
