@@ -5,7 +5,7 @@
 		<left>200</left>
 		<top>20</top>
 	</coordinates>
-	<include>dialogeffect</include>
+	<include>DialogEffect</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -555,7 +555,6 @@
 			<label>$INFO[RDS.ProgEditStaff]</label>
 			<visible>!IsEmpty(RDS.ProgEditStaff)</visible>
 		</control>
-
 		<control type="grouplist">
 			<left>10</left>
 			<top>280</top>
@@ -869,7 +868,6 @@
 				<visible>!IsEmpty(RDS.EmailHotline)</visible>
 			</control>
 		</control>
-
 		<control type="group" id="70">
 			<description>Radio text info list</description>
 			<left>40</left>

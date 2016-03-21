@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="skin.hybrid"
-  version="4.0.5"
+  version="4.0.11"
   name="Hybrid"
   provider-name="Mudislander">
   <requires>
@@ -14,8 +14,11 @@
 		<import addon="script.artwork.downloader" version="13.1.0"/>
 		<import addon="script.globalsearch" version="6.0.6"/>
 		<import addon="script.grab.fanart" version="0.14.1"/>
+		<import addon="script.artistslideshow" version="1.8.7"/>
 		<import addon="script.image.resource.select" version="0.1.1"/>
+		<import addon="resource.images.weathericons.3d-coloured" version="0.0.5"/>
 		<import addon="resource.images.weatherfanart.prairie" version="0.0.5"/>
+		<import addon="resource.images.moviegenreicons.xzener-flat" version="0.0.2"/>
 	</requires>
   <extension
     point="xbmc.gui.skin"

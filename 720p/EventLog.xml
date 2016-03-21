@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
+	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<defaultcontrol always="true">570</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1112)</onload>
 	<views>570</views>
 	<controls>
-		<include>CommonBackground</include>
-		<include>ContentPanelBackgrounds</include>
-		<control type="group">
-			<depth>DepthFooter</depth>
-			<include>CommonPageCount</include>
-			<include>CommonNowPlaying</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">special://skin/backgrounds/settings.jpg</texture>
+			<include>BackgroundFade</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<include>Window_OpenClose_Animation</include>
 		</control>
-		<include>MainWindowMouseButtons</include>
+		<include condition="Skin.HasSetting(InitialSetUpRun)">CommonBackground</include>
+		<control type="button" id="800">
+			<include>InvisibleButton</include>
+			<onleft>801</onleft>
+			<onright>804</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<visible>false</visible>
+		</control>
+		<!--control type="image">
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
+			<left>480</left>
+			<top>0</top>
+			<width>800</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>black-back.png</texture>
+		</control-->
 		<include>BehindDialogFadeOut</include>
-		<include>ScrollOffsetLabel</include>
+		<include>MediaViewBackgrounds</include>
+		<include>FloorReturnButtons</include>
+		<include>CommonPageCount</include>
+		<include>CommonNowPlaying</include>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>
 			<include>Window_OpenClose_Animation</include>

@@ -1,148 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="FullScreenMediaFlagging">
-        <control type="group">
-            <include>Window_OpenClose_Animation</include>
-            <control type="grouplist">
-                <description>Media Codec Flagging Images</description>
-                <left>100</left>
-                <top>18</top>
-                <width>900</width>
-                <align>center</align>
-                <itemgap>5</itemgap>
-                <orientation>horizontal</orientation>
-                <animation effect="slide" start="0,0" end="0,-30" time="0" condition="Skin.HasSetting(EnableAdditionalArtWork) + !Control.IsVisible(555) + !Control.IsVisible(594)">conditional</animation>
-                <control type="image">
-                    <description>Video rez Image</description>
-                    <width>58</width>
-                    <height>28</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$VAR[TypeHackFlagging,flagging/video/,.png]</texture>
-                </control>
-                <control type="image">
-                    <description>Codec Image</description>
-                    <width>58</width>
-                    <height>28</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$VAR[videocodec,flagging/video/,.png]</texture>
-                </control>
-                <control type="image">
-                    <description>Audio Codec Image</description>
-                    <width>58</width>
-                    <height>28</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$VAR[AudioCodecFlag,flagging/audio/,.png]</texture>
-                </control>
-                <control type="image">
-                    <description>Audio Codec Image</description>
-                    <width>37</width>
-                    <height>28</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
-                </control>
-                <control type="image">
-                    <description>Aspectratio Image</description>
-                    <width>58</width>
-                    <height>28</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
-                </control>
-                <visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
-            </control>
-            <control type="image">
-                <description>Studio image</description>
-                <left>0</left>
-                <top>0</top>
-                <width>96</width>
-                <height>46</height>
-                <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-                <visible>!IsEmpty(ListItem.Studio)</visible>
-            </control>
-            <control type="image">
-                <description>Rating image</description>
-                <left>1004</left>
-                <top>0</top>
-                <width>96</width>
-                <height>46</height>
-                <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-                <visible>!IsEmpty(ListItem.Mpaa)</visible>
-            </control>
-        </control>
-    </include>
-    <include name="MovieSetFlaggingConditions">
-        <control type="image">
-            <description>Rating image</description>
-            <width>75</width>
-            <height>35</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>flagging/video/movieset.png</texture>
-            <visible>Container.Content(Movies)</visible>
-            <visible>!Window.IsVisible(VideoPlaylist) + !stringcompare(ListItem.Label,..) + ListItem.IsFolder + SubString(Container.FolderPath,videodb://,left)</visible>
-        </control>
-    </include>
-    <include name="VideoStudioFlagging">
-        <control type="image">
-            <description>Studio image</description>
-            <width>75</width>
-            <height>35</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
-            <visible>!IsEmpty(Control.GetLabel(5047)) + !IsEmpty(ListItem.Studio)</visible>
-        </control>
-    </include>
-    <include name="VideoMPAAFlaggingConditions">
-        <control type="image">
-            <description>Rating image</description>
-            <width>75</width>
-            <height>35</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
-            <visible>!IsEmpty(ListItem.Mpaa)</visible>
-        </control>
-    </include>
-    <include name="VideoCodecFlaggingConditions">
-        <control type="image">
-            <description>Video rez Image</description>
-            <width>58</width>
-            <height>28</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$VAR[TypeHackFlagging,flagging/video/,.png]</texture>
-        </control>
-        <control type="image">
-            <description>Codec Image</description>
-            <width>58</width>
-            <height>28</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$VAR[videocodec,flagging/video/,.png]</texture>
-        </control>
-    </include>
-    <include name="AudioCodecFlaggingConditions">
-        <control type="image">
-            <description>Audio Codec Image</description>
-            <width>58</width>
-            <height>28</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$VAR[AudioCodecFlag,flagging/audio/,.png]</texture>
-        </control>
-    </include>
-    <include name="AudioChannelsFlaggingConditions">
-        <control type="image">
-            <description>Audio Codec Image</description>
-            <width>37</width>
-            <height>28</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
-        </control>
-    </include>
-    <include name="AspectCodecFlaggingConditions">
-        <control type="image">
-            <description>Aspectratio Image</description>
-            <width>58</width>
-            <height>28</height>
-            <aspectratio align="center" aligny="bottom">keep</aspectratio>
-            <texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
-        </control>
-    </include>
+	<include name="FullScreenMediaFlagging">
+		<control type="group">
+			<include>Window_OpenClose_Animation</include>
+			<control type="grouplist">
+				<description>Media Codec Flagging Images</description>
+				<left>100</left>
+				<top>18</top>
+				<width>900</width>
+				<align>center</align>
+				<itemgap>5</itemgap>
+				<orientation>horizontal</orientation>
+				<animation effect="slide" start="0,0" end="0,-30" time="0" condition="Skin.HasSetting(EnableAdditionalArtWork) + !Control.IsVisible(555) + !Control.IsVisible(594)">conditional</animation>
+				<control type="image">
+					<description>Video rez Image</description>
+					<width>58</width>
+					<height>28</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$VAR[TypeHackFlagging,flagging/video/,.png]</texture>
+				</control>
+				<control type="image">
+					<description>Codec Image</description>
+					<width>58</width>
+					<height>28</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$VAR[videocodec,flagging/video/,.png]</texture>
+				</control>
+				<control type="image">
+					<description>Audio Codec Image</description>
+					<width>58</width>
+					<height>28</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$VAR[AudioCodecFlag,flagging/audio/,.png]</texture>
+				</control>
+				<control type="image">
+					<description>Audio Codec Image</description>
+					<width>37</width>
+					<height>28</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
+				</control>
+				<control type="image">
+					<description>Aspectratio Image</description>
+					<width>58</width>
+					<height>28</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
+				</control>
+				<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
+				<visible>!Control.IsVisible(501) | [Control.IsVisible(501) + !Skin.HasSetting(EnableGenreFlagging)]</visible>
+			</control>
+			<control type="image">
+				<description>Studio image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>96</width>
+				<height>46</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+				<visible>!IsEmpty(ListItem.Studio)</visible>
+			</control>
+			<control type="image">
+				<description>Rating image</description>
+				<left>1004</left>
+				<top>0</top>
+				<width>96</width>
+				<height>46</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+				<visible>!IsEmpty(ListItem.Mpaa)</visible>
+			</control>
+		</control>
+	</include>
+	<include name="MovieSetFlaggingConditions">
+		<control type="image">
+			<description>Rating image</description>
+			<width>75</width>
+			<height>35</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>flagging/video/movieset.png</texture>
+			<visible>Container.Content(Movies)</visible>
+			<visible>!Window.IsVisible(VideoPlaylist) + !stringcompare(ListItem.Label,..) + ListItem.IsFolder + SubString(Container.FolderPath,videodb://,left)</visible>
+		</control>
+	</include>
+	<include name="VideoStudioFlagging">
+		<control type="image">
+			<description>Studio image</description>
+			<width>75</width>
+			<height>35</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+			<visible>!IsEmpty(Control.GetLabel(5047)) + !IsEmpty(ListItem.Studio)</visible>
+		</control>
+	</include>
+	<include name="VideoMPAAFlaggingConditions">
+		<control type="image">
+			<description>Rating image</description>
+			<width>75</width>
+			<height>35</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+			<visible>!IsEmpty(ListItem.Mpaa)</visible>
+		</control>
+	</include>
+	<include name="VideoCodecFlaggingConditions">
+		<control type="image">
+			<description>Video rez Image</description>
+			<width>58</width>
+			<height>28</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$VAR[TypeHackFlagging,flagging/video/,.png]</texture>
+		</control>
+		<control type="image">
+			<description>Codec Image</description>
+			<width>58</width>
+			<height>28</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$VAR[videocodec,flagging/video/,.png]</texture>
+		</control>
+	</include>
+	<include name="AudioCodecFlaggingConditions">
+		<control type="image">
+			<description>Audio Codec Image</description>
+			<width>58</width>
+			<height>28</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$VAR[AudioCodecFlag,flagging/audio/,.png]</texture>
+		</control>
+	</include>
+	<include name="AudioChannelsFlaggingConditions">
+		<control type="image">
+			<description>Audio Codec Image</description>
+			<width>37</width>
+			<height>28</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$INFO[ListItem.AudioChannels,flagging/audio/,.png]</texture>
+		</control>
+	</include>
+	<include name="AspectCodecFlaggingConditions">
+		<control type="image">
+			<description>Aspectratio Image</description>
+			<width>58</width>
+			<height>28</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture>$INFO[ListItem.VideoAspect,flagging/aspectratio/,.png]</texture>
+		</control>
+	</include>
 </includes>
