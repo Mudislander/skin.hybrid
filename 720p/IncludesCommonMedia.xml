@@ -54,10 +54,20 @@
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
+				<imagepath background="true">$VAR[InfoWidgetFanArt]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<visible>Control.HasFocus(510)</visible>
+			</control>
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
 				<imagepath background="true">$VAR[HomeMenuItemBackground]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
+				<visible>!Control.HasFocus(510)</visible>
 			</control>
 			<control type="group">
 				<include>BackgroundFade</include>
@@ -65,6 +75,7 @@
 				<include>Window_OpenClose_Animation</include>
 				<include>LiveContentBackgrounds</include>
 				<visible>StringCompare(Container(9000).ListItem.Property(Background),Live)</visible>
+				<visible>!Control.HasFocus(510)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -100,7 +111,7 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible>
+				<!--visible>!IsEmpty(ListItem.Property(Fanart_Image))</visible-->
 				<visible>!Container.Content(Episodes) | !Skin.HasSetting(HideEpisodeThumb)</visible>
 			</control>
 			<control type="multiimage">
@@ -218,17 +229,17 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + !Skin.HasSetting(EnableAltArtScript) + !stringcompare(ListItem.Label,..)</visible>
+				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + !Skin.HasSetting(EnableEpisodeHiRezFanArt) + !stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
-				<!-- Displays Episode Fanart from Artwork Beef -->
+				<!-- Displays HiRez Episode Fanart -->
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(EnableAltArtScript) + !stringcompare(ListItem.Label,..)</visible>
+				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(EnableEpisodeHiRezFanArt) + !stringcompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="group">
 				<visible>!Container.Content(Episodes) | Skin.HasSetting(HideEpisodeThumb) | stringcompare(ListItem.Label,..)</visible>
@@ -310,8 +321,9 @@
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<include>SmallVideoGenreFlagging</include>
-				<visible>!IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible>
-				<visible>!Skin.HasSetting(EnableGenreFlagging) |[Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) | Control.IsVisible(500)] |[ Skin.HasSetting(EnableGenreFlagging) + Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),true)]</visible>
+				<!--visible>!IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible-->
+				<!--visible>!Skin.HasSetting(EnableGenreFlagging) |[Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) | Control.IsVisible(500)] |[ Skin.HasSetting(EnableGenreFlagging) + Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),true)]</visible-->
+				<visible>!Skin.HasSetting(EnableGenreFlagging) | [Skin.HasSetting(EnableGenreFlagging) + Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),true)]</visible>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
 				<visible>!Control.IsVisible(508) + !Control.IsVisible(529) + !Control.IsVisible(555) + !Control.IsVisible(594) + !Control.IsVisible(732)</visible>
 			</control>
@@ -346,10 +358,11 @@
 			<itemgap>0</itemgap>
 			<orientation>horizontal</orientation>
 			<include>SmallVideoGenreFlagging</include>
-			<visible>Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible>
+			<!--visible>Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible-->
+			<visible>Skin.HasSetting(EnableGenreFlagging)</visible>
 			<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
 			<visible>!Control.IsVisible(500) + !Control.IsVisible(508) + !Control.IsVisible(529) + !Control.IsVisible(555) + !Control.IsVisible(594) + !Control.IsVisible(732)</visible>
-			<visible>IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+			<!--visible>IsEmpty(Window(Home).Property(NextAired.NextDate))</visible-->
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),true)</visible>
 		</control>
 	</include>
@@ -365,6 +378,7 @@
 			<animation effect="rotate" start="0" end="-45" center="auto" time="0" condition="true">Conditional</animation>
 			<visible>!IsEmpty(ListItem.Title) + Skin.HasSetting(EnableAdditionalArtWork) + !Skin.HasSetting(DisableLogoArt)</visible>
 			<visible>!Player.HasVideo | Skin.HasSetting(HideNowPlayingFanart)</visible>
+			<visible>!Control.IsVisible(503)</visible>
 		</control>
 	</include>
 	<include name="FullScreenUsrInfo">

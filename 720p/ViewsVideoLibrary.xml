@@ -215,7 +215,7 @@
 				<top>86</top>
 				<visible>Control.IsVisible(515) + [Container.Content(Movies) | Container.Content(MusicVideos)]</visible>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>0</top>
 					<width>810</width>
@@ -228,7 +228,7 @@
 				<control type="group">
 					<left>-5</left>
 					<top>262</top>
-					<animation effect="slide" start="0,0" end="2,28" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="2,28" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<include>MediaInfoPopup</include>
 					<visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
 					<visible>Control.IsVisible(515) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
@@ -270,7 +270,7 @@
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
-					<animation effect="slide" start="0,0" end="-2,-462" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-2,-462" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>500</top>
 					<width>151</width>
@@ -333,7 +333,7 @@
 				<top>85</top>
 				<visible>Control.IsVisible(515) + Container.Content(TVShows)</visible>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>0</top>
 					<width>810</width>
@@ -346,7 +346,7 @@
 				<control type="group">
 					<left>-5</left>
 					<top>207</top>
-					<animation effect="slide" start="0,0" end="2,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="2,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<include>MediaInfoPopup</include>
 					<visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
 					<control type="image">
@@ -387,7 +387,7 @@
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
-					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>480</top>
 					<width>561</width>
@@ -461,7 +461,7 @@
 				<top>85</top>
 				<visible>Control.IsVisible(515) + Container.Content(Seasons)</visible>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>0</top>
 					<width>810</width>
@@ -486,7 +486,7 @@
 				<control type="group">
 					<left>-5</left>
 					<top>207</top>
-					<animation effect="slide" start="0,0" end="0,40" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,40" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<include>MediaInfoPopup</include>
 					<visible>!Skin.String(MediaPopUpControl,Hidden) + !Container.OnNext + !Container.OnPrevious</visible>
 					<control type="image">
@@ -543,7 +543,7 @@
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
-					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>480</top>
 					<width>561</width>
@@ -574,7 +574,7 @@
 				<top>85</top>
 				<visible>Control.IsVisible(515) + Container.Content(Episodes)</visible>
 				<control type="image">
-					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,46" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>0</top>
 					<width>810</width>
@@ -599,7 +599,7 @@
 				<control type="group">
 					<left>-5</left>
 					<top>207</top>
-					<animation effect="slide" start="0,0" end="0,40" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,40" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<include>MediaInfoPopup</include>
 					<visible>!Skin.String(MediaPopUpControl,Hidden) + !IsEmpty(ListItem.Title) + !Container.OnNext + !Container.OnPrevious</visible>
 					<visible>Control.IsVisible(515) + ![ListItem.IsFolder + Container.Content(Movies)]</visible>
@@ -639,7 +639,7 @@
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
-					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-2,-436" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
 					<left>0</left>
 					<top>480</top>
 					<width>192</width>

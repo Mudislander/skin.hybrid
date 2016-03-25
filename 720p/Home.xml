@@ -10,7 +10,7 @@
 	<onload condition="Skin.HasSetting(EnableHolidayEffects) + System.Date(1-6,11-23)">Skin.Reset(EnableHolidayEffects)</onload>
 	<onload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(WOLPingTimer) + Skin.String(PingMacAddr)">AlarmClock(WOLPingAlarm,WakeOnLan($INFO[Skin.String(PingMacAddr)]),$INFO[Skin.String(WOLPingTimer)]:00,silent,loop)</onload>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
-	<onload condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">Skin.SetString(resource.images.weatherfanart.path,resource://resource.images.weatherfanart.prairie/)</onload>
+	<!--onload condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">Skin.SetString(resource.images.weatherfanart.path,resource://resource.images.weatherfanart.prairie/)</onload-->
 	<onload condition="!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=true)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Library.HasContent(Movies)">XBMC.RunScript(script.randomandlastitems,type=Movie,limit=12,method=Random,playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
 	<onload condition="!Skin.HasSetting(DisableScriptPlaylist) + Skin.String(HomeMenu.1.Type,VideoPlayList)">XBMC.RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.1.Data)],method=$VAR[PlaylistSortOrder],limit=12,unwatched=False,resume=False,property=HomePlaylistOne)</onload>
@@ -48,6 +48,7 @@
 			<animation effect="zoom" start="100" end="0" center="auto" time="200" easing="in" tween="sine">Hidden</animation>
 			<animation effect="zoom" start="100" end="0" center="auto" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableCleanHome) + ![Control.HasFocus(9004) | Player.HasMedia | Control.HasFocus(510)]">Conditional</animation>
 			<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 			<visible>!StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 			<visible>!Skin.HasSetting(HideExtendedWidget) | Player.HasMedia</visible>
 			<visible>!StringCompare(Container(9000).ListItem.Property(HiLiteItem),FullScreen)</visible>
@@ -783,8 +784,30 @@
 			<include condition="!Skin.HasSetting(DisableWidgetAdjust)">WidgetTransparency</include>
 			<animation effect="slide" start="0,0" end="0,-400" time="400" easing="out" tween="sine" condition="Skin.HasSetting(EnableCleanHome) + !Control.HasFocus(510)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="500" delay="3000" condition="Window.Previous(Startup)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+			<!--animation effect="slide" start="0,0" end="0,-40" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + [system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]]">Conditional</animation-->
+			<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
+			<!--visible>system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]</visible-->
 			<visible>Control.IsVisible(602) | Control.HasFocus(510)</visible>
-			<include>WidgetPanelVizability</include>
+			<include>VideoWidgetVizability</include>
+		</control>
+		<control type="image">
+			<left>10</left>
+			<top>-8</top>
+			<width>1260</width>
+			<height>545</height>
+			<texture>$VAR[InfoWidgetPanel]</texture>
+			<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
+			<fadetime>FanartCrossFadeTime</fadetime>
+			<include condition="!Skin.HasSetting(DisableWidgetAdjust)">WidgetTransparency</include>
+			<animation effect="slide" start="0,0" end="0,-400" time="400" easing="out" tween="sine" condition="Skin.HasSetting(EnableCleanHome) + !Control.HasFocus(510)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="500" delay="3000" condition="Window.Previous(Startup)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
+			<visible>Control.IsVisible(602) | Control.HasFocus(510)</visible>
+			<include>MusicWidgetVizability</include>
 		</control>
 		<control type="group" id="602">
 			<left>30</left>
@@ -811,6 +834,10 @@
 				<control type="label">
 					<left>10</left>
 					<top>10</top>
+					<animation effect="slide" start="0,0" end="0,272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<!--animation effect="slide" start="0,0" end="0,-40" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + [system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]]">Conditional</animation-->
+					<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 					<width>1200</width>
 					<height>29</height>
 					<font>font12_title</font>
@@ -825,6 +852,10 @@
 				<control type="label">
 					<left>10</left>
 					<top>10</top>
+					<animation effect="slide" start="0,0" end="0,272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<!--animation effect="slide" start="0,0" end="0,-40" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + [system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]]">Conditional</animation-->
+					<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 					<width>1200</width>
 					<height>29</height>
 					<font>font12_title</font>
@@ -836,6 +867,44 @@
 					<textcolor>$VAR[SelectedColor]</textcolor>
 					<visible>Control.HasFocus(510) + Skin.HasSetting(HideExtendedWidget)</visible>
 				</control>
+				<include>VideoWidgetVizability</include>
+			</control>
+			<control type="group">
+				<control type="label">
+					<left>10</left>
+					<top>10</top>
+					<animation effect="slide" start="0,0" end="0,312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
+					<width>1200</width>
+					<height>29</height>
+					<font>font12_title</font>
+					<label>[UPPERCASE]$VAR[InfoWidgetType][/UPPERCASE]</label>
+					<scroll>true</scroll>
+					<scrollout>false</scrollout>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFFFFAF0</textcolor>
+					<visible>!Control.HasFocus(510) | !Skin.HasSetting(HideExtendedWidget)</visible>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>10</top>
+					<animation effect="slide" start="0,0" end="0,312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
+					<width>1200</width>
+					<height>29</height>
+					<font>font12_title</font>
+					<label>[UPPERCASE]$INFO[Container(510).ListItem.Label][/UPPERCASE]</label>
+					<scroll>true</scroll>
+					<scrollout>false</scrollout>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<visible>Control.HasFocus(510) + Skin.HasSetting(HideExtendedWidget)</visible>
+				</control>
+				<include>MusicWidgetVizability</include>
 			</control>
 		</control>
 		<control type="image">

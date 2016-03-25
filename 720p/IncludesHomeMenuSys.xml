@@ -361,6 +361,7 @@
 		<onload>Skin.SetString(StickyMenu.1.Widget,None)</onload>
 		<onload>Skin.SetString(StickyMenu.1.Type,Pictures)</onload>
 		<onload>Skin.SetString(StickyMenu.1.Fanart,special://skin/backgrounds/pictures.jpg)</onload>
+		<onload>Skin.SetString(StickyMenuSelect.Fanart,special://skin/backgrounds/pictures.jpg)</onload>
 		<onload>Skin.SetString(StickyMenu.1.Display,Default)</onload>
 		<onload>Skin.SetString(StickyMenu.1.Stats,None)</onload>
 		<onload>Skin.SetString(StickyMenu.1.Sub,StickyMenu.1)</onload>
@@ -369,18 +370,6 @@
 		<onload>Skin.SetString(StickyMenuSelect.Path,ActivateWindow(Pictures))</onload>
 		<onload>Skin.SetString(HolidayThemePath,special://skin/extras/Holiday/xmastree.jpg)</onload>
 		<onload>Skin.SetString(StartUpBackgroundPath,special://skin/backgrounds/splash.jpg)</onload>
-		<onload>Skin.Reset(resource.images.weathericons.multi)</onload>
-		<onload>Skin.SetString(resource.images.weathericons.name,Weather Icons - 3D Coloured)</onload>
-		<onload>Skin.SetString(resource.images.weathericons.path,resource.resource://resource.images.weathericons.3d-coloured/)</onload>
-		<onload>Skin.SetString(resource.images.weathericons.ext,.png)</onload>
-		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.Reset(resource.images.weatherfanart.multi)</onload>
-		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.name,Weather Fanart - Prairie)</onload>
-		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.path,resource://resource.images.weatherfanart.prairie/)</onload>
-		<onload condition="System.HasAddon(resource.images.weatherfanart.prairie)">Skin.SetString(resource.images.weatherfanart.ext,.jpg)</onload>
-		<onload>Skin.Reset(resource.images.moviegenreicons.multi)</onload>
-		<onload>Skin.SetString(resource.images.moviegenreicons.name,$LOCALIZE[31257])</onload>
-		<onload>Skin.SetString(resource.images.moviegenreicons.path,resource://resource.images.moviegenreicons.xzener-flat/)</onload>
-		<onload>Skin.SetString(resource.images.moviegenreicons.ext,.png)</onload>
 		<onload condition="System.Date(11-24,1-6)">Skin.Setbool(EnableHolidayEffects)</onload>
 		<onload>Skin.SetString(FanArtCycleRate,10)</onload>
 		<onload>Skin.SetBool(UseStickyHomeMenu)</onload>

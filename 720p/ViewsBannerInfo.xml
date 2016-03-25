@@ -16,7 +16,7 @@
 				<viewtype label="$LOCALIZE[31642]">list</viewtype>
 				<pagecontrol>50360</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)</visible>
+				<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
 				<itemlayout height="40" width="610">
 					<control type="image">
 						<left>0</left>
@@ -38,9 +38,9 @@
 						<label>$INFO[ListItem.label]</label>
 					</control>
 					<control type="label">
-						<left>550</left>
+						<left>110</left>
 						<top>0</top>
-						<width>500</width>
+						<width>495</width>
 						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
@@ -49,15 +49,6 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
-						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="!Container.Content(Episodes)">conditional</animation>
-					</control>
-					<control type="image">
-						<left>555</left>
-						<top>8</top>
-						<width>40</width>
-						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
-						<visible>Window.IsVisible(Videos) + Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -87,14 +78,6 @@
 						<visible>Control.HasFocus(503)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
-					<!--control type="image">
-						<left>405</left>
-						<top>4</top>
-						<width>200</width>
-						<height>33</height>
-						<texture border="0,0,14,0" colordiffuse="$VAR[MainColorOne]">MediaItemDetailBG.png</texture>
-						<visible>Control.HasFocus(503) + !IsEmpty(ListItem.label2)</visible>
-					</control-->
 					<control type="label">
 						<left>35</left>
 						<top>0</top>
@@ -108,9 +91,9 @@
 						<label>$INFO[ListItem.label]</label>
 					</control>
 					<control type="label">
-						<left>550</left>
+						<left>110</left>
 						<top>0</top>
-						<width>500</width>
+						<width>495</width>
 						<height>40</height>
 						<font>font12</font>
 						<textcolor>grey2</textcolor>
@@ -119,15 +102,6 @@
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.label2]</label>
 						<visible>Window.IsVisible(Videos)</visible>
-						<animation effect="slide" start="0,0" end="40,0" delay="0" time="0" condition="!Container.Content(Episodes)">conditional</animation>
-					</control>
-					<control type="image">
-						<left>555</left>
-						<top>8</top>
-						<width>40</width>
-						<height>26</height>
-						<texture>$VAR[VideoResolutionFlag]</texture>
-						<visible>Window.IsVisible(Videos) + Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -182,20 +156,25 @@
 					<bordersize>8</bordersize>
 					<visible>IsEmpty(ListItem.Title)</visible>
 				</control>
-				<control type="grouplist">
-					<description>Media Codec Flagging Images</description>
-					<left>0</left>
+				<control type="image">
+					<description>Rating image</description>
+					<left>5</left>
 					<top>120</top>
-					<width>530</width>
-					<align>center</align>
-					<itemgap>2</itemgap>
-					<orientation>horizontal</orientation>
-					<include>VideoMPAAFlaggingConditions</include>
-					<include>VideoCodecFlaggingConditions</include>
-					<include>AudioCodecFlaggingConditions</include>
-					<include>AudioChannelsFlaggingConditions</include>
-					<include>AspectCodecFlaggingConditions</include>
-					<include>VideoStudioFlagging</include>
+					<width>75</width>
+					<height>35</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture>$VAR[RatingMPAA,flagging/ratings/,.png]</texture>
+					<visible>!IsEmpty(ListItem.Mpaa)</visible>
+				</control>
+				<control type="image">
+					<description>Studio image</description>
+					<left>450</left>
+					<top>120</top>
+					<width>75</width>
+					<height>35</height>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture background="true">$INFO[ListItem.Studio,flagging/studio/,.png]</texture>
+					<visible>!IsEmpty(Control.GetLabel(5047)) + !IsEmpty(ListItem.Studio)</visible>
 				</control>
 				<control type="label">
 					<description>Episodes txt</description>

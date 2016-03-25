@@ -24,7 +24,7 @@
 					<width>58</width>
 					<height>28</height>
 					<aspectratio align="center" aligny="bottom">keep</aspectratio>
-					<texture>$VAR[videocodec,flagging/video/,.png]</texture>
+					<texture>$VAR[VideoCodec,flagging/video/,.png]</texture>
 				</control>
 				<control type="image">
 					<description>Audio Codec Image</description>
@@ -116,7 +116,7 @@
 			<width>58</width>
 			<height>28</height>
 			<aspectratio align="center" aligny="bottom">keep</aspectratio>
-			<texture>$VAR[videocodec,flagging/video/,.png]</texture>
+			<texture>$VAR[VideoCodec,flagging/video/,.png]</texture>
 		</control>
 	</include>
 	<include name="AudioCodecFlaggingConditions">

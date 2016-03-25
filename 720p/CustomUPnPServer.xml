@@ -7,11 +7,13 @@
 		<top>0</top>
 	</coordinates>
 	<onload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(PingMacAddr)">WakeOnLan($INFO[Skin.String(PingMacAddr)])</onload>
-	<onload>Container(8050).Update(upnp://,replace)</onload>
+	
+	<!--onload>Container(8050).Update(upnp://,replace)</onload-->
 	<controls>
 		<control type="group">
 			<control type="list" id="8050">
 				<content>$VAR[UPnPServersAvail]</content>
+				<!--content>upnp://</content-->
 			</control>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="400,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
@@ -20,7 +22,10 @@
 				<top>0</top>
 				<width>400</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">HomeBladeSub.png</texture>
+				<texture border="15,0,0,0" flipx="true"  colordiffuse="$VAR[MenuBarColor]">HomeBladeSub.png</texture>
+				
+				
+				
 			</control>
 			<control type="button">
 				<description>Close Window button</description>
@@ -141,182 +146,182 @@
 						<onclick>Dialog.Close(1155)</onclick>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(0).label]</label>
-						<icon>$INFO[Container(8050).ListItem(0).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(0).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(0).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(0).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(0).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(0).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(0).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(0).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,0)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(1).label]</label>
-						<icon>$INFO[Container(8050).ListItem(1).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(1).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(1).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(1).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(1).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(1).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(1).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(1).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,1)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(2).label]</label>
-						<icon>$INFO[Container(8050).ListItem(2).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(2).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(2).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(2).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(2).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(2).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(2).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(2).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,2)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(3).label]</label>
-						<icon>$INFO[Container(8050).ListItem(3).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(3).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(3).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(3).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(3).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(3).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(3).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(3).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,3)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(4).label]</label>
-						<icon>$INFO[Container(8050).ListItem(4).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(4).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(4).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(4).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(4).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(4).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(4).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(4).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,4)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(5).label]</label>
-						<icon>$INFO[Container(8050).ListItem(5).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(5).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(5).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(5).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(5).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(5).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(5).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(5).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,5)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(6).label]</label>
-						<icon>$INFO[Container(8050).ListItem(6).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(6).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(6).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(6).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(6).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(6).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(6).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(6).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,6)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(7).label]</label>
-						<icon>$INFO[Container(8050).ListItem(7).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(7).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(7).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(7).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(7).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(7).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(7).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(7).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,7)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(8).label]</label>
-						<icon>$INFO[Container(8050).ListItem(8).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(8).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(8).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(8).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(8).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(8).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(8).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(8).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,8)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(9).label]</label>
-						<icon>$INFO[Container(8050).ListItem(9).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(9).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(9).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(9).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(9).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(9).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(9).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(9).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,9)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(10).label]</label>
-						<icon>$INFO[Container(8050).ListItem(10).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(10).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(10).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(10).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(10).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(10).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(10).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(10).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,10)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(11).label]</label>
-						<icon>$INFO[Container(8050).ListItem(11).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(11).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(11).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(11).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(11).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(11).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(11).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(11).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,11)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(12).label]</label>
-						<icon>$INFO[Container(8050).ListItem(12).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(12).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(12).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(12).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(12).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(12).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(12).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(12).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,12)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(13).label]</label>
-						<icon>$INFO[Container(8050).ListItem(13).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(13).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(13).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(13).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(13).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(13).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(13).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(13).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,13)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(14).label]</label>
-						<icon>$INFO[Container(8050).ListItem(14).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(14).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(14).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(14).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(14).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(14).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(14).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(14).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,14)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(15).label]</label>
-						<icon>$INFO[Container(8050).ListItem(15).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(15).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(15).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(15).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(15).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(15).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(15).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(15).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,15)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(16).label]</label>
-						<icon>$INFO[Container(8050).ListItem(16).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(16).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(16).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(16).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(16).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(16).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(16).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(16).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,16)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(17).label]</label>
-						<icon>$INFO[Container(8050).ListItem(17).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(17).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(17).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(17).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(17).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(17).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(17).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(17).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,17)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(18).label]</label>
-						<icon>$INFO[Container(8050).ListItem(18).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(18).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(18).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(18).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(18).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(18).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(18).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(18).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,18)</visible>
 					</item>
 					<item>
-						<label>$INFO[Container(8050).ListItem(19).label]</label>
-						<icon>$INFO[Container(8050).ListItem(19).icon]</icon>
-						<thumb>$INFO[Container(8050).ListItem(19).thumb]</thumb>
+						<label>$INFO[Container(8050).ListItem(19).Label]</label>
+						<icon>$INFO[Container(8050).ListItem(19).Icon]</icon>
+						<thumb>$INFO[Container(8050).ListItem(19).Thumb]</thumb>
 						<onclick>Skin.SetString(UPnP_Path,$INFO[Container(8050).ListItem(19).FileNameAndPath])</onclick>
-						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(19).label])</onclick>
+						<onclick>Skin.SetString(UPnP_Name,$INFO[Container(8050).ListItem(19).Label])</onclick>
 						<onclick>Dialog.Close(1155)</onclick>
 						<visible>IntegerGreaterThan(Container(8050).NumItems,19)</visible>
 					</item>

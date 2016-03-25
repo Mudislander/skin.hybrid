@@ -96,7 +96,6 @@
 			<ondown>11</ondown>
 			<onclick>Skin.ResetSettings</onclick>
 			<onclick>ReloadSkin()</onclick>
-			<onclick>Skin.SetBool(DisableReLoadSkin)</onclick>
 			<onclick>Dialog.Close(1160)</onclick>
 			<onclick>ActivateWindow(home)</onclick>
 		</control>
@@ -115,7 +114,9 @@
 			<onright>11</onright>
 			<onup>10</onup>
 			<ondown>10</ondown>
-			<onclick>PreviousMenu</onclick>
+			<onclick>ClearProperty(EnableReLoadSkin,Home)</onclick>
+			<onclick>Dialog.Close(1160)</onclick>
+			<onclick>ActivateWindow(home)</onclick>
 		</control>
 	</controls>
 </window>

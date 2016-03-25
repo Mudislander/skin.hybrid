@@ -101,7 +101,8 @@
 						<top>13</top>
 						<width>253</width>
 						<height>139</height>
-						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
+						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$VAR[MediaClearArt]</texture>
+						<!--texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture-->
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<animation type="Focus" reversible="false">
 							<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />

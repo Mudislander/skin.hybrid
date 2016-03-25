@@ -83,7 +83,8 @@
 						<height>102</height>
 						<aspectratio>stretch</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
+						<!--texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture-->
+						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$VAR[MediaClearArt]</texture>
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
 					</control>
 					<control type="image">
@@ -289,7 +290,8 @@
 						<height>102</height>
 						<aspectratio>stretch</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
-						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
+						<!--texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture-->
+						<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png">$VAR[MediaClearArt]</texture>
 						<visible>!IsEmpty(ListItem.Title) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
 					</control>
 					<control type="image">

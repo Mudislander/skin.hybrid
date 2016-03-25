@@ -474,6 +474,7 @@
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)]] |
+		
 		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
@@ -491,6 +492,54 @@
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
+		</visible>
+		<!-- -->
+		<!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
+	</include>
+	<include name="VideoWidgetVizability">
+		<visible>
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
+		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
+		
+		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)]] |
+		
+		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)]] |
+		
+		[SubString(Window(home).Property(SkinWidgets_Recommended),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)]] |
+		
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Window(home).Property(favourite.count),0)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(DisableScriptPlaylist)] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
+
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
+		</visible>
+	</include>
+	<include name="MusicWidgetVizability">
+		<visible>
+		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
+		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)] |
+		
+		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)]] |
+		
+		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)]] |
+		[SubString(Window(home).Property(SkinWidgets_Recommended),true) +
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)]] |
+		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)]
 		</visible>
 		<!-- -->
 		<!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->

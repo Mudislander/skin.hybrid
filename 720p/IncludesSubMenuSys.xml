@@ -1062,10 +1062,17 @@
 		<item>
 			<label>$VAR[SubSetSevenItemOne]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
+			
+			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + System.Platform.Android">StartAndroidActivity(&quot;com.android.tv.settings&quot;)</onclick>
+			
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + System.HasAddon(os.openelec.settings)">RunAddon(os.openelec.settings)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + System.HasAddon(service.openelec.settings)">RunAddon(service.openelec.settings)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + System.HasAddon(script.raspbmc.settings)">RunAddon(script.raspbmc.settings)</onclick>
-			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + !System.HasAddon(os.openelec.settings) + !System.HasAddon(service.openelec.settings) + !System.HasAddon(script.raspbmc.settings)">ActivateWindow(SkinSettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + !System.Platform.Android + !System.HasAddon(os.openelec.settings) + !System.HasAddon(service.openelec.settings) + !System.HasAddon(script.raspbmc.settings)">ActivateWindow(SkinSettings)</onclick>
+			
+			
+			
+			
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.1.Path))">$INFO[Skin.String(SubSetSeven.1.Path)]</onclick>
 			<visible>!stringcompare(Skin.String(SubSetSeven.1.Path),Hidden)</visible>
 		</item>

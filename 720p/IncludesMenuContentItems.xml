@@ -173,6 +173,16 @@
 				<include>CloseMenuChoice</include>
 				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
 			</item>
+			
+			<!--item>
+				<description>Android</description>
+				<label>$LOCALIZE[31104]</label>
+			
+			
+				<visible>System.Platform.Android</visible>
+				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+			</item-->
+			
 			<item>
 				<description>Favourites</description>
 				<label>$LOCALIZE[31329] - $LOCALIZE[1036]</label>
@@ -1621,7 +1631,8 @@
 				<description>Shutdown</description>
 				<label>$LOCALIZE[13005]</label>
 				<include>ClearButtonChoice</include>
-				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,Shutdown)</onclick>
+				<onclick condition="!Skin.HasSetting(EnableCustomShutDown)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,Shutdown)</onclick>
+				<onclick condition="Skin.HasSetting(EnableCustomShutDown)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,XBMC.RunScript($INFO[Skin.String(CustomShutdownCmd)],$INFO[Skin.String(CustomShutdownArg)]))</onclick>
 				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label,$LOCALIZE[13005])</onclick>
 				<onclick condition="Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
 				<onclick condition="Window.IsVisible(1105)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,Shutdown)</onclick>
