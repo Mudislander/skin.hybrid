@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1170">
+	<onload condition="Library.HasContent(Music)">SetVolume($INFO[Skin.String(AutoPartyVolume)])</onload>
 	<onload condition="Library.HasContent(Music)">PlayerControl(PartyMode(music))</onload>
 	<visible>System.ScreenSaverActive + !Player.HasMedia</visible>
 	<visible>Skin.HasSetting(AutoPartySaver)</visible>

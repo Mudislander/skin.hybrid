@@ -5,13 +5,9 @@
 	<onload>SetProperty(MenuItemActive,Settings,Home)</onload>
 	<onload condition="System.HasAddon(script.favourites)">XBMC.RunScript(script.favourites)</onload>
 	<onload condition="stringcompare(Container(9011).Position,0) + !stringcompare(Skin.String(InitialMenuPosi),0)">Control.Move(9011,$INFO[Skin.String(InitialMenuPosi)])</onload>
-	<onunload condition="!Skin.HasSetting(DisableFanartScript) + IntegerGreaterThan(Skin.String(FanArtCycleRate),0)">RunScript(script.grab.fanart,mode=random,refresh=$INFO[Skin.String(FanArtCycleRate)])</onunload>
-	<onunload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(PingMacAddr)">WakeOnLan($INFO[Skin.String(PingMacAddr)])</onunload>
-	<onunload condition="Skin.HasSetting(EnableAutoSave) + !IsEmpty(Window(Home).Property(EnableReLoadSkin))">ActivateWindow(1100)</onunload>
-	<!--onunload>ClearProperty(EnableReLoadSkin,Home)</onunload-->
+	<onunload condition="Skin.HasSetting(EnableAnimatedFanArt) | Skin.HasSetting(EnableAnimatedPoster)">Skin.SetBool(SkinHelper.EnableAnimatedPosters)</onunload>
 	<controls>
 		<control type="list" id="8050">
-			<!--content>upnp://</content-->
 			<content>$VAR[UPnPServersAvail]</content>
 		</control>
 		<control type="image">
@@ -353,6 +349,19 @@
 						<enable>!Skin.HasSetting(EnableCleanHome)</enable>
 					</control>
 					<control type="radiobutton" id="112">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31111]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(EnableWidgetFanArt)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<selected>Skin.HasSetting(EnableWidgetFanArt)</selected>
+					</control>
+					<control type="radiobutton" id="113">
 						<description>enable library stats</description>
 						<width>750</width>
 						<height>40</height>
@@ -366,7 +375,7 @@
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="113">
+					<control type="radiobutton" id="114">
 						<description>enable home weather info</description>
 						<width>750</width>
 						<height>40</height>
@@ -381,7 +390,7 @@
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 						<enable>!IsEmpty(Weather.Plugin)</enable>
 					</control>
-					<control type="radiobutton" id="114">
+					<control type="radiobutton" id="115">
 						<description>RainDrop Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -562,7 +571,22 @@
 						<selected>Skin.HasSetting(AutoPartySaver)</selected>
 						<enable>Library.HasContent(Music)</enable>
 					</control>
-					<control type="radiobutton" id="139">
+					<control type="button" id="139">
+						<description>Set Volume for Auto Party Mode</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31265]</label>
+						<label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(AutoPartyVolume),,$LOCALIZE[31266] ][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetNumeric(AutoPartyVolume)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<enable>Skin.HasSetting(AutoPartySaver)</enable>
+					</control>
+					<control type="radiobutton" id="140">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -575,7 +599,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(HideOSDProfileClock)</selected>
 					</control>
-					<control type="label" id="140">
+					<control type="label" id="141">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -585,7 +609,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="radiobutton" id="141">
+					<control type="radiobutton" id="142">
 						<description>Auto Music Viz</description>
 						<width>750</width>
 						<height>40</height>
@@ -599,7 +623,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(HideAutoMusicViz)</selected>
 					</control>
-					<control type="button" id="142">
+					<control type="button" id="143">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -614,7 +638,7 @@
 						<onclick condition="Skin.String(MusicOSDInfo,never)">Skin.Reset(MusicOSDInfo)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 					</control>
-					<control type="radiobutton" id="143">
+					<control type="radiobutton" id="144">
 						<description>Enable Artist FanArt</description>
 						<width>750</width>
 						<height>40</height>
@@ -628,7 +652,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(HideArtistArtOSD)</selected>
 					</control>
-					<control type="radiobutton" id="144">
+					<control type="radiobutton" id="145">
 						<description>Enable Music Thumbnail</description>
 						<width>750</width>
 						<height>40</height>
@@ -643,7 +667,7 @@
 						<selected>!Skin.HasSetting(HideAlbumThumbOSD)</selected>
 						<enable> !Skin.String(MusicOSDInfo,never)</enable>
 					</control>
-					<control type="radiobutton" id="145">
+					<control type="radiobutton" id="146">
 						<description>Ken Burns Effect</description>
 						<width>750</width>
 						<height>40</height>
@@ -657,7 +681,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(NoAnimateVizFanart)</selected>
 					</control>
-					<control type="radiobutton" id="146">
+					<control type="radiobutton" id="147">
 						<description>Diffuse Visualisation</description>
 						<width>750</width>
 						<height>40</height>
@@ -671,7 +695,27 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(NoDiffuseVizFanart)</selected>
 					</control>
-					<control type="radiobutton" id="147">
+					<control type="button" id="148">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31110]</label>
+						<label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(VizDiffuseAmnt)]$VAR[VizDiffuseValue][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick condition="IsEmpty(Skin.String(VizDiffuseAmnt))">Skin.SetString(VizDiffuseAmnt,10)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,10)">Skin.SetString(VizDiffuseAmnt,25)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,25)">Skin.SetString(VizDiffuseAmnt,40)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,40)">Skin.SetString(VizDiffuseAmnt,55)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,55)">Skin.SetString(VizDiffuseAmnt,70)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,70)">Skin.SetString(VizDiffuseAmnt,85)</onclick>
+						<onclick condition="Skin.String(VizDiffuseAmnt,85)">Skin.Reset(VizDiffuseAmnt)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<enable>!Skin.HasSetting(NoDiffuseVizFanart)</enable>
+					</control>
+					<control type="radiobutton" id="149">
 						<description>Disable CD Wall</description>
 						<width>750</width>
 						<height>40</height>
@@ -751,7 +795,22 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(HideArtWorkOSD)</selected>
 					</control>
-					<control type="label" id="191">
+					<!--control type="button" id="194">
+						<description>Usr OSD Magic Btn</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31359]</label>
+						<label2>[COLOR=selected]$VAR[UsrOSDBtnLabel][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick condition="IsEmpty(Skin.String(OSDBtnUsrCmd))">Skin.SetString(OSDBtnUsrCmd,AspectRatio)</onclick>
+						<onclick condition="Skin.String(OSDBtnUsrCmd,AspectRatio)">Skin.Reset(OSDBtnUsrCmd)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+					</control-->
+					<control type="label" id="195">
 						<width>750</width>
 						<height>45</height>
 						<font>font13_title</font>
@@ -2255,7 +2314,7 @@
 								<textcolor>grey2</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
-								<label>$LOCALIZE[31110]</label>
+								<label>$LOCALIZE[31309]</label>
 								<visible>![Control.HasFocus(403) | Control.HasFocus(404)]</visible>
 							</control>
 							<control type="label">
@@ -2267,7 +2326,7 @@
 								<textcolor>$VAR[MainColorTwo]</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
-								<label>$LOCALIZE[31110]</label>
+								<label>$LOCALIZE[31309]</label>
 								<visible>[Control.HasFocus(403) | Control.HasFocus(404)]</visible>
 							</control>
 							<control type="label">
@@ -2588,6 +2647,7 @@
 								<onup>407</onup>
 								<ondown>409</ondown>
 							</control>
+							<!--	Window(Home).Property(SkinHelper.AllMoviesBackground) | Random fanart of movies in video database		-->
 							<control type="button" id="409">
 								<description>Live Content Button</description>
 								<left>0</left>
@@ -7224,6 +7284,36 @@
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
+						<label>$LOCALIZE[31112]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(SkinHelper.EnableAnimatedPosters)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<onclick>Skin.ToggleSetting(EnableAnimatedFanArt)</onclick>
+						<selected>Skin.HasSetting(EnableAnimatedFanArt)</selected>
+						<enable>System.HasAddon(script.skin.helper.service)</enable>
+					</control>
+					<control type="radiobutton" id="704">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31113]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.Reset(SkinHelper.EnableAnimatedPosters)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<onclick>Skin.ToggleSetting(EnableAnimatedPoster)</onclick>
+						<selected>Skin.HasSetting(EnableAnimatedPoster)</selected>
+						<enable>System.HasAddon(script.skin.helper.service)</enable>
+					</control>
+					<control type="radiobutton" id="705">
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
 						<label>$LOCALIZE[31102]</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
@@ -7233,7 +7323,7 @@
 						<onclick>Skin.ToggleSetting(EnableEpisodeHiRezFanArt)</onclick>
 						<selected>Skin.HasSetting(EnableEpisodeHiRezFanArt)</selected>
 					</control>
-					<control type="radiobutton" id="705">
+					<control type="radiobutton" id="706">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -7246,7 +7336,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(DisableClearArt)</selected>
 					</control>
-					<control type="radiobutton" id="706">
+					<control type="radiobutton" id="707">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -7259,7 +7349,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(DisableLogoArt)</selected>
 					</control>
-					<control type="radiobutton" id="707">
+					<control type="radiobutton" id="708">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -7272,7 +7362,7 @@
 						<onclick>Skin.ToggleSetting(DisableDiscArt)</onclick>
 						<selected>!Skin.HasSetting(DisableDiscArt)</selected>
 					</control>
-					<control type="radiobutton" id="708">
+					<control type="radiobutton" id="709">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -7445,22 +7535,25 @@
 						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.ToggleSetting(EnableFanartScript)</onclick>
+						<onclick condition="Skin.HasSetting(EnableFanartScript)">Skin.Reset(SkinHelper.RandomFanartDelay)</onclick>
+						<onclick condition="Skin.HasSetting(EnableFanartScript)">Skin.Reset(EnableFanartScript)</onclick>
+						<onclick condition="!Skin.HasSetting(EnableFanartScript)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onclick>
+						<onclick condition="!Skin.HasSetting(EnableFanartScript)">Skin.SetBool(EnableFanartScript)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>Skin.HasSetting(EnableFanartScript)</selected>
-						<enable>System.HasAddon(script.grab.fanart)</enable>
+						<enable>System.HasAddon(script.skin.helper.service)</enable>
 					</control>
 					<control type="button" id="753">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
 						<label>$LOCALIZE[31029]</label>
-						<label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(FanArtCycleRate)][/COLOR] $LOCALIZE[31030]</label2>
+						<label2>[COLOR=$VAR[SelectedColor]]$INFO[Skin.String(SkinHelper.RandomFanartDelay)][/COLOR] $LOCALIZE[31030]</label2>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<onclick>Skin.SetNumeric(FanArtCycleRate)</onclick>
+						<onclick>Skin.SetNumeric(SkinHelper.RandomFanartDelay)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<enable>Skin.HasSetting(EnableFanartScript)</enable>
 					</control>
@@ -8009,11 +8102,11 @@
 						<textoffsetx>20</textoffsetx>
 						<textwidth>730</textwidth>
 						<label>$LOCALIZE[31108]</label>
-						<onclick>RunScript(script.toolbox,info=exportskinsettings)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=BACKUP)</onclick>
 						<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 						<pulseonselect>false</pulseonselect>
-						<enable>System.HasAddon(script.toolbox)</enable>
+						<enable>System.HasAddon(script.skin.helper.service)</enable>
 					</control>
 					<control type="button" id="951">
 						<description>Import Skin Settings</description>
@@ -8026,11 +8119,11 @@
 						<textoffsetx>20</textoffsetx>
 						<textwidth>730</textwidth>
 						<label>$LOCALIZE[31109]</label>
-						<onclick>RunScript(script.toolbox,info=importskinsettings)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=RESTORE)</onclick>
 						<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 						<pulseonselect>false</pulseonselect>
-						<enable>System.HasAddon(script.toolbox)</enable>
+						<enable>System.HasAddon(script.skin.helper.service)</enable>
 					</control>
 					<control type="label" id="960">
 						<width>750</width>

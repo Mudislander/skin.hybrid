@@ -7,13 +7,10 @@
 		<top>0</top>
 	</coordinates>
 	<onload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(PingMacAddr)">WakeOnLan($INFO[Skin.String(PingMacAddr)])</onload>
-	
-	<!--onload>Container(8050).Update(upnp://,replace)</onload-->
 	<controls>
 		<control type="group">
 			<control type="list" id="8050">
 				<content>$VAR[UPnPServersAvail]</content>
-				<!--content>upnp://</content-->
 			</control>
 			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="400,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
@@ -22,10 +19,7 @@
 				<top>0</top>
 				<width>400</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true"  colordiffuse="$VAR[MenuBarColor]">HomeBladeSub.png</texture>
-				
-				
-				
+				<texture border="15,0,0,0" flipx="true" colordiffuse="$VAR[MenuBarColor]">HomeBladeSub.png</texture>
 			</control>
 			<control type="button">
 				<description>Close Window button</description>
@@ -103,7 +97,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<selectedcolor>$VAR[SelectedColor]</selectedcolor>
-						<info>ListItem.Label</info>
+						<info>ListItem.label</info>
 					</control>
 				</itemlayout>
 				<focusedlayout height="40">
@@ -132,7 +126,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<selectedcolor>$VAR[SelectedColor]</selectedcolor>
-						<info>ListItem.Label</info>
+						<info>ListItem.label</info>
 					</control>
 				</focusedlayout>
 				<content>

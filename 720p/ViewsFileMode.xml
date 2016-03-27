@@ -207,24 +207,21 @@
 					<texture background="true" fallback="DefaultFolder.png">$VAR[PosterThumb]</texture>
 					<bordertexture border="8">ContentPanel.png</bordertexture>
 					<!--bordertexture border="8">ThumbShadow.png</bordertexture-->
-					<!--bordersize>8</bordersize-->
 					<visible>!stringcompare(ListItem.Label,..)</visible>
-					<!--visible>!Container.Content(Episodes) | [Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb)]</visible-->
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedPoster)) | !Skin.HasSetting(EnableAnimatedPoster)</visible>
 				</control>
-				<!--control type="image">
+				<control type="image">
 					<left>0</left>
 					<top>0</top>
-					<width>420</width>
-					<height>565</height>
+					<width>360</width>
+					<height>540</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<fadetime>IconCrossfadeTime</fadetime>
-					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-					
-					
-					<bordertexture border="8">ThumbShadow.png</bordertexture>
-					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes) + Skin.HasSetting(HideEpisodeThumb)</visible>
-				</control-->
+					<texture background="true">$INFO[Window(home).Property(SkinHelper.AnimatedPoster)]</texture>
+					<bordertexture border="8">ContentPanel.png</bordertexture>
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>Skin.HasSetting(EnableAnimatedPoster) + !IsEmpty(Window(home).Property(SkinHelper.AnimatedPoster))</visible>
+				</control>
 			</control>
 			<include>VideoLogoArt</include>
 			<control type="image">

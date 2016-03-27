@@ -7,11 +7,22 @@
 			<visible>!Player.HasVideo | Skin.HasSetting(HideNowPlayingFanart)</visible>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<imagepath background="true">$VAR[InfoWidgetFanArt]</imagepath>
+				<timeperimage>8000</timeperimage>
+				<randomize>true</randomize>
+				<fadetime>1000</fadetime>
+				<visible>Control.HasFocus(510)</visible>
+				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
+			</control>
+			<control type="multiimage">
+				<include>Dimensions_Fullscreen</include>
 				<imagepath background="true">$INFO[Skin.String(GlobalBackGroundPath)]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<visible>!IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
@@ -21,6 +32,7 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -59,6 +71,7 @@
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
 				<visible>Control.HasFocus(510)</visible>
+				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
@@ -67,7 +80,7 @@
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>!Control.HasFocus(510)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="group">
 				<include>BackgroundFade</include>
@@ -75,7 +88,7 @@
 				<include>Window_OpenClose_Animation</include>
 				<include>LiveContentBackgrounds</include>
 				<visible>StringCompare(Container(9000).ListItem.Property(Background),Live)</visible>
-				<visible>!Control.HasFocus(510)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -123,6 +136,17 @@
 				<fadetime>1000</fadetime>
 				<visible>[StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Property(Fanart_Image))] + Container.Content(Episodes) + IsEmpty(Fanart.Image)</visible>
 			</control>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Window(home).Property(SkinHelper.AnimatedFanArt)]</texture>
+				<include>BackgroundFade</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<include>Window_OpenClose_Animation</include>
+				<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
+				<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
+				<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(508) | Control.IsVisible(724) | Control.IsVisible(730)</visible>
+			</control>
 		</control>
 		<control type="image">
 			<left>0</left>
@@ -151,7 +175,7 @@
 			<include>AlbumArtMusicVizWall</include>
 			<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),true)</visible>
 			<visible>Window.IsVisible(Home) + Player.HasAudio + StringCompare(Container(9000).ListItem.Property(HiLiteItem),FullScreen)</visible>
-			<visible>Skin.HasSetting(NoDiffuseVizFanart) | IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+			<visible>Skin.HasSetting(NoDiffuseVizFanart) | IsEmpty(Visualisation.Name) | SubString(Visualisation.Name,waveform) | SubString(Visualisation.Name,spectrum)</visible>
 		</control>
 		<control type="visualisation">
 			<include>Dimensions_Fullscreen</include>
@@ -172,11 +196,11 @@
 			<control type="group">
 				<!-- CDWall Diffused -->
 				<include>AlbumArtMusicVizWall</include>
-				<visible>!IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum) + !stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+				<visible>!IsEmpty(Visualisation.Name) + !SubString(Visualisation.Name,waveform) + !SubString(Visualisation.Name,spectrum)</visible>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>AAFFFFFF</colordiffuse>
+				<include>VizDiffusionEffect</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
 				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(NoDiffuseVizFanart) + !Skin.HasSetting(HideArtistArtOSD)</visible>
 				<fadetime>600</fadetime>
@@ -243,6 +267,7 @@
 			</control>
 			<control type="group">
 				<visible>!Container.Content(Episodes) | Skin.HasSetting(HideEpisodeThumb) | stringcompare(ListItem.Label,..)</visible>
+				<visible>!Skin.HasSetting(EnableAnimatedFanArt) | IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
 				<control type="image">
 					<include>Window_OpenClose_Animation</include>
 					<include>Dimensions_Fullscreen</include>
@@ -321,8 +346,7 @@
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<include>SmallVideoGenreFlagging</include>
-				<!--visible>!IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible-->
-				<!--visible>!Skin.HasSetting(EnableGenreFlagging) |[Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) | Control.IsVisible(500)] |[ Skin.HasSetting(EnableGenreFlagging) + Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),true)]</visible-->
+				<visible>!IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible>
 				<visible>!Skin.HasSetting(EnableGenreFlagging) | [Skin.HasSetting(EnableGenreFlagging) + Player.HasMedia + !SubString(Window(videolibrary).Property(TvTunesIsAlive),true)]</visible>
 				<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
 				<visible>!Control.IsVisible(508) + !Control.IsVisible(529) + !Control.IsVisible(555) + !Control.IsVisible(594) + !Control.IsVisible(732)</visible>
@@ -358,11 +382,9 @@
 			<itemgap>0</itemgap>
 			<orientation>horizontal</orientation>
 			<include>SmallVideoGenreFlagging</include>
-			<!--visible>Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible-->
-			<visible>Skin.HasSetting(EnableGenreFlagging)</visible>
+			<visible>Skin.HasSetting(EnableGenreFlagging) + !IsEmpty(Skin.String(resource.images.moviegenreicons.path))</visible>
 			<visible>Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Episodes) | Container.Content(Seasons)</visible>
 			<visible>!Control.IsVisible(500) + !Control.IsVisible(508) + !Control.IsVisible(529) + !Control.IsVisible(555) + !Control.IsVisible(594) + !Control.IsVisible(732)</visible>
-			<!--visible>IsEmpty(Window(Home).Property(NextAired.NextDate))</visible-->
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),true)</visible>
 		</control>
 	</include>

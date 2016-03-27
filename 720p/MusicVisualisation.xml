@@ -8,7 +8,7 @@
 			<include>ArtistExtraFanArt</include>
 		</control>
 		<control type="group">
-			<visible>Skin.HasSetting(NoDiffuseVizFanart) | IsEmpty(Visualisation.Name) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+			<visible>Skin.HasSetting(NoDiffuseVizFanart) | IsEmpty(Visualisation.Name) | SubString(Visualisation.Name,waveform) | SubString(Visualisation.Name,spectrum)</visible>
 			<include>AlbumArtMusicVizWall</include>
 		</control>
 		<include>MusicArtUnderVisualisation</include>
@@ -17,7 +17,7 @@
 			<include>Dimensions_Fullscreen</include>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(NoDiffuseVizFanart) + !IsEmpty(Visualisation.Name) + !stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum) + !stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+			<visible>!Skin.HasSetting(NoDiffuseVizFanart) + !IsEmpty(Visualisation.Name) + !SubString(Visualisation.Name,waveform) + !SubString(Visualisation.Name,spectrum)</visible>
 			<include>AlbumArtMusicVizWall</include>
 		</control>
 		<include>MusicArtOverVisualisation</include>

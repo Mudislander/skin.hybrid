@@ -78,11 +78,13 @@
 			<texture background="true">$VAR[MovieGenreIcon]history$VAR[MovieGenreIconExt]</texture>
 			<visible>substring(ListItem.Genre,$LOCALIZE[31612]) | substring(ListItem.Genre,History)</visible>
 		</control>
+		<!--		
 		<control type="image">
 			<include>SmallGenreFlag</include>
 			<texture background="true">$VAR[MovieGenreIcon]holiday$VAR[MovieGenreIconExt]</texture>
 			<visible>substring(ListItem.Genre,$LOCALIZE[31613]) | substring(ListItem.Genre,Holiday) | substring(ListItem.Genre,Christmas)</visible>
 		</control>
+-->
 		<control type="image">
 			<include>SmallGenreFlag</include>
 			<texture background="true">$VAR[MovieGenreIcon]horror$VAR[MovieGenreIconExt]</texture>
@@ -209,12 +211,14 @@
 			<visible>substring(Container(510).ListItem.Property(Genre),$LOCALIZE[31612]) | substring(Container(510).ListItem.Property(Genre),History)</visible>
 			<visible>Control.HasFocus(510)</visible>
 		</control>
+		<!--		
 		<control type="label">
 			<include>GenreTextPlace</include>
-			<label> $LOCALIZE[31614] </label>
+			<label> $LOCALIZE[31613] </label>
 			<visible>substring(Container(510).ListItem.Property(Genre),$LOCALIZE[31613]) | substring(Container(510).ListItem.Property(Genre),Holiday) | substring(Container(510).ListItem.Property(Genre),Christmas)</visible>
 			<visible>Control.HasFocus(510)</visible>
 		</control>
+-->
 		<control type="label">
 			<include>GenreTextPlace</include>
 			<label> $LOCALIZE[31614] </label>
@@ -365,12 +369,14 @@
 			<visible>substring(VideoPlayer.Genre,$LOCALIZE[31612]) | substring(VideoPlayer.Genre,History)</visible>
 			<visible>Player.HasVideo + !Control.HasFocus(510)</visible>
 		</control>
+		<!--		
 		<control type="label" id="1">
 			<include>GenreTextPlace</include>
-			<label> $LOCALIZE[31614] </label>
+			<label> $LOCALIZE[31613] </label>
 			<visible>substring(VideoPlayer.Genre,$LOCALIZE[31613]) | substring(VideoPlayer.Genre,Holiday) | substring(VideoPlayer.Genre,Christmas)</visible>
 			<visible>Player.HasVideo + !Control.HasFocus(510)</visible>
 		</control>
+-->
 		<control type="label" id="1">
 			<include>GenreTextPlace</include>
 			<label> $LOCALIZE[31614] </label>

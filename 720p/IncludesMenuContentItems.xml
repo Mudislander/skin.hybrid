@@ -173,16 +173,6 @@
 				<include>CloseMenuChoice</include>
 				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
 			</item>
-			
-			<!--item>
-				<description>Android</description>
-				<label>$LOCALIZE[31104]</label>
-			
-			
-				<visible>System.Platform.Android</visible>
-				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
-			</item-->
-			
 			<item>
 				<description>Favourites</description>
 				<label>$LOCALIZE[31329] - $LOCALIZE[1036]</label>
@@ -531,7 +521,7 @@
 				<label>$LOCALIZE[31244] - $LOCALIZE[31226]</label>
 				<include>ClearButtonChoice</include>
 				<onclick>Skin.SetString(UsrSelectAddon,special://skin/extras/Playlists/GenreFamily.xsp)</onclick>
-				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label,$LOCALIZE[31219])</onclick>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label,$LOCALIZE[31226])</onclick>
 				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,ActivateWindow(VideoLibrary,"$INFO[Skin.String(UsrSelectAddon)]",return))</onclick>
 				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Data,$INFO[Skin.String(UsrSelectAddon)])</onclick>
 				<onclick condition="Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>

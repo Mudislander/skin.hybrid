@@ -3,17 +3,18 @@
 	<include file="IncludesVariables.xml" />
 	<include file="IncludesHomeMenuSys.xml" />
 	<include file="IncludesCommonMedia.xml" />
+	<include file="IncludesCommonRoutines.xml" />
 	<include file="IncludesSubMenuSys.xml" />
+	<include file="IncludesGenreFlagging.xml" />
 	<include file="IncludesHomeAddOnSystem.xml" />
 	<include file="IncludesInfoWidget.xml" />
-	<include file="IncludesCDWall.xml" />
 	<include file="IncludesOnScreenDisplay.xml" />
+	<include file="IncludesCDWall.xml" />
 	<include file="IncludesCodecFlagging.xml" />
-	<include file="IncludesGenreFlagging.xml" />
+	<include file="ViewsFileMode.xml" />
 	<include file="IncludesMenuContentItems.xml" />
 	<include file="ViewsVideoLibrary.xml" />
 	<include file="ViewsMusicLibrary.xml" />
-	<include file="ViewsFileMode.xml" />
 	<include file="ViewsPictures.xml" />
 	<include file="ViewsAddonBrowser.xml" />
 	<include file="ViewsLiveTV.xml" />
@@ -28,7 +29,6 @@
 	<include file="ViewsFullWidthList.xml" />
 	<include file="ViewsLowlist.xml" />
 	<include file="IncludesPVR.xml" />
-	<include file="IncludesCommonRoutines.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
 	<default type="image">
@@ -222,8 +222,40 @@
 		<aligny>center</aligny>
 		<pulseonselect>no</pulseonselect>
 	</default>
-	<include name="MenuColorDiffuse">
-		<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
+	<include name="KeyboardButton">
+		<width>50</width>
+		<height>50</height>
+		<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
+		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">KeyboardKey.png</texturefocus>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font13</font>
+		<focusedcolor>black</focusedcolor>
+	</include>
+	<include name="ButtonCommonValues">
+		<height>40</height>
+		<width>250</width>
+		<textoffsetx>10</textoffsetx>
+		<textwidth>200</textwidth>
+		<aligny>center</aligny>
+		<font>font12</font>
+		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="InvisibleButton">
+		<left>1480</left>
+		<top>920</top>
+		<width>1</width>
+		<height>1</height>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+	</include>
+	<include name="Dimensions_Fullscreen">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>720</height>
 	</include>
 	<include name="TransparentEffect">
 		<animation effect="fade" start="100" end="15" time="0" condition="SubString(skin.string(MediaPanelTrans),85)">Conditional</animation>
@@ -238,9 +270,27 @@
 		<animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(MediaPanelTrans),55) | SubString(skin.string(MediaPanelTrans),40)">Conditional</animation>
 		<animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(MediaPanelTrans),25) | SubString(skin.string(MediaPanelTrans),10)">Conditional</animation>
 	</include>
+	<include name="VizDiffusionEffect">
+		<animation effect="fade" start="100" end="30" time="0" condition="IsEmpty(Skin.String(VizDiffuseAmnt))">Conditional</animation>
+		<animation effect="fade" start="100" end="15" time="0" condition="SubString(skin.string(VizDiffuseAmnt),85)">Conditional</animation>
+		<animation effect="fade" start="100" end="30" time="0" condition="SubString(skin.string(VizDiffuseAmnt),70)">Conditional</animation>
+		<animation effect="fade" start="100" end="45" time="0" condition="SubString(skin.string(VizDiffuseAmnt),55)">Conditional</animation>
+		<animation effect="fade" start="100" end="60" time="0" condition="SubString(skin.string(VizDiffuseAmnt),40)">Conditional</animation>
+		<animation effect="fade" start="100" end="75" time="0" condition="SubString(skin.string(VizDiffuseAmnt),25)">Conditional</animation>
+		<animation effect="fade" start="100" end="90" time="0" condition="SubString(skin.string(VizDiffuseAmnt),10)">Conditional</animation>
+	</include>
 	<include name="BackgroundFade">
 		<animation effect="fade" time="600">Visible</animation>
 		<animation effect="fade" time="600">Hidden</animation>
+	</include>
+	<include name="BehindDialogFadeOut">
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture>black-back.png</texture>
+			<animation effect="fade" time="400">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<visible>Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation) | Window.IsActive(Peripherals) | Window.IsActive(PeripheralSettings) | Window.IsActive(script-cu-lrclyrics-main.xml) | Window.IsActive(PVRChannelManager) | Window.IsActive(MediaFilter)</visible>
+		</control>
 	</include>
 	<include name="Animation_Fade">
 		<animation effect="fade" time="500">WindowOpen</animation>
@@ -264,27 +314,6 @@
 		<animation effect="zoom" start="110" end="130" center="auto" time="16000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
 		<animation effect="slide" start="-10,-10" end="20,20" time="8000" tween="cubic" easing="inout" pulse="true" condition="!Skin.HasSetting(NoAnimateVizFanart)">Conditional</animation>
 	</include>
-	<include name="KeyboardButton">
-		<width>50</width>
-		<height>50</height>
-		<texturenofocus border="3">KeyboardKeyNF.png</texturenofocus>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">KeyboardKey.png</texturefocus>
-		<align>center</align>
-		<aligny>center</aligny>
-		<font>font13</font>
-		<focusedcolor>black</focusedcolor>
-	</include>
-	<include name="ButtonCommonValues">
-		<height>40</height>
-		<width>250</width>
-		<textoffsetx>10</textoffsetx>
-		<textwidth>200</textwidth>
-		<aligny>center</aligny>
-		<font>font12</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<pulseonselect>false</pulseonselect>
-	</include>
 	<include name="VideoNodeStatsList">
 		<control type="list" id="8051">
 			<visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),VideoNode)</visible>
@@ -297,46 +326,6 @@
 			<content>$VAR[VideoNodeStats]</content>
 		</control>
 	</include>
-	<!--include name="VideoNodeContentList">
-        <control type="list" id="8052">
-            <visible>StringCompare(Container(9000).ListItem.Property(HiLiteItem),VideoNode)</visible>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1</width>
-            <height>1</height>
-            <focusedlayout />
-            <itemlayout />
-            <content target="video" limit="12">$VAR[VideoNodeContent]</content>
-        </control>
-    </include-->
-	<!--
-	
-	
-	<control type="group">
-			<control type="wraplist" id="8050">
-				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2frecentlyaddedmovies.xml%2f/</content>
-			</control>
-			<control type="wraplist" id="8051">
-				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2frecentlyaddedepisodes.xml%2f/</content>
-			</control>
-			<control type="wraplist" id="8053">
-				<content target="video" limit="10">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2fmusicvideos%2ftitles.xml%2f/</content>
-			</control>
-			<control type="wraplist" id="8054">
-				<content target="music" limit="12">$INFO[Skin.String(UPnP_Path)]musicdb%3a%2f%2frecentlyplayedalbums%2f/</content>
-			</control>
-			<control type="wraplist" id="8052">
-				<content target="music" limit="50">$INFO[Skin.String(UPnP_Path)]musicdb%3a%2f%2fartists%2f/</content>
-			</control>
-			<control type="wraplist" id="8055">
-				<content target="video" limit="50">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2fmovies%2ftitles.xml%2f/</content>
-			</control>
-			<control type="wraplist" id="8056">
-				<content target="video" limit="50">$INFO[Skin.String(UPnP_Path)]library%3a%2f%2fvideo%2ftvshows%2ftitles.xml%2f/</content>
-			</control>
-			<visible>Skin.HasSetting(UPnP_Mode) + Skin.String(UPnPServer,XBMC)</visible>
-		</control>
-	-->
 	<include name="VideoBoxGlass">
 		<control type="image">
 			<left>0</left>
@@ -401,29 +390,6 @@
 		<animation effect="rotate" end="720" center="auto" time="800" loop="true" reversible="false" condition="Player.Rewinding16x">Conditional</animation>
 		<animation effect="rotate" end="720" center="auto" time="400" loop="true" reversible="false" condition="Player.Rewinding32x">Conditional</animation>
 	</include>
-	<include name="Dimensions_Fullscreen">
-		<left>0</left>
-		<top>0</top>
-		<width>1280</width>
-		<height>720</height>
-	</include>
-	<include name="BehindDialogFadeOut">
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<texture>black-back.png</texture>
-			<animation effect="fade" time="400">Visible</animation>
-			<animation effect="fade" time="200">Hidden</animation>
-			<visible>Window.IsActive(MovieInformation) | Window.IsActive(MusicInformation) | Window.IsActive(SongInformation) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation) | Window.IsActive(Peripherals) | Window.IsActive(PeripheralSettings) | Window.IsActive(script-cu-lrclyrics-main.xml) | Window.IsActive(PVRChannelManager) | Window.IsActive(MediaFilter)</visible>
-		</control>
-	</include>
-	<include name="InvisibleButton">
-		<left>1480</left>
-		<top>920</top>
-		<width>1</width>
-		<height>1</height>
-		<texturenofocus>-</texturenofocus>
-		<texturefocus>-</texturefocus>
-	</include>
 	<include name="ClearButtonChoice">
 		<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
 		<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Path)</onclick>
@@ -461,11 +427,10 @@
 		<fadetime>FanartCrossFadeTime</fadetime>
 	</include>
 	<include name="WidgetPanelVizability">
-		<!--visible>true </visible-->
-		<!---->
 		<visible>
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
+		StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) |
 		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
 		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)] |
 		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
@@ -474,7 +439,6 @@
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)]] |
-		
 		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
@@ -488,61 +452,48 @@
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
 		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)]] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Window(home).Property(favourite.count),0)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
 		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
 		</visible>
-		<!-- -->
-		<!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
 	</include>
 	<include name="VideoWidgetVizability">
 		<visible>
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
-		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
-		
-		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)]] |
-		
-		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)]] |
-		
-		[SubString(Window(home).Property(SkinWidgets_Recommended),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)]] |
-		
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Window(home).Property(favourite.count),0)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) + !Skin.HasSetting(DisableScriptPlaylist)] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
-
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),Weather) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies) |
+			[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
+			[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentMovies) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentEpisodes) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentConcerts)]] |
+			[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomMovies) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomEpisodes) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomConcerts)]] |
+			[SubString(Window(home).Property(SkinWidgets_Recommended),true) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedMovies) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedEpisodes) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedConcerts)]] |
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites) + IntegerGreaterThan(Window(home).Property(favourite.count),0)] |
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList) + !Skin.HasSetting(DisableScriptPlaylist)] |
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),NextAired) + !IsEmpty(Window(home).Property(NextAired.1.NextTitle))]
 		</visible>
 	</include>
 	<include name="MusicWidgetVizability">
 		<visible>
-		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)] |
-		[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)] |
-		
-		[SubString(Window(home).Property(SkinWidgets_RecentItems),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)]] |
-		
-		[SubString(Window(home).Property(SkinWidgets_RandomItems),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)]] |
-		[SubString(Window(home).Property(SkinWidgets_Recommended),true) +
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
-		StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)]] |
-		[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)]
+			[Skin.HasSetting(UPnP_Mode) + StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)] |
+			[SubString(Window(home).Property(SkinWidgets_RecentItems),true) + Library.HasContent(Music) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentSongs) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RecentAlbums)]] |
+			[SubString(Window(home).Property(SkinWidgets_RandomItems),true) + Library.HasContent(Music) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomSongs) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomAlbums)]] |
+			[SubString(Window(home).Property(SkinWidgets_Recommended),true) + Library.HasContent(Music) +
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),SuggestedAlbums) |
+			StringCompare(Container(9000).ListItem.Property(WidgetSet),RandomArtists)]] |
+			[StringCompare(Container(9000).ListItem.Property(WidgetSet),MusicPlayList) + !Skin.HasSetting(DisableScriptPlaylist)]
 		</visible>
-		<!-- -->
-		<!-- | [Player.HasMedia + !Skin.HasSetting(HideNowPlayingWidget)] -->
 	</include>
 	<include name="MenuMoviePlayListCheck">
 		<visible>

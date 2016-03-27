@@ -3,10 +3,8 @@
 	<include name="WidgetVideoPanel">
 		<left>0</left>
 		<top>-8</top>
-		<!--top>30</top-->
 		<animation effect="slide" start="0,0" end="0,272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
-		<!--animation effect="slide" start="0,0" end="0,-40" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + [system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]]">Conditional</animation-->
 		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>
 		<height>230</height>
@@ -3234,16 +3232,28 @@
 			</control>
 		</control>
 	</include>
+	<include name="WidgetDynamicUnWatchedContent">
+		<control type="group">
+			<left>0</left>
+			<top>40</top>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>Skin.HasSetting(DisableScriptPlaylist)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies)</visible>
+				<include>WidgetVideoLayout</include>
+				<content target="video" limit="12">special://skin/extras/Playlists/UnwatchedMovies.xsp</content>
+			</control>
+		</control>
+	</include>
 	<include name="WidgetUnWatchedContent">
 		<control type="group">
 			<left>0</left>
 			<top>40</top>
 			<control type="panel" id="510">
 				<include>WidgetVideoPanel</include>
+				<visible>!Skin.HasSetting(DisableScriptPlaylist)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies)</visible>
 				<include>WidgetVideoLayout</include>
-				<!--content target="video" limit="12">special://skin/extras/Playlists/UnwatchedMovies.xsp</content-->
-				<!-- -->
 				<content>
 					<item>
 						<label>$INFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.Title)]</label>
@@ -3438,11 +3448,10 @@
 						<visible>!IsEmpty(Window(home).Property(PlaylistRandomMovieUnWatched.12.Title))</visible>
 					</item>
 				</content>
-				<!-- -->
+			
 			</control>
 		</control>
 	</include>
-	<!-- -->
 	<include name="WidgetVideoPlayListContent">
 		<control type="group">
 			<left>0</left>
@@ -7423,7 +7432,6 @@
 			</control>
 		</control>
 	</include>
-	<!-- -->
 	<include name="WidgetMusicPlayListContent">
 		<control type="group">
 			<left>0</left>
@@ -7601,11 +7609,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListOne.12.Title))</visible>
 						<visible>Container(9000).HasFocus(1)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListOne.1.Title)) + Container(9000).HasFocus(1)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListTwo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListTwo.1.Artist)]</label2>
@@ -7774,11 +7777,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTwo.12.Title))</visible>
 						<visible>Container(9000).HasFocus(2)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListTwo.1.Title)) + Container(9000).HasFocus(2)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListThree.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListThree.1.Artist)]</label2>
@@ -7947,11 +7945,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListThree.12.Title))</visible>
 						<visible>Container(9000).HasFocus(3)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListThree.1.Title)) + Container(9000).HasFocus(3)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListFour.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListFour.1.Artist)]</label2>
@@ -8120,11 +8113,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFour.12.Title))</visible>
 						<visible>Container(9000).HasFocus(4)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListFour.1.Title)) + Container(9000).HasFocus(4)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListFive.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListFive.1.Artist)]</label2>
@@ -8293,11 +8281,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListFive.12.Title))</visible>
 						<visible>Container(9000).HasFocus(5)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListFive.1.Title)) + Container(9000).HasFocus(5)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListSix.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListSix.1.Artist)]</label2>
@@ -8466,11 +8449,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSix.12.Title))</visible>
 						<visible>Container(9000).HasFocus(6)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListSix.1.Title)) + Container(9000).HasFocus(6)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListSeven.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListSeven.1.Artist)]</label2>
@@ -8639,11 +8617,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListSeven.12.Title))</visible>
 						<visible>Container(9000).HasFocus(7)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListSeven.1.Title)) + Container(9000).HasFocus(7)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListEight.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListEight.1.Artist)]</label2>
@@ -8812,11 +8785,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListEight.12.Title))</visible>
 						<visible>Container(9000).HasFocus(8)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListEight.1.Title)) + Container(9000).HasFocus(8)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListNine.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListNine.1.Artist)]</label2>
@@ -8985,11 +8953,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListNine.12.Title))</visible>
 						<visible>Container(9000).HasFocus(9)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListNine.1.Title)) + Container(9000).HasFocus(9)</visible>
-					</item-->
 					<item>
 						<label>$INFO[Window(home).Property(HomePlayListTen.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(HomePlayListTen.1.Artist)]</label2>
@@ -9158,11 +9121,6 @@
 						<visible>!IsEmpty(Window(home).Property(HomePlayListTen.12.Title))</visible>
 						<visible>Container(9000).HasFocus(10)</visible>
 					</item>
-					<!--item>
-						<icon fallback="DefaultAlbumCover.png">DefaultAudioCover.png</icon>
-						<onclick>noop</onclick>
-						<visible>IsEmpty(Window(home).Property(HomePlayListTen.1.Title)) + Container(9000).HasFocus(10)</visible>
-					</item-->
 				</content>
 			</control>
 		</control>
@@ -9176,22 +9134,6 @@
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList)</visible>
 				<include>WidgetVideoLayout</include>
 				<content target="video" limit="12">$VAR[VideoNodeContent]</content>
-				<!--item>
-                        <label>$INFO[Window(home).Property(RecentMovie.1.Title)]</label>
-                        <label2>$INFO[Window(home).Property(RecentMovie.1.Tagline)]</label2>
-                        <icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.1.Art(poster))]</icon>
-                        <property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.1.Art(fanart))]</property>
-                        <property name="Genre">$INFO[Window(home).Property(RecentMovie.1.Genre)]</property>
-                        <property name="Runtime">$INFO[Window(home).Property(RecentMovie.1.Runtime)]</property>
-                        <property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.1.Rating)]</property>
-                        <property name="Plot">$INFO[Window(home).Property(RecentMovie.1.Plot)]</property>
-                        <property name="PlotOutline">$INFO[Window(home).Property(RecentMovie.1.PlotOutline)]</property>
-                        <property name="Year">$INFO[Window(home).Property(RecentMovie.1.Year)]</property>
-                        <property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentMovie.1.mpaa)]</property>
-                        <onclick>PlayList.Clear</onclick>
-                        <onclick>PlayMedia($ESCINFO[Window(home).Property(RecentMovie.1.File)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(RecentMovie.1.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
-                    </item-->
 			</control>
 		</control>
 	</include>
@@ -9204,22 +9146,6 @@
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMovies)</visible>
 				<include>WidgetVideoLayout</include>
 				<content target="video" limit="12">$VAR[UPnPMediaContent]</content>
-				<!--item>
-                        <label>$INFO[Window(home).Property(RecentMovie.1.Title)]</label>
-                        <label2>$INFO[Window(home).Property(RecentMovie.1.Tagline)]</label2>
-                        <icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.1.Art(poster))]</icon>
-                        <property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.1.Art(fanart))]</property>
-                        <property name="Genre">$INFO[Window(home).Property(RecentMovie.1.Genre)]</property>
-                        <property name="Runtime">$INFO[Window(home).Property(RecentMovie.1.Runtime)]</property>
-                        <property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.1.Rating)]</property>
-                        <property name="Plot">$INFO[Window(home).Property(RecentMovie.1.Plot)]</property>
-                        <property name="PlotOutline">$INFO[Window(home).Property(RecentMovie.1.PlotOutline)]</property>
-                        <property name="Year">$INFO[Window(home).Property(RecentMovie.1.Year)]</property>
-                        <property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentMovie.1.mpaa)]</property>
-                        <onclick>PlayList.Clear</onclick>
-                        <onclick>PlayMedia($ESCINFO[Window(home).Property(RecentMovie.1.File)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(RecentMovie.1.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
-                    </item-->
 			</control>
 		</control>
 	</include>
@@ -9232,16 +9158,6 @@
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UPnPMusic)</visible>
 				<include>WidgetMusicLayout</include>
 				<content target="music" limit="12">$VAR[UPnPMediaContent]</content>
-				<!--item>
-                        <label>$INFO[Window(home).Property(LatestSong.1.Title)]</label>
-                        <label2>$INFO[Window(home).Property(LatestSong.1.Artist)]</label2>
-                        <icon fallback="DefaultAlbumCover.png">$INFO[Window(home).Property(LatestSong.1.Thumb)]</icon>
-                        <property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestSong.1.fanart)]</property>
-                        <property name="Year">$INFO[Window(home).Property(LatestSong.1.Year)]</property>
-                        <onclick>PlayList.Clear</onclick>
-                        <onclick>PlayMedia($INFO[Window(home).Property(LatestSong.1.Path)])</onclick>
-                        <visible>!IsEmpty(Window(home).Property(LatestSong.1.Title))</visible>
-                    </item-->
 			</control>
 		</control>
 	</include>

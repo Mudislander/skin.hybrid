@@ -62,25 +62,6 @@
 				<aspectratio aligny="bottom" align="center">keep</aspectratio>
 				<visible>!Skin.HasSetting(DisableLogoArt) + !IsEmpty(Player.Art(clearlogo)) + [IsEmpty(Player.Art(clearart)) | Skin.HasSetting(DisableClearArt)]</visible>
 			</control>
-			<!--control type="image" id="1">
-				<description>Cover image</description>
-				<left>63</left>
-				<top>339r</top>
-				<width>210</width>
-				<height>320</height>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="ClearCase/EmptyCaseMask.png" fallback="DefaultVideo.png">$INFO[Player.Art(poster)]</texture>
-				<visible>IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
-			</control>
-			<control type="image" id="1">
-				<left>30</left>
-				<top>350r</top>
-				<width>255</width>
-				<height>345</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
-				<visible>!Player.IsInternetStream + IsEmpty(Player.Art(clearart)) + IsEmpty(Player.Art(clearlogo))</visible>
-			</control-->
 			<control type="image" id="1">
 				<description>Cover image</description>
 				<left>63</left>
@@ -149,25 +130,6 @@
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(DisableLogoArt) + !IsEmpty(Player.Art(tvshow.clearlogo)) + [Skin.HasSetting(DisableClearArt) | IsEmpty(Player.Art(tvshow.clearart))]</visible>
 			</control>
-			<!--control type="image" id="1">
-				<description>Cover image</description>
-				<left>63</left>
-				<top>339r</top>
-				<width>210</width>
-				<height>320</height>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture diffuse="ClearCase/EmptyCaseMask.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(tvshow.thumb)]</texture>
-				<visible>IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + !IsEmpty(Player.Art(tvshow.thumb))</visible>
-			</control>
-			<control type="image" id="1">
-				<left>30</left>
-				<top>350r</top>
-				<width>255</width>
-				<height>345</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>$VAR[VideoPlayerCase,ClearCase/,.png]</texture>
-				<visible>IsEmpty(Player.Art(tvshow.clearart)) + IsEmpty(Player.Art(tvshow.clearlogo)) + !IsEmpty(Player.Art(tvshow.thumb))</visible>
-			</control-->
 			<control type="image" id="1">
 				<description>Cover image</description>
 				<left>63</left>
@@ -368,7 +330,7 @@
 	</include>
 	<include name="MusicArtUnderVisualisation">
 		<control type="group">
-			<visible>Skin.HasSetting(NoDiffuseVizFanart) | stringcompare(Visualisation.Name,Waveform) | stringcompare(Visualisation.Name,DirectX Spectrum) | stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+			<visible>Skin.HasSetting(NoDiffuseVizFanart) | SubString(Visualisation.Name,waveform) | SubString(Visualisation.Name,spectrum)</visible>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<timeperimage>10000</timeperimage>
@@ -422,14 +384,14 @@
 	<include name="MusicArtOverVisualisation">
 		<control type="group">
 			<visible>!Skin.HasSetting(NoDiffuseVizFanart)</visible>
-			<visible>!stringcompare(Visualisation.Name,Waveform) + !stringcompare(Visualisation.Name,DirectX Spectrum) + !stringcompare(Visualisation.Name,OpenGL Spectrum)</visible>
+			<visible>!SubString(Visualisation.Name,waveform) + !SubString(Visualisation.Name,spectrum)</visible>
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<timeperimage>10000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>600</fadetime>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>AAFFFFFF</colordiffuse>
+				<include>VizDiffusionEffect</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<visible>!Skin.HasSetting(HideArtistArtOSD) + !IsEmpty(Control.GetLabel(5043))</visible>
@@ -441,7 +403,7 @@
 				<randomize>true</randomize>
 				<fadetime>600</fadetime>
 				<aspectratio>keep</aspectratio>
-				<colordiffuse>AAFFFFFF</colordiffuse>
+				<include>VizDiffusionEffect</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Skin.String(PhysicalMusicFolder)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
 				<visible>!Skin.HasSetting(HideArtistArtOSD) + IsEmpty(Control.GetLabel(5043))</visible>
@@ -452,7 +414,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
-				<colordiffuse>AAFFFFFF</colordiffuse>
+				<include>VizDiffusionEffect</include>
 				<fadetime>600</fadetime>
 				<visible>!Skin.HasSetting(HideArtistArtOSD)</visible>
 				<visible>Skin.HasSetting(DisableSlideShowArt) | [!Skin.HasSetting(DisableSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent)) + IsEmpty(Window.Property(ArtworkReady))]</visible>
@@ -466,7 +428,7 @@
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-				<colordiffuse>AAFFFFFF</colordiffuse>
+				<include>VizDiffusionEffect</include>
 				<visible>!Skin.HasSetting(DisableSlideShowArt) + !Skin.HasSetting(HideArtistArtOSD) + !IsEmpty(Window.Property(ArtworkReady))</visible>
 			</control>
 			<control type="image">

@@ -461,6 +461,24 @@
 				<onup>404</onup>
 				<ondown>200</ondown>
 			</control>
+			<!--control type="button" id="256">
+				<visible>Skin.String(OSDBtnUsrCmd)</visible>
+				<left>55</left>
+				<top>0</top>
+				<width>55</width>
+				<height>55</height>
+				<label>36501</label>
+				<font>-</font>
+				<texturefocus>OSDPresetSettingsFO.png</texturefocus>
+				<texturenofocus>OSDPresetSettingsNF.png</texturenofocus>
+				<onleft>255</onleft>
+				<onright>250</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick condition="Skin.String(OSDBtnUsrCmd)">$VAR[UsrOSDBtnCmdOne]</onclick>
+				<onclick condition="Skin.String(OSDBtnUsrCmd)">$VAR[UsrOSDBtnCmdTwo]</onclick>
+				<onclick condition="Skin.String(OSDBtnUsrCmd)">$VAR[UsrOSDBtnCmdThree]</onclick>
+			</control-->
 			<control type="image">
 				<left>55</left>
 				<top>0</top>

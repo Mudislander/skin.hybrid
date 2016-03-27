@@ -97,7 +97,6 @@
 			<onclick>ClearProperty(EnableReLoadSkin,Home)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<onclick>Dialog.Close(1100)</onclick>
-			<onclick>ActivateWindow(home)</onclick>
 		</control>
 		<control type="button" id="10">
 			<description>No button</description>
@@ -116,7 +115,6 @@
 			<ondown>10</ondown>
 			<onclick>ClearProperty(EnableReLoadSkin,Home)</onclick>
 			<onclick>Dialog.Close(1100)</onclick>
-			<onclick>ActivateWindow(home)</onclick>
 		</control>
 	</controls>
 </window>

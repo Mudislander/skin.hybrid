@@ -33,6 +33,9 @@
 			<include>MediaListView3</include>
 			<!-- view id = 503 -->
 			<include>PosterWrapView</include>
+			<!--include condition="Skin.HasSetting(WrapMediaViews)">PosterWrapViewFanart</include>
+			 CCM Helix 
+			<include condition="!Skin.HasSetting(WrapMediaViews)">PosterListViewFanart</include-->
 			<!-- view id = 501 -->
 			<include>Coverflowview</include>
 			<!-- view id = 555 -->

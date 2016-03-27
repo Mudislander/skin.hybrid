@@ -186,6 +186,7 @@
 			<top>55r</top>
 			<animation effect="fade" time="250" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="fade" time="250" condition="Window.Next(home)">WindowClose</animation>
+			<visible>!Window.IsVisible(1155)</visible>
 			<control type="button" id="801">
 				<description>Now Playing</description>
 				<left>45</left>
@@ -322,6 +323,7 @@
 			<animation effect="slide" start="0,0" end="-45,0" time="0" condition="!Skin.HasSetting(HideTrailerBtn) + !IsEmpty(ListItem.Trailer) + ![Control.IsVisible(500) | Control.IsVisible(529) | Control.IsVisible(594) | Control.IsVisible(732)]">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,55" time="0" condition="!Skin.HasSetting(DisableTVNextAired) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(EnableGenreFlagging)">conditional</animation>
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),true)</visible>
+			<visible>!Window.IsVisible(1155)</visible>
 		</control>
 		<control type="label" id="1">
 			<description>Date Label</description>
@@ -341,6 +343,7 @@
 			<animation effect="slide" start="0,0" end="-45,00" time="0" condition="!Skin.HasSetting(HideTrailerBtn) + !IsEmpty(ListItem.Trailer) + ![Control.IsVisible(500) | Control.IsVisible(529) | Control.IsVisible(594) | Control.IsVisible(732)]">conditional</animation>
 			<animation effect="slide" start="0,0" end="0,55" time="0" condition="!Skin.HasSetting(DisableTVNextAired) + !IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(EnableGenreFlagging)">conditional</animation>
 			<visible>!Player.HasMedia | SubString(Window(videolibrary).Property(TvTunesIsAlive),true)</visible>
+			<visible>!Window.IsVisible(1155)</visible>
 		</control>
 	</include>
 	<include name="BottonLogoImage">
