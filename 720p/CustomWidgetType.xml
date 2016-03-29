@@ -174,10 +174,24 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
+						<description>Similar Movies</description>
+						<label>$LOCALIZE[31116]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SimilarMovies)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
 						<description>Recent Episodes</description>
 						<label>$LOCALIZE[31195]</label>
 						<onclick>Dialog.Close(1125)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,RecentEpisodes)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Landscape Recent Episodes</description>
+						<label>$LOCALIZE[31195] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,ThumbRecentEpisodes)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
@@ -188,12 +202,50 @@
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
+						<description>Landscape Random Episodes</description>
+						<label>$LOCALIZE[31193] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,ThumbRandomEpisodes)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
 						<description>Suggested Episodes</description>
 						<label>$LOCALIZE[31194]</label>
 						<onclick>Dialog.Close(1125)</onclick>
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SuggestedEpisodes)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+					</item>
+					<item>
+						<description>Landscape Suggested Episodes</description>
+						<label>$LOCALIZE[31194] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,ThumbSuggestedEpisodes)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+					</item>
+					<item>
+						<description>Next Up</description>
+						<label>$LOCALIZE[31142]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,NextUpEpisodes)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<!--visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible-->
+					</item>
+					<item>
+						<description>Next Aired</description>
+						<label>$LOCALIZE[31245]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,NextAired)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>!Skin.HasSetting(DisableTVNextAired)</visible>
+					</item>
+					<item>
+						<description>Similar TVShows</description>
+						<label>$LOCALIZE[31140]</label>
+						<onclick>Dialog.Close(1125)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,SimilarEpisodes)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 					</item>
 					<item>
 						<description>Playlist Music</description>
@@ -262,14 +314,6 @@
 						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,Weather)</onclick>
 						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
 						<visible>!IsEmpty(Weather.Plugin)</visible>
-					</item>
-					<item>
-						<description>Next Aired</description>
-						<label>$LOCALIZE[31245]</label>
-						<onclick>Dialog.Close(1125)</onclick>
-						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Widget,NextAired)</onclick>
-						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
-						<visible>!Skin.HasSetting(DisableTVNextAired)</visible>
 					</item>
 					<item>
 						<description>Favourites</description>

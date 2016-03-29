@@ -374,7 +374,8 @@
 		<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(EnableFanartScript)</onload>
 		<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
 		<onload>Skin.SetBool(UseStickyHomeMenu)</onload>
-		<!--onload condition="!System.HasAddon(script.randomandlastitems)">Skin.Setbool(DisableScriptPlaylist)</onload-->
+		<onload condition="System.HasAddon(script.randomandlastitems)">Skin.SetString(WidgetPlaylistScript,Random)</onload>
+		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.SetString(WidgetPlaylistScript,Disabled)</onload>
 		<onload>Skin.SetBool(InitialSetUpRun)</onload>
 	</include>
 	<include name="WrapHomeMainMenu">

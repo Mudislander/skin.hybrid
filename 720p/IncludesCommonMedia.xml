@@ -12,7 +12,7 @@
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>Control.HasFocus(510)</visible>
+				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="multiimage">
@@ -22,7 +22,7 @@
 				<randomize>true</randomize>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<visible>!IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
@@ -32,7 +32,7 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -70,7 +70,7 @@
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>Control.HasFocus(510)</visible>
+				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="multiimage">
@@ -80,7 +80,7 @@
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 			</control>
 			<control type="group">
 				<include>BackgroundFade</include>
@@ -88,7 +88,7 @@
 				<include>Window_OpenClose_Animation</include>
 				<include>LiveContentBackgrounds</include>
 				<visible>StringCompare(Container(9000).ListItem.Property(Background),Live)</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
 			</control>
 		</control>
 		<control type="group">

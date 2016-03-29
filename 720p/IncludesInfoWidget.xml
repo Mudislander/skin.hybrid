@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="WidgetVideoPanel">
+		<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetVideoPosi</include>
+		<include condition="!Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetHighPosi</include>
 		<left>0</left>
-		<top>-8</top>
-		<animation effect="slide" start="0,0" end="0,272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>
@@ -19,9 +20,10 @@
 		<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 	</include>
 	<include name="WidgetMusicPanel">
+		<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetMusicPosi</include>
+		<include condition="!Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetHighPosi</include>
 		<left>0</left>
-		<top>-8</top>
-		<animation effect="slide" start="0,0" end="0,312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>
@@ -37,8 +39,12 @@
 		<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 	</include>
 	<include name="WidgetFavouritePanel">
+		<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetVideoPosi</include>
+		<include condition="!Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetHighPosi</include>
 		<left>0</left>
-		<top>-8</top>
+		<animation effect="slide" start="0,0" end="0,-272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>
 		<height>490</height>
 		<ondown>9000</ondown>
@@ -55,6 +61,7 @@
 				<top>146</top>
 				<width>99</width>
 				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -64,6 +71,7 @@
 				<top>8</top>
 				<width>99</width>
 				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture fallback="DefaultVideoCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 			</control>
@@ -74,6 +82,7 @@
 				<top>146</top>
 				<width>99</width>
 				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -87,6 +96,7 @@
 				<top>152</top>
 				<width>70</width>
 				<height>25</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true">WidgetFocus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>40FFFFFF</colordiffuse>
@@ -97,8 +107,135 @@
 				<top>8</top>
 				<width>99</width>
 				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture fallback="DefaultVideoCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="WidgetAltVideoLayout">
+		<itemlayout width="101" height="157">
+			<control type="image">
+				<left>4</left>
+				<top>146</top>
+				<width>99</width>
+				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>8</top>
+				<width>99</width>
+				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture fallback="DefaultVideoCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout width="101" height="157">
+			<control type="image">
+				<left>4</left>
+				<top>146</top>
+				<width>99</width>
+				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true" fallback="DefaultVideoCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>152</top>
+				<width>70</width>
+				<height>25</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true">WidgetFocus.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>40FFFFFF</colordiffuse>
+				<animation effect="fade" start="20" end="80" time="700" condition="true" pulse="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>8</top>
+				<width>99</width>
+				<height>140</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture fallback="DefaultVideoCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Art(poster)]</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="WidgetLandscapeLayout">
+		<itemlayout width="245" height="157">
+			<control type="image">
+				<left>2</left>
+				<top>146</top>
+				<width>240</width>
+				<height>138</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true" fallback="SmallFanartFallback.jpg" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+			</control>
+			<control type="image">
+				<left>2</left>
+				<top>10</top>
+				<width>240</width>
+				<height>138</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+			</control>
+		</itemlayout>
+		<focusedlayout width="245" height="157">
+			<control type="image">
+				<left>2</left>
+				<top>146</top>
+				<width>240</width>
+				<height>138</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true" fallback="SmallFanartFallback.jpg" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+					<effect type="fade" start="80" end="100" time="400" />
+				</animation>
+			</control>
+			<control type="image">
+				<left>87</left>
+				<top>152</top>
+				<width>70</width>
+				<height>25</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture flipy="true">WidgetFocus.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>40FFFFFF</colordiffuse>
+				<animation effect="fade" start="20" end="80" time="700" condition="true" pulse="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>2</left>
+				<top>10</top>
+				<width>240</width>
+				<height>138</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
+				<texture fallback="SmallFanartFallback.jpg" diffuse="episodematte.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
 				<animation type="Focus" reversible="false">
 					<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
 					<effect type="fade" start="80" end="100" time="400" />
@@ -113,6 +250,7 @@
 				<top>106</top>
 				<width>99</width>
 				<height>99</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" fallback="DefaultAudioCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -122,6 +260,7 @@
 				<top>8</top>
 				<width>99</width>
 				<height>99</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture fallback="DefaultAudioCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 			</control>
@@ -132,6 +271,7 @@
 				<top>106</top>
 				<width>99</width>
 				<height>99</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" fallback="DefaultAudioCover.png" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -145,6 +285,7 @@
 				<top>110</top>
 				<width>70</width>
 				<height>25</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true">WidgetFocus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>40FFFFFF</colordiffuse>
@@ -155,6 +296,7 @@
 				<top>8</top>
 				<width>99</width>
 				<height>99</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture fallback="DefaultAudioCover.png" diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -171,6 +313,7 @@
 				<top>140</top>
 				<width>90</width>
 				<height>90</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -181,6 +324,7 @@
 				<top>85</top>
 				<width>90</width>
 				<height>90</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>!Skin.HasSetting(resource.images.weathericons.multi) | IsEmpty(Skin.String(resource.images.weathericons.path))</visible>
@@ -228,6 +372,7 @@
 				<top>152</top>
 				<width>70</width>
 				<height>25</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true">WidgetFocus.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>40FFFFFF</colordiffuse>
@@ -238,6 +383,7 @@
 				<top>140</top>
 				<width>90</width>
 				<height>90</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture flipy="true" diffuse="PosterReflection.png" background="true">$INFO[ListItem.Icon]</texture>
 				<colordiffuse>80FFFFFF</colordiffuse>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
@@ -252,6 +398,7 @@
 				<top>85</top>
 				<width>90</width>
 				<height>90</height>
+				<fadetime>FanartCrossFadeTime</fadetime>
 				<texture diffuse="PosterDiffuse.png" background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<animation type="Focus" reversible="false">
@@ -316,7 +463,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.1.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.1.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.1.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.1.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.1.Rating)]</property>
@@ -332,7 +479,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.2.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.2.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.2.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.2.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.2.Rating)]</property>
@@ -348,7 +495,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.3.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.3.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.3.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.3.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.3.Rating)]</property>
@@ -364,7 +511,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.4.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.4.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.4.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.4.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.4.Rating)]</property>
@@ -380,7 +527,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.5.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.5.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.5.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.5.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.5.Rating)]</property>
@@ -396,7 +543,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.6.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.6.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.6.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.6.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.6.Rating)]</property>
@@ -412,7 +559,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.7.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.7.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.7.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.7.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.7.Rating)]</property>
@@ -428,7 +575,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.8.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.8.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.8.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.8.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.8.Rating)]</property>
@@ -444,7 +591,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.9.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.9.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.9.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.9.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.9.Rating)]</property>
@@ -460,7 +607,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.10.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.10.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.10.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.10.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.10.Rating)]</property>
@@ -476,7 +623,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.11.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.11.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.11.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.11.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.11.Rating)]</property>
@@ -492,7 +639,7 @@
 						<label>$INFO[Window(home).Property(RecentMovie.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMovie.12.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentMovie.12.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentMovie.12.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentMovie.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMovie.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMovie.12.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentMovie.12.Rating)]</property>
@@ -507,7 +654,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.1.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.1.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.1.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.1.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.1.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.1.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.1.Plot)]</property>
@@ -520,7 +667,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.2.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.2.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.2.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.2.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.2.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.2.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.2.Plot)]</property>
@@ -533,7 +680,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.3.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.3.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.3.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.3.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.3.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.3.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.3.Plot)]</property>
@@ -546,7 +693,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.4.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.4.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.4.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.4.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.4.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.4.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.4.Plot)]</property>
@@ -559,7 +706,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.5.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.5.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.5.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.5.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.5.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.5.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.5.Plot)]</property>
@@ -572,7 +719,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.6.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.6.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.6.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.6.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.6.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.6.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.6.Plot)]</property>
@@ -585,7 +732,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.7.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.7.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.7.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.7.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.7.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.7.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.7.Plot)]</property>
@@ -598,7 +745,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.8.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.8.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.8.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.8.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.8.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.8.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.8.Plot)]</property>
@@ -611,7 +758,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.9.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.9.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.9.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.9.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.9.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.9.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.9.Plot)]</property>
@@ -624,7 +771,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.10.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.10.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.10.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.10.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.10.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.10.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.10.Plot)]</property>
@@ -637,7 +784,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.11.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.11.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.11.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.11.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.11.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.11.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.11.Plot)]</property>
@@ -650,7 +797,7 @@
 					<item>
 						<label>$INFO[Window(home).Property(LatestMovie.12.Title)]</label>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestMovie.12.Thumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestMovie.12.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestMovie.12.fanart)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(LatestMovie.12.RunningTime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestMovie.12.Rating)]</property>
 						<property name="Plot">$INFO[Window(home).Property(LatestMovie.12.Plot)]</property>
@@ -671,7 +818,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.1.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.1.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.1.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.1.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.1.Rating)]</property>
@@ -687,7 +834,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.2.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.2.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.2.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.2.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.2.Rating)]</property>
@@ -703,7 +850,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.3.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.3.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.3.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.3.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.3.Rating)]</property>
@@ -719,7 +866,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.4.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.4.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.4.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.4.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.4.Rating)]</property>
@@ -735,7 +882,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.5.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.5.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.5.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.5.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.5.Rating)]</property>
@@ -751,7 +898,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.6.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.6.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.6.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.6.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.6.Rating)]</property>
@@ -767,7 +914,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.7.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.7.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.7.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.7.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.7.Rating)]</property>
@@ -783,7 +930,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.8.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.8.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.8.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.8.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.8.Rating)]</property>
@@ -799,7 +946,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.9.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.9.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.9.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.9.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.9.Rating)]</property>
@@ -815,7 +962,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.10.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.10.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.10.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.10.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.10.Rating)]</property>
@@ -831,7 +978,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.11.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.11.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.11.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.11.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.11.Rating)]</property>
@@ -847,7 +994,7 @@
 						<label>$INFO[Window(home).Property(RandomMovie.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMovie.12.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomMovie.12.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomMovie.12.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomMovie.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMovie.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMovie.12.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomMovie.12.Rating)]</property>
@@ -870,7 +1017,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.1.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.1.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.1.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.1.Rating)]</property>
@@ -886,7 +1033,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.2.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.2.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.2.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.2.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.2.Rating)]</property>
@@ -902,7 +1049,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.3.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.3.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.3.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.3.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.3.Rating)]</property>
@@ -918,7 +1065,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.4.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.4.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.4.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.4.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.4.Rating)]</property>
@@ -934,7 +1081,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.5.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.5.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.5.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.5.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.5.Rating)]</property>
@@ -950,7 +1097,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.6.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.6.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.6.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.6.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.6.Rating)]</property>
@@ -966,7 +1113,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.7.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.7.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.7.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.7.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.7.Rating)]</property>
@@ -982,7 +1129,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.8.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.8.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.8.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.8.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.8.Rating)]</property>
@@ -998,7 +1145,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.9.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.9.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.9.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.9.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.9.Rating)]</property>
@@ -1014,7 +1161,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.10.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.10.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.10.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.10.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.10.Rating)]</property>
@@ -1030,7 +1177,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.11.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.11.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.11.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.11.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.11.Rating)]</property>
@@ -1046,7 +1193,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMovie.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMovie.12.Tagline)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedMovie.12.Art(poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedMovie.12.Art(fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedMovie.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMovie.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMovie.12.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedMovie.12.Rating)]</property>
@@ -1075,7 +1222,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.1.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.1.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.1.Rating)]</property>
@@ -1091,7 +1238,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.2.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.2.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.2.Rating)]</property>
@@ -1107,7 +1254,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.3.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.3.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.3.Rating)]</property>
@@ -1123,7 +1270,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.4.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.4.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.4.Rating)]</property>
@@ -1139,7 +1286,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.5.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.5.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.5.Rating)]</property>
@@ -1155,7 +1302,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.6.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.6.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.6.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.6.Rating)]</property>
@@ -1171,7 +1318,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.7.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.7.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.7.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.7.Rating)]</property>
@@ -1187,7 +1334,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.8.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.8.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.8.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.8.Rating)]</property>
@@ -1203,7 +1350,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.9.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.9.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.9.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.9.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.9.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.9.Rating)]</property>
@@ -1219,7 +1366,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.10.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.10.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.10.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.10.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.10.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.10.Rating)]</property>
@@ -1235,7 +1382,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.11.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.11.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.11.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.11.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.11.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.11.Rating)]</property>
@@ -1251,7 +1398,7 @@
 						<label>$INFO[Window(home).Property(RecentEpisode.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentEpisode.12.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.12.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecentEpisode.12.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.12.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.12.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.12.Rating)]</property>
@@ -1267,7 +1414,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.1.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.1.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.1.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.1.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.1.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.1.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.1.EpisodeNumber)]</property>
@@ -1280,7 +1427,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.2.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.2.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.2.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.2.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.2.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.2.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.2.EpisodeNumber)]</property>
@@ -1293,7 +1440,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.3.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.3.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.3.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.3.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.3.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.3.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.3.EpisodeNumber)]</property>
@@ -1306,7 +1453,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.4.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.4.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.4.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.4.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.4.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.4.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.4.EpisodeNumber)]</property>
@@ -1319,7 +1466,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.5.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.5.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.5.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.5.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.5.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.5.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.5.EpisodeNumber)]</property>
@@ -1332,7 +1479,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.6.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.6.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.6.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.6.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.6.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.6.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.6.EpisodeNumber)]</property>
@@ -1345,7 +1492,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.7.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.7.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.7.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.7.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.7.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.7.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.7.EpisodeNumber)]</property>
@@ -1358,7 +1505,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.8.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.8.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.8.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.8.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.8.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.8.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.8.EpisodeNumber)]</property>
@@ -1371,7 +1518,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.9.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.9.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.9.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.9.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.9.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.9.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.9.EpisodeNumber)]</property>
@@ -1384,7 +1531,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.10.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.10.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.10.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.10.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.10.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.10.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.10.EpisodeNumber)]</property>
@@ -1397,7 +1544,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.11.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.11.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.11.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.11.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.11.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.11.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.11.EpisodeNumber)]</property>
@@ -1410,7 +1557,7 @@
 						<label>$INFO[Window(home).Property(LatestEpisode.12.EpisodeTitle)]</label>
 						<label2>$INFO[Window(home).Property(LatestEpisode.12.ShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.12.ShowThumb)]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(LatestEpisode.12.fanart)]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.12.fanart)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.12.Rating)]</property>
 						<property name="Mpaa">$LOCALIZE[31229]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.12.EpisodeNumber)]</property>
@@ -1430,7 +1577,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.1.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.1.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.1.Rating)]</property>
@@ -1446,7 +1593,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.2.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.2.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.2.Rating)]</property>
@@ -1462,7 +1609,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.3.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.3.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.3.Rating)]</property>
@@ -1478,7 +1625,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.4.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.4.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.4.Rating)]</property>
@@ -1494,7 +1641,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.5.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.5.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.5.Rating)]</property>
@@ -1510,7 +1657,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.6.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.6.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.6.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.6.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.6.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.6.Rating)]</property>
@@ -1526,7 +1673,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.7.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.7.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.7.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.7.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.7.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.7.Rating)]</property>
@@ -1542,7 +1689,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.8.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.8.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.8.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.8.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.8.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.8.Rating)]</property>
@@ -1558,7 +1705,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.9.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.9.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.9.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.9.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.9.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.9.Rating)]</property>
@@ -1574,7 +1721,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.10.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.10.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.10.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.10.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.10.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.10.Rating)]</property>
@@ -1590,7 +1737,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.11.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.11.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.11.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.11.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.11.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.11.Rating)]</property>
@@ -1606,7 +1753,7 @@
 						<label>$INFO[Window(home).Property(RandomEpisode.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomEpisode.12.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.12.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RandomEpisode.12.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.12.Art(tvshow.fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.12.Runtime)]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.12.Rating)]</property>
@@ -1629,7 +1776,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.1.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
@@ -1642,7 +1789,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.2.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.2.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.2.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
@@ -1655,7 +1802,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.3.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.3.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.3.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
@@ -1668,7 +1815,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.4.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.4.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.4.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
@@ -1681,7 +1828,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.5.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.5.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.5.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
@@ -1694,7 +1841,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.6.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.6.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.6.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.6.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.6.EpisodeNo)]</property>
@@ -1707,7 +1854,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.7.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.7.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.7.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.7.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.7.EpisodeNo)]</property>
@@ -1720,7 +1867,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.8.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.8.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.8.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.8.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.8.EpisodeNo)]</property>
@@ -1733,7 +1880,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.9.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.9.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.9.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.9.EpisodeNo)]</property>
@@ -1746,7 +1893,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.10.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.10.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.10.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.10.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.10.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.10.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.10.EpisodeNo)]</property>
@@ -1759,7 +1906,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.11.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.11.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.11.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.11.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.11.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.11.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.11.EpisodeNo)]</property>
@@ -1772,7 +1919,7 @@
 						<label>$INFO[Window(home).Property(RecommendedEpisode.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedEpisode.12.TVShowTitle)]</label2>
 						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.12.Art(tvshow.poster))]</icon>
-						<property name="Fanart" fallback="special://skin/backgrounds/videos.jpg">$INFO[Window(home).Property(RecommendedEpisode.12.Art(tvshow.fanart))]</property>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.12.Art(tvshow.fanart))]</property>
 						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.12.Rating)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.12.mpaa)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.12.EpisodeNo)]</property>
@@ -1780,6 +1927,653 @@
 						<onclick>PlayList.Clear</onclick>
 						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.12.File)])</onclick>
 						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.12.Title))</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</include>
+	<include name="LandscapeTVShowContent">
+		<control type="group">
+			<left>0</left>
+			<top>40</top>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),ThumbRecentEpisodes)</visible>
+				<include>WidgetLandscapeLayout</include>
+				<content>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.1.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.1.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.1.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.1.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.1.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.1.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.1.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.2.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.2.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.2.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.2.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.2.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.2.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.2.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.3.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.3.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.3.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.3.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.3.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.3.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.3.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.4.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.4.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.4.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.4.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.4.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.4.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.4.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.5.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.5.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.5.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.5.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.5.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.5.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.5.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.1.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.1.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.1.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.1.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.1.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.1.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.2.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.2.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.2.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.2.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.2.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.2.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.3.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.3.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.3.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.3.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.3.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.3.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.4.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.4.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.4.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.4.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.4.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.4.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecentEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecentEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RecentEpisode.5.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RecentEpisode.5.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecentEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecentEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecentEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecentEpisode.5.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RecentEpisode.5.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecentEpisode.5.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecentEpisode.5.Title)) + SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.1.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.1.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.1.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.1.thumb)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.1.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.1.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.1.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.1.Path)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.1.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.2.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.2.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.2.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.2.thumb)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.2.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.2.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.2.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.2.Path)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.2.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.3.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.3.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.3.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.3.thumb)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.3.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.3.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.3.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.3.Path)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.3.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.4.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.4.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.4.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.4.thumb)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.4.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.4.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.4.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.4.Path)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.4.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.5.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.5.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.5.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.5.thumb)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.5.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.5.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.5.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.5.Path)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.5.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.1.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.1.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.1.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.1.fanart)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.1.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.1.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.1.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.1.Path)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.1.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.2.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.2.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.2.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.2.fanart)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.2.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.2.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.2.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.2.Path)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.2.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.3.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.3.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.3.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.3.fanart)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.3.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.3.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.3.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.3.Path)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.3.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.4.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.4.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.4.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.4.fanart)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.4.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.4.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.4.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.4.Path)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.4.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(LatestEpisode.5.EpisodeTitle)]</label>
+						<label2>$INFO[Window(home).Property(LatestEpisode.5.ShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(LatestEpisode.5.ShowThumb)]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(LatestEpisode.5.fanart)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(LatestEpisode.5.Rating)]</property>
+						<property name="Mpaa">$LOCALIZE[31229]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(LatestEpisode.5.EpisodeNumber)]</property>
+						<property name="Plot">$INFO[Window(home).Property(LatestEpisode.5.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(LatestEpisode.5.Path)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(LatestEpisode.5.EpisodeTitle)) + !SubString(Window(home).Property(SkinWidgets_RecentItems),true)</visible>
+					</item>
+				</content>
+			</control>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),ThumbRandomEpisodes)</visible>
+				<include>WidgetLandscapeLayout</include>
+				<content>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.1.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.1.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.1.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.1.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.1.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.1.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.1.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.2.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.2.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.2.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.2.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.2.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.2.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.2.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.3.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.3.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.3.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.3.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.3.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.3.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.3.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.4.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.4.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.4.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.4.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.4.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.4.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.4.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.5.Art(thumb))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.5.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.5.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.5.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.5.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.5.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.5.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.1.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.1.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.1.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.1.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.1.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.1.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.2.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.2.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.2.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.2.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.2.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.2.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.3.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.3.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.3.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.3.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.3.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.3.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.4.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.4.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.4.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.4.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.4.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.4.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RandomEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RandomEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Genre">$INFO[Window(home).Property(RandomEpisode.5.Genre)]</property>
+						<property name="Runtime">$INFO[Window(home).Property(RandomEpisode.5.Runtime)]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RandomEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RandomEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RandomEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RandomEpisode.5.Plot)]</property>
+						<property name="Year">$INFO[Window(home).Property(RandomEpisode.5.Premiered)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RandomEpisode.5.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RandomEpisode.5.Title))</visible>
+					</item>
+				</content>
+			</control>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),ThumbSuggestedEpisodes)</visible>
+				<include>WidgetLandscapeLayout</include>
+				<content>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.1.Art(thumb))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.1.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.1.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.2.Art(thumb))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.2.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.2.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.2.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.3.Art(thumb))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.3.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.3.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.3.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.4.Art(thumb))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.4.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.4.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.4.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.5.Art(thumb))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.5.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.5.File)])</onclick>
+						<visible>!Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.5.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.1.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.1.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.1.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.1.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.1.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.1.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.2.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.2.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.2.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.2.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.2.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.2.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.2.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.3.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.3.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.3.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.3.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.3.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.3.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.3.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.4.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.4.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.4.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.4.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.4.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.4.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.4.Title))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window(home).Property(RecommendedEpisode.5.Title)]</label>
+						<label2>$INFO[Window(home).Property(RecommendedEpisode.5.TVShowTitle)]</label2>
+						<icon fallback="DefaultVideoCover.png">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.poster))]</icon>
+						<property name="Fanart" fallback="SmallFanartFallback.jpg">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</property>
+						<property name="Rating" fallback="12310">$INFO[Window(home).Property(RecommendedEpisode.5.Rating)]</property>
+						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(RecommendedEpisode.5.mpaa)]</property>
+						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
+						<property name="Plot">$INFO[Window(home).Property(RecommendedEpisode.5.Plot)]</property>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.5.File)])</onclick>
+						<visible>Skin.HasSetting(HideEpisodeWidgetThumbs)</visible>
+						<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.5.Title))</visible>
 					</item>
 				</content>
 			</control>
@@ -3232,26 +4026,25 @@
 			</control>
 		</control>
 	</include>
-	<include name="WidgetDynamicUnWatchedContent">
+	<!--include name="WidgetDynamicUnWatchedContent">
 		<control type="group">
 			<left>0</left>
 			<top>40</top>
 			<control type="panel" id="510">
 				<include>WidgetVideoPanel</include>
-				<visible>Skin.HasSetting(DisableScriptPlaylist)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies)</visible>
 				<include>WidgetVideoLayout</include>
 				<content target="video" limit="12">special://skin/extras/Playlists/UnwatchedMovies.xsp</content>
 			</control>
 		</control>
-	</include>
+	</include-->
 	<include name="WidgetUnWatchedContent">
 		<control type="group">
 			<left>0</left>
 			<top>40</top>
 			<control type="panel" id="510">
 				<include>WidgetVideoPanel</include>
-				<visible>!Skin.HasSetting(DisableScriptPlaylist)</visible>
+				<visible>!Skin.String(WidgetPlaylistScript,Disabled)</visible>
 				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),UnWatchedMovies)</visible>
 				<include>WidgetVideoLayout</include>
 				<content>
@@ -3267,8 +4060,8 @@
 						<property name="PlotOutline">$INFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.PlotOutline)]</property>
 						<property name="Year">$INFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.Year)]</property>
 						<property name="Mpaa" fallback="31229">$INFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.MPAA)]</property>
-						<onclick>PlayMedia($ESCINFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.File)])</onclick>
 						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia($ESCINFO[Window(home).Property(PlaylistRandomMovieUnWatched.1.File)])</onclick>
 						<visible>!IsEmpty(Window(home).Property(PlaylistRandomMovieUnWatched.1.Title))</visible>
 					</item>
 					<item>
@@ -3448,7 +4241,6 @@
 						<visible>!IsEmpty(Window(home).Property(PlaylistRandomMovieUnWatched.12.Title))</visible>
 					</item>
 				</content>
-			
 			</control>
 		</control>
 	</include>
@@ -9131,7 +9923,8 @@
 			<top>40</top>
 			<control type="panel" id="510">
 				<include>WidgetVideoPanel</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList)</visible>
+				<!--visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode) | StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoPlayList)</visible-->
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),VideoNode)</visible>
 				<include>WidgetVideoLayout</include>
 				<content target="video" limit="12">$VAR[VideoNodeContent]</content>
 			</control>
@@ -9316,6 +10109,42 @@
 						<visible>Skin.HasSetting(resource.images.weathericons.multi) + !IsEmpty(Skin.String(resource.images.weathericons.path))</visible>
 					</item>
 				</content>
+			</control>
+		</control>
+	</include>
+	<include name="WidgetSimilarMovieContent">
+		<control type="group">
+			<left>0</left>
+			<top>40</top>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SimilarMovies)</visible>
+				<include>WidgetAltVideoLayout</include>
+				<content target="video">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=12&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content>
+			</control>
+		</control>
+	</include>
+	<include name="WidgetSimilarTVShowContent">
+		<control type="group">
+			<left>0</left>
+			<top>40</top>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),SimilarEpisodes)</visible>
+				<include>WidgetAltVideoLayout</include>
+				<content target="video">plugin://script.skin.helper.service/?action=similarshows&amp;limit=12&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content>
+			</control>
+		</control>
+	</include>
+	<include name="WidgetnextUpEpisodes">
+		<control type="group">
+			<left>0</left>
+			<top>40</top>
+			<control type="panel" id="510">
+				<include>WidgetVideoPanel</include>
+				<visible>StringCompare(Container(9000).ListItem.Property(WidgetSet),NextUpEpisodes)</visible>
+				<include>WidgetAltVideoLayout</include>
+				<content target="video">plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=12&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
 			</control>
 		</control>
 	</include>
