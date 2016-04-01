@@ -158,7 +158,7 @@
 				<font>font12</font>
 				<align>justify</align>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(disableautoscroll)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 			</control>
 		</control>
 		<control type="button" id="10">

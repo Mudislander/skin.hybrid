@@ -158,6 +158,13 @@
 			<onback>ClearProperty(SideBladeOpen,Home)</onback>
 			<visible>!IsEmpty(Window(Home).Property(SideBladeOpen))</visible>
 		</control>
+		<control type="image">
+			<left>250</left>
+			<top>260</top>
+			<width>42</width>
+			<height>128</height>
+			<texture colordiffuse="$VAR[MenuBarColor]">BaseSub.png</texture>
+		</control>
 		<control type="button" id="9001">
 			<left>250</left>
 			<top>260</top>
@@ -176,7 +183,7 @@
 			<top>0</top>
 			<width>260</width>
 			<height>720</height>
-			<texture border="0,0,10,0">MediaBladeSub.png</texture>
+			<texture colordiffuse="$VAR[MenuBarColor]" border="0,0,10,0">MediaBladeSub.png</texture>
 		</control>
 		<include>BottonLogoImage</include>
 	</include>
@@ -663,7 +670,7 @@
 	</include>
 	<include name="AnimatedBackgroundEffect">
 		<control type="group">
-			<visible>!Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(HideRainDropEffect) + !Player.HasVideo</visible>
+			<visible>!Skin.HasSetting(DisableAnimations) + !Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(HideRainDropEffect) + !Player.HasVideo</visible>
 			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<description>Raindrop 5 animation</description>
@@ -741,7 +748,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Skin.HasSetting(EnableHolidayEffects) + !Player.HasMedia</visible>
+			<visible>Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(DisableAnimations) + !Player.HasMedia</visible>
 			<control type="group">
 				<left>-100</left>
 				<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>

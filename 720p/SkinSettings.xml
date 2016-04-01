@@ -194,7 +194,21 @@
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
-					<control type="button" id="101">
+					<control type="radiobutton" id="101">
+						<description>Enable Animations</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<label>$LOCALIZE[31274]</label>
+						<onclick>Skin.ToggleSetting(DisableAnimations)</onclick>
+						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
+						<selected>!Skin.HasSetting(DisableAnimations)</selected>
+						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="button" id="102">
 						<width>750</width>
 						<height>40</height>
 						<font>font13</font>
@@ -219,7 +233,7 @@
 						<onclick condition="StringCompare(Container(9011).Position,10)">Skin.SetString(initialmenuitem,-2)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 					</control>
-					<control type="radiobutton" id="102">
+					<control type="radiobutton" id="103">
 						<description>Ultra Low Menu</description>
 						<width>750</width>
 						<height>40</height>
@@ -233,7 +247,7 @@
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="103">
+					<control type="radiobutton" id="104">
 						<description>enable wrap around menu</description>
 						<width>750</width>
 						<height>40</height>
@@ -247,7 +261,7 @@
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="radiobutton" id="105">
 						<description>hide horizontal submenu</description>
 						<width>750</width>
 						<height>40</height>
@@ -262,7 +276,7 @@
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
 					</control>
-					<control type="radiobutton" id="105">
+					<control type="radiobutton" id="106">
 						<description>enable submenu advise</description>
 						<width>750</width>
 						<height>40</height>
@@ -417,7 +431,7 @@
 						<selected>!Skin.HasSetting(HideRainDropEffect)</selected>
 						<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
 						<texturenofocus>MenuItemNF.png</texturenofocus>
-						<enable>!Skin.HasSetting(EnableHolidayEffects)</enable>
+						<enable>!Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="label" id="120">
 						<width>750</width>
@@ -531,6 +545,7 @@
 						<onclick>Skin.ToggleSetting(DisableAutoScroll)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(DisableAutoScroll)</selected>
+						<enable>!Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="radiobutton" id="133">
 						<width>750</width>
@@ -570,6 +585,7 @@
 						<onclick>Skin.ToggleSetting(HideNext5SongsInfo)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(HideNext5SongsInfo)</selected>
+						<enable>!Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="radiobutton" id="138">
 						<description>Party Mode with Saver</description>
@@ -694,6 +710,7 @@
 						<onclick>Skin.ToggleSetting(NoAnimateVizFanart)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>!Skin.HasSetting(NoAnimateVizFanart)</selected>
+						<enable>!Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="radiobutton" id="147">
 						<description>Diffuse Visualisation</description>
@@ -878,7 +895,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionOne]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(1)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -1868,7 +1885,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionTwo]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(2)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -2204,7 +2221,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionThree]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(3)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -2267,7 +2284,7 @@
 						<onclick>Skin.ToggleSetting(EnableHolidayEffects)</onclick>
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<selected>Skin.HasSetting(EnableHolidayEffects)</selected>
-						<enable>System.Date(11-24,1-6)</enable>
+						<enable>System.Date(11-24,1-6) + !Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="button" id="403">
 						<description>Menu Item Next Button</description>
@@ -5062,7 +5079,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorTwo]</textcolor>
 						<label>$VAR[SettingsSectionFour]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 						<visible>Container(9000).Hasfocus(4)</visible>
 					</control>
 				</control>
@@ -6266,7 +6283,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionFive]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(5)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -7238,7 +7255,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionSix]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(6)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -7319,7 +7336,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<onclick>Skin.ToggleSetting(EnableAnimatedFanArt)</onclick>
 						<selected>Skin.HasSetting(EnableAnimatedFanArt)</selected>
-						<enable>System.HasAddon(script.skin.helper.service)</enable>
+						<enable>System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="radiobutton" id="704">
 						<width>750</width>
@@ -7334,7 +7351,7 @@
 						<onclick>SetProperty(EnableReLoadSkin,1,Home)</onclick>
 						<onclick>Skin.ToggleSetting(EnableAnimatedPoster)</onclick>
 						<selected>Skin.HasSetting(EnableAnimatedPoster)</selected>
-						<enable>System.HasAddon(script.skin.helper.service)</enable>
+						<enable>System.HasAddon(script.skin.helper.service) + !Skin.HasSetting(DisableAnimations)</enable>
 					</control>
 					<control type="radiobutton" id="705">
 						<width>750</width>
@@ -7597,7 +7614,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionEight]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(7)</visible>
 				</control>
 				<control type="scrollbar" id="60">
@@ -8192,7 +8209,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[SettingsSectionEight]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>Container(9000).Hasfocus(8)</visible>
 				</control>
 				<control type="scrollbar" id="60">

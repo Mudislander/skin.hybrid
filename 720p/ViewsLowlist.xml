@@ -247,7 +247,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorOne]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll time="3600" delay="6000" repeat="6000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll time="3600" delay="6000" repeat="6000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">

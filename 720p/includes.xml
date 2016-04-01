@@ -54,7 +54,7 @@
 		<width>300</width>
 		<height>42</height>
 		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<texturenofocus border="5" colordiffuse="$VAR[MainColorOne]">button-nofocus.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>$VAR[MainColorTwo]</textcolor>
 		<disabledcolor>grey3</disabledcolor>
@@ -147,7 +147,7 @@
 		<textureradioofffocus>radiobutton-nofocus.png</textureradioofffocus>
 		<textureradiooffnofocus>radiobutton-nofocus.png</textureradiooffnofocus>
 		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<texturenofocus border="5" colordiffuse="$VAR[MainColorOne]">button-nofocus.png</texturenofocus>
 		<label>215</label>
 		<font>font13</font>
 		<textcolor>$VAR[MainColorTwo]</textcolor>
@@ -428,9 +428,11 @@
 	</include>
 	<include name="HomeWidgetVideoPosi">
 		<top>264</top>
+		<animation effect="slide" start="0,0" end="0,-272" time="0" condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 	</include>
 	<include name="HomeWidgetMusicPosi">
 		<top>304</top>
+		<animation effect="slide" start="0,0" end="0,-312" time="0" condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 	</include>
 	<include name="HomeWidgetHighPosi">
 		<top>-8</top>
@@ -614,5 +616,53 @@
 		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="AnimatedStatsBar">
+		<animation effect="slide" start="0,35" time="300" tween="quadratic" easing="out" condition="[system.getbool(lookandfeel.enablerssfeeds) + !StringCompare(Container(9000).ListItem.Property(LibStats),None) | ControlGroup(9003).HasFocus] | !MusicPlayer.HasNext">conditional</animation>
+		<animation effect="slide" end="0,35" time="300" tween="quadratic" easing="out" condition="[system.getbool(lookandfeel.enablerssfeeds) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + !ControlGroup(9003).HasFocus] | [!Skin.HasSetting(HideNext5SongsInfo) + MusicPlayer.HasNext]">conditional</animation>
+		<animation effect="fade" start="0" end="100" time="200" condition="[system.getbool(lookandfeel.enablerssfeeds) + !StringCompare(Container(9000).ListItem.Property(LibStats),None) | ControlGroup(9003).HasFocus] | !MusicPlayer.HasNext">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="200" condition="[system.getbool(lookandfeel.enablerssfeeds) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + !ControlGroup(9003).HasFocus] | [!Skin.HasSetting(HideNext5SongsInfo) + MusicPlayer.HasNext]">conditional</animation>
+	</include>
+	<include name="AnimatedRSSBar">
+		<animation effect="slide" end="0,35" time="300" tween="quadratic" easing="out" condition="[!Skin.HasSetting(HideHomeStats) + !StringCompare(Container(9000).ListItem.Property(LibStats),None)] | [!IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo)] | ControlGroup(9003).HasFocus">conditional</animation>
+		<animation effect="slide" start="0,35" time="300" tween="quadratic" easing="out" condition="!Skin.HasSetting(HideHomeStats) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo) + !ControlGroup(9003).HasFocus">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="200" condition="[!Skin.HasSetting(HideHomeStats) + !StringCompare(Container(9000).ListItem.Property(LibStats),None)] | [!IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo)] | ControlGroup(9003).HasFocus">conditional</animation>
+		<animation effect="fade" start="0" end="100" time="200" condition="!Skin.HasSetting(HideHomeStats) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo) + !ControlGroup(9003).HasFocus">conditional</animation>
+	</include>
+	<include name="AnimatedSubMenuBar">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+			<effect type="fade" start="0" end="100" time="300" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+			<effect type="fade" start="100" end="0" time="300" />
+		</animation>
+	</include>
+	<include name="StaticStatsBar">
+		<visible>!system.getbool(lookandfeel.enablerssfeeds) | [system.getbool(lookandfeel.enablerssfeeds) + !StringCompare(Container(9000).ListItem.Property(LibStats),None)] | ControlGroup(9003).HasFocus</visible>
+	</include>
+	<include name="StaticRSSBar">
+		<visible>Skin.HasSetting(HideHomeStats) | [!Skin.HasSetting(HideHomeStats) + StringCompare(Container(9000).ListItem.Property(LibStats),None)]</visible>
+		<visible>!ControlGroup(9003).HasFocus</visible>
+	</include>
+	<include name="AnimatedWeatherInfo">
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="250" tween="sine" delay="2100" easing="inout" />
+		</animation>
+		<animation type="Hidden" reversible="false">
+			<effect type="fade" start="100" end="0" time="250" tween="sine" easing="inout" />
+		</animation>
+	</include>
+	<include name="StaticTopWidget">
+		<!--visible>true</visible-->
+		<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableCleanHome) + !Control.HasFocus(510) + !Control.HasFocus(601)">Conditional</animation>
+		<visible>Control.HasFocus(510) | Control.HasFocus(601) | Control.HasFocus(9004)</visible>
+	</include>
+	<include name="StaticLowTopWidget">
+		<animation effect="slide" start="0,0" end="0,272" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
+	</include>
+	<include name="StaticLowTopMusicWidget">
+		<animation effect="slide" start="0,0" end="0,312" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 	</include>
 </includes>

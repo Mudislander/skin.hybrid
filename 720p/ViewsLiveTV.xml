@@ -158,7 +158,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$INFO[ListItem.Plot]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 				</control>
 			</control>
 		</control>

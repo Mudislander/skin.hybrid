@@ -51,7 +51,7 @@
 					<top>0</top>
 					<width>340</width>
 					<height>30</height>
-					<texture border="20,19,20,0">DialogContextTop.png</texture>
+					<texture colordiffuse="$VAR[MainColorOne]" border="20,19,20,0">DialogContextTop.png</texture>
 				</control>
 				<control type="button" id="20">
 					<description>Close Window button</description>
@@ -87,8 +87,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>Quit()</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -103,8 +103,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick condition="!Skin.HasSetting(EnableCustomShutDown)">Powerdown()</onclick>
 				<onclick condition="Skin.HasSetting(EnableCustomShutDown)">XBMC.RunScript($INFO[Skin.String(CustomShutdownCmd)],$INFO[Skin.String(CustomShutdownArg)])</onclick>
 				<visible>System.CanPowerDown | [Skin.HasSetting(EnableCustomShutDown) + !IsEmpty(Skin.String(CustomShutdownCmd))]</visible>
@@ -120,8 +120,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -137,8 +137,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>CancelAlarm(shutdowntimer)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -153,8 +153,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>Suspend()</onclick>
 				<visible>System.CanSuspend</visible>
 				<pulseonselect>no</pulseonselect>
@@ -169,8 +169,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>Hibernate()</onclick>
 				<visible>System.CanHibernate</visible>
 				<pulseonselect>no</pulseonselect>
@@ -185,8 +185,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>Reset()</onclick>
 				<visible>System.CanReboot</visible>
 				<pulseonselect>no</pulseonselect>
@@ -201,8 +201,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>dialog.close(all,true)</onclick>
 				<onclick>System.LogOff</onclick>
 				<pulseonselect>no</pulseonselect>
@@ -222,8 +222,8 @@
 				<textwidth>290</textwidth>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<usealttexture>!System.IsMaster</usealttexture>
 				<alttexturefocus border="25,5,25,5">ShutdownButtonFocus.png</alttexturefocus>
 				<alttexturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</alttexturenofocus>
@@ -264,8 +264,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>InhibitIdleShutdown(true)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -280,8 +280,8 @@
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 				<align>center</align>
 				<textwidth>290</textwidth>
-				<texturefocus border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
-				<texturenofocus border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonFocus.png</texturefocus>
+				<texturenofocus colordiffuse="$VAR[MainColorOne]" border="25,5,25,5">ShutdownButtonNoFocus.png</texturenofocus>
 				<onclick>InhibitIdleShutdown(false)</onclick>
 				<pulseonselect>no</pulseonselect>
 				<font>font13</font>
@@ -293,7 +293,7 @@
 				<left>0</left>
 				<width>340</width>
 				<height>25</height>
-				<texture border="20,0,19,20">DialogContextBottom.png</texture>
+				<texture colordiffuse="$VAR[MainColorOne]" border="20,0,19,20">DialogContextBottom.png</texture>
 			</control>
 		</control>
 	</controls>

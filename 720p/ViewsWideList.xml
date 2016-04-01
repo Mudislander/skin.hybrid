@@ -334,7 +334,7 @@
 						<textcolor>lightgrey</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label fallback="31028">$INFO[ListItem.Plot]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 						<align>justify</align>
 						<visible>Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
 					</control>

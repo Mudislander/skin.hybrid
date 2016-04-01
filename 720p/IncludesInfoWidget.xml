@@ -4,7 +4,8 @@
 		<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetVideoPosi</include>
 		<include condition="!Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetHighPosi</include>
 		<left>0</left>
-		<animation effect="slide" start="0,0" end="0,-272" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-272" time="200" easing="out" tween="sine" condition="!Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
+		<!--animation effect="slide" start="0,0" end="0,-272" time="0" condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation-->
 		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>
@@ -23,7 +24,7 @@
 		<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetMusicPosi</include>
 		<include condition="!Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetHighPosi</include>
 		<left>0</left>
-		<animation effect="slide" start="0,0" end="0,-312" time="200" easing="out" tween="sine" condition="Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-312" time="200" easing="out" tween="sine" condition="!Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601)">Conditional</animation>
 		<animation effect="slide" start="0,0" end="0,30" time="0" condition="Skin.HasSetting(EnableLowWidgetPanel) + !Control.IsVisible(601) + !system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(HideHomeStats) + [!MusicPlayer.HasNext | Skin.HasSetting(HideNext5SongsInfo)]">Conditional</animation>
 		<width>1240</width>

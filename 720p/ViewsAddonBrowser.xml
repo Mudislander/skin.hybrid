@@ -229,7 +229,7 @@
 						<align>left</align>
 						<textcolor>$VAR[MainColorTwo]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
-						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 				</control>
 			</control>
@@ -487,7 +487,7 @@
 						<align>left</align>
 						<textcolor>$VAR[MainColorTwo]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
-						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 				</control>
 			</control>

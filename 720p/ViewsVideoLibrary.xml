@@ -224,7 +224,7 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[ListItem.Art(fanart)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<animation effect="slide" start="0,0" end="0,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
@@ -237,7 +237,7 @@
 					<texture diffuse="episodematte.png" background="true">$INFO[Window(home).Property(SkinHelper.AnimatedFanArt)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 					<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
-					<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)</visible>
 				</control>
 				<control type="group">
 					<left>-5</left>
@@ -264,7 +264,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -381,7 +381,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -521,7 +521,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 				</control>
 				<control type="image">
@@ -635,7 +635,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -1163,7 +1163,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 				</control>
 			</control>
 			<control type="image">
@@ -1382,7 +1382,7 @@
 					<visible>!IsEmpty(Control.GetLabel(5045))</visible>
 					<visible>!Skin.HasSetting(Disable504FanArt) + !Skin.HasSetting(UPnP_Mode)</visible>
 					<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1396,7 +1396,7 @@
 					<bordersize>8</bordersize>
 					<visible>Container.Content(TVShows) | Skin.HasSetting(Disable504FanArt) | IsEmpty(Control.GetLabel(5045))</visible>
 					<visible>!IsEmpty(ListItem.Title)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1408,7 +1408,7 @@
 					<texture diffuse="episodematte.png" background="true">$INFO[Window(home).Property(SkinHelper.AnimatedFanArt)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 					<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
-					<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)</visible>
 				</control>
 				<control type="image">
 					<left>15</left>
@@ -1455,7 +1455,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1601,7 +1601,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorOne]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
 				</control>
 			</control>
 			<include>VideoLogoArt</include>

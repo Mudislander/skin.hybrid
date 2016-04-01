@@ -18,7 +18,7 @@
 				<top>0</top>
 				<width>1320</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
+				<texture border="15,0,0,0" flipx="true" colordiffuse="$VAR[MenuBarColor]">MediaBladeSub.png</texture>
 			</control>
 			<control type="image">
 				<description>background image</description>
@@ -325,7 +325,7 @@
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
-				<control type="label">
+				<!--control type="label">
 					<description>Page label</description>
 					<left>685</left>
 					<top>680</top>
@@ -352,7 +352,7 @@
 					<label>([COLOR=$VAR[MainColorOne]]$INFO[Container(451).NumItems][/COLOR]) $LOCALIZE[31259] - $LOCALIZE[31319] ([COLOR=$VAR[MainColorOne]]$INFO[Container(451).CurrentPage]/$INFO[Container(451).NumPages][/COLOR])</label>
 					<wrapmultiline>true</wrapmultiline>
 					<visible>Control.IsVisible(451)</visible>
-				</control>
+				</control-->
 			</control>
 		</control>
 		<include>BottomClock</include>

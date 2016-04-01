@@ -13,7 +13,8 @@
 			<control type="group">
 				<!--Sticky Menu-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),StickyMenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9010).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9010).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9010).NumItems,3)">conditional</animation>
@@ -55,7 +56,8 @@
 			<control type="group">
 				<!--FullScreen-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),FullScreen)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9011).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9011).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9011).NumItems,3)">conditional</animation>
@@ -97,7 +99,8 @@
 			<control type="group">
 				<!--SubSetOne Videos-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetOne) + IntegerGreaterThan(Container(9012).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9012).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9012).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9012).NumItems,3)">conditional</animation>
@@ -139,7 +142,8 @@
 			<control type="group">
 				<!--SubSetTwo Movies-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetTwo) + IntegerGreaterThan(Container(9013).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9013).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9013).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9013).NumItems,3)">conditional</animation>
@@ -181,7 +185,8 @@
 			<control type="group">
 				<!--SubSetThree TVShows-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetThree) + IntegerGreaterThan(Container(9014).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9014).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9014).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9014).NumItems,3)">conditional</animation>
@@ -223,7 +228,8 @@
 			<control type="group">
 				<!--SubSetFour Music-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetFour) + IntegerGreaterThan(Container(9015).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9015).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9015).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9015).NumItems,3)">conditional</animation>
@@ -265,7 +271,8 @@
 			<control type="group">
 				<!--SubSetFive Concerts-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetFive) + IntegerGreaterThan(Container(9016).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9016).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9016).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9016).NumItems,3)">conditional</animation>
@@ -307,7 +314,8 @@
 			<control type="group">
 				<!--SubSetSix LiveTV-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetSix) + IntegerGreaterThan(Container(9017).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9017).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9017).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9017).NumItems,3)">conditional</animation>
@@ -349,7 +357,8 @@
 			<control type="group">
 				<!--SubSetSeven Settings-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetSeven) + IntegerGreaterThan(Container(9018).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9018).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9018).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9018).NumItems,3)">conditional</animation>
@@ -391,7 +400,8 @@
 			<control type="group">
 				<!--SubSetEight Pictures-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetEight) + IntegerGreaterThan(Container(9019).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9019).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9019).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9019).NumItems,3)">conditional</animation>
@@ -433,7 +443,8 @@
 			<control type="group">
 				<!--SubSetNine Programs-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetNine) + IntegerGreaterThan(Container(9020).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9020).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9020).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9020).NumItems,3)">conditional</animation>
@@ -475,7 +486,8 @@
 			<control type="group">
 				<!--SubSetTen UserOne-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetTen) + IntegerGreaterThan(Container(9021).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9021).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9021).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9021).NumItems,3)">conditional</animation>
@@ -517,7 +529,8 @@
 			<control type="group">
 				<!--SubSetEleven UserTwo-->
 				<visible>StringCompare(Container(9000).ListItem.Property(SubMenu),SubSetEleven) + IntegerGreaterThan(Container(9022).NumItems,0)</visible>
-				<include>SubMenuAnimation</include>
+				<include>SubMenuDisplay</include>
+				<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">Visible</animation>
 				<animation effect="slide" start="0,0" end="96.5,0" time="0" condition="StringCompare(Container(9022).NumItems,5)">conditional</animation>
 				<animation effect="slide" start="0,0" end="193,0" time="0" condition="StringCompare(Container(9022).NumItems,4)">conditional</animation>
 				<animation effect="slide" start="0,0" end="289.5,0" time="0" condition="StringCompare(Container(9022).NumItems,3)">conditional</animation>
@@ -575,10 +588,9 @@
 		<ondown condition="Skin.HasSetting(UltraLowMenuBar) + Skin.HasSetting(HideHomePowerBtn) + Skin.HasSetting(HideHomeDVDBtn) + [!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(DisableScriptFavourites)]">9000</ondown>
 		<hitrect x="-640" y="66" w="2560" h="44" />
 	</include>
-	<include name="SubMenuAnimation">
-		<animation effect="slide" start="0,-40" end="0,0" delay="200" time="200" tween="quadratic" easing="out">Visible</animation>
+	<include name="SubMenuDisplay">
 		<animation effect="fade" start="100" end="0" time="0" condition="!ControlGroup(9001).HasFocus + Skin.HasSetting(AutoVisableSubMenu)">conditional</animation>
-		<animation effect="fade" start="0" end="100" delay="300" time="200" condition="ControlGroup(9001).HasFocus + Skin.HasSetting(AutoVisableSubMenu)">conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="300" time="0" condition="ControlGroup(9001).HasFocus + Skin.HasSetting(AutoVisableSubMenu)">conditional</animation>
 		<animation effect="fade" start="100" end="0" time="0" condition="ControlGroup(9001).HasFocus + Skin.HasSetting(AutoVisableSubMenu)">WindowClose</animation>
 	</include>
 	<include name="SubMenuCommonLayout">
