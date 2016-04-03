@@ -61,7 +61,7 @@
 						<top>0</top>
 						<width>390</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(515)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -128,7 +128,7 @@
 						<texture background="true">black-back.png</texture>
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>5</bordersize>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
 					</control>
 					<control type="image">
@@ -156,7 +156,7 @@
 						<top>0</top>
 						<width>390</width>
 						<height>73</height>
-						<texture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
+						<texture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</texture>
 						<aspectratio align="left" aligny="bottom">stretch</aspectratio>
 						<visible>Control.HasFocus(515) + IsEmpty(ListItem.Art(banner))</visible>
 						<include>VisibleFadeEffect</include>
@@ -179,7 +179,7 @@
 						<width>390</width>
 						<height>72</height>
 						<aspectratio align="left" aligny="bottom">stretch</aspectratio>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[ListItem.Art(banner)]</texture>
 						<visible>!IsEmpty(ListItem.Art(banner))</visible>
@@ -199,11 +199,7 @@
 				<top>109</top>
 				<width>25</width>
 				<height>520</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>515</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -224,7 +220,7 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture diffuse="episodematte.png" background="true" fallback="SmallFanartFallback.jpg">$INFO[ListItem.Art(fanart)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<animation effect="slide" start="0,0" end="0,38" time="0" condition="Skin.HasSetting(EnableGenreFlagging)">Conditional</animation>
@@ -237,7 +233,7 @@
 					<texture diffuse="episodematte.png" background="true">$INFO[Window(home).Property(SkinHelper.AnimatedFanArt)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 					<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
-					<visible>Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)</visible>
+					<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="group">
 					<left>-5</left>
@@ -264,7 +260,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -381,7 +377,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -521,7 +517,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 				</control>
 				<control type="image">
@@ -635,7 +631,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="label">
 						<left>20</left>
@@ -892,7 +888,7 @@
 				<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0" colordiffuse="$VAR[MainColorOne]">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<textureslidernibfocus colordiffuse="$VAR[MenuBarColor]">ScrollBarNib.png</textureslidernibfocus>
 				<onup>508</onup>
 				<ondown>803</ondown>
 				<showonepage>true</showonepage>
@@ -1163,7 +1159,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 			<control type="image">
@@ -1291,7 +1287,7 @@
 						<top>0</top>
 						<width>610</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(504)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -1352,11 +1348,7 @@
 				<top>96</top>
 				<width>25</width>
 				<height>512</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>504</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -1382,7 +1374,7 @@
 					<visible>!IsEmpty(Control.GetLabel(5045))</visible>
 					<visible>!Skin.HasSetting(Disable504FanArt) + !Skin.HasSetting(UPnP_Mode)</visible>
 					<visible>Container.Content(Movies) | Container.Content(MusicVideos)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1396,7 +1388,7 @@
 					<bordersize>8</bordersize>
 					<visible>Container.Content(TVShows) | Skin.HasSetting(Disable504FanArt) | IsEmpty(Control.GetLabel(5045))</visible>
 					<visible>!IsEmpty(ListItem.Title)</visible>
-					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | Skin.HasSetting(DisableAnimations) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
+					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt)) | !Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1408,7 +1400,7 @@
 					<texture diffuse="episodematte.png" background="true">$INFO[Window(home).Property(SkinHelper.AnimatedFanArt)]</texture>
 					<visible>!IsEmpty(ListItem.Title)</visible>
 					<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
-					<visible>Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)</visible>
+					<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				</control>
 				<control type="image">
 					<left>15</left>
@@ -1455,7 +1447,7 @@
 						<align>justify</align>
 						<textcolor>$VAR[MainColorOne]</textcolor>
 						<label>$VAR[VideoDescription]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1601,7 +1593,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorOne]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+					<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 			<include>VideoLogoArt</include>
@@ -1787,11 +1779,7 @@
 				<top>95</top>
 				<width>25</width>
 				<height>550</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>732</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -1874,7 +1862,7 @@
 						<width>300</width>
 						<height>116</height>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>200</fadetime>
 						<aspectratio scalediffuse="false">keep</aspectratio>
@@ -1893,7 +1881,7 @@
 							<width>300</width>
 							<height>116</height>
 							<texture background="true">$VAR[MediaLogoArt]</texture>
-							<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+							<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 							<bordersize>5</bordersize>
 							<fadetime>200</fadetime>
 							<aspectratio scalediffuse="false">keep</aspectratio>
@@ -1908,7 +1896,7 @@
 							<top>0</top>
 							<width>270</width>
 							<height>84</height>
-							<texture background="true" border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
+							<texture background="true" border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</texture>
 							<bordersize>5</bordersize>
 							<fadetime>200</fadetime>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -1943,7 +1931,7 @@
 				<texturesliderbar border="14,0,14,0">ScrollBarH_bar.png</texturesliderbar>
 				<texturesliderbarfocus border="14,0,14,0" colordiffuse="$VAR[MainColorOne]">ScrollBarH_bar_focus.png</texturesliderbarfocus>
 				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<textureslidernibfocus colordiffuse="$VAR[MenuBarColor]">ScrollBarNib.png</textureslidernibfocus>
 				<showonepage>true</showonepage>
 				<orientation>horizontal</orientation>
 				<onup>594</onup>

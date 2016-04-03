@@ -64,14 +64,7 @@
 		<control type="group">
 			<left>80</left>
 			<top>20</top>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
+			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedOpenWindow</include>
 			<control type="grouplist" id="3">
 				<description>left button area</description>
 				<left>80</left>
@@ -106,7 +99,7 @@
 				<label2>[COLOR=$VAR[SelectedColor]]$INFO[Control.GetLabel(20)][/COLOR]</label2>
 				<textcolor>$VAR[MainColorOne]</textcolor>
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-				<texturefocus colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texturefocus>
 				<texturenofocus>MenuItemNF.png</texturenofocus>
 				<onclick>settingslevelchange</onclick>
 				<onleft>3</onleft>
@@ -139,11 +132,7 @@
 				<top>140</top>
 				<width>25</width>
 				<height>385</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>5</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -158,7 +147,7 @@
 				<font>font12</font>
 				<align>justify</align>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
-				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+				<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 			</control>
 		</control>
 		<control type="button" id="10">
@@ -186,7 +175,7 @@
 			<textcolor>grey2</textcolor>
 			<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 			<invalidcolor>invalid</invalidcolor>
-			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texturefocus>
 			<texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
 		</control>
 		<control type="radiobutton" id="8">
@@ -197,7 +186,7 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texturefocus>
 			<texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
 		</control>
 		<control type="spincontrolex" id="9">
@@ -208,7 +197,7 @@
 			<font>font13</font>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texturefocus>
+			<texturefocus border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texturefocus>
 			<texturenofocus border="0,2,0,2">MenuItemNF.png</texturenofocus>
 			<aligny>center</aligny>
 			<reverse>yes</reverse>

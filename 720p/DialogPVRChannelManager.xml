@@ -84,11 +84,7 @@
 				<top>5</top>
 				<width>25</width>
 				<height>470</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>20</onleft>
 				<onright>9002</onright>
 				<showonepage>false</showonepage>
@@ -180,7 +176,7 @@
 						<top>0</top>
 						<width>420</width>
 						<height>60</height>
-						<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 						<animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(20)">conditional</animation>
 					</control>
 					<control type="image">
@@ -280,7 +276,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<pulseonselect>no</pulseonselect>
 					<label>19074</label>
@@ -299,7 +295,7 @@
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
 					<shadowcolor>black</shadowcolor>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19201</label>
 					<onright>60</onright>
@@ -314,7 +310,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19202</label>
 					<onleft>20</onleft>
@@ -343,7 +339,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<pulseonselect>no</pulseonselect>
 					<label>19206</label>
@@ -359,7 +355,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<label>19200</label>
 					<onright>9000</onright>
@@ -379,7 +375,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<pulseonselect>no</pulseonselect>
 					<label>19267</label>
@@ -412,7 +408,7 @@
 					<width>190</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19205</label>
@@ -429,7 +425,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19024</label>
@@ -446,7 +442,7 @@
 					<height>35</height>
 					<font>font12</font>
 					<visible>!IsEmpty(Window.Property(IsRadio))</visible>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19023</label>
@@ -462,7 +458,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19203</label>
@@ -478,7 +474,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19211</label>
@@ -494,7 +490,7 @@
 					<width>380</width>
 					<height>35</height>
 					<font>font12</font>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 					<align>center</align>
 					<label>19204</label>

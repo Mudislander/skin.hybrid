@@ -103,7 +103,7 @@
 						<top>0</top>
 						<width>690</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(50)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -169,11 +169,7 @@
 				<top>95</top>
 				<width>25</width>
 				<height>510</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>50</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -331,7 +327,7 @@
 						<top>0</top>
 						<width>1175</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -405,11 +401,7 @@
 				<top>114</top>
 				<width>25</width>
 				<height>472</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>50</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -483,7 +475,7 @@
 						<height>186</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="label">
 						<left>8</left>
@@ -514,14 +506,14 @@
 						<height>186</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="image">
 						<left>1</left>
 						<top>0</top>
 						<width>214</width>
 						<height>160</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
@@ -532,7 +524,7 @@
 						<top>0</top>
 						<width>214</width>
 						<height>160</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
@@ -544,7 +536,7 @@
 						<width>214</width>
 						<height>160</height>
 						<aspectratio>scale</aspectratio>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
@@ -600,7 +592,7 @@
 						<height>279</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="label">
 						<left>8</left>
@@ -631,14 +623,14 @@
 						<height>279</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="image">
 						<left>1</left>
 						<top>0</top>
 						<width>214</width>
 						<height>240</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
@@ -649,7 +641,7 @@
 						<top>0</top>
 						<width>214</width>
 						<height>240</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<aspectratio>keep</aspectratio>
@@ -682,11 +674,7 @@
 				<top>80</top>
 				<width>25</width>
 				<height>550</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>500</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -744,7 +732,7 @@
 						<height>110</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -763,14 +751,14 @@
 						<height>110</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>black-back.png</texture>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					</control>
 					<control type="image">
 						<left>1</left>
 						<top>0</top>
 						<width>538</width>
 						<height>105</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
@@ -781,7 +769,7 @@
 						<top>0</top>
 						<width>538</width>
 						<height>105</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 						<aspectratio>keep</aspectratio>
@@ -802,11 +790,7 @@
 				<top>80</top>
 				<width>25</width>
 				<height>550</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>505</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>

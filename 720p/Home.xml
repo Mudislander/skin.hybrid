@@ -11,7 +11,7 @@
 	<onload condition="Skin.HasSetting(EnablePingWOL) + Skin.String(WOLPingTimer) + Skin.String(PingMacAddr)">AlarmClock(WOLPingAlarm,WakeOnLan($INFO[Skin.String(PingMacAddr)]),$INFO[Skin.String(WOLPingTimer)]:00,silent,loop)</onload>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtistSlideshowRunning))">RunScript(script.artistslideshow, daemon=true)</onload>
-	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + Library.HasContent(Movies)">RunScript(script.randomandlastitems,type=Movie,limit=12,method=$INFO[WidgetPlaylistScript)],playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
+	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + Library.HasContent(Movies)">RunScript(script.randomandlastitems,type=Movie,limit=12,method=Random,playlist=special://skin/extras/Playlists/UnwatchedMovies.xsp,menu=UnWatched)</onload>
 	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + Skin.String(HomeMenu.1.Type,VideoPlayList)">RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.1.Data)],method=$INFO[WidgetPlaylistScript)],limit=12,unwatched=False,resume=False,property=HomePlaylistOne)</onload>
 	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + Skin.String(HomeMenu.2.Type,VideoPlayList)">RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.2.Data)],method=$INFO[WidgetPlaylistScript)],limit=12,unwatched=False,resume=False,property=HomePlaylistTwo)</onload>
 	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + Skin.String(HomeMenu.3.Type,VideoPlayList)">RunScript(script.randomandlastitems,playlist=$INFO[Skin.String(HomeMenu.3.Data)],method=$INFO[WidgetPlaylistScript)],limit=12,unwatched=False,resume=False,property=HomePlaylistThree)</onload>
@@ -28,7 +28,7 @@
 	<controls>
 		<include condition="!Skin.HasSetting(DisableDataService) + !Skin.HasSetting(HideHomeStats)">VideoNodeStatsList</include>
 		<include>CommonBackground</include>
-		<include condition="!Skin.HasSetting(DisableAnimations) | [!Skin.HasSetting(HideRainDropEffect) | Skin.HasSetting(EnableHolidayEffects)]">AnimatedBackgroundEffect</include>
+		<include condition="!Skin.HasSetting(HideRainDropEffect) | Skin.HasSetting(EnableHolidayEffects)">AnimatedBackgroundEffect</include>
 		<control type="image">
 			<left>0</left>
 			<top>142r</top>
@@ -363,7 +363,7 @@
 				<label>$VAR[InfoWidgetPlot]</label>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
 				<font>font12</font>
-				<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+				<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 			</control>
 			<control type="group" id="600">
 				<left>6</left>
@@ -695,7 +695,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>StatusBar.png</texture>
 				<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
-				<visible>system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo) + !Skin.HasSetting(DisableAnimations)]</visible>
+				<visible>system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]</visible>
 			</control>
 			<control type="label">
 				<left>10</left>
@@ -726,7 +726,7 @@
 				<headlinecolor>$VAR[MainColorTwo]</headlinecolor>
 				<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedRSSBar</include>
 				<include condition="Skin.HasSetting(DisableAnimations)">StaticRSSBar</include>
-				<visible>system.getbool(lookandfeel.enablerssfeeds) + [[!Player.HasAudio | Skin.HasSetting(HideNext5SongsInfo)] | Skin.HasSetting(DisableAnimations)]</visible>
+				<visible>system.getbool(lookandfeel.enablerssfeeds) + [!Player.HasAudio | Skin.HasSetting(HideNext5SongsInfo)]</visible>
 			</control>
 			<control type="fadelabel" id="1">
 				<description>Next Five Songs</description>
@@ -744,13 +744,13 @@
 				<textcolor>$VAR[MainColorTwo]</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<animation effect="fade" time="200">VisibleChange</animation>
-				<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo) + !Skin.HasSetting(DisableAnimations)</visible>
+				<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)</visible>
 			</control>
 		</control>
 		<control type="group">
 			<top>510</top>
 			<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar)">Conditional</animation>
-			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedSubMenuBar</include>
+			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedOpenWindow</include>
 			<include>HomeSubMenuControl</include>
 			<control type="image">
 				<left>-100</left>
@@ -790,6 +790,7 @@
 				<animation effect="slide" start="0,0" end="0,-272" time="200" easing="out" tween="sine" condition="!Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 				<include condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableCleanHome)">StaticTopWidget</include>
 				<include>VideoWidgetVizability</include>
+				<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<include condition="Skin.HasSetting(EnableLowWidgetPanel)">HomeWidgetMusicPosi</include>
@@ -802,8 +803,11 @@
 				<fadetime>FanartCrossFadeTime</fadetime>
 				<include condition="!Skin.HasSetting(DisableWidgetAdjust)">WidgetTransparency</include>
 				<animation effect="fade" start="0" end="100" time="500" delay="3000" condition="!Skin.HasSetting(DisableAnimations) + Window.Previous(Startup)">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="0,-400" time="400" easing="out" tween="sine" condition="!Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableCleanHome) + !Control.HasFocus(510)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-312" time="200" easing="out" tween="sine" condition="!Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableLowWidgetPanel) + Control.IsVisible(601)">Conditional</animation>
 				<include condition="Skin.HasSetting(DisableAnimations) + Skin.HasSetting(EnableCleanHome)">StaticTopWidget</include>
 				<include>MusicWidgetVizability</include>
+				<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 			</control>
 			<control type="multiimage">
 				<description>Busy animation</description>
@@ -867,6 +871,7 @@
 					<aligny>center</aligny>
 					<textcolor>FFFFFAF0</textcolor>
 					<visible>!Control.HasFocus(510) | !Skin.HasSetting(HideExtendedWidget)</visible>
+					<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 				</control>
 				<control type="label">
 					<width>1200</width>
@@ -879,6 +884,7 @@
 					<aligny>center</aligny>
 					<textcolor>$VAR[SelectedColor]</textcolor>
 					<visible>Control.HasFocus(510) + Skin.HasSetting(HideExtendedWidget)</visible>
+					<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 				</control>
 				<include>VideoWidgetVizability</include>
 			</control>
@@ -901,6 +907,7 @@
 					<aligny>center</aligny>
 					<textcolor>FFFFFAF0</textcolor>
 					<visible>!Control.HasFocus(510) | !Skin.HasSetting(HideExtendedWidget)</visible>
+					<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -915,6 +922,7 @@
 					<aligny>center</aligny>
 					<textcolor>$VAR[SelectedColor]</textcolor>
 					<visible>Control.HasFocus(510) + Skin.HasSetting(HideExtendedWidget)</visible>
+					<visible>!IsEmpty(Container(510).ListItem.Label) | Container(510).IsUpdating</visible>
 				</control>
 				<include>MusicWidgetVizability</include>
 			</control>

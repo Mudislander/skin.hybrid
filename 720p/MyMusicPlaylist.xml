@@ -27,6 +27,7 @@
 		<include>CommonNowPlaying</include>
 		<include>FloorReturnButtons</include>
 		<include>BehindDialogFadeOut</include>
+		<include>MainHeaderLabel</include>
 		<control type="group">
 			<visible>!Skin.HasSetting(EnableEnableKioskMode)</visible>
 			<left>-250</left>
@@ -93,6 +94,5 @@
 			</control>
 		</control>
 		<include>BottomClock</include>
-		<include>MainHeaderLabel</include>
 	</controls>
 </window>

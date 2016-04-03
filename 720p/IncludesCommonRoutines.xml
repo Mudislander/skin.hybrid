@@ -123,7 +123,7 @@
 				<align>left</align>
 				<visible>IntegerGreaterThan(Container.NumPages,1) + !Window.IsActive(script-globalsearch-main.xml)</visible>
 			</control>
-			<control type="label">
+			<!--control type="label">
 				<width min="50" max="800">auto</width>
 				<height>120</height>
 				<label>$VAR[GlobalSearchResults]</label>
@@ -132,14 +132,14 @@
 				<scroll>false</scroll>
 				<align>left</align>
 				<visible>Window.IsActive(script-globalsearch-main.xml)</visible>
-			</control>
+			</control-->
 		</control>
 	</include>
 	<include name="SideBladeLeft">
 		<animation effect="slide" start="0,0" end="250,0" time="400" tween="quadratic" easing="out" condition="!IsEmpty(Window(Home).Property(SideBladeOpen)) | ControlGroup(9000).HasFocus">Conditional</animation>
 		<animation effect="slide" start="0,0" end="-300,0" time="400" tween="quadratic" easing="out" condition="!IsEmpty(Window(Home).Property(SideBladeOpen)) | ControlGroup(9000).HasFocus">WindowClose</animation>
 		<animation effect="slide" start="0,0" end="-50,0" time="300" tween="quadratic" easing="out" condition="IsEmpty(Window(Home).Property(SideBladeOpen)) | !ControlGroup(9000).HasFocus">WindowClose</animation>
-		<animation effect="slide" start="-50,0" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
+		<animation effect="slide" start="-50,0" end="0,0" time="300" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowOpen</animation>
 		<control type="button" id="8999">
 			<description>Fake button for mouse control</description>
 			<left>0</left>
@@ -354,22 +354,29 @@
 		</control>
 	</include>
 	<include name="BottonLogoImage">
-		<control type="image">
-			<description>LOGO</description>
-			<left>10</left>
-			<top>80r</top>
-			<width>220</width>
-			<height>80</height>
-			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="$VAR[MainColorOne]">Hybrid_Logo.png</texture>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
+		<control type="group">
+			<control type="image">
+				<description>LOGO</description>
+				<left>10</left>
+				<top>80r</top>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="$VAR[MainColorOne]">Hybrid_Logo.png</texture>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<top>20r</top>
+				<width>220</width>
+				<height>10</height>
+				<label>$INFO[Window(Home).Property(SkinHelper.skinVersion)]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font10</font>
+				<textcolor>grey2</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedOpenWindow</include>
 		</control>
 	</include>
 	<include name="CommonNowPlaying">
@@ -545,7 +552,7 @@
 				<top>60</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=$VAR[MainColorOne]]-[/COLOR] ]</label>
+				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=white]-[/COLOR] ]</label>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -567,7 +574,7 @@
 				<top>100</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=$VAR[MainColorOne]]-[/COLOR] ]</label>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=white]-[/COLOR] ]</label>
 				<textcolor>grey2</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -578,7 +585,7 @@
 				<top>120</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=$VAR[MainColorOne]]-[/COLOR] (,)]</label>
+				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=white]-[/COLOR] (,)]</label>
 				<textcolor>grey2</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -590,7 +597,7 @@
 				<top>0</top>
 				<width>280</width>
 				<height>145</height>
-				<texture border="10" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+				<texture border="10" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 			</control>
 			<control type="image">
 				<description>Thumb</description>
@@ -628,7 +635,7 @@
 				<top>60</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=$VAR[MainColorOne]]-[/COLOR] ]</label>
+				<label>$INFO[ListItem.Property(NextNumber),$LOCALIZE[20359] [COLOR=white]-[/COLOR] ]</label>
 				<textcolor>$VAR[SelectedColor]</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -650,7 +657,7 @@
 				<top>100</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=$VAR[MainColorOne]]-[/COLOR] ]</label>
+				<label>$INFO[ListItem.Property(ShortTime)]$INFO[ListItem.Property(NextDate), [COLOR=white]-[/COLOR] ]</label>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -661,7 +668,7 @@
 				<top>120</top>
 				<width>260</width>
 				<height>15</height>
-				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=$VAR[MainColorOne]]-[/COLOR] (,)]</label>
+				<label>$INFO[ListItem.Property(Runtime),, $LOCALIZE[12391]]$INFO[ListItem.Property(Network), [COLOR=white]-[/COLOR] (,)]</label>
 				<textcolor>$VAR[MainColorTwo]</textcolor>
 				<font>font12</font>
 				<align>center</align>
@@ -670,7 +677,7 @@
 	</include>
 	<include name="AnimatedBackgroundEffect">
 		<control type="group">
-			<visible>!Skin.HasSetting(DisableAnimations) + !Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(HideRainDropEffect) + !Player.HasVideo</visible>
+			<visible>!Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(HideRainDropEffect) + !Player.HasVideo</visible>
 			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<description>Raindrop 5 animation</description>
@@ -724,7 +731,7 @@
 				<height>128</height>
 				<texture background="true">BackgroundEffect/rain-drop.png</texture>
 				<visible>true</visible>
-				<colordiffuse>88FFFFFF</colordiffuse>
+				<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 				<animation type="conditional" reversible="false" loop="true" condition="true">
 					<effect type="fade" delay="800" start="0" end="100" time="200" />
 					<effect type="fade" delay="2400" start="100" end="0" time="2000" />
@@ -748,7 +755,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>Skin.HasSetting(EnableHolidayEffects) + !Skin.HasSetting(DisableAnimations) + !Player.HasMedia</visible>
+			<visible>Skin.HasSetting(EnableHolidayEffects) + !Player.HasMedia</visible>
 			<control type="group">
 				<left>-100</left>
 				<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>

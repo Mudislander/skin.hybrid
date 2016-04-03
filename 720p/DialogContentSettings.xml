@@ -48,7 +48,7 @@
 				<label>-</label>
 				<font>-</font>
 				<onclick>PreviousMenu</onclick>
-				<texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
 				<texturenofocus>DialogClose.png</texturenofocus>
 				<onleft>10</onleft>
 				<onright>10</onright>
@@ -83,7 +83,7 @@
 				<top>100</top>
 				<width>320</width>
 				<height>40</height>
-				<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+				<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				<font>-</font>
 				<label>-</label>
@@ -216,7 +216,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(21)</visible>
-						<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 					</control>
 					<control type="image">
 						<left>5</left>
@@ -244,11 +244,7 @@
 				<top>100</top>
 				<width>25</width>
 				<height>240</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>21</onleft>
 				<onright>20</onright>
 				<showonepage>false</showonepage>
@@ -285,7 +281,7 @@
 				<top>0</top>
 				<height>40</height>
 				<font>font13</font>
-				<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+				<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 			</control>
 			<control type="radiobutton" id="8">
 				<description>Default RadioButton</description>
@@ -293,7 +289,7 @@
 				<top>0</top>
 				<height>40</height>
 				<font>font13</font>
-				<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texturefocus>
+				<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texturefocus>
 			</control>
 			<control type="group" id="9001">
 				<top>615</top>

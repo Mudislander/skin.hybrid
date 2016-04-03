@@ -36,9 +36,9 @@
 		<value>selected</value>
 	</variable>
 	<variable name="MenuBarColor" type="text">
-		<value condition="IsEmpty(Skin.String(UsrMenuColor))">FFFFFFFF</value>
+		<value condition="IsEmpty(Skin.String(UsrMenuColor))">blue</value>
 		<value condition="!IsEmpty(Skin.String(UsrMenuColor))">$INFO[Skin.String(UsrMenuColor)]</value>
-		<value>FFFFFFFF</value>
+		<value>blue</value>
 	</variable>
 	<variable name="ColorOneName" type="text">
 		<value condition="IsEmpty(Skin.String(UsrColorOne))">$LOCALIZE[13278]</value>
@@ -78,14 +78,6 @@
 		<value condition="!Player.Paused">$LOCALIZE[31054]</value>
 		<value condition="Player.Paused">$LOCALIZE[14098]</value>
 	</variable>
-	<variable name="WeatherIconPath">
-		<value condition="IsEmpty(Skin.String(resource.images.weathericons.path))">resource://resource.images.weathericons.3d-coloured/</value>
-		<value condition="!IsEmpty(Skin.String(resource.images.weathericons.path))">$INFO[Skin.String(resource.images.weathericons.path)]</value>
-	</variable>
-	<variable name="MovieGenreIcon">
-		<value condition="IsEmpty(Skin.String(resource.images.moviegenreicons.path))">resource://resource.images.moviegenreicons.xzener-flat/</value>
-		<value condition="!IsEmpty(Skin.String(resource.images.moviegenreicons.path))">$INFO[Skin.String(resource.images.moviegenreicons.path)]</value>
-	</variable>
 	<variable name="MovieGenreIconExt">
 		<value condition="IsEmpty(Skin.String(resource.images.moviegenreicons.ext))">.png</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.moviegenreicons.ext))">$INFO[Skin.String(resource.images.moviegenreicons.ext)]</value>
@@ -93,6 +85,11 @@
 	<variable name="MovieGenreIconName">
 		<value condition="IsEmpty(Skin.String(resource.images.moviegenreicons.path))">$LOCALIZE[31103]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.moviegenreicons.path))">$INFO[Skin.String(resource.images.moviegenreicons.name)]</value>
+	</variable>
+	<variable name="FileMngrWindow">
+		<value condition="Control.HasFocus(20)">$LOCALIZE[31216] - $LOCALIZE[31218]</value>
+		<value condition="Control.HasFocus(21)">$LOCALIZE[31218] - $LOCALIZE[31217]</value>
+		<value>$LOCALIZE[31218]</value>
 	</variable>
 	<variable name="MediaDiscArt">
 		<value condition="Skin.HasSetting(EnableFileSysArt)">$INFO[ListItem.Path,,disc.png]</value>
@@ -1568,7 +1565,8 @@
 		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),LiveTV) + PVR.HasNonRecordingTimer">$INFO[PVR.NextRecordingDateTime,[B][COLOR=C0FFFFFF]$LOCALIZE[19157]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[PVR.NextRecordingTitle,[B][COLOR=C0FFFFFF]$LOCALIZE[19029]$LOCALIZE[31000] [/COLOR][/B]][COLOR=C0FFFFFF] ($INFO[PVR.NextRecordingChannel, ] )[/COLOR]</value>
 		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),LiveTV)">$INFO[Pvr.BackendChannels,[B][COLOR=C0FFFFFF]$LOCALIZE[19019]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Pvr.BackendRecordings,[B][COLOR=C0FFFFFF]$LOCALIZE[19163]$LOCALIZE[31000] [/COLOR][/B]]</value>
 		<value condition="!substring(System.CPUTemperature,?) + !substring(System.GPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.GPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[141] [/COLOR][/B]]</value>
-		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=C0FFFFFF]$LOCALIZE[155]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?) + !substring(System.UsedSpacePercent,$LOCALIZE[161])">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=C0FFFFFF]$LOCALIZE[155]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=C0FFFFFF]RAM$LOCALIZE[31000] [/COLOR][/B]]</value>
 		<value>$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=C0FFFFFF]RAM$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=C0FFFFFF]$LOCALIZE[155]$LOCALIZE[31000] [/COLOR][/B]]</value>
 	</variable>
 	<variable name="PlaylistSortOrder" type="text">
@@ -2138,9 +2136,13 @@
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.name))">$INFO[Skin.String(resource.images.weatherfanart.name)]</value>
 	</variable>
 	<variable name="WeatherFanartPath">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
+	</variable>
+	<variable name="WeatherIconPath">
+		<value condition="IsEmpty(Skin.String(resource.images.weathericons.path))">resource://resource.images.weathericons.default/</value>
+		<value condition="!IsEmpty(Skin.String(resource.images.weathericons.path))">$INFO[Skin.String(resource.images.weathericons.path)]</value>
 	</variable>
 	<variable name="WeatherIconName">
 		<value condition="IsEmpty(Skin.String(resource.images.weathericons.path))">$LOCALIZE[31419]</value>
@@ -2226,14 +2228,16 @@
 		<value>$INFO[ListItem.label]</value>
 	</variable>
 	<variable name="CommonCountItems">
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(1)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[342]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(2)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[344] $LOCALIZE[342]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(3)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[20343]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(5)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[20360]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(6)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[31201]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(7)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[133]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(8)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[132]</value>
-		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(9)">$LOCALIZE[31053] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[134]</value>
+		<!--
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(1)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[342]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(2)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[344] $LOCALIZE[342]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(3)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[20343]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(5)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[20360]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(6)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[31201]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(7)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[133]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(8)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[132]</value>
+		<value condition="Window.IsActive(script-globalsearch-main.xml) + Container(9000).Hasfocus(9)">$LOCALIZE[31153] - $INFO[Window.Property(GlobalSearch.SearchString)] - $LOCALIZE[134]</value>
+		-->
 		<value condition="stringcompare(Container.FolderPath,videodb://movies/sets/)">$LOCALIZE[31367]</value>
 		<value condition="Container.Content(Movies)">$LOCALIZE[342]</value>
 		<value condition="Container.Content(TVShows)">$LOCALIZE[20343]</value>
@@ -2888,37 +2892,37 @@
 		<value condition="Control.HasFocus(9000)">$LOCALIZE[20077] - $INFO[Container(9000).ListItem.label] $INFO[Container(9000).ListItem.label2]</value>
 	</variable>
 	<variable name="WeatherWidgetOneFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day0.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day0.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day0.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="WeatherWidgetTwoFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day1.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day1.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day1.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="WeatherWidgetThreeFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day2.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day2.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day2.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="WeatherWidgetFourFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day3.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day3.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day3.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="WeatherWidgetFiveFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day4.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day4.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day4.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="WeatherWidgetSixFanArt">
-		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">resource://resource.images.weatherfanart.prairie/$INFO[Window(Weather).Property(Day5.FanartCode)]</value>
+		<value condition="IsEmpty(Skin.String(resource.images.weatherfanart.path))">special://skin/backgrounds/weather.jpg</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day5.FanartCode)]</value>
 		<value condition="!IsEmpty(Skin.String(resource.images.weatherfanart.path)) + !Skin.HasSetting(resource.images.weatherfanart.multi)">$INFO[Skin.String(resource.images.weatherfanart.path)]$INFO[Window(Weather).Property(Day5.FanartCode),,.jpg]</value>
 	</variable>
 	<variable name="InfoWidgetFanArt">
-		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Art(fanart))">$INFO[Container(510).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Art(Fanart))">$INFO[Container(510).ListItem.Art(Fanart)]</value>
 		<value condition="Control.HasFocus(510) + !IsEmpty(Container(510).ListItem.Property(Fanart))">$INFO[Container(510).ListItem.Property(Fanart)]</value>
 		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">special://skin/backgrounds/music.jpg</value>
 		<value condition="Player.HasAudio + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044)) + !IsEmpty(MusicPlayer.Property(fanart_image)) + !Control.HasFocus(510)">$INFO[MusicPlayer.Property(fanart_image)]</value>

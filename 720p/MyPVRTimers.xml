@@ -79,7 +79,7 @@
 					<top>50</top>
 					<width>1100</width>
 					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
+					<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					<texture>separator2.png</texture>
 				</control>
 				<control type="list" id="50">
@@ -254,11 +254,7 @@
 					<top>50</top>
 					<width>25</width>
 					<height>480</height>
-					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-					<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-					<textureslidernib>ScrollBarNib.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+					<include>PageScrollBar</include>
 					<onleft>50</onleft>
 					<onright>103</onright>
 					<showonepage>true</showonepage>
@@ -270,7 +266,7 @@
 					<top>540</top>
 					<width>1010</width>
 					<height>1</height>
-					<colordiffuse>88FFFFFF</colordiffuse>
+					<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 					<texture>separator2.png</texture>
 				</control>
 				<control type="label">

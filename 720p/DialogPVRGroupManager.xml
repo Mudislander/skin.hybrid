@@ -4,14 +4,14 @@
 	<controls>
 		<control type="group">
 			<visible>!Window.IsVisible(FileBrowser)</visible>
-			<animation effect="slide" start="1150,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="1150,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
+			<animation effect="slide" start="1150,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="1150,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowClose</animation>
 			<control type="image">
 				<left>50</left>
 				<top>0</top>
 				<width>1230</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
+				<texture border="15,0,0,0" flipx="true" colordiffuse="$VAR[MenuBarColor]">MediaBladeSub.png</texture>
 			</control>
 			<control type="image">
 				<description>background image</description>
@@ -140,7 +140,7 @@
 								<top>0</top>
 								<width>300</width>
 								<height>40</height>
-								<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+								<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 								<visible>Control.HasFocus(13)</visible>
 							</control>
 							<control type="label">
@@ -162,11 +162,7 @@
 						<top>75</top>
 						<width>25</width>
 						<height>460</height>
-						<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-						<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-						<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-						<textureslidernib>ScrollBarNib.png</textureslidernib>
-						<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+						<include>PageScrollBar</include>
 						<onleft>13</onleft>
 						<onright>11</onright>
 						<ondown>73</ondown>
@@ -251,7 +247,7 @@
 								<top>0</top>
 								<width>300</width>
 								<height>40</height>
-								<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+								<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 								<visible>Control.HasFocus(11)</visible>
 							</control>
 							<control type="image">
@@ -281,11 +277,7 @@
 						<top>75</top>
 						<width>25</width>
 						<height>460</height>
-						<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-						<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-						<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-						<textureslidernib>ScrollBarNib.png</textureslidernib>
-						<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+						<include>PageScrollBar</include>
 						<onleft>11</onleft>
 						<onright>12</onright>
 						<ondown>71</ondown>
@@ -370,7 +362,7 @@
 								<top>0</top>
 								<width>300</width>
 								<height>40</height>
-								<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+								<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 								<visible>Control.HasFocus(12)</visible>
 							</control>
 							<control type="image">
@@ -400,11 +392,7 @@
 						<top>75</top>
 						<width>25</width>
 						<height>460</height>
-						<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-						<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-						<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-						<textureslidernib>ScrollBarNib.png</textureslidernib>
-						<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+						<include>PageScrollBar</include>
 						<onleft>12</onleft>
 						<onright>9000</onright>
 						<ondown>72</ondown>

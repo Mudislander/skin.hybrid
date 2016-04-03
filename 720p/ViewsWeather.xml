@@ -103,7 +103,7 @@
 						<top>0</top>
 						<width>600</width>
 						<height>136</height>
-						<texture border="10" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="10" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -222,7 +222,7 @@
 						<top>0</top>
 						<width>600</width>
 						<height>136</height>
-						<texture border="10" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="10" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 						<visible>Control.HasFocus(51)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -466,11 +466,7 @@
 				<top>60</top>
 				<width>25</width>
 				<height>540</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>51</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -959,7 +955,7 @@
 						<top>0</top>
 						<width>600</width>
 						<height>136</height>
-						<texture border="10" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="10" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 						<visible>Control.HasFocus(52)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -1212,11 +1208,7 @@
 				<top>60</top>
 				<width>25</width>
 				<height>540</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>52</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -1437,7 +1429,7 @@
 					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
 					<align>center</align>
 					<label>$INFO[Window.Property(Alerts)]</label>
-					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+					<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 				</control>
 			</control>
 			<control type="label">

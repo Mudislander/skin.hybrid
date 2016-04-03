@@ -17,14 +17,14 @@
 			<focusedlayout width="1" height="1" />
 		</control>
 		<control type="group">
-			<animation effect="slide" start="1240,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="1240,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
+			<animation effect="slide" start="1240,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="1240,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowClose</animation>
 			<control type="image">
 				<left>20</left>
 				<top>0</top>
 				<width>1260</width>
 				<height>720</height>
-				<texture border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
+				<texture colordiffuse="$VAR[MenuBarColor]" border="15,0,0,0" flipx="true">MediaBladeSub.png</texture>
 			</control>
 			<control type="image" id="199">
 				<left>20</left>
@@ -35,16 +35,16 @@
 				<aspectratio>scale</aspectratio>
 				<texture>$INFO[Container(100).ListItem.Property(Fanart_Image)]</texture>
 			</control>
-			<control type="image">
-				<left>20</left>
-				<top>48</top>
-				<width>1240</width>
-				<height>623</height>
-				<texture>background.jpg</texture>
-				<colordiffuse>4FFFFFFF</colordiffuse>
-				<aspectratio>scale</aspectratio>
-				<visible>IsEmpty(Control.GetLabel(199))</visible>
-			</control>
+			<!--control type="image">
+                <left>20</left>
+                <top>48</top>
+                <width>1240</width>
+                <height>623</height>
+                <texture>background.jpg</texture>
+                <colordiffuse>4FFFFFFF</colordiffuse>
+                <aspectratio>scale</aspectratio>
+                <visible>IsEmpty(Control.GetLabel(199))</visible>
+            </control-->
 			<control type="label">
 				<left>40</left>
 				<top>58</top>
@@ -53,7 +53,7 @@
 				<font>font24_title</font>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textcolor>$VAR[MainColorTwo]</textcolor>
+				<textcolor>$VAR[MainColorOne]</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
 				<label>$INFO[Container(100).ListItem.label]</label>
 			</control>
@@ -73,49 +73,51 @@
 				<aspectratio>keep</aspectratio>
 				<texture>$INFO[Container(100).ListItem.icon]</texture>
 			</control>
+			<!--
 			<control type="group">
-				<visible>Control.IsVisible(110) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
-				<control type="image">
-					<left>80</left>
-					<top>425</top>
-					<width>48</width>
-					<height>36</height>
-					<aspectratio>keep</aspectratio>
-					<texture>mediaflags/videoresolution/$INFO[Container(100).ListItem.Property(VideoResolution),,.png]</texture>
-				</control>
-				<control type="image">
-					<left>130</left>
-					<top>425</top>
-					<width>75</width>
-					<height>36</height>
-					<aspectratio>keep</aspectratio>
-					<texture>mediaflags/videocodec/$INFO[Container(100).ListItem.Property(VideoCodec),,.png]</texture>
-				</control>
-				<control type="image">
-					<left>207</left>
-					<top>425</top>
-					<width>48</width>
-					<height>36</height>
-					<aspectratio>keep</aspectratio>
-					<texture>mediaflags/videoaspect/$INFO[Container(100).ListItem.Property(VideoAspect),,.png]</texture>
-				</control>
-				<control type="image">
-					<left>257</left>
-					<top>425</top>
-					<width>75</width>
-					<height>36</height>
-					<aspectratio>keep</aspectratio>
-					<texture>mediaflags/audiocodec/$INFO[Container(100).ListItem.Property(AudioCodec),,.png]</texture>
-				</control>
-				<control type="image">
-					<left>334</left>
-					<top>425</top>
-					<width>48</width>
-					<height>36</height>
-					<aspectratio>keep</aspectratio>
-					<texture>mediaflags/audiochannels/$INFO[Container(100).ListItem.Property(AudioChannels),,.png]</texture>
-				</control>
-			</control>
+                <visible>Control.IsVisible(110) | Control.IsVisible(140) | Control.IsVisible(150)</visible>
+                <control type="image">
+                    <left>80</left>
+                    <top>425</top>
+                    <width>48</width>
+                    <height>36</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>flagging/video/$INFO[Container(100).ListItem.Property(VideoResolution),,.png]</texture>
+                </control>
+                <control type="image">
+                    <left>130</left>
+                    <top>425</top>
+                    <width>75</width>
+                    <height>36</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>flagging/video/$INFO[Container(100).ListItem.Property(VideoCodec),,.png]</texture>
+                </control>
+                <control type="image">
+                    <left>207</left>
+                    <top>425</top>
+                    <width>48</width>
+                    <height>36</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>flagging/aspectratio/$INFO[Container(100).ListItem.Property(VideoAspect),,.png]</texture>
+                </control>
+                <control type="image">
+                    <left>257</left>
+                    <top>425</top>
+                    <width>75</width>
+                    <height>36</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>flagging/audio/$INFO[Container(100).ListItem.Property(AudioCodec),,.png]</texture>
+                </control>
+                <control type="image">
+                    <left>334</left>
+                    <top>425</top>
+                    <width>48</width>
+                    <height>36</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>flagging/audio/$INFO[Container(100).ListItem.Property(AudioChannels),,.png]</texture>
+                </control>
+            </control>
+			-->
 			<control type="group" id="101">
 				<control type="list" id="110">
 					<left>430</left>
@@ -138,7 +140,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -150,7 +152,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -160,7 +162,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(110)</visible>
 						</control>
 						<control type="label">
@@ -172,7 +174,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -184,7 +186,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -284,7 +286,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -296,7 +298,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -306,7 +308,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(120)</visible>
 						</control>
 						<control type="label">
@@ -318,7 +320,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -330,7 +332,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -412,7 +414,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -424,7 +426,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -434,7 +436,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(130)</visible>
 						</control>
 						<control type="label">
@@ -446,7 +448,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -458,7 +460,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -510,7 +512,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -522,7 +524,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -532,7 +534,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(140)</visible>
 						</control>
 						<control type="label">
@@ -544,7 +546,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -556,7 +558,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -644,7 +646,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -656,7 +658,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -666,7 +668,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(150)</visible>
 						</control>
 						<control type="label">
@@ -678,7 +680,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -690,7 +692,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -772,7 +774,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -784,7 +786,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -794,7 +796,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(160)</visible>
 						</control>
 						<control type="label">
@@ -806,7 +808,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -818,7 +820,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -900,7 +902,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -912,7 +914,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -922,7 +924,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(170)</visible>
 						</control>
 						<control type="label">
@@ -934,7 +936,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -946,7 +948,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -1034,7 +1036,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -1046,7 +1048,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</itemlayout>
@@ -1056,7 +1058,7 @@
 							<top>0</top>
 							<width>800</width>
 							<height>30</height>
-							<texture colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+							<texture colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 							<visible>Control.HasFocus(180)</visible>
 						</control>
 						<control type="label">
@@ -1068,7 +1070,7 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorOne]</textcolor>
-							<selectedcolor>blue</selectedcolor>
+							<selectedcolor>$VAR[MainColorOne]</selectedcolor>
 							<label>$INFO[ListItem.label]</label>
 						</control>
 						<control type="label">
@@ -1080,7 +1082,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>$VAR[MainColorTwo]</textcolor>
-							<selectedcolor>white</selectedcolor>
+							<!--focusedcolor>$VAR[MainColorTwo]</focusedcolor-->
 							<label>$INFO[ListItem.label2]</label>
 						</control>
 					</focusedlayout>
@@ -1218,7 +1220,7 @@
 				<textureupfocus>scroll-up-focus-2.png</textureupfocus>
 				<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
 				<subtype>page</subtype>
-				<showonepage>false</showonepage>
+				<showonepage>true</showonepage>
 				<onup>101</onup>
 				<ondown>190</ondown>
 				<onleft>180</onleft>
@@ -1245,7 +1247,7 @@
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+					<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texture>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				</control>
 				<control type="button" id="192">
@@ -1255,7 +1257,7 @@
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+					<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texture>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				</control>
 				<control type="button" id="193">
@@ -1265,7 +1267,7 @@
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+					<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texture>
 					<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				</control>
 			</control>

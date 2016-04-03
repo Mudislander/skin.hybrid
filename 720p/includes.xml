@@ -53,8 +53,8 @@
 	<default type="button">
 		<width>300</width>
 		<height>42</height>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5" colordiffuse="$VAR[MainColorOne]">button-nofocus.png</texturenofocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
+		<texturenofocus border="5" colordiffuse="$VAR[MenuBarColor]">button-nofocus.png</texturenofocus>
 		<font>font13</font>
 		<textcolor>$VAR[MainColorTwo]</textcolor>
 		<disabledcolor>grey3</disabledcolor>
@@ -121,7 +121,7 @@
 		<height>42</height>
 		<spinwidth>33</spinwidth>
 		<spinheight>22</spinheight>
-		<texturefocus colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<textureup>scroll-up-2.png</textureup>
 		<texturedown>scroll-down-2.png</texturedown>
@@ -146,8 +146,8 @@
 		<textureradioonnofocus colordiffuse="$VAR[MainColorOne]">radiobutton-focus.png</textureradioonnofocus>
 		<textureradioofffocus>radiobutton-nofocus.png</textureradioofffocus>
 		<textureradiooffnofocus>radiobutton-nofocus.png</textureradiooffnofocus>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
-		<texturenofocus border="5" colordiffuse="$VAR[MainColorOne]">button-nofocus.png</texturenofocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
+		<texturenofocus border="5" colordiffuse="$VAR[MenuBarColor]">button-nofocus.png</texturenofocus>
 		<label>215</label>
 		<font>font13</font>
 		<textcolor>$VAR[MainColorTwo]</textcolor>
@@ -165,7 +165,7 @@
 		<font>font12</font>
 		<texturefocus>-</texturefocus>
 		<texturenofocus>-</texturenofocus>
-		<texturebg colordiffuse="$VAR[MainColorOne]">button-focus.png</texturebg>
+		<texturebg colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturebg>
 		<textureleft>scroll-left.png</textureleft>
 		<textureleftfocus>scroll-left-focus.png</textureleftfocus>
 		<textureright>scroll-right.png</textureright>
@@ -183,7 +183,7 @@
 		<height>35</height>
 		<textoffsetx>7</textoffsetx>
 		<aligny>center</aligny>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<sliderwidth>150</sliderwidth>
 		<sliderheight>20</sliderheight>
@@ -197,13 +197,13 @@
 	<default type="mover">
 		<left>60</left>
 		<top>192</top>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 	</default>
 	<default type="resize">
 		<left>60</left>
 		<top>192</top>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 	</default>
 	<default type="edit">
@@ -211,7 +211,7 @@
 		<top>200</top>
 		<width>300</width>
 		<height>42</height>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<font>font13</font>
 		<!-- Needs to stay at White for Keyboard -->
@@ -239,7 +239,7 @@
 		<textwidth>200</textwidth>
 		<aligny>center</aligny>
 		<font>font12</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus>-</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -369,6 +369,13 @@
 		<include>Window_OpenClose_Animation</include>
 		<align>center</align>
 		<aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+	<include name="PageScrollBar">
+		<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+		<texturesliderbar border="2,16,2,16">ScrollBarV_bar.png</texturesliderbar>
+		<texturesliderbarfocus border="2,16,2,16" colordiffuse="$VAR[MenuBarColor]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+		<textureslidernib>ScrollBarNib.png</textureslidernib>
+		<textureslidernibfocus colordiffuse="$VAR[MenuBarColor]">ScrollBarNib.png</textureslidernibfocus>
 	</include>
 	<include name="MediaInfoPopup">
 		<animation effect="fade" start="0" end="100" time="1600" delay="2000" condition="IsEmpty(Skin.String(MediaPopUpControl))">Visible</animation>
@@ -591,7 +598,7 @@
 		<font>font12</font>
 		<textcolor>grey2</textcolor>
 		<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">HomeSubFO.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">HomeSubFO.png</texturefocus>
 		<texturenofocus border="5">HomeSubNF.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -602,7 +609,7 @@
 		<textwidth>195</textwidth>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -613,7 +620,7 @@
 		<align>center</align>
 		<aligny>center</aligny>
 		<font>font12_title</font>
-		<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+		<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		<texturenofocus border="5">button-nofocus.png</texturenofocus>
 		<pulseonselect>false</pulseonselect>
 	</include>
@@ -629,7 +636,7 @@
 		<animation effect="fade" start="100" end="0" time="200" condition="[!Skin.HasSetting(HideHomeStats) + !StringCompare(Container(9000).ListItem.Property(LibStats),None)] | [!IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo)] | ControlGroup(9003).HasFocus">conditional</animation>
 		<animation effect="fade" start="0" end="100" time="200" condition="!Skin.HasSetting(HideHomeStats) + StringCompare(Container(9000).ListItem.Property(LibStats),None) + IsEmpty(MusicPlayer.offset(1).Artist) + !Skin.HasSetting(HideNext5SongsInfo) + !ControlGroup(9003).HasFocus">conditional</animation>
 	</include>
-	<include name="AnimatedSubMenuBar">
+	<include name="AnimatedOpenWindow">
 		<animation type="WindowOpen" reversible="false">
 			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
 			<effect type="fade" start="0" end="100" time="300" />
@@ -641,6 +648,7 @@
 	</include>
 	<include name="StaticStatsBar">
 		<visible>!system.getbool(lookandfeel.enablerssfeeds) | [system.getbool(lookandfeel.enablerssfeeds) + !StringCompare(Container(9000).ListItem.Property(LibStats),None)] | ControlGroup(9003).HasFocus</visible>
+		<visible>!Player.HasAudio | Skin.HasSetting(HideNext5SongsInfo)</visible>
 	</include>
 	<include name="StaticRSSBar">
 		<visible>Skin.HasSetting(HideHomeStats) | [!Skin.HasSetting(HideHomeStats) + StringCompare(Container(9000).ListItem.Property(LibStats),None)]</visible>

@@ -188,7 +188,7 @@
 						<top>53</top>
 						<width>230</width>
 						<height>6</height>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -228,7 +228,7 @@
 						<top>0</top>
 						<width>410</width>
 						<height>65</height>
-						<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+						<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 						<visible>Control.HasFocus(11)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -308,7 +308,7 @@
 						<top>53</top>
 						<width>230</width>
 						<height>6</height>
-						<colordiffuse>88FFFFFF</colordiffuse>
+						<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
 						<info>ListItem.Progress</info>
 						<visible>ListItem.HasEpg</visible>
 					</control>
@@ -339,11 +339,7 @@
 				<top>70</top>
 				<width>25</width>
 				<height>520</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>11</onleft>
 				<onright>NextChannelGroup</onright>
 				<ondown>61</ondown>

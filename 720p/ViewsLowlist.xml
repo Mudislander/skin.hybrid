@@ -74,7 +74,7 @@
 						<top>0</top>
 						<width>470</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(724)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -125,11 +125,7 @@
 				<top>440</top>
 				<width>25</width>
 				<height>160</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>724</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -247,7 +243,7 @@
 					<align>justify</align>
 					<textcolor>$VAR[MainColorOne]</textcolor>
 					<label>$VAR[VideoDescription]</label>
-					<autoscroll time="3600" delay="6000" repeat="6000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+					<autoscroll time="3600" delay="6000" repeat="6000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">

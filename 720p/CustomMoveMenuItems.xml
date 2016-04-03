@@ -34,7 +34,7 @@
 				<width>64</width>
 				<height>32</height>
 				<onclick>PreviousMenu</onclick>
-				<texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+				<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
 				<texturenofocus>DialogClose.png</texturenofocus>
 				<onleft>450</onleft>
 				<onright>450</onright>
@@ -108,7 +108,7 @@
 						<width>360</width>
 						<height>40</height>
 						<visible>Control.HasFocus(450)</visible>
-						<texture border="3" colordiffuse="$VAR[MainColorOne]">button-focus.png</texture>
+						<texture border="3" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texture>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -374,11 +374,7 @@
 				<top>95</top>
 				<width>25</width>
 				<height>550</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>450</onleft>
 				<onright>450</onright>
 				<showonepage>false</showonepage>

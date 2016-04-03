@@ -144,7 +144,7 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>!IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
-				<visible>Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)</visible>
+				<visible>Skin.HasSetting(EnableAnimatedFanArt)</visible>
 				<visible>Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(508) | Control.IsVisible(724) | Control.IsVisible(730)</visible>
 			</control>
 		</control>
@@ -267,7 +267,7 @@
 			</control>
 			<control type="group">
 				<visible>!Container.Content(Episodes) | Skin.HasSetting(HideEpisodeThumb) | stringcompare(ListItem.Label,..)</visible>
-				<visible>[!Skin.HasSetting(EnableAnimatedFanArt) + !Skin.HasSetting(DisableAnimations)] | IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
+				<visible>[!Skin.HasSetting(EnableAnimatedFanArt)] | IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
 				<control type="image">
 					<include>Window_OpenClose_Animation</include>
 					<include>Dimensions_Fullscreen</include>

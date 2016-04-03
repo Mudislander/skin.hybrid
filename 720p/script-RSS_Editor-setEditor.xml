@@ -45,7 +45,7 @@
 			<label>-</label>
 			<font>-</font>
 			<onclick>PreviousMenu</onclick>
-			<texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
 			<texturenofocus>DialogClose.png</texturenofocus>
 			<onleft>10</onleft>
 			<onright>10</onright>
@@ -120,7 +120,7 @@
 					<width>520</width>
 					<height>40</height>
 					<visible>Control.hasfocus(14) | Control.HasFocus(10)</visible>
-					<texture border="5" colordiffuse="$VAR[MainColorOne]">button-focus2.png</texture>
+					<texture border="5" colordiffuse="$VAR[MenuBarColor]">button-focus2.png</texture>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -140,11 +140,7 @@
 			<top>105</top>
 			<width>25</width>
 			<height>225</height>
-			<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-			<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-			<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-			<textureslidernib>ScrollBarNib.png</textureslidernib>
-			<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 			<onleft>10</onleft>
 			<onright>9000</onright>
 			<showonepage>false</showonepage>

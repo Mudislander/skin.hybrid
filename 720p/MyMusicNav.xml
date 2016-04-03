@@ -41,6 +41,7 @@
 		<include>CommonNowPlaying</include>
 		<include>FloorReturnButtons</include>
 		<include>BehindDialogFadeOut</include>
+		<include>MainHeaderLabel</include>
 		<control type="group">
 			<visible>!Skin.HasSetting(EnableEnableKioskMode)</visible>
 			<left>-250</left>
@@ -79,7 +80,7 @@
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>ButtonCommonValues</include>
-					<alttexturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</alttexturefocus>
+					<alttexturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<label>31051</label>
 					<altlabel>31050</altlabel>
@@ -115,7 +116,7 @@
 					<label>$LOCALIZE[31123] $VAR[PopupInfoType]</label>
 					<textcolor>$VAR[MainColorTwo]</textcolor>
 					<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-					<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+					<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<onclick condition="IsEmpty(Skin.String(MediaPopUpControl))">Skin.SetString(MediaPopUpControl,Delayed)</onclick>
@@ -158,13 +159,12 @@
 					<include>ButtonCommonValues</include>
 					<label>653</label>
 					<altlabel>13353</altlabel>
-					<alttexturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</alttexturefocus>
+					<alttexturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</alttexturefocus>
 					<alttexturenofocus>-</alttexturenofocus>
 					<usealttexture>library.isscanningmusic</usealttexture>
 				</control>
 			</control>
 		</control>
 		<include>BottomClock</include>
-		<include>MainHeaderLabel</include>
 	</controls>
 </window>

@@ -46,7 +46,7 @@
 			<label>-</label>
 			<font>-</font>
 			<onclick>PreviousMenu</onclick>
-			<texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
 			<texturenofocus>DialogClose.png</texturenofocus>
 			<onleft>3</onleft>
 			<onright>3</onright>
@@ -122,7 +122,7 @@
 					<top>2</top>
 					<width>235</width>
 					<height>211</height>
-					<texture border="3" colordiffuse="$VAR[MainColorOne]">folder-focus.png</texture>
+					<texture border="3" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</texture>
 				</control>
 				<control type="image">
 					<left>7</left>

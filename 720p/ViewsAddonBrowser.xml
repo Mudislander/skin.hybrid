@@ -65,7 +65,7 @@
 						<top>0</top>
 						<width>580</width>
 						<height>41</height>
-						<texture border="0,2,0,2" colordiffuse="$VAR[MainColorOne]">MenuItemFO.png</texture>
+						<texture border="0,2,0,2" colordiffuse="$VAR[MenuBarColor]">MenuItemFO.png</texture>
 						<visible>Control.HasFocus(550)</visible>
 						<include>VisibleFadeEffect</include>
 					</control>
@@ -108,11 +108,7 @@
 				<top>78</top>
 				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>550</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -229,7 +225,7 @@
 						<align>left</align>
 						<textcolor>$VAR[MainColorTwo]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
-						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 				</control>
 			</control>
@@ -324,7 +320,7 @@
 						<top>0</top>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
@@ -336,7 +332,7 @@
 						<top>0</top>
 						<width>191</width>
 						<height>160</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<fadetime>100</fadetime>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
@@ -390,11 +386,7 @@
 				<top>78</top>
 				<width>25</width>
 				<height>560</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>551</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
@@ -487,7 +479,7 @@
 						<align>left</align>
 						<textcolor>$VAR[MainColorTwo]</textcolor>
 						<label>$INFO[ListItem.Property(Addon.Description)]</label>
-						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll time="2000" delay="3000" repeat="5000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 					</control>
 				</control>
 			</control>

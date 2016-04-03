@@ -33,7 +33,7 @@
 				<align>center</align>
 				<textcolor>grey2</textcolor>
 				<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-				<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+				<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 				<label>$LOCALIZE[31215]</label>
 				<onclick>RunPlugin(plugin://script.simpleplaylists/?mode=addCurrentUrl)</onclick>
 				<visible>!Skin.HasSetting(DisableWatchItLater) + [Container.Content(Episodes) | Container.Content(Movies) | Container.Content(Songs)]</visible>
@@ -48,7 +48,7 @@
 			<label>-</label>
 			<font>-</font>
 			<onclick>PreviousMenu</onclick>
-			<texturefocus colordiffuse="$VAR[MainColorOne]">DialogClose.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
 			<texturenofocus>DialogClose.png</texturenofocus>
 			<onleft>2</onleft>
 			<onright>2</onright>
@@ -74,7 +74,7 @@
 			<align>center</align>
 			<textcolor>grey2</textcolor>
 			<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
-			<texturefocus border="5" colordiffuse="$VAR[MainColorOne]">button-focus.png</texturefocus>
+			<texturefocus border="5" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texturefocus>
 		</control>
 	</controls>
 </window>

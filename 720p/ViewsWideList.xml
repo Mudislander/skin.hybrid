@@ -334,7 +334,7 @@
 						<textcolor>lightgrey</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<label fallback="31028">$INFO[ListItem.Plot]</label>
-						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll) + !Skin.HasSetting(DisableAnimations)</autoscroll>
+						<autoscroll delay="3000" time="1800" repeat="10000">!Skin.HasSetting(DisableAutoScroll)</autoscroll>
 						<align>justify</align>
 						<visible>Container.Content(Episodes) + !StringCompare(ListItem.Label,..)</visible>
 					</control>
@@ -440,11 +440,7 @@
 				<top>105</top>
 				<width>25</width>
 				<height>550</height>
-				<texturesliderbackground border="10,14,10,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="10,14,10,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="10,14,10,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>529</onleft>
 				<onright>800</onright>
 				<onup>60</onup>

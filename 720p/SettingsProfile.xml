@@ -80,14 +80,7 @@
 		<control type="group">
 			<left>90</left>
 			<top>30</top>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-				<effect type="fade" start="0" end="100" time="300" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-				<effect type="fade" start="100" end="0" time="300" />
-			</animation>
+			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedOpenWindow</include>
 			<control type="button" id="4">
 				<texturefocus></texturefocus>
 				<texturenofocus></texturenofocus>
@@ -294,7 +287,7 @@
 						<top>0</top>
 						<width>188</width>
 						<height>145</height>
-						<bordertexture border="5" colordiffuse="$VAR[MainColorOne]">folder-focus.png</bordertexture>
+						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture fallback="unknown-user.png">$INFO[Listitem.icon]</texture>
@@ -318,11 +311,7 @@
 				<top>75</top>
 				<width>25</width>
 				<height>510</height>
-				<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
-				<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="0,14,0,14" colordiffuse="$VAR[MainColorOne]">ScrollBarV_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>ScrollBarNib.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="$VAR[MainColorOne]">ScrollBarNib.png</textureslidernibfocus>
+				<include>PageScrollBar</include>
 				<onleft>2</onleft>
 				<onright>800</onright>
 				<showonepage>true</showonepage>
