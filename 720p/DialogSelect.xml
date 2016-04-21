@@ -129,6 +129,7 @@
 				<width>64</width>
 				<height>32</height>
 				<texture>DialogCloseBtn.png</texture>
+				<animation effect="slide" end="-120,0" time="0" condition="!Control.IsVisible(5)">Conditional</animation>
 				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
 			<control type="list" id="3">

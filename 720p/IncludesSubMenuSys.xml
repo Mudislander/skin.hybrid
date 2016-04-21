@@ -665,13 +665,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.1.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.1.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.1.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.1.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.1.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.1.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.1.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.1.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.1.520Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.1.Sub)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.1.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.1)</visible>
-			<visible>!IsEmpty(Skin.String(StickyMenu.1.Path)) + !stringcompare(Skin.String(StickyMenu.1.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.1.Path)) + !StringCompare(Skin.String(StickyMenu.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(StickyMenu.2.Label)]</label>
@@ -680,13 +683,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.2.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.2.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.2.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.2.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.2.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.2.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.2.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.2.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.2.520Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.2.Sub)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.2.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.2)</visible>
-			<visible>!IsEmpty(Skin.String(StickyMenu.2.Path)) + !stringcompare(Skin.String(StickyMenu.2.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.2.Path)) + !StringCompare(Skin.String(StickyMenu.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(StickyMenu.3.Label)]</label>
@@ -695,13 +701,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.3.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.3.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.3.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.3.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.3.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.3.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.3.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.3.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.3.520Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.3.Sub)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.3.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.3)</visible>
-			<visible>!IsEmpty(Skin.String(StickyMenu.3.Path)) + !stringcompare(Skin.String(StickyMenu.3.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.3.Path)) + !StringCompare(Skin.String(StickyMenu.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(StickyMenu.4.Label)]</label>
@@ -710,13 +719,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.4.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.4.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.4.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.4.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.4.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.4.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.4.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.4.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.4.520Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.4.Sub)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.4.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.4)</visible>
-			<visible>!IsEmpty(Skin.String(StickyMenu.4.Path)) + !stringcompare(Skin.String(StickyMenu.4.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.4.Path)) + !StringCompare(Skin.String(StickyMenu.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(StickyMenu.5.Label)]</label>
@@ -725,13 +737,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.5.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.5.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.5.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.5.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.5.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.5.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.5.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.5.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.5.520Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.5.Sub)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.5.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.5)</visible>
-			<visible>!IsEmpty(Skin.String(StickyMenu.5.Path)) + !stringcompare(Skin.String(StickyMenu.5.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.5.Path)) + !StringCompare(Skin.String(StickyMenu.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(StickyMenu.6.Label)]</label>
@@ -740,13 +755,16 @@
 			<onclick>Skin.SetString(StickyMenuSelect.Path,$INFO[Skin.String(StickyMenu.6.Path)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Addon,$INFO[Skin.String(StickyMenu.6.Addon)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Widget,$INFO[Skin.String(StickyMenu.6.Widget)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.XtraWidget,$INFO[Skin.String(StickyMenu.6.XtraWidget)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Type,$INFO[Skin.String(StickyMenu.6.Type)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Fanart,$INFO[Skin.String(StickyMenu.6.Fanart)])</onclick>
 			<onclick>Skin.SetString(StickyMenuSelect.Display,$INFO[Skin.String(StickyMenu.6.Display)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.510Path,$INFO[Skin.String(StickyMenu.6.510Path)])</onclick>
+			<onclick>Skin.SetString(StickyMenuSelect.520Path,$INFO[Skin.String(StickyMenu.6.520Path)])</onclick>
 			<onclick>$INFO[Skin.String(StickyMenu.6.Path)]</onclick>
 			<visible>!Skin.String(StickyMenuSelect.Current,StickyMenu.6)</visible>
 			<onclick>Skin.SetString(StickyMenuSelect.Current,$INFO[Skin.String(StickyMenu.6.Sub)])</onclick>
-			<visible>!IsEmpty(Skin.String(StickyMenu.6.Path)) + !stringcompare(Skin.String(StickyMenu.6.Path),Hidden)</visible>
+			<visible>!IsEmpty(Skin.String(StickyMenu.6.Path)) + !StringCompare(Skin.String(StickyMenu.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="FullscreenContent">
@@ -803,7 +821,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.1.Path))">ActivateWindow(Videos,MovieTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.1.Path))">$INFO[Skin.String(SubSetOne.1.Path)]</onclick>
 			<visible>Library.HasContent(Movies) | !IsEmpty(Skin.String(SubSetOne.1.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetOne.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetOneItemTwo]</label>
@@ -811,7 +829,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.2.Path))">ActivateWindow(Videos,TvShowTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.2.Path))">$INFO[Skin.String(SubSetOne.2.Path)]</onclick>
 			<visible>Library.HasContent(TVShows)  | !IsEmpty(Skin.String(SubSetOne.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetOne.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetOneItemThree]</label>
@@ -819,14 +837,14 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.3.Path))">ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.3.Path))">$INFO[Skin.String(SubSetOne.3.Path)]</onclick>
 			<visible>Library.HasContent(MusicVideos) | !IsEmpty(Skin.String(SubSetOne.3.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetOne.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetOneItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.4.Path))">ActivateWindow(Videos,Files,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.4.Path))">$INFO[Skin.String(SubSetOne.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetOne.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetOneItemFive]</label>
@@ -834,14 +852,14 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.5.Path))">ActivateWindow(Videos,Root)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.5.Path))">$INFO[Skin.String(SubSetOne.5.Path)]</onclick>
 			<visible>Library.HasContent(Video) | !IsEmpty(Skin.String(SubSetOne.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetOne.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetOneItemSix]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetOne.6.Path))">ActivateWindow(Videos,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetOne.6.Path))">$INFO[Skin.String(SubSetOne.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetOne.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetOne.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetTwoContent">
@@ -850,7 +868,7 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.1.Path))">ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.1.Path))">$INFO[Skin.String(SubSetTwo.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetTwo.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetTwoItemTwo]</label>
@@ -858,35 +876,35 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.2.Path))">ActivateWindow(Videos,MovieSets,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.2.Path))">$INFO[Skin.String(SubSetTwo.2.Path)]</onclick>
 			<visible>Library.HasContent(MovieSets) | !IsEmpty(Skin.String(SubSetTwo.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTwo.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetTwoItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.3.Path))">ActivateWindow(Videos,MovieTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.3.Path))">$INFO[Skin.String(SubSetTwo.3.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetTwo.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetTwoItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.4.Path))">ActivateWindow(Videos,MovieGenres,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.4.Path))">$INFO[Skin.String(SubSetTwo.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetTwo.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetTwoItemFive]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.5.Path))">ActivateWindow(Videos,MovieTags,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.5.Path))">$INFO[Skin.String(SubSetTwo.5.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetTwo.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetTwoItemSix]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetTwo.6.Path))">ActivateWindow(VideoLibrary,special://videoplaylists/,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetTwo.6.Path))">$INFO[Skin.String(SubSetTwo.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetTwo.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTwo.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetThreeContent">
@@ -895,42 +913,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.1.Path))">ActivateWindow(1185)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.1.Path))">$INFO[Skin.String(SubSetThree.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetThreeItemTwo]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.2.Path))">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.2.Path))">$INFO[Skin.String(SubSetThree.2.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetThreeItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.3.Path))">ActivateWindow(Videos,TVShowTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.3.Path))">$INFO[Skin.String(SubSetThree.3.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetThreeItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.4.Path))">ActivateWindow(Videos,TVShowGenres,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.4.Path))">$INFO[Skin.String(SubSetThree.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetThreeItemFive]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.5.Path))">ActivateWindow(Videos,TVShowTags, return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.5.Path))">$INFO[Skin.String(SubSetThree.5.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetThreeItemSix]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetThree.6.Path))">ActivateWindow(Videos,TVShowActors,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetThree.6.Path))">$INFO[Skin.String(SubSetThree.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetThree.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetThree.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetFourContent">
@@ -940,7 +958,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.1.Path))">ActivateWindow(MusicLibrary,Artists,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.1.Path))">$INFO[Skin.String(SubSetFour.1.Path)]</onclick>
 			<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubSetFour.1.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetFour.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFourItemTwo]</label>
@@ -948,7 +966,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.2.Path))">ActivateWindow(MusicLibrary,Albums,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.2.Path))">$INFO[Skin.String(SubSetFour.2.Path)]</onclick>
 			<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubSetFour.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetFour.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFourItemThree]</label>
@@ -956,14 +974,14 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.3.Path))">PlayerControl(PartyMode(music))</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.3.Path))">$INFO[Skin.String(SubSetFour.3.Path)]</onclick>
 			<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubSetFour.3.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetFour.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFourItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.4.Path))">ActivateWindow(MusicFiles)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.4.Path))">$INFO[Skin.String(SubSetFour.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFour.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFourItemFive]</label>
@@ -971,7 +989,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.5.Path))">ActivateWindow(MusicLibrary,root)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.5.Path))">$INFO[Skin.String(SubSetFour.5.Path)]</onclick>
 			<visible>Library.HasContent(Music) | !IsEmpty(Skin.String(SubSetFour.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetFour.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFourItemSix]</label>
@@ -979,7 +997,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.6.Path)) + Library.HasContent(Music)">ActivateWindow(MusicLibrary,Addons,return)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFour.6.Path)) + !Library.HasContent(Music)">ActivateWindow(MusicFiles,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFour.6.Path))">$INFO[Skin.String(SubSetFour.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFour.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFour.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetFiveContent">
@@ -988,42 +1006,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFive.1.Path))">ActivateWindow(1180),return</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFive.1.Path))">$INFO[Skin.String(SubSetFive.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFive.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFiveItemTwo]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFive.2.Path))">ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFive.2.Path))">$INFO[Skin.String(SubSetFive.2.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFive.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFiveItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFive.3.Path))">ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFive.3.Path))">$INFO[Skin.String(SubSetFive.3.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFive.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFiveItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFive.4.Path))">ActivateWindow(Videos,MusicVideoYears,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFive.4.Path))">$INFO[Skin.String(SubSetFive.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFive.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetFiveItemFive]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetFive.5.Path))">ActivateWindow(Videos,MusicVideoTags,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetFive.5.Path))">$INFO[Skin.String(SubSetFive.5.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetFive.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetFive.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetFive.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetFive.6.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetFive.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetFive.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetSixContent">
@@ -1032,42 +1050,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.1.Path))">ActivateWindow(TVChannels)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.1.Path))">$INFO[Skin.String(SubSetSix.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSixItemTwo]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.2.Path))">ActivateWindow(TVGuide)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.2.Path))">$INFO[Skin.String(SubSetSix.2.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSixItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.3.Path))">ActivateWindow(TVRecordings)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.3.Path))">$INFO[Skin.String(SubSetSix.3.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSixItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.4.Path))">ActivateWindow(TVTimers)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.4.Path))">$INFO[Skin.String(SubSetSix.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSixItemFive]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.5.Path))">ActivateWindow(TVSearch)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.5.Path))">$INFO[Skin.String(SubSetSix.5.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSixItemSix]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSix.6.Path))">ActivateWindow(RadioChannels)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSix.6.Path))">$INFO[Skin.String(SubSetSix.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSix.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSix.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetSevenContent">
@@ -1080,42 +1098,42 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + System.HasAddon(script.raspbmc.settings)">RunAddon(script.raspbmc.settings)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.1.path)) + !System.Platform.Android + !System.HasAddon(os.openelec.settings) + !System.HasAddon(service.openelec.settings) + !System.HasAddon(script.raspbmc.settings)">ActivateWindow(SkinSettings)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.1.Path))">$INFO[Skin.String(SubSetSeven.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSevenItemTwo]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.2.Path))">ActivateWindow(FileManager)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.2.Path))">$INFO[Skin.String(SubSetSeven.2.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSevenItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.3.Path))">ActivateWindow(AddonBrowser),return</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.3.Path))">$INFO[Skin.String(SubSetSeven.3.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSevenItemFour]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.4.Path))">ActivateWindow(Profiles)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.4.Path))">$INFO[Skin.String(SubSetSeven.4.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetSevenItemFive]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.5.Path))">ActivateWindow(SystemInfo)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.5.Path))">$INFO[Skin.String(SubSetSeven.5.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.5.Path),Hidden)</visible>
 		</item>
 		<!--item>
 			<label>$VAR[SubSetSevenItemSix]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.6.Path))">ActivateWindow(ShutdownMenu)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.6.Path))">$INFO[Skin.String(SubSetSeven.6.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetSeven.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.6.Path),Hidden)</visible>
 		</item-->
 		<item>
 			<label>$VAR[SubSetSevenItemSix]</label>
@@ -1123,7 +1141,7 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetSeven.6.Path))">ActivateWindow(EventLog,events://,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetSeven.6.Path))">$INFO[Skin.String(SubSetSeven.6.Path)]</onclick>
 			<visible>[!IsEmpty(Skin.String(SubSetSeven.6.Path))] | [IsEmpty(Skin.String(SubSetSeven.6.Path)) + system.getbool(eventlog.enabled)]</visible>
-			<visible>!stringcompare(Skin.String(SubSetSeven.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetSeven.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetEightContent">
@@ -1132,42 +1150,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetEight.1.Path))">ActivateWindow(Pictures,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetEight.1.Path))">$INFO[Skin.String(SubSetEight.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetEight.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEight.2.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEight.2.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEight.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEight.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEight.3.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEight.3.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEight.3.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEight.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEight.4.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEight.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEight.4.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEight.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEight.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEight.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEight.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEight.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEight.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEight.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEight.6.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEight.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEight.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetNineContent">
@@ -1176,7 +1194,7 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetNine.1.Path))">ActivateWindow(Videos,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetNine.1.Path))">$INFO[Skin.String(SubSetNine.1.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetNine.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetNine.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$VAR[SubSetNineItemTwo]</label>
@@ -1184,13 +1202,14 @@
 			<onclick condition="IsEmpty(Skin.String(SubSetNine.2.Path)) + Library.HasContent(Music)">ActivateWindow(MusicLibrary,Addons,return)</onclick>
 			<onclick condition="IsEmpty(Skin.String(SubSetNine.2.Path)) + !Library.HasContent(Music)">ActivateWindow(MusicFiles,Addons,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(SubSetNine.2.Path))">$INFO[Skin.String(SubSetNine.2.Path)]</onclick>
-			<visible>!stringcompare(Skin.String(SubSetNine.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetNine.2.Path),Hidden)</visible>
 		</item>
 		<item>
-			<label>$INFO[Skin.String(SubSetNine.3.Label)]</label>
+			<label>$VAR[SubSetNineItemThree]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
-			<onclick>$INFO[Skin.String(SubSetNine.3.Path)]</onclick>
-			<visible>!IsEmpty(Skin.String(SubSetNine.3.Path))</visible>
+			<onclick condition="IsEmpty(Skin.String(SubSetNine.3.Path)) + System.Platform.Android">ActivateWindow(Programs,Androidapps,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(SubSetNine.3.Path))">$INFO[Skin.String(SubSetNine.3.Path)]</onclick>
+			<visible>!IsEmpty(Skin.String(SubSetNine.3.Path)) | System.Platform.Android</visible>
 			<visible>!stringcompare(Skin.String(SubSetNine.3.Path),Hidden)</visible>
 		</item>
 		<item>
@@ -1198,21 +1217,21 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetNine.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetNine.4.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetNine.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetNine.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetNine.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetNine.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetNine.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetNine.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetNine.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetNine.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetNine.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetNine.6.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetNine.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetNine.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetTenContent">
@@ -1221,42 +1240,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.1.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.1.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetTen.2.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.2.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetTen.3.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.3.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.3.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetTen.4.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.4.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetTen.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetTen.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetTen.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetTen.6.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetTen.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetTen.6.Path),Hidden)</visible>
 		</item>
 	</include>
 	<include name="SubSetElevenContent">
@@ -1265,42 +1284,42 @@
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.1.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.1.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.1.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.1.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEleven.2.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.2.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.2.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.2.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.2.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEleven.3.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.3.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.3.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.3.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.3.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEleven.4.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.4.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.4.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.4.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.4.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEleven.5.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.5.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.5.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.5.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.5.Path),Hidden)</visible>
 		</item>
 		<item>
 			<label>$INFO[Skin.String(SubSetEleven.6.Label)]</label>
 			<onclick>SetProperty(SubMenuBackground,$VAR[SubMenuItemBackground],Home)</onclick>
 			<onclick>$INFO[Skin.String(SubSetEleven.6.Path)]</onclick>
 			<visible>!IsEmpty(Skin.String(SubSetEleven.6.Path))</visible>
-			<visible>!stringcompare(Skin.String(SubSetEleven.6.Path),Hidden)</visible>
+			<visible>!StringCompare(Skin.String(SubSetEleven.6.Path),Hidden)</visible>
 		</item>
 	</include>
 </includes>

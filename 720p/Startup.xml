@@ -4,9 +4,9 @@
 	<include condition="!Skin.HasSetting(InitialSetUpRun)">DefaultInitialSetup</include>
 	<onload condition="Skin.HasSetting(EnableFanartScript) + !System.HasAddon(script.skin.helper.service)">Skin.Reset(SkinHelper.RandomFanartDelay)</onload>
 	<onload condition="Skin.HasSetting(EnableFanartScript) + !System.HasAddon(script.skin.helper.service)">Skin.Reset(EnableFanartScript)</onload>
-	<!--onload condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onload-->
 	<onload condition="!Skin.String(WidgetPlaylistScript,Disabled) + !System.HasAddon(script.randomandlastitems)">Skin.SetString(WidgetPlaylistScript,Disabled)</onload>
 	<onload condition="!Skin.HasSetting(DisableDataService) + !System.HasAddon(service.library.data.provider)">Skin.Setbool(DisableDataService)</onload>
+	<onload condition="Skin.HasSetting(DisableDataService) + System.HasAddon(service.library.data.provider)">Skin.Reset(DisableDataService)</onload>
 	<onload condition="!Skin.HasSetting(DisableSlideShowArt) + !System.HasAddon(script.artistslideshow)">Skin.Setbool(DisableSlideShowArt)</onload>
 	<onload condition="!Skin.HasSetting(DisableTVNextAired) + !System.HasAddon(script.tv.show.next.aired)">Skin.Setbool(DisableTVNextAired)</onload>
 	<onload condition="!Skin.HasSetting(DisableGlobalSearch) + !System.HasAddon(script.globalsearch)">Skin.Setbool(DisableGlobalSearch)</onload>

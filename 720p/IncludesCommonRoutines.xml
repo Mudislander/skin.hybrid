@@ -1666,4 +1666,207 @@
 			</control>
 		</control>
 	</include>
+	<include name="HomeWeatherConditions">
+		<control type="group">
+			<left>0</left>
+			<top>55r</top>
+			<!--visible>!Skin.HasSetting(HideHomeWeatherInfo) + !IsEmpty(Weather.Plugin)</visible-->
+			<visible>!Window.IsVisible(extendedprogressdialog)</visible>
+			<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedWeatherInfo</include>
+			<include>Window_OpenClose_Animation</include>
+			<control type="image">
+				<description>Weather image icon</description>
+				<left>0</left>
+				<top>0</top>
+				<width>60</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Current.OutlookIcon)]</texture>
+				<visible>!Skin.HasSetting(resource.images.weathericons.multi) | IsEmpty(Skin.String(resource.images.weathericons.path))</visible>
+			</control>
+			<control type="multiimage">
+				<description>Animated Weather icon</description>
+				<left>0</left>
+				<top>0</top>
+				<width>60</width>
+				<height>60</height>
+				<imagepath>$VAR[WeatherIconPath]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
+				<timeperimage>100</timeperimage>
+				<randomize>false</randomize>
+				<fadetime>1</fadetime>
+				<visible>Skin.HasSetting(resource.images.weathericons.multi) + !IsEmpty(Skin.String(resource.images.weathericons.path))</visible>
+			</control>
+			<control type="label">
+				<description>Location label</description>
+				<left>65</left>
+				<top>5</top>
+				<width>300</width>
+				<height>15</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font10</font>
+				<textcolor>$VAR[MainColorTwo]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+			</control>
+			<control type="grouplist">
+				<left>65</left>
+				<top>20</top>
+				<width>300</width>
+				<height>30</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>0</itemgap>
+				<control type="label">
+					<description>Temp label</description>
+					<width min="0" max="150">auto</width>
+					<height>30</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font28_title</font>
+					<textcolor>$VAR[MainColorTwo]</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<label>[B]$INFO[Window(Weather).Property(Current.Temperature)][/B]</label>
+				</control>
+				<control type="label">
+					<description>Temp Units</description>
+					<width min="0" max="50">auto</width>
+					<height>22</height>
+					<font>font10</font>
+					<aligny>center</aligny>
+					<label>$INFO[System.TemperatureUnits]</label>
+					<textcolor>$VAR[MainColorTwo]</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<visible>!IsEmpty(Window(Weather).Property(Current.Temperature))</visible>
+				</control>
+				<control type="label">
+					<description>Conditions Label</description>
+					<height>22</height>
+					<font>font10</font>
+					<aligny>center</aligny>
+					<label>$INFO[Window(Weather).Property(Current.Condition),  ]</label>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="HomePowerButtons">
+		<control type="button" id="21">
+			<description>Eject DVD Tray Button</description>
+			<left>100r</left>
+			<top>55r</top>
+			<width>45</width>
+			<height>45</height>
+			<onclick condition="Player.HasMedia">ActivateWindow(playercontrols)</onclick>
+			<onclick condition="!Player.HasMedia + System.HasMediaDVD">XBMC.PlayDVD()</onclick>
+			<onclick condition="!Player.HasMedia + !System.HasMediaDVD">EjectTray()</onclick>
+			<texturefocus border="5">FloorButtons/FloorDiskFO.png</texturefocus>
+			<texturenofocus border="5">FloorButtons/FloorDiskNF.png</texturenofocus>
+			<onleft condition="Skin.HasSetting(HideHomePowerBtn)">9000</onleft>
+			<onleft condition="!Skin.HasSetting(HideHomePowerBtn)">20</onleft>
+			<onright condition="Skin.HasSetting(HideHomePowerBtn)">9000</onright>
+			<onright condition="!Skin.HasSetting(HideHomePowerBtn)">20</onright>
+			<onup>9000</onup>
+			<ondown condition="IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(DisableScriptFavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(DisableScriptFavourites)">9000</ondown>
+			<animation effect="slide" start="0,0" end="45,00" time="0" condition="Skin.HasSetting(HideHomePowerBtn)">conditional</animation>
+			<visible>!Skin.HasSetting(HideHomeDVDBtn)</visible>
+		</control>
+		<control type="button" id="20">
+			<description>Shutdown Button</description>
+			<left>55r</left>
+			<top>55r</top>
+			<width>45</width>
+			<height>45</height>
+			<onclick>$VAR[HomePowerBtnCommand]</onclick>
+			<texturefocus border="5">FloorButtons/FloorPowerFO.png</texturefocus>
+			<texturenofocus border="5">FloorButtons/FloorPowerNF.png</texturenofocus>
+			<onleft condition="Skin.HasSetting(HideHomeDVDBtn)">9000</onleft>
+			<onleft condition="!Skin.HasSetting(HideHomeDVDBtn)">21</onleft>
+			<onright condition="Skin.HasSetting(HideHomeDVDBtn)">9000</onright>
+			<onright condition="!Skin.HasSetting(HideHomeDVDBtn)">21</onright>
+			<onup>9000</onup>
+			<ondown condition="IntegerGreaterThan(Window(home).Property(favourite.count),0) + !Skin.HasSetting(DisableScriptFavourites)">ActivateWindow(Favourites)</ondown>
+			<ondown condition="!IntegerGreaterThan(Window(home).Property(favourite.count),0) | Skin.HasSetting(DisableScriptFavourites)">9000</ondown>
+			<visible>!Skin.HasSetting(HideHomePowerBtn)</visible>
+		</control>
+	</include>
+	<include name="HomeInfoLabel">
+		<control type="image">
+			<description>LOGO</description>
+			<left>0</left>
+			<top>55r</top>
+			<width>170</width>
+			<height>43</height>
+			<aspectratio aligny="top" align="left">keep</aspectratio>
+			<texture>kodi-logo.png</texture>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+		</control>
+		<control type="label">
+			<description>profile label</description>
+			<left>5</left>
+			<top>55r</top>
+			<width>450</width>
+			<height>30</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<info>System.ProfileName</info>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!StringCompare(System.ProfileName,Master user)</visible>
+		</control>
+		<control type="label">
+			<left>5</left>
+			<top>25r</top>
+			<width>350</width>
+			<height>15</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font10</font>
+			<textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$LOCALIZE[31370]</label>
+			<include>Window_OpenClose_Animation</include>
+			<visible>!StringCompare(System.ProfileName,Master user)</visible>
+		</control>
+	</include>
+	<include name="HomeClockDate">
+		<control type="label">
+			<description>time label</description>
+			<left>355r</left>
+			<top>55r</top>
+			<width>350</width>
+			<height>30</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font28_title</font>
+			<textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Time]</label>
+			<include>Window_OpenClose_Animation</include>
+			<animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomePowerBtn)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomeDVDBtn)">conditional</animation>
+		</control>
+		<control type="label">
+			<description>Date label</description>
+			<left>355r</left>
+			<top>25r</top>
+			<width>350</width>
+			<height>15</height>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font10</font>
+			<textcolor>lightgrey</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<label>$INFO[System.Date]</label>
+			<include>Window_OpenClose_Animation</include>
+			<animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomePowerBtn)">conditional</animation>
+			<animation effect="slide" start="0,0" end="-55,00" time="0" condition="!Skin.HasSetting(HideHomeDVDBtn)">conditional</animation>
+		</control>
+	</include>
 </includes>

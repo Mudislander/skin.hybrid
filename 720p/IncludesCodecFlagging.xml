@@ -80,7 +80,7 @@
 			<aspectratio align="center" aligny="bottom">keep</aspectratio>
 			<texture>flagging/video/movieset.png</texture>
 			<visible>Container.Content(Movies)</visible>
-			<visible>!Window.IsVisible(VideoPlaylist) + !stringcompare(ListItem.Label,..) + ListItem.IsFolder + SubString(Container.FolderPath,videodb://,left)</visible>
+			<visible>!Window.IsVisible(VideoPlaylist) + !StringCompare(ListItem.Label,..) + ListItem.IsFolder + SubString(Container.FolderPath,videodb://,left)</visible>
 		</control>
 	</include>
 	<include name="VideoStudioFlagging">

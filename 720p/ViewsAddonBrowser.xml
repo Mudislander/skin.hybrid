@@ -143,7 +143,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -155,7 +155,7 @@
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="group">
 					<top>280</top>
@@ -259,7 +259,7 @@
 						<fadetime>100</fadetime>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -271,7 +271,7 @@
 						<fadetime>100</fadetime>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -325,7 +325,7 @@
 						<fadetime>100</fadetime>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -337,7 +337,7 @@
 						<fadetime>100</fadetime>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>

@@ -129,7 +129,7 @@
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -141,7 +141,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -272,7 +272,7 @@
 						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>2</left>
@@ -284,7 +284,7 @@
 						<bordersize>4</bordersize>
 						<fadetime>200</fadetime>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>6</left>
@@ -309,7 +309,7 @@
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,168,168" end="-12,-4,198,198" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,16,168,168" start="-12,-4,198,198" time="200">unfocus</animation>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>-2</left>
@@ -321,7 +321,7 @@
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<animation reversible="false" effect="zoom" start="-2,16,168,168" end="-12,-4,198,198" time="200">focus</animation>
 						<animation reversible="false" effect="zoom" end="-2,16,168,168" start="-12,-4,198,198" time="200">unfocus</animation>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>180</left>
@@ -601,7 +601,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -613,7 +613,7 @@
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="grouplist">
 					<description>Media Codec Flagging Images</description>
@@ -793,7 +793,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -805,7 +805,7 @@
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="group">
 					<top>310</top>
@@ -1036,7 +1036,7 @@
 					<texture background="true">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>10</left>
@@ -1048,7 +1048,7 @@
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<bordertexture border="8">ThumbShadow.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="label">
 					<description>Description Header txt</description>

@@ -131,6 +131,14 @@
 						<visible>System.HasAddon(script.favourites)</visible>
 					</item>
 					<item>
+						<description>SuperFavourites</description>
+						<label>$LOCALIZE[31329] - $LOCALIZE[31162]</label>
+						<onclick>Dialog.Close(1150)</onclick>
+						<onclick>RunScript(special://home/addons/plugin.program.super.favourites/chooser.py,property=$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,home)</onclick>
+						<visible>System.HasAddon(plugin.program.super.favourites)</visible>
+					</item>
+					<item>
 						<description>Video addons</description>
 						<label>$LOCALIZE[1037]</label>
 						<onclick>Skin.Reset(UsrSelectAddon)</onclick>

@@ -151,7 +151,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -162,7 +162,7 @@
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<fadetime>IconCrossfadeTime</fadetime>
 						<texture background="true">$INFO[ListItem.Thumb]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 				</control>
 				<control type="group">

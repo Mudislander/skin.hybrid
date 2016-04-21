@@ -7,15 +7,6 @@
 	</coordinates>
 	<include>DialogEffect</include>
 	<controls>
-		<include name="DialogBackgroundCommons">
-			<param name="DialogBackgroundWidth" value="830" />
-			<param name="DialogBackgroundHeight" value="660" />
-			<param name="DialogHeaderWidth" value="750" />
-			<param name="DialogHeaderLabel" value="$INFO[ListItem.Title]" />
-			<param name="DialogHeaderId" value="2" />
-			<param name="CloseButtonLeft" value="740" />
-			<param name="CloseButtonNav" value="10" />
-		</include>
 		<control type="list" id="49">
 			<left>40</left>
 			<top>80</top>

@@ -36,7 +36,7 @@
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -45,7 +45,7 @@
 						<height>310</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!StringCompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 					<control type="group">
 						<control type="image">
@@ -99,7 +99,7 @@
 							<aspectratio>stretch</aspectratio>
 							<texture fallback="ClearCase/dv.png">$VAR[VideoListCase,ClearCase/,.png]</texture>
 						</control>
-						<visible>!stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="250" height="310">
@@ -116,7 +116,7 @@
 						<animation type="UnFocus" reversible="true">
 							<effect type="zoom" start="-21,-32,244,374" end="0,0,202,310" time="250" />
 						</animation>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -131,7 +131,7 @@
 						<animation type="UnFocus" reversible="true">
 							<effect type="zoom" start="-21,-32,244,374" end="0,0,202,310" time="250" />
 						</animation>
-						<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!StringCompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 					<control type="group">
 						<control type="image">
@@ -339,7 +339,7 @@
 							</animation>
 							<visible>Skin.HasSetting(DisableAnimatedCase) | Skin.HasSetting(DisableDiscArt)</visible>
 						</control>
-						<visible>!stringcompare(ListItem.Label,..) + !IsEmpty(ListItem.Art(poster))</visible>
+						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 				</focusedlayout>
 			</control>

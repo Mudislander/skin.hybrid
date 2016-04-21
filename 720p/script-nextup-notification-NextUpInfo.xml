@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">3012</defaultcontrol>
+	<zorder>0</zorder>
+	<controls>
+		<control type="group">
+			<right>10</right>
+			<bottom>10</bottom>
+			<width>400</width>
+			<height>240</height>
+			<control type="group">
+				<control type="label" id="3000">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3002">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3003">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3004">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3005">
+					<visible>false</visible>
+				</control>
+				<control type="image" id="3006">
+					<visible>false</visible>
+				</control>
+				<control type="image" id="3007">
+					<visible>false</visible>
+				</control>
+				<control type="image" id="3008">
+					<visible>false</visible>
+				</control>
+				<control type="image" id="3009">
+					<visible>false</visible>
+				</control>
+				<control type="image" id="3010">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3015">
+					<visible>false</visible>
+				</control>
+				<control type="label" id="3016">
+					<visible>false</visible>
+				</control>
+				<control type="textbox" id="3001">
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<animation effect="fade" start="100" end="97" time="200" condition="true">Conditional</animation>
+					<texture border="20">ContentPanel.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(3012)</visible>
+					<visible>IntegerGreaterThan(Player.TimeRemaining(ss),30)</visible>
+					<left>136</left>
+					<top>55</top>
+					<width>128</width>
+					<height>128</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="$VAR[MainColorOne]">NextUpIcons/30.png</texture>
+					<animation type="Focus">
+						<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(3012)</visible>
+					<visible>IntegerGreaterThan(Player.TimeRemaining(ss),30)</visible>
+					<left>136</left>
+					<top>55</top>
+					<width>128</width>
+					<height>128</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="$VAR[MainColorOne]">NextUpIcons/30.png</texture>
+					<animation type="Focus">
+						<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(3012)</visible>
+					<visible>!IntegerGreaterThan(Player.TimeRemaining(ss),30)</visible>
+					<left>136</left>
+					<top>55</top>
+					<width>128</width>
+					<height>128</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="$VAR[MainColorOne]">$INFO[Player.TimeRemaining(ss),NextUpIcons/,.png]</texture>
+					<animation type="Focus">
+						<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+					</animation>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(3012)</visible>
+					<visible>!IntegerGreaterThan(Player.TimeRemaining(ss),30)</visible>
+					<left>136</left>
+					<top>55</top>
+					<width>128</width>
+					<height>128</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="$VAR[MainColorOne]">$INFO[Player.TimeRemaining(ss),NextUpIcons/,.png]</texture>
+					<animation type="Focus">
+						<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
+					</animation>
+					<animation type="Unfocus">
+						<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
+						<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
+					</animation>
+				</control>
+				<control type="button" id="3012">
+					<description>Watch Now</description>
+					<left>5</left>
+					<top>5</top>
+					<width>410</width>
+					<height>250</height>
+					<ondown>3013</ondown>
+					<onup>3013</onup>
+					<texturefocus>noop</texturefocus>
+					<textcolor>ff333333</textcolor>
+				</control>
+				<control type="group">
+					<left>5</left>
+					<right>5</right>
+					<control type="button" id="3013">
+						<description>Cancel</description>
+						<left>125</left>
+						<bottom>21</bottom>
+						<width>150</width>
+						<onup>3012</onup>
+						<ondown>3012</ondown>
+						<align>center</align>
+						<font>font13</font>
+						<label>222</label>
+						<focusedcolor>$VAR[MainColorTwo]</focusedcolor>
+						<disabledcolor>B3dddddd</disabledcolor>
+						<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+						<height>25</height>
+						<textcolor>ff333333</textcolor>
+						<texturefocus colordiffuse="$VAR[MainColorOne]" border="5">box.png</texturefocus>
+						<texturenofocus colordiffuse="$VAR[MainColorTwo]" border="5">box.png</texturenofocus>
+					</control>
+					<control type="label" description="Total Time">
+						<align>center</align>
+						<aligny>center</aligny>
+						<width>100%</width>
+						<top>5</top>
+						<height>40</height>
+						<font>font14</font>
+						<textcolor>$VAR[SelectedColor]</textcolor>
+						<label>$LOCALIZE[31163]</label>
+					</control>
+					<control type="label">
+						<left>4</left>
+						<align>center</align>
+						<aligny>center</aligny>
+						<width>100%</width>
+						<top>25</top>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>$VAR[MainColorTwo]</textcolor>
+						<label>$INFO[Control.GetLabel(3002),$ADDON[service.nextup.notification 30008]... ,]$INFO[Control.GetLabel(3000), ,]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

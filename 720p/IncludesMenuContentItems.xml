@@ -155,6 +155,25 @@
 				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
 			</item>
 			<item>
+				<description>Android Apps</description>
+				<label>$LOCALIZE[31160]</label>
+				<include>ClearButtonChoice</include>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,ActivateWindow(Programs,Androidapps,return))</onclick>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label,$LOCALIZE[31160])</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Type,Programs)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/launcher.jpg)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Display,Default)</onclick>
+				<onclick condition="Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
+				<onclick condition="Window.IsVisible(1105)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Addon,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,None)</onclick>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
+				<include>CloseMenuChoice</include>
+				<visible>System.Platform.Android</visible>
+				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+			</item>
+			<item>
 				<description>Random SlideShow</description>
 				<label>$LOCALIZE[108] ([COLOR=selected]$LOCALIZE[590][/COLOR])</label>
 				<include>ClearButtonChoice</include>
@@ -168,6 +187,43 @@
 				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Type,Pictures)</onclick>
 				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Display,Default)</onclick>
 				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Fanart,special://skin/backgrounds/pictures.jpg)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,None)</onclick>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
+				<include>CloseMenuChoice</include>
+				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+			</item>
+			<item>
+				<description>Super Favourites</description>
+				<label>$LOCALIZE[31329] - $LOCALIZE[31162]</label>
+				<include>ClearButtonChoice</include>
+				<onclick condition="Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
+				<onclick condition="Window.IsVisible(1105)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Addon,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Type,Favourites)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Display,Default)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Fanart,special://home/addons/plugin.program.super.favourites/fanart.jpg)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,None)</onclick>
+				<onclick condition="Window.IsVisible(1135)">Dialog.Close(1135)</onclick>
+				<onclick condition="Window.IsVisible(1105)">Dialog.Close(1105)</onclick>
+				<onclick>RunScript(special://home/addons/plugin.program.super.favourites/chooser.py,property=$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
+				<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+				<visible>System.HasAddon(plugin.program.super.favourites)</visible>
+				<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+			</item>
+			<item>
+				<description>Super Favourites Folder</description>
+				<label>$LOCALIZE[31162] - $LOCALIZE[513]</label>
+				<include>ClearButtonChoice</include>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Path,ActivateWindow(10025,"plugin://plugin.program.super.favourites/?label=Super+Favourites&amp;folder=",return))</onclick>
+				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label,$LOCALIZE[31162])</onclick>
+				<onclick condition="Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,$INFO[Window(Home).Property(UsrSelectBtn)])</onclick>
+				<onclick condition="Window.IsVisible(1105)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Sub,Favourites)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Addon,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Widget,None)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Type,Favourites)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Display,Default)</onclick>
+				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Fanart,special://home/addons/plugin.program.super.favourites/fanart.jpg)</onclick>
 				<onclick condition="Window.IsVisible(1105) | Window.IsVisible(1110)">Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].Stats,None)</onclick>
 				<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].Label)</onclick>
 				<include>CloseMenuChoice</include>

@@ -339,6 +339,7 @@
 				<aspectratio>keep</aspectratio>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
+				<!--imagepath background="true">$INFO[$INFO[Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt)]</imagepath-->
 				<visible>!Skin.HasSetting(HideArtistArtOSD) + Skin.HasSetting(DisableSlideShowArt) + !IsEmpty(Control.GetLabel(5043))</visible>
 			</control>
 			<control type="multiimage">
@@ -356,8 +357,10 @@
 				<include>Dimensions_Fullscreen</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<!--texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.FanArt)]</texture-->
 				<visible>!Skin.HasSetting(HideArtistArtOSD)</visible>
 				<visible>[!IsEmpty(Player.Art(fanart)) + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))] | [!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtworkReady))]</visible>
+				<!--visible>[!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.FanArt)) + IsEmpty(Control.GetLabel(5043)) + IsEmpty(Control.GetLabel(5044))] | [!Skin.HasSetting(DisableSlideShowArt) + IsEmpty(Window.Property(ArtworkReady))]</visible-->
 				<fadetime>600</fadetime>
 			</control>
 			<control type="multiimage">
@@ -394,6 +397,7 @@
 				<include>VizDiffusionEffect</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
+				<!--imagepath background="true">$INFO[$INFO[Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt)]</imagepath-->
 				<visible>!Skin.HasSetting(HideArtistArtOSD) + !IsEmpty(Control.GetLabel(5043))</visible>
 				<visible>Skin.HasSetting(DisableSlideShowArt) | [!Skin.HasSetting(DisableSlideShowArt) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshowTransparent)) + IsEmpty(Window.Property(ArtworkReady))]</visible>
 			</control>
@@ -414,6 +418,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<include condition="!Skin.HasSetting(NoAnimateVizFanart)">KBurnsAnimateFanart</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<!--texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.FanArt)]</texture-->
 				<include>VizDiffusionEffect</include>
 				<fadetime>600</fadetime>
 				<visible>!Skin.HasSetting(HideArtistArtOSD)</visible>

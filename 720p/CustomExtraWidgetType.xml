@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1124">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="400,0" end="0,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="400,0" time="400" tween="quadratic" easing="out" condition="!Skin.HasSetting(DisableAnimations)">WindowClose</animation>
+			<control type="image">
+				<left>400r</left>
+				<top>0</top>
+				<width>400</width>
+				<height>720</height>
+				<texture border="15,0,0,0" flipx="true" colordiffuse="$VAR[MenuBarColor]">MediaBladeSub.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<left>380r</left>
+				<top>0</top>
+				<width>64</width>
+				<height>32</height>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus colordiffuse="$VAR[MenuBarColor]">DialogClose.png</texturefocus>
+				<texturenofocus>DialogClose.png</texturenofocus>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			<control type="image">
+				<left>380r</left>
+				<top>0</top>
+				<width>64</width>
+				<height>32</height>
+				<texture>DialogCloseBtn.png</texture>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			<control type="label">
+				<left>380r</left>
+				<top>35</top>
+				<width>360</width>
+				<height>40</height>
+				<font>font13_title</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>$VAR[MainColorOne]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>$LOCALIZE[31316]</label>
+			</control>
+			<control type="list" id="450">
+				<left>390r</left>
+				<top>130</top>
+				<width>440</width>
+				<height>480</height>
+				<onup>450</onup>
+				<onleft>Dialog.Close(1124)</onleft>
+				<onright>60</onright>
+				<ondown>450</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>360</width>
+						<height>40</height>
+						<texture border="5">button-nofocus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>340</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>360</width>
+						<height>40</height>
+						<visible>!Control.HasFocus(450)</visible>
+						<texture border="3">button-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>360</width>
+						<height>40</height>
+						<visible>Control.HasFocus(450)</visible>
+						<texture border="3" colordiffuse="$VAR[MenuBarColor]">button-focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>340</width>
+						<height>40</height>
+						<font>font12_title</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+				<!--item>
+						<description>Similar Movies</description>
+						<label>$LOCALIZE[31116]</label>
+						<onclick>Dialog.Close(1124)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SimilarMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+				</item-->
+				<content>
+					<item>
+						<description>Up Ome Level</description>
+						<label>[COLOR=selected]$LOCALIZE[31346][/COLOR]</label>
+						<onclick>SetProperty(MenuItemType,MainMenu)</onclick>
+						<visible>!StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+					</item>
+					<item>
+						<description>Music</description>
+						<label>$LOCALIZE[2] $LOCALIZE[33061]</label>
+						<onclick>SetProperty(MenuItemType,MusicMenu)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+					</item>
+					<item>
+						<description>Movies</description>
+						<label>$LOCALIZE[342] $LOCALIZE[33061]</label>
+						<onclick>SetProperty(MenuItemType,MoviesMenu)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>Library.HasContent(Movies)</visible>
+					</item>
+					<item>
+						<description>TVShows</description>
+						<label>$LOCALIZE[31200] $LOCALIZE[33061]</label>
+						<onclick>SetProperty(MenuItemType,TVShowsMenu)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>Library.HasContent(TVShows)</visible>
+					</item>
+					<item>
+						<description>Concerts</description>
+						<label>$LOCALIZE[31203] $LOCALIZE[33061]</label>
+						<onclick>SetProperty(MenuItemType,ConcertsMenu)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>Library.HasContent(MusicVideos)</visible>
+					</item>
+					<!--item>
+						<description>Clear Setting</description>
+						<label>$LOCALIZE[31317]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,None)</onclick>
+						<onclick>Skin.Reset($INFO[Window(Home).Property(UsrSelectBtn)].Path)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item-->
+					<item>
+						<description>Clear Setting</description>
+						<label>$LOCALIZE[31317]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,None)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>Skin.Reset($INFO[Window(home).Property(UsrSelectBtn)].Select)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Playlist Movies</description>
+						<label>***$LOCALIZE[136]***</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,VideoPlayList)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<include>MenuMoviePlayListCheck</include>
+					</item>
+					<item>
+						<description>Playlist Music</description>
+						<label>***$LOCALIZE[136]***</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,MusicPlayList)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<include>MenuMusicPlayListCheck</include>
+					</item>
+					<item>
+						<description>Recent Movies</description>
+						<label>$LOCALIZE[31198]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RecentMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31198])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Random Movies</description>
+						<label>$LOCALIZE[31196]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RandomMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31196])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Suggested Movies</description>
+						<label>$LOCALIZE[31197]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SuggestedMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31271])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>UnWatched Movies</description>
+						<label>$LOCALIZE[16101] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,UnWatchedMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[16101] $LOCALIZE[20342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<!--visible>!Skin.String(WidgetPlaylistScript,Disabled)</visible-->
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Similar Movies</description>
+						<label>$LOCALIZE[31116]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SimilarMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31197])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Genre Movies</description>
+						<label>$LOCALIZE[31155]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,GenreMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31155])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>3D Movies</description>
+						<label>$LOCALIZE[31626] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,3DMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31626] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Animated Movies</description>
+						<label>$LOCALIZE[31602] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,AnimatedMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31602] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Childrens Movies</description>
+						<label>$LOCALIZE[31604] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ChildMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31604] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Comedy Movies</description>
+						<label>$LOCALIZE[31605] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ComedyMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31605] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Family Movies</description>
+						<label>$LOCALIZE[31610] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,FamilyMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31610] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Documentary Movies</description>
+						<label>$LOCALIZE[31608] $LOCALIZE[342]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,DocuMovies)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31608] $LOCALIZE[342])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MoviesMenu)</visible>
+					</item>
+					<item>
+						<description>Recent Episodes</description>
+						<label>$LOCALIZE[31195]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RecentEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31195])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Landscape Recent Episodes</description>
+						<label>$LOCALIZE[31195] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ThumbRecentEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31195])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Random Episodes</description>
+						<label>$LOCALIZE[31193]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RandomEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31193])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Landscape Random Episodes</description>
+						<label>$LOCALIZE[31193] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ThumbRandomEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31193])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Suggested Episodes</description>
+						<label>$LOCALIZE[31194]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SuggestedEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31194])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Landscape Suggested Episodes</description>
+						<label>$LOCALIZE[31194] $LOCALIZE[31118]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ThumbSuggestedEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31194])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Next Up</description>
+						<label>$LOCALIZE[31142]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,NextUpEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31142])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Next Aired</description>
+						<label>$LOCALIZE[31245]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,NextAired)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31245])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>!Skin.HasSetting(DisableTVNextAired)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Similar TVShows</description>
+						<label>$LOCALIZE[31140]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SimilarEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31140])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Genre TVShows</description>
+						<label>$LOCALIZE[31156]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,GenreEpisodes)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31156])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),TVShowsMenu)</visible>
+					</item>
+					<item>
+						<description>Recent Albums</description>
+						<label>$LOCALIZE[31192]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RecentAlbums)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31192])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MusicMenu)</visible>
+					</item>
+					<item>
+						<description>Random Albums</description>
+						<label>$LOCALIZE[31190]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RandomAlbums)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31190])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MusicMenu)</visible>
+					</item>
+					<item>
+						<description>Recent Played Songs</description>
+						<label>$LOCALIZE[31157]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,PlayedAlbums)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31157])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MusicMenu)</visible>
+					</item>
+					<item>
+						<description>Suggested Albums</description>
+						<label>$LOCALIZE[31191]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SuggestedAlbums)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31490])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),MusicMenu)</visible>
+					</item>
+					<item>
+						<description>Recent Concerts</description>
+						<label>$LOCALIZE[31189]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RecentConcerts)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31189])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),ConcertsMenu)</visible>
+					</item>
+					<item>
+						<description>Random Concerts</description>
+						<label>$LOCALIZE[31188]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,RandomConcerts)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31188])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),ConcertsMenu)</visible>
+					</item>
+					<item>
+						<description>Suggested Concerts</description>
+						<label>$LOCALIZE[31199]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,SuggestedConcerts)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31199])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),ConcertsMenu)</visible>
+					</item>
+					<item>
+						<description>Weather</description>
+						<label>$LOCALIZE[8]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,Weather)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[8])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>!IsEmpty(Weather.Plugin)</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+					</item>
+					<item>
+						<description>Favourites</description>
+						<label>$LOCALIZE[10134]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,Favourites)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[1036])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Media Favourites</description>
+						<label>$LOCALIZE[31154]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,MediaFavourites)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31154])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+					</item>
+					<item>
+						<description>Android Apps</description>
+						<label>$LOCALIZE[31160]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,AndroidApps)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[31160])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Path,None)</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>System.Platform.Android</visible>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+					</item>
+					<!--item>
+						<description>Video Addons</description>
+						<label>$LOCALIZE[13280] $LOCALIZE[24001]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,VideoApps)</onclick>
+						
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$LOCALIZE[13280] $LOCALIZE[24001])</onclick>
+						
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Music Addons</description>
+						<label>$LOCALIZE[2] $LOCALIZE[24001]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,MusicApps)</onclick>
+						
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,LOCALIZE[2] $LOCALIZE[24001])</onclick>
+						
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item>
+					<item>
+						<description>Program Addons</description>
+						<label>$LOCALIZE[29908] $LOCALIZE[24001]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].XtraWidget,ProgApps)</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,LOCALIZE[2] $LOCALIZE[24001])</onclick>
+						
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+					</item-->
+					<item>
+						<description>User Widget Number 1</description>
+						<label fallback="31230">$INFO[Skin.String(HomeWidget.1.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.1.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.1.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.1.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.1.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 2</description>
+						<label fallback="31231">$INFO[Skin.String(HomeWidget.2.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.2.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.2.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.2.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.2.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 3</description>
+						<label fallback="31232">$INFO[Skin.String(HomeWidget.3.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.3.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.3.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.3.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.3.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 4</description>
+						<label fallback="31233">$INFO[Skin.String(HomeWidget.4.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.4.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.4.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.4.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.4.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 5</description>
+						<label fallback="31234">$INFO[Skin.String(HomeWidget.5.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.5.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.5.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.5.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.5.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 6</description>
+						<label fallback="31235">$INFO[Skin.String(HomeWidget.6.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.6.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.6.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.6.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.6.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 7</description>
+						<label fallback="31236">$INFO[Skin.String(HomeWidget.7.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.7.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.7.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.7.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.7.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 8</description>
+						<label fallback="31237">$INFO[Skin.String(HomeWidget.8.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.8.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.8.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.8.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.8.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 9</description>
+						<label fallback="31238">$INFO[Skin.String(HomeWidget.9.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.9.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.9.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.9.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.9.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 10</description>
+						<label fallback="31239">$INFO[Skin.String(HomeWidget.10.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.10.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.10.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.10.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.10.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 11</description>
+						<label fallback="31241">$INFO[Skin.String(HomeWidget.11.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.11.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.11.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.11.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.11.Type))</visible>
+					</item>
+					<item>
+						<description>User Widget Number 12</description>
+						<label fallback="31480">$INFO[Skin.String(HomeWidget.12.Name)]</label>
+						<onclick>Dialog.Close(1122)</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].XtraWidget,$INFO[Skin.String(HomeWidget.12.Type)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(home).Property(UsrSelectBtn)].520Name,$INFO[Skin.String(HomeWidget.12.Name)])</onclick>
+						<onclick>Skin.SetString($INFO[Window(Home).Property(UsrSelectBtn)].520Path,$INFO[Skin.String(HomeWidget.12.Path)])</onclick>
+						<onclick>ClearProperty(UsrSelectBtn,Home)</onclick>
+						<visible>StringCompare(Window.Property(MenuItemType),MainMenu)</visible>
+						<visible>!IsEmpty(Skin.String(HomeWidget.12.Type))</visible>
+					</item>
+				</content>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1250</left>
+				<top>95</top>
+				<width>25</width>
+				<height>550</height>
+				<include>PageScrollBar</include>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(450)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

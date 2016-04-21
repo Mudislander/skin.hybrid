@@ -191,7 +191,7 @@
 					<!--bordertexture border="8">ThumbShadow.png</bordertexture-->
 					<bordertexture border="8">ContentPanel.png</bordertexture>
 					<bordersize>8</bordersize>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -203,7 +203,7 @@
 					<texture background="true" fallback="DefaultFolder.png">$VAR[PosterThumb]</texture>
 					<bordertexture border="8">ContentPanel.png</bordertexture>
 					<!--bordertexture border="8">ThumbShadow.png</bordertexture-->
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 					<visible>IsEmpty(Window(home).Property(SkinHelper.AnimatedPoster)) | !Skin.HasSetting(EnableAnimatedPoster)</visible>
 				</control>
 				<control type="image">
@@ -215,7 +215,7 @@
 					<fadetime>IconCrossfadeTime</fadetime>
 					<texture background="true">$INFO[Window(home).Property(SkinHelper.AnimatedPoster)]</texture>
 					<bordertexture border="8">ContentPanel.png</bordertexture>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!StringCompare(ListItem.Label,..)</visible>
 					<visible>Skin.HasSetting(EnableAnimatedPoster) + !IsEmpty(Window(home).Property(SkinHelper.AnimatedPoster))</visible>
 				</control>
 			</control>
@@ -444,7 +444,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -455,7 +455,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+						<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -466,7 +466,7 @@
 						<bordertexture border="5">button-nofocus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
-						<visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
+						<visible>!StringCompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -517,7 +517,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -528,7 +528,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
+						<visible>!StringCompare(ListItem.Label,..) + !Container.Content(Episodes)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -539,7 +539,7 @@
 						<bordertexture border="5" colordiffuse="$VAR[MenuBarColor]">folder-focus.png</bordertexture>
 						<bordersize>5</bordersize>
 						<texture background="true">$INFO[Listitem.Icon]</texture>
-						<visible>!stringcompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
+						<visible>!StringCompare(ListItem.Label,..) + Container.Content(Episodes)</visible>
 					</control>
 					<control type="label">
 						<left>8</left>
@@ -572,7 +572,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -583,7 +583,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -634,7 +634,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -645,7 +645,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[PosterThumb]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="label">
 						<left>8</left>
@@ -712,7 +712,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -723,7 +723,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -762,7 +762,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>stringcompare(ListItem.Label,..)</visible>
+						<visible>StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>1</left>
@@ -773,7 +773,7 @@
 						<bordersize>5</bordersize>
 						<texture background="true">$VAR[BannerThumb]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>

@@ -261,7 +261,7 @@
 								<label>$LOCALIZE[20376]:</label>
 								<label2>$INFO[ListItem.OriginalTitle]</label2>
 								<onclick>noop</onclick>
-								<visible>!IsEmpty(ListItem.OriginalTitle) + !stringcompare(ListItem.OriginalTitle,Listitem.Title)</visible>
+								<visible>!IsEmpty(ListItem.OriginalTitle) + !StringCompare(ListItem.OriginalTitle,Listitem.Title)</visible>
 							</item>
 							<item>
 								<label>$LOCALIZE[20339]:</label>

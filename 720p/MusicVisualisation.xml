@@ -51,7 +51,8 @@
 					<width>170</width>
 					<height>175</height>
 					<include>CDArtSpinner</include>
-					<texture fallback="Disks/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture>
+					<!--texture fallback="Disks/DefaultCDArt.png" background="true">$INFO[Player.FolderPath,,cdart.png]</texture-->
+					<texture fallback="Disks/DefaultCDArt.png" background="true">$INFO[$INFO[Window(Home).Property(SkinHelper.Player.Music.DiscArt)]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<visible>!Skin.HasSetting(DisableDiscArt) + !Player.IsInternetStream</visible>
 					<!--visible>!Skin.HasSetting(DisableAnimations)</visible-->

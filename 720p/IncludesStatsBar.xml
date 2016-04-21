@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="HomeStatsBar">
+		<control type="group">
+			<left>0</left>
+			<top>478</top>
+			<animation effect="slide" start="0,0" end="0,48" time="0" condition="Skin.HasSetting(UltraLowMenuBar)">Conditional</animation>
+			<include>Window_OpenClose_Animation</include>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>40</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>StatusBar.png</texture>
+				<colordiffuse>$VAR[MenuBarColor]</colordiffuse>
+				<visible>system.getbool(lookandfeel.enablerssfeeds) | !Skin.HasSetting(HideHomeStats) | [MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)]</visible>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<top>10</top>
+				<height>30</height>
+				<width>1260</width>
+				<label>$VAR[InfoBarStats]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>$VAR[MainColorOne]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedStatsBar</include>
+				<include condition="Skin.HasSetting(DisableAnimations)">StaticStatsBar</include>
+				<visible>!Skin.HasSetting(HideHomeStats)</visible>
+			</control>
+			<control type="rss">
+				<description>RSS feed</description>
+				<left>0</left>
+				<top>10</top>
+				<height>30</height>
+				<width>1300</width>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<urlset>1</urlset>
+				<textcolor>$VAR[MainColorOne]</textcolor>
+				<titlecolor>$VAR[MainColorOne]</titlecolor>
+				<headlinecolor>$VAR[MainColorTwo]</headlinecolor>
+				<include condition="!Skin.HasSetting(DisableAnimations)">AnimatedRSSBar</include>
+				<include condition="Skin.HasSetting(DisableAnimations)">StaticRSSBar</include>
+				<visible>system.getbool(lookandfeel.enablerssfeeds) + [!Player.HasAudio | Skin.HasSetting(HideNext5SongsInfo)]</visible>
+			</control>
+			<control type="fadelabel" id="1">
+				<description>Next Five Songs</description>
+				<left>0</left>
+				<top>10</top>
+				<height>30</height>
+				<width>1280</width>
+				<align>center</align>
+				<scroll>true</scroll>
+				<scrollout>true</scrollout>
+				<scrollspeed>30</scrollspeed>
+				<pauseatend>400</pauseatend>
+				<label>$VAR[NextFiveSongScroller]</label>
+				<font>font12</font>
+				<textcolor>$VAR[MainColorTwo]</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<visible>MusicPlayer.HasNext + !Skin.HasSetting(HideNext5SongsInfo)</visible>
+			</control>
+		</control>
+	</include>
+	<variable name="InfoBarStats" type="text">
+		<value condition="PVR.IsRecording">$INFO[PVR.NowRecordingChannel,[B][COLOR=C0FFFFFF]$LOCALIZE[19158]$LOCALIZE[31000] [/COLOR][/B]][COLOR=C0FFFFFF] ($INFO[PVR.NowRecordingTitle, ] )[/COLOR]</value>
+		<value condition="!IsEmpty(Window(Weather).Property(Alerts.IsFetched)) + !StringCompare(Window(Weather).Property(Alerts.Count),0)">$INFO[Window(Weather).Property(Alerts),[B][COLOR=red]$LOCALIZE[33049]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Player.HasMedia + Skin.HasSetting(HideNowPlayingWidget) + StringCompare(VideoPlayer.Title,player.swf playpath=105Test1 live=true)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31206]</value>
+		<value condition="Player.HasMedia + Skin.HasSetting(HideNowPlayingWidget) + StringCompare(VideoPlayer.Title,player.swf playpath=rmc1 live=true)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31221]</value>
+		<value condition="Player.HasMedia + Skin.HasSetting(HideNowPlayingWidget) + Player.IsInternetStream + SubString(VideoPlayer.Title,Virgin 1,Left)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31222]</value>
+		<value condition="Player.HasMedia + Skin.HasSetting(HideNowPlayingWidget) + Player.IsInternetStream">$INFO[Player.Title,[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Player.FinishTime,[B][COLOR=C0FFFFFF]$LOCALIZE[31049]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Player.HasMedia + Skin.HasSetting(HideNowPlayingWidget)">$INFO[Player.Title,[B][COLOR=C0FFFFFF]$LOCALIZE[31040]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Player.FinishTime,[B][COLOR=C0FFFFFF]$LOCALIZE[31049]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(20)">[B][COLOR=C0FFFFFF]$LOCALIZE[31262]$LOCALIZE[31000] [/COLOR][/B]$INFO[System.TotalUptime]</value>
+		<value condition="Control.HasFocus(21) + System.HasMediaDVD + !IsEmpty(System.DVDLabel)">$INFO[System.DVDLabel,[B][COLOR=C0FFFFFF]$LOCALIZE[427]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(21) + !System.HasMediaDVD">$LOCALIZE[31260,[B][COLOR=C0FFFFFF]$LOCALIZE[427]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(700) + IntegerGreaterThan(Container(700).NumItems,0)">$INFO[Container(700).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(703) + IntegerGreaterThan(Container(703).NumItems,0)">$INFO[Container(703).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(704) + IntegerGreaterThan(Container(704).NumItems,0)">$INFO[Container(704).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(705) + IntegerGreaterThan(Container(705).NumItems,0)">$INFO[Container(705).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(706) + IntegerGreaterThan(Container(706).NumItems,0)">$INFO[Container(706).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(707) + IntegerGreaterThan(Container(707).NumItems,0)">$INFO[Container(707).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(708) + IntegerGreaterThan(Container(708).NumItems,0)">$INFO[Container(708).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(709) + IntegerGreaterThan(Container(709).NumItems,0)">$INFO[Container(709).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(710) + IntegerGreaterThan(Container(701).NumItems,0)">$INFO[Container(710).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="Control.HasFocus(711) + IntegerGreaterThan(Container(711).NumItems,0)">$INFO[Container(711).ListItem.label,[B][COLOR=C0FFFFFF]$LOCALIZE[31242]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlaylist) + !Skin.HasSetting(DisableDataService) + IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistTVShowCount),[B][COLOR=C0FFFFFF]$LOCALIZE[31200]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodes),[B][COLOR=C0FFFFFF]$LOCALIZE[20360]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodesUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlaylist) + !Skin.HasSetting(DisableDataService) + !IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistCount),[B][COLOR=C0FFFFFF]$LOCALIZE[20342]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistInProgress),[B][COLOR=C0FFFFFF]$LOCALIZE[575]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),VideoNode) + !Skin.HasSetting(DisableDataService) + IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistTVShowCount),[B][COLOR=C0FFFFFF]$LOCALIZE[31200]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodes),[B][COLOR=C0FFFFFF]$LOCALIZE[20360]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodesUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),VideoNode) + !Skin.HasSetting(DisableDataService) + !IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistCount),[B][COLOR=C0FFFFFF]$LOCALIZE[20342]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistInProgress),[B][COLOR=C0FFFFFF]$LOCALIZE[575]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),UPnPMovies) + !Skin.HasSetting(DisableDataService) + IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistTVShowCount),[B][COLOR=C0FFFFFF]$LOCALIZE[31200]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodes),[B][COLOR=C0FFFFFF]$LOCALIZE[20360]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistEpisodesUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),UPnPMovies) + !Skin.HasSetting(DisableDataService) + !IntegerGreaterThan(Window(home).Property(PlaylistTVShowCount),0)">$INFO[Window(home).Property(PlaylistCount),[B][COLOR=C0FFFFFF]$LOCALIZE[20342]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistUnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(PlaylistInProgress),[B][COLOR=C0FFFFFF]$LOCALIZE[575]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),Weather) + !substring(Window(Weather).Property(Day0.Outlook),N/A) + !IsEmpty(Window(Weather).Property(Day0.Outlook))">[B][COLOR=C0FFFFFF]$LOCALIZE[31174][/COLOR][/B] $INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]  [B][COLOR=C0FFFFFF]$LOCALIZE[31177] [/COLOR][/B] $INFO[Window(Weather).Property(Day0.Outlook)]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),Videos) + !IsEmpty(Window.Property(Movies.Count))">$INFO[Window.Property(Movies.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20342]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(TVShows.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20343]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20389]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),Movies) + !IsEmpty(Window.Property(Movies.Count))">$INFO[Window.Property(Movies.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20342]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Movies.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Movies.UnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),TVShows) + !IsEmpty(Window.Property(TVShows.Count))">$INFO[Window.Property(TVShows.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20343]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Episodes.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[20360]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Episodes.UnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),Concerts) + !IsEmpty(Window.Property(MusicVideos.Count))">$INFO[Window.Property(MusicVideos.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31203]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(MusicVideos.UnWatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),Music) + !IsEmpty(Window.Property(Music.AlbumsCount))">$INFO[Window.Property(Music.AlbumsCount),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Music.ArtistsCount),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window.Property(Music.SongsCount),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),FullScreen) + StringCompare(VideoPlayer.Title,player.swf playpath=105Test1 live=true)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31206]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),FullScreen) + StringCompare(VideoPlayer.Title,player.swf playpath=rmc1 live=true)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31221]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),FullScreen) + Player.IsInternetStream + SubString(VideoPlayer.Title,Virgin 1,Left)">[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B] $LOCALIZE[31222]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),FullScreen) + Player.IsInternetStream">$INFO[Player.Title,[B][COLOR=C0FFFFFF]$LOCALIZE[31212]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Player.FinishTime,[B][COLOR=C0FFFFFF]$LOCALIZE[31049]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),FullScreen)">$INFO[Player.Title,[B][COLOR=C0FFFFFF]$LOCALIZE[31040]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Player.FinishTime,[B][COLOR=C0FFFFFF]$LOCALIZE[31049]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),LiveTV) + PVR.HasNonRecordingTimer">$INFO[PVR.NextRecordingDateTime,[B][COLOR=C0FFFFFF]$LOCALIZE[19157]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[PVR.NextRecordingTitle,[B][COLOR=C0FFFFFF]$LOCALIZE[19029]$LOCALIZE[31000] [/COLOR][/B]][COLOR=C0FFFFFF] ($INFO[PVR.NextRecordingChannel, ] )[/COLOR]</value>
+		<value condition="StringCompare(Container(9000).ListItem.Property(LibStats),LiveTV)">$INFO[Pvr.BackendChannels,[B][COLOR=C0FFFFFF]$LOCALIZE[19019]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Pvr.BackendRecordings,[B][COLOR=C0FFFFFF]$LOCALIZE[19163]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?) + !substring(System.GPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.GPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[141] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?) + !substring(System.UsedSpacePercent,$LOCALIZE[161])">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=C0FFFFFF]$LOCALIZE[155]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!substring(System.CPUTemperature,?)">$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.CPUTemperature,[B][COLOR=C0FFFFFF]$LOCALIZE[401]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=C0FFFFFF]RAM$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value>$INFO[Network.IPAddress,[B][COLOR=C0FFFFFF]IP$LOCALIZE[31000] [/COLOR][/B]]     $INFO[system.memory(used.percent),[B][COLOR=C0FFFFFF]RAM$LOCALIZE[31000] [/COLOR][/B]]     $INFO[System.UsedSpacePercent,[B][COLOR=C0FFFFFF]$LOCALIZE[155]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<!--
+
+		
+		
+		
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(1) + !IsEmpty(Window(home).Property(HomePlayListOne.Count))">$INFO[Window(home).Property(HomePlayListOne.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(2) + !IsEmpty(Window(home).Property(HomePlayListTwo.Count))">$INFO[Window(home).Property(HomePlayListTwo.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(3) + !IsEmpty(Window(home).Property(HomePlayListThree.Count))">$INFO[Window(home).Property(HomePlayListThree.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(4) + !IsEmpty(Window(home).Property(HomePlayListFour.Count))">$INFO[Window(home).Property(HomePlayListFour.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(5) + !IsEmpty(Window(home).Property(HomePlayListFive.Count))">$INFO[Window(home).Property(HomePlayListFive.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(6) + !IsEmpty(Window(home).Property(HomePlayListSix.Count))">$INFO[Window(home).Property(HomePlayListSix.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(7) + !IsEmpty(Window(home).Property(HomePlayListSeven.Count))">$INFO[Window(home).Property(HomePlayListSeven.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(8) + !IsEmpty(Window(home).Property(HomePlayListEight.Count))">$INFO[Window(home).Property(HomePlayListEight.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(9) + !IsEmpty(Window(home).Property(HomePlayListNine.Count))">$INFO[Window(home).Property(HomePlayListNine.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),VideoPlayList) + Container(9000).Hasfocus(10) + !IsEmpty(Window(home).Property(HomePlayListTen.Count))">$INFO[Window(home).Property(HomePlayListTen.Count),[B][COLOR=C0FFFFFF]$LOCALIZE[31259]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Watched),[B][COLOR=C0FFFFFF]$LOCALIZE[16102]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Unwatched),[B][COLOR=C0FFFFFF]$LOCALIZE[16101]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(1) + !IsEmpty(Window(home).Property(HomePlayListOne.Artists))">$INFO[Window(home).Property(HomePlayListOne.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListOne.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(2) + !IsEmpty(Window(home).Property(HomePlayListTwo.Artists))">$INFO[Window(home).Property(HomePlayListTwo.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTwo.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(3) + !IsEmpty(Window(home).Property(HomePlayListThree.Artists))">$INFO[Window(home).Property(HomePlayListThree.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListThree.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(4) + !IsEmpty(Window(home).Property(HomePlayListFour.Artists))">$INFO[Window(home).Property(HomePlayListFour.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFour.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(5) + !IsEmpty(Window(home).Property(HomePlayListFive.Artists))">$INFO[Window(home).Property(HomePlayListFive.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListFive.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(6) + !IsEmpty(Window(home).Property(HomePlayListSix.Artists))">$INFO[Window(home).Property(HomePlayListSix.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSix.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(7) + !IsEmpty(Window(home).Property(HomePlayListSeven.Artists))">$INFO[Window(home).Property(HomePlayListSeven.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListSeven.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(8) + !IsEmpty(Window(home).Property(HomePlayListEight.Artists))">$INFO[Window(home).Property(HomePlayListEight.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListEight.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(9) + !IsEmpty(Window(home).Property(HomePlayListNine.Artists))">$INFO[Window(home).Property(HomePlayListNine.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListNine.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		<value condition="!Skin.String(WidgetPlaylistScript,Disabled) + StringCompare(Container(9000).ListItem.Property(LibStats),MusicPlayList) + Container(9000).Hasfocus(10) + !IsEmpty(Window(home).Property(HomePlayListTen.Artists))">$INFO[Window(home).Property(HomePlayListTen.Artists),[B][COLOR=C0FFFFFF]$LOCALIZE[133]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Albums),[B][COLOR=C0FFFFFF]$LOCALIZE[132]$LOCALIZE[31000] [/COLOR][/B]]     $INFO[Window(home).Property(HomePlayListTen.Songs),[B][COLOR=C0FFFFFF]$LOCALIZE[134]$LOCALIZE[31000] [/COLOR][/B]]</value>
+		
+		
+
+	-->
+	</variable>
+</includes>

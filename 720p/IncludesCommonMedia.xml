@@ -8,11 +8,11 @@
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<imagepath background="true">$VAR[InfoWidgetFanArt]</imagepath>
+				<imagepath background="true">$VAR[BackgroundWidgetFanArt]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="multiimage">
@@ -22,7 +22,7 @@
 				<randomize>true</randomize>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<visible>!IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
@@ -32,7 +32,7 @@
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
 				<visible>IsEmpty(Skin.String(GlobalBackGroundPath))</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -66,11 +66,11 @@
 			<control type="multiimage">
 				<include>Dimensions_Fullscreen</include>
 				<aspectratio>scale</aspectratio>
-				<imagepath background="true">$VAR[InfoWidgetFanArt]</imagepath>
+				<imagepath background="true">$VAR[BackgroundWidgetFanArt]</imagepath>
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>Control.HasFocus(510) + !StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 				<visible>Skin.HasSetting(EnableWidgetFanArt)</visible>
 			</control>
 			<control type="multiimage">
@@ -80,7 +80,7 @@
 				<timeperimage>8000</timeperimage>
 				<randomize>true</randomize>
 				<fadetime>1000</fadetime>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 			</control>
 			<control type="group">
 				<include>BackgroundFade</include>
@@ -88,7 +88,7 @@
 				<include>Window_OpenClose_Animation</include>
 				<include>LiveContentBackgrounds</include>
 				<visible>StringCompare(Container(9000).ListItem.Property(Background),Live)</visible>
-				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(WidgetSet),Favourites)</visible>
+				<visible>!Control.HasFocus(510) | !Skin.HasSetting(EnableWidgetFanArt) | StringCompare(Container(9000).ListItem.Property(510WidgetSet),Favourites)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -202,13 +202,17 @@
 				<include>Dimensions_Fullscreen</include>
 				<include>VizDiffusionEffect</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<!--texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.FanArt)]</texture-->
 				<visible>!IsEmpty(Player.Art(fanart)) + !Skin.HasSetting(NoDiffuseVizFanart) + !Skin.HasSetting(HideArtistArtOSD)</visible>
+				<!--visible>!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.FanArt)) + !Skin.HasSetting(NoDiffuseVizFanart) + !Skin.HasSetting(HideArtistArtOSD)</visible-->
 				<fadetime>600</fadetime>
 			</control>
 			<control type="image">
 				<include>Dimensions_Fullscreen</include>
 				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<!--texture background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.FanArt)]</texture-->
 				<visible>!IsEmpty(Player.Art(fanart)) + Skin.HasSetting(NoDiffuseVizFanart) + !Skin.HasSetting(HideArtistArtOSD)</visible>
+				<!--visible>!IsEmpty(Window(Home).Property(SkinHelper.Player.Music.FanArt)) + Skin.HasSetting(NoDiffuseVizFanart) + !Skin.HasSetting(HideArtistArtOSD)</visible-->
 				<fadetime>600</fadetime>
 			</control>
 		</control>
@@ -217,6 +221,7 @@
 		<control type="multiimage" id="5043">
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
+			<!--imagepath background="true">$INFO[Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt)]</imagepath-->
 			<visible>Player.HasAudio + !Player.IsInternetStream</visible>
 		</control>
 		<control type="multiimage" id="5044">
@@ -253,7 +258,7 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + !Skin.HasSetting(EnableEpisodeHiRezFanArt) + !stringcompare(ListItem.Label,..)</visible>
+				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + !Skin.HasSetting(EnableEpisodeHiRezFanArt) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="image">
 				<!-- Displays HiRez Episode Fanart -->
@@ -263,10 +268,10 @@
 				<include>BackgroundFade</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<include>Window_OpenClose_Animation</include>
-				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(EnableEpisodeHiRezFanArt) + !stringcompare(ListItem.Label,..)</visible>
+				<visible>Container.Content(Episodes) + !Skin.HasSetting(HideEpisodeThumb) + Skin.HasSetting(EnableEpisodeHiRezFanArt) + !StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="group">
-				<visible>!Container.Content(Episodes) | Skin.HasSetting(HideEpisodeThumb) | stringcompare(ListItem.Label,..)</visible>
+				<visible>!Container.Content(Episodes) | Skin.HasSetting(HideEpisodeThumb) | StringCompare(ListItem.Label,..)</visible>
 				<visible>[!Skin.HasSetting(EnableAnimatedFanArt)] | IsEmpty(Window(home).Property(SkinHelper.AnimatedFanArt))</visible>
 				<control type="image">
 					<include>Window_OpenClose_Animation</include>

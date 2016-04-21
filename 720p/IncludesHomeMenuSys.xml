@@ -16,10 +16,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.1.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.1.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.1.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.1.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.1.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.1.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.1.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.1.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.1.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.1.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistOne.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.1.Display)]</property>
-				<visible>!Skin.HasSetting(UseStickyHomeMenu) + !stringcompare(Skin.String(HomeMenu.1.Path),Hidden)</visible>
+				<visible>!Skin.HasSetting(UseStickyHomeMenu) + !StringCompare(Skin.String(HomeMenu.1.Path),Hidden)</visible>
 			</item>
 			<item id="1">
 				<description>Home Menu Item One</description>
@@ -34,7 +39,12 @@
 				<property name="LibStats">$INFO[Skin.String(StickyMenuSelect.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(StickyMenuSelect.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(StickyMenuSelect.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(StickyMenuSelect.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(StickyMenuSelect.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(StickyMenuSelect.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(StickyMenuSelect.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(StickyMenuSelect.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(StickyMenuSelect.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(StickyMenuSelect.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistOne.Type)]</property>
 				<property name="Background">$INFO[Skin.String(StickyMenuSelect.Display)]</property>
 				<visible>Skin.HasSetting(UseStickyHomeMenu)</visible>
@@ -53,10 +63,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.2.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.2.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.2.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.2.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.2.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.2.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.2.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.2.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.2.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.2.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistTwo.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.2.Display)]</property>
-				<visible>!stringcompare(Skin.String(HomeMenu.2.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.2.Path),Hidden)</visible>
 				<visible>[IsEmpty(Skin.String(HomeMenu.2.Path)) + !IsEmpty(Weather.Plugin)] | !IsEmpty(Skin.String(HomeMenu.2.Path))</visible>
 			</item>
 			<item id="3">
@@ -73,11 +88,16 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.3.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.3.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.3.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.3.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.3.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.3.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.3.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.3.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.3.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.3.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistThree.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.3.Display)]</property>
 				<visible>[IsEmpty(Skin.String(HomeMenu.3.Path)) + System.GetBool(pvrmanager.enabled)] | !IsEmpty(Skin.String(HomeMenu.3.Path))</visible>
-				<visible>!stringcompare(Skin.String(HomeMenu.3.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.3.Path),Hidden)</visible>
 			</item>
 			<item id="4">
 				<description>Home Menu Item Four</description>
@@ -93,10 +113,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.4.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.4.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.4.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.4.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.4.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.4.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.4.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.4.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.4.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.4.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistFour.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.4.Display)]</property>
-				<visible>!stringcompare(Skin.String(HomeMenu.4.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.4.Path),Hidden)</visible>
 			</item>
 			<item id="5">
 				<description>Home Menu Item Five</description>
@@ -113,11 +138,16 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.5.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.5.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.5.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.5.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.5.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.5.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.5.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.5.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.5.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.5.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistFive.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.5.Display)]</property>
 				<visible>[IsEmpty(Skin.String(HomeMenu.5.Path)) + Library.HasContent(Movies)] | !IsEmpty(Skin.String(HomeMenu.5.Path))</visible>
-				<visible>!stringcompare(Skin.String(HomeMenu.5.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.5.Path),Hidden)</visible>
 			</item>
 			<item id="6">
 				<description>Home Menu Item Six</description>
@@ -133,11 +163,16 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.6.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.6.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.6.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.6.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.6.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.6.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.6.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.6.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.6.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.6.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistSix.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.6.Display)]</property>
 				<visible>[IsEmpty(Skin.String(HomeMenu.6.Path)) + Library.HasContent(TVShows)] | !IsEmpty(Skin.String(HomeMenu.6.Path))</visible>
-				<visible>!stringcompare(Skin.String(HomeMenu.6.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.6.Path),Hidden)</visible>
 			</item>
 			<item id="7">
 				<description>Home Menu Item Seven</description>
@@ -155,11 +190,16 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.7.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.7.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.7.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.7.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.7.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.7.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.7.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.7.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.7.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.7.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistSeven.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.7.Display)]</property>
 				<visible>[IsEmpty(Skin.String(HomeMenu.7.Path)) + !Skin.HasSetting(DisableWatchItLater)] | !IsEmpty(Skin.String(HomeMenu.7.Path))</visible>
-				<visible>!stringcompare(Skin.String(HomeMenu.7.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.7.Path),Hidden)</visible>
 			</item>
 			<item id="8">
 				<description>Home Menu Item Eight</description>
@@ -176,10 +216,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.8.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.8.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.8.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.8.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.8.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.8.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.8.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.8.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.8.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.8.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistEight.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.8.Display)]</property>
-				<visible>!stringcompare(Skin.String(HomeMenu.8.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.8.Path),Hidden)</visible>
 			</item>
 			<item id="9">
 				<description>Home Menu Item Nine</description>
@@ -195,10 +240,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.9.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.9.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.9.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.9.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.9.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.9.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.9.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.9.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.9.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.9.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistNine.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.9.Display)]</property>
-				<visible>!stringcompare(Skin.String(HomeMenu.9.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.9.Path),Hidden)</visible>
 			</item>
 			<item id="10">
 				<description>Home Menu Item Ten</description>
@@ -215,10 +265,15 @@
 				<property name="LibStats">$INFO[Skin.String(HomeMenu.10.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(HomeMenu.10.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(HomeMenu.10.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(HomeMenu.10.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(HomeMenu.10.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(HomeMenu.10.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(HomeMenu.10.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(HomeMenu.10.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(HomeMenu.10.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(HomeMenu.10.520Path)]</property>
 				<property name="PlayListType">$INFO[Window(Home).Property(HomePlaylistTen.Type)]</property>
 				<property name="Background">$INFO[Skin.String(HomeMenu.10.Display)]</property>
-				<visible>!stringcompare(Skin.String(HomeMenu.10.Path),Hidden)</visible>
+				<visible>!StringCompare(Skin.String(HomeMenu.10.Path),Hidden)</visible>
 			</item>
 			<item id="11">
 				<description>FullScreen PlayBack</description>
@@ -233,7 +288,12 @@
 				<property name="HiLiteItem">FullScreen</property>
 				<property name="LibStats">FullScreen</property>
 				<property name="AddOnSet">None</property>
-				<property name="WidgetSet">None</property>
+				<property name="510WidgetSet">None</property>
+				<property name="510WidgetPath">None</property>
+				<property name="510WidgetName">None</property>
+				<property name="520WidgetName">None</property>
+				<property name="520WidgetSet">None</property>
+				<property name="520WidgetPath">None</property>
 				<property name="PlayListType">None</property>
 				<property name="Background">FullScreen</property>
 				<visible>Player.HasMedia</visible>
@@ -251,13 +311,144 @@
 				<property name="LibStats">$INFO[Skin.String(SettingsMenu.Stats)]</property>
 				<property name="HiLiteItem">$INFO[Skin.String(SettingsMenu.Type)]</property>
 				<property name="AddOnSet">$INFO[Skin.String(SettingsMenu.Addon)]</property>
-				<property name="WidgetSet">$INFO[Skin.String(SettingsMenu.Widget)]</property>
+				<property name="510WidgetSet">$INFO[Skin.String(SettingsMenu.Widget)]</property>
+				<property name="510WidgetPath">$INFO[Skin.String(SettingsMenu.510Path)]</property>
+				<property name="510WidgetName">$INFO[Skin.String(SettingsMenu.510Name)]</property>
+				<property name="520WidgetName">$INFO[Skin.String(SettingsMenu.520Name)]</property>
+				<property name="520WidgetSet">$INFO[Skin.String(SettingsMenu.XtraWidget)]</property>
+				<property name="520WidgetPath">$INFO[Skin.String(SettingsMenu.520Path)]</property>
 				<property name="PlayListType">None</property>
 				<property name="Background">$INFO[Skin.String(SettingsMenu.Display)]</property>
 				<visible>!Skin.HasSetting(HideSytemMenuItem)</visible>
 			</item>
 		</content>
 	</include>
+	<!-- Temp Inclusion Convert Widgets -->
+	<!--include name="TempWidgetConversion">
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.1.Widget)) + !StringCompare(Skin.String(HomeMenu.1.Widget),None)">Skin.SetString(HomeMenu.1.510Path,HomeWidget.1.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.1.Widget)) + !StringCompare(Skin.String(HomeMenu.1.Widget),None)">Skin.SetString(HomeWidget.1.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.1.Widget)) + !StringCompare(Skin.String(HomeMenu.1.Widget),None)">Skin.SetString(HomeWidget.1.Type,$INFO[Skin.String(HomeMenu.1.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.1.Widget)) + !StringCompare(Skin.String(HomeMenu.1.Widget),None)">Skin.SetString(HomeWidget.1.Display,Posters)</onload>
+	
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.1.Widget)) + !StringCompare(Skin.String(HomeMenu.1.Widget),None)">Skin.SetString(HomeWidget.1.Name,$VAR[WidgetOneContent])</onload>
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.2.Widget)) + !StringCompare(Skin.String(HomeMenu.2.Widget),None)">Skin.SetString(HomeMenu.2.510Path,HomeWidget.2.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.2.Widget)) + !StringCompare(Skin.String(HomeMenu.2.Widget),None)">Skin.SetString(HomeWidget.2.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.2.Widget)) + !StringCompare(Skin.String(HomeMenu.2.Widget),None)">Skin.SetString(HomeWidget.2.Type,$INFO[Skin.String(HomeMenu.2.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.2.Widget)) + !StringCompare(Skin.String(HomeMenu.2.Widget),None)">Skin.SetString(HomeWidget.2.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.2.Widget)) + !StringCompare(Skin.String(HomeMenu.2.Widget),None)">Skin.SetString(HomeWidget.2.Name,$VAR[WidgetTwoContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.3.Widget)) + !StringCompare(Skin.String(HomeMenu.3.Widget),None)">Skin.SetString(HomeMenu.3.510Path,HomeWidget.3.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.3.Widget)) + !StringCompare(Skin.String(HomeMenu.3.Widget),None)">Skin.SetString(HomeWidget.3.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.3.Widget)) + !StringCompare(Skin.String(HomeMenu.3.Widget),None)">Skin.SetString(HomeWidget.3.Type,$INFO[Skin.String(HomeMenu.3.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.3.Widget)) + !StringCompare(Skin.String(HomeMenu.3.Widget),None)">Skin.SetString(HomeWidget.3.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.3.Widget)) + !StringCompare(Skin.String(HomeMenu.3.Widget),None)">Skin.SetString(HomeWidget.3.Name,$VAR[WidgetThreeContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.4.Widget)) + !StringCompare(Skin.String(HomeMenu.4.Widget),None)">Skin.SetString(HomeMenu.4.510Path,HomeWidget.4.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.4.Widget)) + !StringCompare(Skin.String(HomeMenu.4.Widget),None)">Skin.SetString(HomeWidget.4.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.4.Widget)) + !StringCompare(Skin.String(HomeMenu.4.Widget),None)">Skin.SetString(HomeWidget.4.Type,$INFO[Skin.String(HomeMenu.4.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.4.Widget)) + !StringCompare(Skin.String(HomeMenu.4.Widget),None)">Skin.SetString(HomeWidget.4.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.4.Widget)) + !StringCompare(Skin.String(HomeMenu.4.Widget),None)">Skin.SetString(HomeWidget.4.Name,$VAR[WidgetFourContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.5.Widget)) + !StringCompare(Skin.String(HomeMenu.5.Widget),None)">Skin.SetString(HomeMenu.5.510Path,HomeWidget.5.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.5.Widget)) + !StringCompare(Skin.String(HomeMenu.5.Widget),None)">Skin.SetString(HomeWidget.5.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.5.Widget)) + !StringCompare(Skin.String(HomeMenu.5.Widget),None)">Skin.SetString(HomeWidget.5.Type,$INFO[Skin.String(HomeMenu.5.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.5.Widget)) + !StringCompare(Skin.String(HomeMenu.5.Widget),None)">Skin.SetString(HomeWidget.5.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.5.Widget)) + !StringCompare(Skin.String(HomeMenu.5.Widget),None)">Skin.SetString(HomeWidget.5.Name,$VAR[WidgetFiveContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.6.Widget)) + !StringCompare(Skin.String(HomeMenu.6.Widget),None)">Skin.SetString(HomeMenu.6.510Path,HomeWidget.6.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.6.Widget)) + !StringCompare(Skin.String(HomeMenu.6.Widget),None)">Skin.SetString(HomeWidget.6.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.6.Widget)) + !StringCompare(Skin.String(HomeMenu.6.Widget),None)">Skin.SetString(HomeWidget.6.Type,$INFO[Skin.String(HomeMenu.6.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.6.Widget)) + !StringCompare(Skin.String(HomeMenu.6.Widget),None)">Skin.SetString(HomeWidget.6.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.6.Widget)) + !StringCompare(Skin.String(HomeMenu.6.Widget),None)">Skin.SetString(HomeWidget.6.Name,$VAR[WidgetSixContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.7.Widget)) + !StringCompare(Skin.String(HomeMenu.7.Widget),None)">Skin.SetString(HomeMenu.7.510Path,HomeWidget.7.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.7.Widget)) + !StringCompare(Skin.String(HomeMenu.7.Widget),None)">Skin.SetString(HomeWidget.7.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.7.Widget)) + !StringCompare(Skin.String(HomeMenu.7.Widget),None)">Skin.SetString(HomeWidget.7.Type,$INFO[Skin.String(HomeMenu.7.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.7.Widget)) + !StringCompare(Skin.String(HomeMenu.7.Widget),None)">Skin.SetString(HomeWidget.7.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.7.Widget)) + !StringCompare(Skin.String(HomeMenu.7.Widget),None)">Skin.SetString(HomeWidget.7.Name,$VAR[WidgetSevenLabel])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.8.Widget)) + !StringCompare(Skin.String(HomeMenu.8.Widget),None)">Skin.SetString(HomeMenu.8.510Path,HomeWidget.8.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.8.Widget)) + !StringCompare(Skin.String(HomeMenu.8.Widget),None)">Skin.SetString(HomeWidget.8.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.8.Widget)) + !StringCompare(Skin.String(HomeMenu.8.Widget),None)">Skin.SetString(HomeWidget.8.Type,$INFO[Skin.String(HomeMenu.8.Widget])</onload>
+		
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.8.Widget)) + !StringCompare(Skin.String(HomeMenu.8.Widget),None)">Skin.SetString(HomeWidget.8.Name,$VAR[WidgetEightContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.9.Widget)) + !StringCompare(Skin.String(HomeMenu.9.Widget),None)">Skin.SetString(HomeMenu.9.510Path,HomeWidget.9.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.9.Widget)) + !StringCompare(Skin.String(HomeMenu.9.Widget),None)">Skin.SetString(HomeWidget.9.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.9.Widget)) + !StringCompare(Skin.String(HomeMenu.9.Widget),None)">Skin.SetString(HomeWidget.9.Type,$INFO[Skin.String(HomeMenu.9.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.9.Widget)) + !StringCompare(Skin.String(HomeMenu.9.Widget),None)">Skin.SetString(HomeWidget.9.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.9.Widget)) + !StringCompare(Skin.String(HomeMenu.9.Widget),None)">Skin.SetString(HomeWidget.9.Name,$VAR[WidgetNineContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.10.Widget)) + !StringCompare(Skin.String(HomeMenu.10.Widget),None)">Skin.SetString(HomeMenu.10.510Path,HomeWidget.10.)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.10.Widget)) + !StringCompare(Skin.String(HomeMenu.10.Widget),None)">Skin.SetString(HomeWidget.10.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.10.Widget)) + !StringCompare(Skin.String(HomeMenu.10.Widget),None)">Skin.SetString(HomeWidget.10.Type,$INFO[Skin.String(HomeMenu.10.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.10.Widget)) + !StringCompare(Skin.String(HomeMenu.10.Widget),None)">Skin.SetString(HomeWidget.10.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(HomeMenu.10.Widget)) + !StringCompare(Skin.String(HomeMenu.10.Widget),None)">Skin.SetString(HomeWidget.10.Name,$VAR[WidgetTenContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(SettingsMenu.Widget)) + !StringCompare(Skin.String(SettingsMenu.Widget),None)">Skin.SetString(HomeMenu.11.510Path,SettingsMenu.Widget)</onload>
+		<onload condition="!IsEmpty(Skin.String(SettingsMenu.Widget)) + !StringCompare(Skin.String(SettingsMenu.Widget),None)">Skin.SetString(HomeWidget.11.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(SettingsMenu.Widget)) + !StringCompare(Skin.String(SettingsMenu.Widget),None)">Skin.SetString(HomeWidget.11.Type,$INFO[Skin.String(SettingsMenu.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(SettingsMenu.Widget)) + !StringCompare(Skin.String(SettingsMenu.Widget),None)">Skin.SetString(HomeWidget.11.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(SettingsMenu.Widget)) + !StringCompare(Skin.String(SettingsMenu.Widget),None)">Skin.SetString(HomeWidget.11.Name,$VAR[UsrDefSettingsWidgetLabel])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.1.Widget)) + !StringCompare(Skin.String(StickyMenu.1.Widget),None)">Skin.SetString(StickyMenu.1.510Path,HomeWidget.12.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.1.Widget)) + !StringCompare(Skin.String(StickyMenu.1.Widget),None)">Skin.SetString(HomeWidget.12.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.1.Widget)) + !StringCompare(Skin.String(StickyMenu.1.Widget),None)">Skin.SetString(HomeWidget.12.Type,$INFO[Skin.String(StickyMenu.1.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.1.Widget)) + !StringCompare(Skin.String(StickyMenu.1.Widget),None)">Skin.SetString(HomeWidget.12.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.1.Widget)) + !StringCompare(Skin.String(StickyMenu.1.Widget),None)">Skin.SetString(HomeWidget.12.Name,$VAR[WidgetOneContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.2.Widget)) + !StringCompare(Skin.String(StickyMenu.2.Widget),None)">Skin.SetString(StickyMenu.2.510Path,HomeWidget.13.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.2.Widget)) + !StringCompare(Skin.String(StickyMenu.2.Widget),None)">Skin.SetString(HomeWidget.13.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.2.Widget)) + !StringCompare(Skin.String(StickyMenu.2.Widget),None)">Skin.SetString(HomeWidget.13.Type,$INFO[Skin.String(StickyMenu.2.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.2.Widget)) + !StringCompare(Skin.String(StickyMenu.2.Widget),None)">Skin.SetString(HomeWidget.13.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.2.Widget)) + !StringCompare(Skin.String(StickyMenu.2.Widget),None)">Skin.SetString(HomeWidget.13.Name,$VAR[WidgetOneContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.3.Widget)) + !StringCompare(Skin.String(StickyMenu.3.Widget),None)">Skin.SetString(StickyMenu.3.510Path,HomeWidget.14.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.3.Widget)) + !StringCompare(Skin.String(StickyMenu.3.Widget),None)">Skin.SetString(HomeWidget.14.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.3.Widget)) + !StringCompare(Skin.String(StickyMenu.3.Widget),None)">Skin.SetString(HomeWidget.14.Type,$INFO[Skin.String(StickyMenu.3.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.3.Widget)) + !StringCompare(Skin.String(StickyMenu.3.Widget),None)">Skin.SetString(HomeWidget.14.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.3.Widget)) + !StringCompare(Skin.String(StickyMenu.3.Widget),None)">Skin.SetString(HomeWidget.14.Name,$VAR[WidgetOneContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.4.Widget)) + !StringCompare(Skin.String(StickyMenu.4.Widget),None)">Skin.SetString(StickyMenu.15.510Path,HomeWidget.15.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.4.Widget)) + !StringCompare(Skin.String(StickyMenu.4.Widget),None)">Skin.SetString(HomeWidget.15.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.4.Widget)) + !StringCompare(Skin.String(StickyMenu.4.Widget),None)">Skin.SetString(HomeWidget.15.Type,$INFO[Skin.String(StickyMenu.4.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.4.Widget)) + !StringCompare(Skin.String(StickyMenu.4.Widget),None)">Skin.SetString(HomeWidget.15.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.4.Widget)) + !StringCompare(Skin.String(StickyMenu.4.Widget),None)">Skin.SetString(HomeWidget.15.Name,$VAR[WidgetOneContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.5.Widget)) + !StringCompare(Skin.String(StickyMenu.5.Widget),None)">Skin.SetString(StickyMenu.16.510Path,HomeWidget.16.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.5.Widget)) + !StringCompare(Skin.String(StickyMenu.5.Widget),None)">Skin.SetString(HomeWidget.16.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.5.Widget)) + !StringCompare(Skin.String(StickyMenu.5.Widget),None)">Skin.SetString(HomeWidget.16.Type,$INFO[Skin.String(StickyMenu.5.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.5.Widget)) + !StringCompare(Skin.String(StickyMenu.5.Widget),None)">Skin.SetString(HomeWidget.16.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.5.Widget)) + !StringCompare(Skin.String(StickyMenu.5.Widget),None)">Skin.SetString(HomeWidget.16.Name,$VAR[WidgetOneContent])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.6.Widget)) + !StringCompare(Skin.String(StickyMenu.6.Widget),None)">Skin.SetString(StickyMenu.17.510Path,HomeWidget.17.)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.6.Widget)) + !StringCompare(Skin.String(StickyMenu.6.Widget),None)">Skin.SetString(HomeWidget.17.Select,PreSet)</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.6.Widget)) + !StringCompare(Skin.String(StickyMenu.6.Widget),None)">Skin.SetString(HomeWidget.17.Type,$INFO[Skin.String(StickyMenu.6.Widget])</onload>
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.6.Widget)) + !StringCompare(Skin.String(StickyMenu.6.Widget),None)">Skin.SetString(HomeWidget.17.Display,Posters)</onload>
+		
+		
+		<onload condition="!IsEmpty(Skin.String(StickyMenu.6.Widget)) + !StringCompare(Skin.String(StickyMenu.6.Widget),None)">Skin.SetString(HomeWidget.17.Name,$VAR[WidgetOneContent])</onload>
+		<onload>Skin.SetBool(EnableAutoSave)</onload>
+		<onload>SetProperty(EnableReLoadSkin,1,Home)</onload>
+		<onload>Skin.SetBool(WidgetConversionDone)</onload>
+	</include-->
 	<include name="DefaultInitialSetup">
 		<onload>Skin.SetString(HomeMenu.1.Path,ActivateWindow(Pictures))</onload>
 		<onload>Skin.SetString(HomeMenu.1.Label,$LOCALIZE[1213])</onload>
@@ -272,6 +463,8 @@
 		<onload>Skin.SetString(HomeMenu.2.Sub,None)</onload>
 		<onload>Skin.SetString(HomeMenu.2.Addon,None)</onload>
 		<onload>Skin.SetString(HomeMenu.2.Widget,Weather)</onload>
+		<onload>Skin.SetString(HomeMenu.2.510Name,$LOCALIZE[8])</onload>
+		<onload>Skin.SetString(HomeMenu.2.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.2.Type,Weather)</onload>
 		<onload>Skin.SetString(HomeMenu.2.Fanart,special://skin/backgrounds/weather.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.2.Display,Default)</onload>
@@ -288,27 +481,33 @@
 		<onload>Skin.SetString(HomeMenu.4.Label,$LOCALIZE[3])</onload>
 		<onload>Skin.SetString(HomeMenu.4.Sub,SubSetOne)</onload>
 		<onload>Skin.SetString(HomeMenu.4.Addon,Videos)</onload>
-		<onload>Skin.SetString(HomeMenu.4.Widget,UnWatched)</onload>
+		<onload>Skin.SetString(HomeMenu.4.Widget,UnwatchedMovies)</onload>
+		<onload>Skin.SetString(HomeMenu.4.510Name,$LOCALIZE[16101] $LOCALIZE[20342])</onload>
 		<onload>Skin.SetString(HomeMenu.4.Type,Videos)</onload>
 		<onload>Skin.SetString(HomeMenu.4.Fanart,special://skin/backgrounds/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.4.Display,Default)</onload>
 		<onload>Skin.SetString(HomeMenu.4.Stats,Videos)</onload>
+		<onload>Skin.SetString(HomeMenu.4.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Label,$LOCALIZE[342])</onload>
 		<onload>Skin.SetString(HomeMenu.5.Sub,SubSetTwo)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Addon,Videos)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Widget,RecentMovies)</onload>
+		<onload>Skin.SetString(HomeMenu.5.510Name,$LOCALIZE[31198])</onload>
 		<onload>Skin.SetString(HomeMenu.5.Type,Movies)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Fanart,special://skin/backgrounds/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Display,Database)</onload>
 		<onload>Skin.SetString(HomeMenu.5.Stats,Movies)</onload>
+		<onload>Skin.SetString(HomeMenu.5.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Label,$LOCALIZE[31200])</onload>
 		<onload>Skin.SetString(HomeMenu.6.Sub,SubSetThree)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Addon,Videos)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Widget,RecentEpisodes)</onload>
+		<onload>Skin.SetString(HomeMenu.6.510Name,$LOCALIZE[31195])</onload>
 		<onload>Skin.SetString(HomeMenu.6.Type,TVShows)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Fanart,special://skin/backgrounds/videos.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Display,Database)</onload>
 		<onload>Skin.SetString(HomeMenu.6.Stats,TVShows)</onload>
+		<onload>Skin.SetString(HomeMenu.6.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.7.Label,$LOCALIZE[31215])</onload>
 		<onload>Skin.SetString(HomeMenu.7.Sub,None)</onload>
 		<onload>Skin.SetString(HomeMenu.7.Addon,None)</onload>
@@ -325,8 +524,10 @@
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.Label,$LOCALIZE[31203])</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.Sub,SubSetFive)</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.Widget,RecentConcerts)</onload>
+		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.510Name,$LOCALIZE[31189])</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.Type,Concerts)</onload>
 		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.Stats,Concerts)</onload>
+		<onload condition="Library.HasContent(MusicVideos)">Skin.SetString(HomeMenu.8.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.8.Addon,None)</onload>
 		<onload>Skin.SetString(HomeMenu.8.Fanart,special://skin/backgrounds/musicvideos.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.8.Display,Default)</onload>
@@ -335,10 +536,12 @@
 		<onload>Skin.SetString(HomeMenu.9.Sub,SubSetFour)</onload>
 		<onload>Skin.SetString(HomeMenu.9.Addon,Music)</onload>
 		<onload>Skin.SetString(HomeMenu.9.Widget,RecentAlbums)</onload>
+		<onload>Skin.SetString(HomeMenu.9.510Name,$LOCALIZE[31192])</onload>
 		<onload>Skin.SetString(HomeMenu.9.Type,Music)</onload>
 		<onload>Skin.SetString(HomeMenu.9.Fanart,special://skin/backgrounds/music.jpg)</onload>
 		<onload>Skin.SetString(HomeMenu.9.Display,Default)</onload>
 		<onload>Skin.SetString(HomeMenu.9.Stats,Music)</onload>
+		<onload>Skin.SetString(HomeMenu.9.510Path,None)</onload>
 		<onload>Skin.SetString(HomeMenu.10.Label,$LOCALIZE[350])</onload>
 		<onload>Skin.SetString(HomeMenu.10.Sub,SubSetNine)</onload>
 		<onload>Skin.SetString(HomeMenu.10.Addon,Programs)</onload>
@@ -374,6 +577,7 @@
 		<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(EnableFanartScript)</onload>
 		<onload condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onload>
 		<onload>Skin.SetBool(UseStickyHomeMenu)</onload>
+		<onload>Skin.SetBool(EnableAutoSave)</onload>
 		<onload condition="System.HasAddon(script.randomandlastitems)">Skin.SetString(WidgetPlaylistScript,Random)</onload>
 		<onload condition="!System.HasAddon(script.randomandlastitems)">Skin.SetString(WidgetPlaylistScript,Disabled)</onload>
 		<onload condition="System.Platform.Linux.RaspberryPi">Skin.SetBool(DisableAnimations)</onload>
@@ -381,6 +585,8 @@
 		<onload condition="System.Platform.Linux.RaspberryPi">Skin.SetBool(DisableAutoScroll)</onload>
 		<onload condition="System.Platform.Linux.RaspberryPi">Skin.SetBool(HideNext5SongsInfo)</onload>
 		<onload condition="System.Platform.Linux.RaspberryPi">Skin.SetBool(NoAnimateVizFanart)</onload>
+		<!-- Temp Inclusion Convert Widgets -->
+		<!--onload>Skin.SetBool(WidgetConversionDone)</onload-->
 		<onload>Skin.SetBool(InitialSetUpRun)</onload>
 	</include>
 	<include name="WrapHomeMainMenu">
@@ -404,9 +610,9 @@
 		<height>60</height>
 		<onleft>9000</onleft>
 		<onright>9000</onright>
-		<onup condition="Control.IsVisible(601)">9004</onup>
-		<!--onup condition="!Control.IsVisible(601) + Control.IsVisible(510)">510</onup-->
-		<onup condition="!Control.IsVisible(601)">510</onup>
+		<onup condition="Skin.HasSetting(EnableTwoTierWidget)">520</onup>
+		<onup condition="!Skin.HasSetting(EnableTwoTierWidget) + Control.IsVisible(601)">9004</onup>
+		<onup condition="!Skin.HasSetting(EnableTwoTierWidget) + !Control.IsVisible(601)">510</onup>
 		<ondown>9001</ondown>
 		<pagecontrol>-</pagecontrol>
 		<scrolltime>300</scrolltime>
@@ -527,7 +733,7 @@
 			<animation effect="fade" start="0" end="100" time="200">Focus</animation>
 			<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
 			<visible>Skin.HasSetting(EnableCleanHome)</visible>
-			<include>WidgetPanelVizability</include>
+			<visible>!IsEmpty(Container(9000).ListItem.Property(510WidgetSet)) + !StringCompare(Container(9000).ListItem.Property(510WidgetSet),None)</visible>
 		</control>
 	</include>
 </includes>

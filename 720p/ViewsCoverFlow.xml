@@ -51,7 +51,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-4).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-4).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -60,7 +60,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-4).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-4).Label,..) + IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-4).Label,..) + IsEmpty(Container(555).ListItem(-4).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -111,7 +111,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -120,7 +120,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -171,7 +171,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -180,7 +180,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -233,7 +233,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -242,7 +242,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -293,7 +293,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -302,7 +302,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -353,7 +353,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(1).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -362,7 +362,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(1).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -418,7 +418,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(Container(555).ListItem(0).Label,..)</visible>
+						<visible>StringCompare(Container(555).ListItem(0).Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -427,7 +427,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>$INFO[Container(555).ListItem(0).icon]</texture>
-						<visible>!stringcompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+						<visible>!StringCompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -479,7 +479,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(Container(555).ListItem(-1).Label,..)</visible>
+						<visible>StringCompare(Container(555).ListItem(-1).Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -488,7 +488,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
-						<visible>!stringcompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+						<visible>!StringCompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -548,7 +548,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(4).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(4).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -557,7 +557,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(4).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(4).Label,..) + IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(4).Label,..) + IsEmpty(Container(555).ListItem(4).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -608,7 +608,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -617,7 +617,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -668,7 +668,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -677,7 +677,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -730,7 +730,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -739,7 +739,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -790,7 +790,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -799,7 +799,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -850,7 +850,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-1).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -859,7 +859,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -915,7 +915,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(Container(555).ListItem(0).Label,..)</visible>
+						<visible>StringCompare(Container(555).ListItem(0).Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -924,7 +924,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>$INFO[Container(555).ListItem(0).icon]</texture>
-						<visible>!stringcompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+						<visible>!StringCompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -976,7 +976,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-						<visible>stringcompare(Container(555).ListItem(1).Label,..)</visible>
+						<visible>StringCompare(Container(555).ListItem(1).Label,..)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -985,7 +985,7 @@
 						<height>440</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>$INFO[Container(555).ListItem(1).icon]</texture>
-						<visible>!stringcompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+						<visible>!StringCompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -1042,7 +1042,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1051,7 +1051,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-3).Label,..) + IsEmpty(Container(555).ListItem(-3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1102,7 +1102,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1111,7 +1111,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-2).Label,..) + IsEmpty(Container(555).ListItem(-2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1162,7 +1162,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(-1).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(-1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1171,7 +1171,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(-1).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(-1).Label,..) + IsEmpty(Container(555).ListItem(-1).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1222,7 +1222,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(3).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(3).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1231,7 +1231,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(3).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(3).Label,..) + IsEmpty(Container(555).ListItem(3).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1282,7 +1282,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(2).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(2).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1291,7 +1291,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(2).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(2).Label,..) + IsEmpty(Container(555).ListItem(2).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1342,7 +1342,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(1).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(1).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1351,7 +1351,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(1).icon]</texture>
-					<visible>!stringcompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(1).Label,..) + IsEmpty(Container(555).ListItem(1).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1402,7 +1402,7 @@
 					<height>440</height>
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
-					<visible>stringcompare(Container(555).ListItem(0).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(0).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1412,7 +1412,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 					<visible>Control.HasFocus(555)</visible>
-					<visible>!stringcompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1465,7 +1465,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<visible>!Control.HasFocus(555)</visible>
-					<visible>stringcompare(Container(555).ListItem(0).Label,..)</visible>
+					<visible>StringCompare(Container(555).ListItem(0).Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1475,7 +1475,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[Container(555).ListItem(0).icon]</texture>
 					<visible>!Control.HasFocus(555)</visible>
-					<visible>!stringcompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
+					<visible>!StringCompare(Container(555).ListItem(0).Label,..) + IsEmpty(Container(555).ListItem(0).Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1547,7 +1547,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" colordiffuse="$VAR[MainColorOne]">DefaultLogoReturn.png</texture>
 					<visible>!Control.IsVisible(7001) + !Control.IsVisible(7002)</visible>
-					<visible>stringcompare(ListItem.Label,..)</visible>
+					<visible>StringCompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1557,7 +1557,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>$INFO[ListItem.icon]</texture>
 					<visible>!Control.IsVisible(7001) + !Control.IsVisible(7002)</visible>
-					<visible>!stringcompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
+					<visible>!StringCompare(ListItem.Label,..) + IsEmpty(ListItem.Art(poster))</visible>
 				</control>
 				<control type="image">
 					<left>0</left>
@@ -1607,7 +1607,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$VAR[MediaRuntime,[B]$LOCALIZE[2050]: [/B]]     $VAR[MediaRating] $VAR[MediaLastPlayed]</label>
-				<visible>!stringcompare(ListItem.Label,..)</visible>
+				<visible>!StringCompare(ListItem.Label,..)</visible>
 			</control>
 			<control type="scrollbar" id="55560">
 				<left>90</left>
